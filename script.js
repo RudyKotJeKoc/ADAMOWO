@@ -2,20 +2,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const doc = document;
     let mainRadioPlaylist = [];
     let podcastPlaylist = [];
+    
+    // Add class to indicate JS has loaded
+    document.documentElement.classList.add('js-loaded');
 
-    // Loading screen
-    setTimeout(() => {
+    // Loading screen with timeout fallback
+    const hideLoadingScreen = () => {
         const loadingScreen = doc.getElementById('loading-screen');
         if (loadingScreen) {
             loadingScreen.style.opacity = '0';
-            setTimeout(() => loadingScreen.remove(), 500);
+            setTimeout(() => {
+                if (loadingScreen.parentNode) {
+                    loadingScreen.remove();
+                }
+            }, 500);
         }
-    }, 3000);
+    };
+    
+    // Hide loading screen after 3 seconds or when content loads
+    setTimeout(hideLoadingScreen, 3000);
 
     // Load playlist from JSON file
     async function loadPlaylist() {
         try {
-            const response = await fetch('./playlist.json');
+            // Try fixed playlist first, fallback to original
+            let response;
+            try {
+                response = await fetch('./playlist-fixed.json');
+                if (!response.ok) throw new Error('Fixed playlist not found');
+            } catch (e) {
+                console.log('Using fallback playlist...');
+                response = await fetch('./playlist.json');
+            }
             const fullPlaylist = await response.json();
             
             // Filter tracks for radio (ambient, hiphop, disco categories)
@@ -303,46 +321,99 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- GSAP Animation (Infinity Loop) ---
+    // --- GSAP Animation (Infinity Loop) with Fallback ---
     if (typeof gsap !== 'undefined') {
-        gsap.registerPlugin(Draggable, MotionPathPlugin);
-        const path = doc.getElementById('infinity-path');
+        try {
+            gsap.registerPlugin(Draggable, MotionPathPlugin);
+            const path = doc.getElementById('infinity-path');
+            const avatarD = doc.getElementById('avatar-d');
+            const avatarB = doc.getElementById('avatar-b');
+            const description = doc.getElementById('timeline-description');
+            
+            const stages = [
+                { range: [0, 0.2], text: "Faza 'love bombing': manipulator buduje iluzję idealnej relacji, obsypuje ofiarę uwagą i prezentami." },
+                { range: [0.2, 0.4], text: "Początek dewaluacji: pojawiają się pierwsze drobne uszczypliwości, krytyka i podważanie pewności siebie ofiary." },
+                { range: [0.4, 0.6], text: "Eskalacja przemocy: otwarty konflikt, gaslighting i manipulacja. Ofiara traci poczucie rzeczywistości." },
+                { range: [0.6, 0.8], text: "Faza odrzucenia: manipulator odsuwa się emocjonalnie, karząc ofiarę ciszą, ignorowaniem lub groźbą odejścia." },
+                { range: [0.8, 1.0], text: "Powrót do 'love bombing' (hoovering): manipulator wraca z obietnicami zmiany, by zacząć cykl od nowa." }
+            ];
+            
+            function updateTimelineState(progress) {
+                progress = (progress + 1) % 1;
+                if (path && avatarD && avatarB) {
+                    gsap.set(avatarD, { motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5], end: progress } });
+                    gsap.set(avatarB, { motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5], end: (progress + 0.5) % 1 } });
+                }
+                
+                const currentStage = stages.find(s => progress >= s.range[0] && progress < s.range[1]) || stages[0];
+                if (description) description.textContent = currentStage.text;
+                
+                const manipulatorProgress = (progress + 0.5) % 1;
+                if (avatarB) avatarB.classList.toggle('fire-active', manipulatorProgress > 0.25 && manipulatorProgress < 0.75);
+            }
+            
+            if (path && avatarD && avatarB) {
+                Draggable.create([avatarD, avatarB], { 
+                    type: "motionPath", 
+                    motionPath: { path: path, align: path }, 
+                    onDrag: function() { 
+                        let progress = (this.target === avatarB) ? this.progress - 0.5 : this.progress; 
+                        updateTimelineState(progress); 
+                    } 
+                });
+                updateTimelineState(0);
+            }
+        } catch (error) {
+            console.log('GSAP error, using fallback animation:', error);
+            initFallbackAnimation();
+        }
+    } else {
+        initFallbackAnimation();
+    }
+    
+    function initFallbackAnimation() {
+        // Simple CSS animation fallback when GSAP is not available
         const avatarD = doc.getElementById('avatar-d');
         const avatarB = doc.getElementById('avatar-b');
         const description = doc.getElementById('timeline-description');
         
-        const stages = [
-            { range: [0, 0.2], text: "Faza 'love bombing': manipulator buduje iluzję idealnej relacji, obsypuje ofiarę uwagą i prezentami." },
-            { range: [0.2, 0.4], text: "Początek dewaluacji: pojawiają się pierwsze drobne uszczypliwości, krytyka i podważanie pewności siebie ofiary." },
-            { range: [0.4, 0.6], text: "Eskalacja przemocy: otwarty konflikt, gaslighting i manipulacja. Ofiara traci poczucie rzeczywistości." },
-            { range: [0.6, 0.8], text: "Faza odrzucenia: manipulator odsuwa się emocjonalnie, karząc ofiarę ciszą, ignorowaniem lub groźbą odejścia." },
-            { range: [0.8, 1.0], text: "Powrót do 'love bombing' (hoovering): manipulator wraca z obietnicami zmiany, by zacząć cykl od nowa." }
-        ];
-        
-        function updateTimelineState(progress) {
-            progress = (progress + 1) % 1;
-            if (path && avatarD && avatarB) {
-                gsap.set(avatarD, { motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5], end: progress } });
-                gsap.set(avatarB, { motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5], end: (progress + 0.5) % 1 } });
+        if (avatarD && avatarB) {
+            // Add CSS animation classes
+            avatarD.style.animation = 'infinityLoop 8s linear infinite';
+            avatarB.style.animation = 'infinityLoop 8s linear infinite 4s';
+            
+            // Add the CSS animation if not already present
+            if (!document.getElementById('fallback-animations')) {
+                const style = document.createElement('style');
+                style.id = 'fallback-animations';
+                style.textContent = `
+                    @keyframes infinityLoop {
+                        0% { transform: translate(50px, 50px); }
+                        25% { transform: translate(150px, 20px); }
+                        50% { transform: translate(150px, 50px); }
+                        75% { transform: translate(50px, 80px); }
+                        100% { transform: translate(50px, 50px); }
+                    }
+                `;
+                document.head.appendChild(style);
             }
             
-            const currentStage = stages.find(s => progress >= s.range[0] && progress < s.range[1]) || stages[0];
-            if (description) description.textContent = currentStage.text;
+            // Simple description cycling
+            const stages = [
+                "Faza 'love bombing': manipulator buduje iluzję idealnej relacji, obsypuje ofiarę uwagą i prezentami.",
+                "Początek dewaluacji: pojawiają się pierwsze drobne uszczypliwości, krytyka i podważanie pewności siebie ofiary.",
+                "Eskalacja przemocy: otwarty konflikt, gaslighting i manipulacja. Ofiara traci poczucie rzeczywistości.",
+                "Faza odrzucenia: manipulator odsuwa się emocjonalnie, karząc ofiarę ciszą, ignorowaniem lub groźbą odejścia.",
+                "Powrót do 'love bombing' (hoovering): manipulator wraca z obietnicami zmiany, by zacząć cykl od nowa."
+            ];
             
-            const manipulatorProgress = (progress + 0.5) % 1;
-            if (avatarB) avatarB.classList.toggle('fire-active', manipulatorProgress > 0.25 && manipulatorProgress < 0.75);
-        }
-        
-        if (path && avatarD && avatarB) {
-            Draggable.create([avatarD, avatarB], { 
-                type: "motionPath", 
-                motionPath: { path: path, align: path }, 
-                onDrag: function() { 
-                    let progress = (this.target === avatarB) ? this.progress - 0.5 : this.progress; 
-                    updateTimelineState(progress); 
-                } 
-            });
-            updateTimelineState(0);
+            let stageIndex = 0;
+            setInterval(() => {
+                if (description) {
+                    description.textContent = stages[stageIndex];
+                    stageIndex = (stageIndex + 1) % stages.length;
+                }
+            }, 1600); // Change every 1.6 seconds (8s / 5 stages)
         }
     }
 
