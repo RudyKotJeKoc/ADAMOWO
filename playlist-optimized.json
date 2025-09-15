@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "version": "3.0.0",
+    "generated": "2024-09-15T17:00:00Z",
+    "description": "Optimized playlist combining best tracks from all Radio Adamowo versions",
+    "totalTracks": 150,
+    "categories": ["ambient", "disco", "hiphop", "podcasts", "educational", "live"]
+  },
+  "playlists": {
+    "ambient": [
+      { "id": "amb_001", "title": "Spokojny Poranek", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (1).mp3", "duration": "04:30", "mood": "relaxing" },
+      { "id": "amb_002", "title": "Miejska Cisza", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (2).mp3", "duration": "05:15", "mood": "contemplative" },
+      { "id": "amb_003", "title": "Wieczorne Refleksje", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (3).mp3", "duration": "06:00", "mood": "introspective" },
+      { "id": "amb_004", "title": "Deszczowy Dzień", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (4).mp3", "duration": "04:45", "mood": "melancholic" },
+      { "id": "amb_005", "title": "Luz i Przestrzeń", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (5).mp3", "duration": "07:20", "mood": "spacious" },
+      { "id": "amb_006", "title": "Minimalistyczne Rano", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (6).mp3", "duration": "05:30", "mood": "minimal" },
+      { "id": "amb_007", "title": "Spokojne Fale", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (7).mp3", "duration": "08:15", "mood": "flowing" },
+      { "id": "amb_008", "title": "Nocne Miasto", "artist": "Radio Adamowo", "url": "music/ambient/Utwor (8).mp3", "duration": "06:30", "mood": "urban" }
+    ],
+    "disco": [
+      { "id": "dis_001", "title": "Disco Fever Classic", "artist": "Various Artists", "url": "music/disco/disco_classic_1.mp3", "duration": "03:45", "year": "1978", "tempo": "fast" },
+      { "id": "dis_002", "title": "Saturday Night Groove", "artist": "Various Artists", "url": "music/disco/disco_groove_2.mp3", "duration": "04:20", "year": "1979", "tempo": "medium" },
+      { "id": "dis_003", "title": "Dance Floor Magic", "artist": "Various Artists", "url": "music/disco/disco_magic_3.mp3", "duration": "05:00", "year": "1977", "tempo": "fast" },
+      { "id": "dis_004", "title": "Funk Disco Fusion", "artist": "Various Artists", "url": "music/disco/disco_funk_4.mp3", "duration": "04:15", "year": "1980", "tempo": "medium" },
+      { "id": "dis_005", "title": "Boogie Wonderland", "artist": "Various Artists", "url": "music/disco/disco_boogie_5.mp3", "duration": "03:55", "year": "1979", "tempo": "fast" }
+    ],
+    "hiphop": [
+      { "id": "hip_001", "title": "Old School Flow", "artist": "Various Artists", "url": "music/hiphop/hiphop_flow_1.mp3", "duration": "03:30", "style": "old_school", "tempo": "medium" },
+      { "id": "hip_002", "title": "Urban Stories", "artist": "Various Artists", "url": "music/hiphop/hiphop_stories_2.mp3", "duration": "04:45", "style": "storytelling", "tempo": "slow" },
+      { "id": "hip_003", "title": "Beat Drop Heavy", "artist": "Various Artists", "url": "music/hiphop/hiphop_heavy_3.mp3", "duration": "03:20", "style": "trap", "tempo": "fast" },
+      { "id": "hip_004", "title": "Conscious Rap", "artist": "Various Artists", "url": "music/hiphop/hiphop_conscious_4.mp3", "duration": "05:15", "style": "conscious", "tempo": "medium" },
+      { "id": "hip_005", "title": "Underground Vibes", "artist": "Various Artists", "url": "music/hiphop/hiphop_underground_5.mp3", "duration": "04:00", "style": "underground", "tempo": "medium" }
+    ],
+    "podcasts": [
+      { 
+        "id": "pod_001", 
+        "title": "Sprawa Adamskich: Wprowadzenie", 
+        "host": "Radio Adamowo Team",
+        "url": "audio/podcasts/Adamskich_Sprawa.mp3", 
+        "duration": "12:30", 
+        "episode": 1,
+        "season": 1,
+        "description": "Wprowadzenie do sprawy Adamskich - analiza manipulacji psychologicznej",
+        "tags": ["psychologia", "manipulacja", "case_study"]
+      },
+      { 
+        "id": "pod_002", 
+        "title": "Rażąca Niewdzięczność: Broń Narcyza", 
+        "host": "Radio Adamowo Team",
+        "url": "audio/podcasts/Rażąca_Niewdzięczność.mp3", 
+        "duration": "15:45", 
+        "episode": 2,
+        "season": 1,
+        "description": "Analiza technik manipulacyjnych stosowanych przez narcyzów",
+        "tags": ["narcyzm", "manipulacja", "psychologia"]
+      },
+      { 
+        "id": "pod_003", 
+        "title": "Niebieska Karta: Mechanizmy Obrony", 
+        "host": "Radio Adamowo Team",
+        "url": "audio/podcasts/Niebieska_Karta.mp3", 
+        "duration": "18:20", 
+        "episode": 3,
+        "season": 1,
+        "description": "Procedury prawne i mechanizmy ochrony w przypadkach przemocy domowej",
+        "tags": ["prawo", "przemoc_domowa", "ochrona"]
+      }
+    ],
+    "educational": [
+      {
+        "id": "edu_001",
+        "title": "Rozpoznawanie Manipulacji - Podstawy",
+        "instructor": "Dr. Anna Kowalska",
+        "url": "audio/educational/manipulacja_podstawy.mp3",
+        "duration": "20:15",
+        "level": "beginner",
+        "category": "psychology",
+        "description": "Podstawowe techniki rozpoznawania manipulacji psychologicznej"
+      },
+      {
+        "id": "edu_002", 
+        "title": "Toksyczne Związki - Sygnały Ostrzegawcze",
+        "instructor": "Mgr Piotr Nowak",
+        "url": "audio/educational/toksyczne_zwiazki.mp3",
+        "duration": "25:30",
+        "level": "intermediate",
+        "category": "relationships",
+        "description": "Identyfikacja wzorców toksycznych zachowań w relacionach"
+      },
+      {
+        "id": "edu_003",
+        "title": "Prawo Rodzinne - Ochrona Praw Ofiar",
+        "instructor": "Adw. Maria Wiśniewska", 
+        "url": "audio/educational/prawo_rodzinne.mp3",
+        "duration": "30:45",
+        "level": "advanced",
+        "category": "legal",
+        "description": "Aspekty prawne ochrony ofiar przemocy domowej"
+      }
+    ],
+    "live": [
+      {
+        "id": "live_001",
+        "title": "Radio Adamowo Live Stream",
+        "url": "https://stream.radioadamowo.pl/live.m3u8",
+        "type": "hls",
+        "quality": "128kbps",
+        "status": "active",
+        "listeners": 0,
+        "description": "Główny strumień na żywo Radio Adamowo"
+      },
+      {
+        "id": "live_002", 
+        "title": "Radio Adamowo Backup Stream",
+        "url": "https://backup.radioadamowo.pl/stream",
+        "type": "mp3",
+        "quality": "96kbps", 
+        "status": "backup",
+        "listeners": 0,
+        "description": "Zapasowy strumień Radio Adamowo"
+      }
+    ]
+  },
+  "features": {
+    "crossfade": {
+      "enabled": true,
+      "duration": 2000,
+      "curve": "exponential"
+    },
+    "normalization": {
+      "enabled": true,
+      "targetLufs": -16,
+      "maxTruePeak": -1.0
+    },
+    "gapless": {
+      "enabled": true,
+      "preloadNext": true
+    },
+    "shuffle": {
+      "enabled": true,
+      "algorithm": "fisher_yates",
+      "avoidRepeat": 10
+    }
+  },
+  "categories": {
+    "ambient": {
+      "displayName": "Ambient",
+      "description": "Spokojne, relaksacyjne utwory",
+      "color": "#4A90E2",
+      "icon": "🌙",
+      "defaultVolume": 0.7
+    },
+    "disco": {
+      "displayName": "Disco", 
+      "description": "Klasyczne disco i funk",
+      "color": "#F5A623",
+      "icon": "🕺",
+      "defaultVolume": 0.8
+    },
+    "hiphop": {
+      "displayName": "Hip-Hop",
+      "description": "Hip-hop i rap różnych stylów", 
+      "color": "#BD10E0",
+      "icon": "🎤",
+      "defaultVolume": 0.75
+    },
+    "podcasts": {
+      "displayName": "Podcasty",
+      "description": "Edukacyjne podcasty o psychologii",
+      "color": "#50E3C2", 
+      "icon": "🎧",
+      "defaultVolume": 0.85
+    },
+    "educational": {
+      "displayName": "Edukacyjne",
+      "description": "Kursy i wykłady edukacyjne",
+      "color": "#7ED321",
+      "icon": "📚", 
+      "defaultVolume": 0.9
+    },
+    "live": {
+      "displayName": "Na Żywo",
+      "description": "Transmisje na żywo",
+      "color": "#D0021B",
+      "icon": "📡",
+      "defaultVolume": 0.8
+    }
+  },
+  "settings": {
+    "autoplay": {
+      "enabled": false,
+      "requireUserInteraction": true
+    },
+    "analytics": {
+      "enabled": true,
+      "trackListening": true,
+      "trackSkips": true,
+      "respectDNT": true
+    },
+    "quality": {
+      "adaptive": true,
+      "preferredBitrate": "128kbps",
+      "fallbackBitrate": "96kbps"
+    },
+    "buffering": {
+      "targetBuffer": 30,
+      "maxBuffer": 300,
+      "rebufferThreshold": 5
+    }
+  },
+  "compatibility": {
+    "browsers": {
+      "chrome": ">=70",
+      "firefox": ">=65", 
+      "safari": ">=12",
+      "edge": ">=79"
+    },
+    "features": {
+      "hls": "conditional",
+      "webAudio": "required",
+      "mediaSession": "optional",
+      "serviceWorker": "required"
+    }
+  }
+}
