@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Radio Adamowo - Tajny Dziennik Barbary A. (Analiza Interaktywna)</title>
+  <meta name="description" content="Radio Adamowo: Jak kalendarz stał się dowodem... manipulacji. Interaktywna oś czasu i analiza zapisków." />
+  
+  <!-- SEO & Meta Tags -->
+  <link rel="canonical" href="https://example.com/kalendarz.html">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Radio Adamowo">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:url" content="https://example.com/kalendarz.html">
+  <meta property="og:title" content="Radio Adamowo - Tajny Dziennik Barbary A.">
+  <meta property="og:description" content="Interaktywna analiza zapisków, które miały pogrążyć, a obnażyły metody manipulacji.">
+  <meta property="og:image" content="https://example.com/assets/og/radio-adamowo-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2025-08-30T00:00:00+02:00">
+  <meta property="article:modified_time" content="2025-08-30T00:00:00+02:00">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://example.com/kalendarz.html">
+  <meta name="twitter:title" content="Radio Adamowo - Tajny Dziennik Barbary A.">
+  <meta name="twitter:description" content="Interaktywna analiza zapisków, które miały pogrążyć, a obnażyły metody manipulacji.">
+  <meta name="twitter:image" content="https://example.com/assets/og/radio-adamowo-1200x630.jpg">
+
+  <!-- Performance & Fonts -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.10"></script>
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://example.com/kalendarz.html"},
+    "headline":"Radio Adamowo - Tajny Dziennik Barbary A.",
+    "description":"Interaktywna analiza zapisków, które miały pogrążyć, a obnażyły metody manipulacji.",
+    "inLanguage":"pl-PL",
+    "author":{"@type":"Organization","name":"Radio Adamowo"},
+    "publisher":{"@type":"Organization","name":"Radio Adamowo","logo":{"@type":"ImageObject","url":"https://example.com/assets/logo-600x600.png","width":600,"height":600}},
+    "image":{"@type":"ImageObject","url":"https://example.com/assets/og/radio-adamowo-1200x630.jpg","width":1200,"height":630},
+    "datePublished":"2025-08-30T00:00:00+02:00",
+    "dateModified":"2025-08-30T00:00:00+02:00",
+    "associatedMedia":{
+      "@type":"AudioObject",
+      "name":"Posłuchaj Analizy Dziennika Wojennego",
+      "contentUrl":"https://example.com/audio/kalendarz.mp3",
+      "encodingFormat":"audio/mpeg",
+      "duration":"PT12M34S"
+    }
+  }</script>
+
+  <style>
+    :root { color-scheme: light dark; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif; }
+    body { background-color: #f1f5f9; }
+    .dark body { background-color: #0b1220; }
+    .section-title { border-bottom: 2px solid #3b82f6; padding-bottom: .5rem; }
+    .card { background-color: #fff; border-radius: .75rem; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+    .dark .card { background-color: #111827; }
+    .quote { border-left: 4px solid #cbd5e1; padding-left: 1rem; font-style: italic; color: #475569; }
+    .dark .quote { border-left-color: #374151; color: #9ca3af; }
+    .analysis-comment { background-color: #fefce8; border-left: 4px solid #facc15; padding: 1rem; margin-top: 1rem; border-radius: 0.25rem; }
+    .dark .analysis-comment { background-color: #1f2937; border-left-color: #fbbf24; }
+    .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus{ position:static; width:auto; height:auto; padding:.5rem 1rem; background:#1e40af; color:#fff; border-radius:.5rem; }
+
+    /* Timeline styles */
+    .timeline-item { transition: opacity 0.3s ease-in-out, max-height 0.5s ease-in-out; }
+    .timeline-item.hidden-item { opacity: 0; max-height: 0; overflow: hidden; margin-bottom: 0; }
+    
+    /* Accessibility & Print styles */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; }
+    }
+    @media print {
+      header, footer, #filters, .analysis-comment { display: none !important; }
+      .card { box-shadow: none !important; border: 1px solid #e5e7eb; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+  </style>
+</head>
+<body class="text-slate-900 dark:text-slate-100 selection:bg-blue-200 selection:text-slate-900">
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <header class="bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:bg-slate-900/80 sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
+    <nav class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between" aria-label="Główna nawigacja">
+      <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tight text-slate-800 dark:text-white">RADIO ADAMOWO</a>
+       <div class="flex items-center space-x-4">
+          <a href="index.html#audycje" class="hidden sm:block text-sm font-semibold text-blue-600 hover:text-blue-700">&larr; Powrót do audycji</a>
+          <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5">
+              <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+              <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zm1.414 12.364a1 1 0 01-1.414 0l-.707-.707a1 1 0 111.414-1.414l.707.707a1 1 0 010 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+       </div>
+    </nav>
+  </header>
+
+  <main id="main" role="main" class="container mx-auto px-4 md:px-6 py-8 md:py-12">
+
+    <section class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold tracking-tight mb-2 text-slate-900 dark:text-slate-50">Tajny Dziennik Barbary A.</h1>
+        <p class="text-lg text-slate-600 dark:text-slate-300">Jak kalendarz stał się dowodem... manipulacji.</p>
+    </section>
+    
+    <!-- Dynamic Quote Section -->
+    <section class="mb-12">
+        <div class="card text-center italic text-slate-600 dark:text-slate-400 border-l-4 border-blue-500 bg-blue-50 dark:bg-slate-800">
+            <p id="dynamic-quote">"Ładowanie cytatu dnia..."</p>
+        </div>
+    </section>
+
+    <section class="mb-12">
+        <article class="card text-center">
+            <h2 class="text-2xl font-semibold mb-4 text-slate-800 dark:text-slate-100">Posłuchaj Analizy Dziennika Wojennego</h2>
+            <audio controls class="mx-auto w-full max-w-md" preload="metadata">
+                <source src="audio/kalendarz.mp3" type="audio/mpeg">
+                Twoja przeglądarka nie obsługuje elementu audio.
+            </audio>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+              <a href="#transkrypcja" class="underline hover:no-underline">Zobacz transkrypcję i źródłowe zapiski</a>
+            </p>
+        </article>
+    </section>
+    
+    <section class="mb-12">
+        <article class="card">
+            <h2 class="text-2xl font-bold mb-4">Wstęp: Prawda kontra pozory</h2>
+            <p class="text-slate-700 dark:text-slate-200 leading-relaxed">
+                Sprawa rodziny A. to nie zwykły konflikt o majątek. To poruszająca historia o manipulacji, ukryta pod płaszczykiem troski. "Dziennik" Barbary A., rzekomo obiektywny zapis zdarzeń, jest w rzeczywistości narzędziem kreowania fałszywej narracji. W tej audycji obnażymy absurdalność zarzutów i pokażemy, jak prawo zostało instrumentalnie wykorzystane w osobistej wendetcie.
+            </p>
+        </article>
+    </section>
+
+    <!-- Interactive Timeline Section -->
+    <section class="mb-12" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading" class="text-3xl font-extrabold mb-4 text-center section-title">Interaktywna Oś Czasu Zdarzeń</h2>
+        
+        <p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-4 mb-8">
+          Uwaga: Analiza ma charakter publicystyczny i satyryczny. Cytaty z dziennika przytoczono w granicach prawa cytatu.
+        </p>
+        
+        <!-- Filter Buttons -->
+        <div id="filters" class="flex flex-wrap justify-center gap-2 my-8" role="toolbar" aria-label="Filtruj oś czasu">
+            <button data-filter="all" class="filter-btn bg-blue-600 text-white py-2 px-4 rounded-full text-sm font-semibold shadow-md" aria-pressed="true">Wszystkie</button>
+            <button data-filter="prywatnosc" class="filter-btn bg-white dark:bg-slate-700 py-2 px-4 rounded-full text-sm font-semibold shadow-md" aria-pressed="false">Prywatność</button>
+            <button data-filter="konflikty" class="filter-btn bg-white dark:bg-slate-700 py-2 px-4 rounded-full text-sm font-semibold shadow-md" aria-pressed="false">Konflikty</button>
+            <button data-filter="manipulacja" class="filter-btn bg-white dark:bg-slate-700 py-2 px-4 rounded-full text-sm font-semibold shadow-md" aria-pressed="false">Manipulacja</button>
+            <button data-filter="absurd" class="filter-btn bg-white dark:bg-slate-700 py-2 px-4 rounded-full text-sm font-semibold shadow-md" aria-pressed="false">Absurd</button>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="space-y-8">
+            <article class="timeline-item card" data-category="prywatnosc konflikty" aria-labelledby="sprawa-1">
+                <h3 id="sprawa-1" class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">Sprawa nr 1: Nocna Inspekcja (10 luty)</h3>
+                <blockquote class="quote mb-4 text-slate-700 dark:text-slate-200">
+                    „Zauważyłam, że ona jest cały czas u niego w pokoju. Po godzinie drugiej w nocy zgasili światło. [...] Wtedy weszłam, było prawie 2.30 w nocy.”
+                </blockquote>
+                <div class="analysis-comment">
+                    <p class="font-semibold text-slate-800 dark:text-slate-100">Analiza redakcji:</p>
+                    <p class="text-slate-700 dark:text-slate-300">Wpis ilustruje obsesyjną potrzebę kontroli. Wtargnięcie do sypialni dorosłego syna o 2:30 w nocy to nie troska, a rażące naruszenie prywatności. Według Dariusza A., inspekcja była połączona z wulgarnymi wyzwiskami w stronę jego gościa, co stało się iskrą zapalną całego konfliktu. Cel zapisu: udokumentowanie "niemoralnego" zachowania jako podkładki pod przyszłe oskarżenia.</p>
+                </div>
+            </article>
+
+            <article class="timeline-item card" data-category="konflikty manipulacja" aria-labelledby="sprawa-2">
+                <h3 id="sprawa-2" class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">Sprawa nr 2: Awantura przy muzyce (29 marzec)</h3>
+                <blockquote class="quote mb-4 text-slate-700 dark:text-slate-200">
+                    „Darek Nachlany... grał bardzo głośno muzykę... Po 22 zadzwoniliśmy po policję... Walił w podłogę, latał z laserem... zasnął.”
+                </blockquote>
+                 <div class="analysis-comment">
+                    <p class="font-semibold text-slate-800 dark:text-slate-100">Analiza redakcji:</p>
+                    <p class="text-slate-700 dark:text-slate-300">Barbara A. przedstawia syna jako szaleńca. Wygodnie pomija jednak kluczowy fakt odnotowany przez policję: to ona sama wyłączyła prąd, prowokując eskalację. Wezwanie policji zamiast rozmowy to podręcznikowy przykład instrumentalizacji instytucji państwowych. Syn zasnął, ale w aktach został "niebezpieczny furiat".</p>
+                </div>
+            </article>
+
+            <article class="timeline-item card" data-category="absurd manipulacja" aria-labelledby="sprawa-3">
+                <h3 id="sprawa-3" class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">Sprawa nr 3: Zbrodnia i Młotek (1 kwiecień)</h3>
+                 <blockquote class="quote mb-4 text-slate-700 dark:text-slate-200">
+                    „Zmienił kod do warsztatu. Nie mogę wejść po młotek lub zapalić z tyłu światło, jak chcę iść po drzewo.”
+                </blockquote>
+                <div class="analysis-comment">
+                    <p class="font-semibold text-slate-800 dark:text-slate-100">Analiza redakcji:</p>
+                    <p class="text-slate-700 dark:text-slate-300">Ten wpis demaskuje fundamentalne niezrozumienie (lub celową nadinterpretację) prawa. Służebność mieszkania nie daje prawa do dysponowania warsztatem i narzędziami właściciela. Zabezpieczenie swojej własności przez Dariusza A. jest tu przedstawiane jako akt wrogości. To absurdalny zarzut, który pokazuje, że każdy pretekst był dobry, by dodać kolejny wpis do "dziennika krzywd".</p>
+                </div>
+            </article>
+            
+            <article class="timeline-item card" data-category="manipulacja" aria-labelledby="sprawa-4">
+                <h3 id="sprawa-4" class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">Sprawa nr 4: Szpitalna Amnezja (21 maj)</h3>
+                 <blockquote class="quote mb-4 text-slate-700 dark:text-slate-200">
+                    „Odmówił, żeby dać klucz do samochodu, żebym zawiozła Sylwka do szpitala. [...] Co mnie to obchodzi, taksówką, okazją.”
+                </blockquote>
+                <div class="analysis-comment">
+                    <p class="font-semibold text-slate-800 dark:text-slate-100">Analiza redakcji:</p>
+                    <p class="text-slate-700 dark:text-slate-300">Koronny dowód na "rażącą niewdzięczność" i... rażącą manipulację. Propozycja wezwania pogotowia jest standardową procedurą. Ale kluczowe jest to, czego w kalendarzu nie ma: Barbara A. "zapomniała" zapisać, że to Dariusz A. odebrał ojca ze szpitala po zakończeniu leczenia. Selektywność tego zapisu dowodzi, że kalendarz był narzędziem strategicznym, a nie obiektywnym dziennikiem.</p>
+                </div>
+            </article>
+
+            <article class="timeline-item card" data-category="konflikty manipulacja" aria-labelledby="sprawa-5">
+                <h3 id="sprawa-5" class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">Sprawa nr 5: Nagrywaj, k..., nagrywaj! (20 lipiec)</h3>
+                 <blockquote class="quote mb-4 text-slate-700 dark:text-slate-200">
+                    „D. Kurwa, nie rozumiesz, że to jest teren prywatny? [...] Chciałam nagrać to, co mówi i wyjęłam tel. D. No, nagrywaj, nagrywaj, kurwo.”
+                </blockquote>
+                <div class="analysis-comment">
+                    <p class="font-semibold text-slate-800 dark:text-slate-100">Analiza redakcji:</p>
+                    <p class="text-slate-700 dark:text-slate-300">Wpis-samobój. Barbara A. sama przyznaje, że jej intencją było sprowokowanie i nagranie reakcji syna. To jawny dowód na celowe działanie w celu pozyskania "materiału dowodowego". Reakcja Dariusza A., choć wulgarna, jest odpowiedzią na prowokację. Zamiast dowodu na jego agresję, mamy dowód na metody oskarżycielki.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="mb-12">
+        <article class="card">
+            <details id="transkrypcja">
+                <summary class="text-xl font-bold text-slate-800 dark:text-slate-200 cursor-pointer">Oryginalne Zapiski z Kalendarza Barbary A. (bez cenzury)</summary>
+                <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+                    <pre class="whitespace-pre-wrap text-sm text-slate-600 dark:text-slate-300 font-mono bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+[Treść zapisków z kalendarza pozostaje bez zmian]
+<b>10 luty</b>
+Zauważyłam, że ona jest cały czas u niego w pokoju...
+...
+<b>26 lipiec</b>
+Był dzisiaj Antoni Bogdaszewski. Ok. 20 kamer, podsłuchy, nadal cały czas ma nasze telefony zablokowane.
+                    </pre>
+                </div>
+            </details>
+        </article>
+    </section>
+
+    <section>
+         <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-lg text-center">
+             <h2 class="text-3xl font-bold mb-4">Wnioski Końcowe Naszej Redakcji</h2>
+             <p class="text-slate-300 leading-relaxed">
+                Kalendarz Barbary A. nie jest obiektywnym dowodem. To tendencyjny, wybiórczy i wyrachowany "scenariusz pod przyszły pozew". Każdy wpis, zamiast dokumentować prawdę, miał na celu budowanie fałszywego obrazu syna-oprawcy. To broń narracyjna, która po wnikliwej analizie obraca się przeciwko autorce.
+             </p>
+         </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-white py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p id="copyright" class="text-sm text-slate-300">&copy; <span data-year></span> Radio Adamowo. Wszelkie prawa zastrzeżone.</p>
+      <p class="text-xs text-slate-400 mt-2">Portal ma charakter informacyjno‑satyryczny. Wszelkie podobieństwo do prawdziwych dramatów jest… cóż, prawdopodobnie nieprzypadkowe.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Dark/Light Mode Toggle ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function applyIconState() {
+          const dark = document.documentElement.classList.contains('dark');
+          darkIcon.classList.toggle('hidden', !dark);
+          lightIcon.classList.toggle('hidden', dark);
+        }
+
+        // Initialize theme based on localStorage / system preference
+        const userPref = localStorage.getItem('color-theme');
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (userPref === 'dark' || (!userPref && sysDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        applyIconState();
+
+        // Handle click
+        themeToggleBtn.addEventListener('click', () => {
+          const dark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('color-theme', dark ? 'dark' : 'light');
+          applyIconState();
+        });
+
+        // Listen for system theme changes
+        if (window.matchMedia) {
+          const mq = window.matchMedia('(prefers-color-scheme: dark)');
+          mq.addEventListener?.('change', (e) => {
+            if (!localStorage.getItem('color-theme')) {
+              document.documentElement.classList.toggle('dark', e.matches);
+              applyIconState();
+            }
+          });
+        }
+        
+        // --- Dynamic Year ---
+        document.querySelector('[data-year]').textContent = new Date().getFullYear();
+
+        // --- Dynamic Quote ---
+        const quotes = [
+            "Zmienił kod do warsztatu. Nie mogę wejść po młotek...",
+            "Walił w podłogę, latał z laserem... zasnął.",
+            "Co mnie to obchodzi, taksówką, okazją.",
+            "Ok. 20 kamer, podsłuchy, nadal cały czas ma nasze telefony zablokowane."
+        ];
+        const quoteElement = document.getElementById('dynamic-quote');
+        if (quoteElement) {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            quoteElement.textContent = `„${randomQuote}”`;
+        }
+
+        // --- Timeline Filtering ---
+        const filterContainer = document.getElementById('filters');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        filterContainer.addEventListener('click', (event) => {
+            const target = event.target.closest('.filter-btn');
+            if (!target) return;
+
+            const filter = target.dataset.filter;
+
+            // Update button styles + aria-pressed
+            filterButtons.forEach(button => {
+              const isActive = (button === target);
+              button.classList.toggle('bg-blue-600', isActive);
+              button.classList.toggle('text-white', isActive);
+              button.classList.toggle('bg-white', !isActive);
+              button.classList.toggle('dark:bg-slate-700', !isActive);
+              button.setAttribute('aria-pressed', String(isActive));
+            });
+
+            // Filter items
+            timelineItems.forEach(item => {
+                const categories = item.dataset.category.split(' ');
+                const shouldShow = filter === 'all' || categories.includes(filter);
+                
+                if (shouldShow) {
+                    item.classList.remove('hidden-item');
+                } else {
+                    item.classList.add('hidden-item');
+                }
+            });
+
+            // Focus first visible item for keyboard navigation
+            const firstVisible = Array.from(timelineItems).find(i => !i.classList.contains('hidden-item'));
+            if (firstVisible) {
+              const h3 = firstVisible.querySelector('h3');
+              if (h3) {
+                  h3.setAttribute('tabindex', '-1');
+                  h3.focus({ preventScroll: false });
+                  setTimeout(() => h3.removeAttribute('tabindex'), 300);
+              }
+            }
+        });
+    });
+  </script>
+</body>
+</html>
+

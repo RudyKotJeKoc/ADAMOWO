@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zdrada w Togu: Analiza Sprawy Mecenasa D. - Radio Adamowo</title>
+  <meta name="description" content="Dogłębna analiza sprawy adwokata Aleksandra D. – studium konfliktu interesów, naruszenia etyki zawodowej i zdrady zaufania klienta." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Favicon & Theme -->
+  <meta name="theme-color" content="#1e293b" />
+  <link rel="icon" href="https://placehold.co/32x32/1e293b/ffffff?text=RA" />
+
+  <style>
+    :root { 
+      color-scheme: light dark; 
+    }
+    html { 
+      font-family: 'Inter', sans-serif; 
+    }
+    body { 
+      background-color: #f1f5f9; 
+      color: #334155;
+    }
+    h1, h2, h3 {
+      font-family: 'Source Serif Pro', serif;
+    }
+    @media (prefers-color-scheme: dark) { 
+      body { 
+        background-color: #0f172a; 
+        color: #cbd5e1;
+      } 
+    }
+    .serious-content,
+    .satire-content.hidden {
+      display: none;
+    }
+    .satire-content,
+    .serious-content.hidden {
+      display: none;
+    }
+    body.mode-serious .serious-content {
+      display: inline; /* or block, as appropriate */
+    }
+    body.mode-satire .satire-content {
+      display: inline; /* or block, as appropriate */
+    }
+  </style>
+</head>
+<body class="mode-satire">
+
+  <main class="container mx-auto px-4 py-8 max-w-5xl">
+
+    <!-- Nagłówek -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-3">Zdrada w Togu: Sprawa Mecenasa D.</h1>
+      <p class="text-lg text-slate-500 dark:text-slate-400">
+        <span class="satire-content">Jak adwokat udowodnił, że najlepszą obroną jest atak... na własnego klienta.</span>
+        <span class="serious-content">Analiza konfliktu interesów i naruszenia fundamentalnych zasad etyki zawodowej.</span>
+      </p>
+    </header>
+
+    <!-- Przełącznik trybu -->
+    <div class="flex justify-center mb-12">
+        <div class="relative inline-flex items-center p-1 bg-slate-200 dark:bg-slate-800 rounded-full">
+            <button id="mode-switch-btn" class="relative z-10 px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-300 ease-in-out focus:outline-none">
+                <!-- Text updated by JS -->
+            </button>
+            <div id="mode-switch-bg" class="absolute inset-0 w-1/2 h-full bg-white dark:bg-slate-700 rounded-full transform transition-transform duration-300 ease-in-out"></div>
+        </div>
+    </div>
+
+
+    <!-- Oś Czasu -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">Kluczowe Momenty Sprawy</h2>
+        <div class="relative wrap overflow-hidden p-10 h-full">
+            <div class="border-2 absolute border-opacity-20 border-slate-700 dark:border-slate-300 h-full" style="left: 50%"></div>
+            
+            <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-slate-800 shadow-xl w-10 h-10 rounded-full"><h3 class="mx-auto font-semibold text-lg text-white">1</h3></div>
+                <div class="order-1 bg-white dark:bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                    <h3 class="font-bold text-slate-800 dark:text-white text-lg">Wybór Pełnomocnika</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Klient zatrudnia mec. D., powierzając mu swój los w sprawie o znęcanie.</p>
+                </div>
+            </div>
+            
+            <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-slate-800 shadow-xl w-10 h-10 rounded-full"><h3 class="mx-auto text-white font-semibold text-lg">2</h3></div>
+                <div class="order-1 bg-white dark:bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                    <h3 class="font-bold text-slate-800 dark:text-white text-lg">Rozprawa Sądowa</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Sprawa trafia na wokandę. Pozornie wszystko przebiega zgodnie z planem.</p>
+                </div>
+            </div>
+
+            <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-red-600 shadow-xl w-10 h-10 rounded-full"><h3 class="mx-auto font-semibold text-lg text-white">3</h3></div>
+                <div class="order-1 bg-white dark:bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                    <h3 class="font-bold text-red-500 text-lg">Zdrada na Korytarzu</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Mecenas D. udziela "dyskretnej porady" stronie przeciwnej – Barbarze A.</p>
+                </div>
+            </div>
+
+            <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-slate-800 shadow-xl w-10 h-10 rounded-full"><h3 class="mx-auto text-white font-semibold text-lg">4</h3></div>
+                <div class="order-1 bg-white dark:bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                    <h3 class="font-bold text-slate-800 dark:text-white text-lg">Wyrok i Pozew Cywilny</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Wyrok karny staje się narzędziem w pozwie cywilnym Barbary A. o darowiznę.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analiza i Komentarze -->
+    <article class="prose dark:prose-invert prose-slate max-w-none prose-lg">
+      <p>
+        <span class="satire-content">W świecie, gdzie adwokat jest ostatnią deską ratunku, mecenas Aleksander D. postanowił tę deskę widowiskowo połamać na kolanie. Jego klient, szukając sprawiedliwości, trafił na człowieka, dla którego etyka zawodowa okazała się pojęciem równie giętkim co kręgosłup moralny.</span>
+        <span class="serious-content">Sprawa mecenasa Aleksandra D. stanowi niepokojące studium przypadku, w którym pełnomocnik procesowy, zobowiązany do lojalności, działa na szkodę własnego klienta. Analiza jego postępowania ujawnia rażące naruszenia podstawowych zasad deontologii adwokackiej.</span>
+      </p>
+
+      <aside class="bg-blue-100 dark:bg-blue-900/50 border-l-4 border-blue-500 text-blue-800 dark:text-blue-200 p-4 my-6 rounded-r-lg not-prose">
+        <h4 class="font-bold">Opinia eksperta: dr hab. Krystian Nowak, etyk prawniczy</h4>
+        <p class="mt-2 italic text-base">"Opisana sytuacja to podręcznikowy przykład deliktu dyscyplinarnego. Lojalność wobec klienta jest fundamentem zawodu adwokata. Działanie w porozumieniu ze stroną przeciwną to nie tylko naruszenie zasad etyki, ale także podstawa do roszczeń odszkodowawczych i utraty prawa do wykonywania zawodu."</p>
+      </aside>
+
+      <h3>Punkt zwrotny: Szepty na sądowym korytarzu</h3>
+      <p>
+        Kulminacyjny moment dramatu rozegrał się nie na sali rozpraw, lecz w jej kuluarach. To tam mecenas D., pełnomocnik opłacany przez syna, udzielił "przyjacielskiej" porady jego matce, Barbarze A. Wskazał jej, jak wykorzystać ewentualny wyrok karny w nadchodzącej sprawie cywilnej o darowiznę.
+      </p>
+
+      <!-- Diagram Konfliktu Interesów -->
+      <div class="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg my-8 not-prose text-center">
+          <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">Diagram Konfliktu Interesów</h3>
+          <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-4 text-slate-700 dark:text-slate-300">
+              <div class="text-center mb-4 sm:mb-0"><p class="font-bold">Klient</p><p class="text-sm">(Zleceniodawca)</p></div>
+              <div class="text-2xl font-light text-slate-400 transform rotate-90 sm:rotate-0">→</div>
+              <div class="text-center p-4 border-2 border-red-500 rounded-lg my-4 sm:my-0"><p class="font-bold">Adwokat D.</p><p class="text-sm text-red-500">(Podwójna lojalność)</p></div>
+              <div class="text-2xl font-light text-slate-400 transform rotate-90 sm:rotate-0">→</div>
+              <div class="text-center mt-4 sm:mt-0"><p class="font-bold">Barbara A.</p><p class="text-sm">(Faktyczny beneficjent porady)</p></div>
+          </div>
+          <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Adwokat, formalnie reprezentując syna, w rzeczywistości dostarczył strategicznych wskazówek jego procesowej przeciwniczce.</p>
+      </div>
+
+       <p>Jego działania wpisują się w szerszy kontekst, który opisujemy w naszym cyklu <a href="#" class="text-blue-500 hover:underline">"Tajny Dziennik Barbary A."</a>, gdzie analizujemy zjawisko manipulacji w relacjach rodzinnych i sądowych.</p>
+
+      <details class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg my-6 not-prose text-base">
+          <summary class="font-bold cursor-pointer text-slate-800 dark:text-white">Czytaj więcej: Analiza prawna możliwości odszkodowania</summary>
+          <div class="mt-4 text-slate-700 dark:text-slate-300">
+              <p>Klient, który udowodni winę adwokatowi, może ubiegać się o odszkodowanie na drodze cywilnej. Konieczne jest wykazanie związku przyczynowego między działaniem lub zaniechaniem pełnomocnika a poniesioną szkodą (np. przegranym procesem). Podstawą jest art. 415 Kodeksu cywilnego (odpowiedzialność deliktowa), a także odpowiedzialność kontraktowa z tytułu nienależytego wykonania umowy.</p>
+          </div>
+      </details>
+    </article>
+
+    <!-- Kodeks Etyki -->
+    <section class="my-16">
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-red-500">
+            <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-4">Etyka Zawodowa a Rzeczywistość</h2>
+            <blockquote class="border-l-4 border-slate-300 dark:border-slate-500 pl-4 text-slate-600 dark:text-slate-300 italic my-4">
+                <p>"Adwokat, świadcząc pomoc prawną, postępuje lojalnie i kieruje się dobrem klienta w celu ochrony jego praw."</p>
+                <cite class="block text-right mt-2 text-sm not-italic">- § 8 Zbioru Zasad Etyki Adwokackiej</cite>
+            </blockquote>
+            <p class="mt-4 text-slate-700 dark:text-slate-200">
+                Działania mecenasa D. stanowią podręcznikowe zaprzeczenie powyższej zasady. Zamiast ochrony praw klienta, adwokat aktywnie przyczynił się do ich naruszenia, stawiając potencjalną korzyść strony przeciwnej ponad swój fundamentalny obowiązek.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tabela -->
+    <section class="my-16">
+        <h2 class="text-3xl font-bold text-slate-800 dark:text-white text-center mb-6">Lista Grzechów Adwokata</h2>
+        <div class="overflow-x-auto bg-white dark:bg-slate-800 rounded-lg shadow-lg">
+            <table class="w-full text-sm text-left text-slate-500 dark:text-slate-400">
+                <thead class="text-xs text-slate-700 uppercase bg-slate-50 dark:bg-slate-700 dark:text-slate-300">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Naganne zachowanie</th>
+                        <th scope="col" class="px-6 py-3">Konsekwencje dla klienta</th>
+                        <th scope="col" class="px-6 py-3">Komentarz redakcji</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b dark:border-slate-700">
+                        <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Udzielenie porady stronie przeciwnej</td>
+                        <td class="px-6 py-4">Utrata zaufania, podważenie strategii, przegrany proces o darowiznę.</td>
+                        <td class="px-6 py-4">Klasyczny przykład konfliktu interesów i działania na szkodę klienta.</td>
+                    </tr>
+                    <tr class="border-b dark:border-slate-700">
+                        <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Brak transparentności i lojalności</td>
+                        <td class="px-6 py-4">Poczucie bycia oszukanym, trauma, utrata wiary w system sprawiedliwości.</td>
+                        <td class="px-6 py-4">Zdrada zaufania jest często bardziej bolesna niż sama strata materialna.</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Pobranie honorarium za nielojalną "usługę"</td>
+                        <td class="px-6 py-4">Strata finansowa bez otrzymania należytej pomocy prawnej.</td>
+                        <td class="px-6 py-4">Cynizm w czystej postaci. Wynagrodzenie za zdradę, a nie za rzetelną obronę.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="my-16">
+      <h2 class="text-3xl font-bold text-slate-800 dark:text-white text-center mb-6">Materiały Dowodowe</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <img src="https://placehold.co/600x800/e2e8f0/334155?text=Skan+Akt+1" alt="Skan dokumentu 1" class="gallery-item cursor-pointer hover:opacity-75 rounded-lg shadow-md" />
+          <img src="https://placehold.co/600x800/e2e8f0/334155?text=Pismo+Procesowe" alt="Skan pisma" class="gallery-item cursor-pointer hover:opacity-75 rounded-lg shadow-md" />
+          <img src="https://placehold.co/600x800/e2e8f0/334155?text=Notatka" alt="Skan notatki" class="gallery-item cursor-pointer hover:opacity-75 rounded-lg shadow-md" />
+          <img src="https://placehold.co/600x800/e2e8f0/334155?text=Dowód+4" alt="Skan dowodu 4" class="gallery-item cursor-pointer hover:opacity-75 rounded-lg shadow-md" />
+      </div>
+    </section>
+
+    <!-- Wnioski Końcowe -->
+    <section class="my-16">
+         <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-lg text-center">
+             <h2 class="text-3xl font-bold mb-4">Wnioski Końcowe</h2>
+             <p class="text-slate-300 leading-relaxed max-w-3xl mx-auto">
+                <span class="satire-content">Rola Aleksandra D. w tej historii to gotowy scenariusz na czarną komedię o polskiej palestrze. Niestety, dla jego klienta finał był tragiczny. W tej opowieści mecenas jawi się nie jako obrońca, lecz jako reżyser cudzej porażki. Kurtyna.</span>
+                <span class="serious-content">Postępowanie mecenasa Aleksandra D. stanowi poważne ostrzeżenie dla systemu prawnego i samorządu adwokackiego. Przypadek ten ilustruje, jak destrukcyjne mogą być skutki konfliktu interesów i zdrady zaufania, podważając wizerunek całego środowiska prawniczego.</span>
+             </p>
+         </div>
+    </section>
+  </main>
+
+  <!-- Stopka -->
+  <footer class="bg-slate-900 text-white py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm text-slate-300">&copy; <span id="footer-year"></span> Radio Adamowo. Wszelkie prawa zastrzeżone.</p>
+      <p class="text-xs text-slate-400 mt-2">Portal ma charakter analityczno-publicystyczny. Przedstawione opinie ekspertów są elementem analizy redakcyjnej.</p>
+    </div>
+  </footer>
+
+  <!-- Modal Galerii -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-85 z-50 flex justify-center items-center p-4 transition-opacity duration-300">
+      <span id="closeModal" class="absolute top-4 right-6 text-white text-5xl font-bold cursor-pointer hover:text-slate-300">&times;</span>
+      <img id="modalImage" src="" alt="Powiększony dokument" class="max-w-full max-h-full rounded-lg shadow-2xl" />
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- Tryb Satyryczny / Poważny ---
+        const body = document.body;
+        const toggleBtn = document.getElementById('mode-switch-btn');
+        const toggleBg = document.getElementById('mode-switch-bg');
+        
+        const updateModeUI = (isSerious) => {
+            if (isSerious) {
+                body.classList.remove('mode-satire');
+                body.classList.add('mode-serious');
+                toggleBtn.textContent = 'Analiza';
+                toggleBg.style.transform = 'translateX(100%)';
+            } else {
+                body.classList.remove('mode-serious');
+                body.classList.add('mode-satire');
+                toggleBtn.textContent = 'Satyra';
+                toggleBg.style.transform = 'translateX(0%)';
+            }
+        };
+
+        toggleBtn.parentElement.addEventListener('click', () => {
+            const isSerious = body.classList.contains('mode-serious');
+            updateModeUI(!isSerious);
+        });
+        
+        // Ustawienie początkowe przycisku
+        updateModeUI(false); // Start in Satire mode
+
+
+        // --- Galeria Modal ---
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.getElementById('closeModal');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modalImage.src = item.src;
+            });
+        });
+
+        const hideModal = () => modal.classList.add('hidden');
+        
+        closeModal.addEventListener('click', hideModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                hideModal();
+            }
+        });
+
+        // --- Rok w stopce ---
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    });
+  </script>
+
+</body>
+</html>
