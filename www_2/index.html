@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Radio Adamowo - słuchaj szumu prawdy w eterze manipulacji. Edukacja o toksycznych relacjach i manipulacji psychologicznej.">
+    <title>Radio Adamowo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="images/icons/icon-192x192.png" type="image/png">
+    <meta name="theme-color" content="#f59e0b">
+    <link rel="preload" href="public/images/studio/studio-1.png" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-300">
+    <!-- Enhanced Studio Background Header -->
+    <header class="text-center py-8 studio-background-enhanced relative overflow-hidden">
+        <div class="studio-overlay absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold special-elite text-amber-500 mb-2">Radio Adamowo</h1>
+            <p class="text-xl md:text-2xl mt-2 text-gray-200">Słuchaj szumu prawdy w eterze manipulacji.</p>
+            <div class="mt-4 flex justify-center items-center space-x-4">
+                <div class="on-air-indicator bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+                    🔴 ON AIR
+                </div>
+                <div class="text-gray-300 text-sm">Studio Radia Adamowo</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4">
+        <!-- Enhanced Calendar Section -->
+        <section class="my-12">
+            <h2 class="text-3xl special-elite text-center mb-6 text-amber-500">Notatki z dnia:</h2>
+            <div id="infinity-timeline-container" role="region" aria-label="Kalendarz interaktywny" class="relative">
+                <svg id="infinity-path" aria-hidden="true"></svg>
+                <!-- Kalendarz generowany dynamicznie w JS -->
+            </div>
+            <div id="note-modal" class="hidden modal-backdrop fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+                <div class="modal-content bg-gray-800 p-6 rounded-lg max-w-md w-full border border-amber-500">
+                    <form id="note-form" class="space-y-4">
+                        <input type="date" id="note-date" readonly class="w-full p-2 bg-gray-700 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Data notatki">
+                        <input type="text" id="note-name" placeholder="Twoje imię" class="w-full p-2 bg-gray-700 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Imię">
+                        <textarea id="note-text" placeholder="Twoja notatka" class="w-full p-2 bg-gray-700 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500" rows="5" aria-label="Treść notatki"></textarea>
+                        <div class="flex justify-end space-x-4">
+                            <button type="button" id="modal-close-btn" class="px-4 py-2 bg-gray-600 text-gray-200 rounded hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Zamknij modal">Zamknij</button>
+                            <button type="submit" class="px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Zapisz notatkę">Zapisz Notatkę</button>
+                        </div>
+                        <p id="note-feedback" class="min-h-[1.25rem] text-sm"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Autoplay Overlay -->
+        <div id="autoplay-overlay" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+            <div class="text-center p-6 bg-gray-900 rounded-lg shadow-lg border border-amber-500">
+                <h2 class="text-3xl special-elite text-amber-500 mb-4">Radio Adamowo</h2>
+                <p class="text-gray-300 mb-6">Ze względu na ograniczenia przeglądarek, musisz rozpocząć transmisję ręcznie.</p>
+                <button id="start-btn" class="px-6 py-3 bg-amber-500 text-black rounded-lg hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Uruchom transmisję">Uruchom Transmisję</button>
+            </div>
+        </div>
+
+        <!-- Enhanced Navigation -->
+        <nav class="sticky top-0 bg-gray-900 z-10 border-b border-gray-800">
+            <div class="container mx-auto px-4 py-4">
+                <button id="menu-toggle" class="md:hidden text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Przełącz menu mobilne">☰</button>
+                <ul id="mobile-menu" class="hidden md:flex md:space-x-6 justify-center">
+                    <li><a href="#violence-loop" class="nav-link nav-link-mobile text-gray-300 hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Pętla Przemocy</a></li>
+                    <li><a href="#analytical-broadcasts" class="nav-link nav-link-mobile text-gray-300 hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Audycje Analityczne</a></li>
+                    <li><a href="#video-section" class="nav-link nav-link-mobile text-gray-300 hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Materiał Wideo</a></li>
+                    <li><a href="#guide" class="nav-link nav-link-mobile text-gray-300 hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Poradnik</a></li>
+                    <li><a href="#narcissus-mythology" class="nav-link nav-link-mobile text-gray-300 hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Mitologia Narcyza</a></li>
+                    <li><a href="#archive" class="nav-link nav-link-mobile text-gray-300 hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Archiwum</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Introduction -->
+        <section class="my-12 text-center">
+            <div class="infinity-separator"></div>
+            <h2 class="text-3xl special-elite text-amber-500 mb-4">Osiem lat. To nie fatum, to wzorzec.</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">Osiem lat – tyle trwa cykl narcystycznej przemocy. To nie przypadek czy klątwa. To podręcznikowy wzorzec manipulacji, który powtarza się w nieskończoność. W Adamowie czas nie leczy ran. On ujawnia schematy. Zapraszamy do ich analizy.</p>
+        </section>
+
+        <!-- Enhanced Radio Player -->
+        <section class="my-12">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Radio Adamowo: Muzyka z Eteru</h2>
+            <div class="flex justify-center space-x-4 mb-6">
+                <button class="playlist-btn tab-button px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-500" data-playlist="ambient" aria-label="Odtwórz playlistę ambient">Ambient</button>
+                <button class="playlist-btn tab-button px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-500" data-playlist="disco" aria-label="Odtwórz playlistę disco">Disco</button>
+                <button class="playlist-btn tab-button px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-500" data-playlist="hiphop" aria-label="Odtwórz playlistę hip-hop">Hip-Hop</button>
+                <button class="playlist-btn tab-button px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-500" data-playlist="full" aria-label="Odtwórz pełną playlistę">Pełna Lista</button>
+            </div>
+            <p id="radio-current-song" class="text-center text-gray-300 mb-4">Wybierz styl i naciśnij play...</p>
+            <div class="flex justify-center space-x-4">
+                <button id="radio-prev-btn" class="px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-amber-500" disabled aria-label="Poprzedni utwór">⏮</button>
+                <button id="radio-play-pause-btn" class="px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-amber-500" disabled aria-label="Odtwarzaj lub pauza">
+                    <span id="radio-play-icon">▶</span>
+                    <span id="radio-pause-icon" class="hidden">⏸</span>
+                </button>
+                <button id="radio-next-btn" class="px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-amber-500" disabled aria-label="Następny utwór">⏭</button>
+            </div>
+            <audio id="radio-player" class="mt-4 mx-auto block" aria-label="Odtwarzacz radia">
+                <p>Twoja przeglądarka nie obsługuje elementu audio. Pobierz utwór, aby go odsłuchać.</p>
+            </audio>
+        </section>
+
+        <!-- NEW: Video Section -->
+        <section id="video-section" class="my-12">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Materiał Dokumentalny</h2>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-xl special-elite mb-4 text-amber-500">Sprawa z Adamowa: Autopsja rodzinnej wojny</h3>
+                <p class="text-gray-300 mb-4">Dokument przedstawiający analizę przypadku rodzinnej manipulacji i przemocy psychologicznej. Materiał edukacyjny służący lepszemu zrozumieniu mechanizmów toksycznych relacji.</p>
+                <video id="documentary-video" class="w-full max-w-4xl mx-auto rounded-lg" controls preload="metadata">
+                    <source src="public/video/sprawa-adamowo.mp4" type="video/mp4">
+                    <p>Twoja przeglądarka nie obsługuje elementu video. Pobierz plik, aby go obejrzeć.</p>
+                </video>
+                <div class="mt-4 text-sm text-gray-400">
+                    <p><strong>Uwaga:</strong> Materiał zawiera treści dotyczące przemocy psychologicznej i manipulacji. Przeznaczony wyłącznie do celów edukacyjnych.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Studio Gallery -->
+        <section class="my-12">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Studio Radia Adamowo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="studio-gallery-item bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <img src="public/images/studio/studio-1.png" alt="Studio Radio Adamowo - Prowadzący w studiu" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg special-elite text-amber-500 mb-2">Zespół Radia Adamowo</h3>
+                    <p class="text-gray-300">Prowadzący programu w profesjonalnym studiu nagraniowym, gdzie analizujemy przypadki manipulacji psychologicznej.</p>
+                </div>
+                <div class="studio-gallery-item bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <img src="public/images/studio/studio-2.png" alt="Studio Radio Adamowo - Serce w studiu" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg special-elite text-amber-500 mb-2">Serce Radia</h3>
+                    <p class="text-gray-300">W centrum naszej pracy jest empatia i zrozumienie dla osób dotkniętych toksycznymi relacjami.</p>
+                </div>
+                <div class="studio-gallery-item bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <img src="public/images/studio/studio-3.png" alt="Studio Radio Adamowo - Prowadząca w okularach" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg special-elite text-amber-500 mb-2">Ekspertka ds. Psychologii</h3>
+                    <p class="text-gray-300">Nasza ekspertka analizuje przypadki z perspektywy psychologii klinicznej i terapii rodzinnej.</p>
+                </div>
+                <div class="studio-gallery-item bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <img src="public/images/studio/studio-4.png" alt="Studio Radio Adamowo - Prowadzący z gestem powitania" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg special-elite text-amber-500 mb-2">Witamy w Studiu</h3>
+                    <p class="text-gray-300">Zapraszamy do wysłuchania naszych analiz i dzielenia się własnymi doświadczeniami w bezpiecznym środowisku.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Witch Hut -->
+        <section id="violence-loop" class="my-12 witch-hut-container p-6 rounded-lg">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Kocioł Wiedźmy: Pętla Przemocy</h2>
+            <div class="avatar-group relative" role="region" aria-label="Interaktywna animacja pętli przemocy">
+                <svg width="200" height="100" class="w-full h-auto">
+                    <circle id="avatar-d" class="avatar fire-active" cx="50" cy="50" r="20"></circle>
+                    <text class="avatar-label" x="50" y="55">D</text>
+                    <circle id="avatar-b" class="avatar fire-active" cx="150" cy="50" r="20"></circle>
+                    <text class="avatar-label" x="150" y="55">B</text>
+                </svg>
+            </div>
+            <p class="text-center text-gray-300 mt-4">Przeciągnij kule energii, by poczuć napięcie w pętli fatum...</p>
+        </section>
+
+        <!-- Enhanced Analytical Broadcasts -->
+        <section id="analytical-broadcasts" class="my-12">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Audycje Analityczne: Studium Manipulacji</h2>
+            <p class="text-gray-300 text-center max-w-2xl mx-auto mb-6">W studiu Radia Adamowo dekonstruujemy prawdziwe zdarzenia, aby nauczyć Cię rozpoznawać techniki manipulacji. To nie jest tylko historia jednej rodziny. To lekcja dla nas wszystkich.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite mb-2 text-amber-500">Analiza Aktu Darowizny: Dar czy Dług?</h3>
+                    <p class="text-gray-300">Prześwietlamy dokument, który stał się narzędziem szantażu emocjonalnego.</p>
+                    <button class="podcast-play-button mt-4 px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" data-track-id="niewdziecznosc" aria-label="Odsłuchaj analizę aktu darowizny">Odsłuchaj Analizę</button>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite mb-2 text-amber-500">Służebność: Uwiązanie pod Płaszczem Prawa</h3>
+                    <p class="text-gray-300">Badamy, jak przepisy prawne mogą zostać wykorzystane do psychicznego zniewolenia.</p>
+                    <button class="podcast-play-button mt-4 px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" data-track-id="sledztwo" aria-label="Odsłuchaj analizę służebności">Odsłuchaj Analizę</button>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <h3 class="text-xl special-elite text-amber-500 mb-4">Odtwarzacz Analiz</h3>
+                <p class="text-gray-300 mb-4">Wybierz audycję z listy poniżej</p>
+                <audio id="podcast-player" class="mx-auto block" aria-label="Odtwarzacz audycji">
+                    <p>Twoja przeglądarka nie obsługuje elementu audio. Pobierz audycję, aby ją odsłuchać.</p>
+                </audio>
+                <p id="podcast-title" class="text-gray-300 mt-4">Wybierz audycję...</p>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl special-elite text-amber-500 text-center mb-4">Biblioteka Przypadków: Poznaj Narzędzia Manipulatora</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                        <h4 class="text-lg special-elite text-amber-500">Sprawa Adamskich: Wprowadzenie</h4>
+                        <p class="text-gray-300">Zarys historii, która stała się naszym studium przypadku.</p>
+                        <button class="podcast-play-button mt-2 px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" data-track-id="sprawaAdamskich" aria-label="Odsłuchaj sprawę Adamskich">Odsłuchaj</button>
+                    </li>
+                    <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                        <h4 class="text-lg special-elite text-amber-500">"Rażąca Niewdzięczność": Broń Narcyza</h4>
+                        <p class="text-gray-300">Jak termin prawny staje się narzędziem gaslightingu.</p>
+                        <button class="podcast-play-button mt-2 px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" data-track-id="niewdziecznosc" aria-label="Odsłuchaj o rażącej niewdzięczności">Odsłuchaj</button>
+                    </li>
+                    <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                        <h4 class="text-lg special-elite text-amber-500">Analiza Kalendarza: Kronika Eskalacji</h4>
+                        <p class="text-gray-300">Śledzimy, jak drobne incydenty budują mur przemocy.</p>
+                        <button class="podcast-play-button mt-2 px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" data-track-id="kalendarzAnaliza" aria-label="Odsłuchaj analizę kalendarza">Odsłuchaj</button>
+                    </li>
+                    <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                        <h4 class="text-lg special-elite text-amber-500">Śledztwo: Jak Dokumentować Manipulację?</h4>
+                        <p class="text-gray-300">Praktyczny poradnik, jak zbierać dowody i chronić się.</p>
+                        <button class="podcast-play-button mt-2 px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" data-track-id="sledztwo" aria-label="Odsłuchaj poradnik śledztwa">Odsłuchaj</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Whisper from Behind the Curtain -->
+        <section class="my-12 text-center">
+            <h2 class="text-3xl special-elite text-amber-500 mb-6">SZEPT ZZA KURTYNY</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-6">W szumie oskarżeń i manipulacji, czasem jeden, cichy głos może przywrócić perspektywę. To nagranie, ukryte głęboko w archiwum, nigdy wcześniej nie było publikowane.</p>
+            <audio id="whisper-player" class="mx-auto block" aria-label="Nagranie zza kurtyny">
+                <p>Twoja przeglądarka nie obsługuje elementu audio. Pobierz nagranie, aby je odsłuchać.</p>
+            </audio>
+        </section>
+
+        <!-- AI Laboratory -->
+        <section class="my-12 text-center">
+            <h2 class="text-3xl special-elite text-amber-500 mb-6">Laboratorium AI: Rekonstrukcja Głosów</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-6">Ten materiał edukacyjny został stworzony z wykorzystaniem technologii sztucznej inteligencji do syntezy mowy. Odtworzyliśmy potencjalny głos na podstawie archiwalnych tekstów.</p>
+            <audio id="ai-player" class="mx-auto block" aria-label="Rekonstrukcja głosu AI">
+                <p>Twoja przeglądarka nie obsługuje elementu audio. Pobierz nagranie, aby je odsłuchać.</p>
+            </audio>
+        </section>
+
+        <!-- Enhanced Guide: 8 Sins -->
+        <section id="guide" class="my-12">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Poradnik: 8 Grzechów Toksycznych Osób</h2>
+            <p class="text-gray-300 text-center max-w-2xl mx-auto mb-6">Poniżej przedstawiamy najczęstsze „grzechy" toksycznych osób, które możesz spotkać w rodzinie, pracy czy w kontaktach z instytucjami.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 1: Branie pieniędzy z instytucji zamiast prawdziwej pomocy</h3>
+                    <p class="text-gray-300">Opis: Toksyczna osoba stara się o świadczenia, ale nie zajmuje się podopiecznym, a jedynie zbiera fundusze.</p>
+                    <p class="text-gray-300">Przykład z życia: Matka pobiera zasiłek na dziecko, ale zaniedbuje jego potrzeby, wydając pieniądze na własne cele.</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy fundusze są przeznaczane na cel, dla którego zostały przyznane?</li>
+                        <li>Czy potrzeby podopiecznego są ignorowane?</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 2: Przerzucanie winy i granie ofiary</h3>
+                    <p class="text-gray-300">Opis: Manipulant nigdy nie przyzna się do błędu, obwinia innych, grając rolę pokrzywdzonego.</p>
+                    <p class="text-gray-300">Przykład z życia: Matka opisuje syna jako „niewdzięcznego", choć to ona zaniedbywała rodzinę.</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy ktoś zawsze unika odpowiedzialności?</li>
+                        <li>Czy gra ofiarę, by zyskać współczucie?</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 3: Gaslighting</h3>
+                    <p class="text-gray-300">Opis: Podważanie percepcji ofiary, wmawianie, że „przesadza" lub „wymyśla".</p>
+                    <p class="text-gray-300">Przykład z życia: Matka wpisała, że syn ma „schizofrenię" bez diagnozy, by go zdyskredytować.</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy czujesz, że tracisz pewność siebie?</li>
+                        <li>Czy ktoś podważa Twoje wspomnienia?</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 4: Inwigilacja i obsesyjna kontrola</h3>
+                    <p class="text-gray-300">Opis: Notowanie każdego ruchu ofiary, zbieranie „dowodów" do szantażu.</p>
+                    <p class="text-gray-300">Przykład z życia: Notowanie godzin gaszenia światła jako „dowód niewdzięczności".</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy ktoś monitoruje Twoje działania?</li>
+                        <li>Czy zbiera „dowody" na Twoje zachowanie?</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 5: Używanie instytucji jako broni</h3>
+                    <p class="text-gray-300">Opis: Wciąganie policji, sądów, urzędów do rodzinnych konfliktów.</p>
+                    <p class="text-gray-300">Przykład z życia: Wzywanie dzielnicowego, by uzyskać „papier" na syna.</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy ktoś grozi Ci instytucjami?</li>
+                        <li>Czy eskaluje konflikty do poziomu urzędowego?</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 6: Szantaż emocjonalny i groźby</h3>
+                    <p class="text-gray-300">Opis: Grożenie odebraniem domu, wykluczeniem z rodziny.</p>
+                    <p class="text-gray-300">Przykład z życia: „Jak się nie podporządkujesz, to zabiorę ci wszystko".</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy decyzje są wymuszane strachem?</li>
+                        <li>Czy groźby dotyczą Twojej przyszłości?</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 7: Tworzenie chaosu i dezinformacji</h3>
+                    <p class="text-gray-300">Opis: Zmiana wersji wydarzeń, sianie zamętu.</p>
+                    <p class="text-gray-300">Przykład z życia: Inna wersja dla policji, rodziny, sądu.</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy historie tej osoby są sprzeczne?</li>
+                        <li>Czy trudno uzyskać spójną odpowiedź?</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h3 class="text-xl special-elite text-amber-500 mb-2">Grzech 8: Sianie podziałów i rozbijanie więzi</h3>
+                    <p class="text-gray-300">Opis: Nastawianie rodziny przeciwko sobie, budowanie sojuszy.</p>
+                    <p class="text-gray-300">Przykład z życia: „Twój brat też mówił, że masz problem".</p>
+                    <p class="text-gray-300">Jak wykryć:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Czy ktoś oczernia innych za plecami?</li>
+                        <li>Czy rodzina przestała się wspierać?</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Narcissus Mythology -->
+        <section id="narcissus-mythology" class="my-12 text-center">
+            <h2 class="text-3xl special-elite text-amber-500 mb-6">Mitologia Narcyza: Budowanie Fałszywej Rzeczywistości</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-6">Manipulatorzy tworzą własny system wierzeń i symboli, aby uzasadnić swoje działania i uwięzić ofiarę w wykreowanym świecie.</p>
+            <ul class="list-disc list-inside text-gray-300 max-w-2xl mx-auto space-y-2">
+                <li>Siedem: Symbol "idealnego" paktu, który w rzeczywistości jest cyrografem.</li>
+                <li>Cztery: Okres "inwestycji" i "niszczenia". Znak dualizmu manipulatora.</li>
+                <li>Osiem: Symbol pętli przemocy, z której nie ma ucieczki.</li>
+                <li>Trzynaście: Kreowanie kryzysów i "dni sądu", by utrzymać ofiarę w strachu.</li>
+            </ul>
+        </section>
+
+        <!-- Archive -->
+        <section id="archive" class="my-12">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Archiwum Czerwonych Flag</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h4 class="text-lg special-elite text-amber-500">Dar jako Narzędzie Kontroli</h4>
+                    <p class="text-gray-300">Analiza, jak prezenty stają się narzędziem manipulacji.</p>
+                </li>
+                <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h4 class="text-lg special-elite text-amber-500">Zapiski jako Dowody Przemocy</h4>
+                    <p class="text-gray-300">Jak codzienne notatki odsłaniają schematy przemocy.</p>
+                </li>
+                <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h4 class="text-lg special-elite text-amber-500">Protokoły jako Teatr Absurdu</h4>
+                    <p class="text-gray-300">Jak dokumenty urzędowe stają się częścią manipulacji.</p>
+                </li>
+                <li class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <h4 class="text-lg special-elite text-amber-500">Cykl Ósmego Roku: Wzorzec Przemocy</h4>
+                    <p class="text-gray-300">Analiza powtarzalności zachowań w pętli narcystycznej.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Interactive Zone -->
+        <section class="my-12">
+            <h2 class="text-3xl special-elite text-center text-amber-500 mb-6">Strefa Interaktywna</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl special-elite text-amber-500 mb-4">Głosy Społeczności</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>~Ocalona82: "Ta historia to lustro mojego życia. Dziękuję, że o tym mówicie."</li>
+                        <li>~SzukającyPrawdy: "Dopiero teraz rozumiem, dlaczego 'prezenty' od niego tyle mnie kosztowały."</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl special-elite text-amber-500 mb-4">Symulator Rozmowy z Manipulatorem (AI)</h3>
+                    <p class="text-gray-300 mb-4">Przetestuj swoje reakcje w bezpiecznym środowisku.</p>
+                    <div id="chat-container" class="bg-gray-800 p-4 rounded-lg max-h-96 overflow-y-auto"></div>
+                    <form id="chat-form" class="mt-4 flex space-x-2">
+                        <input type="text" id="chat-input" placeholder="Wpisz swoją wiadomość..." class="w-full p-2 bg-gray-700 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Wiadomość do symulatora AI">
+                        <button type="submit" class="px-4 py-2 bg-amber-500 text-black rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Wyślij wiadomość">Odpowiedz</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Lesson -->
+        <section class="my-12 text-center">
+            <div class="infinity-separator"></div>
+            <h2 class="text-3xl special-elite text-amber-500 mb-4">Ostateczna Lekcja</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">Wygrała mury, straciła wszystko inne. On stracił mury, odzyskał wolność. To ostateczna lekcja o prawdziwej cenie trwania w toksycznej relacji i o sile, jaką daje jej przerwanie.</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-8 text-center border-t border-gray-800">
+        <p>© <span id="current-year">2025</span> Radio Adamowo. Wszelkie prawa zastrzeżone... i poddane publicznej analizie.</p>
+        <p class="mt-2">Celem audycji jest edukacja na temat zjawisk psychologicznych i społecznych. Słuchaj, analizuj, chroń siebie.</p>
+        <div class="mt-4">
+            <p>Jeśli doświadczasz przemocy, szukaj pomocy:</p>
+            <ul class="list-disc list-inside mt-2">
+                <li>Niebieska Linia: <a href="tel:800120002" class="text-amber-500 hover:underline focus:outline-none focus:ring-2 focus:ring-amber-500">800 120 002</a> (całodobowo)</li>
+                <li>Centrum Praw Kobiet: <a href="tel:800120226" class="text-amber-500 hover:underline focus:outline-none focus:ring-2 focus:ring-amber-500">800 120 226</a></li>
+            </ul>
+        </div>
+        <p class="mt-4 text-sm text-gray-400">Wszelka zbieżność imion i miejsc jest całkowicie przypadkowa. Audycja stanowi formę artystycznej i satyrycznej analizy zjawisk społecznych.</p>
+    </footer>
+
+    <button id="to-top-button" class="fixed bottom-4 right-4 bg-amber-500 text-black p-3 rounded-full hidden hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Wróć na górę">↑</button>
+    <canvas id="visualizer-canvas" aria-hidden="true"></canvas>
+    <script src="app.js"></script>
+</body>
+</html>
