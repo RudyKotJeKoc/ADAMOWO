@@ -1,0 +1,348 @@
+:root {
+    --color-primary: #f59e0b; /* amber-500 */
+    --color-secondary: #dc2626; /* red-600 */
+    --color-background: #000000;
+    --color-text: #e0e0e0;
+}
+
+body.modal-open { 
+    overflow: hidden; 
+}
+
+body {
+    font-family: 'Special Elite', 'Courier New', monospace, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><path d="M 25 50 A 25 25 0 1 1 50 50 A 25 25 0 1 1 75 50 A 25 25 0 1 0 50 50 A 25 25 0 1 0 25 50" fill="none" stroke="%23f59e0b" stroke-width="1"/></svg>'),
+        radial-gradient(ellipse at center, rgba(17, 24, 39, 0.95) 0%, #000 70%);
+    background-attachment: fixed;
+    /* Dodaj globalny cień dla głębi */
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+
+/* --- Studio Background z głębią --- */
+.studio-background {
+    background-image: url('/images/studio.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    opacity: 0.3;
+    position: relative;
+    z-index: 1;
+    /* Głębia przez inset shadow i gradient overlay */
+    box-shadow: inset 0 4px 20px rgba(0,0,0,0.5), inset 0 -4px 20px rgba(0,0,0,0.5);
+}
+
+.studio-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%);
+    z-index: -1;
+}
+
+/* --- Visualizer z efektem głębi --- */
+#visualizer-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+    /* Dodaj blur i shadow dla warstwowej głębi */
+    filter: blur(2px) drop-shadow(0 0 10px rgba(245, 158, 11, 0.3));
+}
+
+/* --- Infinity Timeline z głębią --- */
+#infinity-timeline-container { 
+    position: relative; 
+    width: 100%; 
+    max-width: 500px; 
+    margin: 2rem auto; 
+    aspect-ratio: 1.5 / 1; 
+    /* Warstwowa cień dla 3D */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 6px 20px rgba(0,0,0,0.2);
+}
+
+#infinity-path {
+    stroke-width: 3;
+    fill: none;
+    stroke: #ff4800;
+    stroke-linecap: round;
+    -webkit-animation: embers-glow 3s ease-in-out infinite;
+    animation: embers-glow 3s ease-in-out infinite;
+    /* Dodaj drop-shadow dla głębi */
+    filter: drop-shadow(0 0 5px #ff7b00);
+}
+
+@-webkit-keyframes embers-glow {
+    0%, 100% { 
+        stroke: #ff4800; 
+        filter: drop-shadow(0 0 6px #ff7b00) drop-shadow(0 0 12px #dc2626); 
+    }
+    50% { 
+        stroke: #ff8800; 
+        filter: drop-shadow(0 0 10px #ffae00) drop-shadow(0 0 20px #dc2626); 
+    }
+}
+
+@keyframes embers-glow {
+    0%, 100% { 
+        stroke: #ff4800; 
+        filter: drop-shadow(0 0 6px #ff7b00) drop-shadow(0 0 12px #dc2626); 
+    }
+    50% { 
+        stroke: #ff8800; 
+        filter: drop-shadow(0 0 10px #ffae00) drop-shadow(0 0 20px #dc2626); 
+    }
+}
+
+/* --- Witch Hut z głębią --- */
+.witch-hut-container {
+    background-color: #1a110a;
+    background-image: 
+        radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%),
+        linear-gradient(to right, rgba(42, 26, 10, 0.8), rgba(61, 37, 13, 0.8) 50%, rgba(42, 26, 10, 0.8));
+    border: 2px solid #4a2a0a;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5), 0 10px 20px rgba(0,0,0,0.4); /* Multiple layers for depth */
+    overflow: hidden;
+    /* Pseudo-element for gradient shadow */
+    position: relative;
+}
+
+.witch-hut-container::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0, rgba(220, 38, 38, 0.2), transparent);
+    filter: blur(20px);
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .witch-hut-container {
+        padding: 1rem;
+        box-shadow: inset 0 0 15px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5);
+    }
+}
+
+.avatar-group { 
+    will-change: transform; 
+    cursor: grab; 
+}
+
+.avatar-group:active { 
+    cursor: grabbing; 
+}
+
+.avatar { 
+    stroke-width: 2; 
+    filter: drop-shadow(0 0 8px currentColor); 
+}
+
+#avatar-d { 
+    fill: var(--color-primary); 
+    stroke: #fde047; 
+}
+
+#avatar-b { 
+    fill: var(--color-secondary); 
+    stroke: #fca5a5; 
+}
+
+.avatar-label { 
+    font-family: 'Special Elite', 'Courier New', monospace; 
+    font-size: 12px; 
+    fill: #FFFFFF; 
+    font-weight: 700; 
+    text-anchor: middle; 
+    pointer-events: none; 
+}
+
+.fire-active { 
+    -webkit-animation: pulse-fire 1s infinite alternate; 
+    animation: pulse-fire 1s infinite alternate; 
+}
+
+@-webkit-keyframes pulse-fire { 
+    from { filter: drop-shadow(0 0 8px var(--color-secondary)); } 
+    to { filter: drop-shadow(0 0 20px #ff6b6b); } 
+}
+
+@keyframes pulse-fire { 
+    from { filter: drop-shadow(0 0 8px var(--color-secondary)); } 
+    to { filter: drop-shadow(0 0 20px #ff6b6b); } 
+}
+
+/* --- UI Components z głębią --- */
+.infinity-separator {
+    width: 100px; 
+    height: 2px; 
+    margin: 4rem auto;
+    background: linear-gradient(to right, transparent, var(--color-secondary), transparent);
+    position: relative;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3); /* Cień dla głębi */
+}
+
+.infinity-separator::before { 
+    content: '∞'; 
+    font-size: 3rem; 
+    color: var(--color-secondary); 
+    opacity: 0.3; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+audio::-webkit-media-controls-panel { 
+    background-color: #1f2937; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Dodaj głębię do panelu audio */
+}
+
+audio::-webkit-media-controls-play-button, 
+audio::-webkit-media-controls-mute-button { 
+    background-color: var(--color-primary); 
+    border-radius: 50%; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4); /* Lekki cień dla przycisków */
+}
+
+.modal-backdrop { 
+    -webkit-animation: fadeIn 0.3s ease-out forwards; 
+    animation: fadeIn 0.3s ease-out forwards; 
+    background: rgba(0,0,0,0.8); /* Ciemniejsze tło dla kontrastu */
+}
+
+.modal-content { 
+    -webkit-animation: slideInUp 0.4s ease-out forwards; 
+    animation: slideInUp 0.4s ease-out forwards; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.05); /* Multiple shadows + inset for depth */
+    background: linear-gradient(to bottom, #1f2937, #111827); /* Gradient dla wymiarowości */
+}
+
+@-webkit-keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
+@-webkit-keyframes slideInUp { 
+    from { opacity: 0; transform: translateY(30px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes slideInUp { 
+    from { opacity: 0; transform: translateY(30px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@-webkit-keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.tab-button { 
+    transition: all 0.3s ease; 
+    -webkit-transition: all 0.3s ease; 
+    border-color: transparent; 
+    opacity: 0.6; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Dodaj cień dla głębi */
+}
+
+.tab-button.active { 
+    opacity: 1; 
+    transform: translateX(5px); 
+    -webkit-transform: translateX(5px); 
+    border-color: var(--color-secondary); 
+    background-color: rgba(220, 38, 38, 0.1); 
+    box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3); /* Mocniejszy cień dla aktywnego */
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.nav-link-mobile {
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.nav-link-mobile:hover {
+    color: var(--color-primary);
+}
+
+/* --- Sekcje z głębią --- */
+section {
+    -webkit-animation: fadeInUp 0.5s ease-in;
+    animation: fadeInUp 0.5s ease-in;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Cień dla każdej sekcji */
+    background: linear-gradient(to bottom, #111827, #000); /* Gradient dla wymiarowości */
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 4rem; /* Odstęp dla warstwowania */
+}
+
+.bg-gray-900 {
+    background-color: #111827;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5); /* Inset dla głębi */
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+/* --- Karty i listy z głębią --- */
+.bg-gray-800 {
+    background-color: #1f2937;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.05); /* Multiple + inset for 3D depth */
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .text-4xl { font-size: 2rem; }
+    .text-3xl { font-size: 1.75rem; }
+    .text-xl { font-size: 1.25rem; }
+    .tab-button { font-size: 0.875rem; padding: 0.5rem 1rem; }
+    .container { padding-left: 1rem; padding-right: 1rem; }
+    #infinity-timeline-container { max-width: 100%; }
+    section { box-shadow: 0 2px 6px rgba(0,0,0,0.3); } /* Mniejsze cienie na mobile */
+}
+
+/* --- Dostępność --- */
+[role="button"], button {
+    cursor: pointer;
+}
+
+audio:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5); /* Głębszy focus ring */
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Adamowo – Kronika, Analizy, Audycje</title>
+    <meta name="description" content="Przewodnik po wzorcach manipulacji i przemocy psychologicznej. Analizy, audycje i narzędzia edukacyjne.">
+    <meta property="og:image" content="image/studio.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Focus state for accessibility -->
+    <style>
+        :focus {
+            outline: 2px solid var(--focus);
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-infinity font-sans antialiased text-slate-200">
+    <header class="sticky top-0 z-40 bg-panel/95 backdrop-blur outline outline-1 outline-line">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex h-14 items-center gap-6">
+            <a href="/" class="font-semibold tracking-wide flex items-center gap-2">
+                <!-- Lucide headphone icon as inline SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                <span class="text-accent">Radio</span> Adamowo
+            </a>
+            <ul class="ml-auto flex gap-4 text-sm text-slate-300">
+                <li><a class="hover:text-accent transition" href="#petla">Pętla Przemocy</a></li>
+                <li><a class="hover:text-accent transition" href="#audycje">Audycje Analityczne</a></li>
+                <li><a class="hover:text-accent transition" href="#poradnik">Poradnik</a></li>
+                <li><a class="hover:text-accent transition" href="#mitologia">Mitologia Narcyza</a></li>
+                <li><a class="hover:text-accent transition" href="#archiwum">Archiwum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16 text-center">
+            <p class="text-rose-400/90 font-semibold text-lg md:text-xl">Osiem lat. To nie fatum, to wzorzec.</p>
+            <h1 class="mt-2 text-4xl md:text-5xl lg:text-6xl font-serif tracking-wide drop-shadow-lg" style="text-shadow: 0 0 8px var(--glow);">W Adamowie czas nie leczy ran. On ujawnia schematy.</h1>
+            <p class="mt-4 text-muted max-w-3xl mx-auto leading-7">To przewodnik po wzorcach manipulacji i przemocy psychologicznej. Odkrywaj audycje, analizy i narzędzia, które pomagają rozpoznać toksyczne relacje.</p>
+            <!-- Player Hero -->
+            <div class="mt-8 rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow">
+                <div class="flex items-center justify-between">
+                    <h2 class="font-serif text-lg md:text-xl flex items-center gap-2">
+                        <span class="inline-block w-2 h-2 bg-accent rounded-full animate-pulse" style="animation: pulseGlow 2s ease-in-out infinite;"></span>
+                        Radio Adamowo Muzyka z Eteru
+                    </h2>
+                    <button id="play-pause" class="size-12 grid place-content-center rounded-full bg-panel-2 outline outline-1 outline-line text-accent hover:ring-2 hover:ring-accent-weak transition" aria-label="Play/Pause">
+                        <!-- Lucide play icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                    </button>
+                </div>
+                <input type="range" id="progress" class="w-full mt-4 accent-accent h-2 bg-[#243042] rounded-full appearance-none cursor-pointer" min="0" max="100" value="0" aria-label="Progress">
+                <audio id="audio" src="https://example.com/placeholder-audio.mp3" preload="none"></audio> <!-- Placeholder audio src -->
+            </div>
+        </section>
+
+        <!-- Obraz Studia -->
+        <section class="py-6 sm:py-8 lg:py-10">
+            <figure class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <img src="image/studio.png" alt="Duet DJ w studio – graffiti: Jeśli tu wszedłeś to już nie wyjdziesz" class="w-full rounded-2xl glow" loading="lazy">
+                <figcaption class="mt-2 text-sm text-slate-400 text-center">Nasze studio – jeśli tu wszedłeś, to już nie wyjdziesz.</figcaption>
+            </figure>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Kocioł Wiedźmy: Pętla Przemocy -->
+        <section id="petla" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Kocioł Wiedźmy: Pętla Przemocy</h2>
+            <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow text-center">
+                <!-- Placeholder for large graphic -->
+                <img src="https://via.placeholder.com/800x400?text=Pętla+Przemocy" alt="Grafika Pętli Przemocy" class="w-full max-w-2xl mx-auto rounded-xl">
+                <p class="mt-4 text-muted leading-7">Opis pętli przemocy z elementami analizy psychologicznej.</p>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Audycje Analityczne -->
+        <section id="audycje" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Audycje Analityczne</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow flex flex-col hover:shadow-xl hover:shadow-glow transition">
+                    <div class="flex items-center gap-4">
+                        <div class="size-12 rounded-full bg-black/20 border border-line grid place-content-center text-accent">
+                            <!-- Lucide file-text icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-serif text-slate-100">Analiza Aktu Darowizny</h3>
+                    </div>
+                    <p class="mt-4 text-muted leading-7 flex-grow">Szczegółowa analiza prawna i psychologiczna aktu darowizny.</p>
+                    <button class="mt-4 bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Słuchaj Teraz</button>
+                </div>
+                <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow flex flex-col hover:shadow-xl hover:shadow-glow transition">
+                    <div class="flex items-center gap-4">
+                        <div class="size-12 rounded-full bg-black/20 border border-line grid place-content-center text-accent">
+                            <!-- Lucide gavel icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 7.5-3.5 3.5"></path><path d="m17 11-3.5-3.5"></path><path d="m20.5 14.5-3.5-3.5"></path><path d="m6 20h.01"></path><path d="m2.3 20.3 3.1.9 6.8-6.8-4-4-6.8 6.8c-.2.2-.3.6-.1.9z"></path><path d="m10.2 13.8 4 4"></path><path d="m13.7 17.3 3.9 1.4"></path><path d="M17 11V3h4"></path><path d="M13 7V3h-2"></path><path d="m7 13H3v4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-serif text-slate-100">Służebność</h3>
+                    </div>
+                    <p class="mt-4 text-muted leading-7 flex-grow">Analiza służebności w kontekście manipulacji.</p>
+                    <button class="mt-4 bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Słuchaj Teraz</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Odtwarzacz Analiz -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Odtwarzacz Analiz</h2>
+            <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow">
+                <select class="w-full bg-panel-2 text-slate-200 rounded-xl p-3 outline outline-1 outline-line">
+                    <option>Wybierz analizę...</option>
+                    <option>Analiza 1</option>
+                    <option>Analiza 2</option>
+                </select>
+                <div class="mt-4 flex justify-between">
+                    <button class="bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Poprzednia</button>
+                    <button class="bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Następna</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Biblioteka Przypadków -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Biblioteka Przypadków</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                <a href="#" class="block rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow hover:shadow-xl hover:shadow-glow transition">
+                    <h3 class="text-xl font-serif text-slate-100">Przypadek 1</h3>
+                    <p class="mt-2 text-muted">Krótki opis przypadku.</p>
+                </a>
+                <a href="#" class="block rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow hover:shadow-xl hover:shadow-glow transition">
+                    <h3 class="text-xl font-serif text-slate-100">Przypadek 2</h3>
+                    <p class="mt-2 text-muted">Krótki opis przypadku.</p>
+                </a>
+                <a href="#" class="block rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow hover:shadow-xl hover:shadow-glow transition">
+                    <h3 class="text-xl font-serif text-slate-100">Przypadek 3</h3>
+                    <p class="mt-2 text-muted">Krótki opis przypadku.</p>
+                </a>
+                <!-- Dodaj więcej kart jeśli potrzeba -->
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Szept zza Kurtyny -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Szept zza Kurtyny</h2>
+            <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow text-center text-accent">
+                <p class="text-muted leading-7">Tajemnicze szepty i ukryte prawdy...</p>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Laboratorium AI: Rekonstrukcja Głosów -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Laboratorium AI: Rekonstrukcja Głosów</h2>
+            <div class="rounded-2xl bg-panel-2 outline outline-1 outline-focus p-5 lg:p-6 glow">
+                <p class="text-muted leading-7 text-center">Narzędzia AI do rekonstrukcji głosów w analizach.</p>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Poradnik: 8 Grzechów Toksycznych Osób -->
+        <section id="poradnik" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Poradnik: 8 Grzechów Toksycznych Osób</h2>
+            <div class="space-y-4">
+                <details class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow cursor-pointer">
+                    <summary class="font-serif text-xl text-slate-100 flex items-center justify-between">Grzech 1: Manipulacja <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                    <p class="mt-4 text-muted leading-7">Opis grzechu.</p>
+                </details>
+                <!-- Dodaj pozostałe 7 akordeonów podobnym stylem -->
+                <details class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow cursor-pointer">
+                    <summary class="font-serif text-xl text-slate-100 flex items-center justify-between">Grzech 2: Kontrola <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                    <p class="mt-4 text-muted leading-7">Opis grzechu.</p>
+                </details>
+                <!-- ... i tak dalej do 8 -->
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Mitologia Narcyza -->
+        <section id="mitologia" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Mitologia Narcyza</h2>
+            <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow">
+                <ul class="list-disc pl-6 space-y-2 text-muted leading-7">
+                    <li>Punkt 1: Opis mitu.</li>
+                    <li>Punkt 2: Związek z psychologią.</li>
+                    <!-- Dodaj więcej punktów -->
+                </ul>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Archiwum Czerwonych Flag -->
+        <section id="archiwum" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Archiwum Czerwonych Flag</h2>
+            <div class="flex flex-wrap gap-4 justify-center mb-6">
+                <button class="bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Tag 1</button>
+                <button class="bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Tag 2</button>
+                <button class="bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Tag 3</button>
+            </div>
+            <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow text-center">
+                <p class="text-xl font-serif">Cykl Ósmego Roku</p>
+                <p class="mt-2 text-muted">Opis archiwum.</p>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Strefa Interaktywna -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-serif mb-6">Komentarze Społeczności</h2>
+                <div class="space-y-4">
+                    <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 glow">
+                        <p class="text-muted">Komentarz 1 od użytkownika.</p>
+                    </div>
+                    <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 glow">
+                        <p class="text-muted">Komentarz 2 od użytkownika.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl md:text-4xl font-serif mb-6">Kalendarz Czerwonych Flag</h2>
+                <div id="calendar" class="rounded-2xl bg-panel outline outline-1 outline-line p-5 glow max-w-md">
+                    <div class="flex items-center justify-between mb-4">
+                        <button id="prev-month" class="text-accent hover:text-accent-weak transition">
+                            <!-- Lucide chevron-left -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+                        </button>
+                        <span id="month-year" class="font-serif text-lg"></span>
+                        <button id="next-month" class="text-accent hover:text-accent-weak transition">
+                            <!-- Lucide chevron-right -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 text-center text-sm text-slate-300">
+                        <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+                        <!-- Days will be generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Symulator Rozmowy z Manipulatorem -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8">Symulator Rozmowy z Manipulatorem (AI)</h2>
+            <div class="rounded-2xl bg-panel outline outline-1 outline-line p-5 lg:p-6 glow max-w-2xl mx-auto">
+                <div id="chat-messages" class="space-y-4 mb-4 max-h-96 overflow-y-auto">
+                    <!-- Messages appended by JS -->
+                </div>
+                <div class="flex gap-2">
+                    <input id="chat-input" type="text" class="flex-grow bg-panel-2 text-slate-200 rounded-xl p-3 outline outline-1 outline-line" placeholder="Wpisz wiadomość...">
+                    <button id="chat-send" class="bg-accent hover:bg-accent-weak text-black rounded-xl px-4 py-2 shadow-xl transition">Wyślij</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="hr-ornament max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Ostateczna Lekcja -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-8 text-white">Ostateczna Lekcja</h2>
+            <div class="rounded-2xl bg-alert-deep outline outline-1 outline-alert p-5 lg:p-6 text-white shadow-inner">
+                <p class="leading-7">Ostrzeżenie: To jest ostateczna lekcja. Uważaj na toksyczne wzorce.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-16 border-t border-line/60 py-10 text-center text-sm text-slate-400">
+        <p>© 2025 Radio Adamowo. Materiał edukacyjny. W razie potrzeby skontaktuj się z <a class="text-link hover:underline" href="#">instytucjami pomocy</a>.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
