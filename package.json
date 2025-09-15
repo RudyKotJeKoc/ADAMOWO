@@ -1,19 +1,80 @@
 {
-  "name": "html-template",
-  "version": "1.0.0",
-  "description": "",
+  "name": "radio-adamowo-comprehensive",
+  "version": "2.0.0",
+  "description": "Progressive Web Radio Application with Educational Content about Psychological Manipulation and Toxic Relationships",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "vite --mode dev",
+    "dev": "vite --mode development --host",
     "build": "vite build",
-    "lint": "echo 'linted'"
+    "preview": "vite preview --host",
+    "lint": "eslint src --ext .js,.ts,.vue --fix",
+    "format": "prettier --write \"src/**/*.{js,ts,vue,css,md}\"",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "type-check": "tsc --noEmit",
+    "analyze": "npx vite-bundle-analyzer",
+    "lighthouse": "lhci autorun"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "radio", 
+    "pwa", 
+    "streaming", 
+    "education", 
+    "psychology", 
+    "manipulation", 
+    "security", 
+    "web-audio", 
+    "hls"
+  ],
+  "author": "Radio Adamowo Team <contact@radioadamowo.pl>",
+  "license": "MIT",
+  "homepage": "https://radioadamowo.pl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RudyKotJeKoc/ADAMOWO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RudyKotJeKoc/ADAMOWO/issues"
+  },
   "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "hls.js": "^1.5.13",
+    "chart.js": "^4.4.1",
+    "gsap": "^3.12.5"
+  },
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-pwa": "^0.20.1",
+    "eslint": "^9.15.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5",
+    "@vitest/coverage-v8": "^2.1.5",
+    "workbox-build": "^7.0.0",
+    "vite-bundle-analyzer": "^0.11.0",
+    "@lhci/cli": "^0.14.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "pwa": {
+    "name": "Radio Adamowo",
+    "short_name": "Adamowo",
+    "description": "Educational web radio about psychological manipulation",
+    "theme_color": "#f59e0b",
+    "background_color": "#121212",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "start_url": "/"
   }
 }
 
