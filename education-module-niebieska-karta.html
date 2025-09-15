@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moduł Edukacyjny: Niebieska Karta - Analiza Systemu</title>
+    <meta name="description" content="Kompleksowy moduł edukacyjny o procedurze Niebieskiej Karty, jej zastosowaniu i potencjalnych nadużyciach. Nowoczesne podejście do edukacji prawnej.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .card-interactive { transition: all 0.3s ease; cursor: pointer; }
+        .card-interactive:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .progress-bar { transition: width 0.5s ease-in-out; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); }
+        ::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.5); border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="glass sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="modern-platform.html" class="text-blue-400 hover:text-blue-300 transition">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Powrót do Platformy
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center text-sm text-gray-300">
+                        <i class="fas fa-clock mr-2"></i>
+                        Czas: <span id="reading-time">~15 min</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-300">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Postęp: <span id="progress-percent">0%</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Progress bar -->
+        <div class="w-full bg-gray-700 h-1">
+            <div id="progress-bar" class="bg-blue-500 h-1 progress-bar" style="width: 0%"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-500/20 rounded-2xl mb-4">
+                <i class="fas fa-shield-alt text-2xl text-blue-400"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Niebieska Karta
+                <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent block">
+                    Analiza Systemu
+                </span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Kompleksowe studium procedury Niebieskiej Karty: jej cel, mechanizmy działania oraz potencjalne obszary nadużyć. 
+                Nowoczesne podejście do edukacji prawnej z interaktywnymi elementami.
+            </p>
+        </div>
+
+        <!-- Learning Objectives -->
+        <section class="glass p-8 rounded-2xl mb-12" data-section="objectives">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-bullseye text-blue-400 mr-3"></i>
+                Cele Edukacyjne
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center mt-1">
+                            <i class="fas fa-check text-green-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Zrozumienie Procedury</h3>
+                            <p class="text-gray-400 text-sm">Poznanie istoty i celów procedury Niebieskiej Karty</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 bg-amber-500/20 rounded-full flex items-center justify-center mt-1">
+                            <i class="fas fa-exclamation text-amber-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Identyfikacja Ryzyk</h3>
+                            <p class="text-gray-400 text-sm">Rozpoznanie potencjalnych obszarów nadużyć</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 bg-purple-500/20 rounded-full flex items-center justify-center mt-1">
+                            <i class="fas fa-shield text-purple-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Mechanizmy Ochronne</h3>
+                            <p class="text-gray-400 text-sm">Poznanie praw i środków ochrony prawnej</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center mt-1">
+                            <i class="fas fa-balance-scale text-red-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Analiza Przypadku</h3>
+                            <p class="text-gray-400 text-sm">Studium rzeczywistego przypadku i jego implikacji</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Niebieska Karta -->
+        <section class="glass p-8 rounded-2xl mb-12" data-section="definition">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-question-circle text-blue-400 mr-3"></i>
+                Czym jest Niebieska Karta?
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-6 rounded-xl border border-blue-500/20">
+                    <div class="text-3xl text-blue-400 mb-3">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Podejście Interdyscyplinarne</h3>
+                    <p class="text-gray-300 text-sm">Współpraca policji, pomocy społecznej, oświaty, ochrony zdrowia i komisji alkoholowych</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
+                    <div class="text-3xl text-green-400 mb-3">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Cel Ochronny</h3>
+                    <p class="text-gray-300 text-sm">Zapewnienie bezpieczeństwa ofiarom przemocy domowej i zatrzymanie eskalacji</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-6 rounded-xl border border-purple-500/20">
+                    <div class="text-3xl text-purple-400 mb-3">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Charakter Pomocowy</h3>
+                    <p class="text-gray-300 text-sm">To narzędzie wsparcia, nie postępowanie karne - nie orzeka o winie</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/30 to-purple-900/30 p-6 rounded-xl border border-blue-500/30">
+                <h3 class="text-lg font-bold mb-3 text-blue-300">Kluczowe Zasady</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start space-x-2">
+                        <i class="fas fa-check text-green-400 mt-1"></i>
+                        <span>Wszczęcie przez uprawnione instytucje (wypełnienie formularza "Niebieska Karta - A")</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fas fa-check text-green-400 mt-1"></i>
+                        <span>Diagnoza sytuacji rodziny i opracowanie indywidualnego planu pomocy</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fas fa-check text-green-400 mt-1"></i>
+                        <span>Monitorowanie efektów i wsparcie długoterminowe</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fas fa-info text-blue-400 mt-1"></i>
+                        <span>Może prowadzić do zawiadomienia prokuratury, ale sama nim nie jest</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="glass p-8 rounded-2xl mb-12" data-section="comparison">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-balance-scale text-amber-400 mr-3"></i>
+                Niebieska Karta vs. Postępowania Prawne
+            </h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-gray-600">
+                            <th class="text-left p-4 font-bold text-gray-300">Aspekt</th>
+                            <th class="text-left p-4 font-bold text-blue-400">Niebieska Karta</th>
+                            <th class="text-left p-4 font-bold text-red-400">Postępowanie Karne</th>
+                            <th class="text-left p-4 font-bold text-green-400">Postępowanie Cywilne</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-700">
+                        <tr>
+                            <td class="p-4 font-semibold">Cel</td>
+                            <td class="p-4">Zatrzymanie przemocy, wsparcie ofiar</td>
+                            <td class="p-4">Ustalenie winy, wymierzenie kary</td>
+                            <td class="p-4">Rozstrzygnięcie sporu, odszkodowanie</td>
+                        </tr>
+                        <tr class="bg-white/5">
+                            <td class="p-4 font-semibold">Wynik</td>
+                            <td class="p-4">Plan pomocy, działania wspierające</td>
+                            <td class="p-4">Wyrok skazujący/uniewinniający</td>
+                            <td class="p-4">Wyrok/ugoda cywilna</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Sankcje</td>
+                            <td class="p-4">Brak sankcji karnych</td>
+                            <td class="p-4">Kara więzienia, grzywna, ograniczenia</td>
+                            <td class="p-4">Odszkodowanie, zadośćuczynienie</td>
+                        </tr>
+                        <tr class="bg-white/5">
+                            <td class="p-4 font-semibold">Dowody</td>
+                            <td class="p-4">Notatki, relacje, obserwacje</td>
+                            <td class="p-4">Rygorystyczne postępowanie dowodowe (KPK)</td>
+                            <td class="p-4">Dowody z dokumentów, świadkowie (KPC)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Interactive Case Study -->
+        <section class="glass p-8 rounded-2xl mb-12" data-section="case-study">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-microscope text-purple-400 mr-3"></i>
+                Studium Przypadku: Instrumentalizacja Procedury
+            </h2>
+            
+            <div class="bg-gradient-to-r from-amber-900/20 to-red-900/20 p-6 rounded-xl border border-amber-500/30 mb-8">
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-exclamation-triangle text-amber-400 text-xl mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-amber-300 mb-2">Uwaga Metodologiczna</h3>
+                        <p class="text-gray-300 text-sm">
+                            Poniższy przypadek służy wyłącznie celom edukacyjnym. Nie stanowi porady prawnej ani rozstrzygnięcia o winie. 
+                            Analiza ma na celu pokazanie potencjalnych obszarów nadużyć systemu ochrony.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="card-interactive bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-6 rounded-xl border border-gray-600" onclick="toggleDetails('scenario1')">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-bold mb-2 text-blue-300">Scenariusz: Instrumentalizacja w Konflikcie Rodzinnym</h3>
+                            <p class="text-gray-400">Analiza przypadku wykorzystania procedury w sporze o majątek</p>
+                        </div>
+                        <i id="icon-scenario1" class="fas fa-chevron-down text-gray-400"></i>
+                    </div>
+                    <div id="details-scenario1" class="hidden mt-6 pt-6 border-t border-gray-600">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-green-300 mb-3">Kontekst</h4>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li>• Trwający spór rodzinny o darowizną nieruchomości</li>
+                                    <li>• Eskalacja konfliktu na tle finansowym</li>
+                                    <li>• Wykorzystanie instytucji państwowych jako narzędzia nacisku</li>
+                                    <li>• Brak rzeczywistej przemocy fizycznej</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-300 mb-3">Mechanizmy Nadużycia</h4>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li>• Interpretowanie konfliktu werbalnego jako przemoc</li>
+                                    <li>• Wykorzystanie procedury do wywierania presji</li>
+                                    <li>• Pomijanie kontekstu prawnego sporu</li>
+                                    <li>• Stygmatyzacja bez rzetelnego postępowania</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-purple-900/20 rounded-lg border border-purple-500/30">
+                            <h4 class="font-semibold text-purple-300 mb-2">Kluczowe Obserwacje</h4>
+                            <p class="text-gray-300 text-sm">
+                                Przypadek pokazuje, jak procedura pomocowa może zostać wykorzystana jako narzędzie wywierania presji w sporze cywilnym, 
+                                co odbiega od jej pierwotnego celu ochrony ofiar rzeczywistej przemocy domowej.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-interactive bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-6 rounded-xl border border-gray-600" onclick="toggleDetails('implications')">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-bold mb-2 text-amber-300">Implikacje Systemowe</h3>
+                            <p class="text-gray-400">Szerszy kontekst nadużyć procedur pomocowych</p>
+                        </div>
+                        <i id="icon-implications" class="fas fa-chevron-down text-gray-400"></i>
+                    </div>
+                    <div id="details-implications" class="hidden mt-6 pt-6 border-t border-gray-600">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-red-900/20 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-300 mb-2">Ryzyko dla Systemu</h4>
+                                <p class="text-sm text-gray-300">Nadużywanie procedur pomocowych może obniżyć ich skuteczność dla rzeczywistych ofiar przemocy</p>
+                            </div>
+                            <div class="bg-amber-900/20 p-4 rounded-lg">
+                                <h4 class="font-semibold text-amber-300 mb-2">Potrzeba Reform</h4>
+                                <p class="text-sm text-gray-300">Konieczność precyzyjniejszych kryteriów wszczęcia procedury i mechanizmów kontroli</p>
+                            </div>
+                            <div class="bg-blue-900/20 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-300 mb-2">Ochrona Prawna</h4>
+                                <p class="text-sm text-gray-300">Znaczenie znajomości praw i dostępnych środków odwoławczych</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="glass p-8 rounded-2xl mb-12" data-section="faq">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-question-circle text-cyan-400 mr-3"></i>
+                Najczęściej Zadawane Pytania
+            </h2>
+            
+            <div class="space-y-4">
+                <details class="bg-slate-800/50 p-4 rounded-lg border border-gray-600">
+                    <summary class="font-semibold cursor-pointer hover:text-blue-400 transition">
+                        Czy założenie Niebieskiej Karty oznacza wyrok skazujący?
+                    </summary>
+                    <div class="mt-3 pt-3 border-t border-gray-600 text-gray-300">
+                        <p><strong>Absolutnie nie.</strong> Niebieska Karta to procedura interwencyjna i pomocowa, a nie postępowanie karne. 
+                        Nie przesądza o winie, a jej celem jest zatrzymanie przemocy i zapewnienie bezpieczeństwa, a nie ukaranie sprawcy.</p>
+                    </div>
+                </details>
+
+                <details class="bg-slate-800/50 p-4 rounded-lg border border-gray-600">
+                    <summary class="font-semibold cursor-pointer hover:text-blue-400 transition">
+                        Kto może założyć Niebieską Kartę?
+                    </summary>
+                    <div class="mt-3 pt-3 border-t border-gray-600 text-gray-300">
+                        <p>Procedurę może wszcząć przedstawiciel jednej z pięciu instytucji: <strong>policji, pomocy społecznej, oświaty, 
+                        ochrony zdrowia lub gminnej komisji rozwiązywania problemów alkoholowych.</strong> Osoba doświadczająca przemocy 
+                        nie może sama sobie założyć karty, ale może zgłosić interwencję do tych służb.</p>
+                    </div>
+                </details>
+
+                <details class="bg-slate-800/50 p-4 rounded-lg border border-gray-600">
+                    <summary class="font-semibold cursor-pointer hover:text-blue-400 transition">
+                        Jakie prawa ma osoba, wobec której wszczęto procedurę?
+                    </summary>
+                    <div class="mt-3 pt-3 border-t border-gray-600 text-gray-300">
+                        <p>Osoba ma prawo do <strong>przedstawienia swojej wersji wydarzeń</strong> podczas spotkania zespołu interdyscyplinarnego. 
+                        Jej udział nie jest obowiązkowy. Ma również prawo do informacji o procedurze i możliwości odwołania się od 
+                        nieprawidłowych działań służb.</p>
+                    </div>
+                </details>
+
+                <details class="bg-slate-800/50 p-4 rounded-lg border border-gray-600">
+                    <summary class="font-semibold cursor-pointer hover:text-blue-400 transition">
+                        Jak długo trwa procedura?
+                    </summary>
+                    <div class="mt-3 pt-3 border-t border-gray-600 text-gray-300">
+                        <p>Przepisy <strong>nie określają maksymalnego czasu trwania</strong>. Procedura kończy się, gdy zespół 
+                        interdyscyplinarny uzna, że cel został osiągnięty (przemoc ustała) lub gdy dalsze działania są bezzasadne 
+                        (np. z powodu zmiany miejsca zamieszkania rodziny).</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Help Resources -->
+        <section class="glass p-8 rounded-2xl mb-12" data-section="help">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-life-ring text-green-400 mr-3"></i>
+                Gdzie Szukać Pomocy
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-red-500/10 to-pink-500/10 p-6 rounded-xl border border-red-500/20">
+                    <div class="text-3xl text-red-400 mb-3">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Niebieska Linia</h3>
+                    <p class="text-gray-300 text-sm mb-3">Całodobowa pomoc dla ofiar przemocy domowej</p>
+                    <p class="text-red-300 font-mono text-lg">22 668 70 00</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-6 rounded-xl border border-blue-500/20">
+                    <div class="text-3xl text-blue-400 mb-3">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Pomoc Prawna</h3>
+                    <p class="text-gray-300 text-sm mb-3">Bezpłatna pomoc prawna w punktach informacyjnych</p>
+                    <p class="text-blue-300 text-sm">Sprawdź lokalizację na gov.pl</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
+                    <div class="text-3xl text-green-400 mb-3">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Organizacje NGO</h3>
+                    <p class="text-gray-300 text-sm mb-3">Wsparcie psychologiczne i prawne</p>
+                    <p class="text-green-300 text-sm">Federacja na rzecz Kobiet i Planowania Rodziny</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary and Next Steps -->
+        <section class="glass p-8 rounded-2xl mb-12" data-section="summary">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-flag-checkered text-amber-400 mr-3"></i>
+                Podsumowanie i Dalsze Kroki
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-blue-300">Kluczowe Wnioski</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-gray-300">Niebieska Karta to narzędzie pomocowe, nie karne</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-gray-300">System może być instrumentalizowany w sporach cywilnych</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-gray-300">Znajomość praw jest kluczowa dla ochrony</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-gray-300">Potrzebne są mechanizmy kontroli i reform</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-purple-300">Zalecane Działania</h3>
+                    <div class="space-y-3">
+                        <button class="w-full p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-lg text-left hover:bg-blue-600/30 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-book mr-3 text-blue-400"></i>
+                                <div>
+                                    <div class="font-semibold">Pogłęb Wiedzę</div>
+                                    <div class="text-sm text-gray-400">Poznaj więcej modulów edukacyjnych</div>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button class="w-full p-3 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 rounded-lg text-left hover:bg-green-600/30 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-users mr-3 text-green-400"></i>
+                                <div>
+                                    <div class="font-semibold">Dołącz do Dyskusji</div>
+                                    <div class="text-sm text-gray-400">Podziel się doświadczeniami w społeczności</div>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button class="w-full p-3 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 rounded-lg text-left hover:bg-amber-600/30 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-question-circle mr-3 text-amber-400"></i>
+                                <div>
+                                    <div class="font-semibold">Zadaj Pytanie</div>
+                                    <div class="text-sm text-gray-400">Skonsultuj się z ekspertami</div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 border-t border-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <a href="modern-platform.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition">
+                    Powrót do Platformy
+                </a>
+                <button onclick="restartModule()" class="px-6 py-3 bg-gray-600 hover:bg-gray-700 rounded-lg transition">
+                    Rozpocznij Ponownie
+                </button>
+            </div>
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 Radio Adamowo. Materiał edukacyjny służy celom naukowym i nie stanowi porady prawnej.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll('[data-section]');
+        
+        // Initialize progress tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            trackScrollProgress();
+        });
+
+        function toggleDetails(id) {
+            const details = document.getElementById(`details-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                details.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        function trackScrollProgress() {
+            window.addEventListener('scroll', function() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                
+                document.getElementById('progress-bar').style.width = scrolled + '%';
+                document.getElementById('progress-percent').textContent = Math.round(scrolled) + '%';
+                
+                // Update reading time based on progress
+                const remainingTime = Math.max(1, Math.round(15 * (1 - scrolled/100)));
+                document.getElementById('reading-time').textContent = `~${remainingTime} min`;
+            });
+        }
+
+        function updateProgress() {
+            // Simulate progress updates (in real app, this would track actual completion)
+            setTimeout(() => updateProgressValue(25), 2000);
+            setTimeout(() => updateProgressValue(50), 5000);
+            setTimeout(() => updateProgressValue(75), 8000);
+            setTimeout(() => updateProgressValue(100), 12000);
+        }
+
+        function updateProgressValue(value) {
+            document.getElementById('progress-bar').style.width = value + '%';
+            document.getElementById('progress-percent').textContent = value + '%';
+        }
+
+        function restartModule() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            updateProgressValue(0);
+            document.getElementById('reading-time').textContent = '~15 min';
+            
+            // Close all details
+            document.querySelectorAll('[id^="details-"]').forEach(el => {
+                el.classList.add('hidden');
+            });
+            document.querySelectorAll('[id^="icon-"]').forEach(el => {
+                el.classList.remove('fa-chevron-up');
+                el.classList.add('fa-chevron-down');
+            });
+        }
+
+        // Add smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Simulator - Wzorce Manipulacji Psychicznej</title>
+    <meta name="description" content="Interaktywny symulator AI do nauki rozpoznawania wzorców manipulacji narcystycznej i toksycznych zachowań.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        
+        .chat-message {
+            animation: slideInMessage 0.3s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes slideInMessage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .typing-indicator {
+            animation: typing 1.5s infinite;
+        }
+        
+        @keyframes typing {
+            0%, 60% { opacity: 0.3; }
+            30% { opacity: 1; }
+        }
+        
+        .warning-pulse {
+            animation: warningPulse 2s infinite;
+        }
+        
+        @keyframes warningPulse {
+            0%, 100% { background-color: rgba(239, 68, 68, 0.1); }
+            50% { background-color: rgba(239, 68, 68, 0.3); }
+        }
+        
+        .manipulation-highlight {
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+            border-left: 4px solid #ef4444;
+            transition: all 0.3s ease;
+        }
+        
+        .response-option {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .response-option:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .scenario-progress {
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="glass sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="modern-platform.html" class="text-purple-400 hover:text-purple-300 transition">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Powrót do Platformy
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center text-sm text-gray-300">
+                        <i class="fas fa-brain mr-2 text-cyan-400"></i>
+                        AI Simulator v2.0
+                    </div>
+                    <div class="flex items-center text-sm text-gray-300">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Postęp: <span id="scenario-progress">0/5</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-8">
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl mb-6">
+                <i class="fas fa-robot text-3xl text-cyan-400"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    AI Simulator
+                </span>
+                <br>Wzorce Manipulacji
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+                Interaktywny symulator wykorzystujący sztuczną inteligencję do nauki rozpoznawania 
+                i reagowania na wzorce manipulacji narcystycznej w bezpiecznym środowisku edukacyjnym.
+            </p>
+            
+            <!-- Warning Banner -->
+            <div class="bg-gradient-to-r from-amber-900/30 to-red-900/30 p-4 rounded-xl border border-amber-500/30 max-w-2xl mx-auto">
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-exclamation-triangle text-amber-400 text-lg mt-1"></i>
+                    <div class="text-left">
+                        <h3 class="font-bold text-amber-300 mb-1">Środowisko Edukacyjne</h3>
+                        <p class="text-gray-300 text-sm">
+                            To narzędzie służy wyłącznie celom edukacyjnym. Scenariusze są symulowane przez AI 
+                            i nie stanowią porady terapeutycznej ani prawnej.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario Selection -->
+        <section id="scenario-selection" class="glass p-8 rounded-2xl mb-8">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-play-circle text-green-400 mr-3"></i>
+                Wybierz Scenariusz
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Scenario 1: Gift as Manipulation -->
+                <div class="response-option bg-gradient-to-br from-red-500/10 to-pink-500/10 p-6 rounded-xl border border-red-500/20" onclick="startScenario('gift')">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="text-3xl text-red-400">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded-full">Poziom: Podstawowy</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-red-300">Dar jako Manipulacja</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Poznaj, jak prezenty mogą być wykorzystywane do tworzenia poczucia winy i kontroli emocjonalnej.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>~10 minut</span>
+                        <i class="fas fa-comments ml-4 mr-2"></i>
+                        <span>15-20 wymiany</span>
+                    </div>
+                </div>
+
+                <!-- Scenario 2: Gaslighting -->
+                <div class="response-option bg-gradient-to-br from-amber-500/10 to-orange-500/10 p-6 rounded-xl border border-amber-500/20" onclick="startScenario('gaslighting')">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="text-3xl text-amber-400">
+                            <i class="fas fa-eye-slash"></i>
+                        </div>
+                        <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-1 rounded-full">Poziom: Średni</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-amber-300">Gaslighting</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Rozpoznawanie technik podważania percepcji rzeczywistości i manipulacji pamięcią.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>~15 minut</span>
+                        <i class="fas fa-comments ml-4 mr-2"></i>
+                        <span>20-25 wymiany</span>
+                    </div>
+                </div>
+
+                <!-- Scenario 3: Triangulation -->
+                <div class="response-option bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-6 rounded-xl border border-purple-500/20" onclick="startScenario('triangulation')">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="text-3xl text-purple-400">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">Poziom: Zaawansowany</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-purple-300">Triangulacja</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Analiza wykorzystywania trzecich osób do wywierania presji i manipulacji emocjonalnej.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>~20 minut</span>
+                        <i class="fas fa-comments ml-4 mr-2"></i>
+                        <span>25-30 wymiany</span>
+                    </div>
+                </div>
+
+                <!-- More scenarios -->
+                <div class="response-option bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-6 rounded-xl border border-blue-500/20" onclick="startScenario('lovebombing')">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="text-3xl text-blue-400">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">Poziom: Podstawowy</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-blue-300">Love Bombing</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Rozpoznawanie nadmiernej idealnej miłości jako taktyki manipulacji.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>~12 minut</span>
+                        <i class="fas fa-comments ml-4 mr-2"></i>
+                        <span>18-22 wymiany</span>
+                    </div>
+                </div>
+
+                <div class="response-option bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20" onclick="startScenario('projection')">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="text-3xl text-green-400">
+                            <i class="fas fa-mirror"></i>
+                        </div>
+                        <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">Poziom: Średni</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-green-300">Projekcja</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Jak narcyz przypisuje swoje zachowania innym jako mechanizm obronny.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>~18 minut</span>
+                        <i class="fas fa-comments ml-4 mr-2"></i>
+                        <span>22-28 wymiany</span>
+                    </div>
+                </div>
+
+                <div class="response-option bg-gradient-to-br from-gray-500/10 to-slate-500/10 p-6 rounded-xl border border-gray-500/20" onclick="showComingSoon()">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="text-3xl text-gray-400">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <span class="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full">Wkrótce</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-300">Więcej Scenariuszy</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Pracujemy nad dodatkowymi scenariuszami: Silent Treatment, DARVO, Hoovering i inne.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-cog mr-2"></i>
+                        <span>W rozwoju</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulation Interface (Hidden by default) -->
+        <section id="simulation-interface" class="hidden">
+            <!-- Progress Bar -->
+            <div class="glass p-4 rounded-xl mb-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold" id="scenario-title">Symulacja w toku</h3>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-sm text-gray-400">Postęp scenariusza</span>
+                        <button onclick="exitScenario()" class="text-red-400 hover:text-red-300 transition">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div id="progress-bar" class="scenario-progress bg-gradient-to-r from-cyan-500 to-purple-500 h-2 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="glass p-6 rounded-2xl mb-6">
+                <div id="chat-container" class="space-y-4 mb-6 max-h-96 overflow-y-auto">
+                    <!-- Messages will be inserted here -->
+                </div>
+
+                <!-- Response Options -->
+                <div id="response-options" class="space-y-3">
+                    <!-- Response buttons will be inserted here -->
+                </div>
+
+                <!-- Typing Indicator -->
+                <div id="typing-indicator" class="hidden flex items-center space-x-2 text-gray-400 text-sm mt-4">
+                    <div class="flex space-x-1">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full typing-indicator"></div>
+                        <div class="w-2 h-2 bg-gray-400 rounded-full typing-indicator" style="animation-delay: 0.2s"></div>
+                        <div class="w-2 h-2 bg-gray-400 rounded-full typing-indicator" style="animation-delay: 0.4s"></div>
+                    </div>
+                    <span>AI analizuje twoją odpowiedź...</span>
+                </div>
+            </div>
+
+            <!-- Analysis Panel -->
+            <div id="analysis-panel" class="glass p-6 rounded-2xl">
+                <h3 class="text-lg font-bold mb-4 flex items-center">
+                    <i class="fas fa-microscope text-cyan-400 mr-2"></i>
+                    Analiza AI w czasie rzeczywistym
+                </h3>
+                <div id="real-time-analysis" class="space-y-4">
+                    <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                        <p class="text-blue-300 text-sm">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Wybierz scenariusz, aby rozpocząć analizę wzorców manipulacji.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Hidden by default) -->
+        <section id="results-section" class="hidden glass p-8 rounded-2xl">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-chart-bar text-green-400 mr-3"></i>
+                Wyniki Symulacji
+            </h2>
+            
+            <div id="results-content">
+                <!-- Results will be inserted here -->
+            </div>
+
+            <div class="flex justify-center space-x-4 mt-8">
+                <button onclick="restartScenario()" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition">
+                    <i class="fas fa-redo mr-2"></i>
+                    Powtórz Scenariusz
+                </button>
+                <button onclick="showScenarioSelection()" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition">
+                    <i class="fas fa-list mr-2"></i>
+                    Wybierz Inny Scenariusz
+                </button>
+                <button onclick="downloadResults()" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition">
+                    <i class="fas fa-download mr-2"></i>
+                    Pobierz Raport
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 border-t border-gray-800 py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 Radio Adamowo AI Simulator. Narzędzie edukacyjne oparte na najnowszych badaniach z dziedziny psychologii.
+                <br>Nie stanowi porady medycznej ani terapeutycznej.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Simulation data and state
+        let currentScenario = null;
+        let currentStep = 0;
+        let userChoices = [];
+        let analysisData = {};
+
+        // Scenario definitions
+        const scenarios = {
+            gift: {
+                title: "Dar jako Manipulacja",
+                description: "Scenariusz pokazuje, jak prezenty mogą być wykorzystywane do kontroli emocjonalnej",
+                steps: [
+                    {
+                        message: "Dzień dobry! Przyniosłem Ci piękny bukiet kwiatów, bo pomyślałem o Tobie.",
+                        manipulation: "love_bombing",
+                        responses: [
+                            { text: "Dziękuję, to bardzo miłe!", score: 1, analysis: "Neutralna reakcja - nie rozpoznaje manipulacji" },
+                            { text: "Bardzo ładne, ale nie trzeba było.", score: 3, analysis: "Dobra reakcja - wyraża granice" },
+                            { text: "Co się stało? Zwykle nie dajesz prezentów bez powodu.", score: 5, analysis: "Doskonale! Rozpoznaje nietypowe zachowanie" }
+                        ]
+                    },
+                    {
+                        message: "Po tym wszystkim co dla Ciebie robię, a Ty nawet nie potrafisz się cieszyć z prezentu. Zawsze jesteś niewdzięczny/a.",
+                        manipulation: "guilt_tripping",
+                        responses: [
+                            { text: "Przepraszam, masz rację. Cieszę się z kwiatów.", score: 1, analysis: "Uleganie manipulacji - przyjmowanie winy" },
+                            { text: "Doceniam twoje gesty, ale nie lubię gdy ktoś mi wmawia, jak mam się czuć.", score: 4, analysis: "Dobra reakcja - obrona grannic emocjonalnych" },
+                            { text: "To typowe dla Ciebie - robisz coś 'miłego', a potem używasz tego przeciwko mnie.", score: 5, analysis: "Doskonale! Rozpoznaje wzorzec manipulacji" }
+                        ]
+                    }
+                ]
+            },
+            gaslighting: {
+                title: "Gaslighting - Manipulacja Rzeczywistością",
+                description: "Scenariusz demonstruje techniki podważania percepcji i pamięci",
+                steps: [
+                    {
+                        message: "Nie mówiłem wczoraj, że idziemy do kina. Chyba coś ci się przewidziało.",
+                        manipulation: "reality_distortion",
+                        responses: [
+                            { text: "Może rzeczywiście się myliłam...", score: 1, analysis: "Uleganie gaslightingowi - kwestionowanie własnej pamięci" },
+                            { text: "Jestem pewna, że o tym rozmawialiśmy.", score: 3, analysis: "Dobra reakcja - ufanie własnej pamięci" },
+                            { text: "Pamiętam dokładnie naszą rozmowę. Dlaczego zaprzeczasz?", score: 5, analysis: "Doskonale! Przeciwstawia się manipulacji pamięci" }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // Initialize the simulator
+        document.addEventListener('DOMContentLoaded', function() {
+            showScenarioSelection();
+        });
+
+        function startScenario(scenarioId) {
+            currentScenario = scenarios[scenarioId];
+            if (!currentScenario) {
+                showMessage('Scenariusz nie jest jeszcze dostępny', 'warning');
+                return;
+            }
+
+            currentStep = 0;
+            userChoices = [];
+            analysisData = {
+                scenarioId: scenarioId,
+                startTime: new Date(),
+                choices: [],
+                totalScore: 0
+            };
+
+            // Hide scenario selection and show simulation interface
+            document.getElementById('scenario-selection').classList.add('hidden');
+            document.getElementById('simulation-interface').classList.remove('hidden');
+            document.getElementById('scenario-title').textContent = currentScenario.title;
+            
+            // Clear chat and start first message
+            document.getElementById('chat-container').innerHTML = '';
+            document.getElementById('real-time-analysis').innerHTML = '';
+            
+            setTimeout(() => {
+                showMessage('Rozpoczynam symulację...', 'info');
+                setTimeout(() => {
+                    presentStep();
+                }, 1500);
+            }, 500);
+        }
+
+        function presentStep() {
+            if (currentStep >= currentScenario.steps.length) {
+                completeScenario();
+                return;
+            }
+
+            const step = currentScenario.steps[currentStep];
+            updateProgress();
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            // After delay, show AI message
+            setTimeout(() => {
+                hideTypingIndicator();
+                addChatMessage('ai', step.message);
+                
+                // Show analysis of manipulation technique
+                showManipulationAnalysis(step.manipulation);
+                
+                // Show response options
+                setTimeout(() => {
+                    showResponseOptions(step.responses);
+                }, 1000);
+            }, 2000);
+        }
+
+        function addChatMessage(sender, message) {
+            const chatContainer = document.getElementById('chat-container');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+
+            const bubble = document.createElement('div');
+            bubble.className = `max-w-xs lg:max-w-md px-4 py-2 rounded-2xl ${
+                sender === 'user' 
+                ? 'bg-blue-600 text-white' 
+                : 'bg-gray-700 text-gray-100 manipulation-highlight'
+            }`;
+            bubble.textContent = message;
+
+            messageDiv.appendChild(bubble);
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function showResponseOptions(responses) {
+            const optionsContainer = document.getElementById('response-options');
+            optionsContainer.innerHTML = '';
+
+            responses.forEach((response, index) => {
+                const button = document.createElement('button');
+                button.className = 'response-option w-full p-4 bg-gradient-to-r from-slate-700/50 to-slate-600/50 rounded-xl text-left hover:from-slate-600/50 hover:to-slate-500/50 transition border border-gray-600';
+                button.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-blue-400 font-bold">${String.fromCharCode(65 + index)}</span>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-gray-100">${response.text}</p>
+                        </div>
+                    </div>
+                `;
+                button.onclick = () => selectResponse(response, index);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function selectResponse(response, index) {
+            // Add user message to chat
+            addChatMessage('user', response.text);
+            
+            // Record choice
+            analysisData.choices.push({
+                step: currentStep,
+                choice: index,
+                score: response.score,
+                analysis: response.analysis
+            });
+            analysisData.totalScore += response.score;
+
+            // Show real-time analysis
+            showResponseAnalysis(response);
+
+            // Clear response options
+            document.getElementById('response-options').innerHTML = '';
+
+            // Move to next step
+            currentStep++;
+            setTimeout(() => {
+                presentStep();
+            }, 2000);
+        }
+
+        function showManipulationAnalysis(technique) {
+            const analysisContainer = document.getElementById('real-time-analysis');
+            
+            const techniques = {
+                love_bombing: {
+                    name: "Love Bombing",
+                    description: "Nadmierna idealność na początku relacji - czerwona flaga!",
+                    color: "red"
+                },
+                guilt_tripping: {
+                    name: "Wywieranie Poczucia Winy",
+                    description: "Używanie 'poświęceń' do kontroli emocjonalnej",
+                    color: "amber"
+                },
+                reality_distortion: {
+                    name: "Gaslighting",
+                    description: "Podważanie percepcji rzeczywistości ofiary",
+                    color: "purple"
+                }
+            };
+
+            const techInfo = techniques[technique] || { name: "Nieznana technika", description: "", color: "gray" };
+            
+            const analysisDiv = document.createElement('div');
+            analysisDiv.className = `bg-${techInfo.color}-900/20 p-4 rounded-lg border border-${techInfo.color}-500/30 warning-pulse`;
+            analysisDiv.innerHTML = `
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-exclamation-triangle text-${techInfo.color}-400 text-lg mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-${techInfo.color}-300 mb-1">Wykryta Technika: ${techInfo.name}</h4>
+                        <p class="text-gray-300 text-sm">${techInfo.description}</p>
+                    </div>
+                </div>
+            `;
+            
+            analysisContainer.appendChild(analysisDiv);
+        }
+
+        function showResponseAnalysis(response) {
+            const analysisContainer = document.getElementById('real-time-analysis');
+            
+            const scoreColors = {
+                5: 'green',
+                4: 'green',
+                3: 'amber',
+                2: 'red',
+                1: 'red'
+            };
+            
+            const color = scoreColors[response.score] || 'gray';
+            
+            const analysisDiv = document.createElement('div');
+            analysisDiv.className = `bg-${color}-900/20 p-4 rounded-lg border border-${color}-500/30 mt-4`;
+            analysisDiv.innerHTML = `
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-${color}-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-${color}-400 font-bold">${response.score}/5</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-${color}-300 mb-1">Ocena Twojej Odpowiedzi</h4>
+                        <p class="text-gray-300 text-sm">${response.analysis}</p>
+                    </div>
+                </div>
+            `;
+            
+            analysisContainer.appendChild(analysisDiv);
+        }
+
+        function showTypingIndicator() {
+            document.getElementById('typing-indicator').classList.remove('hidden');
+        }
+
+        function hideTypingIndicator() {
+            document.getElementById('typing-indicator').classList.add('hidden');
+        }
+
+        function updateProgress() {
+            const progress = ((currentStep + 1) / currentScenario.steps.length) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('scenario-progress').textContent = `${currentStep}/${currentScenario.steps.length}`;
+        }
+
+        function completeScenario() {
+            analysisData.endTime = new Date();
+            analysisData.duration = (analysisData.endTime - analysisData.startTime) / 1000;
+            
+            // Hide simulation interface and show results
+            document.getElementById('simulation-interface').classList.add('hidden');
+            document.getElementById('results-section').classList.remove('hidden');
+            
+            showResults();
+        }
+
+        function showResults() {
+            const resultsContainer = document.getElementById('results-content');
+            const averageScore = analysisData.totalScore / analysisData.choices.length;
+            const maxPossibleScore = analysisData.choices.length * 5;
+            const percentage = (analysisData.totalScore / maxPossibleScore) * 100;
+            
+            let performanceLevel = '';
+            let performanceColor = '';
+            let recommendations = '';
+            
+            if (percentage >= 80) {
+                performanceLevel = 'Doskonały';
+                performanceColor = 'green';
+                recommendations = 'Wykazujesz świetną umiejętność rozpoznawania manipulacji. Kontynuuj edukację!';
+            } else if (percentage >= 60) {
+                performanceLevel = 'Dobry';
+                performanceColor = 'blue';
+                recommendations = 'Dobrze rozpoznajesz manipulację. Warto pogłębić wiedzę o bardziej subtelnych technikach.';
+            } else if (percentage >= 40) {
+                performanceLevel = 'Podstawowy';
+                performanceColor = 'amber';
+                recommendations = 'Podstawowa świadomość manipulacji. Zalecamy więcej praktyki i edukacji.';
+            } else {
+                performanceLevel = 'Wymaga poprawy';
+                performanceColor = 'red';
+                recommendations = 'Warto pogłębić wiedzę o manipulacji. Rozważ skonsultowanie się z profesjonalistą.';
+            }
+
+            resultsContainer.innerHTML = `
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-${performanceColor}-900/20 p-6 rounded-xl border border-${performanceColor}-500/30 text-center">
+                        <div class="text-3xl font-bold text-${performanceColor}-400 mb-2">${Math.round(percentage)}%</div>
+                        <div class="text-sm text-gray-400">Ogólny Wynik</div>
+                    </div>
+                    <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30 text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-2">${analysisData.totalScore}/${maxPossibleScore}</div>
+                        <div class="text-sm text-gray-400">Punkty</div>
+                    </div>
+                    <div class="bg-purple-900/20 p-6 rounded-xl border border-purple-500/30 text-center">
+                        <div class="text-3xl font-bold text-purple-400 mb-2">${Math.round(analysisData.duration)}s</div>
+                        <div class="text-sm text-gray-400">Czas Symulacji</div>
+                    </div>
+                </div>
+
+                <div class="bg-${performanceColor}-900/20 p-6 rounded-xl border border-${performanceColor}-500/30 mb-8">
+                    <h3 class="text-lg font-bold text-${performanceColor}-300 mb-3">
+                        <i class="fas fa-star mr-2"></i>
+                        Poziom: ${performanceLevel}
+                    </h3>
+                    <p class="text-gray-300">${recommendations}</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold mb-4">Szczegółowa Analiza Odpowiedzi</h3>
+                    ${analysisData.choices.map((choice, index) => `
+                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-600">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-semibold">Krok ${index + 1}</h4>
+                                <span class="text-sm bg-gray-600 px-2 py-1 rounded">${choice.score}/5 punktów</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">${choice.analysis}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function showScenarioSelection() {
+            document.getElementById('scenario-selection').classList.remove('hidden');
+            document.getElementById('simulation-interface').classList.add('hidden');
+            document.getElementById('results-section').classList.add('hidden');
+        }
+
+        function exitScenario() {
+            if (confirm('Czy na pewno chcesz zakończyć bieżący scenariusz?')) {
+                showScenarioSelection();
+            }
+        }
+
+        function restartScenario() {
+            if (currentScenario) {
+                const scenarioId = Object.keys(scenarios).find(key => scenarios[key] === currentScenario);
+                startScenario(scenarioId);
+            }
+        }
+
+        function downloadResults() {
+            const resultsData = {
+                scenario: currentScenario.title,
+                timestamp: new Date().toISOString(),
+                score: analysisData.totalScore,
+                duration: analysisData.duration,
+                choices: analysisData.choices
+            };
+            
+            const dataStr = JSON.stringify(resultsData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `ai-simulator-results-${Date.now()}.json`;
+            link.click();
+            
+            URL.revokeObjectURL(url);
+            showMessage('Raport został pobrany', 'success');
+        }
+
+        function showComingSoon() {
+            showMessage('Więcej scenariuszy będzie dostępnych wkrótce!', 'info');
+        }
+
+        function showMessage(text, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${
+                type === 'info' ? 'bg-blue-500' :
+                type === 'warning' ? 'bg-amber-500' :
+                type === 'error' ? 'bg-red-500' : 'bg-green-500'
+            }`;
+            notification.textContent = text;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

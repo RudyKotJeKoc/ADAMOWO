@@ -81,14 +81,14 @@
                 Poznaj mechanizmy toksycznych relacji przez pryzm najnowszych technologii.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <a href="education-module-niebieska-karta.html" class="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg font-semibold text-black hover:scale-105 transition-transform">
+                <button id="start-platform-btn" class="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg font-semibold text-black hover:scale-105 transition-transform">
                     <i class="fas fa-play mr-2"></i>
                     Rozpocznij Naukę
-                </a>
-                <a href="ai-simulator.html" class="px-8 py-4 glass rounded-lg font-semibold hover:bg-white/20 transition">
-                    <i class="fas fa-robot mr-2"></i>
-                    AI Simulator
-                </a>
+                </button>
+                <button id="demo-btn" class="px-8 py-4 glass rounded-lg font-semibold hover:bg-white/20 transition">
+                    <i class="fas fa-eye mr-2"></i>
+                    Zobacz Demo
+                </button>
             </div>
         </div>
     </section>
@@ -98,7 +98,7 @@
         <h3 class="text-3xl font-bold text-center mb-12">Główne Funkcje Platformy</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- AI Simulator -->
-            <a href="ai-simulator.html" class="glass p-8 rounded-2xl card-hover block">
+            <div class="glass p-8 rounded-2xl card-hover">
                 <div class="text-4xl mb-4 text-cyan-400">
                     <i class="fas fa-robot"></i>
                 </div>
@@ -110,22 +110,22 @@
                     <i class="fas fa-cpu mr-2"></i>
                     <span>Powered by ML</span>
                 </div>
-            </a>
+            </div>
 
             <!-- Case Study Analysis -->
-            <a href="education-module-niebieska-karta.html" class="glass p-8 rounded-2xl card-hover block">
+            <div class="glass p-8 rounded-2xl card-hover">
                 <div class="text-4xl mb-4 text-purple-400">
                     <i class="fas fa-search-plus"></i>
                 </div>
                 <h4 class="text-xl font-bold mb-3">Analiza Przypadków</h4>
                 <p class="text-gray-300 mb-4">
-                    Szczegółowe studium przypadku "Niebieskiej Karty" z interaktywnymi elementami edukacyjnymi.
+                    Szczegółowe studium przypadku "Sprawy Adamskich" z interaktywnymi elementami edukacyjnymi.
                 </p>
                 <div class="flex items-center text-sm text-purple-400">
                     <i class="fas fa-microscope mr-2"></i>
                     <span>Metodologia naukowa</span>
                 </div>
-            </a>
+            </div>
 
             <!-- Interactive Timeline -->
             <div class="glass p-8 rounded-2xl card-hover">
@@ -198,30 +198,28 @@
 
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-                <a href="education-module-niebieska-karta.html" class="glass p-6 rounded-xl block hover:bg-white/10 transition">
+                <div class="glass p-6 rounded-xl">
                     <h4 class="text-lg font-semibold mb-3 text-amber-400">
-                        <i class="fas fa-shield-alt mr-2"></i>
-                        Niebieska Karta - Analiza Systemu
+                        <i class="fas fa-circle-1 mr-2"></i>
+                        Podstawy Rozpoznawania
                     </h4>
-                    <p class="text-gray-300">Kompleksowe studium procedury pomocowej i jej potencjalnych nadużyć.</p>
-                </a>
+                    <p class="text-gray-300">Nauka identyfikacji czerwonych flag i wczesnych sygnałów ostrzegawczych w relacjach toksycznych.</p>
+                </div>
 
                 <div class="glass p-6 rounded-xl">
                     <h4 class="text-lg font-semibold mb-3 text-cyan-400">
                         <i class="fas fa-circle-2 mr-2"></i>
-                        Mechanizmy Manipulacji
+                        Mechanizmy Obronne
                     </h4>
-                    <p class="text-gray-300">Praktyczne strategie rozpoznawania i ochrony przed gaslightingiem.</p>
-                    <span class="text-sm text-gray-500 block mt-2">Wkrótce dostępne</span>
+                    <p class="text-gray-300">Praktyczne strategie ochrony przed manipulacją i gaslightingiem.</p>
                 </div>
 
                 <div class="glass p-6 rounded-xl">
                     <h4 class="text-lg font-semibold mb-3 text-purple-400">
                         <i class="fas fa-circle-3 mr-2"></i>
-                        Studium Przypadku "Adamowo"
+                        Analiza Przypadku
                     </h4>
-                    <p class="text-gray-300">Głęboka analiza 8-letniego cyklu przemocy narcystycznej.</p>
-                    <span class="text-sm text-gray-500 block mt-2">W przygotowaniu</span>
+                    <p class="text-gray-300">Głęboka analiza "Sprawy Adamskich" jako studium narcystycznej przemocy.</p>
                 </div>
             </div>
 
@@ -237,25 +235,25 @@
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <span>Mechanizmy Manipulacji</span>
-                        <span class="text-amber-400">25%</span>
+                        <span>Mechanizmy Obronne</span>
+                        <span class="text-amber-400">75%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-amber-400 h-2 rounded-full w-1/4"></div>
+                        <div class="bg-amber-400 h-2 rounded-full w-3/4"></div>
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <span>Studium Przypadku</span>
-                        <span class="text-red-400">0%</span>
+                        <span>Analiza Przypadku</span>
+                        <span class="text-red-400">25%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-red-400 h-2 rounded-full w-0"></div>
+                        <div class="bg-red-400 h-2 rounded-full w-1/4"></div>
                     </div>
                 </div>
 
-                <a href="education-module-niebieska-karta.html" class="w-full mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg font-semibold hover:scale-105 transition-transform block text-center">
-                    Rozpocznij Naukę
-                </a>
+                <button class="w-full mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg font-semibold hover:scale-105 transition-transform">
+                    Kontynuuj Naukę
+                </button>
             </div>
         </div>
     </section>
@@ -282,7 +280,7 @@
                     <div class="bg-black/30 p-4 rounded-lg">
                         <div class="flex items-center justify-between mb-2">
                             <span class="text-sm text-gray-400">Rekonstrukcja AI #1</span>
-                            <button class="text-cyan-400 hover:text-cyan-300" onclick="showMessage('Funkcja będzie dostępna wkrótce', 'info')">
+                            <button class="text-cyan-400 hover:text-cyan-300">
                                 <i class="fas fa-play"></i>
                             </button>
                         </div>
@@ -294,7 +292,7 @@
                     <div class="bg-black/30 p-4 rounded-lg">
                         <div class="flex items-center justify-between mb-2">
                             <span class="text-sm text-gray-400">Rekonstrukcja AI #2</span>
-                            <button class="text-cyan-400 hover:text-cyan-300" onclick="showMessage('Funkcja będzie dostępna wkrótce', 'info')">
+                            <button class="text-cyan-400 hover:text-cyan-300">
                                 <i class="fas fa-play"></i>
                             </button>
                         </div>
@@ -314,7 +312,7 @@
             </div>
 
             <!-- Manipulation Simulator -->
-            <a href="ai-simulator.html" class="glass p-8 rounded-2xl block hover:bg-white/5 transition">
+            <div class="glass p-8 rounded-2xl">
                 <div class="flex items-center mb-6">
                     <i class="fas fa-robot text-3xl text-purple-400 mr-4"></i>
                     <div>
@@ -327,23 +325,27 @@
                     <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 p-4 rounded-lg border border-purple-500/30">
                         <h5 class="font-semibold mb-2">Scenariusz: Dar jako Manipulacja</h5>
                         <p class="text-sm text-gray-400 mb-3">Poznaj mechanizmy wykorzystywania prezentów do kontroli emocjonalnej</p>
-                        <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">Dostępny</span>
+                        <button class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-md text-sm hover:bg-purple-500/30 transition">
+                            Uruchom Symulację
+                        </button>
                     </div>
 
                     <div class="bg-gradient-to-r from-red-900/30 to-pink-900/30 p-4 rounded-lg border border-red-500/30">
                         <h5 class="font-semibold mb-2">Scenariusz: Gaslighting</h5>
                         <p class="text-sm text-gray-400 mb-3">Rozpoznawanie technik podważania percepcji rzeczywistości</p>
-                        <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">Dostępny</span>
+                        <button class="px-4 py-2 bg-red-500/20 text-red-300 rounded-md text-sm hover:bg-red-500/30 transition">
+                            Uruchom Symulację
+                        </button>
                     </div>
                 </div>
 
                 <div class="mt-6 text-center">
-                    <span class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold">
-                        <i class="fas fa-play mr-2"></i>
-                        Uruchom Symulator
-                    </span>
+                    <button class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold hover:scale-105 transition-transform">
+                        <i class="fas fa-plus mr-2"></i>
+                        Więcej Scenariuszy
+                    </button>
                 </div>
-            </a>
+            </div>
         </div>
     </section>
 
@@ -399,7 +401,7 @@
                 <div>
                     <h5 class="font-semibold mb-4">Edukacja</h5>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="education-module-niebieska-karta.html" class="hover:text-white transition">Niebieska Karta</a></li>
+                        <li><a href="#" class="hover:text-white transition">Podstawy Psychologii</a></li>
                         <li><a href="#" class="hover:text-white transition">Mechanizmy Manipulacji</a></li>
                         <li><a href="#" class="hover:text-white transition">Strategie Obronne</a></li>
                         <li><a href="#" class="hover:text-white transition">Studium Przypadku</a></li>
@@ -409,7 +411,7 @@
                 <div>
                     <h5 class="font-semibold mb-4">Narzędzia</h5>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="ai-simulator.html" class="hover:text-white transition">Symulator AI</a></li>
+                        <li><a href="#" class="hover:text-white transition">Symulator AI</a></li>
                         <li><a href="#" class="hover:text-white transition">Analiza Audio</a></li>
                         <li><a href="#" class="hover:text-white transition">Wizualizacje</a></li>
                         <li><a href="#" class="hover:text-white transition">API Badawcze</a></li>
@@ -502,6 +504,17 @@
         }
 
         function setupInteractions() {
+            // Start platform button
+            document.getElementById('start-platform-btn')?.addEventListener('click', function() {
+                showMessage('Uruchamianie platformy edukacyjnej...', 'info');
+                // Here you would redirect to the full platform
+            });
+
+            // Demo button
+            document.getElementById('demo-btn')?.addEventListener('click', function() {
+                showMessage('Demo będzie dostępne wkrótce!', 'warning');
+            });
+
             // Mobile menu
             document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
                 showMessage('Menu mobilne w rozwoju', 'info');
@@ -523,20 +536,6 @@
                 notification.remove();
             }, 3000);
         }
-
-        // Add smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 </html>
