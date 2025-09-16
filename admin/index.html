@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Adamowo - Panel Administracyjny</title>
+    <meta name="description" content="Panel zarządzania treściami i funkcjami Radia Adamowo">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .slide-over { animation: slideOver 0.3s ease-out; }
+        @keyframes slideOver { from { transform: translateX(100%); } to { transform: translateX(0); } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+            <p class="text-gray-600">Ładowanie panelu administracyjnego...</p>
+        </div>
+    </div>
+
+    <!-- App Container -->
+    <div id="app" class="hidden min-h-screen bg-gray-50">
+        <!-- Login Screen -->
+        <div id="login-screen" class="min-h-screen flex items-center justify-center px-4">
+            <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 fade-in">
+                <div class="text-center mb-8">
+                    <i class="fas fa-shield-alt text-4xl text-red-600 mb-4"></i>
+                    <h1 class="text-2xl font-bold text-gray-900 mb-2">Panel Administracyjny</h1>
+                    <p class="text-gray-600">Radio Adamowo</p>
+                </div>
+                
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-700 mb-2">
+                            Nazwa użytkownika
+                        </label>
+                        <input type="text" id="username" name="username" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                            Hasło
+                        </label>
+                        <input type="password" id="password" name="password" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Zaloguj się
+                    </button>
+                </form>
+                
+                <div id="login-error" class="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm hidden">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    <span id="login-error-text">Nieprawidłowe dane logowania</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div id="dashboard" class="hidden">
+            <!-- Header -->
+            <header class="bg-white shadow-sm border-b border-gray-200">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <button id="sidebar-toggle" class="lg:hidden text-gray-600 hover:text-gray-900">
+                                <i class="fas fa-bars text-xl"></i>
+                            </button>
+                            <h1 class="text-2xl font-bold text-gray-900">
+                                <i class="fas fa-microphone-alt text-red-600 mr-3"></i>
+                                Radio Adamowo - Admin
+                            </h1>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <!-- Notifications -->
+                            <div class="relative">
+                                <button id="notifications-btn" class="text-gray-600 hover:text-gray-900 relative">
+                                    <i class="fas fa-bell text-xl"></i>
+                                    <span class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">3</span>
+                                </button>
+                            </div>
+                            <!-- User Menu -->
+                            <div class="relative">
+                                <button id="user-menu-btn" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                                    <i class="fas fa-user-circle text-2xl"></i>
+                                    <span class="hidden md:inline">Admin</span>
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </button>
+                                <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                                    <div class="py-2">
+                                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                            <i class="fas fa-user mr-2"></i>Profil
+                                        </a>
+                                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                            <i class="fas fa-cog mr-2"></i>Ustawienia
+                                        </a>
+                                        <div class="border-t border-gray-200 mt-2 pt-2">
+                                            <button id="logout-btn" class="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50">
+                                                <i class="fas fa-sign-out-alt mr-2"></i>Wyloguj
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="flex">
+                <!-- Sidebar -->
+                <nav id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-gray-900 transform -translate-x-full lg:translate-x-0 lg:static lg:inset-0 transition-transform duration-300">
+                    <div class="flex flex-col h-full">
+                        <!-- Sidebar Header -->
+                        <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                            <span class="text-white font-semibold">Menu</span>
+                            <button id="sidebar-close" class="lg:hidden text-gray-400 hover:text-white">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Navigation Links -->
+                        <div class="flex-1 overflow-y-auto">
+                            <ul class="p-4 space-y-2">
+                                <li>
+                                    <a href="#dashboard" class="nav-link active flex items-center px-4 py-3 text-white bg-red-600 rounded-lg">
+                                        <i class="fas fa-tachometer-alt mr-3"></i>Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#stream" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-broadcast-tower mr-3"></i>Stream
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#playlists" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-list-music mr-3"></i>Playlisty
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#podcasts" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-podcast mr-3"></i>Podcasty
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#comments" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-comments mr-3"></i>Komentarze
+                                        <span class="ml-auto bg-red-500 text-white rounded-full px-2 py-1 text-xs">5</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#users" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-users mr-3"></i>Użytkownicy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#analytics" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-chart-line mr-3"></i>Analityki
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#content" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-file-alt mr-3"></i>Treści
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#notifications" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-bell mr-3"></i>Powiadomienia
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#settings" class="nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg">
+                                        <i class="fas fa-cog mr-3"></i>Ustawienia
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="p-4 border-t border-gray-700">
+                            <div class="text-center text-gray-400 text-sm">
+                                <p>Radio Adamowo v2.1.0</p>
+                                <p>© 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Sidebar Overlay -->
+                <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden hidden"></div>
+
+                <!-- Main Content -->
+                <main class="flex-1 lg:ml-0">
+                    <div id="content-area" class="p-6">
+                        <!-- Dashboard Content will be loaded here -->
+                        <div id="dashboard-content" class="content-section">
+                            <div class="mb-8">
+                                <h2 class="text-3xl font-bold text-gray-900 mb-2">Dashboard</h2>
+                                <p class="text-gray-600">Przegląd aktywności i kluczowych wskaźników</p>
+                            </div>
+
+                            <!-- Stats Cards -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+                                    <div class="flex items-center">
+                                        <div class="p-3 bg-red-100 rounded-lg">
+                                            <i class="fas fa-users text-red-600 text-xl"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-600">Słuchacze online</p>
+                                            <p class="text-2xl font-bold text-gray-900">127</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+                                    <div class="flex items-center">
+                                        <div class="p-3 bg-blue-100 rounded-lg">
+                                            <i class="fas fa-comments text-blue-600 text-xl"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-600">Nowe komentarze</p>
+                                            <p class="text-2xl font-bold text-gray-900">23</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+                                    <div class="flex items-center">
+                                        <div class="p-3 bg-green-100 rounded-lg">
+                                            <i class="fas fa-play text-green-600 text-xl"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-600">Odtworzenia dzisiaj</p>
+                                            <p class="text-2xl font-bold text-gray-900">1,247</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+                                    <div class="flex items-center">
+                                        <div class="p-3 bg-yellow-100 rounded-lg">
+                                            <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-600">Uptime</p>
+                                            <p class="text-2xl font-bold text-gray-900">99.9%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="grid lg:grid-cols-2 gap-6">
+                                <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                                    <div class="p-6 border-b border-gray-200">
+                                        <h3 class="text-lg font-semibold text-gray-900">Ostatnie komentarze</h3>
+                                    </div>
+                                    <div class="p-6">
+                                        <div class="space-y-4">
+                                            <div class="flex items-start space-x-3">
+                                                <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                                                <div class="flex-1">
+                                                    <p class="font-medium text-gray-900">Anna K.</p>
+                                                    <p class="text-sm text-gray-600">Bardzo przejmująca analiza manipulacji...</p>
+                                                    <p class="text-xs text-gray-500 mt-1">2 minuty temu</p>
+                                                </div>
+                                                <button class="text-gray-400 hover:text-gray-600">
+                                                    <i class="fas fa-ellipsis-h"></i>
+                                                </button>
+                                            </div>
+                                            <!-- More comments... -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                                    <div class="p-6 border-b border-gray-200">
+                                        <h3 class="text-lg font-semibold text-gray-900">Status systemu</h3>
+                                    </div>
+                                    <div class="p-6">
+                                        <div class="space-y-4">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-600">Stream serwer</span>
+                                                <span class="flex items-center text-green-600">
+                                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                    Online
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-600">Baza danych</span>
+                                                <span class="flex items-center text-green-600">
+                                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                    Połączona
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-600">CDN</span>
+                                                <span class="flex items-center text-green-600">
+                                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                    Aktywny
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other content sections will be loaded dynamically -->
+                        <div id="stream-content" class="content-section hidden">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">Zarządzanie Streamem</h2>
+                            <!-- Stream management content -->
+                        </div>
+
+                        <!-- Add more content sections as needed -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/admin.js"></script>
+</body>
+</html>
