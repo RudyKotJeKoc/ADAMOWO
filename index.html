@@ -266,13 +266,24 @@
                         <input type="range" id="volume-slider" min="0" max="100" value="70" class="w-24 accent-amber-500">
                         <i class="fas fa-volume-up text-gray-400"></i>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <span class="text-gray-400 text-sm">Jakość:</span>
-                        <select id="quality-selector" class="bg-gray-800 text-white rounded px-3 py-1 text-sm border border-gray-600">
-                            <option value="high">Wysoka (320kbps)</option>
-                            <option value="medium" selected>Średnia (128kbps)</option>
-                            <option value="low">Niska (64kbps)</option>
-                        </select>
+                    <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-gray-400 text-sm">Playlista:</span>
+                            <select id="playlist-select" class="bg-gray-800 text-white rounded px-3 py-1 text-sm border border-gray-600">
+                                <option value="ambient">Ambient</option>
+                                <option value="disco">Disco</option>
+                                <option value="hiphop">Hip-Hop</option>
+                                <option value="podcasts">Podcasty</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-gray-400 text-sm">Jakość:</span>
+                            <select id="quality-selector" class="bg-gray-800 text-white rounded px-3 py-1 text-sm border border-gray-600">
+                                <option value="high">Wysoka (320kbps)</option>
+                                <option value="medium" selected>Średnia (128kbps)</option>
+                                <option value="low">Niska (64kbps)</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </section>
