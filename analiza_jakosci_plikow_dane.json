@@ -1,0 +1,944 @@
+{
+  "index.html": {
+    "file_type": "html",
+    "size_bytes": 66865,
+    "lines_total": 1029,
+    "lines_empty": 81,
+    "characters": 66570,
+    "metrics": {
+      "semantic_elements": 18,
+      "accessibility": 28,
+      "meta_tags": 3,
+      "comments": 49,
+      "inline_styles": 2,
+      "deprecated_tags": 0
+    },
+    "score": 38.550632911392405
+  },
+  "admin/index.html": {
+    "file_type": "html",
+    "size_bytes": 21377,
+    "lines_total": 345,
+    "lines_empty": 23,
+    "characters": 21358,
+    "metrics": {
+      "semantic_elements": 3,
+      "accessibility": 0,
+      "meta_tags": 3,
+      "comments": 23,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 23.142857142857142
+  },
+  "level2/rozprawa.html": {
+    "file_type": "html",
+    "size_bytes": 11280,
+    "lines_total": 169,
+    "lines_empty": 15,
+    "characters": 11064,
+    "metrics": {
+      "semantic_elements": 13,
+      "accessibility": 1,
+      "meta_tags": 3,
+      "comments": 0,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 29.0
+  },
+  "level2/adwokat.html": {
+    "file_type": "html",
+    "size_bytes": 18759,
+    "lines_total": 312,
+    "lines_empty": 36,
+    "characters": 18572,
+    "metrics": {
+      "semantic_elements": 10,
+      "accessibility": 5,
+      "meta_tags": 3,
+      "comments": 15,
+      "inline_styles": 1,
+      "deprecated_tags": 0
+    },
+    "score": 40.630434782608695
+  },
+  "level2/indexx.html": {
+    "file_type": "html",
+    "size_bytes": 46088,
+    "lines_total": 678,
+    "lines_empty": 69,
+    "characters": 45842,
+    "metrics": {
+      "semantic_elements": 20,
+      "accessibility": 20,
+      "meta_tags": 5,
+      "comments": 13,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 45.64039408866995
+  },
+  "level2/kalendarz.html": {
+    "file_type": "html",
+    "size_bytes": 23954,
+    "lines_total": 374,
+    "lines_empty": 40,
+    "characters": 23683,
+    "metrics": {
+      "semantic_elements": 19,
+      "accessibility": 17,
+      "meta_tags": 9,
+      "comments": 9,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 45.808383233532936
+  },
+  "level2/relacje.html": {
+    "file_type": "html",
+    "size_bytes": 18456,
+    "lines_total": 320,
+    "lines_empty": 23,
+    "characters": 18252,
+    "metrics": {
+      "semantic_elements": 13,
+      "accessibility": 15,
+      "meta_tags": 4,
+      "comments": 12,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 44.21212121212121
+  },
+  "level2/zarzutyx.html": {
+    "file_type": "html",
+    "size_bytes": 11327,
+    "lines_total": 155,
+    "lines_empty": 21,
+    "characters": 11058,
+    "metrics": {
+      "semantic_elements": 9,
+      "accessibility": 0,
+      "meta_tags": 1,
+      "comments": 0,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 22.0
+  },
+  "level2/zarzuty.html": {
+    "file_type": "html",
+    "size_bytes": 25675,
+    "lines_total": 334,
+    "lines_empty": 24,
+    "characters": 25298,
+    "metrics": {
+      "semantic_elements": 13,
+      "accessibility": 17,
+      "meta_tags": 4,
+      "comments": 4,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 43.38709677419355
+  },
+  "level2/werdykt.html": {
+    "file_type": "html",
+    "size_bytes": 25446,
+    "lines_total": 481,
+    "lines_empty": 30,
+    "characters": 25176,
+    "metrics": {
+      "semantic_elements": 13,
+      "accessibility": 10,
+      "meta_tags": 10,
+      "comments": 12,
+      "inline_styles": 3,
+      "deprecated_tags": 0
+    },
+    "score": 39.79822616407982
+  },
+  "level2/niebieska-karta.html": {
+    "file_type": "html",
+    "size_bytes": 27041,
+    "lines_total": 411,
+    "lines_empty": 30,
+    "characters": 26650,
+    "metrics": {
+      "semantic_elements": 19,
+      "accessibility": 3,
+      "meta_tags": 8,
+      "comments": 0,
+      "inline_styles": 0,
+      "deprecated_tags": 0
+    },
+    "score": 39.0
+  },
+  "app-optimized.js": {
+    "file_type": "javascript",
+    "size_bytes": 22092,
+    "lines_total": 676,
+    "lines_empty": 103,
+    "characters": 22075,
+    "metrics": {
+      "functions": 25,
+      "comments": 36,
+      "modern_syntax": 53,
+      "error_handling": 18,
+      "console_logs": 19,
+      "jquery": 0
+    },
+    "score": 13.8848167539267
+  },
+  "sw-optimized.js": {
+    "file_type": "javascript",
+    "size_bytes": 18125,
+    "lines_total": 628,
+    "lines_empty": 85,
+    "characters": 18123,
+    "metrics": {
+      "functions": 77,
+      "comments": 73,
+      "modern_syntax": 110,
+      "error_handling": 24,
+      "console_logs": 19,
+      "jquery": 0
+    },
+    "score": 16.033149171270722
+  },
+  "script.js": {
+    "file_type": "javascript",
+    "size_bytes": 48703,
+    "lines_total": 1127,
+    "lines_empty": 129,
+    "characters": 48343,
+    "metrics": {
+      "functions": 153,
+      "comments": 53,
+      "modern_syntax": 153,
+      "error_handling": 9,
+      "console_logs": 9,
+      "jquery": 0
+    },
+    "score": 33.59318637274549
+  },
+  "app-comprehensive.js": {
+    "file_type": "javascript",
+    "size_bytes": 33431,
+    "lines_total": 1045,
+    "lines_empty": 166,
+    "characters": 33407,
+    "metrics": {
+      "functions": 68,
+      "comments": 62,
+      "modern_syntax": 111,
+      "error_handling": 30,
+      "console_logs": 28,
+      "jquery": 0
+    },
+    "score": 0
+  },
+  "vite.config.js": {
+    "file_type": "javascript",
+    "size_bytes": 1036,
+    "lines_total": 41,
+    "lines_empty": 1,
+    "characters": 1036,
+    "metrics": {
+      "functions": 0,
+      "comments": 0,
+      "modern_syntax": 0,
+      "error_handling": 0,
+      "console_logs": 0,
+      "jquery": 0
+    },
+    "score": 0
+  },
+  "app.js": {
+    "file_type": "javascript",
+    "size_bytes": 19095,
+    "lines_total": 412,
+    "lines_empty": 40,
+    "characters": 19029,
+    "metrics": {
+      "functions": 80,
+      "comments": 30,
+      "modern_syntax": 81,
+      "error_handling": 16,
+      "console_logs": 10,
+      "jquery": 0
+    },
+    "score": 32.41935483870968
+  },
+  "sw-comprehensive.js": {
+    "file_type": "javascript",
+    "size_bytes": 16676,
+    "lines_total": 540,
+    "lines_empty": 84,
+    "characters": 16673,
+    "metrics": {
+      "functions": 68,
+      "comments": 59,
+      "modern_syntax": 121,
+      "error_handling": 14,
+      "console_logs": 15,
+      "jquery": 0
+    },
+    "score": 23.881578947368425
+  },
+  "src/plugins.js": {
+    "file_type": "javascript",
+    "size_bytes": 23282,
+    "lines_total": 814,
+    "lines_empty": 125,
+    "characters": 23281,
+    "metrics": {
+      "functions": 41,
+      "comments": 36,
+      "modern_syntax": 78,
+      "error_handling": 22,
+      "console_logs": 18,
+      "jquery": 0
+    },
+    "score": 15.567489114658926
+  },
+  "admin/src/admin.js": {
+    "file_type": "javascript",
+    "size_bytes": 14709,
+    "lines_total": 428,
+    "lines_empty": 56,
+    "characters": 14703,
+    "metrics": {
+      "functions": 34,
+      "comments": 29,
+      "modern_syntax": 59,
+      "error_handling": 12,
+      "console_logs": 7,
+      "jquery": 0
+    },
+    "score": 38.33870967741936
+  },
+  "api-add-comment-optimized.php": {
+    "file_type": "php",
+    "size_bytes": 8368,
+    "lines_total": 273,
+    "lines_empty": 40,
+    "characters": 8368,
+    "metrics": {
+      "functions": 1,
+      "classes": 0,
+      "comments": 32,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 4
+    },
+    "score": 17.12017167381974
+  },
+  "get_comments.php": {
+    "file_type": "php",
+    "size_bytes": 1372,
+    "lines_total": 50,
+    "lines_empty": 11,
+    "characters": 1355,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 4,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 0
+    },
+    "score": 3.0769230769230766
+  },
+  "config-optimized.php": {
+    "file_type": "php",
+    "size_bytes": 19577,
+    "lines_total": 562,
+    "lines_empty": 79,
+    "characters": 19577,
+    "metrics": {
+      "functions": 25,
+      "classes": 4,
+      "comments": 56,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 17
+    },
+    "score": 43.47826086956522
+  },
+  "api-add-comment.php": {
+    "file_type": "php",
+    "size_bytes": 4960,
+    "lines_total": 176,
+    "lines_empty": 28,
+    "characters": 4960,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 18,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 4
+    },
+    "score": 13.64864864864865
+  },
+  "api-csrf-token-optimized.php": {
+    "file_type": "php",
+    "size_bytes": 1591,
+    "lines_total": 55,
+    "lines_empty": 9,
+    "characters": 1591,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 5,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 2
+    },
+    "score": 13.26086956521739
+  },
+  "add_comment.php": {
+    "file_type": "php",
+    "size_bytes": 2253,
+    "lines_total": 69,
+    "lines_empty": 12,
+    "characters": 2219,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 8,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 0
+    },
+    "score": 4.2105263157894735
+  },
+  "api-get-comments.php": {
+    "file_type": "php",
+    "size_bytes": 4756,
+    "lines_total": 165,
+    "lines_empty": 23,
+    "characters": 4756,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 16,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 3
+    },
+    "score": 13.380281690140844
+  },
+  "api-csrf-token.php": {
+    "file_type": "php",
+    "size_bytes": 1460,
+    "lines_total": 63,
+    "lines_empty": 11,
+    "characters": 1460,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 8,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 2
+    },
+    "score": 14.615384615384617
+  },
+  "db_config.php": {
+    "file_type": "php",
+    "size_bytes": 1351,
+    "lines_total": 40,
+    "lines_empty": 7,
+    "characters": 1311,
+    "metrics": {
+      "functions": 1,
+      "classes": 0,
+      "comments": 9,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 0
+    },
+    "score": 11.181818181818182
+  },
+  "api-get-comments-optimized.php": {
+    "file_type": "php",
+    "size_bytes": 5611,
+    "lines_total": 170,
+    "lines_empty": 24,
+    "characters": 5611,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 18,
+      "security": 1,
+      "sql_injection_risk": 1,
+      "error_handling": 3
+    },
+    "score": 8.698630136986303
+  },
+  "config-enhanced.php": {
+    "file_type": "php",
+    "size_bytes": 11527,
+    "lines_total": 341,
+    "lines_empty": 60,
+    "characters": 11527,
+    "metrics": {
+      "functions": 24,
+      "classes": 2,
+      "comments": 36,
+      "security": 1,
+      "sql_injection_risk": 0,
+      "error_handling": 4
+    },
+    "score": 43.843416370106766
+  },
+  "get_csrf_token.php": {
+    "file_type": "php",
+    "size_bytes": 1182,
+    "lines_total": 43,
+    "lines_empty": 10,
+    "characters": 1176,
+    "metrics": {
+      "functions": 0,
+      "classes": 0,
+      "comments": 6,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 0
+    },
+    "score": 5.454545454545455
+  },
+  "api/v1/stream.php": {
+    "file_type": "php",
+    "size_bytes": 13533,
+    "lines_total": 396,
+    "lines_empty": 52,
+    "characters": 13533,
+    "metrics": {
+      "functions": 10,
+      "classes": 0,
+      "comments": 28,
+      "security": 0,
+      "sql_injection_risk": 0,
+      "error_handling": 16
+    },
+    "score": 27.441860465116278
+  },
+  "api/v1/config.php": {
+    "file_type": "php",
+    "size_bytes": 6921,
+    "lines_total": 244,
+    "lines_empty": 38,
+    "characters": 6921,
+    "metrics": {
+      "functions": 18,
+      "classes": 4,
+      "comments": 18,
+      "security": 1,
+      "sql_injection_risk": 0,
+      "error_handling": 2
+    },
+    "score": 47.62135922330097
+  },
+  "api/v1/notifications.php": {
+    "file_type": "php",
+    "size_bytes": 17984,
+    "lines_total": 530,
+    "lines_empty": 68,
+    "characters": 17982,
+    "metrics": {
+      "functions": 15,
+      "classes": 0,
+      "comments": 20,
+      "security": 0,
+      "sql_injection_risk": 1,
+      "error_handling": 20
+    },
+    "score": 16.2987012987013
+  },
+  "api/v1/comments.php": {
+    "file_type": "php",
+    "size_bytes": 17425,
+    "lines_total": 496,
+    "lines_empty": 65,
+    "characters": 17425,
+    "metrics": {
+      "functions": 9,
+      "classes": 0,
+      "comments": 28,
+      "security": 0,
+      "sql_injection_risk": 1,
+      "error_handling": 12
+    },
+    "score": 16.948955916473317
+  },
+  "style.css": {
+    "file_type": "css",
+    "size_bytes": 15602,
+    "lines_total": 748,
+    "lines_empty": 114,
+    "characters": 15600,
+    "metrics": {
+      "comments": 34,
+      "modern_properties": 37,
+      "responsiveness": 9,
+      "css_variables": 41,
+      "important_overuse": 8
+    },
+    "score": 22.608832807570977
+  },
+  "styles.css": {
+    "file_type": "css",
+    "size_bytes": 5674,
+    "lines_total": 257,
+    "lines_empty": 39,
+    "characters": 5667,
+    "metrics": {
+      "comments": 9,
+      "modern_properties": 9,
+      "responsiveness": 5,
+      "css_variables": 16,
+      "important_overuse": 0
+    },
+    "score": 46.23853211009174
+  },
+  "Code_Optimization_and_Feature_Addition_Framework.md": {
+    "file_type": "markdown",
+    "size_bytes": 4251,
+    "lines_total": 31,
+    "lines_empty": 11,
+    "characters": 4251,
+    "metrics": {
+      "headers": 2,
+      "code_blocks": 0,
+      "links": 0,
+      "images": 0,
+      "tables": 0,
+      "lists": 12
+    },
+    "score": 4.0
+  },
+  "media_session_api_guide.md": {
+    "file_type": "markdown",
+    "size_bytes": 8410,
+    "lines_total": 206,
+    "lines_empty": 41,
+    "characters": 8410,
+    "metrics": {
+      "headers": 6,
+      "code_blocks": 6,
+      "links": 0,
+      "images": 0,
+      "tables": 10,
+      "lists": 7
+    },
+    "score": 37.0
+  },
+  "DEPLOYMENT.md": {
+    "file_type": "markdown",
+    "size_bytes": 2508,
+    "lines_total": 96,
+    "lines_empty": 19,
+    "characters": 2508,
+    "metrics": {
+      "headers": 22,
+      "code_blocks": 8,
+      "links": 0,
+      "images": 0,
+      "tables": 0,
+      "lists": 26
+    },
+    "score": 30.0
+  },
+  "modern_web_radio_architecture.md": {
+    "file_type": "markdown",
+    "size_bytes": 29576,
+    "lines_total": 297,
+    "lines_empty": 67,
+    "characters": 29538,
+    "metrics": {
+      "headers": 17,
+      "code_blocks": 0,
+      "links": 43,
+      "images": 0,
+      "tables": 72,
+      "lists": 0
+    },
+    "score": 35.0
+  },
+  "deconstructing_vague_software_requests.md": {
+    "file_type": "markdown",
+    "size_bytes": 52357,
+    "lines_total": 318,
+    "lines_empty": 81,
+    "characters": 52346,
+    "metrics": {
+      "headers": 31,
+      "code_blocks": 0,
+      "links": 146,
+      "images": 0,
+      "tables": 89,
+      "lists": 68
+    },
+    "score": 35.0
+  },
+  "LIGHTHOUSE.md": {
+    "file_type": "markdown",
+    "size_bytes": 7105,
+    "lines_total": 271,
+    "lines_empty": 53,
+    "characters": 6973,
+    "metrics": {
+      "headers": 56,
+      "code_blocks": 20,
+      "links": 0,
+      "images": 0,
+      "tables": 0,
+      "lists": 91
+    },
+    "score": 30.0
+  },
+  "modular_feature_integration_methodologies.md": {
+    "file_type": "markdown",
+    "size_bytes": 12980,
+    "lines_total": 84,
+    "lines_empty": 28,
+    "characters": 12980,
+    "metrics": {
+      "headers": 12,
+      "code_blocks": 0,
+      "links": 0,
+      "images": 0,
+      "tables": 29,
+      "lists": 9
+    },
+    "score": 25.0
+  },
+  "code-optimization-framework.md": {
+    "file_type": "markdown",
+    "size_bytes": 10396,
+    "lines_total": 85,
+    "lines_empty": 21,
+    "characters": 10385,
+    "metrics": {
+      "headers": 14,
+      "code_blocks": 0,
+      "links": 0,
+      "images": 0,
+      "tables": 24,
+      "lists": 21
+    },
+    "score": 25.0
+  },
+  "requirements-elicitation-framework.md": {
+    "file_type": "markdown",
+    "size_bytes": 11349,
+    "lines_total": 86,
+    "lines_empty": 23,
+    "characters": 11347,
+    "metrics": {
+      "headers": 11,
+      "code_blocks": 0,
+      "links": 0,
+      "images": 0,
+      "tables": 42,
+      "lists": 18
+    },
+    "score": 25.0
+  },
+  "web_app_best_practices_summary.md": {
+    "file_type": "markdown",
+    "size_bytes": 19807,
+    "lines_total": 162,
+    "lines_empty": 39,
+    "characters": 19807,
+    "metrics": {
+      "headers": 27,
+      "code_blocks": 0,
+      "links": 0,
+      "images": 0,
+      "tables": 66,
+      "lists": 33
+    },
+    "score": 25.0
+  },
+  "README_COMPREHENSIVE.md": {
+    "file_type": "markdown",
+    "size_bytes": 8063,
+    "lines_total": 187,
+    "lines_empty": 33,
+    "characters": 6987,
+    "metrics": {
+      "headers": 26,
+      "code_blocks": 8,
+      "links": 0,
+      "images": 0,
+      "tables": 0,
+      "lists": 73
+    },
+    "score": 30.0
+  },
+  "web_info_summaries/Radio_Adamowo_PWA_Development_Guide.md": {
+    "file_type": "markdown",
+    "size_bytes": 12578,
+    "lines_total": 513,
+    "lines_empty": 85,
+    "characters": 12478,
+    "metrics": {
+      "headers": 31,
+      "code_blocks": 32,
+      "links": 0,
+      "images": 0,
+      "tables": 2,
+      "lists": 8
+    },
+    "score": 36.0
+  },
+  "web_info_summaries/hls_js_implementation_guide.md": {
+    "file_type": "markdown",
+    "size_bytes": 6142,
+    "lines_total": 141,
+    "lines_empty": 22,
+    "characters": 6142,
+    "metrics": {
+      "headers": 5,
+      "code_blocks": 10,
+      "links": 0,
+      "images": 0,
+      "tables": 10,
+      "lists": 0
+    },
+    "score": 35.0
+  },
+  "web_info_summaries/Radio_Adamowo_PWA_Analysis_Summary.md": {
+    "file_type": "markdown",
+    "size_bytes": 18482,
+    "lines_total": 722,
+    "lines_empty": 99,
+    "characters": 18313,
+    "metrics": {
+      "headers": 34,
+      "code_blocks": 38,
+      "links": 0,
+      "images": 0,
+      "tables": 4,
+      "lists": 12
+    },
+    "score": 40.0
+  },
+  "web_info_summaries/csrf-protection-guide-php-js.md": {
+    "file_type": "markdown",
+    "size_bytes": 9328,
+    "lines_total": 233,
+    "lines_empty": 52,
+    "characters": 9328,
+    "metrics": {
+      "headers": 6,
+      "code_blocks": 8,
+      "links": 0,
+      "images": 0,
+      "tables": 2,
+      "lists": 13
+    },
+    "score": 33.0
+  },
+  "web_info_summaries/Radio_Adamowo_PWA_Implementation_Guide.md": {
+    "file_type": "markdown",
+    "size_bytes": 16591,
+    "lines_total": 683,
+    "lines_empty": 115,
+    "characters": 16435,
+    "metrics": {
+      "headers": 32,
+      "code_blocks": 38,
+      "links": 0,
+      "images": 0,
+      "tables": 1,
+      "lists": 10
+    },
+    "score": 33.0
+  },
+  "web_info_summaries/resolving-vite-parse5-error-with-external-svg.md": {
+    "file_type": "markdown",
+    "size_bytes": 6393,
+    "lines_total": 107,
+    "lines_empty": 32,
+    "characters": 6393,
+    "metrics": {
+      "headers": 9,
+      "code_blocks": 10,
+      "links": 0,
+      "images": 0,
+      "tables": 16,
+      "lists": 3
+    },
+    "score": 40.0
+  },
+  "web_info_summaries/Polish_Web_Quality_Standards_Guide.md": {
+    "file_type": "markdown",
+    "size_bytes": 0,
+    "lines_total": 0,
+    "lines_empty": 0,
+    "characters": 0,
+    "metrics": {
+      "headers": 0,
+      "code_blocks": 0,
+      "links": 0,
+      "images": 0,
+      "tables": 0,
+      "lists": 0
+    },
+    "score": 0
+  },
+  "docs/developer/README.md": {
+    "file_type": "markdown",
+    "size_bytes": 51185,
+    "lines_total": 1902,
+    "lines_empty": 320,
+    "characters": 49901,
+    "metrics": {
+      "headers": 129,
+      "code_blocks": 100,
+      "links": 10,
+      "images": 0,
+      "tables": 22,
+      "lists": 142
+    },
+    "score": 50.0
+  },
+  "docs/user/README.md": {
+    "file_type": "markdown",
+    "size_bytes": 10650,
+    "lines_total": 297,
+    "lines_empty": 61,
+    "characters": 10630,
+    "metrics": {
+      "headers": 55,
+      "code_blocks": 0,
+      "links": 8,
+      "images": 0,
+      "tables": 0,
+      "lists": 98
+    },
+    "score": 23.0
+  },
+  "docs/admin/README.md": {
+    "file_type": "markdown",
+    "size_bytes": 20186,
+    "lines_total": 613,
+    "lines_empty": 112,
+    "characters": 20182,
+    "metrics": {
+      "headers": 109,
+      "code_blocks": 0,
+      "links": 10,
+      "images": 0,
+      "tables": 0,
+      "lists": 268
+    },
+    "score": 25.0
+  }
+}
