@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['ambient', 'hiphop', 'disco'].includes(track.category)
             );
             
+            // Add titles to radio tracks based on filenames
+            mainRadioPlaylist = mainRadioPlaylist.map(track => ({
+                ...track,
+                title: generateTitleFromFilename(track.file),
+                url: track.file // Map file to url for compatibility
+            }));
+            
             // Create podcast playlist with thematic titles based on categories
             const categoryTitles = {
                 'barbara': [
@@ -54,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     podcastPlaylist.push({
                         id: `${category}_${index}`,
                         title: titles[titleIndex] || `${category} - Część ${index + 1}`,
-                        file: track.url,
+                        file: track.file,
                         category: categoryIndex === 0 ? 'cases' : 'analysis',
                         duration: `${15 + Math.floor(Math.random() * 20)}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`,
                         description: `Głęboka analiza nagrań z kategorii ${category}. Odkrywamy ukryte wzorce manipulacji i przemocy psychicznej.`
@@ -74,6 +81,29 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fallback to default playlist if loading fails
             initializeFallbackPlaylist();
         }
+    }
+
+    // Helper function to generate titles from filenames
+    function generateTitleFromFilename(filepath) {
+        if (filepath === null || filepath === undefined || typeof filepath !== 'string') return 'Utwór bez tytułu';
+        
+        // Extract filename from path
+        const filename = filepath.split('/').pop();
+        if (!filename) return 'Utwór bez tytułu';
+        
+        // Remove extension and clean up
+        let title = filename.replace(/\.mp3$/i, '');
+        
+        // Handle specific patterns like "Utwor (1)" -> "Utwór 1"
+        title = title.replace(/Utwor\s*\((\d+)\)/i, 'Utwór $1');
+        
+        // Clean up underscores and special characters
+        title = title.replace(/_/g, ' ');
+        
+        // Capitalize first letter of each word
+        title = title.replace(/\b\w/g, l => l.toUpperCase());
+        
+        return title || 'Utwór bez tytułu';
     }
 
     function initializeFallbackPlaylist() {
