@@ -320,11 +320,11 @@
                                     </filter>
                                 </defs>
                                 <path id="infinity-path" d="M50,50 C50,0 150,100 150,50 C150,0 50,100 50,50 Z" filter="url(#glow)" />
-                                <g id="avatar-d" class="avatar-group">
+                                <g id="avatar-d" class="avatar-group" tabindex="0" role="button" aria-label="Avatar D - przeciągnij aby kontynuować cykl przemocy">
                                     <circle class="avatar" cx="0" cy="0" r="15" fill="var(--color-primary)" stroke="#fde047" stroke-width="3"></circle>
                                     <text class="avatar-label" x="0" y="0" dy=".3em">D</text>
                                 </g>
-                                <g id="avatar-b" class="avatar-group">
+                                <g id="avatar-b" class="avatar-group" tabindex="0" role="button" aria-label="Avatar B - manipulator w cyklu przemocy">
                                     <circle class="avatar" cx="0" cy="0" r="15" fill="var(--color-secondary)" stroke="#fca5a5" stroke-width="3"></circle>
                                     <text class="avatar-label" x="0" y="0" dy=".3em">B</text>
                                 </g>
@@ -332,9 +332,21 @@
                         </div>
                         
                         <div class="bg-black/60 rounded-xl p-6 backdrop-blur-sm border border-amber-500/30">
-                            <div id="timeline-description" class="text-amber-300 italic text-lg min-h-[4em] mb-4">
+                            <div id="timeline-description" class="text-amber-300 italic text-lg min-h-[4em] mb-4 transition-colors duration-500">
                                 Przeciągnij kule energii, by poczuć napięcie w pętli fatum...
                             </div>
+                            
+                            <!-- Usage Instructions -->
+                            <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-600">
+                                <h4 class="text-amber-400 font-semibold mb-2">Jak używać:</h4>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li><i class="fas fa-mouse-pointer mr-2 text-amber-500"></i>Przeciągnij avatary myszą</li>
+                                    <li><i class="fas fa-keyboard mr-2 text-amber-500"></i>Użyj strzałek do nawigacji</li>
+                                    <li><i class="fas fa-play mr-2 text-amber-500"></i>Spacja/Enter = auto-play</li>
+                                    <li><i class="fas fa-universal-access mr-2 text-amber-500"></i>Tab = przełączanie focus</li>
+                                </ul>
+                            </div>
+                            
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                                 <div class="text-center">
                                     <div class="w-4 h-4 bg-green-500 rounded-full mx-auto mb-2"></div>

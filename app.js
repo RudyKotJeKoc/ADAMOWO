@@ -300,21 +300,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const avatarB = doc.getElementById('avatar-b');
     const description = doc.getElementById('timeline-description');
     const stages = [
-        { range: [0, 0.25], text: "Początek dewaluacji: pojawiają się pierwsze drobne uszczypliwości i krytyka." },
-        { range: [0.25, 0.5], text: "Eskalacja: otwarty konflikt i gaslighting. Ofiara traci poczucie rzeczywistości." },
-        { range: [0.5, 0.75], text: "Faza odrzucenia: manipulator odsuwa się, karząc ofiarę ciszą lub odejściem." },
-        { range: [0.75, 1.0], text: "Powrót do idealizacji (hoovering): manipulator wraca, obiecując poprawę." }
+        { range: [0, 0.25], text: "Początek dewaluacji: pojawiają się pierwsze drobne uszczypliwości i krytyka.", color: "text-green-400" },
+        { range: [0.25, 0.5], text: "Eskalacja: otwarty konflikt i gaslighting. Ofiara traci poczucie rzeczywistości.", color: "text-yellow-400" },
+        { range: [0.5, 0.75], text: "Faza odrzucenia: manipulator odsuwa się, karząc ofiarę ciszą lub odejściem.", color: "text-red-400" },
+        { range: [0.75, 1.0], text: "Powrót do idealizacji (hoovering): manipulator wraca, obiecując poprawę.", color: "text-purple-400" }
     ];
+    
+    let currentProgress = 0;
+    
     function updateTimelineState(progress) {
+        currentProgress = progress;
         progress = (progress + 1) % 1;
         gsap.set(avatarD, { motionPath: { path, align: path, alignOrigin: [0.5, 0.5], end: progress } });
         gsap.set(avatarB, { motionPath: { path, align: path, alignOrigin: [0.5, 0.5], end: (progress + 0.5) % 1 } });
         const currentStage = stages.find(s => progress >= s.range[0] && progress < s.range[1]) || stages[0];
         description.textContent = currentStage.text;
+        description.className = `${currentStage.color} italic text-lg min-h-[4em] mb-4 transition-colors duration-500`;
         const manipulatorProgress = (progress + 0.5) % 1;
         avatarB.classList.toggle('fire-active', manipulatorProgress > 0.25 && manipulatorProgress < 0.75);
     }
-    Draggable.create([avatarD, avatarB], { type:"motionPath", motionPath: { path, align: path }, onDrag: function() { let p = (this.target === avatarB) ? this.progress - 0.5 : this.progress; updateTimelineState(p); } });
+    
+    // Enhanced drag functionality with keyboard support
+    Draggable.create([avatarD, avatarB], { 
+        type: "motionPath", 
+        motionPath: { path, align: path },
+        onDrag: function() { 
+            let p = (this.target === avatarB) ? this.progress - 0.5 : this.progress;
+            updateTimelineState(p);
+        },
+        onDragStart: function() {
+            this.target.style.cursor = 'grabbing';
+        },
+        onDragEnd: function() {
+            this.target.style.cursor = 'grab';
+        }
+    });
+    
+    // Keyboard accessibility for avatar control
+    function addKeyboardSupport(avatar, step = 0.05) {
+        avatar.addEventListener('keydown', (e) => {
+            let newProgress = currentProgress;
+            switch(e.key) {
+                case 'ArrowRight':
+                case 'ArrowDown':
+                    e.preventDefault();
+                    newProgress = Math.min(1, currentProgress + step);
+                    break;
+                case 'ArrowLeft':  
+                case 'ArrowUp':
+                    e.preventDefault();
+                    newProgress = Math.max(0, currentProgress - step);
+                    break;
+                case ' ':
+                case 'Enter':
+                    e.preventDefault();
+                    // Auto-play animation
+                    gsap.to({ progress: currentProgress }, {
+                        progress: currentProgress + 0.25,
+                        duration: 2,
+                        onUpdate: function() {
+                            updateTimelineState(this.targets()[0].progress % 1);
+                        }
+                    });
+                    return;
+            }
+            
+            if (newProgress !== currentProgress) {
+                updateTimelineState(newProgress);
+            }
+        });
+    }
+    
+    addKeyboardSupport(avatarD);
+    addKeyboardSupport(avatarB);
     updateTimelineState(0);
 
     // --- Calendar & Modal Logic ---
