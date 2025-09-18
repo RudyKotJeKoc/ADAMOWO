@@ -64,6 +64,92 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- HLS Stream Support ---
+    let hls = null;
+    const STREAM_URL = 'https://stream.radioadamowo.pl/live.m3u8';
+    const FALLBACK_URL = 'https://backup.radioadamowo.pl/stream';
+
+    function initializeHLS() {
+        if (typeof Hls !== 'undefined') {
+            if (Hls.isSupported()) {
+                // Use HLS.js for browsers that support MSE
+                hls = new Hls({
+                    debug: false,
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                    backBufferLength: 90
+                });
+                
+                hls.loadSource(STREAM_URL);
+                hls.attachMedia(radioPlayer);
+                
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    console.log('HLS manifest loaded successfully');
+                    radioCurrentSongEl.textContent = 'Radio Adamowo - Na żywo';
+                });
+                
+                hls.on(Hls.Events.ERROR, (event, data) => {
+                    console.warn('HLS error:', data);
+                    if (data.fatal) {
+                        if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                            console.log('Retrying HLS connection...');
+                            hls.startLoad();
+                        } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                            console.log('Attempting HLS recovery...');
+                            hls.recoverMediaError();
+                        } else {
+                            // Try fallback stream
+                            console.log('HLS failed, trying fallback stream...');
+                            radioPlayer.src = FALLBACK_URL;
+                        }
+                    }
+                });
+                
+                return true;
+            } else if (radioPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+                // Safari native HLS support
+                radioPlayer.src = STREAM_URL;
+                radioCurrentSongEl.textContent = 'Radio Adamowo - Na żywo (Safari)';
+                console.log('Using native HLS support');
+                return true;
+            }
+        }
+        
+        // Fallback for browsers without HLS support
+        console.log('No HLS support, using fallback stream');
+        radioPlayer.src = FALLBACK_URL;
+        radioCurrentSongEl.textContent = 'Radio Adamowo - Fallback Stream';
+        return false;
+    }
+
+    // --- Stream Controls ---
+    function playLiveStream() {
+        if (!isAudioInitialized) {
+            initializeAudio().then(() => playLiveStream());
+            return;
+        }
+        
+        if (!hls && typeof Hls !== 'undefined') {
+            initializeHLS();
+        }
+        
+        radioPlayer.play().catch(error => {
+            console.error('Stream playback error:', error);
+            radioCurrentSongEl.textContent = 'Błąd odtwarzania strumienia';
+        });
+        
+        isPlaying = true;
+        radioPlayIcon.style.display = 'none';
+        radioPauseIcon.style.display = 'block';
+    }
+
+    function pauseLiveStream() {
+        radioPlayer.pause();
+        isPlaying = false;
+        radioPlayIcon.style.display = 'block';
+        radioPauseIcon.style.display = 'none';
+    }
+
     // --- Main Playlist Loading ---
     async function loadMainPlaylist() {
         try {
@@ -126,21 +212,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function togglePlayPause() {
-        if (!isAudioInitialized) return;
+        if (!isAudioInitialized) {
+            initializeAudio().then(() => togglePlayPause());
+            return;
+        }
 
         if (radioPlayer.paused) {
-            if (currentRadioPlaylist.length === 0) {
-                 loadMainPlaylist().then(() => playRadioTrack(0));
+            // Check if we should play live stream or playlist
+            const playlistSelect = doc.getElementById('playlist-select');
+            if (playlistSelect.value === 'live') {
+                playLiveStream();
             } else {
-                // If there is a src, just play, otherwise start from the first track
-                if (radioPlayer.src) {
-                    radioPlayer.play();
+                // Playlist mode
+                if (currentRadioPlaylist.length === 0) {
+                    loadMainPlaylist().then(() => playRadioTrack(0));
                 } else {
-                    playRadioTrack(currentRadioIndex);
+                    // If there is a src, just play, otherwise start from the first track
+                    if (radioPlayer.src) {
+                        radioPlayer.play();
+                    } else {
+                        playRadioTrack(currentRadioIndex);
+                    }
                 }
             }
         } else {
-            radioPlayer.pause();
+            pauseLiveStream();
         }
     }
     
@@ -347,6 +443,20 @@ document.addEventListener('DOMContentLoaded', () => {
     radioPlayPauseBtn.addEventListener('click', togglePlayPause);
     radioNextBtn.addEventListener('click', () => playRadioTrack(currentRadioIndex + 1));
     radioPrevBtn.addEventListener('click', () => playRadioTrack(currentRadioIndex - 1));
+
+    // Playlist selector
+    doc.getElementById('playlist-select').addEventListener('change', (e) => {
+        const selectedValue = e.target.value;
+        if (selectedValue === 'live') {
+            // Clear any existing playlist and prepare for live stream
+            currentRadioPlaylist = [];
+            radioCurrentSongEl.textContent = 'Radio Adamowo - Gotowe do transmisji na żywo';
+            e.target.setAttribute('data-stream', 'live');
+        } else {
+            e.target.removeAttribute('data-stream');
+            setRadioPlaylist(selectedValue);
+        }
+    });
     radioPlayer.addEventListener('ended', () => playRadioTrack(currentRadioIndex + 1));
 
     radioPlayer.addEventListener('play', () => {

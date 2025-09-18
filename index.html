@@ -10,7 +10,7 @@
     <meta property="og:description" content="Analizujemy rodzinną historię jako studium przypadku manipulacji, narcyzmu i toksycznych zachowań.">
     <meta property="og:type" content="website">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50,10 L90,45 L80,45 L80,90 L60,90 L60,60 L40,60 L40,90 L20,90 L20,45 L10,45 Z' fill='%23f59e0b'/><circle cx='60' cy='75' r='5' fill='%23ef4444'/></svg>">
+    <link rel="icon" href="/images/icons/favicon.svg">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,9 +30,12 @@
     <!-- Chart.js for data visualization -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- HLS.js for live streaming support -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="antialiased">
+<body class="antialiased bg-wave-pattern">
     <!-- Loading Screen -->
     <div id="loading-screen" class="fixed inset-0 bg-black z-[200] flex items-center justify-center">
         <div class="text-center">
@@ -55,17 +58,17 @@
     <!-- Calendar Modal Structure -->
     <div id="calendar-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="modal-backdrop hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4">
         <div class="modal-content w-full max-w-lg bg-gray-900 border border-amber-500 rounded-lg shadow-xl p-6 relative">
-            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="Zamknij okno kalendarza">
                 <i class="fas fa-times text-xl"></i>
             </button>
             <h3 id="modal-title" class="text-2xl font-bold special-elite text-amber-400 mb-4">Notatki z dnia: <span id="modal-date"></span></h3>
             <div id="modal-notes-display" class="space-y-3 mb-4 max-h-48 overflow-y-auto pr-2"></div>
             <form id="modal-note-form">
-                <input type="text" id="modal-name-input" class="w-full bg-gray-800 border border-gray-600 rounded-md p-2 mb-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Twoje imię lub pseudonim" required maxlength="50">
-                <textarea id="modal-note-input" class="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500" rows="3" placeholder="Dodaj nową czerwoną flagę..." required maxlength="1000"></textarea>
+                <input type="text" id="modal-name-input" class="w-full bg-gray-800 border border-gray-600 rounded-md p-2 mb-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Twoje imię lub pseudonim" required maxlength="50" aria-label="Podaj swoje imię lub pseudonim">
+                <textarea id="modal-note-input" class="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500" rows="3" placeholder="Dodaj nową czerwoną flagę..." required maxlength="1000" aria-label="Wpisz swoją notatkę lub obserwację"></textarea>
                 <div id="modal-feedback" class="text-sm mt-2 min-h-[1.25rem]"></div>
                 <div class="flex justify-end items-center mt-4 space-x-3">
-                    <button type="submit" class="px-4 py-2 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-md transition">
+                    <button type="submit" class="px-4 py-2 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-md transition" aria-label="Zapisz notatkę do kalendarza">
                         <i class="fas fa-save mr-2"></i>Zapisz Notatkę
                     </button>
                 </div>
@@ -139,10 +142,10 @@
                     <li><a href="#community" class="nav-link"><i class="fas fa-users mr-2"></i>Społeczność</a></li>
                 </ul>
                 <div class="flex items-center space-x-4">
-                    <button id="theme-toggle" class="text-gray-300 hover:text-amber-400 transition">
+                    <button id="theme-toggle" class="text-gray-300 hover:text-amber-400 transition" aria-label="Przełącz motyw kolorystyczny">
                         <i class="fas fa-moon text-xl"></i>
                     </button>
-                    <button id="stats-btn" class="text-gray-300 hover:text-cyan-400 transition">
+                    <button id="stats-btn" class="text-gray-300 hover:text-cyan-400 transition" aria-label="Zobacz statystyki aplikacji">
                         <i class="fas fa-chart-line text-xl"></i>
                     </button>
                     <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-white focus:outline-none" aria-label="Otwórz menu">
@@ -269,7 +272,8 @@
                     <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
                         <div class="flex items-center space-x-4">
                             <span class="text-gray-400 text-sm">Playlista:</span>
-                            <select id="playlist-select" class="bg-gray-800 text-white rounded px-3 py-1 text-sm border border-gray-600">
+                            <select id="playlist-select" class="bg-gray-800 text-white rounded px-3 py-1 text-sm border border-gray-600" aria-label="Wybierz playlistę lub transmisję na żywo">
+                                <option value="live" data-stream="live">🔴 Na Żywo</option>
                                 <option value="ambient">Ambient</option>
                                 <option value="disco">Disco</option>
                                 <option value="hiphop">Hip-Hop</option>
