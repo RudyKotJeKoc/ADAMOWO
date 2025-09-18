@@ -9,18 +9,81 @@ body.modal-open {
     overflow: hidden; 
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-text);
+/* SVG Pattern Background */
+.bg-wave-pattern {
     background-image: 
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><path d="M 25 50 A 25 25 0 1 1 50 50 A 25 25 0 1 1 75 50 A 25 25 0 1 0 50 50 A 25 25 0 1 0 25 50" fill="none" stroke="%23f59e0b" stroke-width="1"/></svg>'),
         radial-gradient(ellipse at center, rgba(17, 24, 39, 0.95) 0%, #000 70%);
     background-attachment: fixed;
 }
 
-.special-elite { 
-    font-family: 'Special Elite', cursive; 
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Enhanced Infinity Timeline Styles */
+#infinity-timeline-container .avatar-group {
+    cursor: grab;
+    transition: all 0.2s ease;
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));
+}
+
+#infinity-timeline-container .avatar-group:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.8));
+}
+
+#infinity-timeline-container .avatar-group:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.7));
+}
+
+#infinity-timeline-container .fire-active {
+    animation: fireFlicker 1.5s infinite alternate;
+}
+
+@keyframes fireFlicker {
+    0% { filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8)); }
+    100% { filter: drop-shadow(0 0 25px rgba(239, 68, 68, 1)); }
+}
+
+#infinity-path {
+    stroke: #f59e0b;
+    stroke-width: 2;
+    fill: none;
+    opacity: 0.8;
+}
+
+.witch-hut-container {
+    background-image: 
+        radial-gradient(circle at 30% 70%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
+}
+
+/* Timeline Description Enhancement */
+#timeline-description {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1));
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Calendar Enhancement */
+#calendar-container .flatpickr-calendar {
+    background: rgba(17, 24, 39, 0.95) !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    backdrop-filter: blur(10px);
+}
+
+.flatpickr-day.selected {
+    background: rgba(239, 68, 68, 0.8) !important;
+    color: white !important;
+}
+
+.flatpickr-day:hover {
+    background: rgba(245, 158, 11, 0.3) !important;
 }
 
 /* --- Studio Background --- */

@@ -64,6 +64,92 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- HLS Stream Support ---
+    let hls = null;
+    const STREAM_URL = 'https://stream.radioadamowo.pl/live.m3u8';
+    const FALLBACK_URL = 'https://backup.radioadamowo.pl/stream';
+
+    function initializeHLS() {
+        if (typeof Hls !== 'undefined') {
+            if (Hls.isSupported()) {
+                // Use HLS.js for browsers that support MSE
+                hls = new Hls({
+                    debug: false,
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                    backBufferLength: 90
+                });
+                
+                hls.loadSource(STREAM_URL);
+                hls.attachMedia(radioPlayer);
+                
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    console.log('HLS manifest loaded successfully');
+                    radioCurrentSongEl.textContent = 'Radio Adamowo - Na żywo';
+                });
+                
+                hls.on(Hls.Events.ERROR, (event, data) => {
+                    console.warn('HLS error:', data);
+                    if (data.fatal) {
+                        if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                            console.log('Retrying HLS connection...');
+                            hls.startLoad();
+                        } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                            console.log('Attempting HLS recovery...');
+                            hls.recoverMediaError();
+                        } else {
+                            // Try fallback stream
+                            console.log('HLS failed, trying fallback stream...');
+                            radioPlayer.src = FALLBACK_URL;
+                        }
+                    }
+                });
+                
+                return true;
+            } else if (radioPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+                // Safari native HLS support
+                radioPlayer.src = STREAM_URL;
+                radioCurrentSongEl.textContent = 'Radio Adamowo - Na żywo (Safari)';
+                console.log('Using native HLS support');
+                return true;
+            }
+        }
+        
+        // Fallback for browsers without HLS support
+        console.log('No HLS support, using fallback stream');
+        radioPlayer.src = FALLBACK_URL;
+        radioCurrentSongEl.textContent = 'Radio Adamowo - Fallback Stream';
+        return false;
+    }
+
+    // --- Stream Controls ---
+    function playLiveStream() {
+        if (!isAudioInitialized) {
+            initializeAudio().then(() => playLiveStream());
+            return;
+        }
+        
+        if (!hls && typeof Hls !== 'undefined') {
+            initializeHLS();
+        }
+        
+        radioPlayer.play().catch(error => {
+            console.error('Stream playback error:', error);
+            radioCurrentSongEl.textContent = 'Błąd odtwarzania strumienia';
+        });
+        
+        isPlaying = true;
+        radioPlayIcon.style.display = 'none';
+        radioPauseIcon.style.display = 'block';
+    }
+
+    function pauseLiveStream() {
+        radioPlayer.pause();
+        isPlaying = false;
+        radioPlayIcon.style.display = 'block';
+        radioPauseIcon.style.display = 'none';
+    }
+
     // --- Main Playlist Loading ---
     async function loadMainPlaylist() {
         try {
@@ -126,21 +212,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function togglePlayPause() {
-        if (!isAudioInitialized) return;
+        if (!isAudioInitialized) {
+            initializeAudio().then(() => togglePlayPause());
+            return;
+        }
 
         if (radioPlayer.paused) {
-            if (currentRadioPlaylist.length === 0) {
-                 loadMainPlaylist().then(() => playRadioTrack(0));
+            // Check if we should play live stream or playlist
+            const playlistSelect = doc.getElementById('playlist-select');
+            if (playlistSelect.value === 'live') {
+                playLiveStream();
             } else {
-                // If there is a src, just play, otherwise start from the first track
-                if (radioPlayer.src) {
-                    radioPlayer.play();
+                // Playlist mode
+                if (currentRadioPlaylist.length === 0) {
+                    loadMainPlaylist().then(() => playRadioTrack(0));
                 } else {
-                    playRadioTrack(currentRadioIndex);
+                    // If there is a src, just play, otherwise start from the first track
+                    if (radioPlayer.src) {
+                        radioPlayer.play();
+                    } else {
+                        playRadioTrack(currentRadioIndex);
+                    }
                 }
             }
         } else {
-            radioPlayer.pause();
+            pauseLiveStream();
         }
     }
     
@@ -204,21 +300,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const avatarB = doc.getElementById('avatar-b');
     const description = doc.getElementById('timeline-description');
     const stages = [
-        { range: [0, 0.25], text: "Początek dewaluacji: pojawiają się pierwsze drobne uszczypliwości i krytyka." },
-        { range: [0.25, 0.5], text: "Eskalacja: otwarty konflikt i gaslighting. Ofiara traci poczucie rzeczywistości." },
-        { range: [0.5, 0.75], text: "Faza odrzucenia: manipulator odsuwa się, karząc ofiarę ciszą lub odejściem." },
-        { range: [0.75, 1.0], text: "Powrót do idealizacji (hoovering): manipulator wraca, obiecując poprawę." }
+        { range: [0, 0.25], text: "Początek dewaluacji: pojawiają się pierwsze drobne uszczypliwości i krytyka.", color: "text-green-400" },
+        { range: [0.25, 0.5], text: "Eskalacja: otwarty konflikt i gaslighting. Ofiara traci poczucie rzeczywistości.", color: "text-yellow-400" },
+        { range: [0.5, 0.75], text: "Faza odrzucenia: manipulator odsuwa się, karząc ofiarę ciszą lub odejściem.", color: "text-red-400" },
+        { range: [0.75, 1.0], text: "Powrót do idealizacji (hoovering): manipulator wraca, obiecując poprawę.", color: "text-purple-400" }
     ];
+    
+    let currentProgress = 0;
+    
     function updateTimelineState(progress) {
+        currentProgress = progress;
         progress = (progress + 1) % 1;
         gsap.set(avatarD, { motionPath: { path, align: path, alignOrigin: [0.5, 0.5], end: progress } });
         gsap.set(avatarB, { motionPath: { path, align: path, alignOrigin: [0.5, 0.5], end: (progress + 0.5) % 1 } });
         const currentStage = stages.find(s => progress >= s.range[0] && progress < s.range[1]) || stages[0];
         description.textContent = currentStage.text;
+        description.className = `${currentStage.color} italic text-lg min-h-[4em] mb-4 transition-colors duration-500`;
         const manipulatorProgress = (progress + 0.5) % 1;
         avatarB.classList.toggle('fire-active', manipulatorProgress > 0.25 && manipulatorProgress < 0.75);
     }
-    Draggable.create([avatarD, avatarB], { type:"motionPath", motionPath: { path, align: path }, onDrag: function() { let p = (this.target === avatarB) ? this.progress - 0.5 : this.progress; updateTimelineState(p); } });
+    
+    // Enhanced drag functionality with keyboard support
+    Draggable.create([avatarD, avatarB], { 
+        type: "motionPath", 
+        motionPath: { path, align: path },
+        onDrag: function() { 
+            let p = (this.target === avatarB) ? this.progress - 0.5 : this.progress;
+            updateTimelineState(p);
+        },
+        onDragStart: function() {
+            this.target.style.cursor = 'grabbing';
+        },
+        onDragEnd: function() {
+            this.target.style.cursor = 'grab';
+        }
+    });
+    
+    // Keyboard accessibility for avatar control
+    function addKeyboardSupport(avatar, step = 0.05) {
+        avatar.addEventListener('keydown', (e) => {
+            let newProgress = currentProgress;
+            switch(e.key) {
+                case 'ArrowRight':
+                case 'ArrowDown':
+                    e.preventDefault();
+                    newProgress = Math.min(1, currentProgress + step);
+                    break;
+                case 'ArrowLeft':  
+                case 'ArrowUp':
+                    e.preventDefault();
+                    newProgress = Math.max(0, currentProgress - step);
+                    break;
+                case ' ':
+                case 'Enter':
+                    e.preventDefault();
+                    // Auto-play animation
+                    gsap.to({ progress: currentProgress }, {
+                        progress: currentProgress + 0.25,
+                        duration: 2,
+                        onUpdate: function() {
+                            updateTimelineState(this.targets()[0].progress % 1);
+                        }
+                    });
+                    return;
+            }
+            
+            if (newProgress !== currentProgress) {
+                updateTimelineState(newProgress);
+            }
+        });
+    }
+    
+    addKeyboardSupport(avatarD);
+    addKeyboardSupport(avatarB);
     updateTimelineState(0);
 
     // --- Calendar & Modal Logic ---
@@ -347,6 +501,20 @@ document.addEventListener('DOMContentLoaded', () => {
     radioPlayPauseBtn.addEventListener('click', togglePlayPause);
     radioNextBtn.addEventListener('click', () => playRadioTrack(currentRadioIndex + 1));
     radioPrevBtn.addEventListener('click', () => playRadioTrack(currentRadioIndex - 1));
+
+    // Playlist selector
+    doc.getElementById('playlist-select').addEventListener('change', (e) => {
+        const selectedValue = e.target.value;
+        if (selectedValue === 'live') {
+            // Clear any existing playlist and prepare for live stream
+            currentRadioPlaylist = [];
+            radioCurrentSongEl.textContent = 'Radio Adamowo - Gotowe do transmisji na żywo';
+            e.target.setAttribute('data-stream', 'live');
+        } else {
+            e.target.removeAttribute('data-stream');
+            setRadioPlaylist(selectedValue);
+        }
+    });
     radioPlayer.addEventListener('ended', () => playRadioTrack(currentRadioIndex + 1));
 
     radioPlayer.addEventListener('play', () => {
