@@ -25,6 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
             { title: 'Hip-Hop Flow #1', artist: 'Various Artists', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3' },
             { title: 'Hip-Hop Flow #2', artist: 'Various Artists', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3' },
         ],
+        hits: [
+            { title: 'Midnight Radio', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
+            { title: 'Echoes of Truth', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' },
+            { title: 'Breaking the Cycle', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' },
+            { title: 'Red Flag Symphony', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' },
+            { title: 'Voice of Liberation', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3' },
+            { title: 'Patterns in the Dark', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3' },
+            { title: 'Healing Frequencies', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3' },
+            { title: 'Beyond the Manipulation', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3' },
+            { title: 'Rise Above', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3' },
+            { title: 'Freedom Signal', artist: 'Radio Adamowo', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3' }
+        ],
         podcasts: [
             { id: 'sprawaAdamskich', title: "Sprawa Adamskich: Wprowadzenie", url: 'audio/Adamskich_Sprawa.mp3' },
             { id: 'niewdziecznosc', title: "'Rażąca Niewdzięczność': Broń Narcyza", url: 'audio/Rażąca_Niewdzięczność.mp3' },
@@ -96,7 +108,26 @@ document.addEventListener('DOMContentLoaded', () => {
         currentRadioPlaylist = [...(playlists[playlistKey] || [])];
         shuffleArray(currentRadioPlaylist);
         currentRadioIndex = 0;
-        doc.getElementById('radio-current-song').textContent = `Wybrano playlistę: ${playlistKey}.`;
+        
+        // Update display based on playlist type
+        const playlistNames = {
+            ambient: 'Ambient',
+            disco: 'Disco Fever',
+            hiphop: 'Hip-Hop Flow',
+            hits: 'Lista Hitów',
+            podcasts: 'Podcasty'
+        };
+        const displayName = playlistNames[playlistKey] || playlistKey;
+        doc.getElementById('radio-current-song').textContent = `Wybrano playlistę: ${displayName}. Naciśnij play, aby rozpocząć.`;
+        
+        // Prepare first track for immediate playback
+        if (currentRadioPlaylist.length > 0 && isAudioInitialized) {
+            const track = currentRadioPlaylist[currentRadioIndex];
+            radioPlayer.src = track.url;
+            radioPlayer.preload = 'metadata';
+        }
+        
+        // If currently playing, switch to new playlist immediately
         if (isPlaying) {
             playRadioTrack(0);
         }
@@ -130,14 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (radioPlayer.paused) {
             if (currentRadioPlaylist.length === 0) {
-                 loadMainPlaylist().then(() => playRadioTrack(0));
+                // Load default playlist if none selected
+                loadMainPlaylist().then(() => playRadioTrack(0));
             } else {
-                // If there is a src, just play, otherwise start from the first track
-                if (radioPlayer.src) {
-                    radioPlayer.play();
-                } else {
-                    playRadioTrack(currentRadioIndex);
-                }
+                // Playlist is selected, start playing
+                playRadioTrack(currentRadioIndex);
             }
         } else {
             radioPlayer.pause();

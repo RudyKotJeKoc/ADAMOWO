@@ -162,6 +162,7 @@
                 <button data-playlist="ambient" class="playlist-btn bg-amber-800 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded transition">Ambient</button>
                 <button data-playlist="disco" class="playlist-btn bg-pink-600 hover:bg-pink-500 text-white font-semibold py-2 px-4 rounded transition">Disco Fever</button>
                 <button data-playlist="hiphop" class="playlist-btn bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition">Hip-Hop Flow</button>
+                <button data-playlist="hits" class="playlist-btn bg-red-600 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded transition">🔥 Lista Hitów</button>
                 <button data-playlist="kids" class="playlist-btn bg-green-600 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded transition">Kids Beats</button>
             </div>
             <div class="flex items-center justify-center space-x-4 my-4">
@@ -339,6 +340,18 @@
                 disco: [{ title: 'Disco Fever #1', file: 'music/disco/track1.mp3' }],
                 hiphop: [{ title: 'Hip-Hop Flow #1', file: 'music/hiphop/track1.mp3' }],
                 kids: [{ title: 'Kids Beats #1', file: 'music/kids/track1.mp3' }],
+                hits: [
+                    { title: 'Midnight Radio', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
+                    { title: 'Echoes of Truth', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' },
+                    { title: 'Breaking the Cycle', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' },
+                    { title: 'Red Flag Symphony', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' },
+                    { title: 'Voice of Liberation', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3' },
+                    { title: 'Patterns in the Dark', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3' },
+                    { title: 'Healing Frequencies', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3' },
+                    { title: 'Beyond the Manipulation', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3' },
+                    { title: 'Rise Above', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3' },
+                    { title: 'Freedom Signal', file: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3' }
+                ],
                 podcasts: [
                     { id: 'sprawaAdamskich', title: "Sprawa Adamskich: Wprowadzenie", file: 'audio/Adamskich_Sprawa.mp3' },
                     { id: 'niewdziecznosc', title: "'Rażąca Niewdzięczność': Broń Narcyza", file: 'audio/Rażąca_Niewdzięczność.mp3' },
@@ -374,7 +387,25 @@
                 currentRadioPlaylist = [...(playlists[key] || [])];
                 shuffleArray(currentRadioPlaylist);
                 currentRadioIndex = 0;
-                doc.getElementById('radio-current-song').textContent = `Wybrano: ${key}. Naciśnij play.`;
+                
+                // Update display with better playlist names
+                const playlistNames = {
+                    ambient: 'Ambient',
+                    disco: 'Disco Fever',
+                    hiphop: 'Hip-Hop Flow',
+                    hits: 'Lista Hitów',
+                    kids: 'Kids Beats',
+                    podcasts: 'Podcasty'
+                };
+                const displayName = playlistNames[key] || key;
+                doc.getElementById('radio-current-song').textContent = `Wybrano playlistę: ${displayName}. Naciśnij play, aby rozpocząć.`;
+                
+                // Prepare first track for smoother playback
+                if (currentRadioPlaylist.length > 0) {
+                    const track = currentRadioPlaylist[currentRadioIndex];
+                    radioPlayer.src = track.file;
+                    radioPlayer.preload = 'metadata';
+                }
             }
 
             function shuffleArray(array) {
@@ -386,6 +417,10 @@
 
             function toggleRadioPlay() {
                 if (radioPlayer.paused) {
+                    // If no playlist is loaded, load default ambient playlist
+                    if (!currentRadioPlaylist.length) {
+                        setRadioPlaylist('ambient');
+                    }
                     playRadioTrack(currentRadioIndex);
                 } else {
                     radioPlayer.pause();
@@ -393,14 +428,23 @@
             }
 
             function playRadioTrack(index) {
-                if (!currentRadioPlaylist.length) return;
+                if (!currentRadioPlaylist.length) {
+                    doc.getElementById('radio-current-song').textContent = 'Nie wybrano żadnej playlisty. Wybierz styl muzyki.';
+                    return;
+                }
+                
                 currentRadioIndex = (index + currentRadioPlaylist.length) % currentRadioPlaylist.length;
                 const track = currentRadioPlaylist[currentRadioIndex];
+                
                 if (track) {
-                    podcastPlayer.pause();
+                    podcastPlayer.pause(); // Stop podcast if playing
                     radioPlayer.src = track.file;
                     doc.getElementById('radio-current-song').textContent = track.title;
-                    radioPlayer.play().catch(e => console.error("Błąd odtwarzania radia:", e));
+                    
+                    radioPlayer.play().catch(e => {
+                        console.error("Błąd odtwarzania radia:", e);
+                        doc.getElementById('radio-current-song').textContent = 'Błąd odtwarzania: ' + track.title;
+                    });
                 }
             }
             
