@@ -1,6 +1,75 @@
-# Radio Adamowo - Educational Web Radio
+# Radio Adamowo - Professional Educational Web Radio
 
 🎵 **Modern Progressive Web Application** for educational content about psychological manipulation and toxic relationships.
+
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/RudyKotJeKoc/ADAMOWO)
+[![Security Status](https://img.shields.io/badge/security-enhanced-green)](https://github.com/RudyKotJeKoc/ADAMOWO)
+[![PWA Ready](https://img.shields.io/badge/PWA-ready-blue)](https://github.com/RudyKotJeKoc/ADAMOWO)
+[![Multi-language](https://img.shields.io/badge/i18n-pl%20%7C%20en%20%7C%20nl-orange)](https://github.com/RudyKotJeKoc/ADAMOWO)
+
+## 🚀 Professional Features
+
+### 🔒 **Enterprise-Grade Security**
+- **CSRF Protection**: Complete protection against cross-site request forgery
+- **SQL Injection Prevention**: Prepared statements and input validation
+- **XSS Protection**: Output sanitization and content security policy
+- **Rate Limiting**: Comprehensive rate limiting for API endpoints
+- **Secure Sessions**: HTTPOnly, secure cookies with proper lifetime management
+
+### 🌍 **Multi-language Support**
+- **Polish (pl)**: Native language with complete translations
+- **English (en)**: Full international support
+- **Dutch (nl)**: Additional European language support
+- **Automatic Detection**: Browser language detection with manual override
+- **Dynamic Switching**: Change language without page reload
+
+### 📻 **Advanced Audio System**
+- **HLS Streaming**: Live stream support with HLS.js
+- **Multiple Fallbacks**: Comprehensive fallback strategy for maximum compatibility
+- **Web Audio API**: Real-time audio visualization and processing
+- **Media Session API**: System-level media controls and notifications
+- **Playlist Management**: Categorized playlists with metadata support
+
+### 📱 **Progressive Web App**
+- **Offline Support**: Complete offline functionality with service worker
+- **Installation**: Add to home screen on mobile and desktop
+- **Push Notifications**: Background sync and push notification support
+- **App Shortcuts**: Quick actions from home screen
+- **Responsive Design**: Mobile-first design with desktop optimization
+
+### 🎓 **Educational Content System**
+- **Interactive Calendar**: Event-based content with comment system
+- **Podcast Integration**: Educational podcast episodes with metadata
+- **Content Categories**: Organized content by topics and difficulty
+- **Progress Tracking**: User progress and achievement system
+
+## 🏗 **Architecture Overview**
+
+### **Modular Frontend**
+```
+├── app-optimized.js         # Main application controller
+├── src/
+│   ├── i18n.js             # Internationalization manager
+│   └── plugins.js          # Plugin system architecture
+├── lang/                   # Translation files
+│   ├── pl.json            # Polish translations
+│   ├── en.json            # English translations
+│   └── nl.json            # Dutch translations
+└── sw-optimized.js         # Service worker for PWA features
+```
+
+### **Secure Backend**
+```
+├── api/v1/                 # REST API endpoints
+│   ├── config.php         # API configuration
+│   ├── comments.php       # Comment system API
+│   ├── stream.php         # Streaming API
+│   └── notifications.php  # Push notifications
+├── config-enhanced.php     # Enhanced security configuration
+├── get_comments.php        # Secure comment retrieval
+├── add_comment.php         # Secure comment addition
+└── get_csrf_token.php      # CSRF token generation
+```
 
 ## ✨ Features
 

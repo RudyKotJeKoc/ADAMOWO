@@ -652,8 +652,14 @@ class RadioAdamowoApp {
     async registerServiceWorker() {
         if ('serviceWorker' in navigator) {
             try {
-                const registration = await navigator.serviceWorker.register('/sw-comprehensive.js');
-                console.log('Service Worker registered successfully:', registration);
+                const registration = await navigator.serviceWorker.register('/sw-optimized.js');
+                console.log('Optimized Service Worker registered successfully:', registration);
+                
+                // Handle updates
+                registration.addEventListener('updatefound', () => {
+                    console.log('Service Worker update found');
+                });
+                
             } catch (error) {
                 console.error('Service Worker registration failed:', error);
             }
