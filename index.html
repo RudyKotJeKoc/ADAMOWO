@@ -954,11 +954,11 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/pl.js"></script>
     
-    <!-- Plugin System (New Architecture) -->
-    <script src="./src/plugins.js"></script>
+    <!-- Plugin System (Modular Architecture) -->
+    <script type="module" src="./src/plugins.js"></script>
     
-    <!-- Backward Compatibility: Original Script -->
-    <script src="./script.js"></script>
+    <!-- Main Application (Optimized & Secure) -->
+    <script type="module" src="./app-optimized.js"></script>
     
     <!-- Enhanced Integration Script -->
     <script>
@@ -1037,9 +1037,9 @@
 
         // Service Worker registration for enhanced PWA features
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw-comprehensive.js')
+            navigator.serviceWorker.register('/sw-optimized.js')
                 .then(registration => {
-                    console.log('✓ Enhanced Service Worker registered:', registration);
+                    console.log('✓ Optimized Service Worker registered:', registration);
                     
                     // Listen for push notifications
                     registration.addEventListener('pushsubscriptionchange', event => {

@@ -5,9 +5,23 @@
  */
 
 // Prevent direct access
-if (!defined('RADIO_ADAMOWO_API')) {
+if (!defined('RADIO_ADAMOWO_API') && basename($_SERVER['PHP_SELF']) === 'config-enhanced.php') {
     http_response_code(403);
     exit('Direct access forbidden');
+}
+
+/**
+ * Simple enhanced database connection function for compatibility
+ */
+function get_enhanced_db_connection(): ?mysqli 
+{
+    try {
+        $config = DatabaseConfig::getInstance();
+        return $config->getConnection();
+    } catch (Exception $e) {
+        error_log("Enhanced DB connection failed: " . $e->getMessage());
+        return null;
+    }
 }
 
 class DatabaseConfig {
