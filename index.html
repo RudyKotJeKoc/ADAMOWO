@@ -15,9 +15,6 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50,10 L90,45 L80,45 L80,90 L60,90 L60,60 L40,60 L40,90 L20,90 L20,45 L10,45 Z' fill='%23f59e0b'/><circle cx='60' cy='75' r='5' fill='%23ef4444'/></svg>">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,26 +22,6 @@
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Chart.js for data visualization -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <style>
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .gradient-text { background: linear-gradient(135deg, #f59e0b, #dc2626); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .loading-dots::after { content: ''; animation: dots 1.5s infinite; }
-        @keyframes dots {
-            0%, 20% { content: ''; }
-            40% { content: '.'; }
-            60% { content: '..'; }
-            80%, 100% { content: '...'; }
-        }
-        .pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-    </style>
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen">
     <!-- Header -->
@@ -94,11 +71,11 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="container mx-auto px-6 py-16">
-        <h3 class="text-3xl font-bold text-center mb-12">Główne Funkcje Platformy</h3>
+    <section id="features" class="container mx-auto px-6 py-16" data-fade-in>
+        <h3 class="text-3xl font-bold text-center mb-12" data-fade-in>Główne Funkcje Platformy</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- AI Simulator -->
-            <a href="ai-simulator.html" class="glass p-8 rounded-2xl card-hover block">
+            <a href="ai-simulator.html" class="glass p-8 rounded-2xl card-hover block" data-fade-in>
                 <div class="text-4xl mb-4 text-cyan-400">
                     <i class="fas fa-robot"></i>
                 </div>
@@ -433,110 +410,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Initialize charts
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeCharts();
-            setupInteractions();
-        });
-
-        function initializeCharts() {
-            // Manipulation patterns chart
-            const ctx1 = document.getElementById('manipulation-chart');
-            if (ctx1) {
-                new Chart(ctx1, {
-                    type: 'line',
-                    data: {
-                        labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
-                        datasets: [{
-                            label: 'Intensywność Manipulacji',
-                            data: [12, 19, 23, 35, 42, 38, 31, 28],
-                            borderColor: 'rgb(239, 68, 68)',
-                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                            tension: 0.4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: { 
-                                labels: { color: 'white' }
-                            }
-                        },
-                        scales: {
-                            x: { ticks: { color: 'white' } },
-                            y: { ticks: { color: 'white' } }
-                        }
-                    }
-                });
-            }
-
-            // Cycle analysis chart
-            const ctx2 = document.getElementById('cycle-chart');
-            if (ctx2) {
-                new Chart(ctx2, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Narastanie', 'Wybuch', 'Miodowy Miesiąc', 'Spokojna Faza'],
-                        datasets: [{
-                            data: [30, 20, 25, 25],
-                            backgroundColor: [
-                                'rgba(245, 158, 11, 0.8)',
-                                'rgba(239, 68, 68, 0.8)',
-                                'rgba(16, 185, 129, 0.8)',
-                                'rgba(59, 130, 246, 0.8)'
-                            ]
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: { 
-                                labels: { color: 'white' }
-                            }
-                        }
-                    }
-                });
-            }
-        }
-
-        function setupInteractions() {
-            // Mobile menu
-            document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
-                showMessage('Menu mobilne w rozwoju', 'info');
-            });
-        }
-
-        function showMessage(text, type = 'info') {
-            // Create a simple notification
-            const notification = document.createElement('div');
-            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${
-                type === 'info' ? 'bg-blue-500' :
-                type === 'warning' ? 'bg-amber-500' :
-                type === 'error' ? 'bg-red-500' : 'bg-green-500'
-            }`;
-            notification.textContent = text;
-            document.body.appendChild(notification);
-
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-
-        // Add smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Vite Entry Point -->
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+:root {
+  --color-primary: #f59e0b;
+  --color-secondary: #dc2626;
+  --color-background: #000000;
+  --color-text: #e0e0e0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  background-image: radial-gradient(ellipse at center, rgba(17,24,39,0.95) 0%, #000 70%);
+  background-attachment: fixed;
+}
+
+.gradient-text { 
+  background: linear-gradient(135deg, #f59e0b, #dc2626); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+
+.glass { 
+  backdrop-filter: blur(12px); 
+  background: rgba(255,255,255,0.1); 
+  border: 1px solid rgba(255,255,255,0.2); 
+}
+
+.card-hover { 
+  transition: all 0.3s ease; 
+}
+
+.card-hover:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+}
+
+.loading-dots::after { 
+  content: ''; 
+  animation: dots 1.5s infinite; 
+}
+
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+.pulse-slow { 
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; 
+}
+
+body.modal-open { 
+  overflow: hidden; 
+}
+
+.special-elite { 
+  font-family: 'Special Elite', cursive; 
+}
+
+.mono { 
+  font-family: 'JetBrains Mono', monospace; 
+}
