@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: '.',
+  publicDir: 'public',
   server: {
     port: 3000,
     host: true,
@@ -18,6 +20,9 @@ export default defineConfig({
     minify: 'esbuild',
     target: ['es2020', 'chrome80', 'firefox78', 'safari14'],
     rollupOptions: {
+      input: {
+        main: 'index.html'
+      },
       output: {
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
@@ -33,6 +38,9 @@ export default defineConfig({
       }
     },
     chunkSizeWarningLimit: 1000,
+  },
+  css: {
+    postcss: './postcss.config.js'
   },
   define: {
     __APP_VERSION__: JSON.stringify('2.0.0'),
