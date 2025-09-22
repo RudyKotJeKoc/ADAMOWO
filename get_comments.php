@@ -37,6 +37,8 @@ $result = $stmt->get_result();
 
 $comments = [];
 while ($row = $result->fetch_assoc()) {
+    $row['name'] = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+    $row['text'] = htmlspecialchars($row['text'], ENT_QUOTES, 'UTF-8');
     $comments[] = $row;
 }
 
