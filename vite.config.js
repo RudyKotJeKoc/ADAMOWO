@@ -21,7 +21,8 @@ export default defineConfig({
     target: ['es2020', 'chrome80', 'firefox78', 'safari14'],
     rollupOptions: {
       input: {
-        main: 'index.html'
+        main: 'index.html',
+        level2: 'level2/indexx-modern.html'
       },
       output: {
         chunkFileNames: 'assets/js/[name]-[hash].js',

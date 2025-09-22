@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Adamowo – Przewodnik po Toksycznych Relacjach i Manipulacji</title>
+    <meta name="description" content="Analizujemy rodzinną historię jako studium przypadku manipulacji, narcyzmu i toksycznych zachowań. Naucz się rozpoznawać czerwone flagi z Radiem Adamowo.">
+    <meta name="keywords" content="Radio Adamowo, manipulacja, toksyczne relacje, narcyzm, przemoc psychiczna, gaslighting, studium przypadku, poradnik, czerwone flagi, pętla przemocy">
+    <meta name="csrf-token" content="">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50,10 L90,45 L80,45 L80,90 L60,90 L60,60 L40,60 L40,90 L20,90 L20,45 L10,45 Z' fill='%23f59e0b'/><circle cx='60' cy='75' r='5' fill='%23ef4444'/></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <!-- Flatpickr Datepicker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="../manifest.json">
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="container mx-auto px-6 py-4">
+        <nav class="flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-2xl font-bold gradient-text">Radio Adamowo</h1>
+                <span class="text-xs bg-amber-500 text-black px-2 py-1 rounded-full font-semibold">LEVEL 2</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="../index.html" class="hover:text-amber-400 transition">Główna</a>
+                <a href="#timeline" class="hover:text-amber-400 transition">Oś Czasu</a>
+                <a href="#analysis" class="hover:text-amber-400 transition">Analiza</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 py-16 text-center" data-fade-in>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Głęboka Analiza <br>
+                <span class="gradient-text">Wzorców Manipulacji</span>
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Interaktywna wizualizacja cyklu narcystycznej przemocy. 
+                Eksploruj mechanizmy manipulacji w czasie rzeczywistym.
+            </p>
+        </section>
+
+        <!-- Infinity Timeline Section -->
+        <section id="timeline" class="container mx-auto px-6 py-16" data-fade-in>
+            <div class="glass p-8 rounded-2xl text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-900/20 to-red-900/20"></div>
+                <div class="relative z-10">
+                    <div id="infinity-timeline-container" class="mb-8">
+                        <svg viewBox="0 0 200 100" class="w-full h-64 overflow-visible">
+                            <defs>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <!-- Infinity path -->
+                            <path id="infinity-path" 
+                                  d="M 50 50 Q 25 25, 50 50 Q 75 75, 100 50 Q 125 25, 100 50 Q 75 75, 50 50" 
+                                  stroke="#f59e0b" 
+                                  stroke-width="2" 
+                                  fill="none" 
+                                  filter="url(#glow)"/>
+                            <!-- Avatars -->
+                            <circle id="avatar-d" cx="50" cy="50" r="6" fill="#dc2626" class="cursor-pointer"/>
+                            <circle id="avatar-b" cx="100" cy="50" r="6" fill="#2563eb" class="cursor-pointer"/>
+                        </svg>
+                    </div>
+                    
+                    <div id="timeline-description" class="text-lg text-gray-300 min-h-[60px] flex items-center justify-center">
+                        Obserwuj jak rozwija się cykl przemocy...
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                        <div class="bg-red-900/20 p-6 rounded-lg border border-red-500/30">
+                            <h4 class="font-bold text-red-400 mb-3">
+                                <i class="fas fa-user-times mr-2"></i>Agresor (D)
+                            </h4>
+                            <p class="text-sm text-gray-300">
+                                Reprezentuje osobę stosującą manipulację i przemoc psychiczną. 
+                                Porusza się po ścieżce przemocy, przechodząc przez kolejne fazy cyklu.
+                            </p>
+                        </div>
+                        <div class="bg-blue-900/20 p-6 rounded-lg border border-blue-500/30">
+                            <h4 class="font-bold text-blue-400 mb-3">
+                                <i class="fas fa-user-shield mr-2"></i>Ofiara (B)
+                            </h4>
+                            <p class="text-sm text-gray-300">
+                                Reprezentuje osobę doświadczającą przemocy. Pozostaje w stałym 
+                                przesunięciu czasowym, próbując nadążyć za zmianami nastrojów agresora.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section id="analysis" class="container mx-auto px-6 py-16" data-fade-in>
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-4">Analiza Wzorców</h3>
+                <p class="text-xl text-gray-300">Kluczowe elementy cyklu przemocy narcystycznej</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass p-6 rounded-xl text-center card-hover" data-fade-in>
+                    <div class="text-3xl text-amber-400 mb-3">
+                        <i class="fas fa-heart-broken"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Dewaluacja</h4>
+                    <p class="text-sm text-gray-400">Stopniowe podważanie wartości ofiary</p>
+                </div>
+                
+                <div class="glass p-6 rounded-xl text-center card-hover" data-fade-in>
+                    <div class="text-3xl text-red-400 mb-3">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Eskalacja</h4>
+                    <p class="text-sm text-gray-400">Intensyfikacja konfliktów i agresji</p>
+                </div>
+                
+                <div class="glass p-6 rounded-xl text-center card-hover" data-fade-in>
+                    <div class="text-3xl text-gray-400 mb-3">
+                        <i class="fas fa-user-slash"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Odrzucenie</h4>
+                    <p class="text-sm text-gray-400">Kara ciszy i emocjonalnego dystansu</p>
+                </div>
+                
+                <div class="glass p-6 rounded-xl text-center card-hover" data-fade-in>
+                    <div class="text-3xl text-green-400 mb-3">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Hoovering</h4>
+                    <p class="text-sm text-gray-400">Pozorna poprawa i obietnice zmiany</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                &copy; 2024 Radio Adamowo. Materiały służą celom edukacyjnym. 
+                <a href="../index.html" class="text-amber-400 hover:underline">Powrót do głównej</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Modern Module System Entry Point -->
+    <script type="module" src="../src/level2.js"></script>
+</body>
+</html>
