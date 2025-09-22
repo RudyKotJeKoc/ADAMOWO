@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "language": "nl",
+    "version": "2.0.0",
+    "name": "Nederlands"
+  },
+  "app": {
+    "name": "Radio Adamowo",
+    "tagline": "Gids voor Toxische Relaties",
+    "description": "Educatieve webradio over psychologische manipulatie en toxische relaties"
+  },
+  "navigation": {
+    "home": "Home",
+    "radio": "Radio",
+    "podcasts": "Podcasts",
+    "calendar": "Kalender",
+    "about": "Over ons",
+    "contact": "Contact"
+  },
+  "player": {
+    "play": "Afspelen",
+    "pause": "Pauze",
+    "stop": "Stop",
+    "volume": "Volume",
+    "loading": "Laden...",
+    "connecting": "Verbinden met stream...",
+    "buffering": "Buffering...",
+    "live": "LIVE",
+    "offline": "Offline modus"
+  },
+  "comments": {
+    "title": "Reacties",
+    "add": "Reactie toevoegen",
+    "name": "Naam",
+    "message": "Bericht",
+    "submit": "Verzenden",
+    "loading": "Reacties laden...",
+    "empty": "Geen reacties voor deze dag",
+    "success": "Reactie is toegevoegd",
+    "error": "Fout bij het toevoegen van reactie"
+  },
+  "calendar": {
+    "title": "Evenementenkalender",
+    "selectDate": "Datum selecteren",
+    "noEvents": "Geen evenementen op deze dag",
+    "today": "Vandaag"
+  },
+  "podcasts": {
+    "title": "Educatieve Podcasts",
+    "episodes": "Afleveringen",
+    "duration": "Duur",
+    "description": "Beschrijving"
+  },
+  "errors": {
+    "networkError": "Netwerkverbindingsfout",
+    "serverError": "Serverfout",
+    "invalidInput": "Ongeldige invoergegevens",
+    "rateLimitExceeded": "Tariefgrens overschreden",
+    "csrfError": "Beveiligingsfout - ververs de pagina",
+    "unknownError": "Er is een onbekende fout opgetreden"
+  },
+  "security": {
+    "csrfTokenRequired": "Beveiligingstoken vereist",
+    "sessionExpired": "Sessie verlopen - ververs de pagina",
+    "rateLimitWarning": "Te veel verzoeken - wacht even"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "language": "pl",
+    "version": "2.0.0",
+    "name": "Polski"
+  },
+  "app": {
+    "name": "Radio Adamowo",
+    "tagline": "Przewodnik po Toksycznych Relacjach",
+    "description": "Edukacyjna aplikacja radiowa o manipulacji psychologicznej i toksycznych związkach"
+  },
+  "navigation": {
+    "home": "Strona główna",
+    "radio": "Radio",
+    "podcasts": "Podcasty",
+    "calendar": "Kalendarz",
+    "about": "O nas",
+    "contact": "Kontakt"
+  },
+  "player": {
+    "play": "Odtwórz",
+    "pause": "Pauza",
+    "stop": "Stop",
+    "volume": "Głośność",
+    "loading": "Ładowanie...",
+    "connecting": "Łączenie z transmisją...",
+    "buffering": "Buforowanie...",
+    "live": "NA ŻYWO",
+    "offline": "Tryb offline"
+  },
+  "comments": {
+    "title": "Komentarze",
+    "add": "Dodaj komentarz",
+    "name": "Imię",
+    "message": "Wiadomość",
+    "submit": "Wyślij",
+    "loading": "Ładowanie komentarzy...",
+    "empty": "Brak komentarzy na ten dzień",
+    "success": "Komentarz został dodany",
+    "error": "Błąd podczas dodawania komentarza"
+  },
+  "calendar": {
+    "title": "Kalendarz Wydarzeń",
+    "selectDate": "Wybierz datę",
+    "noEvents": "Brak wydarzeń w tym dniu",
+    "today": "Dzisiaj"
+  },
+  "podcasts": {
+    "title": "Podcasty Edukacyjne",
+    "episodes": "Odcinki",
+    "duration": "Czas trwania",
+    "description": "Opis"
+  },
+  "errors": {
+    "networkError": "Błąd połączenia z siecią",
+    "serverError": "Błąd serwera",
+    "invalidInput": "Nieprawidłowe dane wejściowe",
+    "rateLimitExceeded": "Przekroczono limit żądań",
+    "csrfError": "Błąd bezpieczeństwa - odśwież stronę",
+    "unknownError": "Wystąpił nieznany błąd"
+  },
+  "security": {
+    "csrfTokenRequired": "Wymagany token bezpieczeństwa",
+    "sessionExpired": "Sesja wygasła - odśwież stronę",
+    "rateLimitWarning": "Zbyt wiele żądań - poczekaj chwilę"
+  }
+}

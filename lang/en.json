@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "language": "en",
+    "version": "2.0.0",
+    "name": "English"
+  },
+  "app": {
+    "name": "Radio Adamowo",
+    "tagline": "Guide to Toxic Relationships",
+    "description": "Educational web radio about psychological manipulation and toxic relationships"
+  },
+  "navigation": {
+    "home": "Home",
+    "radio": "Radio",
+    "podcasts": "Podcasts",
+    "calendar": "Calendar",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "player": {
+    "play": "Play",
+    "pause": "Pause",
+    "stop": "Stop",
+    "volume": "Volume",
+    "loading": "Loading...",
+    "connecting": "Connecting to stream...",
+    "buffering": "Buffering...",
+    "live": "LIVE",
+    "offline": "Offline mode"
+  },
+  "comments": {
+    "title": "Comments",
+    "add": "Add comment",
+    "name": "Name",
+    "message": "Message",
+    "submit": "Submit",
+    "loading": "Loading comments...",
+    "empty": "No comments for this day",
+    "success": "Comment was added",
+    "error": "Error while adding comment"
+  },
+  "calendar": {
+    "title": "Event Calendar",
+    "selectDate": "Select date",
+    "noEvents": "No events on this day",
+    "today": "Today"
+  },
+  "podcasts": {
+    "title": "Educational Podcasts",
+    "episodes": "Episodes",
+    "duration": "Duration",
+    "description": "Description"
+  },
+  "errors": {
+    "networkError": "Network connection error",
+    "serverError": "Server error",
+    "invalidInput": "Invalid input data",
+    "rateLimitExceeded": "Rate limit exceeded",
+    "csrfError": "Security error - please refresh the page",
+    "unknownError": "An unknown error occurred"
+  },
+  "security": {
+    "csrfTokenRequired": "Security token required",
+    "sessionExpired": "Session expired - please refresh the page",
+    "rateLimitWarning": "Too many requests - please wait a moment"
+  }
+}
