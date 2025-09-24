@@ -818,11 +818,56 @@ class CommentSystem {
     }
 }
 
+// Supabase Integration
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+// It's assumed the Supabase client library is loaded globally, e.g. via a script tag.
+// In a module-based environment, you would use: import { createClient } from '@supabase/supabase-js'
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+async function getPlayableUrl(storagePath) {
+    if (!storagePath) return null;
+    const [bucket, ...rest] = storagePath.split("/");
+    const path = rest.join("/");
+
+    const { data, error } = await supabaseClient
+        .storage
+        .from(bucket)
+        .createSignedUrl(path, 3600); // URL valid for 1 hour
+
+    if (error) {
+        console.error(`Error creating signed URL for ${storagePath}:`, error);
+        return null;
+    }
+    return data.signedUrl;
+}
+
+async function fetchPlaylistFromSupabase(slug) {
+    const { data, error } = await supabaseClient.rpc("get_playlist", { p_slug: slug });
+    if (error) {
+        console.error(`Error fetching playlist '${slug}':`, error);
+        throw error;
+    }
+
+    const enriched = await Promise.all(
+        data.map(async (item) => ({
+            ...item,
+            url: item.storage_path
+                ? await getPlayableUrl(item.storage_path)
+                : item.stream_url,
+        }))
+    );
+    return enriched;
+}
+
+
 // Playlist Management
 class PlaylistManager {
     constructor() {
-        this.playlists = appState.playlists;
+        this.playlists = {}; // Will be populated from Supabase
         this.isLoaded = false;
+        this.availablePlaylists = []; // Holds { slug, name }
     }
 
     async initialize() {
@@ -832,138 +877,76 @@ class PlaylistManager {
             await this.loadPlaylists();
             this.setupPlaylistUI();
             this.isLoaded = true;
-            console.log('Playlist manager initialized');
+            console.log('Playlist manager initialized with Supabase data');
         } catch (error) {
             console.error('Failed to initialize playlist manager:', error);
+            uiManager.showNotification('Could not load playlists from database.', 'error');
         }
     }
 
     async loadPlaylists() {
-        try {
-            const response = await fetch('./playlist.json');
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-            
-            const fullPlaylist = await response.json();
-            
-            // Categorize tracks
-            this.playlists.ambient = fullPlaylist.filter(track => track.category === 'ambient');
-            this.playlists.disco = fullPlaylist.filter(track => track.category === 'disco');
-            this.playlists.hiphop = fullPlaylist.filter(track => track.category === 'hiphop');
-            
-            // Create enhanced podcast entries
-            this.createPodcastPlaylist(fullPlaylist);
-            
-            // Update app state
-            Object.assign(appState.playlists, this.playlists);
-            
-        } catch (error) {
-            console.error('Failed to load playlists:', error);
-            // Use fallback playlists
-            this.createFallbackPlaylists();
+        console.log('Loading playlists from Supabase...');
+        const { data, error } = await supabaseClient
+            .from('playlists')
+            .select('slug, title')
+            .eq('is_public', true)
+            .order('title');
+
+        if (error) {
+            console.error('Error fetching playlist definitions:', error);
+            throw error;
         }
-    }
 
-    createPodcastPlaylist(fullPlaylist) {
-        const podcastCategories = ['barbara', 'kids', 'analysis'];
-        const categoryTitles = {
-            'barbara': [
-                'Analiza Głosów Barbary: Studium Przypadku',
-                'Sekretne Nagrania: Co Ukrywa Barbara?',
-                'Psychologia Manipulacji: Przypadek Barbary'
-            ],
-            'kids': [
-                'Dziecięce Piosenki jako Narzędzie Kontroli',
-                'Infantylizacja w Toksycznych Relacjach',
-                'Analiza: Kiedy Niewinność Staje Się Bronią'
-            ],
-            'analysis': [
-                'Sprawa Adamskich: Wprowadzenie',
-                'Kalendarz Eskalacji: Kronika Wydarzeń',
-                'Śledztwo: Jak Dokumentować Manipulację?'
-            ]
-        };
+        this.availablePlaylists = data.map(p => ({ slug: p.slug, name: p.title }));
 
-        this.playlists.podcasts = [];
+        // Load the first playlist by default or a default one
+        const defaultPlaylistSlug = appState.currentPlaylist || this.availablePlaylists[0]?.slug || 'analizy';
+        await this.loadSpecificPlaylist(defaultPlaylistSlug);
         
-        podcastCategories.forEach(category => {
-            const categoryTracks = fullPlaylist.filter(track => track.category === category);
-            const titles = categoryTitles[category] || [`Podcast ${category}`];
-            
-            categoryTracks.forEach((track, index) => {
-                const title = titles[index % titles.length];
-                this.playlists.podcasts.push({
-                    id: `${category}_${index}`,
-                    title: title,
-                    category: 'podcast',
-                    url: track.file,
-                    duration: this.estimateDuration(track.file),
-                    description: this.generateDescription(category, title)
-                });
-            });
-        });
+        // Update app state with all available playlists
+        appState.playlists = this.playlists;
     }
 
-    createFallbackPlaylists() {
-        this.playlists = {
-            ambient: [
-                { title: 'Ambient Soundscape 1', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' }
-            ],
-            disco: [
-                { title: 'Disco Classic 1', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' }
-            ],
-            hiphop: [
-                { title: 'Hip-Hop Beat 1', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' }
-            ],
-            podcasts: [
-                { title: 'Sample Podcast', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' }
-            ]
-        };
+    async loadSpecificPlaylist(slug) {
+        if (this.playlists[slug]) {
+             console.log(`Playlist '${slug}' already loaded.`);
+             return;
+        }
+        console.log(`Fetching playlist '${slug}'...`);
+        try {
+            const playlistTracks = await fetchPlaylistFromSupabase(slug);
+            this.playlists[slug] = playlistTracks;
+            appState.updateState('currentPlaylist', slug);
+            console.log(`Playlist '${slug}' loaded with ${playlistTracks.length} tracks.`);
+        } catch (error) {
+            console.error(`Failed to load specific playlist '${slug}':`, error);
+            uiManager.showNotification(`Failed to load playlist: ${slug}`, 'error');
+        }
     }
 
     setupPlaylistUI() {
         const select = document.getElementById('playlist-select');
         if (!select) return;
 
-        // Clear existing options
         select.innerHTML = '';
 
-        // Add playlist options
-        Object.keys(this.playlists).forEach(category => {
+        this.availablePlaylists.forEach(playlist => {
             const option = document.createElement('option');
-            option.value = category;
-            option.textContent = this.formatCategoryName(category);
+            option.value = playlist.slug;
+            option.textContent = playlist.name;
             select.appendChild(option);
         });
 
-        // Set current selection
-        select.value = appState.currentPlaylist;
-    }
+        // Set current selection from state
+        if (appState.currentPlaylist && this.availablePlaylists.some(p => p.slug === appState.currentPlaylist)) {
+            select.value = appState.currentPlaylist;
+        }
 
-    formatCategoryName(category) {
-        const names = {
-            ambient: 'Ambient',
-            disco: 'Disco',
-            hiphop: 'Hip-Hop',
-            podcasts: 'Podcasts'
-        };
-        return names[category] || category;
-    }
-
-    estimateDuration(filename) {
-        // Simple estimation based on filename patterns
-        const match = filename.match(/(\d+)/);
-        return match ? `${Math.floor(Math.random() * 10) + 5}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')}` : '5:00';
-    }
-
-    generateDescription(category, title) {
-        const descriptions = {
-            barbara: 'Głęboka analiza wzorców manipulacji w relacjach rodzinnych',
-            kids: 'Badanie wykorzystania dziecięcej niewinności jako narzędzia kontroli',
-            analysis: 'Szczegółowa dokumentacja i analiza technik manipulacyjnych'
-        };
-        return descriptions[category] || 'Edukacyjna treść o toksycznych relacjach';
+        // Add event listener to load on change
+        select.addEventListener('change', async (e) => {
+            const newSlug = e.target.value;
+            await this.loadSpecificPlaylist(newSlug);
+        });
     }
 
     getCurrentPlaylist() {
