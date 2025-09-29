@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Radio Adamowo"
+  },
+  "navigation": {
+    "live": "Live",
+    "violenceLoop": "Geweldscyclus",
+    "shows": "Uitzendingen",
+    "guide": "Gids",
+    "lab": "Laboratorium",
+    "community": "Gemeenschap"
+  },
+  "pages": {
+    "home": {
+      "title": "Radio Adamowo",
+      "lead": "Educatieve radio over psychologisch misbruik."
+    },
+    "live": {
+      "title": "Livestream"
+    },
+    "guides": {
+      "title": "Gidsen"
+    },
+    "lab": {
+      "title": "AI-lab"
+    },
+    "community": {
+      "title": "Gemeenschap"
+    },
+    "violenceLoop": {
+      "title": "Geweldscyclus"
+    },
+    "shows": {
+      "title": "Uitzendingen"
+    }
+  },
+  "controls": {
+    "theme": {
+      "light": "Lichte modus",
+      "dark": "Donkere modus"
+    },
+    "language": "Taal"
+  }
+}

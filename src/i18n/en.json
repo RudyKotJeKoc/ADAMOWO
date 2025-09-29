@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Radio Adamowo"
+  },
+  "navigation": {
+    "live": "Live",
+    "violenceLoop": "Violence Loop",
+    "shows": "Shows",
+    "guide": "Guide",
+    "lab": "Lab",
+    "community": "Community"
+  },
+  "pages": {
+    "home": {
+      "title": "Radio Adamowo",
+      "lead": "An educational radio about psychological abuse."
+    },
+    "live": {
+      "title": "Live Stream"
+    },
+    "guides": {
+      "title": "Guides"
+    },
+    "lab": {
+      "title": "AI Lab"
+    },
+    "community": {
+      "title": "Community"
+    },
+    "violenceLoop": {
+      "title": "Violence loop"
+    },
+    "shows": {
+      "title": "Shows"
+    }
+  },
+  "controls": {
+    "theme": {
+      "light": "Light mode",
+      "dark": "Dark mode"
+    },
+    "language": "Language"
+  }
+}

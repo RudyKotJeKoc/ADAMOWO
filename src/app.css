@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark light;
+}
+
+html {
+  min-height: 100%;
+  background-color: theme('colors.base.950');
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  @apply text-accent-400 hover:text-accent-500 focus:outline-none focus-visible:shadow-focus;
+}
+
+button,
+[role='button'] {
+  @apply focus:outline-none focus-visible:shadow-focus;
+}

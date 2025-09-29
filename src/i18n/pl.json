@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Radio Adamowo"
+  },
+  "navigation": {
+    "live": "Na Żywo",
+    "violenceLoop": "Pętla Przemocy",
+    "shows": "Audycje",
+    "guide": "Poradnik",
+    "lab": "Laboratorium",
+    "community": "Społeczność"
+  },
+  "pages": {
+    "home": {
+      "title": "Radio Adamowo",
+      "lead": "Nowa odsłona edukacyjnego radia o przemocy psychicznej."
+    },
+    "live": {
+      "title": "Transmisja na żywo"
+    },
+    "guides": {
+      "title": "Poradniki"
+    },
+    "lab": {
+      "title": "Laboratorium AI"
+    },
+    "community": {
+      "title": "Społeczność"
+    },
+    "violenceLoop": {
+      "title": "Pętla przemocy"
+    },
+    "shows": {
+      "title": "Audycje"
+    }
+  },
+  "controls": {
+    "theme": {
+      "light": "Tryb jasny",
+      "dark": "Tryb ciemny"
+    },
+    "language": "Język"
+  }
+}

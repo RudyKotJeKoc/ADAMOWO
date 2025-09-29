@@ -1,83 +1,46 @@
 {
-  "name": "radio-adamowo-comprehensive",
-  "version": "2.0.0",
-  "description": "Progressive Web Radio Application with Educational Content about Psychological Manipulation and Toxic Relationships",
-  "main": "index.js",
+  "name": "radio-adamowo",
+  "version": "0.0.1",
+  "private": true,
   "type": "module",
+  "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "dev": "vite --mode development --host",
-    "build": "vite build",
+    "dev": "vite --host",
+    "build": "tsc -b && vite build",
     "preview": "vite preview --host",
-    "lint": "eslint src --ext .js,.ts,.vue --fix",
-    "format": "prettier --write \"src/**/*.{js,ts,vue,css,md}\"",
+    "lint": "eslint . --ext .ts,.tsx,.cjs --max-warnings=0",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "type-check": "tsc --noEmit",
-    "analyze": "npx vite-bundle-analyzer",
-    "lighthouse": "lhci autorun"
-  },
-  "keywords": [
-    "radio",
-    "pwa",
-    "streaming",
-    "education",
-    "psychology",
-    "manipulation",
-    "security",
-    "web-audio",
-    "hls"
-  ],
-  "author": "Radio Adamowo Team <contact@radioadamowo.pl>",
-  "license": "MIT",
-  "homepage": "https://radioadamowo.pl",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RudyKotJeKoc/ADAMOWO.git"
-  },
-  "bugs": {
-    "url": "https://github.com/RudyKotJeKoc/ADAMOWO/issues"
-  },
-  "packageManager": "pnpm@10.10.0",
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.1",
-    "chart.js": "^4.5.0",
-    "flatpickr": "^4.6.13",
-    "gsap": "^3.13.0",
-    "hls.js": "^1.6.13"
+    "clsx": "^2.1.1",
+    "i18next": "^23.11.5",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^13.5.0",
+    "react-router-dom": "^6.26.1",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.13",
-    "@vitest/coverage-v8": "^1.6.0",
+    "@eslint/js": "^9.13.0",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.10.0",
+    "@vitejs/plugin-react": "^4.3.2",
     "autoprefixer": "^10.4.20",
-    "cssnano": "^6.1.2",
-    "eslint": "^8.57.1",
-    "prettier": "^3.3.3",
-    "tailwindcss": "^4.1.13",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
     "typescript": "^5.6.3",
     "vite": "^5.4.8",
-    "vite-plugin-pwa": "^0.20.1",
-    "vitest": "^1.6.0",
-    "workbox-build": "^7.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie <= 11"
-  ],
-  "pwa": {
-    "name": "Radio Adamowo",
-    "short_name": "Adamowo",
-    "description": "Educational web radio about psychological manipulation",
-    "theme_color": "#f59e0b",
-    "background_color": "#121212",
-    "display": "standalone",
-    "orientation": "portrait-primary",
-    "scope": "/",
-    "start_url": "/"
+    "vitest": "^2.1.3",
+    "globals": "^15.11.0"
   }
 }
