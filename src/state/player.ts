@@ -1,21 +1,41 @@
 import { create } from 'zustand';
 
-export type StreamQuality = '128kbps';
+export type PlayerStatus = 'idle' | 'buffering' | 'playing' | 'reconnecting' | 'error';
 
-interface PlayerState {
-  isPlaying: boolean;
+export interface PlayerState {
+  playing: boolean;
   volume: number;
-  quality: StreamQuality;
-  setPlaying: (isPlaying: boolean) => void;
+  muted: boolean;
+  src: string;
+  status: PlayerStatus;
+  error: string | null;
+  reconnectCount: number;
+  setPlaying: (playing: boolean) => void;
   setVolume: (volume: number) => void;
-  setQuality: (quality: StreamQuality) => void;
+  setMuted: (muted: boolean) => void;
+  setStatus: (status: PlayerStatus) => void;
+  setError: (error: string | null) => void;
+  setSrc: (src: string) => void;
+  setReconnectCount: (count: number) => void;
+  resetReconnect: () => void;
 }
 
+const STREAM_SRC = import.meta.env.VITE_STREAM_URL_HLS ?? '';
+
 export const usePlayerStore = create<PlayerState>((set) => ({
-  isPlaying: false,
+  playing: false,
   volume: 1,
-  quality: '128kbps',
-  setPlaying: (isPlaying) => set({ isPlaying }),
+  muted: false,
+  src: STREAM_SRC,
+  status: 'idle',
+  error: null,
+  reconnectCount: 0,
+  setPlaying: (playing) => set({ playing }),
   setVolume: (volume) => set({ volume }),
-  setQuality: (quality) => set({ quality })
+  setMuted: (muted) => set({ muted }),
+  setStatus: (status) => set({ status }),
+  setError: (error) => set({ error }),
+  setSrc: (src) => set({ src }),
+  setReconnectCount: (count) => set({ reconnectCount: count }),
+  resetReconnect: () => set({ reconnectCount: 0 })
 }));
