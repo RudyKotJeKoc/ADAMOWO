@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "framer-motion": "^11.13.1",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^7.2.0",
     "react": "^18.3.1",

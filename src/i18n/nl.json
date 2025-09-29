@@ -47,12 +47,4 @@
       "resolved_dark": "donkere modus",
       "resolved_light": "lichte modus"
     },
-    "language": {
-      "label": "Taal",
-      "pl": "Pools",
-      "nl": "Nederlands",
-      "en": "Engels"
-    }
-  },
-  "header": { "navigation": "Hoofdnavigatie", "openMenu": "Menu openen", "closeMenu": "Menu sluiten", "skipToContent": "Ga naar inhoud", "home": "Radio Adamowo startpagina" }
 }

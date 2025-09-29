@@ -47,12 +47,4 @@
       "resolved_dark": "tryb ciemny",
       "resolved_light": "tryb jasny"
     },
-    "language": {
-      "label": "Język",
-      "pl": "Polski",
-      "nl": "Niderlandzki",
-      "en": "Angielski"
-    }
-  },
-  "header": { "navigation": "Główna nawigacja", "openMenu": "Otwórz menu", "closeMenu": "Zamknij menu", "skipToContent": "Przejdź do treści", "home": "Strona główna Radio Adamowo" }
 }

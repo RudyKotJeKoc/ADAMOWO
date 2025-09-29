@@ -47,12 +47,4 @@
       "resolved_dark": "dark mode",
       "resolved_light": "light mode"
     },
-    "language": {
-      "label": "Language",
-      "pl": "Polish",
-      "nl": "Dutch",
-      "en": "English"
-    }
-  },
-  "header": { "navigation": "Main navigation", "openMenu": "Open menu", "closeMenu": "Close menu", "skipToContent": "Skip to content", "home": "Radio Adamowo home" }
 }
