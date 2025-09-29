@@ -36,11 +36,15 @@
   },
   "controls": {
     "theme": {
+      "label": "Theme",
+      "system": "System theme",
+      "systemShort": "SYS",
       "light": "Light mode",
-      "dark": "Dark mode"
+      "lightShort": "LGT",
+      "dark": "Dark mode",
+      "darkShort": "DRK",
+      "current": "Currently: {{value}}",
+      "resolved_dark": "dark mode",
+      "resolved_light": "light mode"
     },
-    "language": "Language"
-  },
-
-  }
 }

@@ -36,11 +36,15 @@
   },
   "controls": {
     "theme": {
+      "label": "Motyw",
+      "system": "Motyw systemowy",
+      "systemShort": "SYS",
       "light": "Tryb jasny",
-      "dark": "Tryb ciemny"
+      "lightShort": "JAS",
+      "dark": "Tryb ciemny",
+      "darkShort": "NOC",
+      "current": "Aktualnie: {{value}}",
+      "resolved_dark": "tryb ciemny",
+      "resolved_light": "tryb jasny"
     },
-    "language": "Język"
-  },
-
-  }
 }

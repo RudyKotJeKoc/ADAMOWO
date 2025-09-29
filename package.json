@@ -8,13 +8,12 @@
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host",
-    "lint": "eslint . --ext .ts,.tsx,.cjs --max-warnings=0",
+    "lint": "eslint . --max-warnings=0",
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "hls.js": "^1.5.18",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^7.2.0",
     "react": "^18.3.1",

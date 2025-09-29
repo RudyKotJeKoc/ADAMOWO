@@ -1,37 +1,49 @@
-import { useCallback, type ChangeEvent } from 'react';
+import clsx from 'clsx';
+import { LayoutGroup, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-
-const languages = [
-  { code: 'pl', label: 'Polski' },
-  { code: 'nl', label: 'Nederlands' },
-  { code: 'en', label: 'English' }
-];
+const LANG_CODES = ['pl', 'nl', 'en'] as const;
 
 export function LangSwitch(): JSX.Element {
   const { i18n, t } = useTranslation();
-
-  const handleChange = useCallback(
-    async (event: ChangeEvent<HTMLSelectElement>) => {
-      await i18n.changeLanguage(event.target.value);
-    },
-    [i18n]
-  );
-
+  const current = i18n.resolvedLanguage ?? i18n.language;
   return (
-    <label className="inline-flex items-center gap-2 text-sm font-medium text-base-200">
-      <span className="sr-only sm:not-sr-only">{t('controls.language')}</span>
-      <select
-        className="rounded-full border border-base-700 bg-base-900 px-3 py-2 text-base-100 focus:border-accent-400 focus:outline-none focus-visible:shadow-focus"
-        value={i18n.resolvedLanguage ?? i18n.language}
-        onChange={handleChange}
-        aria-label={t('controls.language')}
-      >
-        {languages.map((lang) => (
-          <option key={lang.code} value={lang.code}>
-            {lang.label}
-          </option>
-        ))}
-      </select>
-    </label>
+    <div className="relative" role="group" aria-label={t('controls.language.label')}>
+      <LayoutGroup>
+        <div className="relative flex items-center gap-1 rounded-full border border-base-700 bg-base-900/80 px-1 py-1 text-xs font-semibold uppercase tracking-wide text-base-200 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-base-900/70">
+          {LANG_CODES.map((code) => {
+            const isActive = current === code;
+            const label = t(`controls.language.${code}`);
+            const short = code.toUpperCase();
+
+            return (
+              <button
+                key={code}
+                type="button"
+                className={clsx(
+                  'relative inline-flex min-w-[2.75rem] items-center justify-center rounded-full px-2.5 py-1.5 transition focus-visible:shadow-focus',
+                  isActive ? 'text-base-950' : 'text-base-200 hover:text-base-50'
+                )}
+                aria-pressed={isActive}
+                onClick={() => {
+                  void i18n.changeLanguage(code);
+                }}
+                lang={code}
+                title={label}
+              >
+                {isActive ? (
+                  <motion.span
+                    layoutId="lang-switch-indicator"
+                    className="absolute inset-0 -z-10 rounded-full bg-base-200 text-base-950 shadow-[0_8px_20px_-15px_rgba(10,14,39,0.8)]"
+                    transition={{ type: 'spring', stiffness: 320, damping: 30 }}
+                  />
+                ) : null}
+                <span aria-hidden="true">{short}</span>
+                <span className="sr-only">{label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </LayoutGroup>
+    </div>
   );
 }
