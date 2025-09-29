@@ -40,5 +40,37 @@
       "dark": "Tryb ciemny"
     },
     "language": "Język"
+  },
+  "whisper": {
+    "title": "Szept zza Kurtyny",
+    "subtitle": "W czasie oskarżeń i manipulacji, czasem jeden, cichy głos może przywrócić perspektywę.",
+    "length": "2017 · 12:34",
+    "play": "Odtwórz",
+    "pause": "Wstrzymaj",
+    "restart": "Zacznij od nowa",
+    "mute": "Wycisz",
+    "unmute": "Przywróć dźwięk",
+    "volume": "Głośność",
+    "scrub": "Przewiń nagranie",
+    "regionLabel": "Szept zza Kurtyny – nagranie archiwalne",
+    "ethics": {
+      "title": "Etyka odsłuchu",
+      "body": [
+        "Nagranie dokumentuje napięte przesłuchanie publiczne z 2017 roku.",
+        "Słuchaj z empatią – to czyjeś prawdziwe doświadczenia.",
+        "Nie udostępniaj fragmentów poza kontekstem edukacyjnym."
+      ]
+    },
+    "status": {
+      "playing": "Rozpoczęto odtwarzanie.",
+      "paused": "Odtwarzanie wstrzymane.",
+      "ended": "Nagranie zakończone.",
+      "restarted": "Odtwarzanie od początku.",
+      "seeked": "Pozycja nagrania zmieniona.",
+      "muted": "Dźwięk wyciszony.",
+      "unmuted": "Dźwięk przywrócony.",
+      "volume": "Głośność zaktualizowana.",
+      "error": "Nie udało się uruchomić odtwarzania."
+    }
   }
 }

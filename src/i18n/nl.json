@@ -40,5 +40,37 @@
       "dark": "Donkere modus"
     },
     "language": "Taal"
+  },
+  "whisper": {
+    "title": "Fluister achter het Gordijn",
+    "subtitle": "Temidden van beschuldigingen en manipulatie kan één stille stem het perspectief terugbrengen.",
+    "length": "2017 · 12:34",
+    "play": "Afspelen",
+    "pause": "Pauze",
+    "restart": "Opnieuw starten",
+    "mute": "Dempen",
+    "unmute": "Geluid aan",
+    "volume": "Volume",
+    "scrub": "Zoek positie",
+    "regionLabel": "Fluister achter het Gordijn – archiefopname",
+    "ethics": {
+      "title": "Luisterethiek",
+      "body": [
+        "Deze archiefopname legt een gespannen openbare hoorzitting uit 2017 vast.",
+        "Luister met empathie; de stemmen getuigen van geleefde ervaringen.",
+        "Deel geen fragmenten buiten een educatieve context."
+      ]
+    },
+    "status": {
+      "playing": "Afspelen gestart.",
+      "paused": "Afspelen gepauzeerd.",
+      "ended": "Afspelen beëindigd.",
+      "restarted": "Opnieuw vanaf het begin.",
+      "seeked": "Positie bijgewerkt.",
+      "muted": "Audio gedempt.",
+      "unmuted": "Audio hoorbaar.",
+      "volume": "Volume aangepast.",
+      "error": "Afspelen kon niet starten."
+    }
   }
 }
