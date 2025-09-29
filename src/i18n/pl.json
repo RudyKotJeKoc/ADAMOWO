@@ -41,6 +41,216 @@
     },
     "language": "Język"
   },
-
+  "guide": {
+    "title": "8 grzechów toksycznych osób",
+    "intro": "Interaktywny poradnik pomoże Ci rozpoznać zachowania, które niszczą relacje i poczucie bezpieczeństwa. Odpowiedz na pytania, a zobaczysz interpretację wyników oraz rekomendacje wsparcia.",
+    "start": "Rozpocznij",
+    "continue": "Kontynuuj",
+    "reset": "Resetuj postęp",
+    "reset.confirm": "Czy na pewno chcesz usunąć wszystkie odpowiedzi?",
+    "progress": "Postęp",
+    "progress.summary": "Ukończono {{percentage}}% pytań",
+    "progress.module": "{{answered}} z {{total}} pytań",
+    "score": "Wynik",
+    "score.summary": "Zdobyto {{total}} z {{max}} pkt ({{percentage}}%)",
+    "result": {
+      "low": "Niskie ryzyko",
+      "medium": "Podwyższone ryzyko",
+      "high": "Wysokie ryzyko"
+    },
+    "examples": {
+      "title": "Przykładowe sytuacje"
+    },
+    "answer": {
+      "yes": "Tak",
+      "no": "Nie"
+    },
+    "scale": {
+      "never": "Nigdy",
+      "sometimes": "Czasami",
+      "always": "Zawsze"
+    },
+    "resources": {
+      "title": "Rekomendowane kroki",
+      "financialHelp": "Skontaktuj się z lokalnym ośrodkiem pomocy społecznej w sprawie bezpłatnego wsparcia finansowego.",
+      "reportAbuse": "Zgłoś nadużycia instytucjonalne do rzecznika praw obywatelskich lub organizacji strażniczych.",
+      "emotionalSupport": "Umów się na rozmowę z psychologiem lub telefon zaufania, aby porozmawiać o swoich emocjach.",
+      "boundaries": "Przećwicz stawianie granic z osobą zaufaną i przygotuj przykładowe odpowiedzi.",
+      "psychologicalHelp": "Rozważ terapię indywidualną, która pomoże odbudować poczucie własnej wartości.",
+      "documentation": "Zbieraj dowody (zrzuty ekranu, notatki) z rozmów i sytuacji przemocowych.",
+      "safetyPlan": "Przygotuj plan bezpieczeństwa obejmujący miejsca schronienia i osoby do kontaktu.",
+      "digitalSecurity": "Zmień hasła, włącz dwustopniowe uwierzytelnienie i ogranicz dostęp do urządzeń.",
+      "legalAdvice": "Skorzystaj z darmowych porad prawnych w lokalnej poradni obywatelskiej.",
+      "trustedPerson": "Podziel się sytuacją z osobą, której ufasz, aby mieć wsparcie i świadka zdarzeń.",
+      "communitySupport": "Znajdź grupę wsparcia online lub stacjonarną, która zna temat przemocy psychicznej."
+    },
+    "footer": {
+      "title": "Twoja mapa ryzyk",
+      "body": "Punkty z poszczególnych modułów pomagają uchwycić obszary wymagające uwagi. Wyniki nie zastępują diagnozy ani pomocy specjalistycznej.",
+      "disclaimer": "Treści mają charakter edukacyjny. W sytuacji zagrożenia skontaktuj się z numerem alarmowym.",
+      "moduleScore": "Wynik modułu: {{score}} pkt"
+    }
+  },
+  "sin_1": {
+    "title": "Branie pieniędzy z instytucji zamiast prawdziwej pomocy",
+    "desc": "Toksyczna osoba wykorzystuje zasoby instytucji do własnych celów, zamiast zapewnić realne wsparcie partnerowi lub rodzinie. Skupia się na zyskach finansowych, a nie na potrzebach osób w kryzysie.",
+    "example_1": "Partner pobiera świadczenia socjalne przeznaczone dla ofiary przemocy, ale nie przekazuje ich na opłacenie terapii.",
+    "example_2": "Bliski zachęca do kredytu na siebie, by otrzymać dodatkową premię z banku, ignorując zadłużenie rodziny.",
+    "example_3": "Opiekun przejmuje kontrolę nad kontem dziecka, by pobierać świadczenie wychowawcze na swoje cele.",
+    "q_1": "Czy ktoś bliski pobiera świadczenia lub granty, ale nie przeznacza ich na realną pomoc Tobie?",
+    "help_1": "Dotyczy to np. dodatków mieszkaniowych, funduszy terapeutycznych, stypendiów kryzysowych.",
+    "q_2": "Jak często musisz tłumaczyć, na co powinny zostać wydane środki wsparcia?",
+    "help_2": "Rozważ sytuacje z ostatnich sześciu miesięcy.",
+    "q_3": "Jakie działania finansowe podejmuje ta osoba?",
+    "q_3.opt_1": "Podpisuje dokumenty bez konsultacji, by przyspieszyć wypłatę środków.",
+    "q_3.opt_2": "Namawia do zatajenia informacji przed instytucją.",
+    "q_3.opt_3": "Przenosi pieniądze na swoje konto, utrudniając dostęp.",
+    "q_4": "Na ile czujesz, że masz kontrolę nad wspólnymi wydatkami na pomoc?",
+    "q_5": "Czy zdarzało się, że wstrzymano Ci wsparcie, bo ktoś inny rozporządzał pieniędzmi?",
+    "result": {
+      "low": "Ryzyko finansowego nadużycia jest niskie, jednak warto regularnie monitorować przepływ pieniędzy i zachować dokumentację wydatków.",
+      "medium": "Pojawiają się sygnały, że ktoś przejmuje środki pomocowe. Zadbaj o wspólne planowanie budżetu i konsultacje z doradcą.",
+      "high": "Wynik wskazuje na poważne nadużycia finansowe. Rozważ szybki kontakt z instytucją przyznającą świadczenie oraz wsparcie prawne."
+    }
+  },
+  "sin_2": {
+    "title": "Przerzucanie winy i granie ofiary",
+    "desc": "Osoba toksyczna kreuje siebie na pokrzywdzonego, by unikać odpowiedzialności i wzbudzać poczucie winy. Manipuluje narracją, abyś przepraszał za jej działania.",
+    "example_1": "Po awanturze sprawca twierdzi, że krzyczał, bo był sprowokowany Twoją ciszą.",
+    "example_2": "W rozmowie z rodziną przedstawia Cię jako agresora, mimo że to ona wszczęła konflikt.",
+    "example_3": "W mediach społecznościowych publikuje wpisy o byciu ofiarą, sugerując, że wszyscy są przeciwko niej.",
+    "q_1": "Czy często słyszysz, że to Twoja wina, nawet gdy fakty mówią inaczej?",
+    "q_2": "Jak często toksyczna osoba przedstawia Cię innym jako sprawcę problemów?",
+    "q_3": "Jakie techniki obwiniania się pojawiają?",
+    "q_3.opt_1": "Przypomina dawne błędy, by uciszyć dyskusję.",
+    "q_3.opt_2": "Grozi ujawnieniem prywatnych informacji.",
+    "q_3.opt_3": "Przesadza z opowieściami o własnym cierpieniu.",
+    "q_4": "Czy musisz przepraszać mimo braku swojej winy?",
+    "q_5": "Na ile czujesz wsparcie od otoczenia, gdy dochodzi do przerzucania winy?",
+    "result": {
+      "low": "Masz świadomość manipulacji i potrafisz zachować dystans. Utrzymuj kontakt z zaufaną osobą, która potwierdzi Twoją perspektywę.",
+      "medium": "Toksyczna osoba skutecznie zaburza postrzeganie odpowiedzialności. Przygotuj faktyczne przykłady zdarzeń i sięgaj po wsparcie mediatora.",
+      "high": "Stałe przerzucanie winy poważnie podważa Twoją samoocenę. Rozważ konsultację z psychologiem i ograniczenie kontaktu."
+    }
+  },
+  "sin_3": {
+    "title": "Gaslighting",
+    "desc": "Gaslighting to celowe podważanie Twojej pamięci i poczucia rzeczywistości. Sprawca sprawia, że wątpisz w swoje doświadczenia, by mieć nad Tobą większą kontrolę.",
+    "example_1": "Słyszysz, że „przesadzasz”, choć rozmowa była pełna krzyków i obelg.",
+    "example_2": "Dowody w telefonie są kasowane, a sprawca twierdzi, że nigdy ich nie było.",
+    "example_3": "Osoba mówi innym, że masz problemy psychiczne, by podważyć Twoją wiarygodność.",
+    "q_1": "Czy ktoś często wmawia Ci, że źle pamiętasz wydarzenia?",
+    "q_2": "Jak często Twoje emocje są bagatelizowane jako przesada?",
+    "q_3": "Jakie działania podważające rzeczywistość zauważasz?",
+    "q_3.opt_1": "Ukrywanie lub niszczenie dowodów.",
+    "q_3.opt_2": "Powoływanie się na rzekomych świadków, których nie było.",
+    "q_3.opt_3": "Wyśmiewanie Twojej pamięci lub zdrowia psychicznego.",
+    "q_4": "Na ile czujesz się pewnie, mówiąc o swoich wspomnieniach?",
+    "q_5": "Czy zdarza się, że wycofujesz się z rozmowy, bo boisz się, że znów zostaniesz zakwestionowany?",
+    "result": {
+      "low": "Masz narzędzia, aby potwierdzać swoje wspomnienia. Kontynuuj dokumentowanie i trzymaj się faktów.",
+      "medium": "Gaslighting wpływa na Twoje poczucie stabilności. Warto prowadzić dziennik zdarzeń i konsultować je z zaufanymi osobami.",
+      "high": "Wysoki poziom gaslightingu zagraża Twojemu zdrowiu psychicznemu. Skontaktuj się z profesjonalnym wsparciem i rozważ zabezpieczenie dowodów."
+    }
+  },
+  "sin_4": {
+    "title": "Inwigilacja i obsesyjna kontrola",
+    "desc": "Toksyczna osoba śledzi każdy Twój ruch, narusza prywatność i wymaga pełnej kontroli nad Twoim czasem. To naruszenie granic i forma przemocy.",
+    "example_1": "Partner wymaga natychmiastowej odpowiedzi na każdą wiadomość i dzwoni co kilka minut.",
+    "example_2": "Ktoś instaluje aplikacje szpiegowskie na Twoim telefonie lub komputerze.",
+    "example_3": "Bliski oczekuje udostępniania lokalizacji przez całą dobę.",
+    "q_1": "Czy ktoś oczekuje, że cały czas będziesz dostępny?",
+    "q_2": "Jak często sprawdzane są Twoje urządzenia lub konta?",
+    "q_3": "Jakie formy kontroli pojawiają się najczęściej?",
+    "q_3.opt_1": "Sprawdzanie historii przeglądania i wiadomości.",
+    "q_3.opt_2": "Monitorowanie lokalizacji w czasie rzeczywistym.",
+    "q_3.opt_3": "Żądanie haseł do kont lub bankowości.",
+    "q_4": "Czy możesz swobodnie decydować o spotkaniach z innymi?",
+    "q_5": "Jak często ukrywasz swoje działania, by uniknąć konfliktu?",
+    "result": {
+      "low": "Utrzymujesz zdrowe granice prywatności. Dbaj o jasne zasady dotyczące czasu i kontaktu.",
+      "medium": "Kontrola zaczyna ograniczać Twoją wolność. Wzmocnij zabezpieczenia cyfrowe i poinformuj zaufane osoby o sytuacji.",
+      "high": "Wysoki poziom inwigilacji jest groźny. Rozważ natychmiastowe działania bezpieczeństwa i wsparcie prawne."
+    }
+  },
+  "sin_5": {
+    "title": "Używanie instytucji jako broni",
+    "desc": "Toksyczna osoba manipuluje instytucjami, by zastraszyć i uciszyć ofiarę. Zgłasza fałszywe skargi, wykorzystuje prawo, by utrudniać życie.",
+    "example_1": "Składanie bezpodstawnych zawiadomień na policji.",
+    "example_2": "Wysyłanie fałszywych pism do szkoły dziecka, by podważyć Twoją opiekę.",
+    "example_3": "Groźby pozwami, jeśli ujawnisz prawdę o przemocy.",
+    "q_1": "Czy doświadczyłeś bezpodstawnych skarg lub zawiadomień?",
+    "q_2": "Jak często musisz tłumaczyć się instytucjom z powodu czyichś oskarżeń?",
+    "q_3": "Jakie działania instytucjonalne są wykorzystywane przeciwko Tobie?",
+    "q_3.opt_1": "Fikcyjne zgłoszenia na policję.",
+    "q_3.opt_2": "Zawiadomienia do pracodawcy lub szkoły.",
+    "q_3.opt_3": "Manipulowanie dokumentami lub pismami urzędowymi.",
+    "q_4": "Czy obawiasz się korzystać z pomocy instytucji przez strach przed odwetem?",
+    "q_5": "Jak często konsultujesz się z prawnikiem w związku z tymi działaniami?",
+    "result": {
+      "low": "Sytuacja jest pod kontrolą, ale zapisuj wszystkie kontakty z instytucjami.",
+      "medium": "Instytucje stają się narzędziem nacisku. Przygotuj dokumentację i skorzystaj z porad prawnych.",
+      "high": "Wynik wskazuje na poważne nadużycie prawa. Pilnie poszukaj wsparcia prawnego i poinformuj zaufanego pełnomocnika."
+    }
+  },
+  "sin_6": {
+    "title": "Szantaż emocjonalny i groźby",
+    "desc": "Szantaż emocjonalny polega na wzbudzaniu strachu i poczucia odpowiedzialności za czyjeś emocje. Groźby mają zmusić Cię do podporządkowania.",
+    "example_1": "Słyszysz, że jeśli odejdziesz, stanie się tragedia.",
+    "example_2": "Ktoś grozi ujawnieniem kompromitujących informacji, jeśli nie spełnisz żądań.",
+    "example_3": "Bliska osoba twierdzi, że zrobi sobie krzywdę, jeśli nie przyznasz jej racji.",
+    "q_1": "Czy ktoś grozi skrzywdzeniem siebie lub Ciebie, by wymusić decyzję?",
+    "q_2": "Jak często odczuwasz lęk przed reakcją tej osoby?",
+    "q_3": "Jakie formy szantażu emocjonalnego zauważasz?",
+    "q_3.opt_1": "Groźby samookaleczenia.",
+    "q_3.opt_2": "Szantaż ujawnieniem tajemnic.",
+    "q_3.opt_3": "Obwinianie Cię za samopoczucie sprawcy.",
+    "q_4": "Czy unikasz ważnych decyzji ze strachu przed konsekwencjami?",
+    "q_5": "Jak często korzystasz z pomocy osób trzecich, gdy dochodzi do szantażu?",
+    "result": {
+      "low": "Rozpoznajesz próby szantażu i stawiasz granice. Kontynuuj planowanie wsparcia zaufanych osób.",
+      "medium": "Szantaż emocjonalny wpływa na Twoje wybory. Rozważ konsultację terapeutyczną i przygotuj scenariusze bezpieczeństwa.",
+      "high": "Wysoki wynik świadczy o poważnych groźbach. Natychmiast skontaktuj się z odpowiednimi służbami i organizacjami pomocowymi."
+    }
+  },
+  "sin_7": {
+    "title": "Tworzenie chaosu i dezinformacji",
+    "desc": "Toksyczna osoba celowo wprowadza zamieszanie, by utrudnić Ci ocenę sytuacji. Wysyła sprzeczne informacje i zmienia zasady gry.",
+    "example_1": "Plany spotkań są ciągle zmieniane bez uprzedzenia.",
+    "example_2": "Otrzymujesz sprzeczne wiadomości dotyczące ważnych decyzji.",
+    "example_3": "Osoba przekazuje innym różne wersje wydarzeń, by wzbudzić chaos.",
+    "q_1": "Czy masz trudność w ustaleniu faktów, bo informacje ciągle się zmieniają?",
+    "q_2": "Jak często otrzymujesz sprzeczne komunikaty?",
+    "q_3": "Jakie praktyki dezinformacyjne zauważasz?",
+    "q_3.opt_1": "Zmiana terminów lub zasad bez powiadomienia.",
+    "q_3.opt_2": "Rozsyłanie sprzecznych wiadomości do różnych osób.",
+    "q_3.opt_3": "Celowe ukrywanie ważnych informacji.",
+    "q_4": "Na ile możesz polegać na deklaracjach tej osoby?",
+    "q_5": "Czy musisz angażować inne osoby, by potwierdzić prawdziwe ustalenia?",
+    "result": {
+      "low": "Chaos jest ograniczony i potrafisz go neutralizować. Kontynuuj zapisywanie ustaleń na piśmie.",
+      "medium": "Dezinformacja zaczyna wpływać na Twoje decyzje. Wprowadzaj potwierdzenia pisemne i angażuj świadków.",
+      "high": "Wysoki poziom chaosu to poważne narzędzie kontroli. Wprowadź jasne zasady komunikacji i poszukaj mediacji."
+    }
+  },
+  "sin_8": {
+    "title": "Sianie podziałów i rozrywanie więzi",
+    "desc": "Sprawca izoluje Cię od bliskich, wzbudza konflikty i utrudnia dostęp do wsparcia. Celem jest osłabienie Twojej sieci pomocy.",
+    "example_1": "Toksyczna osoba oczernia Twoich przyjaciół, byś ograniczył z nimi kontakt.",
+    "example_2": "Rodzina jest skłócana poprzez przekazywanie plotek i sekretów.",
+    "example_3": "Ktoś wymusza wybór „albo oni, albo ja”.",
+    "q_1": "Czy ktoś próbuje kontrolować, z kim utrzymujesz relacje?",
+    "q_2": "Jak często czujesz presję, by ograniczyć kontakty z bliskimi?",
+    "q_3": "Jakie działania rozrywające więzi zauważasz?",
+    "q_3.opt_1": "Oczernianie bliskich osób.",
+    "q_3.opt_2": "Utrudnianie wspólnych spotkań.",
+    "q_3.opt_3": "Stawianie ultimatum wobec relacji.",
+    "q_4": "Czy masz przestrzeń, by samodzielnie budować sieć wsparcia?",
+    "q_5": "Jak często musisz ukrywać spotkania z bliskimi?",
+    "result": {
+      "low": "Twoje relacje są stabilne. Dbaj o regularny kontakt z siecią wsparcia.",
+      "medium": "Pojawiają się próby izolacji. Ustal granice i informuj bliskich o manipulacjach.",
+      "high": "Silne działania izolujące wymagają reakcji. Skontaktuj się z grupą wsparcia i opracuj plan odbudowy relacji."
+    }
   }
 }
