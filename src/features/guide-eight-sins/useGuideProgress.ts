@@ -149,7 +149,7 @@ export const useGuideProgress = (modules: SinModuleData[]): UseGuideProgressResu
         nextAnswersByModule[moduleId] = moduleAnswers;
         const totals = computeTotals(modules, nextAnswersByModule);
         const payload = createPayload(modules, nextAnswersByModule, totals);
-        void writeStorage(payload);
+        writeStorage(payload);
 
         return {
           answersByModule: nextAnswersByModule,
