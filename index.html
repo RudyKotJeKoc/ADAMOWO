@@ -10,6 +10,7 @@
     <meta property="og:description" content="Analizujemy rodzinną historię jako studium przypadku manipulacji, narcyzmu i toksycznych zachowań.">
     <meta property="og:type" content="website">
     <link rel="icon" href="/images/icons/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Special+Elite&family=Creepster&display=swap" rel="stylesheet">
@@ -56,12 +57,12 @@
     </div>
 
     <!-- Statistics Modal -->
-    <div id="stats-modal" class="modal-backdrop hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4">
+    <div id="stats-modal" role="dialog" aria-modal="true" aria-labelledby="stats-modal-title" class="modal-backdrop hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4">
         <div class="modal-content w-full max-w-4xl bg-gray-900 border border-cyan-500 rounded-lg shadow-xl p-6 relative">
-            <button id="stats-modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+            <button id="stats-modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="Zamknij okno statystyk">
                 <i class="fas fa-times text-xl"></i>
             </button>
-            <h3 class="text-2xl font-bold special-elite text-cyan-400 mb-6">
+            <h3 id="stats-modal-title" class="text-2xl font-bold special-elite text-cyan-400 mb-6">
                 <i class="fas fa-chart-line mr-3"></i>Statystyki Manipulacji
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -903,14 +904,14 @@
     </div>
 
     <!-- Emergency Help Modal -->
-    <div id="emergency-modal" class="modal-backdrop hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[150] p-4">
+    <div id="emergency-modal" role="dialog" aria-modal="true" aria-labelledby="emergency-modal-title" class="modal-backdrop hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[150] p-4">
         <div class="modal-content w-full max-w-md bg-red-900 border border-red-500 rounded-lg shadow-xl p-6 relative">
-            <button id="emergency-close" class="absolute top-4 right-4 text-gray-300 hover:text-white">
+            <button id="emergency-close" class="absolute top-4 right-4 text-gray-300 hover:text-white" aria-label="Zamknij okno pomocy">
                 <i class="fas fa-times text-xl"></i>
             </button>
             <div class="text-center">
                 <i class="fas fa-exclamation-triangle text-yellow-400 text-4xl mb-4"></i>
-                <h3 class="text-2xl font-bold text-white mb-4">Potrzebujesz natychmiastowej pomocy?</h3>
+                <h3 id="emergency-modal-title" class="text-2xl font-bold text-white mb-4">Potrzebujesz natychmiastowej pomocy?</h3>
                 <div class="space-y-4">
                     <a href="tel:112" class="block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition">
                         <i class="fas fa-phone mr-2"></i>Zadzwoń 112

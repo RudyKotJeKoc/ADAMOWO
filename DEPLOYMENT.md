@@ -48,10 +48,11 @@ npm run preview
 ## Files Overview
 
 ### Core Application Files
-- `app-comprehensive.js` - Main application logic with all features
+- `src/main.js` - Punkt wejścia aplikacji Vite oraz inicjalizacja modułów UI
+- `src/modules/` - Moduły odpowiedzialne za odtwarzacz, kalendarz, czat oraz logikę UI
 - `config-enhanced.php` - Security framework and database configuration
 - `api-*.php` - Secure API endpoints with CSRF protection
-- `sw-comprehensive.js` - Advanced service worker with intelligent caching
+- `public/sw.js` - Service Worker obsługujący cache zasobów statycznych
 - `schema-comprehensive.sql` - Complete database schema with optimization
 
 ### Configuration
