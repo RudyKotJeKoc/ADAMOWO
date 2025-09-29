@@ -33,9 +33,6 @@ describe('EightSinsPage', () => {
     ).closest('div');
 
     expect(questionCard).not.toBeNull();
-    if (!questionCard) {
-      throw new Error('Question container not found');
-    }
 
     const yesOption = within(questionCard).getAllByLabelText('Tak')[0];
     fireEvent.click(yesOption);
