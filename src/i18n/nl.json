@@ -40,5 +40,23 @@
       "dark": "Donkere modus"
     },
     "language": "Taal"
+  },
+  "player": {
+    "play": "Afspelen",
+    "pause": "Pauzeren",
+    "live": "Live",
+    "buffering": "Bufferen…",
+    "reconnecting": "Opnieuw verbinden ({{attempt}}/{{max}})…",
+    "error": "Afspeelfout",
+    "idle": "Gereed",
+    "retry": "Opnieuw proberen",
+    "volume": "Volume",
+    "mute": "Dempen",
+    "unmute": "Dempen uit",
+    "quality_128kbps": "128 kbps",
+    "nowPlaying": "Nu speelt",
+    "regionLabel": "Live radioplayer",
+    "artworkAlt": "Albumhoes voor {{title}} van {{artist}}",
+    "visualizerAria": "Audiospectrum visualisatie"
   }
 }
