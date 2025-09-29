@@ -49,7 +49,7 @@ export const getScaleScore = (
   weight = DEFAULT_WEIGHT,
   scaleMax = 5
 ): number => {
-  if (!answer) {
+  if (answer === undefined || answer === null) {
     return 0;
   }
 
