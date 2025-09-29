@@ -36,9 +36,23 @@
   },
   "controls": {
     "theme": {
+      "label": "Motyw",
+      "system": "Motyw systemowy",
+      "systemShort": "SYS",
       "light": "Tryb jasny",
-      "dark": "Tryb ciemny"
+      "lightShort": "JAS",
+      "dark": "Tryb ciemny",
+      "darkShort": "NOC",
+      "current": "Aktualnie: {{value}}",
+      "resolved_dark": "tryb ciemny",
+      "resolved_light": "tryb jasny"
     },
-    "language": "Język"
-  }
+    "language": {
+      "label": "Język",
+      "pl": "Polski",
+      "nl": "Niderlandzki",
+      "en": "Angielski"
+    }
+  },
+  "header": { "navigation": "Główna nawigacja", "openMenu": "Otwórz menu", "closeMenu": "Zamknij menu", "skipToContent": "Przejdź do treści", "home": "Strona główna Radio Adamowo" }
 }
