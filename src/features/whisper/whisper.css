@@ -1,0 +1,88 @@
+.whisper-section {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(26, 31, 58, 0.55), transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(15, 19, 40, 0.55), transparent 50%),
+    linear-gradient(135deg, #0a0e27, #151b38 50%, #1a1f3a);
+}
+
+.whisper-curtain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.whisper-curtain::after {
+  content: '';
+  position: absolute;
+  inset: -200%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+  animation: whisper-grain 18s steps(10) infinite;
+}
+
+.whisper-panel {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: -10%;
+  width: 55%;
+  background: radial-gradient(circle at 0% 50%, rgba(10, 14, 39, 0.9), rgba(10, 14, 39, 0.35) 60%, transparent);
+  box-shadow: inset -30px 0 80px rgba(4, 7, 19, 0.6);
+  animation: whisper-sway-left 14s ease-in-out infinite alternate;
+}
+
+.whisper-panel--right {
+  left: auto;
+  right: -10%;
+  transform: scaleX(-1);
+  box-shadow: inset 30px 0 80px rgba(4, 7, 19, 0.65);
+  animation-name: whisper-sway-right;
+  animation-delay: 1.8s;
+}
+
+@keyframes whisper-sway-left {
+  0% {
+    transform: translateX(-8px) skewY(-1deg);
+  }
+  50% {
+    transform: translateX(4px) skewY(0deg);
+  }
+  100% {
+    transform: translateX(-12px) skewY(1deg);
+  }
+}
+
+@keyframes whisper-sway-right {
+  0% {
+    transform: scaleX(-1) translateX(-12px) skewY(1deg);
+  }
+  50% {
+    transform: scaleX(-1) translateX(6px) skewY(0deg);
+  }
+  100% {
+    transform: scaleX(-1) translateX(-8px) skewY(-1deg);
+  }
+}
+
+@keyframes whisper-grain {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(5%, 5%, 0);
+  }
+}
+
+[data-reduced-motion='true'] .whisper-panel,
+[data-reduced-motion='true'] .whisper-curtain::after {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whisper-panel,
+  .whisper-curtain::after {
+    animation: none !important;
+  }
+}

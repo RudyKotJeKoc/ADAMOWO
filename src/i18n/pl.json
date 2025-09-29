@@ -41,22 +41,6 @@
     },
     "language": "Język"
   },
-  "player": {
-    "play": "Odtwórz",
-    "pause": "Pauza",
-    "live": "Na żywo",
-    "buffering": "Buforowanie…",
-    "reconnecting": "Ponowne łączenie ({{attempt}}/{{max}})…",
-    "error": "Błąd odtwarzania",
-    "idle": "Gotowy",
-    "retry": "Spróbuj ponownie",
-    "volume": "Głośność",
-    "mute": "Wycisz",
-    "unmute": "Włącz dźwięk",
-    "quality_128kbps": "128 kb/s",
-    "nowPlaying": "Teraz gramy",
-    "regionLabel": "Odtwarzacz radia na żywo",
-    "artworkAlt": "Okładka: {{title}} — {{artist}}",
-    "visualizerAria": "Wizualizacja widma audio"
+
   }
 }

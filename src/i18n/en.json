@@ -41,22 +41,6 @@
     },
     "language": "Language"
   },
-  "player": {
-    "play": "Play",
-    "pause": "Pause",
-    "live": "Live",
-    "buffering": "Buffering…",
-    "reconnecting": "Reconnecting ({{attempt}}/{{max}})…",
-    "error": "Playback error",
-    "idle": "Ready",
-    "retry": "Retry",
-    "volume": "Volume",
-    "mute": "Mute",
-    "unmute": "Unmute",
-    "quality_128kbps": "128 kbps",
-    "nowPlaying": "Now Playing",
-    "regionLabel": "Live radio player",
-    "artworkAlt": "Cover art for {{title}} by {{artist}}",
-    "visualizerAria": "Audio spectrum visualisation"
+
   }
 }
