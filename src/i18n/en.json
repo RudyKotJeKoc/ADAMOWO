@@ -41,36 +41,6 @@
     },
     "language": "Language"
   },
-  "whisper": {
-    "title": "Whisper Behind the Curtain",
-    "subtitle": "Amid accusations and manipulation, sometimes a single quiet voice can restore perspective.",
-    "length": "2017 · 12:34",
-    "play": "Play",
-    "pause": "Pause",
-    "restart": "Restart",
-    "mute": "Mute",
-    "unmute": "Unmute",
-    "volume": "Volume",
-    "scrub": "Seek position",
-    "regionLabel": "Whisper Behind the Curtain – archival recording",
-    "ethics": {
-      "title": "Listening ethics",
-      "body": [
-        "This archival document captures a tense public hearing from 2017.",
-        "Approach the voices with empathy; they reflect lived experiences.",
-        "Please refrain from sharing excerpts outside educational contexts."
-      ]
-    },
-    "status": {
-      "playing": "Playback started.",
-      "paused": "Playback paused.",
-      "ended": "Playback ended.",
-      "restarted": "Playback restarted from the beginning.",
-      "seeked": "Position updated.",
-      "muted": "Audio muted.",
-      "unmuted": "Audio unmuted.",
-      "volume": "Volume adjusted.",
-      "error": "Playback could not start."
-    }
+
   }
 }
