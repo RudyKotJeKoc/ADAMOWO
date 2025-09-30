@@ -13,6 +13,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
     "clsx": "^2.1.1",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^7.2.0",

@@ -38,3 +38,15 @@ Aplikacja uruchomi się pod adresem `http://localhost:5173`.
 
 ## Testy
 Testy jednostkowe znajdują się w katalogu obok komponentów lub w `src/test`.
+
+## Audycje Analityczne
+- Kontener funkcjonalności znajduje się w `src/features/analysis-archive`.
+- Dane lokalne i schemat typów są w plikach `data.local.json` oraz `data.schema.ts`.
+- Domyślnie aplikacja korzysta z mocka JSON; aby włączyć Supabase ustaw zmienne środowiskowe:
+
+```bash
+VITE_SUPABASE_URL="https://<projekt>.supabase.co"
+VITE_SUPABASE_ANON="<anon-key>"
+```
+
+- API pobiera dane z tabeli `episodes` i wspiera filtrowanie po tytule/opisie, kategoriach, tagach i sortowaniu.
