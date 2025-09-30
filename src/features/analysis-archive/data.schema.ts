@@ -18,7 +18,7 @@ export type Chapter = {
 
 export type EpisodeCategory =
   | 'AktDarowania'
-  | 'SlużebnośćUwiązania'
+  | 'SłużebnośćUwiązania'
   | 'SprawaAdamskich'
   | 'BronNarcyza'
   | 'Sledztwo';

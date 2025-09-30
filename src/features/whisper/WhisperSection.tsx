@@ -152,7 +152,6 @@ export function WhisperSection(): JSX.Element {
     } catch (error) {
       // Playback may be blocked by the browser until user interaction.
       setStatusMessage(t('whisper.status.error'));
-      // eslint-disable-next-line no-console
       console.error('Unable to play the audio file.', error);
     }
   }, [isPlaying, t]);
@@ -172,7 +171,6 @@ export function WhisperSection(): JSX.Element {
         await audio.play();
       } catch (error) {
         setStatusMessage(t('whisper.status.error'));
-        // eslint-disable-next-line no-console
         console.error('Unable to resume playback.', error);
       }
     }
