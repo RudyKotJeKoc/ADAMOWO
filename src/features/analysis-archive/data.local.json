@@ -4,207 +4,372 @@
     "title": "Akt Darowania: początki narracji",
     "slug": "akt-darowania-poczatki",
     "category": "AktDarowania",
-    "tags": ["wprowadzenie", "psychologia", "strategie"],
+    "tags": [
+      "wprowadzenie",
+      "psychologia",
+      "strategie"
+    ],
     "description": "Pierwsze spotkanie z cyklem Audycji Analitycznych tłumaczące podstawowe mechanizmy manipulacji oraz emocjonalnego uzależniania.",
     "durationSec": 1845,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/akt-darowania-1.mp3",
     "coverUrl": "https://cdn.adamowo.org/covers/analysis/akt-darowania-1.jpg",
     "publishedAt": "2024-01-12T08:00:00.000Z",
     "chapters": [
-      { "title": "Wprowadzenie", "startSec": 0 },
-      { "title": "Definicje i kontekst", "startSec": 210 },
-      { "title": "Przykłady sytuacyjne", "startSec": 960 }
+      {
+        "title": "Wprowadzenie",
+        "startSec": 0
+      },
+      {
+        "title": "Definicje i kontekst",
+        "startSec": 210
+      },
+      {
+        "title": "Przykłady sytuacyjne",
+        "startSec": 960
+      }
     ],
     "resources": [
-      { "label": "Notatki do odcinka", "url": "https://adamowo.org/notatki/akt-darowania-1" }
-    ]
+      {
+        "label": "Notatki do odcinka",
+        "url": "https://adamowo.org/notatki/akt-darowania-1"
+      }
+    ],
+    "programId": "heart"
   },
   {
     "id": "analysis-002",
     "title": "Służebność Uwiązania: eskalacja",
     "slug": "sluzebnosc-uwiazania-eskalacja",
     "category": "SłużebnośćUwiązania",
-    "tags": ["relacje", "escalacja"],
+    "tags": [
+      "relacje",
+      "escalacja"
+    ],
     "description": "Analiza działań prowadzących do eskalacji zależności psychicznej oraz sposobów rozpoznawania czerwonych flag.",
     "durationSec": 2312,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/sluzebnosc-uwiazania-2.mp3",
     "coverUrl": "https://cdn.adamowo.org/covers/analysis/sluzebnosc-uwiazania-2.jpg",
     "publishedAt": "2024-01-26T08:00:00.000Z",
     "chapters": [
-      { "title": "Wywiad ekspercki", "startSec": 60 },
-      { "title": "Studium przypadku", "startSec": 780 },
-      { "title": "Rekomendacje", "startSec": 1890 }
+      {
+        "title": "Wywiad ekspercki",
+        "startSec": 60
+      },
+      {
+        "title": "Studium przypadku",
+        "startSec": 780
+      },
+      {
+        "title": "Rekomendacje",
+        "startSec": 1890
+      }
     ],
     "resources": [
-      { "label": "Artykuł naukowy", "url": "https://adamowo.org/baza/escalacja" }
-    ]
+      {
+        "label": "Artykuł naukowy",
+        "url": "https://adamowo.org/baza/escalacja"
+      }
+    ],
+    "programId": "psych"
   },
   {
     "id": "analysis-003",
     "title": "Sprawa Adamskich: timeline zdarzeń",
     "slug": "sprawa-adamskich-timeline",
     "category": "SprawaAdamskich",
-    "tags": ["case-study", "rodzina"],
+    "tags": [
+      "case-study",
+      "rodzina"
+    ],
     "description": "Szczegółowa rekonstrukcja wydarzeń w sprawie Adamskich, z naciskiem na momenty przełomowe.",
     "durationSec": 2670,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/sprawa-adamskich-1.mp3",
     "publishedAt": "2024-02-02T08:00:00.000Z",
     "chapters": [
-      { "title": "Wprowadzenie do akt", "startSec": 0 },
-      { "title": "Analiza dokumentów", "startSec": 540 },
-      { "title": "Głosy świadków", "startSec": 1500 }
+      {
+        "title": "Wprowadzenie do akt",
+        "startSec": 0
+      },
+      {
+        "title": "Analiza dokumentów",
+        "startSec": 540
+      },
+      {
+        "title": "Głosy świadków",
+        "startSec": 1500
+      }
     ],
     "resources": [
-      { "label": "Teczka sprawy", "url": "https://adamowo.org/sprawa-adamskich" }
-    ]
+      {
+        "label": "Teczka sprawy",
+        "url": "https://adamowo.org/sprawa-adamskich"
+      }
+    ],
+    "programId": "team"
   },
   {
     "id": "analysis-004",
     "title": "Broń Narcyza: język dominacji",
     "slug": "bron-narcyza-jezyk",
     "category": "BronNarcyza",
-    "tags": ["manipulacja", "język"],
+    "tags": [
+      "manipulacja",
+      "język"
+    ],
     "description": "Rozłożenie na czynniki pierwsze języka, którym narcyzi budują iluzję kontroli i wyższości.",
     "durationSec": 1984,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/bron-narcyza-1.mp3",
     "publishedAt": "2024-02-16T08:00:00.000Z",
     "chapters": [
-      { "title": "Mechanizmy językowe", "startSec": 20 },
-      { "title": "Techniki wpływu", "startSec": 780 },
-      { "title": "Przeciwdziałanie", "startSec": 1530 }
+      {
+        "title": "Mechanizmy językowe",
+        "startSec": 20
+      },
+      {
+        "title": "Techniki wpływu",
+        "startSec": 780
+      },
+      {
+        "title": "Przeciwdziałanie",
+        "startSec": 1530
+      }
     ],
     "resources": [
-      { "label": "Lista technik językowych", "url": "https://adamowo.org/bron-narcyza" }
-    ]
+      {
+        "label": "Lista technik językowych",
+        "url": "https://adamowo.org/bron-narcyza"
+      }
+    ],
+    "programId": "welcome"
   },
   {
     "id": "analysis-005",
     "title": "Śledztwo: notatki terenowe",
     "slug": "sledztwo-notatki-terenowe",
     "category": "Sledztwo",
-    "tags": ["teren", "weryfikacja", "procedury"],
+    "tags": [
+      "teren",
+      "weryfikacja",
+      "procedury"
+    ],
     "description": "Podsumowanie pracy terenowej zespołu śledczego, z naciskiem na metodologię i bezpieczeństwo informatorów.",
     "durationSec": 2466,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/sledztwo-1.mp3",
     "publishedAt": "2024-03-01T08:00:00.000Z",
     "chapters": [
-      { "title": "Protokół bezpieczeństwa", "startSec": 120 },
-      { "title": "Mapowanie relacji", "startSec": 920 },
-      { "title": "Wnioski", "startSec": 1980 }
-    ]
+      {
+        "title": "Protokół bezpieczeństwa",
+        "startSec": 120
+      },
+      {
+        "title": "Mapowanie relacji",
+        "startSec": 920
+      },
+      {
+        "title": "Wnioski",
+        "startSec": 1980
+      }
+    ],
+    "programId": "team"
   },
   {
     "id": "analysis-006",
     "title": "Akt Darowania: konfrontacja",
     "slug": "akt-darowania-konfrontacja",
     "category": "AktDarowania",
-    "tags": ["konfrontacja", "narcyzm"],
+    "tags": [
+      "konfrontacja",
+      "narcyzm"
+    ],
     "description": "Opis narzędzi konfrontacyjnych i sposobów stawiania granic w relacji opartej na akcie darowania.",
     "durationSec": 2104,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/akt-darowania-2.mp3",
     "publishedAt": "2024-03-15T08:00:00.000Z",
     "chapters": [
-      { "title": "Diagnoza sytuacji", "startSec": 0 },
-      { "title": "Plan działania", "startSec": 660 },
-      { "title": "Wsparcie specjalistyczne", "startSec": 1500 }
+      {
+        "title": "Diagnoza sytuacji",
+        "startSec": 0
+      },
+      {
+        "title": "Plan działania",
+        "startSec": 660
+      },
+      {
+        "title": "Wsparcie specjalistyczne",
+        "startSec": 1500
+      }
     ],
     "resources": [
-      { "label": "Checklist granic", "url": "https://adamowo.org/granice-checklist" }
-    ]
+      {
+        "label": "Checklist granic",
+        "url": "https://adamowo.org/granice-checklist"
+      }
+    ],
+    "programId": "heart"
   },
   {
     "id": "analysis-007",
     "title": "Broń Narcyza: cyfrowe tropy",
     "slug": "bron-narcyza-cyfrowe-tropy",
     "category": "BronNarcyza",
-    "tags": ["cyber", "monitoring"],
+    "tags": [
+      "cyber",
+      "monitoring"
+    ],
     "description": "Śledzenie cyfrowych śladów narcyzów oraz analiza narzędzi do monitorowania ofiar w sieci.",
     "durationSec": 2240,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/bron-narcyza-2.mp3",
     "publishedAt": "2024-03-29T08:00:00.000Z",
     "chapters": [
-      { "title": "Narzędzia kontroli", "startSec": 140 },
-      { "title": "Anonimizacja", "startSec": 900 },
-      { "title": "Wsparcie prawne", "startSec": 1620 }
+      {
+        "title": "Narzędzia kontroli",
+        "startSec": 140
+      },
+      {
+        "title": "Anonimizacja",
+        "startSec": 900
+      },
+      {
+        "title": "Wsparcie prawne",
+        "startSec": 1620
+      }
     ],
     "resources": [
-      { "label": "Pakiet bezpieczeństwa cyfrowego", "url": "https://adamowo.org/bezpieczenstwo-cyfrowe" }
-    ]
+      {
+        "label": "Pakiet bezpieczeństwa cyfrowego",
+        "url": "https://adamowo.org/bezpieczenstwo-cyfrowe"
+      }
+    ],
+    "programId": "welcome"
   },
   {
     "id": "analysis-008",
     "title": "Służebność Uwiązania: ślady ekonomiczne",
     "slug": "sluzebnosc-uwiazania-ekonomia",
     "category": "SłużebnośćUwiązania",
-    "tags": ["finanse", "kontrola"],
+    "tags": [
+      "finanse",
+      "kontrola"
+    ],
     "description": "Analiza wzorców ekonomicznych wskazujących na uwiązanie finansowe oraz sposoby reagowania.",
     "durationSec": 2055,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/sluzebnosc-uwiazania-3.mp3",
     "publishedAt": "2024-04-12T08:00:00.000Z",
     "chapters": [
-      { "title": "Typowe schematy", "startSec": 30 },
-      { "title": "Budżet ratunkowy", "startSec": 750 },
-      { "title": "Wsparcie instytucjonalne", "startSec": 1500 }
-    ]
+      {
+        "title": "Typowe schematy",
+        "startSec": 30
+      },
+      {
+        "title": "Budżet ratunkowy",
+        "startSec": 750
+      },
+      {
+        "title": "Wsparcie instytucjonalne",
+        "startSec": 1500
+      }
+    ],
+    "programId": "psych"
   },
   {
     "id": "analysis-009",
     "title": "Sprawa Adamskich: proces sądowy",
     "slug": "sprawa-adamskich-proces",
     "category": "SprawaAdamskich",
-    "tags": ["prawo", "orzecznictwo"],
+    "tags": [
+      "prawo",
+      "orzecznictwo"
+    ],
     "description": "Przegląd kluczowych rozpraw w procesie Adamskich i analiza zeznań świadków.",
     "durationSec": 2520,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/sprawa-adamskich-2.mp3",
     "publishedAt": "2024-04-26T08:00:00.000Z",
     "chapters": [
-      { "title": "Przygotowanie obrony", "startSec": 120 },
-      { "title": "Linie argumentacyjne", "startSec": 840 },
-      { "title": "Orzeczenie", "startSec": 2040 }
-    ]
+      {
+        "title": "Przygotowanie obrony",
+        "startSec": 120
+      },
+      {
+        "title": "Linie argumentacyjne",
+        "startSec": 840
+      },
+      {
+        "title": "Orzeczenie",
+        "startSec": 2040
+      }
+    ],
+    "programId": "team"
   },
   {
     "id": "analysis-010",
     "title": "Śledztwo: analiza sygnałów",
     "slug": "sledztwo-analiza-sygnalow",
     "category": "Sledztwo",
-    "tags": ["analiza", "sygnały"],
+    "tags": [
+      "analiza",
+      "sygnały"
+    ],
     "description": "Zestawienie sygnałów ostrzegawczych pojawiających się w zgłoszeniach i ich weryfikacja.",
     "durationSec": 2386,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/sledztwo-2.mp3",
-    "publishedAt": "2024-05-10T08:00:00.000Z"
+    "publishedAt": "2024-05-10T08:00:00.000Z",
+    "programId": "team"
   },
   {
     "id": "analysis-011",
     "title": "Akt Darowania: odbudowa",
     "slug": "akt-darowania-odbudowa",
     "category": "AktDarowania",
-    "tags": ["regeneracja", "wsparcie"],
+    "tags": [
+      "regeneracja",
+      "wsparcie"
+    ],
     "description": "Strategie odbudowy własnej autonomii po zakończeniu relacji opartej na darowaniu.",
     "durationSec": 2150,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/akt-darowania-3.mp3",
     "publishedAt": "2024-05-24T08:00:00.000Z",
     "resources": [
-      { "label": "Plan odbudowy", "url": "https://adamowo.org/odbudowa-plan" }
-    ]
+      {
+        "label": "Plan odbudowy",
+        "url": "https://adamowo.org/odbudowa-plan"
+      }
+    ],
+    "programId": "heart"
   },
   {
     "id": "analysis-012",
     "title": "Broń Narcyza: architektura kłamstwa",
     "slug": "bron-narcyza-architektura-klamstwa",
     "category": "BronNarcyza",
-    "tags": ["kłamstwo", "propaganda", "dezinformacja"],
+    "tags": [
+      "kłamstwo",
+      "propaganda",
+      "dezinformacja"
+    ],
     "description": "Przegląd technik dezinformacyjnych i sposobów reagowania na zmasowane kampanie kłamstw.",
     "durationSec": 2425,
     "audioUrl": "https://cdn.adamowo.org/audio/analysis/bron-narcyza-3.mp3",
     "publishedAt": "2024-06-07T08:00:00.000Z",
     "chapters": [
-      { "title": "Źródła kłamstw", "startSec": 0 },
-      { "title": "Reakcje społeczności", "startSec": 880 },
-      { "title": "Strategie odporności", "startSec": 1710 }
+      {
+        "title": "Źródła kłamstw",
+        "startSec": 0
+      },
+      {
+        "title": "Reakcje społeczności",
+        "startSec": 880
+      },
+      {
+        "title": "Strategie odporności",
+        "startSec": 1710
+      }
     ],
     "resources": [
-      { "label": "Przewodnik odporności", "url": "https://adamowo.org/odpornosc" }
-    ]
+      {
+        "label": "Przewodnik odporności",
+        "url": "https://adamowo.org/odpornosc"
+      }
+    ],
+    "programId": "welcome"
   }
 ]

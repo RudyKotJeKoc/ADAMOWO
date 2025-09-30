@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { DocumentarySection } from '../features/documentary/DocumentarySection';
 import { FinalLessonSection } from '../features/final-lesson/FinalLessonSection';
+import { StudioSection } from '../features/studio/StudioSection';
 import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
 
 export default function Home(): ReactElement {
@@ -17,6 +18,7 @@ export default function Home(): ReactElement {
 
       <DocumentarySection />
       <FinalLessonSection />
+      <StudioSection />
       <ViolenceLoopSection />
     </div>
   );
