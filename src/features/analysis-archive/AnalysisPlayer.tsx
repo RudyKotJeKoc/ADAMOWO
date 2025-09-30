@@ -80,7 +80,7 @@ export const AnalysisPlayer = forwardRef<AnalysisPlayerHandle, AnalysisPlayerPro
       audio.removeEventListener('timeupdate', handleTime);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [episode?.id]);
+  }, [episode?.id, episode?.durationSec]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -113,7 +113,7 @@ export const AnalysisPlayer = forwardRef<AnalysisPlayerHandle, AnalysisPlayerPro
       setDuration(0);
       setIsPlaying(false);
     }
-  }, [episode?.audioUrl, episode?.durationSec, episode?.id]);
+  }, [episode]);
 
   useEffect(() => {
     const audio = audioRef.current;
