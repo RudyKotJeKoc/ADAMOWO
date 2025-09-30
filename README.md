@@ -31,6 +31,11 @@ Aplikacja uruchomi się pod adresem `http://localhost:5173`.
 - Dostępne przełączniki motywu i języka.
 - Translacje dla PL/NL/EN z autodetekcją języka przeglądarki.
 
+### Kocioł Wiedźmy: Pętla Przemocy
+- Animowany diagram nieskończoności wykorzystuje pętlę o długości ~14 s z możliwością pauzy, resetu oraz ręcznego wyboru fazy.
+- Przy włączonym systemowym `prefers-reduced-motion` animacja startuje w stanie pauzy, a w UI dostępny jest przełącznik "Ogranicz animacje".
+- Wskaźnik faz przekazuje krótkie komunikaty w regionie `aria-live` oraz obsługuje nawigację Tab/Enter/strzałki.
+
 ## Testy
 Testy jednostkowe znajdują się w katalogu obok komponentów lub w `src/test`.
 

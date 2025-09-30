@@ -48,68 +48,7 @@
       "resolved_light": "light mode"
     }
   },
-  "analysis": {
-    "page": {
-      "title": "Analytical Broadcasts",
-      "lead": "Explore investigations and commentary on manipulation and control."
-    },
-    "filters": {
-      "title": "Filters",
-      "results": "{{count}} results",
-      "searchLabel": "Search episodes",
-      "searchPlaceholder": "Search title or description...",
-      "categoriesLabel": "Categories",
-      "tagsLabel": "Tags",
-      "sortLabel": "Sort",
-      "sortNewest": "Newest first",
-      "sortOldest": "Oldest first",
-      "sortDurationAsc": "Shortest duration",
-      "sortDurationDesc": "Longest duration"
-    },
-    "categories": {
-      "AktDarowania": "Act of Giving",
-      "SłużebnośćUwiązania": "Servitude of Binding",
-      "SprawaAdamskich": "Adamski Case",
-      "BronNarcyza": "Narcissus' Weapon",
-      "Sledztwo": "Investigation"
-    },
-    "actions": {
-      "listen": "Listen",
-      "listenEpisode": "Listen to {{title}}",
-      "currentlyPlaying": "Now playing"
-    },
-    "list": {
-      "ariaLabel": "Analysis episodes"
-    },
-    "state": {
-      "loading": "Loading episodes...",
-      "empty": "No episodes match the filters yet."
-    },
-    "pagination": {
-      "pageIndicator": "Page {{page}} of {{pages}}",
-      "previous": "Previous",
-      "next": "Next"
-    },
-    "player": {
-      "title": "Episode player",
-      "play": "Play",
-      "pause": "Pause",
-      "mute": "Mute",
-      "unmute": "Unmute",
-      "volume": "Volume",
-      "progress": "Playback progress",
-      "nowPlaying": "Now playing: {{title}}",
-      "idle": "Select an episode to start listening",
-      "chapters": "Chapters"
-    },
-    "details": {
-      "emptyTitle": "Episode details",
-      "emptyHint": "Choose an episode from the list to see its description and materials.",
-      "published": "Published: {{date}}",
-      "unknownDate": "unknown",
-      "chapters": "Chapters",
-      "seekTo": "Jump to chapter {{title}}",
-      "resources": "Resources"
+
     }
   }
 }
