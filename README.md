@@ -31,14 +31,6 @@ Aplikacja uruchomi się pod adresem `http://localhost:5173`.
 - Dostępne przełączniki motywu i języka.
 - Translacje dla PL/NL/EN z autodetekcją języka przeglądarki.
 
-## Konfiguracja materiału dokumentalnego
-- Ustaw adresy strumienia w pliku `.env` lub `.env.local`:
-  - `VITE_DOC_VIDEO_HLS` – adres playlisty HLS (`.m3u8`).
-  - `VITE_DOC_VIDEO_MP4` – adres pliku MP4 używany jako fallback.
-  - `VITE_DOC_SUBTITLES_VTT` – opcjonalna ścieżka do napisów w formacie WebVTT.
-- Gdy brak źródła HLS/MP4, sekcja wyświetla komunikat konfiguracyjny oraz wyłączony odtwarzacz.
-- Metadane (rozdziały, materiały dodatkowe) znajdują się w `src/features/documentary/doc.data.ts` i są tłumaczone przez klucze w `src/i18n/*`.
-- Napisy można dodać przez umieszczenie plików `.vtt` w katalogu `public/assets/...` i wskazanie ich ścieżki w zmiennej `VITE_DOC_SUBTITLES_VTT`.
 
 ### Kocioł Wiedźmy: Pętla Przemocy
 - Animowany diagram nieskończoności wykorzystuje pętlę o długości ~14 s z możliwością pauzy, resetu oraz ręcznego wyboru fazy.

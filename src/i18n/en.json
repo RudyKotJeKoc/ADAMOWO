@@ -125,6 +125,211 @@
       }
     }
   },
+
+  "community": {
+    "title": "Interactive Zone",
+    "subtitle": "Share experiences safely, practise recognising manipulation and keep a private red flag log.",
+    "tabs": {
+      "voices": "Community Voices",
+      "simulator": "Simulator",
+      "redflags": "Red Flag Journal",
+      "ariaLabel": "Interactive zone sections"
+    }
+  },
+  "comments": {
+    "info": {
+      "localOnly": "This demo works without a backend — entries live only in your browser."
+    },
+    "add": {
+      "title": "Add a contribution"
+    },
+    "form": {
+      "nickname": "Nickname",
+      "content": "Message",
+      "submit": "Send",
+      "nicknameError": "Nickname must be at least 2 characters long.",
+      "contentError": "Please write a short message.",
+      "lengthError": "Messages are limited to {{max}} characters.",
+      "submitError": "We could not save your message locally.",
+      "success": "Saved locally",
+      "limit": "Up to {{max}} characters. Please avoid sharing identifying details.",
+      "remaining": "{{count}} characters remaining"
+    },
+    "card": {
+      "label": "Comment from {{nickname}}"
+    },
+    "status": {
+      "hidden": "Hidden",
+      "visible": "Visible",
+      "flagged": "Flagged"
+    },
+    "hiddenMessage": "This entry is hidden for you. You can show it again at any time.",
+    "empty": "No messages yet. Be the first to share a thought.",
+    "safety": {
+      "title": "Safety tips",
+      "anonymity": "Use a nickname and skip personal identifiers.",
+      "noNames": "Avoid posting names, addresses or legal information.",
+      "emergency": "If you are in danger, contact local services — this space cannot replace emergency help."
+    },
+    "moderation": {
+      "label": "Local moderation controls",
+      "hide": "Hide",
+      "unhide": "Show",
+      "flag": "Flag",
+      "unflag": "Remove flag",
+      "hideConfirmTitle": "Hide this entry?",
+      "hideConfirmDescription": "Hidden entries stay on your device and can be restored later.",
+      "cancel": "Cancel"
+    },
+    "threads": {
+      "ariaLabel": "Discussion threads",
+      "general": "Open conversations",
+      "generalDescription": "Share what is on your mind right now.",
+      "boundaries": "Boundaries and safety",
+      "boundariesDescription": "Practical tips for staying grounded and safe.",
+      "victories": "Small victories",
+      "victoriesDescription": "Celebrate the steps you are proud of."
+    }
+  },
+  "sim": {
+    "title": "Conversation simulator with a manipulator",
+    "subtitle": "Practise spotting manipulation patterns. Responses are generated offline from simple rules.",
+    "input": {
+      "label": "Send a message to the simulator",
+      "placeholder": "Write what you would like to say..."
+    },
+    "send": "Send",
+    "reset": "Reset",
+    "userLabel": "Your message",
+    "botLabel": "Manipulator response",
+    "analysis": {
+      "title": "Conversation analysis",
+      "none": "No techniques detected yet. Send a message to start the exercise."
+    },
+    "techniques": {
+      "detected": "Detected techniques",
+      "gaslighting": {
+        "label": "Gaslighting",
+        "description": "Twisting reality to make you doubt your perception.",
+        "tip": "Write down facts or ask a trusted person to reality-check."
+      },
+      "blameShift": {
+        "label": "Blame shifting",
+        "description": "Placing responsibility for their behaviour onto you.",
+        "tip": "State the observable behaviour and keep responsibilities clear."
+      },
+      "triangulation": {
+        "label": "Triangulation",
+        "description": "Using third parties to pressure or control the narrative.",
+        "tip": "Limit indirect channels and engage only in safe, direct conversations."
+      },
+      "loveBombing": {
+        "label": "Love bombing",
+        "description": "Overwhelming affection or promises to regain control.",
+        "tip": "Look for consistent actions rather than grand declarations."
+      },
+      "guiltTripping": {
+        "label": "Guilt tripping",
+        "description": "Invoking guilt to push you into compliance.",
+        "tip": "Name the tactic and reaffirm your boundaries."
+      },
+      "futureFaking": {
+        "label": "Future faking",
+        "description": "Dangling hypothetical plans to keep you attached.",
+        "tip": "Focus on what is happening now, not on promises of tomorrow."
+      }
+    },
+    "responses": {
+      "welcome": "I'm only trying to help. Tell me what's on your mind.",
+      "gaslighting": {
+        "overreacting": "You're overreacting again. Everyone knows you're too sensitive."
+      },
+      "blameShift": {
+        "yourFault": "This is your fault — if you behaved better we wouldn't have any problems."
+      },
+      "triangulation": {
+        "everyone": "Even our friends say you're the difficult one here."
+      },
+      "loveBombing": {
+        "promises": "I promise I'll change overnight, just give me another chance."
+      },
+      "guiltTripping": {
+        "sacrifice": "After everything I've sacrificed for you, this is how you repay me?"
+      },
+      "futureFaking": {
+        "plans": "Why are you upset? I already planned our future house and wedding."
+      },
+      "default": "Don't make a scene. You're imagining issues again."
+    },
+    "disclaimer": "Educational demo only. The simulator runs locally and does not store or transmit your input."
+  },
+  "rf": {
+    "title": "Red Flag Journal",
+    "add": "Add incident",
+    "date": "Date",
+    "category": "Category",
+    "intensity": "Intensity",
+    "note": "Description (optional)",
+    "export": "Export JSON",
+    "filter": {
+      "from": "From",
+      "to": "To",
+      "category": "Category filter",
+      "intensity": "Intensity filter",
+      "intensityValue": "Intensity {{value}}/5",
+      "all": "All"
+    },
+    "list": {
+      "title": "Entries"
+    },
+    "none": "No entries for the selected filters.",
+    "form": {
+      "dateError": "Choose a date.",
+      "limitError": "Notes are limited to {{max}} characters.",
+      "submitError": "We could not save the entry.",
+      "success": "Saved locally",
+      "intensityValue": "Intensity: {{value}}/5",
+      "limit": "Up to {{max}} characters.",
+      "submit": "Add entry"
+    },
+    "categories": {
+      "gaslighting": "Gaslighting",
+      "financial_abuse": "Financial abuse",
+      "stalking": "Stalking",
+      "legal_weaponization": "Legal weaponisation",
+      "emotional_blackmail": "Emotional blackmail",
+      "devaluation": "Devaluation",
+      "discard": "Discard",
+      "hoovering": "Hoovering"
+    },
+    "calendar": {
+      "title": "Monthly overview",
+      "subtitle": "Navigate with arrow keys to inspect days. Entries stay on this device.",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "prevShort": "◀",
+      "nextShort": "▶",
+      "ariaLabel": "Calendar of recorded incidents",
+      "week": {
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday",
+        "sat": "Saturday",
+        "sun": "Sunday",
+        "monShort": "Mon",
+        "tueShort": "Tue",
+        "wedShort": "Wed",
+        "thuShort": "Thu",
+        "friShort": "Fri",
+        "satShort": "Sat",
+        "sunShort": "Sun"
+      },
+      "dayAria": "{{date}}. Entries: {{count}}.",
+      "count": "Entries: {{count}}"
+    }
+
   "finalLesson": {
     "sectionLabel": "Final lesson",
     "title": "Final Lesson",
@@ -178,5 +383,6 @@
     },
     "backToTop": "Back to top",
     "rights": "© 2025 Radio Adamowo"
+
   }
 }
