@@ -1,3 +1,6 @@
+
+import { EightSinsPage } from '../features/guide-eight-sins/EightSinsPage';
+
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -5,9 +8,11 @@ import { LibrarySection } from '../features/library/LibrarySection';
 import { MythologySection } from '../features/mythology/MythologySection';
 
 export default function Guides(): JSX.Element {
-  const { t } = useTranslation();
-
   return (
+
+    <section className="space-y-6">
+      <EightSinsPage />
+
     <section className="space-y-12">
       <header className="space-y-6">
         <div className="space-y-4">
@@ -58,6 +63,7 @@ export default function Guides(): JSX.Element {
           {t('analysis.actions.listen')}
         </Link>
       </div>
+
     </section>
   );
 }

@@ -4,11 +4,19 @@
   },
   "navigation": {
     "live": "Live",
+
+    "violenceLoop": "Spiraal van geweld",
+    "shows": "Shows",
+    "guide": "Gids",
+    "lab": "Lab",
+    "community": "Community"
+
     "violenceLoop": "Geweldscyclus",
     "shows": "Programma's",
     "guide": "Gids",
     "lab": "Lab",
     "community": "Gemeenschap"
+
   },
   "header": {
     "skipToContent": "Ga naar de hoofdinhoud",
@@ -40,7 +48,11 @@
   "pages": {
     "home": {
       "title": "Radio Adamowo",
+
+      "lead": "Een educatieve radiozender over psychologisch geweld."
+
       "lead": "Een educatieve radio over psychologisch geweld."
+
     },
     "live": {
       "title": "Livestream"
@@ -58,12 +70,15 @@
       "title": "AI-lab"
     },
     "community": {
-      "title": "Gemeenschap"
+      "title": "Community"
     },
     "violenceLoop": {
-      "title": "Geweldscyclus"
+      "title": "Spiraal van geweld"
     },
     "shows": {
+
+      "title": "Shows"
+
       "title": "Programma's"
     }
   },
@@ -281,6 +296,7 @@
           "Handleiding getuigeninterviews"
         ]
       }
+
     }
   },
   "mythology": {
@@ -460,6 +476,218 @@
       }
     }
   },
+
+  "guide": {
+    "title": "8 giftige patronen",
+    "intro": "Deze interactieve gids helpt je schadelijk gedrag te herkennen dat relaties en veiligheid ondermijnt. Beantwoord de vragen voor risico-inzichten en passende ondersteuning.",
+    "start": "Start",
+    "continue": "Ga verder",
+    "reset": "Reset voortgang",
+    "reset.confirm": "Weet je zeker dat je alle antwoorden wilt verwijderen?",
+    "progress": "Voortgang",
+    "progress.summary": "{{percentage}}% van de vragen voltooid",
+    "progress.module": "{{answered}} van {{total}} vragen",
+    "score": "Score",
+    "score.summary": "{{total}} van {{max}} punten ({{percentage}}%)",
+    "result": {
+      "low": "Laag risico",
+      "medium": "Verhoogd risico",
+      "high": "Hoog risico"
+    },
+    "examples": {
+      "title": "Voorbeelden"
+    },
+    "answer": {
+      "yes": "Ja",
+      "no": "Nee"
+    },
+    "scale": {
+      "never": "Nooit",
+      "sometimes": "Soms",
+      "always": "Altijd"
+    },
+    "resources": {
+      "title": "Aanbevolen acties",
+      "financialHelp": "Neem contact op met het lokale maatschappelijk werk voor kosteloze financiële hulp.",
+      "reportAbuse": "Meld institutioneel misbruik bij een ombudsman of waakhond.",
+      "emotionalSupport": "Plan een gesprek met een hulpverlener of hulplijn om gevoelens te delen.",
+      "boundaries": "Oefen het stellen van grenzen met iemand die je vertrouwt en bereid assertieve antwoorden voor.",
+      "psychologicalHelp": "Overweeg individuele therapie om zelfvertrouwen en veerkracht op te bouwen.",
+      "documentation": "Verzamel bewijs (screenshots, notities) van gewelddadige situaties.",
+      "safetyPlan": "Maak een veiligheidsplan met veilige plekken en contactpersonen.",
+      "digitalSecurity": "Wijzig wachtwoorden, activeer tweestapsverificatie en beperk apparaat-toegang.",
+      "legalAdvice": "Vraag gratis juridisch advies aan bij een juridisch loket.",
+      "trustedPerson": "Deel je situatie met iemand die je vertrouwt voor steun en getuigen.",
+      "communitySupport": "Sluit je aan bij een online of lokale steungroep met ervaring rond psychisch geweld."
+    },
+    "footer": {
+      "title": "Jouw risicokaart",
+      "body": "Scores per module tonen waar extra aandacht nodig kan zijn. Resultaten vervangen geen professionele diagnose of hulp.",
+      "disclaimer": "De inhoud is educatief. Neem bij acuut gevaar direct contact op met de hulpdiensten.",
+      "moduleScore": "Modulescore: {{score}} punten"
+    }
+  },
+  "sin_1": {
+    "title": "Geld innen in plaats van echte hulp",
+    "desc": "Een toxisch persoon gebruikt institutionele middelen voor eigen gewin in plaats van echte steun te bieden. Geld is belangrijker dan de noden van mensen in crisis.",
+    "example_1": "Een partner houdt uitkeringen achter die voor het slachtoffer bedoeld zijn en betaalt geen therapie.",
+    "example_2": "Een familielid dringt aan op een lening op zijn naam om een bonus te krijgen, terwijl de schulden oplopen.",
+    "example_3": "Een verzorger beheert de rekening van een kind om kinderbijslag voor zichzelf te gebruiken.",
+    "q_1": "Int iemand uit jouw omgeving uitkeringen maar weigert hij ze aan jouw ondersteuning te besteden?",
+    "help_1": "Bijvoorbeeld huurtoeslag, therapiefondsen of crisissubsidies.",
+    "q_2": "Hoe vaak moet jij verantwoorden hoe ondersteuningsgeld besteed wordt?",
+    "help_2": "Denk aan de afgelopen zes maanden.",
+    "q_3": "Welke financiële acties voert deze persoon uit?",
+    "q_3.opt_1": "Ondertekent documenten zonder overleg om uitbetalingen te versnellen.",
+    "q_3.opt_2": "Spoort aan om informatie voor instanties achter te houden.",
+    "q_3.opt_3": "Verplaatst geld naar eigen rekeningen en blokkeert toegang.",
+    "q_4": "Hoeveel controle heb jij over het besteden van ondersteuningsgeld?",
+    "q_5": "Ben je ooit steun kwijtgeraakt omdat iemand anders het beheerde?",
+    "result": {
+      "low": "Het financiële risico is laag, maar blijf transacties volgen en bewaar bewijs.",
+      "medium": "Er zijn signalen dat steun wordt omgeleid. Maak samen een budget en zoek financieel advies.",
+      "high": "Er is sprake van ernstig misbruik. Neem snel contact op met de verstrekker en vraag juridisch advies."
+    }
+  },
+  "sin_2": {
+    "title": "Schuld doorschuiven en slachtoffer spelen",
+    "desc": "De toxische persoon presenteert zichzelf als slachtoffer om verantwoordelijkheid te ontwijken en schuld op te wekken.",
+    "example_1": "Na een ruzie zegt hij dat jouw stilte hem dwong te schreeuwen.",
+    "example_2": "Bij familie schildert hij jou af als agressor, ook al startte hij het conflict.",
+    "example_3": "Op sociale media claimt hij overal buiten gesloten te worden zodat iedereen partij kiest.",
+    "q_1": "Krijg je vaak te horen dat het jouw schuld is, ondanks de feiten?",
+    "q_2": "Hoe vaak noemt de persoon jou de oorzaak van problemen tegenover anderen?",
+    "q_3": "Welke schuldtechnieken herken je?",
+    "q_3.opt_1": "Oude fouten oprakelen om je te laten zwijgen.",
+    "q_3.opt_2": "Dreigen met het delen van privé-informatie.",
+    "q_3.opt_3": "Overdrijven van eigen lijden om medelijden te winnen.",
+    "q_4": "Moet je je verontschuldigen terwijl je niets fout deed?",
+    "q_5": "Hoeveel steun ervaar je wanneer de schuld wordt doorgeschoven?",
+    "result": {
+      "low": "Je herkent de manipulatie en bewaart perspectief. Houd contact met bondgenoten die jouw verhaal bevestigen.",
+      "medium": "De verantwoordelijkheid raakt vertroebeld. Verzamel feitelijke voorbeelden en zoek bemiddeling.",
+      "high": "Voortdurende beschuldigingen tasten je zelfbeeld aan. Praat met een therapeut en overweeg afstand."
+    }
+  },
+  "sin_3": {
+    "title": "Gaslighting",
+    "desc": "Gaslighting ondermijnt je geheugen en realiteitsgevoel. De dader laat je twijfelen zodat hij controle krijgt.",
+    "example_1": "Je hoort dat je ‘overdrijft’, zelfs na een gesprek vol scheldwoorden.",
+    "example_2": "Bewijs op je telefoon verdwijnt en hij ontkent dat het ooit bestond.",
+    "example_3": "Hij vertelt anderen dat je psychisch instabiel bent om je geloofwaardigheid te breken.",
+    "q_1": "Zegt iemand vaak dat je gebeurtenissen verkeerd herinnert?",
+    "q_2": "Hoe vaak worden jouw gevoelens weggezet als overdreven?",
+    "q_3": "Welke realiteitsverdraaiende acties zie je?",
+    "q_3.opt_1": "Bewijs verbergen of vernietigen.",
+    "q_3.opt_2": "Zogenaamde getuigen opvoeren die er niet waren.",
+    "q_3.opt_3": "Je geheugen of mentale gezondheid belachelijk maken.",
+    "q_4": "Hoe zeker voel je je wanneer je herinneringen deelt?",
+    "q_5": "Trek je je terug uit gesprekken uit angst opnieuw in twijfel getrokken te worden?",
+    "result": {
+      "low": "Je hebt middelen om je herinneringen te staven. Blijf documenteren en vertrouw op feiten.",
+      "medium": "Gaslighting wankelt je stabiliteit. Houd een logboek bij en bespreek het met vertrouwelingen.",
+      "high": "Het gaslighting-niveau is schadelijk. Zoek professionele hulp en bescherm bewijs."
+    }
+  },
+  "sin_4": {
+    "title": "Bewaking en obsessieve controle",
+    "desc": "De toxische persoon volgt elke beweging, schendt privacy en eist volledige controle over jouw tijd.",
+    "example_1": "Hij verwacht directe antwoorden en belt om de paar minuten.",
+    "example_2": "Hij installeert spyware op telefoon of laptop.",
+    "example_3": "Hij eist 24/7 locatie delen.",
+    "q_1": "Moet je voortdurend beschikbaar zijn voor deze persoon?",
+    "q_2": "Hoe vaak worden jouw apparaten of accounts gecontroleerd?",
+    "q_3": "Welke controlepatronen zie je het meest?",
+    "q_3.opt_1": "Browsegeschiedenis en berichten controleren.",
+    "q_3.opt_2": "Live je locatie volgen.",
+    "q_3.opt_3": "Wachtwoorden of bankgegevens opeisen.",
+    "q_4": "Kun je vrij beslissen wie je ontmoet?",
+    "q_5": "Verberg je activiteiten om conflicten te vermijden?",
+    "result": {
+      "low": "Je bewaakt gezonde privacy-grenzen. Blijf afspraken over contact helder houden.",
+      "medium": "Controle beperkt je vrijheid. Versterk digitale beveiliging en informeer vertrouwelingen.",
+      "high": "Het toezicht is gevaarlijk. Neem direct veiligheidsmaatregelen en vraag juridisch advies."
+    }
+  },
+  "sin_5": {
+    "title": "Instanties als wapen",
+    "desc": "De dader gebruikt instanties om te intimideren en het zwijgen op te leggen met valse meldingen en juridische dreiging.",
+    "example_1": "Ongegronde aangiftes bij de politie.",
+    "example_2": "Valse brieven naar school of werkgever om jouw zorg te ondermijnen.",
+    "example_3": "Dreigen met rechtszaken als je over het geweld spreekt.",
+    "q_1": "Heb je te maken gehad met ongegronde klachten of meldingen?",
+    "q_2": "Hoe vaak moet je je verantwoorden tegenover instanties door beschuldigingen?",
+    "q_3": "Welke tactieken worden gebruikt?",
+    "q_3.opt_1": "Fictieve politierapporten.",
+    "q_3.opt_2": "Werkgever of school informeren.",
+    "q_3.opt_3": "Officiële documenten manipuleren.",
+    "q_4": "Vermijd je hulp omdat je bang bent voor represailles?",
+    "q_5": "Hoe vaak overleg je met een jurist hierover?",
+    "result": {
+      "low": "De situatie is beheersbaar, maar noteer alle contacten met instanties.",
+      "medium": "Instanties worden een drukmiddel. Verzamel documentatie en win juridisch advies in.",
+      "high": "Er is ernstig misbruik van het recht. Zoek meteen juridische vertegenwoordiging en licht een vertrouwenspersoon in."
+    }
+  },
+  "sin_6": {
+    "title": "Emotionele chantage en dreigingen",
+    "desc": "Door emotionele chantage voel je je verantwoordelijk voor iemands emoties en word je via angst gestuurd.",
+    "example_1": "Je hoort dat er iets ergs gebeurt als je weggaat.",
+    "example_2": "Hij dreigt gevoelige informatie te lekken tenzij je gehoorzaamt.",
+    "example_3": "Hij zegt zichzelf pijn te doen als je hem niet gelijk geeft.",
+    "q_1": "Dreigt iemand zichzelf of jou pijn te doen om zijn zin te krijgen?",
+    "q_2": "Hoe vaak voel je angst voor zijn reactie?",
+    "q_3": "Welke vormen van chantage zie je?",
+    "q_3.opt_1": "Dreigen met zelfbeschadiging.",
+    "q_3.opt_2": "Geheimen onthullen als drukmiddel.",
+    "q_3.opt_3": "Jou verantwoordelijk maken voor zijn stemming.",
+    "q_4": "Vermijd je beslissingen om gevolgen te voorkomen?",
+    "q_5": "Hoe vaak vraag je steun van anderen bij chantage?",
+    "result": {
+      "low": "Je herkent chantage en stelt grenzen. Blijf steun organiseren met vertrouwelingen.",
+      "medium": "Chantage beïnvloedt je keuzes. Overweeg therapie en werk veiligheidsstappen uit.",
+      "high": "Het dreigingsniveau is hoog. Neem direct contact op met hulpdiensten en steunorganisaties."
+    }
+  },
+  "sin_7": {
+    "title": "Chaos en desinformatie creëren",
+    "desc": "De toxische persoon zaait verwarring zodat je uit balans raakt. Regels veranderen steeds en informatie spreekt zichzelf tegen.",
+    "example_1": "Afspraken worden op het laatste moment gewijzigd zonder bericht.",
+    "example_2": "Je ontvangt tegenstrijdige updates over belangrijke beslissingen.",
+    "example_3": "Hij vertelt iedereen een ander verhaal om conflict te zaaien.",
+    "q_1": "Is het moeilijk feiten te kennen omdat informatie steeds verandert?",
+    "q_2": "Hoe vaak krijg je tegenstrijdige berichten?",
+    "q_3": "Welke desinformatietrucs zie je?",
+    "q_3.opt_1": "Regels of data veranderen zonder waarschuwing.",
+    "q_3.opt_2": "Tegenstrijdige berichten naar verschillende mensen sturen.",
+    "q_3.opt_3": "Belangrijke informatie bewust achterhouden.",
+    "q_4": "Hoe betrouwbaar zijn zijn beloftes?",
+    "q_5": "Moet je anderen betrekken om afspraken te bevestigen?",
+    "result": {
+      "low": "Je houdt de chaos beheersbaar. Blijf afspraken schriftelijk bevestigen.",
+      "medium": "Desinformatie stuurt je keuzes. Gebruik schriftelijke bevestiging en betrek getuigen.",
+      "high": "Chaos wordt als controlemiddel ingezet. Stel duidelijke communicatieafspraken en zoek bemiddeling."
+    }
+  },
+  "sin_8": {
+    "title": "Verdeling zaaien en banden breken",
+    "desc": "De dader isoleert je van je netwerk, veroorzaakt conflicten en beperkt toegang tot steun om je kwetsbaarder te maken.",
+    "example_1": "Hij maakt je vrienden zwart zodat je hen minder ziet.",
+    "example_2": "Familieleden worden tegen elkaar uitgespeeld met roddels.",
+    "example_3": "Je moet kiezen: ‘zij of ik’.",
+    "q_1": "Probeert iemand te bepalen met wie jij contact hebt?",
+    "q_2": "Hoe vaak voel je druk om contact met dierbaren te beperken?",
+    "q_3": "Welke acties die banden verbreken herken je?",
+    "q_3.opt_1": "Kwaadspreken over dierbaren.",
+    "q_3.opt_2": "Gezamenlijke ontmoetingen blokkeren.",
+    "q_3.opt_3": "Ultimatums stellen over relaties.",
+    "q_4": "Heb je ruimte om een eigen steunnetwerk op te bouwen?",
+    "q_5": "Hoe vaak moet je ontmoetingen verbergen?",
+    "result": {
+      "low": "Je relaties blijven stabiel. Investeer in regelmatig contact met steunfiguren.",
+      "medium": "Pogingen tot isolatie zijn zichtbaar. Stel grenzen en informeer bondgenoten over manipulatie.",
+      "high": "Sterke isolatiepogingen vragen actie. Zoek steun bij groepen en herstel je netwerk."
+    }
 
   "community": {
     "title": "Interactieve zone",
@@ -718,6 +946,7 @@
     },
     "backToTop": "Terug naar boven",
     "rights": "© 2025 Radio Adamowo"
+
 
 
   }

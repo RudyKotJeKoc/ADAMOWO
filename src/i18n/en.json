@@ -460,6 +460,219 @@
     }
   },
 
+  "guide": {
+    "title": "Eight toxic sins",
+    "intro": "This interactive guide helps you recognise behaviours that erode relationships and safety. Answer the questions to get personalised risk insights and recommended support.",
+    "start": "Start",
+    "continue": "Continue",
+    "reset": "Reset progress",
+    "reset.confirm": "Are you sure you want to delete all answers?",
+    "progress": "Progress",
+    "progress.summary": "You completed {{percentage}}% of questions",
+    "progress.module": "{{answered}} of {{total}} questions",
+    "score": "Score",
+    "score.summary": "Scored {{total}} of {{max}} pts ({{percentage}}%)",
+    "result": {
+      "low": "Low risk",
+      "medium": "Elevated risk",
+      "high": "High risk"
+    },
+    "examples": {
+      "title": "Example situations"
+    },
+    "answer": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "scale": {
+      "never": "Never",
+      "sometimes": "Sometimes",
+      "always": "Always"
+    },
+    "resources": {
+      "title": "Recommended actions",
+      "financialHelp": "Contact your local social services for free financial support options.",
+      "reportAbuse": "Report institutional abuse to an ombudsperson or watchdog organisation.",
+      "emotionalSupport": "Schedule a conversation with a counsellor or helpline to process your emotions.",
+      "boundaries": "Practice boundary-setting with a trusted person and prepare assertive responses.",
+      "psychologicalHelp": "Consider individual therapy to rebuild self-esteem and resilience.",
+      "documentation": "Collect evidence (screenshots, notes) documenting abusive interactions.",
+      "safetyPlan": "Create a safety plan with safe locations and people you can reach out to.",
+      "digitalSecurity": "Update passwords, enable two-factor authentication and limit device access.",
+      "legalAdvice": "Seek free legal advice from a civic advice centre or legal aid.",
+      "trustedPerson": "Share the situation with someone you trust to gain support and witnesses.",
+      "communitySupport": "Join an online or local support community experienced with psychological abuse."
+    },
+    "footer": {
+      "title": "Your risk map",
+      "body": "Module scores highlight areas that may need attention. Results do not replace professional assessment or help.",
+      "disclaimer": "Content is educational. In an emergency contact local authorities immediately.",
+      "moduleScore": "Module score: {{score}} pts"
+    }
+  },
+  "sin_1": {
+    "title": "Taking institutional money instead of real help",
+    "desc": "A toxic person exploits institutional resources for personal gain instead of offering real support to the partner or family. Money matters more than the needs of people in crisis.",
+    "example_1": "A partner takes social benefits meant for the survivor but never pays for therapy.",
+    "example_2": "A relative pushes you to take a loan in their name to get a bank bonus, ignoring family debt.",
+    "example_3": "A caregiver controls a child’s account to spend the childcare allowance on themselves.",
+    "q_1": "Does someone close collect benefits or grants but refuse to spend them on your needs?",
+    "help_1": "Covers housing allowances, therapy funds or crisis scholarships.",
+    "q_2": "How often do you have to justify how support funds should be used?",
+    "help_2": "Think about the last six months.",
+    "q_3": "What financial actions does this person take?",
+    "q_3.opt_1": "Signs paperwork without consent to speed up payouts.",
+    "q_3.opt_2": "Urges you to hide information from institutions.",
+    "q_3.opt_3": "Moves money to their account and blocks access.",
+    "q_4": "How much control do you have over spending support money?",
+    "q_5": "Have you ever lost access to support because someone else controlled the funds?",
+    "result": {
+      "low": "Financial abuse risk is low, yet keep tracking transactions and store receipts.",
+      "medium": "There are signs someone redirects support funds. Plan budgets together and seek financial counselling.",
+      "high": "Severe financial misuse detected. Contact the institution providing aid and seek legal support quickly."
+    }
+  },
+  "sin_2": {
+    "title": "Blame shifting and playing the victim",
+    "desc": "The toxic person casts themselves as the victim to avoid responsibility and trigger guilt. They twist the story so you apologise for their behaviour.",
+    "example_1": "After a fight they claim they shouted only because your silence provoked them.",
+    "example_2": "They tell family you are aggressive even though they started the conflict.",
+    "example_3": "They post on social media about being victimised so everyone turns against you.",
+    "q_1": "Do you often hear it is your fault even when facts say otherwise?",
+    "q_2": "How often does the person describe you as the troublemaker to others?",
+    "q_3": "What blaming tactics do you notice?",
+    "q_3.opt_1": "Bringing up past mistakes to silence you.",
+    "q_3.opt_2": "Threatening to expose private information.",
+    "q_3.opt_3": "Exaggerating their suffering to gain sympathy.",
+    "q_4": "Do you end up apologising even when you did nothing wrong?",
+    "q_5": "How supported do you feel when blame shifting happens?",
+    "result": {
+      "low": "You recognise the manipulation and keep perspective. Stay in touch with allies who validate your view.",
+      "medium": "Blame shifting distorts accountability. Prepare factual examples and seek mediator support.",
+      "high": "Constant blame erodes your self-worth. Consult a therapist and consider limiting contact."
+    }
+  },
+  "sin_3": {
+    "title": "Gaslighting",
+    "desc": "Gaslighting undermines your memory and reality. The abuser makes you doubt your experiences to gain control.",
+    "example_1": "You are told you are “overreacting” even though the conversation was full of insults.",
+    "example_2": "Evidence on your phone disappears and they insist it never existed.",
+    "example_3": "They tell others you have mental issues to discredit you.",
+    "q_1": "Does someone tell you that you misremember events?",
+    "q_2": "How often are your feelings dismissed as exaggeration?",
+    "q_3": "What reality-twisting actions appear?",
+    "q_3.opt_1": "Hiding or destroying evidence.",
+    "q_3.opt_2": "Citing imaginary witnesses.",
+    "q_3.opt_3": "Mocking your memory or mental health.",
+    "q_4": "How confident do you feel when sharing your memories?",
+    "q_5": "Do you withdraw from conversations to avoid being questioned again?",
+    "result": {
+      "low": "You have tools to confirm your memories. Keep documenting and rely on facts.",
+      "medium": "Gaslighting shakes your stability. Keep a log of events and review it with trusted people.",
+      "high": "Gaslighting is severe and harms your mental health. Seek professional help and secure evidence."
+    }
+  },
+  "sin_4": {
+    "title": "Surveillance and obsessive control",
+    "desc": "The toxic person tracks every move, violates privacy and demands total control over your time. It is a boundary violation and abuse.",
+    "example_1": "They expect immediate replies and call every few minutes.",
+    "example_2": "They install spyware on your phone or computer.",
+    "example_3": "They demand location sharing 24/7.",
+    "q_1": "Does someone expect you to be available all the time?",
+    "q_2": "How often are your devices or accounts checked?",
+    "q_3": "What control patterns do you see most?",
+    "q_3.opt_1": "Checking browsing history and messages.",
+    "q_3.opt_2": "Live tracking your location.",
+    "q_3.opt_3": "Demanding passwords or banking access.",
+    "q_4": "Can you freely decide who to meet and when?",
+    "q_5": "How often do you hide actions to avoid conflict?",
+    "result": {
+      "low": "You maintain healthy privacy boundaries. Keep clear agreements about time and contact.",
+      "medium": "Control is limiting your freedom. Strengthen digital security and inform trusted people.",
+      "high": "Surveillance is dangerous. Take immediate safety steps and seek legal guidance."
+    }
+  },
+  "sin_5": {
+    "title": "Weaponising institutions",
+    "desc": "The toxic person manipulates institutions to intimidate and silence. False reports and legal threats are used to disrupt your life.",
+    "example_1": "Filing groundless police complaints.",
+    "example_2": "Sending false statements to your child’s school to undermine your care.",
+    "example_3": "Threatening lawsuits if you speak about the abuse.",
+    "q_1": "Have you faced unfounded complaints or reports?",
+    "q_2": "How often do you have to explain yourself to institutions because of accusations?",
+    "q_3": "What institutional tactics are used against you?",
+    "q_3.opt_1": "Fictitious police reports.",
+    "q_3.opt_2": "Notifying employers or schools.",
+    "q_3.opt_3": "Manipulating official documents.",
+    "q_4": "Do you avoid seeking help for fear of retaliation?",
+    "q_5": "How often do you consult a lawyer because of these actions?",
+    "result": {
+      "low": "Things are manageable but record every institutional contact.",
+      "medium": "Institutions are becoming a pressure tool. Prepare documentation and get legal advice.",
+      "high": "Severe misuse of law detected. Find legal representation immediately and inform an advocate."
+    }
+  },
+  "sin_6": {
+    "title": "Emotional blackmail and threats",
+    "desc": "Emotional blackmail evokes fear and makes you feel responsible for someone else’s emotions. Threats are used to force compliance.",
+    "example_1": "You hear that tragedy will happen if you leave.",
+    "example_2": "They threaten to expose compromising information unless you obey.",
+    "example_3": "They promise self-harm if you do not agree with them.",
+    "q_1": "Does someone threaten to hurt themselves or you to get their way?",
+    "q_2": "How often do you feel fear about their reaction?",
+    "q_3": "What types of emotional blackmail occur?",
+    "q_3.opt_1": "Threats of self-harm.",
+    "q_3.opt_2": "Threatening to reveal secrets.",
+    "q_3.opt_3": "Blaming you for their mood.",
+    "q_4": "Do you avoid decisions because of possible retaliation?",
+    "q_5": "How often do you seek help from others when blackmail happens?",
+    "result": {
+      "low": "You recognise blackmail attempts and set boundaries. Keep coordinating support with trusted allies.",
+      "medium": "Blackmail influences your decisions. Consider therapy and plan safety responses.",
+      "high": "Threat levels are severe. Contact emergency services and support organisations immediately."
+    }
+  },
+  "sin_7": {
+    "title": "Creating chaos and disinformation",
+    "desc": "The toxic person deliberately creates confusion to keep you off balance. Rules change constantly and information contradicts itself.",
+    "example_1": "Plans are changed last minute without notice.",
+    "example_2": "You receive conflicting updates about key decisions.",
+    "example_3": "They tell different stories to different people to spark conflict.",
+    "q_1": "Is it hard to know the facts because information keeps changing?",
+    "q_2": "How often do you get contradictory messages?",
+    "q_3": "What disinformation practices occur?",
+    "q_3.opt_1": "Changing dates or rules without warning.",
+    "q_3.opt_2": "Sending conflicting messages to others.",
+    "q_3.opt_3": "Hiding important information on purpose.",
+    "q_4": "How reliable are their promises?",
+    "q_5": "Do you need others to confirm what was agreed?",
+    "result": {
+      "low": "You keep chaos in check. Continue documenting agreements in writing.",
+      "medium": "Disinformation begins to sway your choices. Use written confirmations and involve witnesses.",
+      "high": "Chaos is used as a control tool. Set clear communication rules and seek mediation."
+    }
+  },
+  "sin_8": {
+    "title": "Sowing division and breaking bonds",
+    "desc": "The abuser isolates you from allies, fuels conflicts and restricts access to support to weaken your safety net.",
+    "example_1": "They badmouth your friends so you stop seeing them.",
+    "example_2": "Family members are turned against each other via rumours.",
+    "example_3": "You are forced to choose “them or me”.",
+    "q_1": "Does someone control who you can spend time with?",
+    "q_2": "How often do you feel pressure to reduce contact with loved ones?",
+    "q_3": "What bond-breaking actions do you notice?",
+    "q_3.opt_1": "Slandering close people.",
+    "q_3.opt_2": "Blocking shared meetings.",
+    "q_3.opt_3": "Issuing ultimatums about relationships.",
+    "q_4": "Do you have space to build your own support network?",
+    "q_5": "How often do you hide meetings with loved ones?",
+    "result": {
+      "low": "Your relationships remain stable. Nurture regular contact with supporters.",
+      "medium": "Isolation tactics appear. Set boundaries and inform allies about manipulation.",
+      "high": "Strong isolation efforts require action. Reach out to support groups and rebuild connections."
+    }
+
+
   "community": {
     "title": "Interactive Zone",
     "subtitle": "Share experiences safely, practise recognising manipulation and keep a private red flag log.",
