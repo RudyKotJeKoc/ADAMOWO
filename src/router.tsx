@@ -1,13 +1,16 @@
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
 import { AppShell } from './components/AppShell';
-import Community from './pages/Community';
-import Guides from './pages/Guides';
-import Home from './pages/Home';
-import Lab from './pages/Lab';
-import Live from './pages/Live';
-import Shows from './pages/Shows';
-import ViolenceLoop from './pages/ViolenceLoop';
+
+const Home = lazy(() => import('./pages/Home'));
+const Live = lazy(() => import('./pages/Live'));
+const ViolenceLoop = lazy(() => import('./pages/ViolenceLoop'));
+const Shows = lazy(() => import('./pages/Shows'));
+const AnalysisPage = lazy(() => import('./features/analysis-archive/AnalysisPage'));
+const Guides = lazy(() => import('./pages/Guides'));
+const Lab = lazy(() => import('./pages/Lab'));
+const Community = lazy(() => import('./pages/Community'));
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +21,7 @@ export const router = createBrowserRouter([
       { path: 'live', element: <Live /> },
       { path: 'violence-loop', element: <ViolenceLoop /> },
       { path: 'shows', element: <Shows /> },
+      { path: 'analysis', element: <AnalysisPage /> },
       { path: 'guides', element: <Guides /> },
       { path: 'lab', element: <Lab /> },
       { path: 'community', element: <Community /> }

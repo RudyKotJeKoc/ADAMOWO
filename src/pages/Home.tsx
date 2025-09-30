@@ -1,9 +1,11 @@
+import type { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { HeroPlayer } from '../components/HeroPlayer';
 
-import { WhisperSection } from '../features/whisper/WhisperSection';
+import { DocumentarySection } from '../features/documentary/DocumentarySection';
+import { FinalLessonSection } from '../features/final-lesson/FinalLessonSection';
+import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
 
-export default function Home(): JSX.Element {
+export default function Home(): ReactElement {
   const { t } = useTranslation();
 
   return (
@@ -13,6 +15,9 @@ export default function Home(): JSX.Element {
         <p className="max-w-2xl text-base-200">{t('pages.home.lead')}</p>
       </section>
 
+      <DocumentarySection />
+      <FinalLessonSection />
+      <ViolenceLoopSection />
     </div>
   );
 }

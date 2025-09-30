@@ -367,5 +367,355 @@
         ]
       }
     }
+
+  "controls": {
+    "theme": {
+      "label": "Motyw",
+      "system": "Motyw systemowy",
+      "systemShort": "SYS",
+      "light": "Tryb jasny",
+      "lightShort": "JAS",
+      "dark": "Tryb ciemny",
+      "darkShort": "NOC",
+      "current": "Aktualnie: {{value}}",
+      "resolved_dark": "tryb ciemny",
+      "resolved_light": "tryb jasny"
+    }
+  },
+
+    }
+  },
+  "documentary": {
+    "sectionLabel": "Materiał dokumentalny",
+    "title": "Sprawa z Adamowa: Autopsja rodzinnej wojny",
+    "description": "Reporterskie śledztwo w mechanizmy władzy, które rozdarły rodzinę z Adamowa — i praktyki, które pomagają przerwać przemoc.",
+    "player": {
+      "controlsGroup": "Sterowanie odtwarzaczem",
+      "play": "Odtwórz wideo",
+      "pause": "Wstrzymaj wideo",
+      "mute": "Wycisz",
+      "unmute": "Włącz dźwięk",
+      "subtitlesOn": "Włącz napisy",
+      "subtitlesOff": "Wyłącz napisy",
+      "subtitlesUnavailable": "Napisy niedostępne",
+      "enterFullscreen": "Pełny ekran",
+      "exitFullscreen": "Zamknij pełny ekran",
+      "progress": "Przesuń wideo",
+      "volume": "Zmień głośność",
+      "volumeIndicator": "Głośność: {{value}}%",
+      "chaptersHeading": "Rozdziały",
+      "chapterCurrent": "Obecny rozdział",
+      "chapterAriaLabel": "{{title}} ({{time}})",
+      "status": {
+        "loading": "Ładowanie materiału…",
+        "error": "Nie udało się wczytać strumienia dokumentu.",
+        "noSource": "Brak źródła wideo. Dodaj adres HLS lub MP4.",
+        "configurationHint": "Skonfiguruj zmienne VITE_DOC_VIDEO_HLS lub VITE_DOC_VIDEO_MP4, aby udostępnić transmisję."
+      }
+    },
+    "resources": {
+      "heading": "Materiały towarzyszące",
+      "description": "Pobierz opracowania i artykuły pogłębiające dochodzenie.",
+      "timeline": {
+        "title": "Oś czasu sprawy",
+        "description": "Chronologiczny opis eskalacji, interwencji i etapów sądowych."
+      },
+      "profile": {
+        "title": "Portrety rodziny",
+        "description": "Sylwetki kluczowych osób i ich sieci wsparcia."
+      },
+      "legal": {
+        "title": "Brief prawny",
+        "description": "Podsumowanie postępowań, dowodów i orzecznictwa."
+      }
+    },
+    "resourceTypes": {
+      "pdf": "Plik PDF",
+      "article": "Artykuł",
+      "audio": "Audio",
+      "guide": "Poradnik",
+      "video": "Wideo"
+    },
+    "subtitles": {
+      "primaryLabel": "Napisy polskie",
+      "primaryCode": "pl"
+    },
+    "chapters": {
+      "prologue": {
+        "title": "Prolog: zakłócenie ciszy",
+        "summary": "Podczas sąsiedzkiej skargi wypływają sprzeczne świadectwa."
+      },
+      "escalation": {
+        "title": "Spirala eskalacji",
+        "summary": "Nasilają się izolacja, kontrola finansowa i groźby."
+      },
+      "intervention": {
+        "title": "Noc interwencji",
+        "summary": "Radio społeczne i służby koordynują wyjście wysokiego ryzyka."
+      },
+      "aftermath": {
+        "title": "Skutki i odbudowa",
+        "summary": "Ocalałe osoby odbudowują sieci wsparcia, a sąd waży dowody."
+      }
+    }
+  },
+  "community": {
+    "title": "Strefa Interaktywna",
+    "subtitle": "Bezpieczna przestrzeń do dzielenia się doświadczeniami, treningu rozpoznawania manipulacji i prowadzenia dziennika sygnałów ostrzegawczych.",
+    "tabs": {
+      "voices": "Głosy Społeczności",
+      "simulator": "Symulator",
+      "redflags": "Dziennik Czerwonych Flag",
+      "ariaLabel": "Zakładki strefy interaktywnej"
+    }
+  },
+  "comments": {
+    "info": {
+      "localOnly": "To demo bez backendu — wpisy są przechowywane tylko lokalnie."
+    },
+    "add": {
+      "title": "Dodaj wypowiedź"
+    },
+    "form": {
+      "nickname": "Pseudonim",
+      "content": "Treść",
+      "submit": "Wyślij",
+      "nicknameError": "Pseudonim powinien mieć co najmniej 2 znaki.",
+      "contentError": "Wpisz krótką wiadomość.",
+      "lengthError": "Wpis może mieć maksymalnie {{max}} znaków.",
+      "submitError": "Nie udało się zapisać wpisu lokalnie.",
+      "success": "Zapisano lokalnie",
+      "limit": "Do {{max}} znaków. Nie podawaj danych identyfikujących.",
+      "remaining": "Pozostało znaków: {{count}}"
+    },
+    "card": {
+      "label": "Wpis użytkownika {{nickname}}"
+    },
+    "status": {
+      "hidden": "Ukryty",
+      "visible": "Widoczny",
+      "flagged": "Zgłoszony"
+    },
+    "hiddenMessage": "Ten wpis jest ukryty. Możesz go ponownie wyświetlić w dowolnym momencie.",
+    "empty": "Brak wpisów. Podziel się swoim głosem jako pierwsza/y.",
+    "safety": {
+      "title": "Wskazówki bezpieczeństwa",
+      "anonymity": "Korzystaj z pseudonimu i pomijaj dane osobowe.",
+      "noNames": "Nie publikuj imion, adresów ani danych prawnych.",
+      "emergency": "W sytuacji zagrożenia skontaktuj się z lokalnymi służbami — to miejsce nie zastępuje pomocy alarmowej."
+    },
+    "moderation": {
+      "label": "Lokalne narzędzia moderacji",
+      "hide": "Ukryj",
+      "unhide": "Pokaż",
+      "flag": "Zgłoś",
+      "unflag": "Usuń zgłoszenie",
+      "hideConfirmTitle": "Ukryć ten wpis?",
+      "hideConfirmDescription": "Ukryte wpisy pozostają na Twoim urządzeniu i można je przywrócić.",
+      "cancel": "Anuluj"
+    },
+    "threads": {
+      "ariaLabel": "Wątki rozmów",
+      "general": "Otwarte rozmowy",
+      "generalDescription": "Podziel się tym, co teraz czujesz.",
+      "boundaries": "Granice i bezpieczeństwo",
+      "boundariesDescription": "Praktyczne wskazówki, jak zadbać o siebie.",
+      "victories": "Małe zwycięstwa",
+      "victoriesDescription": "Świętuj kroki, z których jesteś dumny/a."
+    }
+  },
+  "sim": {
+    "title": "Symulator rozmowy z manipulatorem",
+    "subtitle": "Trenuj rozpoznawanie technik manipulacji. Odpowiedzi powstają lokalnie na podstawie prostych reguł.",
+    "input": {
+      "label": "Wyślij wiadomość do symulatora",
+      "placeholder": "Napisz, co chcesz powiedzieć..."
+    },
+    "send": "Wyślij",
+    "reset": "Reset",
+    "userLabel": "Twoja wiadomość",
+    "botLabel": "Odpowiedź manipulatora",
+    "analysis": {
+      "title": "Analiza rozmowy",
+      "none": "Na razie brak wykrytych technik. Wyślij wiadomość, by rozpocząć ćwiczenie."
+    },
+    "techniques": {
+      "detected": "Wykryte techniki",
+      "gaslighting": {
+        "label": "Gaslighting",
+        "description": "Podważanie rzeczywistości, byś zwątpił/a w swoje odczucia.",
+        "tip": "Spisuj fakty lub poproś zaufaną osobę o spojrzenie z boku."
+      },
+      "blameShift": {
+        "label": "Przerzucanie winy",
+        "description": "Przerzucanie odpowiedzialności za jego/jej zachowanie na ciebie.",
+        "tip": "Nazywaj konkretne działania i przypominaj o granicach odpowiedzialności."
+      },
+      "triangulation": {
+        "label": "Triangulacja",
+        "description": "Wykorzystywanie osób trzecich do wywierania presji lub kontrolowania narracji.",
+        "tip": "Ogranicz pośrednie kanały i rozmawiaj tylko w bezpieczny sposób."
+      },
+      "loveBombing": {
+        "label": "Love bombing",
+        "description": "Zalew uczuć lub obietnic, by odzyskać kontrolę.",
+        "tip": "Zwracaj uwagę na stałe działania, a nie wielkie deklaracje."
+      },
+      "guiltTripping": {
+        "label": "Wzbudzanie poczucia winy",
+        "description": "Wywoływanie poczucia winy, by wymusić uległość.",
+        "tip": "Nazwij technikę i potwierdź swoje granice."
+      },
+      "futureFaking": {
+        "label": "Future faking",
+        "description": "Obiecywanie przyszłości, by zatrzymać cię przy sobie.",
+        "tip": "Skup się na tym, co dzieje się teraz, nie na obietnicach."
+      }
+    },
+    "responses": {
+      "welcome": "Ja przecież chcę dobrze. Powiedz, co ci chodzi po głowie.",
+      "gaslighting": {
+        "overreacting": "Znowu przesadzasz. Wszyscy wiedzą, że jesteś przewrażliwiona/y."
+      },
+      "blameShift": {
+        "yourFault": "To twoja wina — gdybyś zachowywał/a się lepiej, nie byłoby problemu."
+      },
+      "triangulation": {
+        "everyone": "Nawet znajomi mówią, że to z tobą najtrudniej."
+      },
+      "loveBombing": {
+        "promises": "Obiecuję, że zmienię się z dnia na dzień, tylko daj mi jeszcze jedną szansę."
+      },
+      "guiltTripping": {
+        "sacrifice": "Po tym wszystkim, co dla ciebie poświęciłem/am, tak się odwdzięczasz?"
+      },
+      "futureFaking": {
+        "plans": "Dlaczego się złościsz? Już zaplanowałem/am nasz dom i ślub."
+      },
+      "default": "Nie rób scen. Wymyślasz problemy."
+    },
+    "disclaimer": "Materiały edukacyjne. Symulator działa offline i nie wysyła twoich danych."
+  },
+  "rf": {
+    "title": "Dziennik Czerwonych Flag",
+    "add": "Dodaj incydent",
+    "date": "Data",
+    "category": "Kategoria",
+    "intensity": "Natężenie",
+    "note": "Opis (opcjonalnie)",
+    "export": "Eksportuj JSON",
+    "filter": {
+      "from": "Od",
+      "to": "Do",
+      "category": "Filtr kategorii",
+      "intensity": "Filtr natężenia",
+      "intensityValue": "Natężenie {{value}}/5",
+      "all": "Wszystkie"
+    },
+    "list": {
+      "title": "Lista wpisów"
+    },
+    "none": "Brak wpisów dla wybranych filtrów.",
+    "form": {
+      "dateError": "Wybierz datę.",
+      "limitError": "Opis może mieć maksymalnie {{max}} znaków.",
+      "submitError": "Nie udało się zapisać wpisu.",
+      "success": "Zapisano lokalnie",
+      "intensityValue": "Natężenie: {{value}}/5",
+      "limit": "Do {{max}} znaków.",
+      "submit": "Dodaj wpis"
+    },
+    "categories": {
+      "gaslighting": "Gaslighting",
+      "financial_abuse": "Przemoc ekonomiczna",
+      "stalking": "Stalking",
+      "legal_weaponization": "Wykorzystywanie prawa",
+      "emotional_blackmail": "Szantaż emocjonalny",
+      "devaluation": "Dewaluacja",
+      "discard": "Odrzucenie",
+      "hoovering": "Hoovering"
+    },
+    "calendar": {
+      "title": "Kalendarz miesięczny",
+      "subtitle": "Poruszaj się strzałkami, aby sprawdzić dni. Wpisy zostają tylko na tym urządzeniu.",
+      "prevMonth": "Poprzedni miesiąc",
+      "nextMonth": "Następny miesiąc",
+      "prevShort": "◀",
+      "nextShort": "▶",
+      "ariaLabel": "Kalendarz zarejestrowanych incydentów",
+      "week": {
+        "mon": "Poniedziałek",
+        "tue": "Wtorek",
+        "wed": "Środa",
+        "thu": "Czwartek",
+        "fri": "Piątek",
+        "sat": "Sobota",
+        "sun": "Niedziela",
+        "monShort": "Pn",
+        "tueShort": "Wt",
+        "wedShort": "Śr",
+        "thuShort": "Cz",
+        "friShort": "Pt",
+        "satShort": "So",
+        "sunShort": "Nd"
+      },
+      "dayAria": "{{date}}. Liczba wpisów: {{count}}.",
+      "count": "Wpisów: {{count}}"
+    }
+
+  "finalLesson": {
+    "sectionLabel": "Ostateczna lekcja",
+    "title": "Ostateczna Lekcja",
+    "description": "Co wynosimy ze sprawy Adamowo i gdzie szukać pomocy tu i teraz.",
+    "summary": {
+      "title": "Najważniejsze wnioski",
+      "cycle": "Przemoc jest systemem — wzorzec wróci, jeśli nie zmienimy układu sił.",
+      "breakingSilence": "Mówienie głośno jest bezpieczniejsze z planem i zaufanymi osobami.",
+      "communityCare": "Media społecznościowe mogą dokumentować, świadkować i rozbrajać izolację.",
+      "documentation": "Archiwizacja dowodów chroni, gdy narracje są używane przeciw ocalałym.",
+      "boundaries": "Stawianie granic to prawo, a nie przesada."
+    },
+    "resources": {
+      "title": "Zasoby pomocowe",
+      "lead": "Zestawy narzędzi, poradniki i kontakty, które rozszerzają pracę poza dokumentem.",
+      "visit": "Przejdź do zasobu",
+      "openExternal": "Otwiera się w nowym oknie",
+      "blueprint": {
+        "title": "Plan bezpieczeństwa",
+        "description": "Ćwiczenia scenariuszowe z checklistą bezpieczeństwa i mapą wyjścia."
+      },
+      "deEscalation": {
+        "title": "Podręcznik deeskalacji",
+        "description": "Mikrointerwencje i podpowiedzi dla przyjaciół, sąsiadów i współpracowników."
+      },
+      "legal": {
+        "title": "Zestaw prawny",
+        "description": "Instrukcje dokumentowania i pozyskiwania reprezentacji pro bono."
+      }
+    },
+    "crisis": {
+      "title": "Kontakty kryzysowe (Polska)",
+      "description": "Jeśli ty lub ktoś bliski jest w zagrożeniu, skontaktuj się natychmiast.",
+      "niebieska": {
+        "label": "Niebieska Linia – telefon zaufania",
+        "description": "Całodobowe wsparcie psychologiczne i prawne dla osób doświadczających przemocy."
+      },
+      "cpk": {
+        "label": "Centrum Praw Kobiet",
+        "description": "Porady prawne, schronienie i opieka psychologiczna dla kobiet."
+      },
+      "callAction": "Zadzwoń do {{organization}} pod numer {{phone}}"
+    }
+  },
+  "footer": {
+    "navigation": "Nawigacja w stopce",
+    "links": {
+      "documentation": "Dokumentacja",
+      "privacy": "Prywatność i cookies",
+      "methodology": "Metodologia i źródła"
+    },
+    "backToTop": "Do góry",
+    "rights": "© 2025 Radio Adamowo"
+
   }
 }
