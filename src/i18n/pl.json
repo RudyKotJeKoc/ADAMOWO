@@ -10,6 +10,33 @@
     "lab": "Laboratorium",
     "community": "Społeczność"
   },
+  "header": {
+    "skipToContent": "Przejdź do treści głównej",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "home": "Powrót do strony głównej Radio Adamowo",
+    "navigation": "Główna nawigacja"
+  },
+  "controls": {
+    "theme": {
+      "label": "Motyw",
+      "system": "Motyw systemowy",
+      "systemShort": "SYS",
+      "light": "Tryb jasny",
+      "lightShort": "JAS",
+      "dark": "Tryb ciemny",
+      "darkShort": "NOC",
+      "current": "Aktualnie: {{value}}",
+      "resolved_dark": "tryb ciemny",
+      "resolved_light": "tryb jasny"
+    },
+    "language": {
+      "label": "Zmiana języka",
+      "pl": "Polski",
+      "nl": "Niderlandzki",
+      "en": "Angielski"
+    }
+  },
   "pages": {
     "home": {
       "title": "Radio Adamowo",
@@ -19,7 +46,13 @@
       "title": "Transmisja na żywo"
     },
     "guides": {
-      "title": "Poradniki"
+      "title": "Poradniki",
+      "lede": "Centrum edukacyjne o manipulacji, narcyzmie i dokumentowaniu przemocy psychicznej.",
+      "anchorNav": "Nawigacja po sekcjach poradnika",
+      "links": {
+        "library": "Biblioteka przypadków",
+        "mythology": "Mitologia Narcyza"
+      }
     },
     "lab": {
       "title": "Laboratorium AI"
@@ -34,12 +67,397 @@
       "title": "Audycje"
     }
   },
+  "player": {
+    "regionLabel": "Odtwarzacz stacji Radio Adamowo",
+    "artworkAlt": "Okładka audycji {{title}} — {{artist}}",
+    "live": "Na żywo",
+    "buffering": "Buforowanie sygnału…",
+    "reconnecting": "Próba ponownego połączenia (pozostało {{seconds}} s)",
+    "error": "Nie udało się odtworzyć strumienia.",
+    "idle": "Odtwarzacz gotowy",
+    "nowPlaying": "Teraz gramy",
+    "visualizerAria": "Wizualizacja fal dźwiękowych",
+    "play": "Odtwórz",
+    "pause": "Wstrzymaj",
+    "mute": "Wycisz",
+    "unmute": "Przywróć dźwięk",
+    "quality_128kbps": "128 kbps",
+    "volume": "Głośność",
+    "retry": "Spróbuj ponownie"
+  },
+  "whisper": {
+    "regionLabel": "Szept zza Kurtyny — rekonstrukcja przesłuchania",
+    "length": "Czas nagrania",
+    "title": "Szept zza Kurtyny",
+    "subtitle": "Nagranie dokumentuje napięte przesłuchanie publiczne z 2017 roku.",
+    "ethics": {
+      "title": "Zasady etyczne słuchacza",
+      "body": [
+        "Słuchaj z empatią — każde westchnienie to realna osoba.",
+        "Zwracaj uwagę na pauzy i niedopowiedzenia, w nich ukryta jest dynamika władzy.",
+        "Notuj fakty, unikaj osądów — materiał służy edukacji i profilaktyce."
+      ]
+    },
+    "play": "Odtwórz",
+    "pause": "Wstrzymaj",
+    "restart": "Zacznij od początku",
+    "mute": "Wycisz",
+    "unmute": "Włącz dźwięk",
+    "scrub": "Linia czasu",
+    "volume": "Głośność",
+    "status": {
+      "paused": "Nagranie wstrzymane.",
+      "playing": "Odtwarzanie aktywne.",
+      "ended": "Nagranie zakończone.",
+      "error": "Nie można odtworzyć pliku audio.",
+      "restarted": "Nagranie uruchomione od początku.",
+      "seeked": "Przesunięto pozycję odtwarzania.",
+      "muted": "Dźwięk został wyciszony.",
+      "unmuted": "Dźwięk został przywrócony.",
+      "volume": "Głośność ustawiona na {{value}}%"
+    }
+  },
+  "library": {
+    "kicker": "Biblioteka przypadków",
+    "title": "Biblioteka Przypadków",
+    "intro": "Cztery narzędzia do rozpoznawania przemocy narcyzmu: studium przypadku, analiza kalendarza, arsenał taktyk i metody dokumentacji.",
+    "gridLabel": "Lista kart biblioteki",
+    "view": "Zobacz",
+    "details": "Panel wiedzy",
+    "tabs": {
+      "label": "Zakładki treści biblioteki",
+      "summary": "Streszczenie",
+      "timeline": "Oś czasu",
+      "resources": "Materiały",
+      "tips": "Wskazówki"
+    },
+    "empty": {
+      "timeline": "Brak zarejestrowanych wydarzeń w osi czasu.",
+      "resources": "Materiały będą dostępne wkrótce.",
+      "tips": "Brak dodatkowych wskazówek dla tego przypadku."
+    },
+    "tags": {
+      "label": "Tagi przypadku",
+      "caseStudy": "case study",
+      "escalation": "eskalacja",
+      "family": "relacje rodzinne",
+      "timeline": "oś czasu",
+      "data": "analiza danych",
+      "patterns": "wzorce",
+      "tactics": "taktyki",
+      "narcissism": "narcyzm",
+      "relationships": "relacje",
+      "documentation": "dokumentacja",
+      "procedures": "procedury",
+      "community": "wsparcie"
+    },
+    "entries": {
+      "caseAdamscy": {
+        "title": "Sprawa Adamskich: Wprowadzenie",
+        "summary": "Rodzina Adamskich zgłosiła serię subtelnych, lecz narastających aktów izolacji i dewaluacji ze strony głowy rodziny.",
+        "content": [
+          "Analiza rozpoczyna się od codziennych obserwacji: zamykane drzwi, przejmowanie rozmów i narastająca kontrola nad codziennym grafikiem rodziny.",
+          "Pojawiają się próby rozbijania więzi — prezenty dla wybranych członków, krytyka reszty i straszenie odebraniem środków finansowych.",
+          "Moment przełomowy następuje, gdy najmłodsza córka dokumentuje komentarze, a sąsiedzi potwierdzają zmianę zachowania sprawcy."
+        ],
+        "tips": [
+          "Zbieraj zapiski z codziennych interakcji, nawet jeśli wydają się banalne.",
+          "Porównuj relacje różnych członków rodziny — narcyz często dzieli otoczenie na frakcje.",
+          "Sprawdzaj, czy pojawiają się nagłe gesty dobroci poprzedzone epizodami upokorzeń."
+        ],
+        "timeline": [
+          {
+            "when": "Styczeń 2020",
+            "title": "Pierwsze sygnały izolacji",
+            "note": "Sprawca przejmuje planowanie czasu dzieci i ogranicza ich kontakty online."
+          },
+          {
+            "when": "Marzec 2020",
+            "title": "Wzmożona kontrola finansowa",
+            "note": "Dochodzi do wymuszania paragonów i kar za wydatki spoza listy."
+          },
+          {
+            "when": "Czerwiec 2020",
+            "title": "Zebranie dowodów i interwencja"
+          }
+        ],
+        "resources": [
+          "Raport obserwacyjny rodziny Adamskich",
+          "Lista kontrolna sygnałów izolacji"
+        ]
+      },
+      "calendarAnalysis": {
+        "title": "Analiza Kalendarza: Kronika Eskalacji",
+        "summary": "Technika rejestrowania mikro-zdarzeń, które tworzą pełny obraz cyklu przemocy psychicznej.",
+        "content": [
+          "Metoda opiera się na codziennym zapisywaniu zdarzeń w kalendarzu i oznaczaniu ich kolorami według typu nadużycia.",
+          "Po 30 dniach powstaje mapa częstotliwości, która ujawnia fazy idealizacji, dewaluacji i ciszy.",
+          "Zestawienie z kalendarzem ofiary i sprawcy pozwala dostrzec korelacje między obietnicami a karami."
+        ],
+        "tips": [
+          "Ustal jedno miejsce zapisu, by uniknąć chaosu w danych.",
+          "Dodawaj krótkie cytaty lub opis tonu głosu — to ważne w analizie.",
+          "Raz w tygodniu omawiaj wpisy z osobą zaufaną lub terapeutą."
+        ],
+        "timeline": [
+          {
+            "when": "Dzień 1",
+            "title": "Start obserwacji",
+            "note": "Ustalono legendę kolorów i kategorię 'alarm'."
+          },
+          {
+            "when": "Dzień 14",
+            "title": "Pierwsze wzory",
+            "note": "Powtarza się cykl: prezent – milczenie – krytyka."
+          },
+          {
+            "when": "Dzień 30",
+            "title": "Raport i omówienie"
+          }
+        ],
+        "resources": [
+          "Szablon kalendarza eskalacji"
+        ]
+      },
+      "princeIngratitude": {
+        "title": "\u201eKsiążę Niewdzięczność\u201d: Broń Narcyza",
+        "summary": "Strategia nagłego odebrania łaski po okresie idealizacji, by wymusić całkowite podporządkowanie.",
+        "content": [
+          "Narcyz konstruuje scenariusz baśniowy: obietnice awansu, wspólnych projektów lub statusu. Ofiara otrzymuje 'tytuł księcia'.",
+          "Gdy zaufanie jest pełne, następuje ciche wycofanie wsparcia i publiczne zawstydzenie ofiary.",
+          "Mechanizm działa, bo ofiara broni wyimaginowanego statusu, a nie realnej relacji."
+        ],
+        "tips": [
+          "Sprawdzaj, czy oferowane przywileje mają konkretne podstawy prawne lub finansowe.",
+          "Zwracaj uwagę na momenty, gdy narcyz żąda wdzięczności bez faktycznej pomocy.",
+          "Ustal własne kryteria sukcesu zamiast przyjmować narrację sprawcy."
+        ],
+        "timeline": [
+          {
+            "when": "Tydzień 1",
+            "title": "Idealizacja i tytułowanie"
+          },
+          {
+            "when": "Tydzień 4",
+            "title": "Publiczne odebranie łaski",
+            "note": "Ofiara zostaje ośmieszona przy świadkach."
+          }
+        ],
+        "resources": [
+          "Ćwiczenie refleksyjne: rozpoznaj narrację narcyza"
+        ]
+      },
+      "investigationDocs": {
+        "title": "Śledztwo: Jak Dokumentować Manipulacje?",
+        "summary": "Procedura zbierania dowodów bez eskalowania konfliktu oraz z poszanowaniem bezpieczeństwa ofiary.",
+        "content": [
+          "Twórz dziennik zdarzeń z datami, godzinami i źródłami: wiadomości SMS, e-maile, nagrania głosu.",
+          "Ustal protokół przechowywania plików w zaszyfrowanej chmurze lub na nośniku offline.",
+          "Dołącz świadectwa osób trzecich oraz dokumenty instytucji (szkoła, lekarz, pracodawca)."
+        ],
+        "tips": [
+          "Używaj identycznych nazw plików: data_miejsce_zdarzenie.",
+          "Nie informuj sprawcy o dokumentowaniu, jeśli grozi to retorsją.",
+          "Współpracuj z lokalnymi grupami wsparcia, by zapewnić sobie zaplecze prawne."
+        ],
+        "timeline": [
+          {
+            "when": "Tydzień 1",
+            "title": "Założenie dziennika zdarzeń"
+          },
+          {
+            "when": "Tydzień 3",
+            "title": "Konfrontacja z dowodami",
+            "note": "Materiały przekazane mediatorowi."
+          },
+          {
+            "when": "Tydzień 6",
+            "title": "Przygotowanie raportu dla instytucji"
+          }
+        ],
+        "resources": [
+          "Arkusz ewidencji dowodów",
+          "Przewodnik do rozmów świadków"
+        ]
+      }
+    }
+  },
+  "mythology": {
+    "kicker": "Mitologia narcyza",
+    "title": "Mitologia Narcyza",
+    "intro": "Cztery symbole ostrzegawcze opisujące cykl kontroli: 7 — pakt idealizacji, 4 — sieć zależności, 8 — pętla powrotów, 13 — alarm rozstania.",
+    "gridLabel": "Symbole mitologii narcyza",
+    "viewSymbol": "Zobacz symbol",
+    "symbolCode": "Symbol {{code}}",
+    "detailKicker": "Rozszyfrowanie symbolu",
+    "blocks": {
+      "meaning": "Co oznacza",
+      "when": "Kiedy się pojawia",
+      "actions": "Jak reagować"
+    },
+    "symbol": {
+      "7": {
+        "title": "Siedem",
+        "subtitle": "Symbol idealnego paktu",
+        "meaning": [
+          "Obietnica wyjątkowego porozumienia ponad normami społecznymi.",
+          "Deklaracje totalnej lojalności w zamian za oddanie sterów."
+        ],
+        "when": [
+          "Gdy narcyz proponuje tajną współpracę lub 'specjalny' układ.",
+          "W momentach nagłych prezentów po okresie konfliktów.",
+          "Tuż przed prośbą o ryzykowny gest lojalności."
+        ],
+        "action": [
+          "Pytaj o realne konsekwencje umowy i proś o czas do namysłu.",
+          "Rozmawiaj z osobą zaufaną, zanim przystaniesz na warunki."
+        ]
+      },
+      "4": {
+        "title": "Cztery",
+        "subtitle": "Symbol zamkniętej sieci",
+        "meaning": [
+          "Cztery filary zależności: emocje, pieniądze, reputacja, dostęp do bliskich.",
+          "Wskazuje na układ, w którym każda decyzja ma cztery wersje kontroli."
+        ],
+        "when": [
+          "Gdy wsparcie finansowe wiąże się z raportowaniem każdej wydanej złotówki.",
+          "Kiedy narcyz narzuca, kto może być twoim przyjacielem."
+        ],
+        "action": [
+          "Zmapuj, od kogo poza sprawcą możesz otrzymać wsparcie.",
+          "Podziel zależności: osobny budżet, alternatywne kanały komunikacji.",
+          "Sprawdź, które z czterech filarów możesz zabezpieczyć już dziś."
+        ]
+      },
+      "8": {
+        "title": "Osiem",
+        "subtitle": "Symbol pętli powrotów",
+        "meaning": [
+          "Pętla nieskończonych obietnic poprawy.",
+          "Wskazuje na cykliczność: 'już nigdy' zamienia się w 'znowu to samo'.",
+          "Odnosi się do uzależniającej dynamiki rozstań i powrotów."
+        ],
+        "when": [
+          "Gdy po zerwaniu narcyz natychmiast obiecuje terapię lub zmianę pracy.",
+          "Kiedy harmonogram spotkań zaczyna przypominać sinusoidę.",
+          "Tuż po tym, jak ofiara zapowiada granice lub ultimatum."
+        ],
+        "action": [
+          "Spisz warunki powrotu i ustal datę przeglądu postępów.",
+          "Monitoruj faktyczne zmiany, nie deklaracje."
+        ]
+      },
+      "13": {
+        "title": "Trzynaście",
+        "subtitle": "Symbol przerwania i alarmu",
+        "meaning": [
+          "Zapowiedź radykalnego cięcia — często używanego jako straszak.",
+          "Może oznaczać eskalację w stronę przemocy ekonomicznej lub prawnej."
+        ],
+        "when": [
+          "Gdy narcyz straszy odebraniem dzieci lub majątku.",
+          "W momentach, gdy ofiara planuje ucieczkę lub ujawnienie dowodów.",
+          "Tuż przed dużymi wydarzeniami: święta, podpisanie umowy, przeprowadzka."
+        ],
+        "action": [
+          "Zabezpiecz dokumenty i kontakty awaryjne.",
+          "Powiadom zaufaną osobę o możliwej eskalacji.",
+          "Przygotuj plan bezpieczeństwa i sprawdź lokalne zasoby pomocy."
+        ]
+      }
+    }
+
   "controls": {
     "theme": {
+      "label": "Motyw",
+      "system": "Motyw systemowy",
+      "systemShort": "SYS",
       "light": "Tryb jasny",
-      "dark": "Tryb ciemny"
+      "lightShort": "JAS",
+      "dark": "Tryb ciemny",
+      "darkShort": "NOC",
+      "current": "Aktualnie: {{value}}",
+      "resolved_dark": "tryb ciemny",
+      "resolved_light": "tryb jasny"
+    }
+  },
+
+    }
+  },
+  "documentary": {
+    "sectionLabel": "Materiał dokumentalny",
+    "title": "Sprawa z Adamowa: Autopsja rodzinnej wojny",
+    "description": "Reporterskie śledztwo w mechanizmy władzy, które rozdarły rodzinę z Adamowa — i praktyki, które pomagają przerwać przemoc.",
+    "player": {
+      "controlsGroup": "Sterowanie odtwarzaczem",
+      "play": "Odtwórz wideo",
+      "pause": "Wstrzymaj wideo",
+      "mute": "Wycisz",
+      "unmute": "Włącz dźwięk",
+      "subtitlesOn": "Włącz napisy",
+      "subtitlesOff": "Wyłącz napisy",
+      "subtitlesUnavailable": "Napisy niedostępne",
+      "enterFullscreen": "Pełny ekran",
+      "exitFullscreen": "Zamknij pełny ekran",
+      "progress": "Przesuń wideo",
+      "volume": "Zmień głośność",
+      "volumeIndicator": "Głośność: {{value}}%",
+      "chaptersHeading": "Rozdziały",
+      "chapterCurrent": "Obecny rozdział",
+      "chapterAriaLabel": "{{title}} ({{time}})",
+      "status": {
+        "loading": "Ładowanie materiału…",
+        "error": "Nie udało się wczytać strumienia dokumentu.",
+        "noSource": "Brak źródła wideo. Dodaj adres HLS lub MP4.",
+        "configurationHint": "Skonfiguruj zmienne VITE_DOC_VIDEO_HLS lub VITE_DOC_VIDEO_MP4, aby udostępnić transmisję."
+      }
     },
-    "language": "Język"
+    "resources": {
+      "heading": "Materiały towarzyszące",
+      "description": "Pobierz opracowania i artykuły pogłębiające dochodzenie.",
+      "timeline": {
+        "title": "Oś czasu sprawy",
+        "description": "Chronologiczny opis eskalacji, interwencji i etapów sądowych."
+      },
+      "profile": {
+        "title": "Portrety rodziny",
+        "description": "Sylwetki kluczowych osób i ich sieci wsparcia."
+      },
+      "legal": {
+        "title": "Brief prawny",
+        "description": "Podsumowanie postępowań, dowodów i orzecznictwa."
+      }
+    },
+    "resourceTypes": {
+      "pdf": "Plik PDF",
+      "article": "Artykuł",
+      "audio": "Audio",
+      "guide": "Poradnik",
+      "video": "Wideo"
+    },
+    "subtitles": {
+      "primaryLabel": "Napisy polskie",
+      "primaryCode": "pl"
+    },
+    "chapters": {
+      "prologue": {
+        "title": "Prolog: zakłócenie ciszy",
+        "summary": "Podczas sąsiedzkiej skargi wypływają sprzeczne świadectwa."
+      },
+      "escalation": {
+        "title": "Spirala eskalacji",
+        "summary": "Nasilają się izolacja, kontrola finansowa i groźby."
+      },
+      "intervention": {
+        "title": "Noc interwencji",
+        "summary": "Radio społeczne i służby koordynują wyjście wysokiego ryzyka."
+      },
+      "aftermath": {
+        "title": "Skutki i odbudowa",
+        "summary": "Ocalałe osoby odbudowują sieci wsparcia, a sąd waży dowody."
+      }
+    }
   },
   "guide": {
     "title": "8 grzechów toksycznych osób",
@@ -252,5 +670,264 @@
       "medium": "Pojawiają się próby izolacji. Ustal granice i informuj bliskich o manipulacjach.",
       "high": "Silne działania izolujące wymagają reakcji. Skontaktuj się z grupą wsparcia i opracuj plan odbudowy relacji."
     }
+
+  "community": {
+    "title": "Strefa Interaktywna",
+    "subtitle": "Bezpieczna przestrzeń do dzielenia się doświadczeniami, treningu rozpoznawania manipulacji i prowadzenia dziennika sygnałów ostrzegawczych.",
+    "tabs": {
+      "voices": "Głosy Społeczności",
+      "simulator": "Symulator",
+      "redflags": "Dziennik Czerwonych Flag",
+      "ariaLabel": "Zakładki strefy interaktywnej"
+    }
+  },
+  "comments": {
+    "info": {
+      "localOnly": "To demo bez backendu — wpisy są przechowywane tylko lokalnie."
+    },
+    "add": {
+      "title": "Dodaj wypowiedź"
+    },
+    "form": {
+      "nickname": "Pseudonim",
+      "content": "Treść",
+      "submit": "Wyślij",
+      "nicknameError": "Pseudonim powinien mieć co najmniej 2 znaki.",
+      "contentError": "Wpisz krótką wiadomość.",
+      "lengthError": "Wpis może mieć maksymalnie {{max}} znaków.",
+      "submitError": "Nie udało się zapisać wpisu lokalnie.",
+      "success": "Zapisano lokalnie",
+      "limit": "Do {{max}} znaków. Nie podawaj danych identyfikujących.",
+      "remaining": "Pozostało znaków: {{count}}"
+    },
+    "card": {
+      "label": "Wpis użytkownika {{nickname}}"
+    },
+    "status": {
+      "hidden": "Ukryty",
+      "visible": "Widoczny",
+      "flagged": "Zgłoszony"
+    },
+    "hiddenMessage": "Ten wpis jest ukryty. Możesz go ponownie wyświetlić w dowolnym momencie.",
+    "empty": "Brak wpisów. Podziel się swoim głosem jako pierwsza/y.",
+    "safety": {
+      "title": "Wskazówki bezpieczeństwa",
+      "anonymity": "Korzystaj z pseudonimu i pomijaj dane osobowe.",
+      "noNames": "Nie publikuj imion, adresów ani danych prawnych.",
+      "emergency": "W sytuacji zagrożenia skontaktuj się z lokalnymi służbami — to miejsce nie zastępuje pomocy alarmowej."
+    },
+    "moderation": {
+      "label": "Lokalne narzędzia moderacji",
+      "hide": "Ukryj",
+      "unhide": "Pokaż",
+      "flag": "Zgłoś",
+      "unflag": "Usuń zgłoszenie",
+      "hideConfirmTitle": "Ukryć ten wpis?",
+      "hideConfirmDescription": "Ukryte wpisy pozostają na Twoim urządzeniu i można je przywrócić.",
+      "cancel": "Anuluj"
+    },
+    "threads": {
+      "ariaLabel": "Wątki rozmów",
+      "general": "Otwarte rozmowy",
+      "generalDescription": "Podziel się tym, co teraz czujesz.",
+      "boundaries": "Granice i bezpieczeństwo",
+      "boundariesDescription": "Praktyczne wskazówki, jak zadbać o siebie.",
+      "victories": "Małe zwycięstwa",
+      "victoriesDescription": "Świętuj kroki, z których jesteś dumny/a."
+    }
+  },
+  "sim": {
+    "title": "Symulator rozmowy z manipulatorem",
+    "subtitle": "Trenuj rozpoznawanie technik manipulacji. Odpowiedzi powstają lokalnie na podstawie prostych reguł.",
+    "input": {
+      "label": "Wyślij wiadomość do symulatora",
+      "placeholder": "Napisz, co chcesz powiedzieć..."
+    },
+    "send": "Wyślij",
+    "reset": "Reset",
+    "userLabel": "Twoja wiadomość",
+    "botLabel": "Odpowiedź manipulatora",
+    "analysis": {
+      "title": "Analiza rozmowy",
+      "none": "Na razie brak wykrytych technik. Wyślij wiadomość, by rozpocząć ćwiczenie."
+    },
+    "techniques": {
+      "detected": "Wykryte techniki",
+      "gaslighting": {
+        "label": "Gaslighting",
+        "description": "Podważanie rzeczywistości, byś zwątpił/a w swoje odczucia.",
+        "tip": "Spisuj fakty lub poproś zaufaną osobę o spojrzenie z boku."
+      },
+      "blameShift": {
+        "label": "Przerzucanie winy",
+        "description": "Przerzucanie odpowiedzialności za jego/jej zachowanie na ciebie.",
+        "tip": "Nazywaj konkretne działania i przypominaj o granicach odpowiedzialności."
+      },
+      "triangulation": {
+        "label": "Triangulacja",
+        "description": "Wykorzystywanie osób trzecich do wywierania presji lub kontrolowania narracji.",
+        "tip": "Ogranicz pośrednie kanały i rozmawiaj tylko w bezpieczny sposób."
+      },
+      "loveBombing": {
+        "label": "Love bombing",
+        "description": "Zalew uczuć lub obietnic, by odzyskać kontrolę.",
+        "tip": "Zwracaj uwagę na stałe działania, a nie wielkie deklaracje."
+      },
+      "guiltTripping": {
+        "label": "Wzbudzanie poczucia winy",
+        "description": "Wywoływanie poczucia winy, by wymusić uległość.",
+        "tip": "Nazwij technikę i potwierdź swoje granice."
+      },
+      "futureFaking": {
+        "label": "Future faking",
+        "description": "Obiecywanie przyszłości, by zatrzymać cię przy sobie.",
+        "tip": "Skup się na tym, co dzieje się teraz, nie na obietnicach."
+      }
+    },
+    "responses": {
+      "welcome": "Ja przecież chcę dobrze. Powiedz, co ci chodzi po głowie.",
+      "gaslighting": {
+        "overreacting": "Znowu przesadzasz. Wszyscy wiedzą, że jesteś przewrażliwiona/y."
+      },
+      "blameShift": {
+        "yourFault": "To twoja wina — gdybyś zachowywał/a się lepiej, nie byłoby problemu."
+      },
+      "triangulation": {
+        "everyone": "Nawet znajomi mówią, że to z tobą najtrudniej."
+      },
+      "loveBombing": {
+        "promises": "Obiecuję, że zmienię się z dnia na dzień, tylko daj mi jeszcze jedną szansę."
+      },
+      "guiltTripping": {
+        "sacrifice": "Po tym wszystkim, co dla ciebie poświęciłem/am, tak się odwdzięczasz?"
+      },
+      "futureFaking": {
+        "plans": "Dlaczego się złościsz? Już zaplanowałem/am nasz dom i ślub."
+      },
+      "default": "Nie rób scen. Wymyślasz problemy."
+    },
+    "disclaimer": "Materiały edukacyjne. Symulator działa offline i nie wysyła twoich danych."
+  },
+  "rf": {
+    "title": "Dziennik Czerwonych Flag",
+    "add": "Dodaj incydent",
+    "date": "Data",
+    "category": "Kategoria",
+    "intensity": "Natężenie",
+    "note": "Opis (opcjonalnie)",
+    "export": "Eksportuj JSON",
+    "filter": {
+      "from": "Od",
+      "to": "Do",
+      "category": "Filtr kategorii",
+      "intensity": "Filtr natężenia",
+      "intensityValue": "Natężenie {{value}}/5",
+      "all": "Wszystkie"
+    },
+    "list": {
+      "title": "Lista wpisów"
+    },
+    "none": "Brak wpisów dla wybranych filtrów.",
+    "form": {
+      "dateError": "Wybierz datę.",
+      "limitError": "Opis może mieć maksymalnie {{max}} znaków.",
+      "submitError": "Nie udało się zapisać wpisu.",
+      "success": "Zapisano lokalnie",
+      "intensityValue": "Natężenie: {{value}}/5",
+      "limit": "Do {{max}} znaków.",
+      "submit": "Dodaj wpis"
+    },
+    "categories": {
+      "gaslighting": "Gaslighting",
+      "financial_abuse": "Przemoc ekonomiczna",
+      "stalking": "Stalking",
+      "legal_weaponization": "Wykorzystywanie prawa",
+      "emotional_blackmail": "Szantaż emocjonalny",
+      "devaluation": "Dewaluacja",
+      "discard": "Odrzucenie",
+      "hoovering": "Hoovering"
+    },
+    "calendar": {
+      "title": "Kalendarz miesięczny",
+      "subtitle": "Poruszaj się strzałkami, aby sprawdzić dni. Wpisy zostają tylko na tym urządzeniu.",
+      "prevMonth": "Poprzedni miesiąc",
+      "nextMonth": "Następny miesiąc",
+      "prevShort": "◀",
+      "nextShort": "▶",
+      "ariaLabel": "Kalendarz zarejestrowanych incydentów",
+      "week": {
+        "mon": "Poniedziałek",
+        "tue": "Wtorek",
+        "wed": "Środa",
+        "thu": "Czwartek",
+        "fri": "Piątek",
+        "sat": "Sobota",
+        "sun": "Niedziela",
+        "monShort": "Pn",
+        "tueShort": "Wt",
+        "wedShort": "Śr",
+        "thuShort": "Cz",
+        "friShort": "Pt",
+        "satShort": "So",
+        "sunShort": "Nd"
+      },
+      "dayAria": "{{date}}. Liczba wpisów: {{count}}.",
+      "count": "Wpisów: {{count}}"
+    }
+
+  "finalLesson": {
+    "sectionLabel": "Ostateczna lekcja",
+    "title": "Ostateczna Lekcja",
+    "description": "Co wynosimy ze sprawy Adamowo i gdzie szukać pomocy tu i teraz.",
+    "summary": {
+      "title": "Najważniejsze wnioski",
+      "cycle": "Przemoc jest systemem — wzorzec wróci, jeśli nie zmienimy układu sił.",
+      "breakingSilence": "Mówienie głośno jest bezpieczniejsze z planem i zaufanymi osobami.",
+      "communityCare": "Media społecznościowe mogą dokumentować, świadkować i rozbrajać izolację.",
+      "documentation": "Archiwizacja dowodów chroni, gdy narracje są używane przeciw ocalałym.",
+      "boundaries": "Stawianie granic to prawo, a nie przesada."
+    },
+    "resources": {
+      "title": "Zasoby pomocowe",
+      "lead": "Zestawy narzędzi, poradniki i kontakty, które rozszerzają pracę poza dokumentem.",
+      "visit": "Przejdź do zasobu",
+      "openExternal": "Otwiera się w nowym oknie",
+      "blueprint": {
+        "title": "Plan bezpieczeństwa",
+        "description": "Ćwiczenia scenariuszowe z checklistą bezpieczeństwa i mapą wyjścia."
+      },
+      "deEscalation": {
+        "title": "Podręcznik deeskalacji",
+        "description": "Mikrointerwencje i podpowiedzi dla przyjaciół, sąsiadów i współpracowników."
+      },
+      "legal": {
+        "title": "Zestaw prawny",
+        "description": "Instrukcje dokumentowania i pozyskiwania reprezentacji pro bono."
+      }
+    },
+    "crisis": {
+      "title": "Kontakty kryzysowe (Polska)",
+      "description": "Jeśli ty lub ktoś bliski jest w zagrożeniu, skontaktuj się natychmiast.",
+      "niebieska": {
+        "label": "Niebieska Linia – telefon zaufania",
+        "description": "Całodobowe wsparcie psychologiczne i prawne dla osób doświadczających przemocy."
+      },
+      "cpk": {
+        "label": "Centrum Praw Kobiet",
+        "description": "Porady prawne, schronienie i opieka psychologiczna dla kobiet."
+      },
+      "callAction": "Zadzwoń do {{organization}} pod numer {{phone}}"
+    }
+  },
+  "footer": {
+    "navigation": "Nawigacja w stopce",
+    "links": {
+      "documentation": "Dokumentacja",
+      "privacy": "Prywatność i cookies",
+      "methodology": "Metodologia i źródła"
+    },
+    "backToTop": "Do góry",
+    "rights": "© 2025 Radio Adamowo"
+
   }
 }

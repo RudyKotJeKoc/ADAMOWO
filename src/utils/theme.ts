@@ -1,10 +1,13 @@
-export type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark' | 'system';
+
+export type ResolvedTheme = 'light' | 'dark';
 
 const STORAGE_KEY = 'radio-adamowo-theme';
+const MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
-const getSystemPreference = (): Theme => {
+const getSystemPreference = (): ResolvedTheme => {
   if (typeof window !== 'undefined' && window.matchMedia) {
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return window.matchMedia(MEDIA_QUERY).matches ? 'dark' : 'light';
   }
 
   return 'dark';
@@ -17,7 +20,7 @@ export const readStoredTheme = (): Theme | null => {
 
   try {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === 'light' || stored === 'dark') {
+    if (stored === 'light' || stored === 'dark' || stored === 'system') {
       return stored;
     }
   } catch (error) {
@@ -39,24 +42,58 @@ export const persistTheme = (theme: Theme): void => {
   }
 };
 
+export const resolveTheme = (theme: Theme): ResolvedTheme =>
+  theme === 'system' ? getSystemPreference() : theme;
+
 export const applyTheme = (theme: Theme): void => {
   if (typeof document === 'undefined') {
     return;
   }
 
   const root = document.documentElement;
-  root.classList.toggle('dark', theme === 'dark');
+  const resolved = resolveTheme(theme);
+  root.classList.toggle('dark', resolved === 'dark');
   root.dataset.theme = theme;
+  root.dataset.themeResolved = resolved;
 };
 
 export const initTheme = (): Theme => {
   const stored = readStoredTheme();
-  const theme = stored ?? getSystemPreference();
+  const theme = stored ?? 'system';
   applyTheme(theme);
   return theme;
 };
 
-export const toggleTheme = (current: Theme): Theme =>
-  current === 'dark' ? 'light' : 'dark';
+export const toggleTheme = (current: Theme): Theme => {
+  switch (current) {
+    case 'system':
+      return 'light';
+    case 'light':
+      return 'dark';
+    default:
+      return 'system';
+  }
+};
 
 export const THEME_STORAGE_KEY = STORAGE_KEY;
+
+type ThemeChangeHandler = (theme: ResolvedTheme) => void;
+
+export const subscribeToSystemTheme = (handler: ThemeChangeHandler): (() => void) => {
+  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+    return () => {};
+  }
+
+  const media = window.matchMedia(MEDIA_QUERY);
+  const listener = (event: MediaQueryListEvent): void => {
+    handler(event.matches ? 'dark' : 'light');
+  };
+
+  if (typeof media.addEventListener === 'function') {
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }
+
+  media.addListener(listener);
+  return () => media.removeListener(listener);
+};

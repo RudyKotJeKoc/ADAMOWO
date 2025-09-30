@@ -10,6 +10,33 @@
     "lab": "Lab",
     "community": "Community"
   },
+  "header": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Back to Radio Adamowo home",
+    "navigation": "Main navigation"
+  },
+  "controls": {
+    "theme": {
+      "label": "Theme",
+      "system": "System theme",
+      "systemShort": "SYS",
+      "light": "Light mode",
+      "lightShort": "LGT",
+      "dark": "Dark mode",
+      "darkShort": "DRK",
+      "current": "Currently: {{value}}",
+      "resolved_dark": "dark mode",
+      "resolved_light": "light mode"
+    },
+    "language": {
+      "label": "Change language",
+      "pl": "Polish",
+      "nl": "Dutch",
+      "en": "English"
+    }
+  },
   "pages": {
     "home": {
       "title": "Radio Adamowo",
@@ -19,7 +46,13 @@
       "title": "Live Stream"
     },
     "guides": {
-      "title": "Guides"
+      "title": "Guides",
+      "lede": "An educational hub about manipulation, narcissism and documenting psychological abuse.",
+      "anchorNav": "Guide section navigation",
+      "links": {
+        "library": "Case library",
+        "mythology": "Mythology of the Narcissist"
+      }
     },
     "lab": {
       "title": "AI Lab"
@@ -34,13 +67,399 @@
       "title": "Shows"
     }
   },
+  "player": {
+    "regionLabel": "Radio Adamowo player",
+    "artworkAlt": "Show artwork {{title}} — {{artist}}",
+    "live": "Live",
+    "buffering": "Buffering signal…",
+    "reconnecting": "Reconnecting ({{seconds}} s remaining)",
+    "error": "Unable to play the stream.",
+    "idle": "Player ready",
+    "nowPlaying": "Now playing",
+    "visualizerAria": "Audio waveform visualiser",
+    "play": "Play",
+    "pause": "Pause",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "quality_128kbps": "128 kbps",
+    "volume": "Volume",
+    "retry": "Try again"
+  },
+  "whisper": {
+    "regionLabel": "Whisper Behind the Curtain — reconstructed hearing",
+    "length": "Recording length",
+    "title": "Whisper Behind the Curtain",
+    "subtitle": "The recording captures a tense public hearing from 2017.",
+    "ethics": {
+      "title": "Ethical listening notes",
+      "body": [
+        "Listen with empathy — every breath belongs to a real person.",
+        "Pay attention to pauses and ellipses; power dynamics hide between the lines.",
+        "Write down facts, avoid judgments — the material serves education and prevention."
+      ]
+    },
+    "play": "Play",
+    "pause": "Pause",
+    "restart": "Start over",
+    "mute": "Mute",
+    "unmute": "Turn sound on",
+    "scrub": "Timeline",
+    "volume": "Volume",
+    "status": {
+      "paused": "Playback paused.",
+      "playing": "Playback running.",
+      "ended": "Recording finished.",
+      "error": "Unable to play the audio file.",
+      "restarted": "Restarted from the beginning.",
+      "seeked": "Playback position changed.",
+      "muted": "Sound muted.",
+      "unmuted": "Sound restored.",
+      "volume": "Volume set to {{value}}%"
+    }
+  },
+  "library": {
+    "kicker": "Case library",
+    "title": "Case Library",
+    "intro": "Four tools to decode narcissistic abuse: case study, calendar analysis, weaponised charm and documentation protocols.",
+    "gridLabel": "Library cards",
+    "view": "View",
+    "details": "Knowledge panel",
+    "tabs": {
+      "label": "Library tabs",
+      "summary": "Summary",
+      "timeline": "Timeline",
+      "resources": "Materials",
+      "tips": "Tips"
+    },
+    "empty": {
+      "timeline": "No events recorded in the timeline.",
+      "resources": "Materials will be available soon.",
+      "tips": "No extra tips for this entry."
+    },
+    "tags": {
+      "label": "Case tags",
+      "caseStudy": "case study",
+      "escalation": "escalation",
+      "family": "family",
+      "timeline": "timeline",
+      "data": "data",
+      "patterns": "patterns",
+      "tactics": "tactics",
+      "narcissism": "narcissism",
+      "relationships": "relationships",
+      "documentation": "documentation",
+      "procedures": "procedures",
+      "community": "support"
+    },
+    "entries": {
+      "caseAdamscy": {
+        "title": "The Adamski Case: Orientation",
+        "summary": "The Adamski family reported a subtle yet growing isolation and devaluation campaign by the head of the household.",
+        "content": [
+          "The analysis starts with daily observations: locked doors, hijacked conversations and tight control over the family schedule.",
+          "Attempts to fracture bonds appear — gifts for selected members, criticism of the rest and threats to cut off funds.",
+          "The turning point arrives when the youngest daughter logs remarks and neighbours confirm the behavioural shift."
+        ],
+        "tips": [
+          "Keep notes on everyday interactions, even the mundane ones.",
+          "Compare accounts from different family members — narcissists split people into factions.",
+          "Watch for sudden acts of kindness preceded by episodes of humiliation."
+        ],
+        "timeline": [
+          {
+            "when": "January 2020",
+            "title": "First signs of isolation",
+            "note": "The abuser takes over the children's schedule and limits online contact."
+          },
+          {
+            "when": "March 2020",
+            "title": "Escalated financial control",
+            "note": "Receipts are demanded and penalties issued for unapproved expenses."
+          },
+          {
+            "when": "June 2020",
+            "title": "Evidence review and intervention"
+          }
+        ],
+        "resources": [
+          "Adamski family observation report",
+          "Isolation warning checklist"
+        ]
+      },
+      "calendarAnalysis": {
+        "title": "Calendar Analysis: Chronicle of Escalation",
+        "summary": "A technique that records micro-events to reveal the full cycle of psychological abuse.",
+        "content": [
+          "Keep a daily log of incidents and tag them with colour codes according to the type of harm.",
+          "After 30 days, a frequency map emerges showing phases of idealisation, devaluation and silence.",
+          "Comparing the victim and abuser calendars exposes correlations between promises and punishments."
+        ],
+        "tips": [
+          "Use a single log to avoid losing track of data.",
+          "Add brief quotes or tone descriptions — critical for analysis.",
+          "Review entries weekly with a trusted person or therapist."
+        ],
+        "timeline": [
+          {
+            "when": "Day 1",
+            "title": "Observation starts",
+            "note": "Colour legend defined with an 'alert' category."
+          },
+          {
+            "when": "Day 14",
+            "title": "Patterns emerge",
+            "note": "Cycle repeats: gift – silence – criticism."
+          },
+          {
+            "when": "Day 30",
+            "title": "Report and debrief"
+          }
+        ],
+        "resources": [
+          "Escalation calendar template"
+        ]
+      },
+      "princeIngratitude": {
+        "title": "The Prince of Ingratitude: Narcissist Weapon",
+        "summary": "A strategy of suddenly withdrawing favour after idealisation to force complete submission.",
+        "content": [
+          "The narcissist scripts a fairy-tale scenario: promises of promotion, joint ventures or elevated status. The victim receives a 'prince' title.",
+          "Once trust is absolute, support disappears and public shaming follows.",
+          "The trap works because the victim defends an imagined status rather than the relationship itself."
+        ],
+        "tips": [
+          "Check whether offered privileges have legal or financial grounding.",
+          "Notice demands for gratitude without actual help.",
+          "Define your own success criteria instead of adopting the abuser's narrative."
+        ],
+        "timeline": [
+          {
+            "when": "Week 1",
+            "title": "Idealisation and titling"
+          },
+          {
+            "when": "Week 4",
+            "title": "Public removal of favour",
+            "note": "The victim is humiliated in front of witnesses."
+          }
+        ],
+        "resources": [
+          "Reflection exercise: decode the narcissist narrative"
+        ]
+      },
+      "investigationDocs": {
+        "title": "Investigation: Documenting Manipulation",
+        "summary": "A safe evidence-gathering protocol that avoids escalation while protecting the victim.",
+        "content": [
+          "Create an incident diary with dates, times and sources: texts, emails, voice notes.",
+          "Set up a storage protocol — encrypted cloud or offline drive.",
+          "Add third-party statements and institutional records (school, doctor, employer)."
+        ],
+        "tips": [
+          "Use consistent file names: date_location_event.",
+          "Do not alert the abuser if retaliation is likely.",
+          "Partner with local support groups to secure legal backup."
+        ],
+        "timeline": [
+          {
+            "when": "Week 1",
+            "title": "Incident log created"
+          },
+          {
+            "when": "Week 3",
+            "title": "Evidence review",
+            "note": "Materials shared with a mediator."
+          },
+          {
+            "when": "Week 6",
+            "title": "Report prepared for institutions"
+          }
+        ],
+        "resources": [
+          "Evidence log worksheet",
+          "Witness interview guide"
+        ]
+      }
+    }
+  },
+  "mythology": {
+    "kicker": "Mythology of the narcissist",
+    "title": "Mythology of the Narcissist",
+    "intro": "Four warning symbols describing control cycles: 7 — ideal pact, 4 — dependency grid, 8 — return loop, 13 — rupture alert.",
+    "gridLabel": "Narcissist mythology symbols",
+    "viewSymbol": "View symbol",
+    "symbolCode": "Symbol {{code}}",
+    "detailKicker": "Decoding the symbol",
+    "blocks": {
+      "meaning": "What it means",
+      "when": "When it appears",
+      "actions": "How to respond"
+    },
+    "symbol": {
+      "7": {
+        "title": "Seven",
+        "subtitle": "Symbol of the perfect pact",
+        "meaning": [
+          "Promise of an exceptional agreement beyond social norms.",
+          "Declarations of total loyalty in exchange for control."
+        ],
+        "when": [
+          "When the narcissist proposes a secret collaboration or 'special' deal.",
+          "During sudden gifts after conflict periods.",
+          "Right before asking for a risky act of loyalty."
+        ],
+        "action": [
+          "Ask about real consequences and request time to reflect.",
+          "Consult a trusted person before accepting the terms."
+        ]
+      },
+      "4": {
+        "title": "Four",
+        "subtitle": "Symbol of the closed network",
+        "meaning": [
+          "Four pillars of dependency: emotions, money, reputation, access to loved ones.",
+          "Signals a setup where every choice has four control levers."
+        ],
+        "when": [
+          "When financial help requires reporting every expense.",
+          "When the abuser dictates who may be your friend."
+        ],
+        "action": [
+          "Map alternative support outside the abuser.",
+          "Split dependencies: separate budget, alternate communication channels.",
+          "Secure at least one pillar today."
+        ]
+      },
+      "8": {
+        "title": "Eight",
+        "subtitle": "Symbol of the return loop",
+        "meaning": [
+          "Endless promise of improvement.",
+          "Highlights the cycle: 'never again' turns into 'again'.",
+          "Refers to addictive break-up/make-up dynamics."
+        ],
+        "when": [
+          "After a breakup when therapy or drastic change is promised immediately.",
+          "When the meeting schedule looks like a sine wave.",
+          "Right after the victim states boundaries or ultimatums."
+        ],
+        "action": [
+          "Write down conditions for return and schedule a progress review date.",
+          "Track real change, not declarations."
+        ]
+      },
+      "13": {
+        "title": "Thirteen",
+        "subtitle": "Symbol of rupture and alarm",
+        "meaning": [
+          "Announces a drastic cut-off often used as a threat.",
+          "May signal escalation toward economic or legal abuse."
+        ],
+        "when": [
+          "When the abuser threatens custody or asset seizure.",
+          "As the victim prepares to leave or disclose evidence.",
+          "Right before major events: holidays, contracts, moving."
+        ],
+        "action": [
+          "Secure documents and emergency contacts.",
+          "Alert a trusted person about potential escalation.",
+          "Draft a safety plan and review local resources."
+        ]
+      }
+    }
+
   "controls": {
     "theme": {
+      "label": "Theme",
+      "system": "System theme",
+      "systemShort": "SYS",
       "light": "Light mode",
-      "dark": "Dark mode"
-    },
-    "language": "Language"
+      "lightShort": "LGT",
+      "dark": "Dark mode",
+      "darkShort": "DRK",
+      "current": "Currently: {{value}}",
+      "resolved_dark": "dark mode",
+      "resolved_light": "light mode"
+    }
   },
+
+    }
+  },
+  "documentary": {
+    "sectionLabel": "Documentary",
+    "title": "The Adamowo Case: Autopsy of a Family War",
+    "description": "An investigative dive into the power structures that tore the Adamowo family apart — and the lessons that help communities interrupt violence.",
+    "player": {
+      "controlsGroup": "Video controls",
+      "play": "Play video",
+      "pause": "Pause video",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "subtitlesOn": "Enable subtitles",
+      "subtitlesOff": "Disable subtitles",
+      "subtitlesUnavailable": "Subtitles unavailable",
+      "enterFullscreen": "Enter fullscreen",
+      "exitFullscreen": "Exit fullscreen",
+      "progress": "Seek video",
+      "volume": "Adjust volume",
+      "volumeIndicator": "Volume: {{value}}%",
+      "chaptersHeading": "Chapters",
+      "chapterCurrent": "Current chapter",
+      "chapterAriaLabel": "{{title}} ({{time}})",
+      "status": {
+        "loading": "Loading documentary…",
+        "error": "We could not load the documentary stream.",
+        "noSource": "The video source is unavailable. Please provide an HLS or MP4 URL.",
+        "configurationHint": "Configure environment variables VITE_DOC_VIDEO_HLS or VITE_DOC_VIDEO_MP4 to publish the stream."
+      }
+    },
+    "resources": {
+      "heading": "Companion materials",
+      "description": "Downloadable dossiers and reporting to continue the investigation.",
+      "timeline": {
+        "title": "Case timeline",
+        "description": "Chronological report of escalation, interventions and court milestones."
+      },
+      "profile": {
+        "title": "Family profiles",
+        "description": "Portraits of the key actors and the networks around them."
+      },
+      "legal": {
+        "title": "Legal brief",
+        "description": "Summary of proceedings, evidence handling and jurisprudence."
+      }
+    },
+    "resourceTypes": {
+      "pdf": "PDF dossier",
+      "article": "Article",
+      "audio": "Audio",
+      "guide": "Guide",
+      "video": "Video"
+    },
+    "subtitles": {
+      "primaryLabel": "Polish subtitles",
+      "primaryCode": "pl"
+    },
+    "chapters": {
+      "prologue": {
+        "title": "Prologue: Break in the static",
+        "summary": "Conflicting testimonies surface during a neighbour's complaint."
+      },
+      "escalation": {
+        "title": "Escalation spiral",
+        "summary": "Isolation, financial control and coercive threats intensify."
+      },
+      "intervention": {
+        "title": "Intervention night",
+        "summary": "Community radio and local services coordinate a high-risk exit."
+      },
+      "aftermath": {
+        "title": "Aftermath and repair",
+        "summary": "Survivors rebuild support networks while courts deliberate."
+      }
+    }
+  },
+
   "guide": {
     "title": "Eight toxic sins",
     "intro": "This interactive guide helps you recognise behaviours that erode relationships and safety. Answer the questions to get personalised risk insights and recommended support.",
@@ -252,5 +671,265 @@
       "medium": "Isolation tactics appear. Set boundaries and inform allies about manipulation.",
       "high": "Strong isolation efforts require action. Reach out to support groups and rebuild connections."
     }
+
+
+  "community": {
+    "title": "Interactive Zone",
+    "subtitle": "Share experiences safely, practise recognising manipulation and keep a private red flag log.",
+    "tabs": {
+      "voices": "Community Voices",
+      "simulator": "Simulator",
+      "redflags": "Red Flag Journal",
+      "ariaLabel": "Interactive zone sections"
+    }
+  },
+  "comments": {
+    "info": {
+      "localOnly": "This demo works without a backend — entries live only in your browser."
+    },
+    "add": {
+      "title": "Add a contribution"
+    },
+    "form": {
+      "nickname": "Nickname",
+      "content": "Message",
+      "submit": "Send",
+      "nicknameError": "Nickname must be at least 2 characters long.",
+      "contentError": "Please write a short message.",
+      "lengthError": "Messages are limited to {{max}} characters.",
+      "submitError": "We could not save your message locally.",
+      "success": "Saved locally",
+      "limit": "Up to {{max}} characters. Please avoid sharing identifying details.",
+      "remaining": "{{count}} characters remaining"
+    },
+    "card": {
+      "label": "Comment from {{nickname}}"
+    },
+    "status": {
+      "hidden": "Hidden",
+      "visible": "Visible",
+      "flagged": "Flagged"
+    },
+    "hiddenMessage": "This entry is hidden for you. You can show it again at any time.",
+    "empty": "No messages yet. Be the first to share a thought.",
+    "safety": {
+      "title": "Safety tips",
+      "anonymity": "Use a nickname and skip personal identifiers.",
+      "noNames": "Avoid posting names, addresses or legal information.",
+      "emergency": "If you are in danger, contact local services — this space cannot replace emergency help."
+    },
+    "moderation": {
+      "label": "Local moderation controls",
+      "hide": "Hide",
+      "unhide": "Show",
+      "flag": "Flag",
+      "unflag": "Remove flag",
+      "hideConfirmTitle": "Hide this entry?",
+      "hideConfirmDescription": "Hidden entries stay on your device and can be restored later.",
+      "cancel": "Cancel"
+    },
+    "threads": {
+      "ariaLabel": "Discussion threads",
+      "general": "Open conversations",
+      "generalDescription": "Share what is on your mind right now.",
+      "boundaries": "Boundaries and safety",
+      "boundariesDescription": "Practical tips for staying grounded and safe.",
+      "victories": "Small victories",
+      "victoriesDescription": "Celebrate the steps you are proud of."
+    }
+  },
+  "sim": {
+    "title": "Conversation simulator with a manipulator",
+    "subtitle": "Practise spotting manipulation patterns. Responses are generated offline from simple rules.",
+    "input": {
+      "label": "Send a message to the simulator",
+      "placeholder": "Write what you would like to say..."
+    },
+    "send": "Send",
+    "reset": "Reset",
+    "userLabel": "Your message",
+    "botLabel": "Manipulator response",
+    "analysis": {
+      "title": "Conversation analysis",
+      "none": "No techniques detected yet. Send a message to start the exercise."
+    },
+    "techniques": {
+      "detected": "Detected techniques",
+      "gaslighting": {
+        "label": "Gaslighting",
+        "description": "Twisting reality to make you doubt your perception.",
+        "tip": "Write down facts or ask a trusted person to reality-check."
+      },
+      "blameShift": {
+        "label": "Blame shifting",
+        "description": "Placing responsibility for their behaviour onto you.",
+        "tip": "State the observable behaviour and keep responsibilities clear."
+      },
+      "triangulation": {
+        "label": "Triangulation",
+        "description": "Using third parties to pressure or control the narrative.",
+        "tip": "Limit indirect channels and engage only in safe, direct conversations."
+      },
+      "loveBombing": {
+        "label": "Love bombing",
+        "description": "Overwhelming affection or promises to regain control.",
+        "tip": "Look for consistent actions rather than grand declarations."
+      },
+      "guiltTripping": {
+        "label": "Guilt tripping",
+        "description": "Invoking guilt to push you into compliance.",
+        "tip": "Name the tactic and reaffirm your boundaries."
+      },
+      "futureFaking": {
+        "label": "Future faking",
+        "description": "Dangling hypothetical plans to keep you attached.",
+        "tip": "Focus on what is happening now, not on promises of tomorrow."
+      }
+    },
+    "responses": {
+      "welcome": "I'm only trying to help. Tell me what's on your mind.",
+      "gaslighting": {
+        "overreacting": "You're overreacting again. Everyone knows you're too sensitive."
+      },
+      "blameShift": {
+        "yourFault": "This is your fault — if you behaved better we wouldn't have any problems."
+      },
+      "triangulation": {
+        "everyone": "Even our friends say you're the difficult one here."
+      },
+      "loveBombing": {
+        "promises": "I promise I'll change overnight, just give me another chance."
+      },
+      "guiltTripping": {
+        "sacrifice": "After everything I've sacrificed for you, this is how you repay me?"
+      },
+      "futureFaking": {
+        "plans": "Why are you upset? I already planned our future house and wedding."
+      },
+      "default": "Don't make a scene. You're imagining issues again."
+    },
+    "disclaimer": "Educational demo only. The simulator runs locally and does not store or transmit your input."
+  },
+  "rf": {
+    "title": "Red Flag Journal",
+    "add": "Add incident",
+    "date": "Date",
+    "category": "Category",
+    "intensity": "Intensity",
+    "note": "Description (optional)",
+    "export": "Export JSON",
+    "filter": {
+      "from": "From",
+      "to": "To",
+      "category": "Category filter",
+      "intensity": "Intensity filter",
+      "intensityValue": "Intensity {{value}}/5",
+      "all": "All"
+    },
+    "list": {
+      "title": "Entries"
+    },
+    "none": "No entries for the selected filters.",
+    "form": {
+      "dateError": "Choose a date.",
+      "limitError": "Notes are limited to {{max}} characters.",
+      "submitError": "We could not save the entry.",
+      "success": "Saved locally",
+      "intensityValue": "Intensity: {{value}}/5",
+      "limit": "Up to {{max}} characters.",
+      "submit": "Add entry"
+    },
+    "categories": {
+      "gaslighting": "Gaslighting",
+      "financial_abuse": "Financial abuse",
+      "stalking": "Stalking",
+      "legal_weaponization": "Legal weaponisation",
+      "emotional_blackmail": "Emotional blackmail",
+      "devaluation": "Devaluation",
+      "discard": "Discard",
+      "hoovering": "Hoovering"
+    },
+    "calendar": {
+      "title": "Monthly overview",
+      "subtitle": "Navigate with arrow keys to inspect days. Entries stay on this device.",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "prevShort": "◀",
+      "nextShort": "▶",
+      "ariaLabel": "Calendar of recorded incidents",
+      "week": {
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday",
+        "sat": "Saturday",
+        "sun": "Sunday",
+        "monShort": "Mon",
+        "tueShort": "Tue",
+        "wedShort": "Wed",
+        "thuShort": "Thu",
+        "friShort": "Fri",
+        "satShort": "Sat",
+        "sunShort": "Sun"
+      },
+      "dayAria": "{{date}}. Entries: {{count}}.",
+      "count": "Entries: {{count}}"
+    }
+
+  "finalLesson": {
+    "sectionLabel": "Final lesson",
+    "title": "Final Lesson",
+    "description": "What to carry forward from the Adamowo case and where to find help right now.",
+    "summary": {
+      "title": "Key takeaways",
+      "cycle": "Abuse is systemic: patterns repeat unless the power balance changes.",
+      "breakingSilence": "Speaking up is safer with a plan — rehearse disclosure with allies.",
+      "communityCare": "Community media can document, witness and prevent isolation.",
+      "documentation": "Evidence logs protect survivors when narratives are weaponised.",
+      "boundaries": "Setting firm boundaries is a right, never an overreaction."
+    },
+    "resources": {
+      "title": "Support resources",
+      "lead": "Toolkits, guides and contacts to extend the work beyond the documentary.",
+      "visit": "Visit resource",
+      "openExternal": "Opens in a new window",
+      "blueprint": {
+        "title": "Survivor blueprint",
+        "description": "Scenario planning workbook with safety checklists and exit mapping."
+      },
+      "deEscalation": {
+        "title": "De-escalation playbook",
+        "description": "Micro-interventions and scripts for friends, neighbours and coworkers."
+      },
+      "legal": {
+        "title": "Legal response kit",
+        "description": "Guidance on documenting evidence and seeking pro-bono representation."
+      }
+    },
+    "crisis": {
+      "title": "Crisis contacts (Poland)",
+      "description": "If you or someone you know is in immediate danger, reach out now.",
+      "niebieska": {
+        "label": "Blue Line – National emergency helpline",
+        "description": "24/7 psychological and legal help for survivors of violence."
+      },
+      "cpk": {
+        "label": "Women's Rights Centre",
+        "description": "Legal advice, shelters and psychological care for women experiencing abuse."
+      },
+      "callAction": "Call {{organization}} at {{phone}}"
+    }
+  },
+  "footer": {
+    "navigation": "Footer navigation",
+    "links": {
+      "documentation": "Documentation",
+      "privacy": "Privacy & cookies",
+      "methodology": "Methodology & sources"
+    },
+    "backToTop": "Back to top",
+    "rights": "© 2025 Radio Adamowo"
+
   }
 }

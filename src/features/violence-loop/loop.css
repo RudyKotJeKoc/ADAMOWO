@@ -1,0 +1,68 @@
+.loop-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.loop-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.loop-path {
+  stroke-dasharray: 10 12;
+  stroke-linecap: round;
+  animation: loop-flow 6s linear infinite;
+}
+
+.loop-path[data-paused='true'] {
+  animation-play-state: paused;
+}
+
+.loop-path[data-reduced='true'] {
+  animation: none;
+}
+
+@keyframes loop-flow {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+.loop-hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 160px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(12, 17, 37, 0.65);
+  backdrop-filter: blur(6px);
+  color: #f3f5ff;
+  text-align: left;
+  transition: box-shadow 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+
+.loop-hotspot[data-active='true'] {
+  border-color: rgba(255, 107, 53, 0.65);
+  box-shadow: 0 0 18px rgba(255, 107, 53, 0.35);
+  background: rgba(12, 17, 37, 0.85);
+}
+
+.loop-hotspot:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.55);
+}
+
+.loop-indicator {
+  filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.55));
+}
+
+@media (max-width: 640px) {
+  .loop-hotspot {
+    min-width: 140px;
+    padding: 0.5rem 0.75rem;
+  }
+}
