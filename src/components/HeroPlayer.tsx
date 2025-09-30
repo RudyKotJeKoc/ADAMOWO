@@ -14,11 +14,36 @@ import { usePlayerStore } from '../state/player';
 
 const POLLING_INTERVAL = 15_000;
 
+const usePrefersReducedMotion = (): boolean => {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return;
+    }
+
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePreference = () => {
+      setPrefersReducedMotion(query.matches);
+    };
+
+    updatePreference();
+    query.addEventListener('change', updatePreference);
+
+    return () => {
+      query.removeEventListener('change', updatePreference);
+    };
+  }, []);
+
+  return prefersReducedMotion;
+};
+
 export function HeroPlayer(): JSX.Element {
   const { t } = useTranslation();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const hlsRef = useRef<HlsClient | null>(null);
   const [nowPlaying, setNowPlaying] = useState<NowPlaying>(FALLBACK_NOW_PLAYING);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const {
     playing,
@@ -294,6 +319,9 @@ export function HeroPlayer(): JSX.Element {
             alt={t('player.artworkAlt', { title: nowPlaying.title, artist: nowPlaying.artist })}
             className="h-full w-full object-cover"
             loading="lazy"
+            decoding="async"
+            width={640}
+            height={640}
           />
           <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-accent-500/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-base-950">
             <span className="h-2 w-2 rounded-full bg-base-950" aria-hidden="true" />
@@ -310,7 +338,7 @@ export function HeroPlayer(): JSX.Element {
           </div>
           <AudioViz
             audio={audioRef.current}
-            active={playing}
+            active={playing && !prefersReducedMotion}
             ariaLabel={t('player.visualizerAria')}
           />
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -319,7 +347,7 @@ export function HeroPlayer(): JSX.Element {
                 type="button"
                 onClick={handleTogglePlay}
                 className={clsx(
-                  'rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors',
+                  'touch-target rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors',
                   playing
                     ? 'bg-accent-500 text-base-950 hover:bg-accent-400'
                     : 'bg-accent-400 text-base-950 hover:bg-accent-300'
@@ -332,7 +360,7 @@ export function HeroPlayer(): JSX.Element {
               <button
                 type="button"
                 onClick={handleMuteToggle}
-                className="rounded-full border border-base-700 px-4 py-2 text-sm text-base-100 transition-colors hover:border-accent-400 hover:text-accent-200"
+                className="touch-target rounded-full border border-base-700 px-4 py-2 text-sm text-base-100 transition-colors hover:border-accent-400 hover:text-accent-200"
                 aria-pressed={muted}
                 aria-label={muted ? t('player.unmute') : t('player.mute')}
               >
@@ -356,6 +384,7 @@ export function HeroPlayer(): JSX.Element {
                 aria-valuemax={1}
                 aria-valuenow={Number((muted ? 0 : volume).toFixed(2))}
                 aria-label={t('player.volume')}
+                aria-orientation="horizontal"
               />
             </label>
           </div>
@@ -371,7 +400,7 @@ export function HeroPlayer(): JSX.Element {
                 <button
                   type="button"
                   onClick={handleRetry}
-                  className="rounded-full border border-accent-400 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-accent-200 transition-colors hover:bg-accent-400/10"
+                  className="touch-target rounded-full border border-accent-400 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-accent-200 transition-colors hover:bg-accent-400/10"
                 >
                   {t('player.retry')}
                 </button>
