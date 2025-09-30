@@ -6,12 +6,14 @@
     "live": "Live",
 
     "violenceLoop": "Spiraal van geweld",
+    "studio": "Studio",
     "shows": "Shows",
     "guide": "Gids",
     "lab": "Lab",
     "community": "Community"
 
     "violenceLoop": "Geweldscyclus",
+    "studio": "Studio",
     "shows": "Programma's",
     "guide": "Gids",
     "lab": "Lab",
@@ -80,6 +82,138 @@
       "title": "Shows"
 
       "title": "Programma's"
+    }
+  },
+
+  "studio": {
+    "section": {
+      "kicker": "Studio-overzicht",
+      "title": "Studio Radio Adamowo",
+      "lead": "Ontdek de vier kernprogramma's die de stem van Radio Adamowo vormen.",
+      "skipToPrograms": "Ga naar de programmalijst"
+    },
+    "cards": {
+      "latest": "Laatste aflevering",
+      "loading": "Laatste aflevering wordt geladen…",
+      "latestEpisode": "“{{title}}” ({{duration}})",
+      "noEpisodes": "Nog geen afleveringen.",
+      "cta": "Bekijk programma",
+      "viewProgram": "Open het programma {{title}}"
+    },
+    "badges": {
+      "live": "Live"
+    },
+    "schedule": {
+      "title": "Mini-uitzendrooster",
+      "weeklyLabel": "Week",
+      "headers": {
+        "day": "Dag",
+        "time": "Tijd",
+        "note": "Opmerking"
+      },
+      "weekdays": {
+        "0": "Zondag",
+        "1": "Maandag",
+        "2": "Dinsdag",
+        "3": "Woensdag",
+        "4": "Donderdag",
+        "5": "Vrijdag",
+        "6": "Zaterdag"
+      },
+      "weekdaysShort": {
+        "0": "Zo",
+        "1": "Ma",
+        "2": "Di",
+        "3": "Wo",
+        "4": "Do",
+        "5": "Vr",
+        "6": "Za"
+      },
+      "defaultNote": "Opname",
+      "live": "Live-uitzending",
+      "replay": "Herhaling"
+    },
+    "program": {
+      "layoutAria": "Programma-indeling",
+      "descriptionTitle": "Over het programma",
+      "hostsTitle": "Presentatoren",
+      "recentEpisodesTitle": "Recente afleveringen",
+      "viewArchive": "Bekijk het volledige archief",
+      "noEpisodes": "Er zijn nog geen afleveringen beschikbaar.",
+      "playerAria": "Programmaspeler"
+    },
+    "notFound": {
+      "title": "Programma niet gevonden",
+      "description": "Kies een programma uit het studio-overzicht.",
+      "back": "Terug naar het studio-overzicht"
+    },
+    "team": {
+      "title": "Team van Radio Adamowo",
+      "subtitle": "Stemmen en technici achter de knoppen",
+      "description": {
+        "0": "Maak kennis met de producenten die elke dag het live-signaal en de community bewaken.",
+        "1": "Verslagen vanachter het glas, redactienieuws en antwoorden op vragen van luisteraars."
+      },
+      "hosts": {
+        "agnieszka": {
+          "name": "Agnieszka Mazur",
+          "bio": "Eindredacteur die zorgt dat de studio soepel draait."
+        },
+        "michal": {
+          "name": "Michał Drzewiecki",
+          "bio": "Geluidsontwerper en technisch leider van Radio Adamowo."
+        }
+      }
+    },
+    "heart": {
+      "title": "Hart van de Radio",
+      "subtitle": "Verhalen die onze gemeenschap verbinden",
+      "description": {
+        "0": "Een empathische reeks over veerkracht, zorg en solidariteit na psychologisch geweld.",
+        "1": "Luisteraarsbrieven gekoppeld aan experts, hulpmiddelen en hoop."
+      },
+      "hosts": {
+        "nadia": {
+          "name": "Nadia Wysocka",
+          "bio": "Communityjournalist die focust op emotioneel herstel."
+        }
+      }
+    },
+    "psych": {
+      "title": "Psychologie-expert",
+      "subtitle": "Inzichten in manipulatief gedrag",
+      "description": {
+        "0": "Klinische perspectieven op traumabinding, gaslighting en veilige grenzen.",
+        "1": "Gesprekken met specialisten over herstel en bescherming."
+      },
+      "hosts": {
+        "drNowak": {
+          "name": "dr Anna Nowak",
+          "bio": "Gelicentieerd psycholoog gespecialiseerd in geweldsdynamiek."
+        },
+        "profZielinska": {
+          "name": "prof. Karolina Zielińska",
+          "bio": "Onderzoeker naar dwangcontrole en pleitbezorger voor overlevenden."
+        }
+      }
+    },
+    "welcome": {
+      "title": "Welkom in de Studio",
+      "subtitle": "Open deuren voor nieuwe luisteraars",
+      "description": {
+        "0": "Live-introducties, rondleidingen achter de schermen en hoogtepunten uit Adamowo.",
+        "1": "Neem vrienden mee om de nieuwste verhalen, hulpmiddelen en muziek te ontdekken."
+      },
+      "hosts": {
+        "zofia": {
+          "name": "Zofia Ratajczak",
+          "bio": "Presentator die luisteraars door de week loodst."
+        },
+        "ola": {
+          "name": "Ola Pietrzak",
+          "bio": "Producer die community-items en muziek samenstelt."
+        }
+      }
     }
   },
 

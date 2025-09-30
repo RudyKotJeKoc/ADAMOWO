@@ -5,6 +5,7 @@
   "navigation": {
     "live": "Na Żywo",
     "violenceLoop": "Pętla Przemocy",
+    "studio": "Studio",
     "shows": "Audycje",
     "guide": "Poradnik",
     "lab": "Laboratorium",
@@ -65,6 +66,137 @@
     },
     "shows": {
       "title": "Audycje"
+    }
+  },
+  "studio": {
+    "section": {
+      "kicker": "Programy studia",
+      "title": "Studio Radia Adamowo",
+      "lead": "Poznaj cztery filary ramówki Radia Adamowo i sprawdź nowe odcinki.",
+      "skipToPrograms": "Przejdź do listy programów"
+    },
+    "cards": {
+      "latest": "Ostatni odcinek",
+      "loading": "Ładuję ostatni odcinek…",
+      "latestEpisode": "„{{title}}” ({{duration}})",
+      "noEpisodes": "Brak odcinków.",
+      "cta": "Zobacz program",
+      "viewProgram": "Otwórz program {{title}}"
+    },
+    "badges": {
+      "live": "Na żywo"
+    },
+    "schedule": {
+      "title": "Mini-ramówka",
+      "weeklyLabel": "Tydzień",
+      "headers": {
+        "day": "Dzień",
+        "time": "Godzina",
+        "note": "Uwagi"
+      },
+      "weekdays": {
+        "0": "Niedziela",
+        "1": "Poniedziałek",
+        "2": "Wtorek",
+        "3": "Środa",
+        "4": "Czwartek",
+        "5": "Piątek",
+        "6": "Sobota"
+      },
+      "weekdaysShort": {
+        "0": "Nd",
+        "1": "Pn",
+        "2": "Wt",
+        "3": "Śr",
+        "4": "Cz",
+        "5": "Pt",
+        "6": "So"
+      },
+      "defaultNote": "Emisja nagrana",
+      "live": "Audycja na żywo",
+      "replay": "Powtórka"
+    },
+    "program": {
+      "layoutAria": "Układ strony programu",
+      "descriptionTitle": "O audycji",
+      "hostsTitle": "Prowadzący",
+      "recentEpisodesTitle": "Ostatnie odcinki",
+      "viewArchive": "Przejdź do archiwum",
+      "noEpisodes": "Brak odcinków do odsłuchania.",
+      "playerAria": "Odtwarzacz programu"
+    },
+    "notFound": {
+      "title": "Nie znaleziono programu",
+      "description": "Sprawdź listę audycji w Studiu i wybierz inną pozycję.",
+      "back": "Powrót do studia"
+    },
+    "team": {
+      "title": "Zespół Radia Adamowo",
+      "subtitle": "Głosy i realizatorzy zza szyb",
+      "description": {
+        "0": "Poznaj producentów czuwających nad sygnałem na żywo i kontaktami ze słuchaczami.",
+        "1": "Raporty zza kulis, aktualności z newsroomu i odpowiedzi na pytania w czasie rzeczywistym."
+      },
+      "hosts": {
+        "agnieszka": {
+          "name": "Agnieszka Mazur",
+          "bio": "Producentka wykonawcza dbająca o płynne działanie studia."
+        },
+        "michal": {
+          "name": "Michał Drzewiecki",
+          "bio": "Realizator dźwięku i lider techniczny Radia Adamowo."
+        }
+      }
+    },
+    "heart": {
+      "title": "Serce Radia",
+      "subtitle": "Historie, które łączą społeczność",
+      "description": {
+        "0": "Empatyczny cykl o odporności, trosce i solidarności po przemocy psychicznej.",
+        "1": "Łączy listy od słuchaczy z ekspertami, zasobami i dawką nadziei."
+      },
+      "hosts": {
+        "nadia": {
+          "name": "Nadia Wysocka",
+          "bio": "Dziennikarka społeczna skupiona na procesie zdrowienia."
+        }
+      }
+    },
+    "psych": {
+      "title": "Ekspertka ds. Psychologii",
+      "subtitle": "Narzędzia do rozumienia manipulacji",
+      "description": {
+        "0": "Perspektywa kliniczna o traumatycznych więziach, gaslightingu i stawianiu granic.",
+        "1": "Rozmowy ze specjalistkami o tym, jak się leczyć i chronić."
+      },
+      "hosts": {
+        "drNowak": {
+          "name": "dr Anna Nowak",
+          "bio": "Psycholożka specjalizująca się w dynamice przemocy."
+        },
+        "profZielinska": {
+          "name": "prof. Karolina Zielińska",
+          "bio": "Badaczka kontroli przemocowej i rzeczniczka osób ocalałych."
+        }
+      }
+    },
+    "welcome": {
+      "title": "Witamy w Studiu",
+      "subtitle": "Otwieramy drzwi dla nowych słuchaczy",
+      "description": {
+        "0": "Wejścia na żywo, oprowadzanie po kulisach i najciekawsze materiały z Adamowa.",
+        "1": "Zapraszaj znajomych, aby odkryli najnowsze historie, narzędzia i muzykę."
+      },
+      "hosts": {
+        "zofia": {
+          "name": "Zofia Ratajczak",
+          "bio": "Prowadząca oprowadzająca po wydarzeniach tygodnia."
+        },
+        "ola": {
+          "name": "Ola Pietrzak",
+          "bio": "Producentka odpowiedzialna za społecznościowe akcenty i oprawę muzyczną."
+        }
+      }
     }
   },
   "player": {

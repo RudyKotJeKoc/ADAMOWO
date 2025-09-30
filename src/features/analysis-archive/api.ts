@@ -23,6 +23,7 @@ type SupabaseQueryBuilder = {
   select: (...args: unknown[]) => SupabaseQueryBuilderPromise;
   in: (...args: unknown[]) => SupabaseQueryBuilder;
   contains: (...args: unknown[]) => SupabaseQueryBuilder;
+  eq: (...args: unknown[]) => SupabaseQueryBuilder;
   order: (...args: unknown[]) => SupabaseQueryBuilder;
   range: (...args: unknown[]) => SupabaseQueryBuilder;
 };
@@ -169,14 +170,27 @@ function getDefaultedQuery(query: EpisodeQuery = {}): Required<Pick<EpisodeQuery
   };
 }
 
+function filterByProgram(episode: Episode, programId?: EpisodeQuery['programId']): boolean {
+  if (!programId) {
+    return true;
+  }
+
+  return episode.programId === programId;
+}
+
 function getLocalEpisodes(query: EpisodeQuery = {}): EpisodeQueryResult {
-  const { q, categories, tags, sort, page, pageSize } = getDefaultedQuery(query);
+  const { q, categories, tags, sort, page, pageSize, programId } = getDefaultedQuery(query);
 
   const metadata = computeMetadata(LOCAL_EPISODES);
 
   const filtered = LOCAL_EPISODES.filter((episode) => {
     const matchesSearch = q ? matchesQuery(episode, q) : true;
-    return matchesSearch && filterByCategories(episode, categories) && filterByTags(episode, tags);
+    return (
+      matchesSearch &&
+      filterByCategories(episode, categories) &&
+      filterByTags(episode, tags) &&
+      filterByProgram(episode, programId)
+    );
   });
 
   const sorted = sortEpisodes(filtered, sort);
@@ -218,7 +232,7 @@ async function getSupabaseMetadata(client: SupabaseClient): Promise<EpisodeFilte
 }
 
 async function getSupabaseEpisodes(client: SupabaseClient, query: EpisodeQuery = {}): Promise<EpisodeQueryResult> {
-  const { q, categories, tags, sort, page, pageSize } = getDefaultedQuery(query);
+  const { q, categories, tags, sort, page, pageSize, programId } = getDefaultedQuery(query);
 
   let builder = client.from('episodes').select('*', { count: 'exact' });
 
@@ -233,6 +247,10 @@ async function getSupabaseEpisodes(client: SupabaseClient, query: EpisodeQuery =
 
   if (tags && tags.length > 0) {
     builder = builder.contains('tags', tags);
+  }
+
+  if (programId) {
+    builder = builder.eq('program_id', programId);
   }
 
   switch (sort) {

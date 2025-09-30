@@ -1,3 +1,5 @@
+import type { ProgramId } from '../studio/studio.schema';
+
 export type Chapter = {
   title: string;
   startSec: number;
@@ -21,6 +23,7 @@ export type Episode = {
   audioUrl: string;
   coverUrl?: string;
   publishedAt: string;
+  programId?: ProgramId;
   chapters?: Chapter[];
   resources?: { label: string; url: string }[];
 };
@@ -34,6 +37,7 @@ export type EpisodeQuery = {
   sort?: EpisodeSort;
   page?: number;
   pageSize?: number;
+  programId?: ProgramId;
 };
 
 export type EpisodeFiltersMetadata = {

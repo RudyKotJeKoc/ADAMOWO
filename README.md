@@ -78,3 +78,14 @@ VITE_SUPABASE_ANON="<anon-key>"
 ```
 
 - API pobiera dane z tabeli `episodes` i wspiera filtrowanie po tytule/opisie, kategoriach, tagach i sortowaniu.
+
+## Studio Radia Adamowo
+- Metadane czterech głównych audycji znajdują się w `src/features/studio/studio.data.ts`, a typy w `src/features/studio/studio.schema.ts`.
+- Ikony SVG zapisane są w `src/features/studio/icons` i mapowane przez pole `icon`.
+- Mini-ramówka korzysta ze struktury `ScheduleEntry` i komponentu `ScheduleMini` (tabela z nagłówkami `<th scope>` oraz skrótami dni tygodnia).
+- Ostatnie odcinki ładowane są przez hook `useRecentEpisodes`, który deleguje do `getEpisodes` (Supabase → fallback JSON). W mocku `data.local.json` każde nagranie musi mieć `programId`.
+- Aby dodać nowy program:
+  1. Rozszerz typ `ProgramId` i dodaj wpis w `studio.data.ts` (tytuł, opis, prowadzący, harmonogram, ikona).
+  2. Uzupełnij tłumaczenia w `pl.json`, `nl.json` i `en.json` (przestrzeń `studio.*`).
+  3. Jeżeli potrzebna jest nowa ikona, utwórz komponent w `src/features/studio/icons` i zarejestruj go w mapie `PROGRAM_ICON_MAP`.
+  4. Dodaj `programId` do powiązanych odcinków w Supabase oraz w `data.local.json`.

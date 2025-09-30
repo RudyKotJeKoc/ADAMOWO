@@ -5,6 +5,7 @@
   "navigation": {
     "live": "Live",
     "violenceLoop": "Violence Loop",
+    "studio": "Studio",
     "shows": "Shows",
     "guide": "Guide",
     "lab": "Lab",
@@ -65,6 +66,137 @@
     },
     "shows": {
       "title": "Shows"
+    }
+  },
+  "studio": {
+    "section": {
+      "kicker": "Studio highlight",
+      "title": "Studio Radio Adamowo",
+      "lead": "Explore the flagship programmes shaping the voice of Radio Adamowo.",
+      "skipToPrograms": "Skip to program list"
+    },
+    "cards": {
+      "latest": "Latest episode",
+      "loading": "Loading latest episode…",
+      "latestEpisode": "“{{title}}” ({{duration}})",
+      "noEpisodes": "No episodes yet.",
+      "cta": "See the program",
+      "viewProgram": "Open the {{title}} program"
+    },
+    "badges": {
+      "live": "Live now"
+    },
+    "schedule": {
+      "title": "Mini schedule",
+      "weeklyLabel": "Weekly",
+      "headers": {
+        "day": "Day",
+        "time": "Time",
+        "note": "Note"
+      },
+      "weekdays": {
+        "0": "Sunday",
+        "1": "Monday",
+        "2": "Tuesday",
+        "3": "Wednesday",
+        "4": "Thursday",
+        "5": "Friday",
+        "6": "Saturday"
+      },
+      "weekdaysShort": {
+        "0": "Sun",
+        "1": "Mon",
+        "2": "Tue",
+        "3": "Wed",
+        "4": "Thu",
+        "5": "Fri",
+        "6": "Sat"
+      },
+      "defaultNote": "Recorded edition",
+      "live": "Live broadcast",
+      "replay": "Replay edition"
+    },
+    "program": {
+      "layoutAria": "Program detail layout",
+      "descriptionTitle": "About the program",
+      "hostsTitle": "Hosts",
+      "recentEpisodesTitle": "Recent episodes",
+      "viewArchive": "Browse full archive",
+      "noEpisodes": "No episodes are available yet.",
+      "playerAria": "Program player"
+    },
+    "notFound": {
+      "title": "Program not found",
+      "description": "We could not find that program. Choose one from the Studio overview.",
+      "back": "Back to Studio overview"
+    },
+    "team": {
+      "title": "Radio Adamowo Team",
+      "subtitle": "Voices and engineers behind the stream",
+      "description": {
+        "0": "Meet the producers who coordinate our live signal and listen to the community every day.",
+        "1": "Behind-the-scenes reports, newsroom updates and real-time answers to listener questions."
+      },
+      "hosts": {
+        "agnieszka": {
+          "name": "Agnieszka Mazur",
+          "bio": "Executive producer keeping the studio running smoothly."
+        },
+        "michal": {
+          "name": "Michał Drzewiecki",
+          "bio": "Sound designer and technical lead for Radio Adamowo."
+        }
+      }
+    },
+    "heart": {
+      "title": "Heart of the Radio",
+      "subtitle": "Stories that keep our community together",
+      "description": {
+        "0": "An empathetic series exploring resilience, care and solidarity after psychological abuse.",
+        "1": "Each episode pairs letters from listeners with resources, specialists and hope."
+      },
+      "hosts": {
+        "nadia": {
+          "name": "Nadia Wysocka",
+          "bio": "Community journalist focusing on emotional recovery."
+        }
+      }
+    },
+    "psych": {
+      "title": "Psychology Expert",
+      "subtitle": "Tools to understand manipulative behaviour",
+      "description": {
+        "0": "Clinical perspectives on trauma bonding, gaslighting and building safe boundaries.",
+        "1": "Deep dives with specialists explaining how to heal and protect yourself."
+      },
+      "hosts": {
+        "drNowak": {
+          "name": "Dr. Anna Nowak",
+          "bio": "Licensed psychologist specialising in abuse dynamics."
+        },
+        "profZielinska": {
+          "name": "Prof. Karolina Zielińska",
+          "bio": "Researcher of coercive control and survivor advocacy."
+        }
+      }
+    },
+    "welcome": {
+      "title": "Welcome to the Studio",
+      "subtitle": "Open doors for new listeners",
+      "description": {
+        "0": "Live introductions, behind-the-scenes tours and highlights from Adamowo investigations.",
+        "1": "Invite your friends to discover the latest stories, tools and music beds."
+      },
+      "hosts": {
+        "zofia": {
+          "name": "Zofia Ratajczak",
+          "bio": "Host guiding audiences through the week’s stories."
+        },
+        "ola": {
+          "name": "Ola Pietrzak",
+          "bio": "Producer curating community spotlights and music beds."
+        }
+      }
     }
   },
   "player": {
@@ -366,7 +498,7 @@
           "Draft a safety plan and review local resources."
         ]
       }
-    }
+    },
 
   "controls": {
     "theme": {
