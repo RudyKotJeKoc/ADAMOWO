@@ -1,6 +1,8 @@
 {
   "title": "Chill Synthwave Session",
   "artist": "DJ Adamowo",
-  "artwork": "/images/Icon.jpg",
-  "startedAt": "2024-01-01T00:00:00Z"
+  "track": "Neon Drive",
+  "coverUrl": "/images/Icon.jpg",
+  "startedAt": "2024-01-01T00:00:00Z",
+  "duration": 3600
 }
