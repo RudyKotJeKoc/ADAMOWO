@@ -48,92 +48,84 @@
       "resolved_light": "light mode"
     }
   },
-  "loop": {
-    "title": "Witch's Cauldron: The Violence Loop",
-    "subtitle": "Relationship stages that overlap and repeat.",
-    "diagram": {
-      "label": "Infinity diagram of the abuse cycle",
-      "instructions": "Use Tab to move between controls and phase hotspots. Press Enter or Space to activate a phase. Use Arrow Left or Arrow Right to move between phases while the diagram is focused.",
-      "order": "Phase order: Love Bombing, Devaluation, Discard, Hoovering."
+
+    }
+  },
+  "documentary": {
+    "sectionLabel": "Documentary",
+    "title": "The Adamowo Case: Autopsy of a Family War",
+    "description": "An investigative dive into the power structures that tore the Adamowo family apart — and the lessons that help communities interrupt violence.",
+    "player": {
+      "controlsGroup": "Video controls",
+      "play": "Play video",
+      "pause": "Pause video",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "subtitlesOn": "Enable subtitles",
+      "subtitlesOff": "Disable subtitles",
+      "subtitlesUnavailable": "Subtitles unavailable",
+      "enterFullscreen": "Enter fullscreen",
+      "exitFullscreen": "Exit fullscreen",
+      "progress": "Seek video",
+      "volume": "Adjust volume",
+      "volumeIndicator": "Volume: {{value}}%",
+      "chaptersHeading": "Chapters",
+      "chapterCurrent": "Current chapter",
+      "chapterAriaLabel": "{{title}} ({{time}})",
+      "status": {
+        "loading": "Loading documentary…",
+        "error": "We could not load the documentary stream.",
+        "noSource": "The video source is unavailable. Please provide an HLS or MP4 URL.",
+        "configurationHint": "Configure environment variables VITE_DOC_VIDEO_HLS or VITE_DOC_VIDEO_MP4 to publish the stream."
+      }
     },
-    "controls": {
-      "label": "Animation controls",
-      "play": "Play",
-      "pause": "Pause",
-      "prev": "Previous phase",
-      "next": "Next phase",
-      "reset": "Reset",
-      "reduceMotion": "Reduce animations"
-    },
-    "details": {
-      "definition": "Definition",
-      "examples": "Examples of behaviour",
-      "tips": "What helps",
-      "cta": "Open guides with support",
-      "resources": "Opens the guides page"
-    },
-    "status": {
-      "phase": "Active phase: {{phase}}"
-    },
-    "phase": {
-      "loveBombing": {
-        "title": "Love Bombing",
-        "summary": "Overwhelming affection and promises create a false sense of safety.",
-        "examples": {
-          "0": "Showering you with gifts after the very first meeting.",
-          "1": "Planning a shared future within a few days.",
-          "2": "Messaging constantly to keep your attention on them."
-        },
-        "tips": {
-          "0": "Notice whether gestures match consistent behaviour over time.",
-          "1": "Keep seeing trusted friends and loved ones.",
-          "2": "Set a pace that respects your boundaries."
-        }
+    "resources": {
+      "heading": "Companion materials",
+      "description": "Downloadable dossiers and reporting to continue the investigation.",
+      "timeline": {
+        "title": "Case timeline",
+        "description": "Chronological report of escalation, interventions and court milestones."
       },
-      "devaluation": {
-        "title": "Devaluation",
-        "summary": "Criticism and emotional withdrawal erode confidence.",
-        "examples": {
-          "0": "Belittling your achievements as overreactions.",
-          "1": "Using silent treatment when you ask for respect.",
-          "2": "Twisting jokes into humiliating comments in public."
-        },
-        "tips": {
-          "0": "Document incidents to keep perspective.",
-          "1": "Name your feelings with a therapist or trusted ally.",
-          "2": "Reinforce boundaries about respectful language."
-        }
+      "profile": {
+        "title": "Family profiles",
+        "description": "Portraits of the key actors and the networks around them."
       },
-      "discard": {
-        "title": "Discard",
-        "summary": "The abuser drops contact or blames you for the collapse.",
-        "examples": {
-          "0": "Ending plans suddenly without any explanation.",
-          "1": "Spreading rumours that you were \"too needy\".",
-          "2": "Switching affection to someone else overnight."
-        },
-        "tips": {
-          "0": "Lean on friends, hotlines or local support services.",
-          "1": "Secure your belongings and digital accounts.",
-          "2": "Remind yourself that the blame is misplaced."
-        }
+      "legal": {
+        "title": "Legal brief",
+        "description": "Summary of proceedings, evidence handling and jurisprudence."
+      }
+    },
+    "resourceTypes": {
+      "pdf": "PDF dossier",
+      "article": "Article",
+      "audio": "Audio",
+      "guide": "Guide",
+      "video": "Video"
+    },
+    "subtitles": {
+      "primaryLabel": "Polish subtitles",
+      "primaryCode": "pl"
+    },
+    "chapters": {
+      "prologue": {
+        "title": "Prologue: Break in the static",
+        "summary": "Conflicting testimonies surface during a neighbour's complaint."
       },
-      "hoovering": {
-        "title": "Hoovering",
-        "summary": "Attempts to pull you back with promises or guilt.",
-        "examples": {
-          "0": "Sending tearful messages about changing for good.",
-          "1": "Appearing at your workplace without notice.",
-          "2": "Asking mutual friends to deliver \"urgent\" messages."
-        },
-        "tips": {
-          "0": "Prepare a no-contact or low-contact plan with support.",
-          "1": "Redirect or block communication through safe channels.",
-          "2": "Reach out to professionals if safety is threatened."
-        }
+      "escalation": {
+        "title": "Escalation spiral",
+        "summary": "Isolation, financial control and coercive threats intensify."
+      },
+      "intervention": {
+        "title": "Intervention night",
+        "summary": "Community radio and local services coordinate a high-risk exit."
+      },
+      "aftermath": {
+        "title": "Aftermath and repair",
+        "summary": "Survivors rebuild support networks while courts deliberate."
       }
     }
   },
+
   "community": {
     "title": "Interactive Zone",
     "subtitle": "Share experiences safely, practise recognising manipulation and keep a private red flag log.",
@@ -337,5 +329,60 @@
       "dayAria": "{{date}}. Entries: {{count}}.",
       "count": "Entries: {{count}}"
     }
+
+  "finalLesson": {
+    "sectionLabel": "Final lesson",
+    "title": "Final Lesson",
+    "description": "What to carry forward from the Adamowo case and where to find help right now.",
+    "summary": {
+      "title": "Key takeaways",
+      "cycle": "Abuse is systemic: patterns repeat unless the power balance changes.",
+      "breakingSilence": "Speaking up is safer with a plan — rehearse disclosure with allies.",
+      "communityCare": "Community media can document, witness and prevent isolation.",
+      "documentation": "Evidence logs protect survivors when narratives are weaponised.",
+      "boundaries": "Setting firm boundaries is a right, never an overreaction."
+    },
+    "resources": {
+      "title": "Support resources",
+      "lead": "Toolkits, guides and contacts to extend the work beyond the documentary.",
+      "visit": "Visit resource",
+      "openExternal": "Opens in a new window",
+      "blueprint": {
+        "title": "Survivor blueprint",
+        "description": "Scenario planning workbook with safety checklists and exit mapping."
+      },
+      "deEscalation": {
+        "title": "De-escalation playbook",
+        "description": "Micro-interventions and scripts for friends, neighbours and coworkers."
+      },
+      "legal": {
+        "title": "Legal response kit",
+        "description": "Guidance on documenting evidence and seeking pro-bono representation."
+      }
+    },
+    "crisis": {
+      "title": "Crisis contacts (Poland)",
+      "description": "If you or someone you know is in immediate danger, reach out now.",
+      "niebieska": {
+        "label": "Blue Line – National emergency helpline",
+        "description": "24/7 psychological and legal help for survivors of violence."
+      },
+      "cpk": {
+        "label": "Women's Rights Centre",
+        "description": "Legal advice, shelters and psychological care for women experiencing abuse."
+      },
+      "callAction": "Call {{organization}} at {{phone}}"
+    }
+  },
+  "footer": {
+    "navigation": "Footer navigation",
+    "links": {
+      "documentation": "Documentation",
+      "privacy": "Privacy & cookies",
+      "methodology": "Methodology & sources"
+    },
+    "backToTop": "Back to top",
+    "rights": "© 2025 Radio Adamowo"
+
   }
 }
