@@ -5,21 +5,54 @@
   "navigation": {
     "live": "Live",
     "violenceLoop": "Geweldscyclus",
-    "shows": "Uitzendingen",
+    "shows": "Programma's",
     "guide": "Gids",
-    "lab": "Laboratorium",
+    "lab": "Lab",
     "community": "Gemeenschap"
+  },
+  "header": {
+    "skipToContent": "Ga naar de hoofdinhoud",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "home": "Terug naar Radio Adamowo",
+    "navigation": "Hoofdnavigatie"
+  },
+  "controls": {
+    "theme": {
+      "label": "Thema",
+      "system": "Systeemthema",
+      "systemShort": "SYS",
+      "light": "Lichte modus",
+      "lightShort": "LGT",
+      "dark": "Donkere modus",
+      "darkShort": "DRK",
+      "current": "Huidig: {{value}}",
+      "resolved_dark": "donkere modus",
+      "resolved_light": "lichte modus"
+    },
+    "language": {
+      "label": "Taal wijzigen",
+      "pl": "Pools",
+      "nl": "Nederlands",
+      "en": "Engels"
+    }
   },
   "pages": {
     "home": {
       "title": "Radio Adamowo",
-      "lead": "Educatieve radio over psychologisch misbruik."
+      "lead": "Een educatieve radio over psychologisch geweld."
     },
     "live": {
       "title": "Livestream"
     },
     "guides": {
-      "title": "Gidsen"
+      "title": "Gidsen",
+      "lede": "Kenniscentrum over manipulatie, narcisme en het documenteren van psychologisch geweld.",
+      "anchorNav": "Navigatie door de gids",
+      "links": {
+        "library": "Casusbibliotheek",
+        "mythology": "Mythologie van de narcist"
+      }
     },
     "lab": {
       "title": "AI-lab"
@@ -31,20 +64,308 @@
       "title": "Geweldscyclus"
     },
     "shows": {
-      "title": "Uitzendingen"
+      "title": "Programma's"
     }
   },
-  "controls": {
-    "theme": {
-      "label": "Thema",
-      "system": "Systeemthema",
-      "systemShort": "SYS",
-      "light": "Lichte modus",
-      "lightShort": "LIC",
-      "dark": "Donkere modus",
-      "darkShort": "DON",
-      "current": "Actueel: {{value}}",
-      "resolved_dark": "donkere modus",
-      "resolved_light": "lichte modus"
+  "player": {
+    "regionLabel": "Radio Adamowo-speler",
+    "artworkAlt": "Programmahoes {{title}} — {{artist}}",
+    "live": "Live",
+    "buffering": "Signaal wordt geladen…",
+    "reconnecting": "Opnieuw verbinden (nog {{seconds}} s)",
+    "error": "Stream kan niet worden afgespeeld.",
+    "idle": "Speler klaar",
+    "nowPlaying": "Speelt nu",
+    "visualizerAria": "Visualisatie van geluidsgolven",
+    "play": "Afspelen",
+    "pause": "Pauze",
+    "mute": "Dempen",
+    "unmute": "Dempen opheffen",
+    "quality_128kbps": "128 kbps",
+    "volume": "Volume",
+    "retry": "Opnieuw proberen"
+  },
+  "whisper": {
+    "regionLabel": "Fluistering achter het gordijn — gereconstrueerde hoorzitting",
+    "length": "Duur van de opname",
+    "title": "Fluistering achter het gordijn",
+    "subtitle": "De opname legt een gespannen openbare hoorzitting uit 2017 vast.",
+    "ethics": {
+      "title": "Ethische luisternotities",
+      "body": [
+        "Luister met empathie — elke zucht is van een echt persoon.",
+        "Let op pauzes en stiltes; machtsdynamiek zit tussen de regels.",
+        "Noteer feiten en vermijd oordelen — het materiaal dient onderwijs en preventie."
+      ]
     },
+    "play": "Afspelen",
+    "pause": "Pauze",
+    "restart": "Opnieuw starten",
+    "mute": "Dempen",
+    "unmute": "Geluid aan",
+    "scrub": "Tijdlijn",
+    "volume": "Volume",
+    "status": {
+      "paused": "Afspelen gepauzeerd.",
+      "playing": "Afspelen actief.",
+      "ended": "Opname beëindigd.",
+      "error": "Audiobestand kan niet worden afgespeeld.",
+      "restarted": "Opnieuw gestart vanaf het begin.",
+      "seeked": "Afspelpositie gewijzigd.",
+      "muted": "Geluid gedempt.",
+      "unmuted": "Geluid hersteld.",
+      "volume": "Volume ingesteld op {{value}}%"
+    }
+  },
+  "library": {
+    "kicker": "Casusbibliotheek",
+    "title": "Casusbibliotheek",
+    "intro": "Vier instrumenten om narcistisch geweld te doorgronden: casusstudie, kalenderscan, wapenarsenaal en documentatieprocedures.",
+    "gridLabel": "Kaarten van de bibliotheek",
+    "view": "Bekijken",
+    "details": "Kennispaneel",
+    "tabs": {
+      "label": "Bibliotheek-tabbladen",
+      "summary": "Samenvatting",
+      "timeline": "Tijdlijn",
+      "resources": "Materialen",
+      "tips": "Tips"
+    },
+    "empty": {
+      "timeline": "Geen gebeurtenissen vastgelegd.",
+      "resources": "Materialen volgen binnenkort.",
+      "tips": "Geen extra tips voor dit dossier."
+    },
+    "tags": {
+      "label": "Casustags",
+      "caseStudy": "casus",
+      "escalation": "escalatie",
+      "family": "familie",
+      "timeline": "tijdlijn",
+      "data": "data",
+      "patterns": "patronen",
+      "tactics": "tactieken",
+      "narcissism": "narcisme",
+      "relationships": "relaties",
+      "documentation": "documentatie",
+      "procedures": "procedures",
+      "community": "steun"
+    },
+    "entries": {
+      "caseAdamscy": {
+        "title": "Zaak Adamski: introductie",
+        "summary": "Familie Adamski meldde een subtiele maar groeiende campagne van isolatie en devaluatie door het gezinshoofd.",
+        "content": [
+          "De analyse begint met dagelijkse observaties: afgesloten deuren, afgebroken gesprekken en strakke controle over het familieschema.",
+          "Er verschijnen pogingen om banden te breken — cadeaus voor enkelen, kritiek op de rest en dreiging om geldstromen stop te zetten.",
+          "Het kantelpunt komt wanneer de jongste dochter opmerkingen vastlegt en buren het veranderde gedrag bevestigen."
+        ],
+        "tips": [
+          "Noteer dagelijkse interacties, hoe klein ook.",
+          "Vergelijk getuigenissen van verschillende gezinsleden — narcisten splijten hun omgeving.",
+          "Let op plotselinge vriendelijkheid na perioden van vernedering."
+        ],
+        "timeline": [
+          {
+            "when": "Januari 2020",
+            "title": "Eerste signalen van isolatie",
+            "note": "De dader neemt het schema van de kinderen over en beperkt online contact."
+          },
+          {
+            "when": "Maart 2020",
+            "title": "Verscherpte financiële controle",
+            "note": "Bonnetjes worden geëist en ongeplande uitgaven bestraft."
+          },
+          {
+            "when": "Juni 2020",
+            "title": "Bewijs verzameld en interventie"
+          }
+        ],
+        "resources": [
+          "Observatierapport familie Adamski",
+          "Checklist signalen van isolatie"
+        ]
+      },
+      "calendarAnalysis": {
+        "title": "Kalenderanalyse: kroniek van escalatie",
+        "summary": "Techniek om microgebeurtenissen vast te leggen en de volledige cyclus van psychologisch geweld zichtbaar te maken.",
+        "content": [
+          "Houd een dagelijks logboek bij en markeer gebeurtenissen met kleuren per soort misbruik.",
+          "Na 30 dagen ontstaat een frequentiekaart die idealisatie, devaluatie en stilte toont.",
+          "Door kalenders van slachtoffer en dader te vergelijken, worden verbanden tussen beloften en straffen zichtbaar."
+        ],
+        "tips": [
+          "Gebruik één vaste plek voor notities om overzicht te bewaren.",
+          "Voeg korte citaten of toonbeschrijvingen toe — essentieel voor de analyse.",
+          "Bespreek wekelijks de notities met een vertrouwenspersoon of therapeut."
+        ],
+        "timeline": [
+          {
+            "when": "Dag 1",
+            "title": "Start observatie",
+            "note": "Kleurlegenda opgesteld met een 'alarm'-categorie."
+          },
+          {
+            "when": "Dag 14",
+            "title": "Patronen zichtbaar",
+            "note": "Cyclus herhaalt: cadeau – stilte – kritiek."
+          },
+          {
+            "when": "Dag 30",
+            "title": "Rapport en nabespreking"
+          }
+        ],
+        "resources": [
+          "Template escalatiekalender"
+        ]
+      },
+      "princeIngratitude": {
+        "title": "'Prins Ondankbaar': wapen van de narcist",
+        "summary": "Strategie waarbij gunst abrupt wordt ingetrokken na idealisatie om volledige onderwerping af te dwingen.",
+        "content": [
+          "De narcist bouwt een sprookjesscenario: beloften van promotie, gezamenlijke projecten of status. Het slachtoffer krijgt een 'prinstitel'.",
+          "Wanneer het vertrouwen totaal is, verdwijnt steun en volgt publieke vernedering.",
+          "Het werkt omdat het slachtoffer een denkbeeldige status verdedigt in plaats van de relatie zelf."
+        ],
+        "tips": [
+          "Controleer of beloofde privileges juridisch of financieel onderbouwd zijn.",
+          "Let op eisen tot dankbaarheid zonder echte hulp.",
+          "Bepaal eigen succescriteria in plaats van de narratief van de dader te volgen."
+        ],
+        "timeline": [
+          {
+            "when": "Week 1",
+            "title": "Idealiserende start"
+          },
+          {
+            "when": "Week 4",
+            "title": "Publiek ontnemen van gunst",
+            "note": "Het slachtoffer wordt belachelijk gemaakt voor getuigen."
+          }
+        ],
+        "resources": [
+          "Reflectie-oefening: ontmasker de narratief van de narcist"
+        ]
+      },
+      "investigationDocs": {
+        "title": "Onderzoek: manipulaties documenteren",
+        "summary": "Veilig protocol om bewijs te verzamelen zonder escalatie en met bescherming van het slachtoffer.",
+        "content": [
+          "Houd een incidentenlog bij met datum, tijd en bron: sms, e-mail, spraakmemo.",
+          "Leg een opslagprotocol vast — versleutelde cloud of offline drager.",
+          "Voeg verklaringen van derden en officiële documenten (school, arts, werkgever) toe."
+        ],
+        "tips": [
+          "Gebruik consistente bestandsnamen: datum_locatie_gebeurtenis.",
+          "Informeer de dader niet als dit wraak kan uitlokken.",
+          "Werk samen met lokale steunpunten voor juridische rugdekking."
+        ],
+        "timeline": [
+          {
+            "when": "Week 1",
+            "title": "Start incidentenlog"
+          },
+          {
+            "when": "Week 3",
+            "title": "Bewijsreview",
+            "note": "Materiaal gedeeld met mediator."
+          },
+          {
+            "when": "Week 6",
+            "title": "Rapport voor instanties"
+          }
+        ],
+        "resources": [
+          "Werkblad bewijslijst",
+          "Handleiding getuigeninterviews"
+        ]
+      }
+    }
+  },
+  "mythology": {
+    "kicker": "Mythologie van de narcist",
+    "title": "Mythologie van de narcist",
+    "intro": "Vier waarschuwingssymbolen voor controle: 7 — ideaal pact, 4 — afhankelijkheidsnet, 8 — terugkeerlus, 13 — alarmsignaal.",
+    "gridLabel": "Symbolen van de narcist",
+    "viewSymbol": "Bekijk symbool",
+    "symbolCode": "Symbool {{code}}",
+    "detailKicker": "Het symbool ontcijferen",
+    "blocks": {
+      "meaning": "Betekenis",
+      "when": "Wanneer zichtbaar",
+      "actions": "Aanpak"
+    },
+    "symbol": {
+      "7": {
+        "title": "Zeven",
+        "subtitle": "Symbool van het perfecte pact",
+        "meaning": [
+          "Belofte van een uitzonderlijke afspraak buiten sociale normen.",
+          "Verklaringen van totale loyaliteit in ruil voor controle."
+        ],
+        "when": [
+          "Wanneer de narcist een geheime samenwerking of 'speciale' deal aanbiedt.",
+          "Tijdens plotselinge cadeaus na conflicten.",
+          "Vlak voordat om een riskant loyaliteitsgebaar wordt gevraagd."
+        ],
+        "action": [
+          "Vraag naar concrete gevolgen en neem bedenktijd.",
+          "Bespreek het aanbod met een vertrouweling voordat je toestemt."
+        ]
+      },
+      "4": {
+        "title": "Vier",
+        "subtitle": "Symbool van het gesloten netwerk",
+        "meaning": [
+          "Vier pijlers van afhankelijkheid: emotie, geld, reputatie, toegang tot geliefden.",
+          "Toont een systeem waarin elke keuze vier controlehendels heeft."
+        ],
+        "when": [
+          "Wanneer financiële steun gepaard gaat met volledige verantwoording.",
+          "Als de dader bepaalt wie jouw vrienden mogen zijn."
+        ],
+        "action": [
+          "Breng alternatieve steun in kaart buiten de dader om.",
+          "Splits afhankelijkheden: eigen budget, andere communicatieroutes.",
+          "Zeker vandaag nog één pijler veilig."
+        ]
+      },
+      "8": {
+        "title": "Acht",
+        "subtitle": "Symbool van de terugkeerlus",
+        "meaning": [
+          "Eindeloze belofte van verbetering.",
+          "Toont de cyclus: 'nooit meer' wordt 'weer opnieuw'.",
+          "Verwijst naar de verslavende dynamiek van uit elkaar gaan en terugkomen."
+        ],
+        "when": [
+          "Na een breuk wanneer direct therapie of verandering wordt beloofd.",
+          "Als de afspraken agenda op een sinusgolf lijkt.",
+          "Direct nadat het slachtoffer grenzen of ultimata stelt."
+        ],
+        "action": [
+          "Noteer voorwaarden voor terugkeer en plan een evaluatiemoment.",
+          "Volg echte verandering, niet alleen woorden."
+        ]
+      },
+      "13": {
+        "title": "Dertien",
+        "subtitle": "Symbool van breuk en alarm",
+        "meaning": [
+          "Aankondiging van een drastische breuk als dreigement.",
+          "Kan wijzen op escalatie naar economisch of juridisch geweld."
+        ],
+        "when": [
+          "Wanneer wordt gedreigd met het afpakken van kinderen of bezit.",
+          "Als het slachtoffer vertrek of bewijsdeling voorbereidt.",
+          "Vlak voor grote gebeurtenissen: feestdagen, contract, verhuizing."
+        ],
+        "action": [
+          "Beveilig documenten en noodcontacten.",
+          "Informeer een vertrouwenspersoon over mogelijke escalatie.",
+          "Maak een veiligheidsplan en verken lokale hulpbronnen."
+        ]
+      }
+    }
+  }
 }

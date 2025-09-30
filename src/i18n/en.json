@@ -10,29 +10,12 @@
     "lab": "Lab",
     "community": "Community"
   },
-  "pages": {
-    "home": {
-      "title": "Radio Adamowo",
-      "lead": "An educational radio about psychological abuse."
-    },
-    "live": {
-      "title": "Live Stream"
-    },
-    "guides": {
-      "title": "Guides"
-    },
-    "lab": {
-      "title": "AI Lab"
-    },
-    "community": {
-      "title": "Community"
-    },
-    "violenceLoop": {
-      "title": "Violence loop"
-    },
-    "shows": {
-      "title": "Shows"
-    }
+  "header": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Back to Radio Adamowo home",
+    "navigation": "Main navigation"
   },
   "controls": {
     "theme": {
@@ -47,4 +30,342 @@
       "resolved_dark": "dark mode",
       "resolved_light": "light mode"
     },
+    "language": {
+      "label": "Change language",
+      "pl": "Polish",
+      "nl": "Dutch",
+      "en": "English"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Radio Adamowo",
+      "lead": "An educational radio about psychological abuse."
+    },
+    "live": {
+      "title": "Live Stream"
+    },
+    "guides": {
+      "title": "Guides",
+      "lede": "An educational hub about manipulation, narcissism and documenting psychological abuse.",
+      "anchorNav": "Guide section navigation",
+      "links": {
+        "library": "Case library",
+        "mythology": "Mythology of the Narcissist"
+      }
+    },
+    "lab": {
+      "title": "AI Lab"
+    },
+    "community": {
+      "title": "Community"
+    },
+    "violenceLoop": {
+      "title": "Violence loop"
+    },
+    "shows": {
+      "title": "Shows"
+    }
+  },
+  "player": {
+    "regionLabel": "Radio Adamowo player",
+    "artworkAlt": "Show artwork {{title}} — {{artist}}",
+    "live": "Live",
+    "buffering": "Buffering signal…",
+    "reconnecting": "Reconnecting ({{seconds}} s remaining)",
+    "error": "Unable to play the stream.",
+    "idle": "Player ready",
+    "nowPlaying": "Now playing",
+    "visualizerAria": "Audio waveform visualiser",
+    "play": "Play",
+    "pause": "Pause",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "quality_128kbps": "128 kbps",
+    "volume": "Volume",
+    "retry": "Try again"
+  },
+  "whisper": {
+    "regionLabel": "Whisper Behind the Curtain — reconstructed hearing",
+    "length": "Recording length",
+    "title": "Whisper Behind the Curtain",
+    "subtitle": "The recording captures a tense public hearing from 2017.",
+    "ethics": {
+      "title": "Ethical listening notes",
+      "body": [
+        "Listen with empathy — every breath belongs to a real person.",
+        "Pay attention to pauses and ellipses; power dynamics hide between the lines.",
+        "Write down facts, avoid judgments — the material serves education and prevention."
+      ]
+    },
+    "play": "Play",
+    "pause": "Pause",
+    "restart": "Start over",
+    "mute": "Mute",
+    "unmute": "Turn sound on",
+    "scrub": "Timeline",
+    "volume": "Volume",
+    "status": {
+      "paused": "Playback paused.",
+      "playing": "Playback running.",
+      "ended": "Recording finished.",
+      "error": "Unable to play the audio file.",
+      "restarted": "Restarted from the beginning.",
+      "seeked": "Playback position changed.",
+      "muted": "Sound muted.",
+      "unmuted": "Sound restored.",
+      "volume": "Volume set to {{value}}%"
+    }
+  },
+  "library": {
+    "kicker": "Case library",
+    "title": "Case Library",
+    "intro": "Four tools to decode narcissistic abuse: case study, calendar analysis, weaponised charm and documentation protocols.",
+    "gridLabel": "Library cards",
+    "view": "View",
+    "details": "Knowledge panel",
+    "tabs": {
+      "label": "Library tabs",
+      "summary": "Summary",
+      "timeline": "Timeline",
+      "resources": "Materials",
+      "tips": "Tips"
+    },
+    "empty": {
+      "timeline": "No events recorded in the timeline.",
+      "resources": "Materials will be available soon.",
+      "tips": "No extra tips for this entry."
+    },
+    "tags": {
+      "label": "Case tags",
+      "caseStudy": "case study",
+      "escalation": "escalation",
+      "family": "family",
+      "timeline": "timeline",
+      "data": "data",
+      "patterns": "patterns",
+      "tactics": "tactics",
+      "narcissism": "narcissism",
+      "relationships": "relationships",
+      "documentation": "documentation",
+      "procedures": "procedures",
+      "community": "support"
+    },
+    "entries": {
+      "caseAdamscy": {
+        "title": "The Adamski Case: Orientation",
+        "summary": "The Adamski family reported a subtle yet growing isolation and devaluation campaign by the head of the household.",
+        "content": [
+          "The analysis starts with daily observations: locked doors, hijacked conversations and tight control over the family schedule.",
+          "Attempts to fracture bonds appear — gifts for selected members, criticism of the rest and threats to cut off funds.",
+          "The turning point arrives when the youngest daughter logs remarks and neighbours confirm the behavioural shift."
+        ],
+        "tips": [
+          "Keep notes on everyday interactions, even the mundane ones.",
+          "Compare accounts from different family members — narcissists split people into factions.",
+          "Watch for sudden acts of kindness preceded by episodes of humiliation."
+        ],
+        "timeline": [
+          {
+            "when": "January 2020",
+            "title": "First signs of isolation",
+            "note": "The abuser takes over the children's schedule and limits online contact."
+          },
+          {
+            "when": "March 2020",
+            "title": "Escalated financial control",
+            "note": "Receipts are demanded and penalties issued for unapproved expenses."
+          },
+          {
+            "when": "June 2020",
+            "title": "Evidence review and intervention"
+          }
+        ],
+        "resources": [
+          "Adamski family observation report",
+          "Isolation warning checklist"
+        ]
+      },
+      "calendarAnalysis": {
+        "title": "Calendar Analysis: Chronicle of Escalation",
+        "summary": "A technique that records micro-events to reveal the full cycle of psychological abuse.",
+        "content": [
+          "Keep a daily log of incidents and tag them with colour codes according to the type of harm.",
+          "After 30 days, a frequency map emerges showing phases of idealisation, devaluation and silence.",
+          "Comparing the victim and abuser calendars exposes correlations between promises and punishments."
+        ],
+        "tips": [
+          "Use a single log to avoid losing track of data.",
+          "Add brief quotes or tone descriptions — critical for analysis.",
+          "Review entries weekly with a trusted person or therapist."
+        ],
+        "timeline": [
+          {
+            "when": "Day 1",
+            "title": "Observation starts",
+            "note": "Colour legend defined with an 'alert' category."
+          },
+          {
+            "when": "Day 14",
+            "title": "Patterns emerge",
+            "note": "Cycle repeats: gift – silence – criticism."
+          },
+          {
+            "when": "Day 30",
+            "title": "Report and debrief"
+          }
+        ],
+        "resources": [
+          "Escalation calendar template"
+        ]
+      },
+      "princeIngratitude": {
+        "title": "The Prince of Ingratitude: Narcissist Weapon",
+        "summary": "A strategy of suddenly withdrawing favour after idealisation to force complete submission.",
+        "content": [
+          "The narcissist scripts a fairy-tale scenario: promises of promotion, joint ventures or elevated status. The victim receives a 'prince' title.",
+          "Once trust is absolute, support disappears and public shaming follows.",
+          "The trap works because the victim defends an imagined status rather than the relationship itself."
+        ],
+        "tips": [
+          "Check whether offered privileges have legal or financial grounding.",
+          "Notice demands for gratitude without actual help.",
+          "Define your own success criteria instead of adopting the abuser's narrative."
+        ],
+        "timeline": [
+          {
+            "when": "Week 1",
+            "title": "Idealisation and titling"
+          },
+          {
+            "when": "Week 4",
+            "title": "Public removal of favour",
+            "note": "The victim is humiliated in front of witnesses."
+          }
+        ],
+        "resources": [
+          "Reflection exercise: decode the narcissist narrative"
+        ]
+      },
+      "investigationDocs": {
+        "title": "Investigation: Documenting Manipulation",
+        "summary": "A safe evidence-gathering protocol that avoids escalation while protecting the victim.",
+        "content": [
+          "Create an incident diary with dates, times and sources: texts, emails, voice notes.",
+          "Set up a storage protocol — encrypted cloud or offline drive.",
+          "Add third-party statements and institutional records (school, doctor, employer)."
+        ],
+        "tips": [
+          "Use consistent file names: date_location_event.",
+          "Do not alert the abuser if retaliation is likely.",
+          "Partner with local support groups to secure legal backup."
+        ],
+        "timeline": [
+          {
+            "when": "Week 1",
+            "title": "Incident log created"
+          },
+          {
+            "when": "Week 3",
+            "title": "Evidence review",
+            "note": "Materials shared with a mediator."
+          },
+          {
+            "when": "Week 6",
+            "title": "Report prepared for institutions"
+          }
+        ],
+        "resources": [
+          "Evidence log worksheet",
+          "Witness interview guide"
+        ]
+      }
+    }
+  },
+  "mythology": {
+    "kicker": "Mythology of the narcissist",
+    "title": "Mythology of the Narcissist",
+    "intro": "Four warning symbols describing control cycles: 7 — ideal pact, 4 — dependency grid, 8 — return loop, 13 — rupture alert.",
+    "gridLabel": "Narcissist mythology symbols",
+    "viewSymbol": "View symbol",
+    "symbolCode": "Symbol {{code}}",
+    "detailKicker": "Decoding the symbol",
+    "blocks": {
+      "meaning": "What it means",
+      "when": "When it appears",
+      "actions": "How to respond"
+    },
+    "symbol": {
+      "7": {
+        "title": "Seven",
+        "subtitle": "Symbol of the perfect pact",
+        "meaning": [
+          "Promise of an exceptional agreement beyond social norms.",
+          "Declarations of total loyalty in exchange for control."
+        ],
+        "when": [
+          "When the narcissist proposes a secret collaboration or 'special' deal.",
+          "During sudden gifts after conflict periods.",
+          "Right before asking for a risky act of loyalty."
+        ],
+        "action": [
+          "Ask about real consequences and request time to reflect.",
+          "Consult a trusted person before accepting the terms."
+        ]
+      },
+      "4": {
+        "title": "Four",
+        "subtitle": "Symbol of the closed network",
+        "meaning": [
+          "Four pillars of dependency: emotions, money, reputation, access to loved ones.",
+          "Signals a setup where every choice has four control levers."
+        ],
+        "when": [
+          "When financial help requires reporting every expense.",
+          "When the abuser dictates who may be your friend."
+        ],
+        "action": [
+          "Map alternative support outside the abuser.",
+          "Split dependencies: separate budget, alternate communication channels.",
+          "Secure at least one pillar today."
+        ]
+      },
+      "8": {
+        "title": "Eight",
+        "subtitle": "Symbol of the return loop",
+        "meaning": [
+          "Endless promise of improvement.",
+          "Highlights the cycle: 'never again' turns into 'again'.",
+          "Refers to addictive break-up/make-up dynamics."
+        ],
+        "when": [
+          "After a breakup when therapy or drastic change is promised immediately.",
+          "When the meeting schedule looks like a sine wave.",
+          "Right after the victim states boundaries or ultimatums."
+        ],
+        "action": [
+          "Write down conditions for return and schedule a progress review date.",
+          "Track real change, not declarations."
+        ]
+      },
+      "13": {
+        "title": "Thirteen",
+        "subtitle": "Symbol of rupture and alarm",
+        "meaning": [
+          "Announces a drastic cut-off often used as a threat.",
+          "May signal escalation toward economic or legal abuse."
+        ],
+        "when": [
+          "When the abuser threatens custody or asset seizure.",
+          "As the victim prepares to leave or disclose evidence.",
+          "Right before major events: holidays, contracts, moving."
+        ],
+        "action": [
+          "Secure documents and emergency contacts.",
+          "Alert a trusted person about potential escalation.",
+          "Draft a safety plan and review local resources."
+        ]
+      }
+    }
+  }
 }
