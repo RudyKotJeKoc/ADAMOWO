@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
 
+import { AppFooter } from '../features/footer/AppFooter';
 import { Header } from './Header';
 
 export function AppShell(): JSX.Element {
@@ -23,6 +24,7 @@ export function AppShell(): JSX.Element {
       >
         <Outlet />
       </main>
+      <AppFooter />
     </div>
   );
 }
