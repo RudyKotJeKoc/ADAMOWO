@@ -6,20 +6,46 @@
   color-scheme: dark light;
 }
 
-html {
-  min-height: 100%;
-  background-color: theme('colors.base.950');
+@layer base {
+  html {
+    min-height: 100%;
+    background-color: theme('colors.base.950');
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  a {
+    @apply text-accent-400 transition-colors hover:text-accent-500;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-400 ring-offset-2 ring-offset-base-950;
+  }
+
+  .skip-link {
+    @apply pointer-events-auto focus-visible:ring-offset-base-950;
+  }
 }
 
-body {
-  min-height: 100vh;
+@layer components {
+  .container-responsive {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
 }
 
-a {
-  @apply text-accent-400 hover:text-accent-500 focus:outline-none focus-visible:shadow-focus;
-}
-
-button,
-[role='button'] {
-  @apply focus:outline-none focus-visible:shadow-focus;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
