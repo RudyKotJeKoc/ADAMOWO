@@ -133,5 +133,133 @@
         }
       }
     }
+  },
+  "documentary": {
+    "sectionLabel": "Materiał dokumentalny",
+    "title": "Sprawa z Adamowa: Autopsja rodzinnej wojny",
+    "description": "Reporterskie śledztwo w mechanizmy władzy, które rozdarły rodzinę z Adamowa — i praktyki, które pomagają przerwać przemoc.",
+    "player": {
+      "controlsGroup": "Sterowanie odtwarzaczem",
+      "play": "Odtwórz wideo",
+      "pause": "Wstrzymaj wideo",
+      "mute": "Wycisz",
+      "unmute": "Włącz dźwięk",
+      "subtitlesOn": "Włącz napisy",
+      "subtitlesOff": "Wyłącz napisy",
+      "subtitlesUnavailable": "Napisy niedostępne",
+      "enterFullscreen": "Pełny ekran",
+      "exitFullscreen": "Zamknij pełny ekran",
+      "progress": "Przesuń wideo",
+      "volume": "Zmień głośność",
+      "volumeIndicator": "Głośność: {{value}}%",
+      "chaptersHeading": "Rozdziały",
+      "chapterCurrent": "Obecny rozdział",
+      "chapterAriaLabel": "{{title}} ({{time}})",
+      "status": {
+        "loading": "Ładowanie materiału…",
+        "error": "Nie udało się wczytać strumienia dokumentu.",
+        "noSource": "Brak źródła wideo. Dodaj adres HLS lub MP4.",
+        "configurationHint": "Skonfiguruj zmienne VITE_DOC_VIDEO_HLS lub VITE_DOC_VIDEO_MP4, aby udostępnić transmisję."
+      }
+    },
+    "resources": {
+      "heading": "Materiały towarzyszące",
+      "description": "Pobierz opracowania i artykuły pogłębiające dochodzenie.",
+      "timeline": {
+        "title": "Oś czasu sprawy",
+        "description": "Chronologiczny opis eskalacji, interwencji i etapów sądowych."
+      },
+      "profile": {
+        "title": "Portrety rodziny",
+        "description": "Sylwetki kluczowych osób i ich sieci wsparcia."
+      },
+      "legal": {
+        "title": "Brief prawny",
+        "description": "Podsumowanie postępowań, dowodów i orzecznictwa."
+      }
+    },
+    "resourceTypes": {
+      "pdf": "Plik PDF",
+      "article": "Artykuł",
+      "audio": "Audio",
+      "guide": "Poradnik",
+      "video": "Wideo"
+    },
+    "subtitles": {
+      "primaryLabel": "Napisy polskie",
+      "primaryCode": "pl"
+    },
+    "chapters": {
+      "prologue": {
+        "title": "Prolog: zakłócenie ciszy",
+        "summary": "Podczas sąsiedzkiej skargi wypływają sprzeczne świadectwa."
+      },
+      "escalation": {
+        "title": "Spirala eskalacji",
+        "summary": "Nasilają się izolacja, kontrola finansowa i groźby."
+      },
+      "intervention": {
+        "title": "Noc interwencji",
+        "summary": "Radio społeczne i służby koordynują wyjście wysokiego ryzyka."
+      },
+      "aftermath": {
+        "title": "Skutki i odbudowa",
+        "summary": "Ocalałe osoby odbudowują sieci wsparcia, a sąd waży dowody."
+      }
+    }
+  },
+  "finalLesson": {
+    "sectionLabel": "Ostateczna lekcja",
+    "title": "Ostateczna Lekcja",
+    "description": "Co wynosimy ze sprawy Adamowo i gdzie szukać pomocy tu i teraz.",
+    "summary": {
+      "title": "Najważniejsze wnioski",
+      "cycle": "Przemoc jest systemem — wzorzec wróci, jeśli nie zmienimy układu sił.",
+      "breakingSilence": "Mówienie głośno jest bezpieczniejsze z planem i zaufanymi osobami.",
+      "communityCare": "Media społecznościowe mogą dokumentować, świadkować i rozbrajać izolację.",
+      "documentation": "Archiwizacja dowodów chroni, gdy narracje są używane przeciw ocalałym.",
+      "boundaries": "Stawianie granic to prawo, a nie przesada."
+    },
+    "resources": {
+      "title": "Zasoby pomocowe",
+      "lead": "Zestawy narzędzi, poradniki i kontakty, które rozszerzają pracę poza dokumentem.",
+      "visit": "Przejdź do zasobu",
+      "openExternal": "Otwiera się w nowym oknie",
+      "blueprint": {
+        "title": "Plan bezpieczeństwa",
+        "description": "Ćwiczenia scenariuszowe z checklistą bezpieczeństwa i mapą wyjścia."
+      },
+      "deEscalation": {
+        "title": "Podręcznik deeskalacji",
+        "description": "Mikrointerwencje i podpowiedzi dla przyjaciół, sąsiadów i współpracowników."
+      },
+      "legal": {
+        "title": "Zestaw prawny",
+        "description": "Instrukcje dokumentowania i pozyskiwania reprezentacji pro bono."
+      }
+    },
+    "crisis": {
+      "title": "Kontakty kryzysowe (Polska)",
+      "description": "Jeśli ty lub ktoś bliski jest w zagrożeniu, skontaktuj się natychmiast.",
+      "niebieska": {
+        "label": "Niebieska Linia – telefon zaufania",
+        "description": "Całodobowe wsparcie psychologiczne i prawne dla osób doświadczających przemocy."
+      },
+      "cpk": {
+        "label": "Centrum Praw Kobiet",
+        "description": "Porady prawne, schronienie i opieka psychologiczna dla kobiet."
+      },
+      "callAction": "Zadzwoń do {{organization}} pod numer {{phone}}"
+    }
+  },
+  "footer": {
+    "navigation": "Nawigacja w stopce",
+    "links": {
+      "documentation": "Dokumentacja",
+      "privacy": "Prywatność i cookies",
+      "methodology": "Metodologia i źródła"
+    },
+    "backToTop": "Do góry",
+    "rights": "© 2025 Radio Adamowo"
   }
 }
