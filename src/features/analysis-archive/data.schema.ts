@@ -1,3 +1,12 @@
+import type {
+  Episode as BaseEpisode,
+  EpisodeFiltersMetadata as BaseEpisodeFiltersMetadata,
+  EpisodeQuery as BaseEpisodeQuery,
+  EpisodeQueryResult as BaseEpisodeQueryResult,
+  EpisodeResource,
+  EpisodeSort as BaseEpisodeSort
+} from '../../data/types';
+
 export type Chapter = {
   title: string;
   startSec: number;
@@ -10,41 +19,25 @@ export type EpisodeCategory =
   | 'BronNarcyza'
   | 'Sledztwo';
 
-export type Episode = {
-  id: string;
-  title: string;
+export type EpisodeSort = BaseEpisodeSort;
+
+export type Episode = Omit<BaseEpisode, 'category' | 'slug' | 'resources' | 'chapters'> & {
   slug: string;
   category: EpisodeCategory;
-  tags: string[];
-  description: string;
-  durationSec: number;
-  audioUrl: string;
-  coverUrl?: string;
-  publishedAt: string;
   chapters?: Chapter[];
-  resources?: { label: string; url: string }[];
+  resources?: EpisodeResource[];
 };
 
-export type EpisodeSort = 'newest' | 'oldest' | 'durationAsc' | 'durationDesc';
-
-export type EpisodeQuery = {
-  q?: string;
+export type EpisodeQuery = Omit<BaseEpisodeQuery, 'categories'> & {
   categories?: EpisodeCategory[];
-  tags?: string[];
-  sort?: EpisodeSort;
-  page?: number;
-  pageSize?: number;
 };
 
 export type EpisodeFiltersMetadata = {
   categories: { value: EpisodeCategory; count: number }[];
-  tags: { value: string; count: number }[];
+  tags: BaseEpisodeFiltersMetadata['tags'];
 };
 
-export type EpisodeQueryResult = {
+export type EpisodeQueryResult = Omit<BaseEpisodeQueryResult, 'episodes' | 'metadata'> & {
   episodes: Episode[];
-  total: number;
-  page: number;
-  pageSize: number;
   metadata: EpisodeFiltersMetadata;
 };

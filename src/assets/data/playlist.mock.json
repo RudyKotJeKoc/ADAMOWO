@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mock-track-01",
+    "title": "Neon Drive",
+    "artist": "DJ Adamowo",
+    "url": "https://stream.adamowo.org/audio/neon-drive.mp3",
+    "coverUrl": "/images/playlist/neon-drive.jpg",
+    "position": 1
+  },
+  {
+    "id": "mock-track-02",
+    "title": "Midnight Pulse",
+    "artist": "Radio Collective",
+    "url": "https://stream.adamowo.org/audio/midnight-pulse.mp3",
+    "coverUrl": "/images/playlist/midnight-pulse.jpg",
+    "position": 2
+  },
+  {
+    "id": "mock-track-03",
+    "title": "Aurora Trails",
+    "artist": "Analogue Bloom",
+    "url": "https://stream.adamowo.org/audio/aurora-trails.mp3",
+    "coverUrl": "/images/playlist/aurora-trails.jpg",
+    "position": 3
+  }
+]

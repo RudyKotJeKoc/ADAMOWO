@@ -1,15 +1,13 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
+import type { JSX } from 'react';
 import clsx from 'clsx';
 import Hls from 'hls.js';
 import { useTranslation } from 'react-i18next';
 import { AudioViz } from './AudioViz';
 import type { HlsClient } from '../lib/hlsClient';
 import { MAX_RECONNECT_ATTEMPTS, createHlsClient } from '../lib/hlsClient';
-import {
-  FALLBACK_NOW_PLAYING,
-  NowPlaying,
-  fetchNowPlaying
-} from '../lib/nowPlaying';
+import { FALLBACK_NOW_PLAYING, getNowPlaying, subscribeNowPlaying } from '../data/nowPlaying';
+import type { NowPlaying } from '../data/types';
 import { usePlayerStore } from '../state/player';
 
 const POLLING_INTERVAL = 15_000;
@@ -79,11 +77,23 @@ export function HeroPlayer(): JSX.Element {
 
   useEffect(() => {
     let isMounted = true;
+    const unsubscribe = subscribeNowPlaying((payload) => {
+      if (isMounted) {
+        setNowPlaying(payload);
+      }
+    });
 
     const poll = async (): Promise<void> => {
-      const metadata = await fetchNowPlaying();
-      if (isMounted) {
-        setNowPlaying(metadata);
+      try {
+        const metadata = await getNowPlaying();
+        if (isMounted) {
+          setNowPlaying(metadata);
+        }
+      } catch (error) {
+        console.error('Failed to load Now Playing metadata', error);
+        if (isMounted) {
+          setNowPlaying(FALLBACK_NOW_PLAYING);
+        }
       }
     };
 
@@ -93,6 +103,7 @@ export function HeroPlayer(): JSX.Element {
     return () => {
       isMounted = false;
       window.clearInterval(intervalId);
+      unsubscribe();
     };
   }, []);
 
@@ -306,6 +317,27 @@ export function HeroPlayer(): JSX.Element {
     });
   };
 
+  const nowPlayingDetails = useMemo(() => {
+    if (nowPlaying.artist) {
+      return nowPlaying.track ? `${nowPlaying.artist} – ${nowPlaying.track}` : nowPlaying.artist;
+    }
+
+    if (nowPlaying.track) {
+      return nowPlaying.track;
+    }
+
+    return t('player.live');
+  }, [nowPlaying.artist, nowPlaying.track, t]);
+
+  const artworkAlt = useMemo(
+    () =>
+      t('player.artworkAlt', {
+        title: nowPlaying.title,
+        artist: nowPlaying.artist ?? nowPlayingDetails
+      }),
+    [nowPlaying.artist, nowPlaying.title, nowPlayingDetails, t]
+  );
+
   return (
     <section
       className="rounded-3xl bg-gradient-to-br from-[#0a0e27] to-[#1a1f3a] p-6 text-base-100 shadow-xl sm:p-10"
@@ -315,8 +347,8 @@ export function HeroPlayer(): JSX.Element {
       <div className="grid gap-6 lg:grid-cols-[280px,1fr] lg:items-center">
         <div className="relative overflow-hidden rounded-3xl bg-base-900/50">
           <img
-            src={nowPlaying.artwork}
-            alt={t('player.artworkAlt', { title: nowPlaying.title, artist: nowPlaying.artist })}
+            src={nowPlaying.coverUrl ?? FALLBACK_NOW_PLAYING.coverUrl}
+            alt={artworkAlt}
             className="h-full w-full object-cover"
             loading="lazy"
             decoding="async"
@@ -334,7 +366,7 @@ export function HeroPlayer(): JSX.Element {
               {t('player.nowPlaying')}
             </p>
             <h2 className="text-3xl font-bold text-base-50 sm:text-4xl">{nowPlaying.title}</h2>
-            <p className="text-base-200">{nowPlaying.artist}</p>
+            <p className="text-base-200">{nowPlayingDetails}</p>
           </div>
           <AudioViz
             audio={audioRef.current}
