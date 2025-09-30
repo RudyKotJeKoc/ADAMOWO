@@ -133,5 +133,209 @@
         }
       }
     }
+  },
+  "community": {
+    "title": "Interactieve zone",
+    "subtitle": "Een veilige ruimte om ervaringen te delen, manipulatie te leren herkennen en een persoonlijk logboek bij te houden.",
+    "tabs": {
+      "voices": "Stemmen van de gemeenschap",
+      "simulator": "Simulator",
+      "redflags": "Dagboek met rode vlaggen",
+      "ariaLabel": "Tabbladen interactieve zone"
+    }
+  },
+  "comments": {
+    "info": {
+      "localOnly": "Deze demo werkt zonder backend — berichten blijven alleen in je browser."
+    },
+    "add": {
+      "title": "Plaats een bericht"
+    },
+    "form": {
+      "nickname": "Schuilnaam",
+      "content": "Bericht",
+      "submit": "Verzenden",
+      "nicknameError": "De schuilnaam moet minstens 2 tekens bevatten.",
+      "contentError": "Schrijf een kort bericht.",
+      "lengthError": "Berichten mogen maximaal {{max}} tekens bevatten.",
+      "submitError": "Je bericht kon niet lokaal worden opgeslagen.",
+      "success": "Lokaal opgeslagen",
+      "limit": "Maximaal {{max}} tekens. Deel geen identificeerbare gegevens.",
+      "remaining": "{{count}} tekens resterend"
+    },
+    "card": {
+      "label": "Bericht van {{nickname}}"
+    },
+    "status": {
+      "hidden": "Verborgen",
+      "visible": "Zichtbaar",
+      "flagged": "Gemeld"
+    },
+    "hiddenMessage": "Dit bericht is voor jou verborgen. Je kunt het later opnieuw tonen.",
+    "empty": "Nog geen berichten. Deel je ervaring als eerste.",
+    "safety": {
+      "title": "Veiligheidstips",
+      "anonymity": "Gebruik een schuilnaam en laat persoonlijke details achterwege.",
+      "noNames": "Plaats geen namen, adressen of juridische gegevens.",
+      "emergency": "In een noodsituatie neem je contact op met lokale hulpdiensten — deze ruimte vervangt geen noodhulp."
+    },
+    "moderation": {
+      "label": "Lokale moderatieknoppen",
+      "hide": "Verbergen",
+      "unhide": "Tonen",
+      "flag": "Melden",
+      "unflag": "Melding verwijderen",
+      "hideConfirmTitle": "Dit bericht verbergen?",
+      "hideConfirmDescription": "Verborgen berichten blijven op je apparaat en zijn later terug te halen.",
+      "cancel": "Annuleren"
+    },
+    "threads": {
+      "ariaLabel": "Discussietopics",
+      "general": "Open gesprekken",
+      "generalDescription": "Deel wat er nu bij je speelt.",
+      "boundaries": "Grenzen en veiligheid",
+      "boundariesDescription": "Praktische tips om stevig te blijven staan.",
+      "victories": "Kleine overwinningen",
+      "victoriesDescription": "Vier stappen waar je trots op bent."
+    }
+  },
+  "sim": {
+    "title": "Gesprekssimulator met een manipulator",
+    "subtitle": "Train het herkennen van manipulatietactieken. Antwoorden worden lokaal met eenvoudige regels gegenereerd.",
+    "input": {
+      "label": "Stuur een bericht naar de simulator",
+      "placeholder": "Schrijf wat je wilt zeggen..."
+    },
+    "send": "Verzenden",
+    "reset": "Resetten",
+    "userLabel": "Jouw bericht",
+    "botLabel": "Reactie van de manipulator",
+    "analysis": {
+      "title": "Gesprekanalyse",
+      "none": "Nog geen technieken gedetecteerd. Stuur een bericht om te beginnen."
+    },
+    "techniques": {
+      "detected": "Gedetecteerde technieken",
+      "gaslighting": {
+        "label": "Gaslighting",
+        "description": "Verdraait de werkelijkheid zodat je aan jezelf gaat twijfelen.",
+        "tip": "Noteer feiten of vraag een vertrouwenspersoon om mee te kijken."
+      },
+      "blameShift": {
+        "label": "Schuld doorschuiven",
+        "description": "Schuift verantwoordelijkheid voor hun gedrag op jou af.",
+        "tip": "Blijf bij waarneembaar gedrag en benoem ieders verantwoordelijkheid."
+      },
+      "triangulation": {
+        "label": "Triangulatie",
+        "description": "Zet derden in om druk te zetten of het verhaal te sturen.",
+        "tip": "Beperk indirecte kanalen en reageer alleen op veilige, directe communicatie."
+      },
+      "loveBombing": {
+        "label": "Love bombing",
+        "description": "Overlaadt je met affectie of beloften om controle terug te krijgen.",
+        "tip": "Kijk naar consistente daden in plaats van grootse woorden."
+      },
+      "guiltTripping": {
+        "label": "Schuldgevoel opwekken",
+        "description": "Speelt in op schuld om je te laten toegeven.",
+        "tip": "Noem de tactiek en bevestig je grenzen."
+      },
+      "futureFaking": {
+        "label": "Future faking",
+        "description": "Houdt je vast met beloften over een mooie toekomst.",
+        "tip": "Let op wat er nu gebeurt, niet op beloofde plannen."
+      }
+    },
+    "responses": {
+      "welcome": "Ik probeer alleen te helpen. Vertel eens wat er is.",
+      "gaslighting": {
+        "overreacting": "Je reageert weer overdreven. Iedereen weet dat je veel te gevoelig bent."
+      },
+      "blameShift": {
+        "yourFault": "Dit is jouw schuld — als jij je normaal gedroeg hadden we geen problemen."
+      },
+      "triangulation": {
+        "everyone": "Zelfs onze vrienden zeggen dat jij degene bent met wie het moeilijk is."
+      },
+      "loveBombing": {
+        "promises": "Ik beloof dat ik van de ene op de andere dag verander, geef me nog een kans."
+      },
+      "guiltTripping": {
+        "sacrifice": "Na alles wat ik voor je heb opgeofferd, doe jij dit terug?"
+      },
+      "futureFaking": {
+        "plans": "Waarom ben je boos? Ik heb ons huis en huwelijk al helemaal gepland."
+      },
+      "default": "Doe niet zo dramatisch. Je verzint problemen."
+    },
+    "disclaimer": "Alleen voor educatie. De simulator draait offline en slaat je invoer niet extern op."
+  },
+  "rf": {
+    "title": "Dagboek met rode vlaggen",
+    "add": "Incident toevoegen",
+    "date": "Datum",
+    "category": "Categorie",
+    "intensity": "Intensiteit",
+    "note": "Beschrijving (optioneel)",
+    "export": "Exporteer JSON",
+    "filter": {
+      "from": "Van",
+      "to": "Tot",
+      "category": "Categorie-filter",
+      "intensity": "Intensiteitsfilter",
+      "intensityValue": "Intensiteit {{value}}/5",
+      "all": "Alle"
+    },
+    "list": {
+      "title": "Overzicht"
+    },
+    "none": "Geen items voor de gekozen filters.",
+    "form": {
+      "dateError": "Kies een datum.",
+      "limitError": "De beschrijving mag maximaal {{max}} tekens bevatten.",
+      "submitError": "Het item kon niet worden opgeslagen.",
+      "success": "Lokaal opgeslagen",
+      "intensityValue": "Intensiteit: {{value}}/5",
+      "limit": "Maximaal {{max}} tekens.",
+      "submit": "Opslaan"
+    },
+    "categories": {
+      "gaslighting": "Gaslighting",
+      "financial_abuse": "Financieel misbruik",
+      "stalking": "Stalking",
+      "legal_weaponization": "Misbruik van juridische middelen",
+      "emotional_blackmail": "Emotionele chantage",
+      "devaluation": "Devaluatie",
+      "discard": "Verstoting",
+      "hoovering": "Hoovering"
+    },
+    "calendar": {
+      "title": "Maandoverzicht",
+      "subtitle": "Navigeer met de pijltjestoetsen. Gegevens blijven op dit apparaat.",
+      "prevMonth": "Vorige maand",
+      "nextMonth": "Volgende maand",
+      "prevShort": "◀",
+      "nextShort": "▶",
+      "ariaLabel": "Kalender met geregistreerde incidenten",
+      "week": {
+        "mon": "Maandag",
+        "tue": "Dinsdag",
+        "wed": "Woensdag",
+        "thu": "Donderdag",
+        "fri": "Vrijdag",
+        "sat": "Zaterdag",
+        "sun": "Zondag",
+        "monShort": "Ma",
+        "tueShort": "Di",
+        "wedShort": "Wo",
+        "thuShort": "Do",
+        "friShort": "Vr",
+        "satShort": "Za",
+        "sunShort": "Zo"
+      },
+      "dayAria": "{{date}}. Aantal items: {{count}}.",
+      "count": "Items: {{count}}"
+    }
   }
 }

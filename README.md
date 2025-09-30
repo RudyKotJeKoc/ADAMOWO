@@ -31,6 +31,15 @@ Aplikacja uruchomi się pod adresem `http://localhost:5173`.
 - Dostępne przełączniki motywu i języka.
 - Translacje dla PL/NL/EN z autodetekcją języka przeglądarki.
 
+## Zasady treści i prywatność (Strefa Interaktywna)
+- Publikowane wypowiedzi i wpisy dziennika są przechowywane wyłącznie lokalnie w `localStorage` przeglądarki użytkownika.
+- Zakaz udostępniania danych identyfikujących (imiona, adresy, dane prawne) – moderator działa lokalnie po stronie użytkownika.
+- Symulator rozmowy działa offline, bez połączeń sieciowych i zapisuje historię wyłącznie w aktualnej sesji.
+
+### Eksport danych użytkownika
+- Dane z Dziennika Czerwonych Flag można wyeksportować do pliku JSON bezpośrednio z interfejsu aplikacji.
+- Wyeksportowany plik zawiera pełną listę wpisów przechowywanych lokalnie; kopiowanie lub usuwanie danych odbywa się po stronie użytkownika.
+
 ### Kocioł Wiedźmy: Pętla Przemocy
 - Animowany diagram nieskończoności wykorzystuje pętlę o długości ~14 s z możliwością pauzy, resetu oraz ręcznego wyboru fazy.
 - Przy włączonym systemowym `prefers-reduced-motion` animacja startuje w stanie pauzy, a w UI dostępny jest przełącznik "Ogranicz animacje".
