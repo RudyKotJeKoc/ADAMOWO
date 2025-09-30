@@ -1,5 +1,6 @@
 import { fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import i18n from '../../i18n';
 import { HeroPlayer } from '../HeroPlayer';
 import { usePlayerStore } from '../../state/player';
@@ -11,25 +12,36 @@ vi.mock('hls.js', () => ({
 }));
 
 const defaultNowPlaying = {
-  title: 'Mock Track',
+  title: 'Mock Show',
   artist: 'Mock Artist',
-  artwork: '/mock.jpg'
+  track: 'Mock Track',
+  coverUrl: '/mock.jpg',
+  startedAt: '2024-01-01T00:00:00Z'
 };
 
-let capturedHlsOptions: Record<string, ((...args: any[]) => void) | undefined> | undefined;
+type HlsEventHandlers = {
+  onReady?: () => void;
+  onReconnectAttempt?: (attempt: number, max: number) => void;
+  onReconnectSuccess?: () => void;
+  onError?: (message: string) => void;
+};
 
-const mockFetchNowPlaying = vi.fn(() => Promise.resolve(defaultNowPlaying));
+let capturedHlsOptions: HlsEventHandlers | undefined;
+
+const mockGetNowPlaying = vi.fn(() => Promise.resolve(defaultNowPlaying));
+const mockSubscribeNowPlaying = vi.fn<[], () => void>(() => () => undefined);
 const mockRetry = vi.fn();
-const mockCreateHlsClient = vi.fn((_: unknown, __: unknown, options: Record<string, any>) => {
-  capturedHlsOptions = options as typeof capturedHlsOptions;
+const mockCreateHlsClient = vi.fn((_: unknown, __: unknown, options: HlsEventHandlers) => {
+  capturedHlsOptions = options;
   return {
     destroy: vi.fn(),
     retry: mockRetry
   };
 });
 
-vi.mock('../../lib/nowPlaying', () => ({
-  fetchNowPlaying: mockFetchNowPlaying,
+vi.mock('../../data/nowPlaying', () => ({
+  getNowPlaying: mockGetNowPlaying,
+  subscribeNowPlaying: mockSubscribeNowPlaying,
   FALLBACK_NOW_PLAYING: defaultNowPlaying
 }));
 
@@ -87,7 +99,8 @@ beforeEach(() => {
   vi.clearAllMocks();
   resetPlayerStore();
   capturedHlsOptions = undefined;
-  mockFetchNowPlaying.mockResolvedValue(defaultNowPlaying);
+  mockGetNowPlaying.mockResolvedValue(defaultNowPlaying);
+  mockSubscribeNowPlaying.mockReturnValue(() => undefined);
 });
 
 afterEach(() => {
@@ -160,14 +173,27 @@ describe('HeroPlayer', () => {
   it('refreshes now playing metadata on interval', async () => {
     vi.useFakeTimers();
 
-    const first = { title: 'Track One', artist: 'Artist One', artwork: '/one.jpg' };
-    const second = { title: 'Track Two', artist: 'Artist Two', artwork: '/two.jpg' };
+    const first = {
+      title: 'Track One',
+      artist: 'Artist One',
+      track: 'First Cut',
+      coverUrl: '/one.jpg',
+      startedAt: '2024-01-01T00:00:00Z'
+    };
+    const second = {
+      title: 'Track Two',
+      artist: 'Artist Two',
+      track: 'Second Cut',
+      coverUrl: '/two.jpg',
+      startedAt: '2024-01-01T00:05:00Z'
+    };
 
-    mockFetchNowPlaying.mockResolvedValueOnce(first).mockResolvedValueOnce(second);
+    mockGetNowPlaying.mockResolvedValueOnce(first).mockResolvedValueOnce(second);
 
     renderPlayer();
 
     expect(await screen.findByText('Track One')).toBeInTheDocument();
+    expect(screen.getByText('Artist One – First Cut')).toBeInTheDocument();
 
     await act(async () => {
       vi.advanceTimersByTime(15_000);
@@ -175,5 +201,6 @@ describe('HeroPlayer', () => {
     });
 
     await waitFor(() => expect(screen.getByText('Track Two')).toBeInTheDocument());
+    expect(screen.getByText('Artist Two – Second Cut')).toBeInTheDocument();
   });
 });

@@ -1,5 +1,6 @@
-import localEpisodes from './data.local.json';
+import { getEpisodes as fetchEpisodes, getLocalEpisodes } from '../../data/episodes';
 import type {
+
   Episode,
   EpisodeCategory,
   EpisodeFiltersMetadata,
@@ -45,130 +46,55 @@ function getSupabaseConfig(): { url: string; key: string } | null {
   }
 
   return null;
+
+  Episode as BaseEpisode,
+  EpisodeFiltersMetadata as BaseEpisodeFiltersMetadata,
+  EpisodeQuery as BaseEpisodeQuery,
+  EpisodeQueryResult as BaseEpisodeQueryResult
+} from '../../data/types';
+import type { Episode, EpisodeCategory, EpisodeFiltersMetadata, EpisodeQuery, EpisodeQueryResult } from './data.schema';
+
+const CATEGORY_VALUES: EpisodeCategory[] = [
+  'AktDarowania',
+  'SlużebnośćUwiązania',
+  'SprawaAdamskich',
+  'BronNarcyza',
+  'Sledztwo'
+];
+
+function isEpisodeCategory(value: string): value is EpisodeCategory {
+  return CATEGORY_VALUES.includes(value as EpisodeCategory);
+
 }
 
-let cachedClient: SupabaseClient | null = null;
-let createClientFactory: CreateClientFn | null = null;
-let supabaseAttempted = false;
-
-async function getSupabaseClient(): Promise<SupabaseClient | null> {
-  const config = getSupabaseConfig();
-
-  if (!config) {
-    cachedClient = null;
+function adaptEpisode(episode: BaseEpisode): Episode | null {
+  if (!isEpisodeCategory(episode.category)) {
+    console.warn('[analysis-archive] Unknown episode category received:', episode.category);
     return null;
   }
 
-  if (cachedClient) {
-    return cachedClient;
-  }
-
-  if (!createClientFactory && !supabaseAttempted) {
-    supabaseAttempted = true;
-    try {
-      const module = await import('@supabase/supabase-js');
-      createClientFactory = (module as { createClient: CreateClientFn }).createClient;
-    } catch (error) {
-      console.warn('[analysis-archive] Supabase client not available, using local data.', error);
-      return null;
-    }
-  }
-
-  if (!createClientFactory) {
-    return null;
-  }
-
-  cachedClient = createClientFactory(config.url, config.key, {
-    auth: { persistSession: false }
-  });
-
-  return cachedClient;
-}
-
-function normalize(value: string): string {
-  return value.normalize('NFKD').toLowerCase();
-}
-
-function matchesQuery(episode: Episode, query: string): boolean {
-  const normalizedQuery = normalize(query);
-  const title = normalize(episode.title);
-  const description = normalize(episode.description);
-
-  return title.includes(normalizedQuery) || description.includes(normalizedQuery);
-}
-
-function filterByCategories(episode: Episode, categories?: EpisodeCategory[]): boolean {
-  if (!categories || categories.length === 0) {
-    return true;
-  }
-
-  return categories.includes(episode.category);
-}
-
-function filterByTags(episode: Episode, tags?: string[]): boolean {
-  if (!tags || tags.length === 0) {
-    return true;
-  }
-
-  return tags.every((tag) => episode.tags.includes(tag));
-}
-
-function sortEpisodes(data: Episode[], sort: EpisodeSort = 'newest'): Episode[] {
-  const sorted = [...data];
-
-  switch (sort) {
-    case 'oldest':
-      sorted.sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime());
-      break;
-    case 'durationAsc':
-      sorted.sort((a, b) => a.durationSec - b.durationSec);
-      break;
-    case 'durationDesc':
-      sorted.sort((a, b) => b.durationSec - a.durationSec);
-      break;
-    case 'newest':
-    default:
-      sorted.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
-      break;
-  }
-
-  return sorted;
-}
-
-function paginate<T>(data: T[], page: number, pageSize: number): T[] {
-  const start = (page - 1) * pageSize;
-  const end = start + pageSize;
-  return data.slice(start, end);
-}
-
-function computeMetadata(source: Episode[]): EpisodeFiltersMetadata {
-  const categoryMap = new Map<EpisodeCategory, number>();
-  const tagMap = new Map<string, number>();
-
-  for (const episode of source) {
-    categoryMap.set(episode.category, (categoryMap.get(episode.category) ?? 0) + 1);
-
-    for (const tag of episode.tags) {
-      tagMap.set(tag, (tagMap.get(tag) ?? 0) + 1);
-    }
-  }
-
   return {
-    categories: Array.from(categoryMap.entries()).map(([value, count]) => ({ value, count })),
-    tags: Array.from(tagMap.entries())
-      .map(([value, count]) => ({ value, count }))
-      .sort((a, b) => a.value.localeCompare(b.value))
+    ...episode,
+    slug: episode.slug ?? episode.id,
+    category: episode.category,
+    chapters: episode.chapters?.map((chapter) => ({ title: chapter.title, startSec: chapter.startSec }))
   };
 }
 
-function getDefaultedQuery(query: EpisodeQuery = {}): Required<Pick<EpisodeQuery, 'page' | 'pageSize' | 'sort'>> & EpisodeQuery {
+function adaptEpisodesResult(result: BaseEpisodeQueryResult): EpisodeQueryResult {
+  const episodes = result.episodes
+    .map(adaptEpisode)
+    .filter((episode): episode is Episode => episode !== null);
+
   return {
-    page: query.page && query.page > 0 ? query.page : 1,
-    pageSize: query.pageSize && query.pageSize > 0 ? query.pageSize : 10,
-    sort: query.sort ?? 'newest',
-    ...query
+    episodes,
+    total: result.total,
+    page: result.page,
+    pageSize: result.pageSize,
+    metadata: adaptMetadata(result.metadata)
   };
 }
+
 
 function filterByProgram(episode: Episode, programId?: EpisodeQuery['programId']): boolean {
   if (!programId) {
@@ -195,15 +121,18 @@ function getLocalEpisodes(query: EpisodeQuery = {}): EpisodeQueryResult {
 
   const sorted = sortEpisodes(filtered, sort);
   const paged = paginate(sorted, page, pageSize);
+function adaptMetadata(metadata: BaseEpisodeFiltersMetadata): EpisodeFiltersMetadata {
+  const categories = metadata.categories
+    .filter((category) => isEpisodeCategory(category.value))
+    .map((category) => ({ value: category.value as EpisodeCategory, count: category.count }));
+
 
   return {
-    episodes: paged,
-    total: filtered.length,
-    page,
-    pageSize,
-    metadata
+    categories,
+    tags: metadata.tags
   };
 }
+
 
 function escapeLikeValue(value: string): string {
   return value.replace(/[\\%_]/g, (match) => `\\${match}`);
@@ -289,19 +218,19 @@ async function getSupabaseEpisodes(client: SupabaseClient, query: EpisodeQuery =
     pageSize,
     metadata
   };
+
+function toBaseQuery(query: EpisodeQuery): BaseEpisodeQuery {
+  return { ...query } as BaseEpisodeQuery;
+
 }
 
 export async function getEpisodes(query: EpisodeQuery = {}): Promise<EpisodeQueryResult> {
-  const client = await getSupabaseClient();
-
-  if (!client) {
-    return getLocalEpisodes(query);
-  }
-
   try {
-    return await getSupabaseEpisodes(client, query);
+    const result = await fetchEpisodes(toBaseQuery(query));
+    return adaptEpisodesResult(result);
   } catch (error) {
     console.warn('[analysis-archive] Failed to load data from Supabase, falling back to local JSON.', error);
-    return getLocalEpisodes(query);
+    const fallback = await getLocalEpisodes(toBaseQuery(query));
+    return adaptEpisodesResult(fallback);
   }
 }

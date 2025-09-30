@@ -20,6 +20,15 @@ Aplikacja uruchomi się pod adresem `http://localhost:5173`.
 - `pnpm test` – uruchamia testy jednostkowe Vitest.
 - `pnpm lint` – sprawdza projekt ESLint-em.
 
+## Konfiguracja Supabase
+Warstwa danych aplikacji korzysta z Supabase. Aby połączyć się z własnym projektem:
+
+1. Skopiuj plik `.env.example` do `.env.local` i uzupełnij wartości zmiennych `VITE_SUPABASE_URL` oraz `VITE_SUPABASE_ANON`.
+2. W Supabase utwórz tabele `playlist`, `now_playing` oraz `episodes` zgodnie ze schematem w dokumentacji backendu i włącz polityki odczytu publicznego (RLS `select`).
+3. Klucze środowiskowe przechowuj jako sekrety GitHub Actions (`Settings → Secrets and variables → Actions`). Testy jednostkowe korzystają z mocków i nie wymagają tych wartości.
+
+Bez ustawionych zmiennych środowiskowych aplikacja przełącza się na lokalne mocki (`src/assets/data/*`, `src/features/analysis-archive/data.local.json`), dzięki czemu development offline pozostaje możliwy.
+
 ## Struktura
 - `src/components` – komponenty współdzielone.
 - `src/features/*` – moduły funkcjonalne opisane w README danego katalogu.
@@ -69,6 +78,7 @@ Testy jednostkowe znajdują się w katalogu obok komponentów lub w `src/test`.
 
 ## Audycje Analityczne
 - Kontener funkcjonalności znajduje się w `src/features/analysis-archive`.
+
 - Dane lokalne i schemat typów są w plikach `data.local.json` oraz `data.schema.ts`.
 - Domyślnie aplikacja korzysta z mocka JSON; aby włączyć Supabase ustaw zmienne środowiskowe:
 
@@ -89,3 +99,8 @@ VITE_SUPABASE_ANON="<anon-key>"
   2. Uzupełnij tłumaczenia w `pl.json`, `nl.json` i `en.json` (przestrzeń `studio.*`).
   3. Jeżeli potrzebna jest nowa ikona, utwórz komponent w `src/features/studio/icons` i zarejestruj go w mapie `PROGRAM_ICON_MAP`.
   4. Dodaj `programId` do powiązanych odcinków w Supabase oraz w `data.local.json`.
+=======
+- Warstwa danych korzysta z modułu `src/data/episodes.ts`, który obsługuje Supabase oraz lokalny fallback (`data.local.json`).
+- Typy domenowe dostępne są w `src/data/types.ts` oraz rozszerzeniach w `data.schema.ts`.
+- Zapytania obsługują filtrowanie po tytule/opisie, kategoriach, tagach i sortowaniu oraz paginację na poziomie Supabase.
+
