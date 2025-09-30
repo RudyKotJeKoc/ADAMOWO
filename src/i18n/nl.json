@@ -46,5 +46,70 @@
       "current": "Actueel: {{value}}",
       "resolved_dark": "donkere modus",
       "resolved_light": "lichte modus"
+    }
+  },
+  "analysis": {
+    "page": {
+      "title": "Analytische uitzendingen",
+      "lead": "Ontdek onderzoeken en commentaar over manipulatie en controle."
     },
+    "filters": {
+      "title": "Filters",
+      "results": "{{count}} resultaten",
+      "searchLabel": "Zoek aflevering",
+      "searchPlaceholder": "Titel of beschrijving...",
+      "categoriesLabel": "Categorieën",
+      "tagsLabel": "Tags",
+      "sortLabel": "Sortering",
+      "sortNewest": "Nieuwste eerst",
+      "sortOldest": "Oudste eerst",
+      "sortDurationAsc": "Kortste duur",
+      "sortDurationDesc": "Langste duur"
+    },
+    "categories": {
+      "AktDarowania": "Act van Schenking",
+      "SłużebnośćUwiązania": "Dienstbaarheid van Gebondenheid",
+      "SprawaAdamskich": "Zaak Adamski",
+      "BronNarcyza": "Wapen van de Narcist",
+      "Sledztwo": "Onderzoek"
+    },
+    "actions": {
+      "listen": "Luister",
+      "listenEpisode": "Luister naar {{title}}",
+      "currentlyPlaying": "Nu aan het afspelen"
+    },
+    "list": {
+      "ariaLabel": "Analyse-afleveringen"
+    },
+    "state": {
+      "loading": "Afleveringen laden...",
+      "empty": "Geen afleveringen voldoen aan de filters."
+    },
+    "pagination": {
+      "pageIndicator": "Pagina {{page}} van {{pages}}",
+      "previous": "Vorige",
+      "next": "Volgende"
+    },
+    "player": {
+      "title": "Afleveringsspeler",
+      "play": "Afspelen",
+      "pause": "Pauze",
+      "mute": "Dempen",
+      "unmute": "Geluid aan",
+      "volume": "Volume",
+      "progress": "Voortgang",
+      "nowPlaying": "Nu speelt: {{title}}",
+      "idle": "Kies een aflevering om te starten",
+      "chapters": "Hoofdstukken"
+    },
+    "details": {
+      "emptyTitle": "Details van de aflevering",
+      "emptyHint": "Kies een aflevering uit de lijst voor beschrijving en bronnen.",
+      "published": "Gepubliceerd: {{date}}",
+      "unknownDate": "onbekend",
+      "chapters": "Hoofdstukken",
+      "seekTo": "Spring naar hoofdstuk {{title}}",
+      "resources": "Bronnen"
+    }
+  }
 }

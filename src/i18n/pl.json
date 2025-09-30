@@ -46,5 +46,70 @@
       "current": "Aktualnie: {{value}}",
       "resolved_dark": "tryb ciemny",
       "resolved_light": "tryb jasny"
+    }
+  },
+  "analysis": {
+    "page": {
+      "title": "Audycje Analityczne",
+      "lead": "Przegląd analiz, śledztw i komentarzy o mechanizmach kontroli."
     },
+    "filters": {
+      "title": "Filtry",
+      "results": "Znaleziono {{count}} wyników",
+      "searchLabel": "Szukaj odcinka",
+      "searchPlaceholder": "Tytuł lub opis...",
+      "categoriesLabel": "Kategorie",
+      "tagsLabel": "Tagi",
+      "sortLabel": "Sortowanie",
+      "sortNewest": "Najnowsze",
+      "sortOldest": "Najstarsze",
+      "sortDurationAsc": "Najkrótszy czas",
+      "sortDurationDesc": "Najdłuższy czas"
+    },
+    "categories": {
+      "AktDarowania": "Akt Darowania",
+      "SłużebnośćUwiązania": "Służebność Uwiązania",
+      "SprawaAdamskich": "Sprawa Adamskich",
+      "BronNarcyza": "Broń Narcyza",
+      "Sledztwo": "Śledztwo"
+    },
+    "actions": {
+      "listen": "Słuchaj",
+      "listenEpisode": "Słuchaj: {{title}}",
+      "currentlyPlaying": "Odtwarzanie"
+    },
+    "list": {
+      "ariaLabel": "Lista odcinków analitycznych"
+    },
+    "state": {
+      "loading": "Wczytywanie odcinków...",
+      "empty": "Brak odcinków spełniających wybrane filtry."
+    },
+    "pagination": {
+      "pageIndicator": "Strona {{page}} z {{pages}}",
+      "previous": "Poprzednia",
+      "next": "Następna"
+    },
+    "player": {
+      "title": "Odtwarzacz analizy",
+      "play": "Odtwórz",
+      "pause": "Pauza",
+      "mute": "Wycisz",
+      "unmute": "Włącz dźwięk",
+      "volume": "Głośność",
+      "progress": "Postęp odtwarzania",
+      "nowPlaying": "Odtwarzane: {{title}}",
+      "idle": "Wybierz odcinek, aby rozpocząć",
+      "chapters": "Rozdziały"
+    },
+    "details": {
+      "emptyTitle": "Szczegóły odcinka",
+      "emptyHint": "Wybierz odcinek z listy, aby zobaczyć opis i materiały.",
+      "published": "Data publikacji: {{date}}",
+      "unknownDate": "brak danych",
+      "chapters": "Rozdziały",
+      "seekTo": "Przeskocz do rozdziału {{title}}",
+      "resources": "Materiały"
+    }
+  }
 }
