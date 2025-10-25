@@ -1,6 +1,6 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
-export type GenericSupabaseClient = SupabaseClient<Record<string, unknown>, 'public', Record<string, unknown>>;
+export type GenericSupabaseClient = SupabaseClient<any, any, any>;
 
 let cachedClient: GenericSupabaseClient | null | undefined;
 
