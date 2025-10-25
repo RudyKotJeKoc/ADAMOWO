@@ -215,7 +215,41 @@
     "unmute": "Przywróć dźwięk",
     "quality_128kbps": "128 kbps",
     "volume": "Głośność",
-    "retry": "Spróbuj ponownie"
+    "retry": "Spróbuj ponownie",
+    "tooltips": {
+      "quality": "Jakość strumienia: 128 kbps zapewnia wyraźny dźwięk przy niskim zużyciu danych. Idealna dla radia mówionego i muzyki.",
+      "buffering": "Odtwarzacz pobiera dane ze strumienia. To normalne przy pierwszym uruchomieniu lub słabszym łączu.",
+      "visualizer": "Wizualizacja pokazuje częstotliwości audio na żywo. Możesz ją wyłączyć w ustawieniach dostępności.",
+      "volume": "Reguluj głośność od 0% do 100%. Możesz też użyć klawiatury: strzałki w górę/dół.",
+      "live": "Transmisja na żywo. Słuchasz tego samego co wszyscy inni słuchacze w tym momencie.",
+      "reconnecting": "Odtwarzacz automatycznie próbuje przywrócić połączenie. Sprawdź swoje łącze internetowe."
+    },
+    "errors": {
+      "network": "Brak połączenia internetowego. Sprawdź swoją sieć Wi-Fi lub dane komórkowe.",
+      "media": "Problem z odtwarzaniem pliku audio. Spróbuj odświeżyć stronę.",
+      "permission": "Brak uprawnień do odtwarzania dźwięku. Kliknij przycisk \"Odtwórz\" aby uruchomić.",
+      "notSupported": "Twoja przeglądarka nie obsługuje strumieniowania HLS. Użyj nowszej przeglądarki.",
+      "timeout": "Przekroczono czas oczekiwania. Sprawdź połączenie i spróbuj ponownie.",
+      "generic": "Wystąpił problem z odtwarzaniem. Odśwież stronę lub spróbuj później.",
+      "maxRetries": "Nie udało się przywrócić połączenia po kilku próbach. Sprawdź swoje łącze i odśwież stronę."
+    },
+    "keyboard": {
+      "title": "Skróty klawiszowe",
+      "space": "Spacja: odtwórz/pauza",
+      "m": "M: wycisz/włącz dźwięk",
+      "up": "Strzałka w górę: zwiększ głośność",
+      "down": "Strzałka w dół: zmniejsz głośność",
+      "info": "Użyj klawiatury do sterowania odtwarzaczem"
+    },
+    "status": {
+      "connecting": "Łączenie z serwerem...",
+      "loading": "Ładowanie strumienia...",
+      "ready": "Gotowy do odtwarzania",
+      "playing": "Odtwarzanie",
+      "paused": "Wstrzymano",
+      "buffering": "Buforowanie...",
+      "reconnecting": "Wznawianie połączenia..."
+    }
   },
   "whisper": {
     "regionLabel": "Szept zza Kurtyny — rekonstrukcja przesłuchania",
@@ -498,23 +532,20 @@
           "Przygotuj plan bezpieczeństwa i sprawdź lokalne zasoby pomocy."
         ]
       }
-    }
-
-  "controls": {
-    "theme": {
-      "label": "Motyw",
-      "system": "Motyw systemowy",
-      "systemShort": "SYS",
-      "light": "Tryb jasny",
-      "lightShort": "JAS",
-      "dark": "Tryb ciemny",
-      "darkShort": "NOC",
-      "current": "Aktualnie: {{value}}",
-      "resolved_dark": "tryb ciemny",
-      "resolved_light": "tryb jasny"
-    }
-  },
-
+    },
+    "controls": {
+      "theme": {
+        "label": "Motyw",
+        "system": "Motyw systemowy",
+        "systemShort": "SYS",
+        "light": "Tryb jasny",
+        "lightShort": "JAS",
+        "dark": "Tryb ciemny",
+        "darkShort": "NOC",
+        "current": "Aktualnie: {{value}}",
+        "resolved_dark": "tryb ciemny",
+        "resolved_light": "tryb jasny"
+      }
     }
   },
   "documentary": {
@@ -802,7 +833,7 @@
       "medium": "Pojawiają się próby izolacji. Ustal granice i informuj bliskich o manipulacjach.",
       "high": "Silne działania izolujące wymagają reakcji. Skontaktuj się z grupą wsparcia i opracuj plan odbudowy relacji."
     }
-
+  },
   "community": {
     "title": "Strefa Interaktywna",
     "subtitle": "Bezpieczna przestrzeń do dzielenia się doświadczeniami, treningu rozpoznawania manipulacji i prowadzenia dziennika sygnałów ostrzegawczych.",
@@ -1006,7 +1037,7 @@
       "dayAria": "{{date}}. Liczba wpisów: {{count}}.",
       "count": "Wpisów: {{count}}"
     }
-
+  },
   "finalLesson": {
     "sectionLabel": "Ostateczna lekcja",
     "title": "Ostateczna Lekcja",
