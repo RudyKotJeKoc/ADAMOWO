@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import Hls from 'hls.js';
 import { useTranslation } from 'react-i18next';
 import { AudioViz } from './AudioViz';
+import { Tooltip } from './Tooltip';
 import type { HlsClient } from '../lib/hlsClient';
 import { MAX_RECONNECT_ATTEMPTS, createHlsClient } from '../lib/hlsClient';
 import { FALLBACK_NOW_PLAYING, getNowPlaying, subscribeNowPlaying } from '../data/nowPlaying';
@@ -11,6 +12,31 @@ import type { NowPlaying } from '../data/types';
 import { usePlayerStore } from '../state/player';
 
 const POLLING_INTERVAL = 15_000;
+
+const getErrorMessage = (error: string | null, t: (key: string) => string): string => {
+  if (!error) return '';
+
+  if (error.includes('network') || error.includes('Network')) {
+    return t('player.errors.network');
+  }
+  if (error.includes('not supported') || error.includes('NotSupported')) {
+    return t('player.errors.notSupported');
+  }
+  if (error.includes('permission') || error.includes('Permission')) {
+    return t('player.errors.permission');
+  }
+  if (error.includes('timeout') || error.includes('Timeout')) {
+    return t('player.errors.timeout');
+  }
+  if (error.includes('Media error') || error.includes('MEDIA')) {
+    return t('player.errors.media');
+  }
+  if (error.includes('Maximum reconnect')) {
+    return t('player.errors.maxRetries');
+  }
+
+  return t('player.errors.generic');
+};
 
 const usePrefersReducedMotion = (): boolean => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -222,6 +248,71 @@ export function HeroPlayer(): JSX.Element {
     };
   }, [setError, setPlaying, setStatus]);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent): void => {
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+        return;
+      }
+
+      const audio = audioRef.current;
+      if (!audio) {
+        return;
+      }
+
+      switch (event.key.toLowerCase()) {
+        case ' ':
+          event.preventDefault();
+          if (playing) {
+            audio.pause();
+            setPlaying(false);
+            setStatus('idle');
+          } else {
+            resetReconnect();
+            setError(null);
+            setStatus('buffering');
+            void audio.play().then(() => setPlaying(true)).catch(() => {
+              setStatus('error');
+              setError('Playback failed');
+            });
+          }
+          break;
+        case 'm':
+          event.preventDefault();
+          const nextMuted = !muted;
+          setMuted(nextMuted);
+          audio.muted = nextMuted;
+          if (!nextMuted && audio.volume === 0) {
+            audio.volume = 0.5;
+            setVolume(0.5);
+          }
+          break;
+        case 'arrowup':
+          event.preventDefault();
+          const newVolumeUp = Math.min(1, volume + 0.1);
+          setVolume(newVolumeUp);
+          audio.volume = newVolumeUp;
+          if (muted) {
+            setMuted(false);
+            audio.muted = false;
+          }
+          break;
+        case 'arrowdown':
+          event.preventDefault();
+          const newVolumeDown = Math.max(0, volume - 0.1);
+          setVolume(newVolumeDown);
+          audio.volume = newVolumeDown;
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [playing, muted, volume, setVolume, setMuted, setPlaying, setStatus, setError, resetReconnect]);
+
   const statusLabel = useMemo(() => {
     switch (status) {
       case 'playing':
@@ -338,27 +429,45 @@ export function HeroPlayer(): JSX.Element {
     [nowPlaying.artist, nowPlaying.title, nowPlayingDetails, t]
   );
 
+  const friendlyErrorMessage = useMemo(
+    () => getErrorMessage(error, t),
+    [error, t]
+  );
+
   return (
     <section
-      className="rounded-3xl bg-gradient-to-br from-[#0a0e27] to-[#1a1f3a] p-6 text-base-100 shadow-xl sm:p-10"
+      className="rounded-3xl bg-gradient-to-br from-[#0a0e27] to-[#1a1f3a] p-6 text-base-100 shadow-xl sm:p-10 transition-all duration-300"
       role="region"
       aria-label={t('player.regionLabel')}
     >
       <div className="grid gap-6 lg:grid-cols-[280px,1fr] lg:items-center">
-        <div className="relative overflow-hidden rounded-3xl bg-base-900/50">
+        <div className="relative overflow-hidden rounded-3xl bg-base-900/50 shadow-lg">
           <img
             src={nowPlaying.coverUrl ?? FALLBACK_NOW_PLAYING.coverUrl}
             alt={artworkAlt}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-opacity duration-300"
             loading="lazy"
             decoding="async"
             width={640}
             height={640}
           />
-          <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-accent-500/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-base-950">
-            <span className="h-2 w-2 rounded-full bg-base-950" aria-hidden="true" />
-            {t('player.live')}
-          </span>
+          <Tooltip content={t('player.tooltips.live')}>
+            <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-accent-500/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-base-950 shadow-md">
+              <span
+                className="h-2 w-2 rounded-full bg-base-950 animate-pulse"
+                aria-hidden="true"
+              />
+              {t('player.live')}
+            </span>
+          </Tooltip>
+          {status === 'buffering' && (
+            <div className="absolute inset-0 flex items-center justify-center bg-base-950/60 backdrop-blur-sm">
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-12 w-12 animate-spin rounded-full border-4 border-accent-500 border-t-transparent" />
+                <p className="text-sm font-medium">{t('player.status.buffering')}</p>
+              </div>
+            </div>
+          )}
         </div>
         <div className="space-y-6">
           <div className="space-y-2">
@@ -368,21 +477,27 @@ export function HeroPlayer(): JSX.Element {
             <h2 className="text-3xl font-bold text-base-50 sm:text-4xl">{nowPlaying.title}</h2>
             <p className="text-base-200">{nowPlayingDetails}</p>
           </div>
-          <AudioViz
-            audio={audioRef.current}
-            active={playing && !prefersReducedMotion}
-            ariaLabel={t('player.visualizerAria')}
-          />
+          <Tooltip content={t('player.tooltips.visualizer')}>
+            <div>
+              <AudioViz
+                audio={audioRef.current}
+                active={playing && !prefersReducedMotion}
+                ariaLabel={t('player.visualizerAria')}
+              />
+            </div>
+          </Tooltip>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-wrap items-center gap-3">
               <button
                 type="button"
                 onClick={handleTogglePlay}
+                disabled={status === 'error'}
                 className={clsx(
-                  'touch-target rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors',
+                  'touch-target rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-all duration-200 shadow-lg',
                   playing
-                    ? 'bg-accent-500 text-base-950 hover:bg-accent-400'
-                    : 'bg-accent-400 text-base-950 hover:bg-accent-300'
+                    ? 'bg-accent-500 text-base-950 hover:bg-accent-400 hover:shadow-xl hover:scale-105'
+                    : 'bg-accent-400 text-base-950 hover:bg-accent-300 hover:shadow-xl hover:scale-105',
+                  status === 'error' && 'opacity-50 cursor-not-allowed'
                 )}
                 aria-pressed={playing}
                 aria-label={playing ? t('player.pause') : t('player.play')}
@@ -392,33 +507,37 @@ export function HeroPlayer(): JSX.Element {
               <button
                 type="button"
                 onClick={handleMuteToggle}
-                className="touch-target rounded-full border border-base-700 px-4 py-2 text-sm text-base-100 transition-colors hover:border-accent-400 hover:text-accent-200"
+                className="touch-target rounded-full border border-base-700 px-4 py-2 text-sm text-base-100 transition-all duration-200 hover:border-accent-400 hover:text-accent-200 hover:scale-105"
                 aria-pressed={muted}
                 aria-label={muted ? t('player.unmute') : t('player.mute')}
               >
                 {muted ? t('player.unmute') : t('player.mute')}
               </button>
-              <span className="rounded-full border border-base-800 px-3 py-1 text-xs uppercase tracking-wide text-base-200">
-                {t('player.quality_128kbps')}
-              </span>
+              <Tooltip content={t('player.tooltips.quality')}>
+                <span className="rounded-full border border-base-800 px-3 py-1 text-xs uppercase tracking-wide text-base-200 cursor-help">
+                  {t('player.quality_128kbps')}
+                </span>
+              </Tooltip>
             </div>
-            <label className="flex w-full flex-col gap-2 text-xs font-semibold uppercase tracking-wide text-base-200 lg:w-64">
-              {t('player.volume')}
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value={muted ? 0 : volume}
-                onChange={handleVolumeChange}
-                className="h-2 w-full cursor-pointer appearance-none rounded-full bg-base-800 accent-accent-400"
-                aria-valuemin={0}
-                aria-valuemax={1}
-                aria-valuenow={Number((muted ? 0 : volume).toFixed(2))}
-                aria-label={t('player.volume')}
-                aria-orientation="horizontal"
-              />
-            </label>
+            <Tooltip content={t('player.tooltips.volume')}>
+              <label className="flex w-full flex-col gap-2 text-xs font-semibold uppercase tracking-wide text-base-200 lg:w-64">
+                {t('player.volume')}
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value={muted ? 0 : volume}
+                  onChange={handleVolumeChange}
+                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-base-800 accent-accent-400 transition-all"
+                  aria-valuemin={0}
+                  aria-valuemax={1}
+                  aria-valuenow={Number((muted ? 0 : volume).toFixed(2))}
+                  aria-label={t('player.volume')}
+                  aria-orientation="horizontal"
+                />
+              </label>
+            </Tooltip>
           </div>
           <div className="flex flex-wrap items-center gap-3 text-sm text-base-200">
             <p role="status" aria-live="polite" className="font-semibold text-base-100">
@@ -426,19 +545,30 @@ export function HeroPlayer(): JSX.Element {
             </p>
             {status === 'error' && (
               <>
-                <span className="text-base-400" role="alert">
-                  {error}
+                <span className="text-accent-300 bg-accent-500/10 px-3 py-1 rounded-full text-xs" role="alert">
+                  {friendlyErrorMessage}
                 </span>
                 <button
                   type="button"
                   onClick={handleRetry}
-                  className="touch-target rounded-full border border-accent-400 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-accent-200 transition-colors hover:bg-accent-400/10"
+                  className="touch-target rounded-full border-2 border-accent-400 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-accent-200 transition-all duration-200 hover:bg-accent-400/20 hover:scale-105"
                 >
                   {t('player.retry')}
                 </button>
               </>
             )}
           </div>
+          <details className="mt-2">
+            <summary className="cursor-pointer text-xs text-base-400 hover:text-accent-300 transition-colors">
+              {t('player.keyboard.info')}
+            </summary>
+            <ul className="mt-2 space-y-1 text-xs text-base-300 pl-4">
+              <li>{t('player.keyboard.space')}</li>
+              <li>{t('player.keyboard.m')}</li>
+              <li>{t('player.keyboard.up')}</li>
+              <li>{t('player.keyboard.down')}</li>
+            </ul>
+          </details>
         </div>
       </div>
       <audio

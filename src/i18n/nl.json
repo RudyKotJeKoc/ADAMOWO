@@ -4,21 +4,12 @@
   },
   "navigation": {
     "live": "Live",
-
-    "violenceLoop": "Spiraal van geweld",
-    "studio": "Studio",
-    "shows": "Shows",
-    "guide": "Gids",
-    "lab": "Lab",
-    "community": "Community"
-
     "violenceLoop": "Geweldscyclus",
     "studio": "Studio",
     "shows": "Programma's",
     "guide": "Gids",
     "lab": "Lab",
     "community": "Gemeenschap"
-
   },
   "header": {
     "skipToContent": "Ga naar de hoofdinhoud",
@@ -50,11 +41,7 @@
   "pages": {
     "home": {
       "title": "Radio Adamowo",
-
-      "lead": "Een educatieve radiozender over psychologisch geweld."
-
       "lead": "Een educatieve radio over psychologisch geweld."
-
     },
     "live": {
       "title": "Livestream"
@@ -78,13 +65,9 @@
       "title": "Spiraal van geweld"
     },
     "shows": {
-
-      "title": "Shows"
-
       "title": "Programma's"
     }
   },
-
   "studio": {
     "section": {
       "kicker": "Studio-overzicht",
@@ -233,7 +216,41 @@
     "unmute": "Dempen opheffen",
     "quality_128kbps": "128 kbps",
     "volume": "Volume",
-    "retry": "Opnieuw proberen"
+    "retry": "Opnieuw proberen",
+    "tooltips": {
+      "quality": "Streamkwaliteit: 128 kbps biedt heldere audio met laag datagebruik. Perfect voor spraakradio en muziek.",
+      "buffering": "De speler laadt streamgegevens. Dit is normaal bij het eerste afspelen of langzamere verbindingen.",
+      "visualizer": "Live audiofrequentievisualisatie. U kunt dit uitschakelen in toegankelijkheidsinstellingen.",
+      "volume": "Pas het volume aan van 0% tot 100%. U kunt ook het toetsenbord gebruiken: pijltjes omhoog/omlaag.",
+      "live": "Live-uitzending. U luistert naar dezelfde inhoud als alle andere luisteraars op dit moment.",
+      "reconnecting": "De speler probeert automatisch de verbinding te herstellen. Controleer uw internetverbinding."
+    },
+    "errors": {
+      "network": "Geen internetverbinding. Controleer uw Wi-Fi of mobiele data.",
+      "media": "Probleem bij het afspelen van audiobestand. Probeer de pagina te vernieuwen.",
+      "permission": "Geen toestemming om audio af te spelen. Klik op de knop \"Afspelen\" om te starten.",
+      "notSupported": "Uw browser ondersteunt geen HLS-streaming. Gebruik een nieuwere browser.",
+      "timeout": "Verbindingstime-out. Controleer uw verbinding en probeer het opnieuw.",
+      "generic": "Er is een afspeelprobleem opgetreden. Ververs de pagina of probeer het later.",
+      "maxRetries": "Kan verbinding niet herstellen na meerdere pogingen. Controleer uw verbinding en ververs de pagina."
+    },
+    "keyboard": {
+      "title": "Sneltoetsen",
+      "space": "Spatie: afspelen/pauzeren",
+      "m": "M: dempen/dempen opheffen",
+      "up": "Pijl omhoog: volume verhogen",
+      "down": "Pijl omlaag: volume verlagen",
+      "info": "Gebruik het toetsenbord om de speler te bedienen"
+    },
+    "status": {
+      "connecting": "Verbinden met server...",
+      "loading": "Stream laden...",
+      "ready": "Klaar om af te spelen",
+      "playing": "Afspelen",
+      "paused": "Gepauzeerd",
+      "buffering": "Bufferen...",
+      "reconnecting": "Opnieuw verbinden..."
+    }
   },
   "whisper": {
     "regionLabel": "Fluistering achter het gordijn — gereconstrueerde hoorzitting",
@@ -517,23 +534,20 @@
           "Maak een veiligheidsplan en verken lokale hulpbronnen."
         ]
       }
-    }
-
-  "controls": {
-    "theme": {
-      "label": "Thema",
-      "system": "Systeemthema",
-      "systemShort": "SYS",
-      "light": "Lichte modus",
-      "lightShort": "LIC",
-      "dark": "Donkere modus",
-      "darkShort": "DON",
-      "current": "Actueel: {{value}}",
-      "resolved_dark": "donkere modus",
-      "resolved_light": "lichte modus"
-    }
-  },
-
+    },
+    "controls": {
+      "theme": {
+        "label": "Thema",
+        "system": "Systeemthema",
+        "systemShort": "SYS",
+        "light": "Lichte modus",
+        "lightShort": "LIC",
+        "dark": "Donkere modus",
+        "darkShort": "DON",
+        "current": "Actueel: {{value}}",
+        "resolved_dark": "donkere modus",
+        "resolved_light": "lichte modus"
+      }
     }
   },
   "documentary": {
@@ -822,7 +836,7 @@
       "medium": "Pogingen tot isolatie zijn zichtbaar. Stel grenzen en informeer bondgenoten over manipulatie.",
       "high": "Sterke isolatiepogingen vragen actie. Zoek steun bij groepen en herstel je netwerk."
     }
-
+  },
   "community": {
     "title": "Interactieve zone",
     "subtitle": "Een veilige ruimte om ervaringen te delen, manipulatie te leren herkennen en een persoonlijk logboek bij te houden.",
@@ -1026,7 +1040,7 @@
       "dayAria": "{{date}}. Aantal items: {{count}}.",
       "count": "Items: {{count}}"
     }
-
+  },
   "finalLesson": {
     "sectionLabel": "Laatste les",
     "title": "Laatste les",

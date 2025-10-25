@@ -215,7 +215,41 @@
     "unmute": "Unmute",
     "quality_128kbps": "128 kbps",
     "volume": "Volume",
-    "retry": "Try again"
+    "retry": "Try again",
+    "tooltips": {
+      "quality": "Stream quality: 128 kbps provides clear audio with low data usage. Perfect for spoken radio and music.",
+      "buffering": "The player is loading stream data. This is normal on first play or slower connections.",
+      "visualizer": "Live audio frequency visualization. You can disable it in accessibility settings.",
+      "volume": "Adjust volume from 0% to 100%. You can also use keyboard: up/down arrows.",
+      "live": "Live broadcast. You're listening to the same content as all other listeners right now.",
+      "reconnecting": "The player automatically attempts to restore connection. Check your internet connection."
+    },
+    "errors": {
+      "network": "No internet connection. Check your Wi-Fi or mobile data.",
+      "media": "Problem playing audio file. Try refreshing the page.",
+      "permission": "No permission to play audio. Click the \"Play\" button to start.",
+      "notSupported": "Your browser doesn't support HLS streaming. Use a newer browser.",
+      "timeout": "Connection timeout. Check your connection and try again.",
+      "generic": "A playback problem occurred. Refresh the page or try later.",
+      "maxRetries": "Could not restore connection after several attempts. Check your connection and refresh the page."
+    },
+    "keyboard": {
+      "title": "Keyboard shortcuts",
+      "space": "Space: play/pause",
+      "m": "M: mute/unmute",
+      "up": "Up arrow: increase volume",
+      "down": "Down arrow: decrease volume",
+      "info": "Use keyboard to control the player"
+    },
+    "status": {
+      "connecting": "Connecting to server...",
+      "loading": "Loading stream...",
+      "ready": "Ready to play",
+      "playing": "Playing",
+      "paused": "Paused",
+      "buffering": "Buffering...",
+      "reconnecting": "Reconnecting..."
+    }
   },
   "whisper": {
     "regionLabel": "Whisper Behind the Curtain — reconstructed hearing",
@@ -499,22 +533,19 @@
         ]
       }
     },
-
-  "controls": {
-    "theme": {
-      "label": "Theme",
-      "system": "System theme",
-      "systemShort": "SYS",
-      "light": "Light mode",
-      "lightShort": "LGT",
-      "dark": "Dark mode",
-      "darkShort": "DRK",
-      "current": "Currently: {{value}}",
-      "resolved_dark": "dark mode",
-      "resolved_light": "light mode"
-    }
-  },
-
+    "controls": {
+      "theme": {
+        "label": "Theme",
+        "system": "System theme",
+        "systemShort": "SYS",
+        "light": "Light mode",
+        "lightShort": "LGT",
+        "dark": "Dark mode",
+        "darkShort": "DRK",
+        "current": "Currently: {{value}}",
+        "resolved_dark": "dark mode",
+        "resolved_light": "light mode"
+      }
     }
   },
   "documentary": {
@@ -803,8 +834,7 @@
       "medium": "Isolation tactics appear. Set boundaries and inform allies about manipulation.",
       "high": "Strong isolation efforts require action. Reach out to support groups and rebuild connections."
     }
-
-
+  },
   "community": {
     "title": "Interactive Zone",
     "subtitle": "Share experiences safely, practise recognising manipulation and keep a private red flag log.",
@@ -1008,7 +1038,7 @@
       "dayAria": "{{date}}. Entries: {{count}}.",
       "count": "Entries: {{count}}"
     }
-
+  },
   "finalLesson": {
     "sectionLabel": "Final lesson",
     "title": "Final Lesson",

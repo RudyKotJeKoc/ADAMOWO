@@ -12,6 +12,7 @@ export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Eleme
   const analyserRef = useRef<AnalyserNode | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const sourceRef = useRef<MediaElementAudioSourceNode | null>(null);
+  const previousDataRef = useRef<Uint8Array | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -49,7 +50,8 @@ export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Eleme
           const context = new AudioContext();
           const source = context.createMediaElementSource(audio);
           const analyser = context.createAnalyser();
-          analyser.fftSize = 64;
+          analyser.fftSize = 128;
+          analyser.smoothingTimeConstant = 0.8;
           source.connect(analyser);
           analyser.connect(context.destination);
           audioContextRef.current = context;
@@ -83,6 +85,7 @@ export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Eleme
 
       const bufferLength = analyser.frequencyBinCount;
       const dataArray = new Uint8Array(bufferLength);
+      previousDataRef.current = new Uint8Array(bufferLength);
 
       const draw = (): void => {
         if (!isMounted) {
@@ -94,13 +97,45 @@ export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Eleme
         const { width, height } = canvas;
         canvasContext.clearRect(0, 0, width, height);
 
-        const barWidth = width / bufferLength;
-        for (let i = 0; i < bufferLength; i += 1) {
-          const value = dataArray[i] / 255;
-          const barHeight = value * height;
+        const barCount = 48;
+        const barWidth = width / barCount;
+        const gap = barWidth * 0.3;
+
+        for (let i = 0; i < barCount; i += 1) {
+          const index = Math.floor((i / barCount) * bufferLength);
+          const value = dataArray[index] / 255;
+          const previousValue = previousDataRef.current![index] / 255;
+
+          const smoothValue = previousValue + (value - previousValue) * 0.3;
+          previousDataRef.current![index] = smoothValue * 255;
+
+          const barHeight = smoothValue * height * 0.85;
           const x = i * barWidth;
-          canvasContext.fillStyle = '#ff6b35';
-          canvasContext.fillRect(x, height - barHeight, barWidth * 0.7, barHeight);
+          const y = height - barHeight;
+
+          const gradient = canvasContext.createLinearGradient(0, y, 0, height);
+          const hue = 15 + smoothValue * 10;
+          gradient.addColorStop(0, `hsla(${hue}, 100%, 65%, 0.9)`);
+          gradient.addColorStop(0.5, `hsla(${hue}, 100%, 55%, 0.8)`);
+          gradient.addColorStop(1, `hsla(${hue}, 100%, 45%, 0.95)`);
+
+          canvasContext.fillStyle = gradient;
+          canvasContext.fillRect(x + gap / 2, y, barWidth - gap, barHeight);
+
+          if (smoothValue > 0.1) {
+            const glowGradient = canvasContext.createRadialGradient(
+              x + barWidth / 2,
+              y,
+              0,
+              x + barWidth / 2,
+              y,
+              barWidth * 2
+            );
+            glowGradient.addColorStop(0, `hsla(${hue}, 100%, 60%, 0.4)`);
+            glowGradient.addColorStop(1, 'hsla(15, 100%, 60%, 0)');
+            canvasContext.fillStyle = glowGradient;
+            canvasContext.fillRect(x, y - 10, barWidth, 10);
+          }
         }
 
         animationRef.current = requestAnimationFrame(draw);
@@ -144,7 +179,7 @@ export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Eleme
   return (
     <canvas
       ref={canvasRef}
-      className="h-20 w-full rounded-lg bg-base-900/60"
+      className="h-20 w-full rounded-lg bg-base-900/60 shadow-inner"
       role="img"
       aria-label={ariaLabel}
     />
