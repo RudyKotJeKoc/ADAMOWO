@@ -2,9 +2,5 @@
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" }
-  ],
-  "compilerOptions": {
-    "composite": true,
-    "types": ["vitest/globals", "vite/client"]
-  }
+  ]
 }

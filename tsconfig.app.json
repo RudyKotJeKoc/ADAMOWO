@@ -11,11 +11,17 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "noEmit": true,
-    "types": ["vite/client"],
     "paths": {
       "framer-motion": ["./src/vendor/framer-motion"]
     }
   },
   "include": ["src"],
-  "exclude": ["src/**/*.test-d.ts"]
+  "exclude": [
+    "src/**/*.test-d.ts",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/__tests__",
+    "src/**/__mocks__",
+    "src/test"
+  ]
 }

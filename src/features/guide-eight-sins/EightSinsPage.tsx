@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { eightSinsModules } from './guide.data';
-import { ModuleAnswers } from './guide.schema';
+import { AnswerValue, ModuleAnswers } from './guide.schema';
 import { ProgressBar } from './ProgressBar';
 import { SinModule } from './SinModule';
 import { useGuideProgress } from './useGuideProgress';
@@ -87,7 +87,7 @@ export const EightSinsPage = (): JSX.Element => {
           key={activeModule.id}
           module={activeModule}
           answers={activeAnswers}
-          onAnswer={(questionId, value) => setAnswer(activeModule.id, questionId, value)}
+          onAnswer={(questionId, value) => setAnswer(activeModule.id, questionId, value as AnswerValue)}
         />
       ) : null}
 

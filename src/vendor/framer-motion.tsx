@@ -27,3 +27,11 @@ export const motion = new Proxy(
 
 export const AnimatePresence = ({ children }: PropsWithChildren): JSX.Element => <>{children}</>;
 export const LayoutGroup = ({ children }: PropsWithChildren): JSX.Element => <>{children}</>;
+
+export const useReducedMotion = (): boolean => {
+  if (typeof window === 'undefined' || !window.matchMedia) {
+    return false;
+  }
+  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  return mediaQuery.matches;
+};

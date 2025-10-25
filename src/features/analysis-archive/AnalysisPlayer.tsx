@@ -183,9 +183,9 @@ export const AnalysisPlayer = forwardRef<AnalysisPlayerHandle, AnalysisPlayerPro
             <h2 id="analysis-player-heading" className="text-xl font-semibold text-accent-300">
               {t('analysis.player.title')}
             </h2>
-            <p className="text-sm text-base-200" aria-live="polite" ref={statusRef}>
+            <span className="text-sm text-base-200" aria-live="polite" ref={statusRef}>
               {episode ? t('analysis.player.nowPlaying', { title: episode.title }) : t('analysis.player.idle')}
-            </p>
+            </span>
           </div>
           <button
             type="button"
