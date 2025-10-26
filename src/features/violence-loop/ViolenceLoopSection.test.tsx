@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -39,9 +40,11 @@ describe('ViolenceLoopSection', () => {
 
   const renderSection = () =>
     render(
-      <I18nextProvider i18n={i18n}>
-        <ViolenceLoopSection />
-      </I18nextProvider>
+      <MemoryRouter>
+        <I18nextProvider i18n={i18n}>
+          <ViolenceLoopSection />
+        </I18nextProvider>
+      </MemoryRouter>
     );
 
   it('renders the section heading and description', () => {

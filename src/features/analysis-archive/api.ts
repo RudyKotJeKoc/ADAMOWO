@@ -19,16 +19,19 @@ function isEpisodeCategory(value: string): value is EpisodeCategory {
   return CATEGORY_VALUES.includes(value as EpisodeCategory);
 }
 
-function adaptEpisode(episode: BaseEpisode): Episode | null {
+function adaptEpisode(episode: BaseEpisode): Episode {
+  const safeCategory: EpisodeCategory = isEpisodeCategory(episode.category)
+    ? episode.category
+    : 'SprawaAdamskich';
+
   if (!isEpisodeCategory(episode.category)) {
-    console.warn('[analysis-archive] Unknown episode category received:', episode.category);
-    return null;
+    console.warn('[analysis-archive] Unknown episode category received:', episode.category, '- using fallback:', safeCategory);
   }
 
   return {
     ...episode,
     slug: episode.slug ?? episode.id,
-    category: episode.category,
+    category: safeCategory,
     tags: episode.tags ?? [],
     description: episode.description,
     durationSec: episode.durationSec,
@@ -48,9 +51,7 @@ function adaptMetadata(metadata: BaseEpisodeFiltersMetadata): EpisodeFiltersMeta
 }
 
 function adaptQueryResult(result: BaseEpisodeQueryResult): EpisodeQueryResult {
-  const episodes = result.episodes
-    .map(adaptEpisode)
-    .filter((episode): episode is Episode => episode !== null);
+  const episodes = result.episodes.map(adaptEpisode);
 
   return {
     episodes,
