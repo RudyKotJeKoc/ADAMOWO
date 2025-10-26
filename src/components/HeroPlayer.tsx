@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
 import type { JSX } from 'react';
 import clsx from 'clsx';
-import Hls from 'hls.js';
 import { useTranslation } from 'react-i18next';
 import { AudioViz } from './AudioViz';
 import { Tooltip } from './Tooltip';
-import type { HlsClient } from '../lib/hlsClient';
-import { MAX_RECONNECT_ATTEMPTS, createHlsClient } from '../lib/hlsClient';
+import type { LocalAudioClient, Track } from '../lib/localAudioClient';
+import { createLocalAudioClient } from '../lib/localAudioClient';
 import { FALLBACK_NOW_PLAYING, getNowPlaying, subscribeNowPlaying } from '../data/nowPlaying';
 import type { NowPlaying } from '../data/types';
 import { usePlayerStore } from '../state/player';
@@ -65,7 +64,7 @@ const usePrefersReducedMotion = (): boolean => {
 export function HeroPlayer(): JSX.Element {
   const { t } = useTranslation();
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const hlsRef = useRef<HlsClient | null>(null);
+  const audioClientRef = useRef<LocalAudioClient | null>(null);
   const [nowPlaying, setNowPlaying] = useState<NowPlaying>(FALLBACK_NOW_PLAYING);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -75,30 +74,28 @@ export function HeroPlayer(): JSX.Element {
     muted,
     status,
     error,
-    reconnectCount,
-    src,
+    playlistUrl,
+    currentTrack,
     setPlaying,
     setVolume,
     setMuted,
     setStatus,
     setError,
-    setReconnectCount,
-    resetReconnect
+    setCurrentTrack
   } = usePlayerStore((state) => ({
     playing: state.playing,
     volume: state.volume,
     muted: state.muted,
     status: state.status,
     error: state.error,
-    reconnectCount: state.reconnectCount,
-    src: state.src,
+    playlistUrl: state.playlistUrl,
+    currentTrack: state.currentTrack,
     setPlaying: state.setPlaying,
     setVolume: state.setVolume,
     setMuted: state.setMuted,
     setStatus: state.setStatus,
     setError: state.setError,
-    setReconnectCount: state.setReconnectCount,
-    resetReconnect: state.resetReconnect
+    setCurrentTrack: state.setCurrentTrack
   }));
 
   useEffect(() => {
@@ -135,54 +132,41 @@ export function HeroPlayer(): JSX.Element {
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio || !src) {
+    if (!audio || !playlistUrl) {
       return;
     }
 
-    if (Hls.isSupported()) {
-      const client = createHlsClient(audio, src, {
-        onReady: () => {
-          setStatus('buffering');
-        },
-        onReconnectAttempt: (attempt) => {
-          setStatus('reconnecting');
-          setReconnectCount(attempt);
-          setError(null);
-        },
-        onReconnectSuccess: () => {
-          setStatus('buffering');
-          resetReconnect();
-        },
-        onError: (message) => {
-          setStatus('error');
-          setError(message);
-          setPlaying(false);
-        }
-      });
+    const client = createLocalAudioClient(audio, playlistUrl, {
+      onReady: () => {
+        setStatus('buffering');
+      },
+      onTrackChange: (track: Track) => {
+        setCurrentTrack({
+          id: track.id,
+          title: track.title,
+          artist: track.artist,
+          url: track.url,
+          coverUrl: track.coverUrl
+        });
+        setError(null);
+      },
+      onPlaylistLoaded: (tracks: Track[]) => {
+        console.log(`Playlist loaded with ${tracks.length} tracks`);
+      },
+      onError: (message) => {
+        setStatus('error');
+        setError(message);
+        setPlaying(false);
+      }
+    });
 
-      hlsRef.current = client;
-
-      return () => {
-        client.destroy();
-        hlsRef.current = null;
-      };
-    }
-
-    if (audio.canPlayType('application/vnd.apple.mpegurl')) {
-      audio.src = src;
-      setStatus('buffering');
-      return () => {
-        audio.removeAttribute('src');
-      };
-    }
-
-    audio.src = src;
-    setStatus('buffering');
+    audioClientRef.current = client;
 
     return () => {
-      audio.removeAttribute('src');
+      client.destroy();
+      audioClientRef.current = null;
     };
-  }, [resetReconnect, setError, setPlaying, setReconnectCount, setStatus, src]);
+  }, [playlistUrl, setError, setPlaying, setStatus, setCurrentTrack]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -267,7 +251,6 @@ export function HeroPlayer(): JSX.Element {
             setPlaying(false);
             setStatus('idle');
           } else {
-            resetReconnect();
             setError(null);
             setStatus('buffering');
             void audio.play().then(() => setPlaying(true)).catch(() => {
@@ -311,25 +294,20 @@ export function HeroPlayer(): JSX.Element {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [playing, muted, volume, setVolume, setMuted, setPlaying, setStatus, setError, resetReconnect]);
+  }, [playing, muted, volume, setVolume, setMuted, setPlaying, setStatus, setError]);
 
   const statusLabel = useMemo(() => {
     switch (status) {
       case 'playing':
-        return t('player.live');
+        return currentTrack ? `${currentTrack.artist} - ${currentTrack.title}` : t('player.playing');
       case 'buffering':
         return t('player.buffering');
-      case 'reconnecting':
-        return t('player.reconnecting', {
-          attempt: reconnectCount,
-          max: MAX_RECONNECT_ATTEMPTS
-        });
       case 'error':
         return t('player.error');
       default:
         return t('player.idle');
     }
-  }, [reconnectCount, status, t]);
+  }, [currentTrack, status, t]);
 
   const handleTogglePlay = async (): Promise<void> => {
     const audio = audioRef.current;
@@ -345,7 +323,6 @@ export function HeroPlayer(): JSX.Element {
     }
 
     try {
-      resetReconnect();
       setError(null);
       setStatus('buffering');
       await audio.play();
@@ -391,14 +368,14 @@ export function HeroPlayer(): JSX.Element {
   const handleRetry = (): void => {
     setError(null);
     setStatus('buffering');
-    resetReconnect();
-    if (hlsRef.current) {
-      hlsRef.current.retry();
+
+    if (audioClientRef.current) {
+      audioClientRef.current.retry();
       return;
     }
 
     const audio = audioRef.current;
-    if (!audio || !src) {
+    if (!audio) {
       return;
     }
 

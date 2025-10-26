@@ -4,14 +4,14 @@ declare namespace NodeJS {
   interface ProcessEnv {
     readonly VITE_SUPABASE_URL?: string;
     readonly VITE_SUPABASE_ANON?: string;
-    readonly VITE_STREAM_URL_HLS?: string;
+    readonly VITE_PLAYLIST_URL?: string;
   }
 }
 
 declare interface ImportMetaEnv {
   readonly VITE_SUPABASE_URL?: string;
   readonly VITE_SUPABASE_ANON?: string;
-  readonly VITE_STREAM_URL_HLS?: string;
+  readonly VITE_PLAYLIST_URL?: string;
 }
 
 declare interface ImportMeta {
