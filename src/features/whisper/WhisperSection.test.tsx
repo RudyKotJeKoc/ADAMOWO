@@ -27,9 +27,10 @@ describe('WhisperSection', () => {
     });
   });
 
-  beforeEach(() => {
+  beforeEach(async () => {
     reduceMotion = false;
     sessionStorage.clear();
+    await i18n.changeLanguage('pl');
     vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue();
     vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => undefined);
   });

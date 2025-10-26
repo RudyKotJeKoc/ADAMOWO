@@ -79,6 +79,20 @@ describe('analysis-archive/api', () => {
           slug: 'episode-1',
           chapters: [],
           resources: []
+        },
+        {
+          id: 'episode-2',
+          title: 'Episode 2',
+          category: 'SprawaAdamskich',
+          tags: [],
+          description: 'desc',
+          durationSec: 60,
+          audioUrl: 'https://example.com/2.mp3',
+          publishedAt: '2024-02-01T00:00:00.000Z',
+          coverUrl: undefined,
+          slug: 'episode-2',
+          chapters: undefined,
+          resources: undefined
         }
       ],
       total: 1,

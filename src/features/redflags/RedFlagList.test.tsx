@@ -27,6 +27,13 @@ const seedEntries: RedFlagEntry[] = [
 describe('RedFlagList', () => {
   beforeEach(() => {
     useRedFlagsStore.setState({ entries: seedEntries });
+    // Mock URL.createObjectURL for jsdom environment
+    if (!URL.createObjectURL) {
+      URL.createObjectURL = vi.fn();
+    }
+    if (!URL.revokeObjectURL) {
+      URL.revokeObjectURL = vi.fn();
+    }
   });
 
   afterEach(() => {

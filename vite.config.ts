@@ -9,6 +9,18 @@ export default defineConfig({
       'framer-motion': path.resolve(__dirname, 'src/vendor/framer-motion.tsx')
     }
   },
+  build: {
+    chunkSizeWarningLimit: 900,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          i18n: ['i18next', 'react-i18next'],
+        }
+      }
+    }
+  },
   server: {
     port: 5173
   },
