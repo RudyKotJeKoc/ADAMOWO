@@ -1,0 +1,38 @@
+{
+  "genre": "Disco",
+  "description": {
+    "pl": "Muzyka disco - radość, taniec i celebracja życia. Gatunek który powstał w czasach walki o prawa mniejszości.",
+    "nl": "Disco muziek - vreugde, dans en viering van het leven.",
+    "en": "Disco music - joy, dance and celebration of life."
+  },
+  "therapeuticValue": {
+    "pl": "Disco pomaga w odbudowie radości życia, stymuluje ruch (terapia tańcem), wspiera budowanie pozytywnych doświadczeń.",
+    "nl": "Disco helpt bij het herbouwen van levensvreugde, stimuleert beweging, ondersteunt positieve ervaringen.",
+    "en": "Disco helps rebuild joy of life, stimulates movement (dance therapy), supports building positive experiences."
+  },
+  "historicalContext": {
+    "pl": "Disco powstało jako muzyka wyzwolenia dla społeczności LGBT+, Afroamerykanów i Latynosów w latach 70.",
+    "nl": "Disco ontstond als bevrijdingsmuziek voor de LGBT+-gemeenschap, Afro-Amerikanen en Latinos in de jaren 70.",
+    "en": "Disco emerged as liberation music for LGBT+ communities, African Americans and Latinos in the 1970s."
+  },
+  "recommendedFor": [
+    "post-trauma-joy-recovery",
+    "dance-therapy",
+    "group-therapy-sessions",
+    "empowerment-work"
+  ],
+  "playlists": [
+    {
+      "name": "Empowerment",
+      "description": "Utwory dodające pewności siebie i siły"
+    },
+    {
+      "name": "Joy",
+      "description": "Radość i celebracja życia"
+    },
+    {
+      "name": "Healing",
+      "description": "Uspokajające utwory wspierające healing"
+    }
+  ]
+}
