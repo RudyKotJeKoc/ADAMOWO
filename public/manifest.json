@@ -2,7 +2,7 @@
   "name": "Radio Adamowo - Edukacja i Wsparcie",
   "short_name": "Adamowo",
   "description": "Platforma edukacyjna dla ofiar manipulacji psychologicznej i toksycznych związków",
-  "theme_color": "#ff6b35",
+  "theme_color": "#f59e0b",
   "background_color": "#0a0e27",
   "display": "standalone",
   "start_url": "/",
