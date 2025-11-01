@@ -3,8 +3,118 @@
     "id": "track-001",
     "title": "Whisper 2017",
     "artist": "Radio Adamowo",
+    "album": "Original",
+    "year": 2017,
     "url": "/music/whisper-2017.mp3",
     "coverUrl": "/images/Icon.jpg",
-    "duration": 0
+    "duration": 0,
+    "genre": "Ambient",
+    "category": "Calming",
+    "mood": ["peaceful", "introspective", "healing"],
+    "therapeuticTags": ["meditation", "calming", "trauma-healing", "grounding"],
+    "educationalContext": {
+      "relatedTopics": ["mindfulness", "trauma-recovery"],
+      "message": "Utwór wspierający uspokojenie umysłu i proces grounding",
+      "languageKeys": {
+        "pl": "songs.track001",
+        "nl": "songs.track001",
+        "en": "songs.track001"
+      }
+    },
+    "accessibility": {
+      "hasLyrics": false,
+      "lyricsUrl": null,
+      "hasSignLanguage": false,
+      "triggerWarnings": []
+    }
+  },
+  {
+    "id": "disco-001",
+    "title": "I Will Survive",
+    "artist": "Gloria Gaynor",
+    "album": "Love Tracks",
+    "year": 1978,
+    "url": "/music/Disco/Empowerment/gloria-gaynor-i-will-survive.mp3",
+    "coverUrl": "/images/covers/disco-001.jpg",
+    "duration": 198,
+    "genre": "Disco",
+    "category": "Empowerment",
+    "mood": ["uplifting", "empowering", "confident"],
+    "therapeuticTags": ["self-worth", "independence", "resilience", "post-breakup"],
+    "educationalContext": {
+      "relatedTopics": ["narcissism-recovery", "boundary-setting"],
+      "message": "Pieśń o odzyskaniu siły po toksycznym związku",
+      "languageKeys": {
+        "pl": "songs.disco001",
+        "nl": "songs.disco001",
+        "en": "songs.disco001"
+      }
+    },
+    "accessibility": {
+      "hasLyrics": true,
+      "lyricsUrl": "/lyrics/disco-001.txt",
+      "hasSignLanguage": false,
+      "triggerWarnings": []
+    }
+  },
+  {
+    "id": "hiphop-001",
+    "title": "Keep Ya Head Up",
+    "artist": "2Pac",
+    "album": "Strictly 4 My N.I.G.G.A.Z.",
+    "year": 1993,
+    "url": "/music/Hip-Hop/Empowerment/tupac-keep-ya-head-up.mp3",
+    "coverUrl": "/images/covers/hiphop-001.jpg",
+    "duration": 268,
+    "genre": "Hip-Hop",
+    "category": "Empowerment",
+    "mood": ["inspirational", "hopeful", "supportive"],
+    "therapeuticTags": ["domestic-violence", "women-empowerment", "community-support", "hope"],
+    "educationalContext": {
+      "relatedTopics": ["domestic-abuse", "community-healing"],
+      "message": "Wsparcie dla kobiet doświadczających przemocy",
+      "languageKeys": {
+        "pl": "songs.hiphop001",
+        "nl": "songs.hiphop001",
+        "en": "songs.hiphop001"
+      }
+    },
+    "accessibility": {
+      "hasLyrics": true,
+      "lyricsUrl": "/lyrics/hiphop-001.txt",
+      "hasSignLanguage": false,
+      "triggerWarnings": ["references to violence", "adult themes"]
+    }
+  },
+  {
+    "id": "kids-001",
+    "title": "How Far I'll Go",
+    "artist": "Auli'i Cravalho",
+    "album": "Moana (Original Soundtrack)",
+    "year": 2016,
+    "url": "/music/Kids/Empowerment/moana-how-far-ill-go.mp3",
+    "coverUrl": "/images/covers/kids-001.jpg",
+    "duration": 163,
+    "genre": "Kids",
+    "category": "Empowerment",
+    "mood": ["adventurous", "determined", "hopeful"],
+    "therapeuticTags": ["self-discovery", "courage", "family-expectations", "identity"],
+    "educationalContext": {
+      "relatedTopics": ["child-autonomy", "healthy-boundaries"],
+      "message": "Odkrywanie własnej drogi mimo presji rodziny",
+      "ageRating": "G",
+      "languageKeys": {
+        "pl": "songs.kids001",
+        "nl": "songs.kids001",
+        "en": "songs.kids001"
+      }
+    },
+    "accessibility": {
+      "hasLyrics": true,
+      "lyricsUrl": "/lyrics/kids-001.txt",
+      "hasSignLanguage": true,
+      "signLanguageUrl": "/sign-language/kids-001.mp4",
+      "triggerWarnings": []
+    }
   }
 ]

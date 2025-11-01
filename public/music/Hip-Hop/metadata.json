@@ -1,0 +1,33 @@
+{
+  "genre": "Hip-Hop",
+  "description": {
+    "pl": "Hip-Hop - świadomość społeczna, storytelling i empowerment przez narratives.",
+    "nl": "Hip-Hop - sociaal bewustzijn, storytelling en empowerment door verhalen.",
+    "en": "Hip-Hop - social consciousness, storytelling and empowerment through narratives."
+  },
+  "therapeuticValue": {
+    "pl": "Hip-Hop pozwala na wyrażenie gniewu w konstruktywny sposób, dostarcza inspirujących historii przetrwania i podnosi świadomość o mechanizmach manipulacji.",
+    "nl": "Hip-Hop maakt het mogelijk om woede op een constructieve manier uit te drukken, levert inspirerende verhalen over overleven en vergroot het bewustzijn van manipulatiemechanismen.",
+    "en": "Hip-Hop allows expressing anger constructively, provides inspiring survival stories and raises awareness about manipulation mechanisms."
+  },
+  "historicalContext": {
+    "pl": "Hip-Hop powstał w latach 70. w Bronx jako głos marginalizowanych społeczności, narzędzie storytelling i społecznego komentarza.",
+    "nl": "Hip-Hop ontstond in de jaren 70 in de Bronx als stem van gemarginaliseerde gemeenschappen, storytelling tool en sociaal commentaar.",
+    "en": "Hip-Hop emerged in the 1970s in the Bronx as the voice of marginalized communities, storytelling tool and social commentary."
+  },
+  "recommendedFor": ["anger-work", "identity-recovery", "community-building", "awareness-raising"],
+  "playlists": [
+    {
+      "name": "Empowerment",
+      "description": "Utwory o sile, odwadze i resilience"
+    },
+    {
+      "name": "Awareness",
+      "description": "Świadomość społeczna i mechanizmów manipulacji"
+    },
+    {
+      "name": "Storytelling",
+      "description": "Historie przetrwania i transformacji"
+    }
+  ]
+}

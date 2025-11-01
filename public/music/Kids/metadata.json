@@ -1,0 +1,42 @@
+{
+  "genre": "Kids",
+  "description": {
+    "pl": "Muzyka dla dzieci - bezpieczeństwo emocjonalne, rozwój i healing.",
+    "nl": "Muziek voor kinderen - emotionele veiligheid, ontwikkeling en healing.",
+    "en": "Music for children - emotional safety, development and healing."
+  },
+  "therapeuticValue": {
+    "pl": "Muzyka dziecięca pomaga w nazywaniu emocji, budowaniu poczucia bezpieczeństwa, nauce granic i autonomii ciała. Odpowiednia dla dzieci świadków przemocy.",
+    "nl": "Kindermuziek helpt bij het benoemen van emoties, het opbouwen van een gevoel van veiligheid, het leren van grenzen en lichaamsautonomie. Geschikt voor kinderen die getuige zijn van geweld.",
+    "en": "Children's music helps naming emotions, building sense of safety, learning boundaries and body autonomy. Suitable for children who witness violence."
+  },
+  "historicalContext": {
+    "pl": "Nowoczesne piosenki dla dzieci coraz częściej poruszają tematy emocji, autonomii i bezpieczeństwa, wspierając healing poprzez sztukę.",
+    "nl": "Moderne kinderliedjes behandelen steeds vaker thema's als emoties, autonomie en veiligheid, ter ondersteuning van healing door kunst.",
+    "en": "Modern children's songs increasingly address themes of emotions, autonomy and safety, supporting healing through art."
+  },
+  "recommendedFor": [
+    "children-3-12",
+    "trauma-informed-care",
+    "emotional-literacy",
+    "safety-education"
+  ],
+  "playlists": [
+    {
+      "name": "Empowerment",
+      "description": "Budowanie pewności siebie i odkrywanie tożsamości"
+    },
+    {
+      "name": "Emotions",
+      "description": "Rozpoznawanie i nazywanie emocji"
+    },
+    {
+      "name": "Safety",
+      "description": "Granice, body autonomy i bezpieczeństwo"
+    },
+    {
+      "name": "Calming",
+      "description": "Uspokajające utwory dla dzieci po traumach"
+    }
+  ]
+}
