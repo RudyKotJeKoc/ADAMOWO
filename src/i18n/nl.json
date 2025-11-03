@@ -199,7 +199,6 @@
       }
     }
   },
-
   "player": {
     "regionLabel": "Radio Adamowo-speler",
     "artworkAlt": "Programmahoes {{title}} — {{artist}}",
@@ -447,7 +446,6 @@
           "Handleiding getuigeninterviews"
         ]
       }
-
     }
   },
   "mythology": {
@@ -624,7 +622,6 @@
       }
     }
   },
-
   "guide": {
     "title": "8 giftige patronen",
     "intro": "Deze interactieve gids helpt je schadelijk gedrag te herkennen dat relaties en veiligheid ondermijnt. Beantwoord de vragen voor risico-inzichten en passende ondersteuning.",
@@ -1094,8 +1091,43 @@
     },
     "backToTop": "Terug naar boven",
     "rights": "© 2025 Radio Adamowo"
-
-
-
+  },
+  "trackHighlights": {
+    "sectionLabel": "Aankomende muziek",
+    "title": "Zes plekken klaar voor nieuwe premières",
+    "description": "Een mozaïek van placeholders op de homepage dat toekomstige Radio Adamowo releases verwelkomt.",
+    "placeholderCta": "Gereserveerd voor een aankomend nummer",
+    "cards": {
+      "forest": {
+        "kicker": "Bosopen plek",
+        "title": "Dageraadfrequenties",
+        "description": "Een zachte opening geïnspireerd door verre vogels en het eerste licht."
+      },
+      "rooftop": {
+        "kicker": "Dakterras",
+        "title": "Stadse Echo Sessie",
+        "description": "Stedelijke ambiance en pulserende bas voor een avond boven de skyline."
+      },
+      "neon": {
+        "kicker": "Neongang",
+        "title": "Naglans Intermezzo",
+        "description": "Een ruime plek badend in synthreflecties en trage, gloeiende beats."
+      },
+      "river": {
+        "kicker": "Oeversein",
+        "title": "Stroom Drift",
+        "description": "Gereserveerd voor een vloeibare drumloop die de rivier volgt."
+      },
+      "attic": {
+        "kicker": "Zolderarchief",
+        "title": "Stof & Vinyl",
+        "description": "Een intieme plek tussen bandruis en gefluisterde poëzie."
+      },
+      "garden": {
+        "kicker": "Nachtelijke tuin",
+        "title": "Bloei Puls",
+        "description": "Een geurige afsluiting voor koorzang en warme percussie."
+      }
+    }
   }
 }
