@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { DocumentarySection } from '../features/documentary/DocumentarySection';
 import { FinalLessonSection } from '../features/final-lesson/FinalLessonSection';
 import { StudioSection } from '../features/studio/StudioSection';
+import { TrackHighlightsSection } from '../features/track-highlights/TrackHighlightsSection';
 import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
 
 export default function Home(): ReactElement {
@@ -16,6 +17,7 @@ export default function Home(): ReactElement {
         <p className="max-w-2xl text-base-200">{t('pages.home.lead')}</p>
       </section>
 
+      <TrackHighlightsSection />
       <DocumentarySection />
       <FinalLessonSection />
       <StudioSection />

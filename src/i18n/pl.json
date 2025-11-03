@@ -68,6 +68,44 @@
       "title": "Audycje"
     }
   },
+  "trackHighlights": {
+    "sectionLabel": "Nadchodzące utwory",
+    "title": "Sześć miejsc czekających na premierowe nagrania",
+    "description": "Mozaika placeholderów rozmieszczonych na stronie głównej, gotowych na przyszłe premiery Radia Adamowo.",
+    "placeholderCta": "Rezerwacja dla nadchodzącego utworu",
+    "cards": {
+      "forest": {
+        "kicker": "Polana w lesie",
+        "title": "Poranne Częstotliwości",
+        "description": "Łagodny slot otwierający inspirowany śpiewem ptaków i pierwszym blaskiem."
+      },
+      "rooftop": {
+        "kicker": "Scena na dachu",
+        "title": "Miejskie Echo",
+        "description": "Miejska aura i pulsujący bas na wieczorne słuchanie ponad panoramą."
+      },
+      "neon": {
+        "kicker": "Neonowy korytarz",
+        "title": "Pogłos Poświaty",
+        "description": "Przestrzeń skąpana w syntezatorowych refleksach i wolnych, świecących beatach."
+      },
+      "river": {
+        "kicker": "Sygnał znad rzeki",
+        "title": "Dryf Prądu",
+        "description": "Miejsce dla płynnego rytmu podążającego za nurtem wody."
+      },
+      "attic": {
+        "kicker": "Strychowe archiwum",
+        "title": "Kurz i Winyl",
+        "description": "Intymny zakątek pełen szumu taśmy i szeptanej poezji."
+      },
+      "garden": {
+        "kicker": "Nocny ogród",
+        "title": "Puls Kwiatów",
+        "description": "Zamykająca przestrzeń na chóralne harmonie i ciepłe perkusjonalia."
+      }
+    }
+  },
   "studio": {
     "section": {
       "kicker": "Programy studia",

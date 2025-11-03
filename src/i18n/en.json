@@ -68,6 +68,44 @@
       "title": "Shows"
     }
   },
+  "trackHighlights": {
+    "sectionLabel": "Upcoming music",
+    "title": "Six track slots ready for new premieres",
+    "description": "A mosaic of placeholders across the homepage designed to welcome future Radio Adamowo releases.",
+    "placeholderCta": "Reserved for an upcoming track",
+    "cards": {
+      "forest": {
+        "kicker": "Forest clearing mix",
+        "title": "Dawn Frequencies",
+        "description": "A mellow opening slot inspired by distant birdsong and the hum of first light."
+      },
+      "rooftop": {
+        "kicker": "Rooftop stage",
+        "title": "City Echo Session",
+        "description": "Urban ambience and pulsing bass ready for a twilight listening party above the skyline."
+      },
+      "neon": {
+        "kicker": "Neon corridor",
+        "title": "Afterglow Interlude",
+        "description": "A spacious track position bathed in synth reflections and slow, glowing beats."
+      },
+      "river": {
+        "kicker": "Riverbank signal",
+        "title": "Current Drift",
+        "description": "Reserved for a liquid drum loop that follows the rhythm of flowing water."
+      },
+      "attic": {
+        "kicker": "Attic archive",
+        "title": "Dust & Vinyl",
+        "description": "An intimate slot among tape hiss memories and whispered poetry."
+      },
+      "garden": {
+        "kicker": "Night garden",
+        "title": "Bloom Pulse",
+        "description": "A fragrant closing space waiting for choral harmonies and warm percussion."
+      }
+    }
+  },
   "studio": {
     "section": {
       "kicker": "Studio highlight",
