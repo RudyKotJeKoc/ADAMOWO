@@ -64,7 +64,7 @@ export function StarRatingInput({
             onMouseLeave={() => !readonly && setHoveredRating(null)}
             disabled={readonly}
             className={`${sizeClasses[size]} ${readonly ? 'cursor-default' : 'cursor-pointer hover:scale-110'} transition-transform`}
-            aria-label={t('multimedia.rating.rateStar', { star }, `Rate ${star} stars`)}
+            aria-label={t('multimedia.rating.rateStar', { star, defaultValue: `Rate ${star} stars` })}
           >
             <span className={star <= displayRating ? 'text-accent-400' : 'text-base-700'}>
               {star <= displayRating ? '★' : '☆'}
@@ -75,7 +75,7 @@ export function StarRatingInput({
       {showLabel && (
         <span className="text-sm text-base-400">
           {displayRating > 0
-            ? t('multimedia.rating.starsCount', { count: displayRating }, `${displayRating} star${displayRating !== 1 ? 's' : ''}`)
+            ? t('multimedia.rating.starsCount', { count: displayRating, defaultValue: `${displayRating} star${displayRating !== 1 ? 's' : ''}` })
             : t('multimedia.rating.notRated', 'Not rated')}
         </span>
       )}
@@ -264,7 +264,7 @@ export function RatingStatistics({ ratings, className = '' }: RatingStatisticsPr
         <div className="text-4xl font-bold text-accent-400">{averageRating.toFixed(1)}</div>
         <StarRatingInput rating={Math.round(averageRating)} onChange={() => {}} readonly size="sm" showLabel={false} />
         <p className="text-sm text-base-400 mt-2">
-          {t('multimedia.rating.totalRatings', { count: ratings.length }, `${ratings.length} rating${ratings.length !== 1 ? 's' : ''}`)}
+          {t('multimedia.rating.totalRatings', { count: ratings.length, defaultValue: `${ratings.length} rating${ratings.length !== 1 ? 's' : ''}` })}
         </p>
       </div>
 
@@ -341,7 +341,7 @@ export function RatingsList({
     return (
       <div className={`text-center text-base-400 py-8 ${className}`}>
         {filterRating
-          ? t('multimedia.rating.noTracksWithRating', { rating: filterRating }, `No tracks with ${filterRating} star rating`)
+          ? t('multimedia.rating.noTracksWithRating', { rating: filterRating, defaultValue: `No tracks with ${filterRating} star rating` })
           : t('multimedia.rating.noRatedTracks', 'No rated tracks yet')}
       </div>
     );
