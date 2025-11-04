@@ -1120,6 +1120,170 @@
       "callAction": "Zadzwoń do {{organization}} pod numer {{phone}}"
     }
   },
+  "multimedia": {
+    "audioEngine": {
+      "loading": "Ładowanie dźwięku...",
+      "buffering": "Buforowanie...",
+      "playing": "Odtwarzanie",
+      "paused": "Wstrzymano",
+      "error": "Błąd odtwarzania",
+      "offline": "Dźwięk niedostępny offline",
+      "retry": "Spróbuj ponownie",
+      "crossfading": "Przejście do następnego utworu..."
+    },
+    "visualizer": {
+      "title": "Wizualizator dźwięku",
+      "enable": "Włącz wizualizator",
+      "disable": "Wyłącz wizualizator",
+      "mode": "Tryb wizualizatora",
+      "modes": {
+        "bars": "Słupki",
+        "wave": "Fala",
+        "circular": "Okrągły",
+        "3dBars": "Słupki 3D",
+        "3dWave": "Fala 3D",
+        "3dParticles": "Cząsteczki 3D"
+      },
+      "requiresThree": "Wymaga biblioteki Three.js",
+      "disabled": "Wizualizator wyłączony",
+      "waiting": "Oczekiwanie na dane dźwiękowe..."
+    },
+    "playlist": {
+      "title": "Playlista",
+      "empty": "Brak utworów w playliście",
+      "loading": "Ładowanie playlisty...",
+      "addTrack": "Dodaj do playlisty",
+      "removeTrack": "Usuń z playlisty",
+      "clearPlaylist": "Wyczyść playlistę",
+      "shuffle": "Losuj",
+      "repeat": "Powtarzaj",
+      "repeatModes": {
+        "none": "Bez powtarzania",
+        "one": "Powtórz jeden",
+        "all": "Powtórz wszystkie"
+      },
+      "queue": "Kolejka",
+      "history": "Historia",
+      "nowPlaying": "Teraz odtwarzane",
+      "upNext": "Następnie",
+      "noHistory": "Brak historii odtwarzania",
+      "search": "Szukaj utworów...",
+      "filterBy": "Filtruj według",
+      "sortBy": "Sortuj według",
+      "sortOptions": {
+        "title": "Tytuł",
+        "artist": "Artysta",
+        "album": "Album",
+        "duration": "Czas trwania"
+      }
+    },
+    "slideshow": {
+      "title": "Pokaz slajdów",
+      "play": "Odtwórz",
+      "pause": "Wstrzymaj",
+      "previous": "Poprzedni",
+      "next": "Następny",
+      "goTo": "Przejdź do",
+      "fullscreen": "Pełny ekran",
+      "exitFullscreen": "Wyjdź z pełnego ekranu",
+      "noItems": "Brak elementów do wyświetlenia",
+      "videoError": "Nie udało się załadować wideo",
+      "videoNotSupported": "Twoja przeglądarka nie obsługuje odtwarzania wideo",
+      "autoplayBlocked": "Automatyczne odtwarzanie zablokowane przez przeglądarkę",
+      "settings": "Ustawienia pokazu slajdów",
+      "autoPlay": "Automatyczne odtwarzanie",
+      "interval": "Interwał (sekundy)",
+      "transition": "Efekt przejścia",
+      "transitions": {
+        "fade": "Zanikanie",
+        "slide": "Przesuwanie",
+        "zoom": "Powiększenie",
+        "none": "Brak"
+      }
+    },
+    "rating": {
+      "title": "Oceń ten utwór",
+      "rateStar": "Oceń {{star}} gwiazdek",
+      "starsCount_one": "{{count}} gwiazdka",
+      "starsCount_few": "{{count}} gwiazdki",
+      "starsCount_many": "{{count}} gwiazdek",
+      "notRated": "Nie oceniono",
+      "comment": "Komentarz (opcjonalnie)",
+      "commentPlaceholder": "Podziel się swoimi myślami o tym utworze...",
+      "save": "Zapisz ocenę",
+      "cancel": "Anuluj",
+      "edit": "Edytuj ocenę",
+      "ratedOn": "Oceniono dnia",
+      "noRatings": "Brak ocen",
+      "totalRatings_one": "{{count}} ocena",
+      "totalRatings_few": "{{count}} oceny",
+      "totalRatings_many": "{{count}} ocen",
+      "noTracksWithRating": "Brak utworów z oceną {{rating}} gwiazdek",
+      "noRatedTracks": "Brak ocenionych utworów",
+      "yourRating": "Twoja ocena",
+      "averageRating": "Średnia ocena"
+    },
+    "player": {
+      "play": "Odtwórz",
+      "pause": "Wstrzymaj",
+      "stop": "Zatrzymaj",
+      "previous": "Poprzedni utwór",
+      "next": "Następny utwór",
+      "volume": "Głośność",
+      "mute": "Wycisz",
+      "unmute": "Włącz dźwięk",
+      "seekForward": "Przewiń do przodu",
+      "seekBackward": "Przewiń do tyłu",
+      "currentTime": "Aktualny czas",
+      "duration": "Czas trwania",
+      "remaining": "Pozostało",
+      "speed": "Szybkość odtwarzania",
+      "downloadTrack": "Pobierz utwór",
+      "shareTrack": "Udostępnij utwór"
+    },
+    "theme": {
+      "title": "Ustawienia motywu",
+      "audioReactive": "Kolory reagujące na dźwięk",
+      "audioReactiveDesc": "Kolory zmieniają się wraz z muzyką",
+      "animationIntensity": "Intensywność animacji",
+      "intensityLow": "Niska",
+      "intensityMedium": "Średnia",
+      "intensityHigh": "Wysoka",
+      "autoTheme": "Automatyczny motyw dzień/noc",
+      "followSystem": "Śledź ustawienia systemowe",
+      "customColors": "Własne kolory",
+      "presets": "Predefiniowane motywy",
+      "presetNames": {
+        "dark": "Ciemny",
+        "light": "Jasny",
+        "sunset": "Zachód słońca",
+        "ocean": "Ocean",
+        "forest": "Las"
+      }
+    },
+    "offline": {
+      "title": "Tryb offline",
+      "available": "Dostępne offline",
+      "unavailable": "Niedostępne offline",
+      "downloading": "Pobieranie...",
+      "downloaded": "Pobrano",
+      "cached": "W pamięci podręcznej",
+      "download": "Pobierz do trybu offline",
+      "remove": "Usuń kopię offline",
+      "storage": "Wykorzystana pamięć",
+      "clearCache": "Wyczyść pamięć podręczną",
+      "syncPending": "Oczekuje na synchronizację"
+    },
+    "errors": {
+      "loadFailed": "Nie udało się załadować mediów",
+      "playbackFailed": "Odtwarzanie nie powiodło się",
+      "networkError": "Błąd sieci",
+      "notFound": "Nie znaleziono mediów",
+      "formatNotSupported": "Format nieobsługiwany",
+      "permissionDenied": "Brak uprawnień",
+      "unknown": "Wystąpił nieznany błąd"
+    }
+  },
   "footer": {
     "navigation": "Nawigacja w stopce",
     "links": {

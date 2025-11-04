@@ -1121,6 +1121,168 @@
       "callAction": "Call {{organization}} at {{phone}}"
     }
   },
+  "multimedia": {
+    "audioEngine": {
+      "loading": "Loading audio...",
+      "buffering": "Buffering...",
+      "playing": "Playing",
+      "paused": "Paused",
+      "error": "Playback error",
+      "offline": "Audio unavailable offline",
+      "retry": "Retry",
+      "crossfading": "Crossfading to next track..."
+    },
+    "visualizer": {
+      "title": "Audio Visualizer",
+      "enable": "Enable visualizer",
+      "disable": "Disable visualizer",
+      "mode": "Visualizer mode",
+      "modes": {
+        "bars": "Bars",
+        "wave": "Wave",
+        "circular": "Circular",
+        "3dBars": "3D Bars",
+        "3dWave": "3D Wave",
+        "3dParticles": "3D Particles"
+      },
+      "requiresThree": "Requires Three.js library",
+      "disabled": "Visualizer disabled",
+      "waiting": "Waiting for audio data..."
+    },
+    "playlist": {
+      "title": "Playlist",
+      "empty": "No tracks in playlist",
+      "loading": "Loading playlist...",
+      "addTrack": "Add to playlist",
+      "removeTrack": "Remove from playlist",
+      "clearPlaylist": "Clear playlist",
+      "shuffle": "Shuffle",
+      "repeat": "Repeat",
+      "repeatModes": {
+        "none": "No repeat",
+        "one": "Repeat one",
+        "all": "Repeat all"
+      },
+      "queue": "Queue",
+      "history": "History",
+      "nowPlaying": "Now playing",
+      "upNext": "Up next",
+      "noHistory": "No playback history",
+      "search": "Search tracks...",
+      "filterBy": "Filter by",
+      "sortBy": "Sort by",
+      "sortOptions": {
+        "title": "Title",
+        "artist": "Artist",
+        "album": "Album",
+        "duration": "Duration"
+      }
+    },
+    "slideshow": {
+      "title": "Slideshow",
+      "play": "Play",
+      "pause": "Pause",
+      "previous": "Previous",
+      "next": "Next",
+      "goTo": "Go to",
+      "fullscreen": "Fullscreen",
+      "exitFullscreen": "Exit fullscreen",
+      "noItems": "No media items to display",
+      "videoError": "Failed to load video",
+      "videoNotSupported": "Your browser does not support video playback",
+      "autoplayBlocked": "Autoplay blocked by browser",
+      "settings": "Slideshow settings",
+      "autoPlay": "Auto-play",
+      "interval": "Interval (seconds)",
+      "transition": "Transition effect",
+      "transitions": {
+        "fade": "Fade",
+        "slide": "Slide",
+        "zoom": "Zoom",
+        "none": "None"
+      }
+    },
+    "rating": {
+      "title": "Rate this track",
+      "rateStar": "Rate {{star}} stars",
+      "starsCount": "{{count}} star",
+      "starsCount_other": "{{count}} stars",
+      "notRated": "Not rated",
+      "comment": "Comment (optional)",
+      "commentPlaceholder": "Share your thoughts about this track...",
+      "save": "Save Rating",
+      "cancel": "Cancel",
+      "edit": "Edit Rating",
+      "ratedOn": "Rated on",
+      "noRatings": "No ratings yet",
+      "totalRatings": "{{count}} rating",
+      "totalRatings_other": "{{count}} ratings",
+      "noTracksWithRating": "No tracks with {{rating}} star rating",
+      "noRatedTracks": "No rated tracks yet",
+      "yourRating": "Your rating",
+      "averageRating": "Average rating"
+    },
+    "player": {
+      "play": "Play",
+      "pause": "Pause",
+      "stop": "Stop",
+      "previous": "Previous track",
+      "next": "Next track",
+      "volume": "Volume",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "seekForward": "Seek forward",
+      "seekBackward": "Seek backward",
+      "currentTime": "Current time",
+      "duration": "Duration",
+      "remaining": "Remaining",
+      "speed": "Playback speed",
+      "downloadTrack": "Download track",
+      "shareTrack": "Share track"
+    },
+    "theme": {
+      "title": "Theme Settings",
+      "audioReactive": "Audio-reactive colors",
+      "audioReactiveDesc": "Colors change with the music",
+      "animationIntensity": "Animation intensity",
+      "intensityLow": "Low",
+      "intensityMedium": "Medium",
+      "intensityHigh": "High",
+      "autoTheme": "Auto day/night theme",
+      "followSystem": "Follow system preference",
+      "customColors": "Custom colors",
+      "presets": "Theme presets",
+      "presetNames": {
+        "dark": "Dark",
+        "light": "Light",
+        "sunset": "Sunset",
+        "ocean": "Ocean",
+        "forest": "Forest"
+      }
+    },
+    "offline": {
+      "title": "Offline Mode",
+      "available": "Available offline",
+      "unavailable": "Unavailable offline",
+      "downloading": "Downloading...",
+      "downloaded": "Downloaded",
+      "cached": "Cached",
+      "download": "Download for offline",
+      "remove": "Remove offline copy",
+      "storage": "Storage used",
+      "clearCache": "Clear cache",
+      "syncPending": "Sync pending"
+    },
+    "errors": {
+      "loadFailed": "Failed to load media",
+      "playbackFailed": "Playback failed",
+      "networkError": "Network error",
+      "notFound": "Media not found",
+      "formatNotSupported": "Format not supported",
+      "permissionDenied": "Permission denied",
+      "unknown": "Unknown error occurred"
+    }
+  },
   "footer": {
     "navigation": "Footer navigation",
     "links": {

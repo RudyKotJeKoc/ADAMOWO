@@ -1129,5 +1129,167 @@
         "description": "Een geurige afsluiting voor koorzang en warme percussie."
       }
     }
+  },
+  "multimedia": {
+    "audioEngine": {
+      "loading": "Audio laden...",
+      "buffering": "Bufferen...",
+      "playing": "Afspelen",
+      "paused": "Gepauzeerd",
+      "error": "Afspeelfout",
+      "offline": "Audio niet beschikbaar offline",
+      "retry": "Opnieuw proberen",
+      "crossfading": "Overgaan naar volgend nummer..."
+    },
+    "visualizer": {
+      "title": "Audio Visualisator",
+      "enable": "Visualisator inschakelen",
+      "disable": "Visualisator uitschakelen",
+      "mode": "Visualisatormodus",
+      "modes": {
+        "bars": "Balken",
+        "wave": "Golf",
+        "circular": "Circulair",
+        "3dBars": "3D Balken",
+        "3dWave": "3D Golf",
+        "3dParticles": "3D Deeltjes"
+      },
+      "requiresThree": "Vereist Three.js bibliotheek",
+      "disabled": "Visualisator uitgeschakeld",
+      "waiting": "Wachten op audiogegevens..."
+    },
+    "playlist": {
+      "title": "Afspeellijst",
+      "empty": "Geen nummers in afspeellijst",
+      "loading": "Afspeellijst laden...",
+      "addTrack": "Toevoegen aan afspeellijst",
+      "removeTrack": "Verwijderen uit afspeellijst",
+      "clearPlaylist": "Afspeellijst wissen",
+      "shuffle": "Willekeurig",
+      "repeat": "Herhalen",
+      "repeatModes": {
+        "none": "Niet herhalen",
+        "one": "Eén herhalen",
+        "all": "Alles herhalen"
+      },
+      "queue": "Wachtrij",
+      "history": "Geschiedenis",
+      "nowPlaying": "Nu afspelen",
+      "upNext": "Volgende",
+      "noHistory": "Geen afspeelgeschiedenis",
+      "search": "Nummers zoeken...",
+      "filterBy": "Filteren op",
+      "sortBy": "Sorteren op",
+      "sortOptions": {
+        "title": "Titel",
+        "artist": "Artiest",
+        "album": "Album",
+        "duration": "Duur"
+      }
+    },
+    "slideshow": {
+      "title": "Diavoorstelling",
+      "play": "Afspelen",
+      "pause": "Pauzeren",
+      "previous": "Vorige",
+      "next": "Volgende",
+      "goTo": "Ga naar",
+      "fullscreen": "Volledig scherm",
+      "exitFullscreen": "Volledig scherm sluiten",
+      "noItems": "Geen media-items om weer te geven",
+      "videoError": "Video laden mislukt",
+      "videoNotSupported": "Uw browser ondersteunt video-afspelen niet",
+      "autoplayBlocked": "Automatisch afspelen geblokkeerd door browser",
+      "settings": "Diavoorstelling instellingen",
+      "autoPlay": "Automatisch afspelen",
+      "interval": "Interval (seconden)",
+      "transition": "Overgangseffect",
+      "transitions": {
+        "fade": "Vervagen",
+        "slide": "Schuiven",
+        "zoom": "Zoomen",
+        "none": "Geen"
+      }
+    },
+    "rating": {
+      "title": "Beoordeel dit nummer",
+      "rateStar": "Beoordeel {{star}} sterren",
+      "starsCount": "{{count}} ster",
+      "starsCount_other": "{{count}} sterren",
+      "notRated": "Niet beoordeeld",
+      "comment": "Opmerking (optioneel)",
+      "commentPlaceholder": "Deel uw gedachten over dit nummer...",
+      "save": "Beoordeling opslaan",
+      "cancel": "Annuleren",
+      "edit": "Beoordeling bewerken",
+      "ratedOn": "Beoordeeld op",
+      "noRatings": "Nog geen beoordelingen",
+      "totalRatings": "{{count}} beoordeling",
+      "totalRatings_other": "{{count}} beoordelingen",
+      "noTracksWithRating": "Geen nummers met {{rating}} sterren beoordeling",
+      "noRatedTracks": "Nog geen beoordeelde nummers",
+      "yourRating": "Uw beoordeling",
+      "averageRating": "Gemiddelde beoordeling"
+    },
+    "player": {
+      "play": "Afspelen",
+      "pause": "Pauzeren",
+      "stop": "Stoppen",
+      "previous": "Vorig nummer",
+      "next": "Volgend nummer",
+      "volume": "Volume",
+      "mute": "Dempen",
+      "unmute": "Geluid inschakelen",
+      "seekForward": "Vooruitspoelen",
+      "seekBackward": "Terugspoelen",
+      "currentTime": "Huidige tijd",
+      "duration": "Duur",
+      "remaining": "Resterend",
+      "speed": "Afspeelsnelheid",
+      "downloadTrack": "Nummer downloaden",
+      "shareTrack": "Nummer delen"
+    },
+    "theme": {
+      "title": "Thema-instellingen",
+      "audioReactive": "Audioreactieve kleuren",
+      "audioReactiveDesc": "Kleuren veranderen met de muziek",
+      "animationIntensity": "Animatie-intensiteit",
+      "intensityLow": "Laag",
+      "intensityMedium": "Gemiddeld",
+      "intensityHigh": "Hoog",
+      "autoTheme": "Automatisch dag/nacht thema",
+      "followSystem": "Systeemvoorkeur volgen",
+      "customColors": "Aangepaste kleuren",
+      "presets": "Themavoorinstellingen",
+      "presetNames": {
+        "dark": "Donker",
+        "light": "Licht",
+        "sunset": "Zonsondergang",
+        "ocean": "Oceaan",
+        "forest": "Bos"
+      }
+    },
+    "offline": {
+      "title": "Offlinemodus",
+      "available": "Beschikbaar offline",
+      "unavailable": "Niet beschikbaar offline",
+      "downloading": "Downloaden...",
+      "downloaded": "Gedownload",
+      "cached": "In cache",
+      "download": "Downloaden voor offline",
+      "remove": "Offline kopie verwijderen",
+      "storage": "Gebruikte opslag",
+      "clearCache": "Cache wissen",
+      "syncPending": "Synchronisatie in behandeling"
+    },
+    "errors": {
+      "loadFailed": "Media laden mislukt",
+      "playbackFailed": "Afspelen mislukt",
+      "networkError": "Netwerkfout",
+      "notFound": "Media niet gevonden",
+      "formatNotSupported": "Formaat niet ondersteund",
+      "permissionDenied": "Toestemming geweigerd",
+      "unknown": "Onbekende fout opgetreden"
+    }
   }
 }
