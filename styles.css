@@ -79,7 +79,7 @@ body {
 
 .flatpickr-day.selected {
     background: rgba(239, 68, 68, 0.8) !important;
-    color: white !important;
+    color: var(--color-background) !important;
 }
 
 .flatpickr-day:hover {
@@ -183,10 +183,10 @@ body {
     stroke: #fca5a5; 
 }
 
-.avatar-label { 
-    font-family: 'Special Elite', cursive; 
-    font-size: 12px; 
-    fill: #FFFFFF; 
+.avatar-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 12px;
+    fill: var(--color-text);
     font-weight: 700; 
     text-anchor: middle; 
     pointer-events: none; 

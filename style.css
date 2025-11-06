@@ -272,7 +272,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--color-background);
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
@@ -626,7 +626,7 @@ select:focus {
     :root {
         --color-primary: #ffff00;
         --color-secondary: #ff0000;
-        --color-text: #ffffff;
+        --color-text: #e0e0e0;
     }
 }
 
@@ -648,8 +648,8 @@ select:focus {
     }
     
     body {
-        background: white !important;
-        color: black !important;
+        background: var(--color-text) !important;
+        color: var(--color-background) !important;
     }
     
     .text-amber-500,
@@ -734,7 +734,7 @@ select:focus {
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
-    color: white;
+    color: var(--color-text);
     padding: 0.5rem;
     border-radius: 4px;
     font-size: 0.875rem;
