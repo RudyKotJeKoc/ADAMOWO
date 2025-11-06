@@ -52,7 +52,8 @@
       "anchorNav": "Nawigacja po sekcjach poradnika",
       "links": {
         "library": "Biblioteka przypadków",
-        "mythology": "Mitologia Narcyza"
+        "mythology": "Mitologia Narcyza",
+        "familyPsychology": "Psychologia rodzinnych wzorców"
       }
     },
     "lab": {
@@ -1391,5 +1392,150 @@
     "backToTop": "Do góry",
     "rights": "© 2025 Radio Adamowo"
 
+  },
+  "familyPsychology": {
+    "kicker": "Psychologia rodzinnych wzorców",
+    "title": "Mechanizmy, które rządzą rodzinami",
+    "intro": "Niektóre rodziny funkcjonują jak system naczyń połączonych emocjonalnie — napięcia, które nie zostały przepracowane, przechodzą dalej. Ten rozdział edukacyjny bada transmisję międzypokoleniową, projekcję emocjonalną i mechanizmy obronne, które kształtują relacje rodzinne na przestrzeni dekad.",
+    "sections": {
+      "mechanisms": {
+        "title": "Echo rodziny: jak powstaje perpetuum mobile emocji",
+        "content": [
+          "Rodzina to system, w którym każdy członek odgrywa określoną rolę. Gdy jeden z rodziców stosuje przemoc emocjonalną lub dominację, dzieci uczą się dwóch podstawowych strategii przetrwania: ucieczki lub powielenia wzorca. Te mechanizmy obronne, choć funkcjonalne w dzieciństwie, stają się problemem w życiu dorosłym.",
+          "Transmisja międzypokoleniowa to proces, w którym nieświadome schematy emocjonalne przekazywane są jak gen rodzinny. Osoba, która uciekła od dominującego rodzica, może sama stać się dominująca wobec własnych dzieci — nie ze złej woli, ale z braku innych narzędzi radzenia sobie ze stresem.",
+          "Kluczowe pojęcia psychologiczne, które pomagają zrozumieć te mechanizmy, to: projekcja (przerzucanie własnych emocji na innych), racjonalizacja (uzasadnianie nieakceptowalnych zachowań), gaslighting (manipulacja rzeczywistością), pasywna agresja (ukryte wyrażanie gniewu) oraz mechanizmy obronne opisane przez Annę Freud."
+        ]
+      },
+      "recognition": {
+        "title": "Jak rozpoznać, że powtarzasz cudzy schemat",
+        "content": [
+          "Istnieją charakterystyczne cechy komunikacji, które sygnalizują, że dana osoba może nieświadomie powielać toksyczny wzorzec relacyjny. Oto kilka z nich:"
+        ]
+      },
+      "observer": {
+        "title": "Perspektywa obserwatora – gdy ktoś widzi wzorzec",
+        "description": "Często zdarza się, że osoba z zewnątrz – partner, przyjaciel lub terapeuta – dostrzega schemat wcześniej niż osoba uwikłana w rodzinny system. Taka osoba staje się symbolicznym 'obserwatorem', który próbuje nazwać problem i wskazać na jego źródło.",
+        "mechanism": "W odpowiedzi na nazwanie prawdy przez obserwatora, osoba dotknięta schematem często reaguje agresją, odwróceniem winy lub zerwaniem kontaktu. To klasyczny mechanizm obronny: prawda boli najbardziej tego, kto jeszcze jej nie zaakceptował.",
+        "mechanismTitle": "Mechanizm obronny",
+        "truth": "Prawda boli najbardziej tego, kto jeszcze jej nie zaakceptował.",
+        "symbolicTitle": "Symboliczny obserwator (np. postać Bożeny)",
+        "symbolicDescription": "Osoba, która widzi schemat, nazywa go i próbuje pomóc, ale zostaje zaatakowana lub odrzucona. To nie jej wina – system rodzinny broni się przed zmianą."
+      },
+      "curse": {
+        "title": "Klątwa Wiedźmy – metafora transgeneracyjna",
+        "metaphorTitle": "Lustro pokoleń",
+        "explanation": "W folklorze słowiańskim \"klątwa wiedźmy\" oznaczała przekleństwo, które przechodzi z pokolenia na pokolenie, dotykając tych, którzy nie wiedzą, jak je przerwać. W psychologii rodzinnej to metafora systemu przekazu emocjonalnego: gniew, lęk, poczucie krzywdy i potrzeba kontroli przechodzą z dziadków na rodziców, a potem na dzieci.",
+        "primaryWound": "W każdej rodzinie istnieje 'pierwotna rana' — moment, w którym ktoś został zdominowany, zdradzony, zlekceważony lub upokorzony. Kolejne pokolenia nieświadomie odtwarzają tę emocję w nowych rolach: ofiara staje się agresorem, a obserwator staje się ofiarą.",
+        "breakingPoint": "Klątwa traci moc w chwili, gdy ktoś zobaczy mechanizm i odmówi udziału.",
+        "quoteTitle": "Przykład rekurencji emocjonalnej – przypadek X (anonimowy)",
+        "quote": "Nie mogłem wytrzymać z nią – tak jak ona nie mogła wytrzymać ze swoim ojcem.",
+        "quoteAttribution": "— fragment z dokumentacji przypadku, tożsamość ukryta"
+      },
+      "liberation": {
+        "title": "Jak się uwolnić – ćwiczenie świadomości",
+        "content": [
+          "Uwolnienie się od rodzinnego schematu nie wymaga zemsty ani konfrontacji. Wymaga świadomości, odwagi i konsekwentnej pracy nad sobą. Oto proste kroki, które mogą pomóc w procesie wyzwolenia:"
+        ],
+        "stepsTitle": "Kroki do wyzwolenia",
+        "steps": [
+          "Zrób mapę relacji: kto kogo kontrolował, kto uciekał, kto milczał. Zapisz to na papierze lub w formie diagramu. Wizualizacja często ujawnia wzorce, które wcześniej były niewidoczne.",
+          "Wypisz powtarzające się zdania, które słyszałeś w rodzinie (np. 'nie wiesz, co cię czeka', 'ja tylko się bronię', 'to ty zacząłeś'). To sygnały systemowe – frazy, które przechodzą z pokolenia na pokolenie.",
+          "Zrób symboliczny gest zamknięcia cyklu: napisz list (który nie musi zostać wysłany), zniszcz stare notatki lub po prostu powiedz głośno: 'Widzę ten schemat i nie będę go kontynuował'.",
+          "Pamiętaj: świadomość ≠ zemsta. Świadomość = wolność. Zobaczenie mechanizmu nie oznacza, że musisz kogoś osądzać. Oznacza, że możesz wybrać inną drogę."
+        ],
+        "reminder": "Świadomość ≠ zemsta. Świadomość = wolność."
+      }
+    },
+    "transmission": {
+      "title": "Diagram transmisji międzypokoleniowej",
+      "father": {
+        "name": "Ojciec",
+        "mechanism": "Dominacja i presja emocjonalna"
+      },
+      "barbara": {
+        "name": "Barbara",
+        "mechanism": "Ucieczka od presji, następnie powielenie stylu dominującego"
+      },
+      "son": {
+        "name": "Syn",
+        "mechanism": "Odcięcie w poszukiwaniu spokoju"
+      },
+      "partner": {
+        "name": "Partnerka (Julia)",
+        "mechanism": "Odbicie wzorca, próba zatrzymania go przez świadomość"
+      },
+      "note": "Każda strzałka reprezentuje przekazanie nieświadomego schematu emocjonalnego"
+    },
+    "patterns": {
+      "title": "Wskaźniki powtarzania cudzego schematu",
+      "caseLabel": "Przykład komunikacji obronnej typu Barbara (uniwersalny wzorzec)",
+      "affectWriting": {
+        "title": "Pisanie w afekcie i moralnym tonie",
+        "description": "Wiadomości lub wypowiedzi nacechowane silnymi emocjami, oskarżeniami i moralnym oburzeniem. Brak dystansu emocjonalnego i refleksji nad własnymi motywacjami."
+      },
+      "blameShifting": {
+        "title": "Przerzucanie winy na innych",
+        "description": "Konsekwentne przedstawianie siebie jako ofiary, podczas gdy inni są obwiniani za wszystkie problemy. Brak umiejętności przyjęcia odpowiedzialności za własne działania."
+      },
+      "revengeThreats": {
+        "title": "Groźby 'odwetu' jako sposób odzyskania kontroli",
+        "description": "Używanie gróźb (prawnych, emocjonalnych, społecznych) jako narzędzia wywierania presji. Cel: przywrócenie poczucia mocy i kontroli nad sytuacją."
+      },
+      "politeMasking": {
+        "title": "Kończenie agresywnej wypowiedzi uprzejmym życzeniem",
+        "description": "Maskowanie agresji pozorną uprzejmością (np. 'pozdrawiam serdecznie' po serii oskarżeń). Ten kontrast sygnalizuje wewnętrzny konflikt i brak autentyczności."
+      },
+      "pastJustification": {
+        "title": "Powoływanie się na przeszłość jako usprawiedliwienie",
+        "description": "Argumentacja typu 'to już było rozbite' lub 'ty zacząłeś' służy racjonalizacji obecnych działań i unikaniu odpowiedzialności za własne wybory."
+      }
+    },
+    "communication": {
+      "title": "Jak reagować na komunikaty emocjonalne typu Barbara",
+      "note": "Świadoma komunikacja to nie gra w wygraną, ale próba zrozumienia i ochrony własnych granic.",
+      "impulsive": {
+        "type": "A: Reakcja impulsywna (eskalacja)",
+        "description": "Odpisanie w emocjach, oskarżenia zwrotne, walka o ostatnie słowo.",
+        "example": "Przykład: 'To ty jesteś problemem!', 'Zawsze tak robisz!', 'Sam jesteś manipulatorem!' — prowadzi do eskalacji i utrwala konflikt."
+      },
+      "assertive": {
+        "type": "B: Reakcja asertywna (granice)",
+        "description": "Spokojne wyznaczenie granic bez wchodzenia w obronę lub atak.",
+        "example": "Przykład: 'Rozumiem, że jesteś zdenerwowana, ale nie będę kontynuować tej rozmowy w obecnej formie. Jestem otwarty na spokojną rozmowę, gdy będziesz gotowa.'"
+      },
+      "conscious": {
+        "type": "C: Reakcja świadoma (lustro emocjonalne)",
+        "description": "Nazwanie mechanizmu bez osądzania osoby, ze współczuciem dla jej trudności.",
+        "example": "Przykład: 'Widzę, że odczuwasz silne emocje. To może być echo tego, co sama przeżyłaś w przeszłości. Jestem tutaj, jeśli będziesz chciała porozmawiać, ale nie mogę przyjąć na siebie odpowiedzialności za coś, czego nie zrobiłem.'"
+      }
+    },
+    "concepts": {
+      "title": "Kluczowe pojęcia psychologiczne",
+      "list": "Projekcja • Racjonalizacja • Gaslighting • Pasywna agresja • Transmisja międzypokoleniowa • Mechanizmy obronne (Anna Freud)"
+    },
+    "references": {
+      "title": "Linki naukowe i edukacyjne",
+      "projection": {
+        "term": "Projekcja",
+        "url": "https://pl.wikipedia.org/wiki/Projekcja_(psychologia)"
+      },
+      "gaslighting": {
+        "term": "Gaslighting",
+        "url": "https://pl.wikipedia.org/wiki/Gaslighting"
+      },
+      "transmission": {
+        "term": "Transmisja międzypokoleniowa",
+        "url": "https://www.terapia.com.pl/mechanizmy-obronne"
+      },
+      "passiveAggressive": {
+        "term": "Pasywna agresja",
+        "url": "https://pl.wikipedia.org/wiki/Agresja_pasywna"
+      },
+      "defenseMechanisms": {
+        "term": "Mechanizmy obronne",
+        "url": "https://pl.wikipedia.org/wiki/Mechanizm_obronny"
+      }
+    },
+    "closing": "Każda rodzina ma swoje schematy. Różnica między więzieniem a wolnością leży w tym, czy je widzimy."
   }
 }
