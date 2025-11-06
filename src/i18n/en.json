@@ -68,6 +68,103 @@
       "title": "Shows"
     }
   },
+  "platformInfo": {
+    "label": "About the platform",
+    "title": "Comprehensive Educational Platform",
+    "mission": "Radio Adamowo is an innovative educational platform that combines live radio streaming with advanced interactive tools and a rich library of analytical content. Our mission is to provide knowledge that helps recognize, understand, and counteract psychological manipulation and violence in relationships. We create a safe educational space where everyone can find support, tools, and a community of people sharing similar experiences.",
+    "features": {
+      "heading": "Key Platform Features",
+      "streaming": {
+        "title": "24/7 Streaming",
+        "description": "Continuous radio broadcast with curated ambient, hip-hop, disco music, and educational analytical podcasts. We use advanced Web Audio API with real-time visualizations."
+      },
+      "podcasts": {
+        "title": "Analytical Podcasts",
+        "description": "Professionally prepared shows hosted by psychologists, experts, and people with experience. Analysis of cases, manipulation techniques, and defensive strategies. Archive of over 100 hours of educational content."
+      },
+      "interactive": {
+        "title": "Interactive Tools",
+        "description": "Advanced educational tools: test of 8 sins of toxic people, violence loop visualization, AI simulator for conversations with manipulator, red flags calendar. All based on psychological research."
+      },
+      "community": {
+        "title": "Community Support",
+        "description": "Safe space to share experiences, community calendar for documenting patterns of violence, moderated comment system, quotes and stories from people who have gone through difficult experiences."
+      },
+      "multilingual": {
+        "title": "Multilingual Support",
+        "description": "Full support for three languages: Polish, English, and Dutch. All content, interface, and podcasts available in all languages with automatic browser language detection."
+      },
+      "pwa": {
+        "title": "PWA Application",
+        "description": "Installable Progressive Web App working offline. Synchronization between devices, push notifications about new content, touch gesture support, and operating system integration."
+      }
+    },
+    "tools": {
+      "heading": "Interactive Educational Tools",
+      "description": "We have created a set of unique tools that help understand the mechanisms of manipulation and psychological violence in a practical way.",
+      "explore": "Explore tool",
+      "eightSins": {
+        "title": "8 Sins of Toxic People",
+        "description": "Interactive guide with scoring system that will help you recognize 8 key patterns of manipulation: financial abuse, blame-shifting, gaslighting, control, institutional abuse, emotional blackmail, chaos, and division.",
+        "link": "guide"
+      },
+      "violenceLoop": {
+        "title": "Witch's Cauldron: Violence Loop",
+        "description": "Animated visualization of the violence cycle in the form of an infinite loop. Learn the phases: Love Bombing, Devaluation, Rejection, and Hoovering. Understand why it's so hard to break free from a toxic relationship.",
+        "link": "violence-loop"
+      },
+      "aiLab": {
+        "title": "AI Laboratory",
+        "description": "Conversation simulator with a manipulator based on artificial intelligence. Safely practice recognizing manipulation techniques, gaslighting, and emotional blackmail. After the conversation, you'll receive a detailed analysis of the techniques used.",
+        "link": "lab"
+      },
+      "calendar": {
+        "title": "Red Flags Calendar",
+        "description": "Tool for documenting incidents and behavior patterns. Record observations, share anonymously with the community, identify recurring patterns. Evidence can be crucial in the healing process and legal situations.",
+        "link": "community"
+      }
+    },
+    "programs": {
+      "heading": "Four Studio Shows",
+      "description": "Radio Adamowo offers four original shows hosted by a professional team of journalists, psychologists, and experts.",
+      "team": {
+        "title": "Radio Adamowo Team",
+        "description": "Voices and producers from behind the glass. Behind-the-scenes reports, newsroom updates, and real-time listener questions."
+      },
+      "heart": {
+        "title": "Heart of Radio",
+        "description": "Stories that connect the community. Empathetic series about resilience, care, and solidarity after psychological violence. Letters from listeners with experts and a dose of hope."
+      },
+      "psychology": {
+        "title": "Psychology Expert",
+        "description": "Tools for understanding manipulation. Clinical perspective on traumatic bonds, gaslighting, and setting boundaries. Conversations with specialists."
+      },
+      "welcome": {
+        "title": "Welcome to the Studio",
+        "description": "Opening doors for new listeners. Live entries, behind-the-scenes tours, and the most interesting materials from Adamowo. Invite your friends."
+      }
+    },
+    "technology": {
+      "title": "Modern Technology",
+      "webAudio": "Web Audio API with advanced frequency visualizations and crossfade between tracks",
+      "pwa": "Progressive Web App with full offline support, caching, and synchronization",
+      "responsive": "Responsive design optimized for all devices - desktop, tablet, mobile",
+      "offline": "Intelligent Service Worker providing access to content without internet connection"
+    },
+    "accessibility": {
+      "title": "Accessibility and Universality",
+      "wcag": "WCAG 2.1 Level AA compliance - accessibility for people with disabilities",
+      "keyboard": "Full keyboard support - navigation without mouse, skip links, focus indicators",
+      "screenReader": "Screen reader optimization with ARIA labels and semantic HTML",
+      "reducedMotion": "Support for prefers-reduced-motion - animations can be disabled in settings"
+    },
+    "cta": {
+      "title": "Start Your Educational Journey",
+      "description": "Join thousands of listeners who learn every day to recognize and counteract psychological manipulation. Start with live streaming or explore our guides.",
+      "startListening": "Listen now",
+      "exploreGuides": "Explore guides"
+    }
+  },
   "trackHighlights": {
     "sectionLabel": "Upcoming music",
     "title": "Six track slots ready for new premieres",

@@ -68,6 +68,103 @@
       "title": "Programma's"
     }
   },
+  "platformInfo": {
+    "label": "Over het platform",
+    "title": "Uitgebreid Educatief Platform",
+    "mission": "Radio Adamowo is een innovatief educatief platform dat live radio-uitzendingen combineert met geavanceerde interactieve tools en een uitgebreide bibliotheek met analytische content. Onze missie is het verstrekken van kennis die helpt bij het herkennen, begrijpen en tegengaan van psychologische manipulatie en geweld in relaties. We creëren een veilige educatieve ruimte waar iedereen ondersteuning, tools en een gemeenschap kan vinden van mensen die vergelijkbare ervaringen delen.",
+    "features": {
+      "heading": "Belangrijkste Platformfuncties",
+      "streaming": {
+        "title": "24/7 Streaming",
+        "description": "Ononderbroken radio-uitzending met geselecteerde ambient, hip-hop, disco muziek en educatieve analytische podcasts. We gebruiken geavanceerde Web Audio API met realtime visualisaties."
+      },
+      "podcasts": {
+        "title": "Analytische Podcasts",
+        "description": "Professioneel voorbereide shows gepresenteerd door psychologen, experts en mensen met ervaring. Analyse van gevallen, manipulatietechnieken en defensieve strategieën. Archief van meer dan 100 uur educatieve content."
+      },
+      "interactive": {
+        "title": "Interactieve Tools",
+        "description": "Geavanceerde educatieve tools: test van 8 zonden van toxische mensen, geweldsloop visualisatie, AI-simulator voor gesprekken met manipulator, kalender met rode vlaggen. Alles gebaseerd op psychologisch onderzoek."
+      },
+      "community": {
+        "title": "Gemeenschapsondersteuning",
+        "description": "Veilige ruimte om ervaringen te delen, gemeenschapskalender voor het documenteren van geweldspatronen, gemodereerd commentaarsysteem, citaten en verhalen van mensen die moeilijke ervaringen hebben doorgemaakt."
+      },
+      "multilingual": {
+        "title": "Meertalige Ondersteuning",
+        "description": "Volledige ondersteuning voor drie talen: Pools, Engels en Nederlands. Alle content, interface en podcasts beschikbaar in alle talen met automatische browsertaaldetectie."
+      },
+      "pwa": {
+        "title": "PWA Applicatie",
+        "description": "Installeerbare Progressive Web App die offline werkt. Synchronisatie tussen apparaten, pushmeldingen over nieuwe content, ondersteuning voor aanraakgebaren en integratie met besturingssysteem."
+      }
+    },
+    "tools": {
+      "heading": "Interactieve Educatieve Tools",
+      "description": "We hebben een set unieke tools ontwikkeld die helpen de mechanismen van manipulatie en psychologisch geweld op een praktische manier te begrijpen.",
+      "explore": "Verken tool",
+      "eightSins": {
+        "title": "8 Zonden van Toxische Mensen",
+        "description": "Interactieve gids met puntensysteem die je helpt 8 belangrijke manipulatiepatronen te herkennen: financieel misbruik, schuld afschuiven, gaslighting, controle, institutioneel misbruik, emotionele chantage, chaos en verdeeldheid.",
+        "link": "guide"
+      },
+      "violenceLoop": {
+        "title": "Heksenketel: Geweldsloop",
+        "description": "Geanimeerde visualisatie van de geweldscyclus in de vorm van een oneindige lus. Leer de fasen: Love Bombing, Devaluatie, Afwijzing en Hoovering. Begrijp waarom het zo moeilijk is om uit een toxische relatie te ontsnappen.",
+        "link": "violence-loop"
+      },
+      "aiLab": {
+        "title": "AI Laboratorium",
+        "description": "Gesprekssimulator met een manipulator gebaseerd op kunstmatige intelligentie. Oefen veilig met het herkennen van manipulatietechnieken, gaslighting en emotionele chantage. Na het gesprek ontvang je een gedetailleerde analyse van de gebruikte technieken.",
+        "link": "lab"
+      },
+      "calendar": {
+        "title": "Rode Vlaggen Kalender",
+        "description": "Tool voor het documenteren van incidenten en gedragspatronen. Registreer observaties, deel anoniem met de gemeenschap, identificeer terugkerende patronen. Bewijs kan cruciaal zijn in het genezingsproces en juridische situaties.",
+        "link": "community"
+      }
+    },
+    "programs": {
+      "heading": "Vier Studio Shows",
+      "description": "Radio Adamowo biedt vier originele shows gepresenteerd door een professioneel team van journalisten, psychologen en experts.",
+      "team": {
+        "title": "Radio Adamowo Team",
+        "description": "Stemmen en producenten van achter het glas. Achter-de-schermen rapporten, nieuwsruimte updates en realtime luisteraarsvragen."
+      },
+      "heart": {
+        "title": "Hart van Radio",
+        "description": "Verhalen die de gemeenschap verbinden. Empathische serie over veerkracht, zorg en solidariteit na psychologisch geweld. Brieven van luisteraars met experts en een dosis hoop."
+      },
+      "psychology": {
+        "title": "Psychologie Expert",
+        "description": "Tools voor het begrijpen van manipulatie. Klinisch perspectief op traumatische bindingen, gaslighting en grenzen stellen. Gesprekken met specialisten."
+      },
+      "welcome": {
+        "title": "Welkom in de Studio",
+        "description": "Deuren openen voor nieuwe luisteraars. Live toegangen, achter-de-schermen tours en het meest interessante materiaal uit Adamowo. Nodig je vrienden uit."
+      }
+    },
+    "technology": {
+      "title": "Moderne Technologie",
+      "webAudio": "Web Audio API met geavanceerde frequentievisualisaties en crossfade tussen tracks",
+      "pwa": "Progressive Web App met volledige offline ondersteuning, caching en synchronisatie",
+      "responsive": "Responsive design geoptimaliseerd voor alle apparaten - desktop, tablet, mobiel",
+      "offline": "Intelligente Service Worker die toegang biedt tot content zonder internetverbinding"
+    },
+    "accessibility": {
+      "title": "Toegankelijkheid en Universaliteit",
+      "wcag": "WCAG 2.1 Level AA compliance - toegankelijkheid voor mensen met beperkingen",
+      "keyboard": "Volledige toetsenbordondersteuning - navigatie zonder muis, skip links, focus indicators",
+      "screenReader": "Schermlezer optimalisatie met ARIA labels en semantische HTML",
+      "reducedMotion": "Ondersteuning voor prefers-reduced-motion - animaties kunnen worden uitgeschakeld in instellingen"
+    },
+    "cta": {
+      "title": "Begin je Educatieve Reis",
+      "description": "Sluit je aan bij duizenden luisteraars die elke dag leren psychologische manipulatie te herkennen en tegen te gaan. Begin met live streaming of verken onze gidsen.",
+      "startListening": "Luister nu",
+      "exploreGuides": "Verken gidsen"
+    }
+  },
   "studio": {
     "section": {
       "kicker": "Studio-overzicht",
