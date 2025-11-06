@@ -41,7 +41,7 @@
   "pages": {
     "home": {
       "title": "Radio Adamowo",
-      "lead": "Nowa odsłona edukacyjnego radia o przemocy psychicznej."
+      "lead": "Edukacyjna platforma radiowa działająca 24/7, poświęcona analizie manipulacji psychicznej i toksycznych relacji. Naszą misją jest dostarczanie treści edukacyjnych, które pomagają słuchaczom rozpoznawać i rozumieć wzorce przemocy psychicznej. Oferujemy transmisję na żywo, analityczne audycje, interaktywne narzędzia oraz wsparcie społeczności w trzech językach."
     },
     "live": {
       "title": "Transmisja na żywo"
@@ -66,6 +66,103 @@
     },
     "shows": {
       "title": "Audycje"
+    }
+  },
+  "platformInfo": {
+    "label": "O platformie",
+    "title": "Kompleksowa Platforma Edukacyjna",
+    "mission": "Radio Adamowo to innowacyjna platforma edukacyjna, która łączy transmisję radiową na żywo z zaawansowanymi narzędziami interaktywnymi i bogatą biblioteką treści analitycznych. Naszą misją jest dostarczanie wiedzy, która pomaga rozpoznawać, rozumieć i przeciwdziałać manipulacji psychicznej oraz przemocy w relacjach. Tworzymy bezpieczną przestrzeń edukacyjną, gdzie każdy może znaleźć wsparcie, narzędzia i społeczność osób dzielących podobne doświadczenia.",
+    "features": {
+      "heading": "Kluczowe Funkcje Platformy",
+      "streaming": {
+        "title": "Transmisja 24/7",
+        "description": "Nieprzerwana transmisja radiowa z wyselekcjonowaną muzyką ambient, hip-hop, disco oraz edukacyjnymi audycjami analitycznymi. Korzystamy z zaawansowanego Web Audio API z wizualizacjami w czasie rzeczywistym."
+      },
+      "podcasts": {
+        "title": "Audycje Analityczne",
+        "description": "Profesjonalnie przygotowane audycje prowadzone przez psychologów, ekspertów i osoby z doświadczeniem. Analiza przypadków, technik manipulacji i strategii obronnych. Archiwum ponad 100 godzin treści edukacyjnych."
+      },
+      "interactive": {
+        "title": "Narzędzia Interaktywne",
+        "description": "Zaawansowane narzędzia edukacyjne: test 8 grzechów toksycznych osób, wizualizacja pętli przemocy, symulator AI rozmów z manipulatorem, kalendarz czerwonych flag. Wszystko oparte na badaniach psychologicznych."
+      },
+      "community": {
+        "title": "Wsparcie Społeczności",
+        "description": "Bezpieczna przestrzeń do dzielenia się doświadczeniami, calendar wspólnotowy do dokumentowania wzorców przemocy, system komentarzy z moderacją, cytaty i historie osób które przeszły przez trudne doświadczenia."
+      },
+      "multilingual": {
+        "title": "Wielojęzyczność",
+        "description": "Pełne wsparcie dla trzech języków: polski, angielski i niderlandzki. Wszystkie treści, interfejs i audycje dostępne we wszystkich językach z automatyczną detekcją języka przeglądarki."
+      },
+      "pwa": {
+        "title": "Aplikacja PWA",
+        "description": "Instalowalna aplikacja Progressive Web App działająca offline. Synchronizacja między urządzeniami, powiadomienia push o nowych treściach, obsługa gestów dotykowych i integracja z systemem operacyjnym."
+      }
+    },
+    "tools": {
+      "heading": "Interaktywne Narzędzia Edukacyjne",
+      "description": "Stworzyliśmy zestaw unikalnych narzędzi, które pomagają w praktyczny sposób zrozumieć mechanizmy manipulacji i przemocy psychicznej.",
+      "explore": "Odkryj narzędzie",
+      "eightSins": {
+        "title": "8 Grzechów Toksycznych Osób",
+        "description": "Interaktywny poradnik z systemem punktacji, który pomoże Ci rozpoznać 8 kluczowych wzorców manipulacji: nadużycia finansowe, przerzucanie winy, gaslighting, kontrola, wykorzystywanie instytucji, szantaż emocjonalny, chaos i sianie podziałów.",
+        "link": "guide"
+      },
+      "violenceLoop": {
+        "title": "Kocioł Wiedźmy: Pętla Przemocy",
+        "description": "Animowana wizualizacja cyklu przemocy w formie nieskończonej pętli. Poznaj fazy: Love Bombing, Dewaluacja, Odrzucenie i Hoovering. Zrozum, dlaczego tak trudno jest wyrwać się z toksycznej relacji.",
+        "link": "violence-loop"
+      },
+      "aiLab": {
+        "title": "Laboratorium AI",
+        "description": "Symulator rozmowy z manipulatorem oparty na sztucznej inteligencji. Bezpiecznie przećwicz rozpoznawanie technik manipulacji, gaslightingu i szantażu emocjonalnego. Po rozmowie otrzymasz szczegółową analizę użytych technik.",
+        "link": "lab"
+      },
+      "calendar": {
+        "title": "Kalendarz Czerwonych Flag",
+        "description": "Narzędzie do dokumentowania incydentów i wzorców zachowań. Zapisuj obserwacje, dziel się anonimowo z społecznością, identyfikuj powtarzające się wzorce. Dowody mogą być kluczowe w procesie zdrowienia i w sytuacjach prawnych.",
+        "link": "community"
+      }
+    },
+    "programs": {
+      "heading": "Cztery Audycje Studia",
+      "description": "Radio Adamowo oferuje cztery autorskie audycje prowadzone przez profesjonalny zespół dziennikarzy, psychologów i ekspertów.",
+      "team": {
+        "title": "Zespół Radia Adamowo",
+        "description": "Głosy i realizatorzy zza szyb. Raporty zza kulis, aktualności z newsroomu i odpowiedzi na pytania słuchaczy w czasie rzeczywistym."
+      },
+      "heart": {
+        "title": "Serce Radia",
+        "description": "Historie, które łączą społeczność. Empatyczny cykl o odporności, trosce i solidarności po przemocy psychicznej. Listy od słuchaczy z ekspertami i dawką nadziei."
+      },
+      "psychology": {
+        "title": "Ekspertka ds. Psychologii",
+        "description": "Narzędzia do rozumienia manipulacji. Perspektywa kliniczna o traumatycznych więziach, gaslightingu i stawianiu granic. Rozmowy ze specjalistkami."
+      },
+      "welcome": {
+        "title": "Witamy w Studiu",
+        "description": "Otwieramy drzwi dla nowych słuchaczy. Wejścia na żywo, oprowadzanie po kulisach i najciekawsze materiały z Adamowa. Zapraszaj znajomych."
+      }
+    },
+    "technology": {
+      "title": "Nowoczesna Technologia",
+      "webAudio": "Web Audio API z zaawansowanymi wizualizacjami częstotliwości i crossfade między utworami",
+      "pwa": "Progressive Web App z pełnym wsparciem offline, cache'owaniem i synchronizacją",
+      "responsive": "Responsywny design zoptymalizowany dla wszystkich urządzeń - desktop, tablet, mobile",
+      "offline": "Inteligentny Service Worker zapewniający dostęp do treści bez połączenia internetowego"
+    },
+    "accessibility": {
+      "title": "Dostępność i Uniwersalność",
+      "wcag": "Zgodność z WCAG 2.1 Level AA - dostępność dla osób z niepełnosprawnościami",
+      "keyboard": "Pełna obsługa klawiatury - nawigacja bez myszy, skip links, focus indicators",
+      "screenReader": "Optymalizacja dla czytników ekranu z ARIA labels i semantycznym HTML",
+      "reducedMotion": "Wsparcie dla prefers-reduced-motion - animacje można wyłączyć w ustawieniach"
+    },
+    "cta": {
+      "title": "Zacznij Swoją Podróż Edukacyjną",
+      "description": "Dołącz do tysięcy słuchaczy, którzy każdego dnia uczą się rozpoznawać i przeciwdziałać manipulacji psychicznej. Zacznij od transmisji na żywo lub odkryj nasze poradniki.",
+      "startListening": "Słuchaj teraz",
+      "exploreGuides": "Odkryj poradniki"
     }
   },
   "trackHighlights": {
