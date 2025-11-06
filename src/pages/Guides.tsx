@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { EightSinsPage } from '../features/guide-eight-sins/EightSinsPage';
 import { LibrarySection } from '../features/library/LibrarySection';
 import { MythologySection } from '../features/mythology/MythologySection';
+import { FamilyPsychologySection } from '../features/family-psychology/FamilyPsychologySection';
 
 export default function Guides(): JSX.Element {
   const { t } = useTranslation();
@@ -33,12 +34,20 @@ export default function Guides(): JSX.Element {
             <span aria-hidden="true">✨</span>
             <span>{t('pages.guides.links.mythology')}</span>
           </a>
+          <a
+            href="#family-psychology"
+            className="inline-flex items-center gap-2 rounded-full border border-accent-500/50 bg-base-925/60 px-4 py-2 text-sm font-semibold text-accent-100 transition motion-safe:hover:border-accent-400 motion-safe:hover:text-accent-50 focus-visible:shadow-focus"
+          >
+            <span aria-hidden="true">🧠</span>
+            <span>{t('pages.guides.links.familyPsychology')}</span>
+          </a>
         </nav>
       </header>
 
       <div className="space-y-12">
         <LibrarySection sectionId="library" />
         <MythologySection sectionId="mythology" />
+        <FamilyPsychologySection sectionId="family-psychology" />
         <EightSinsPage />
         <div className="rounded-2xl border border-base-800 bg-base-900/40 p-6 text-base-100">
           <h2 className="text-xl font-semibold text-accent-300">{t('analysis.page.title')}</h2>
