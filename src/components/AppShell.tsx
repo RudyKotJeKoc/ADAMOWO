@@ -4,9 +4,13 @@ import { useTranslation } from 'react-i18next';
 
 import { AppFooter } from '../features/footer/AppFooter';
 import { Header } from './Header';
+import { usePageTracking } from '../hooks/usePageTracking';
 
 export function AppShell(): JSX.Element {
   const { t } = useTranslation();
+
+  // Track page visits automatically
+  usePageTracking();
 
   return (
     <div className="min-h-screen bg-base-950 text-base-100">

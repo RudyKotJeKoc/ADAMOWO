@@ -10,6 +10,7 @@ import { TimelineSection } from '../features/timeline/TimelineSection';
 import { TrackHighlightsSection } from '../features/track-highlights/TrackHighlightsSection';
 import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
 import { ExploreMore, type ExploreMoreLink } from '../components/ExploreMore';
+import { VisitCounter } from '../features/analytics/VisitCounter';
 
 export default function Home(): ReactElement {
   const { t } = useTranslation();
@@ -54,6 +55,9 @@ export default function Home(): ReactElement {
       <section className="space-y-4">
         <h1 className="text-3xl font-bold text-base-50 sm:text-4xl">{t('pages.home.title')}</h1>
         <p className="max-w-4xl text-lg leading-relaxed text-base-200">{t('pages.home.lead')}</p>
+        <div className="pt-4">
+          <VisitCounter />
+        </div>
       </section>
 
       <TimelineSection />
