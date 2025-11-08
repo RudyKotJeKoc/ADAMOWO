@@ -14,7 +14,8 @@
 }
 
 @keyframes gradientShift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% center;
   }
   50% {
@@ -105,7 +106,79 @@
   outline-offset: 2px;
 }
 
-.anatomy-schema-card input[type="radio"]:focus-visible {
+.anatomy-schema-card input[type='radio']:focus-visible {
   outline: 2px solid #f59e0b;
   outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* TRIGGER WARNING ANIMATIONS */
+/* ═══════════════════════════════════════════════════════════ */
+
+/* Fade out dla backdrop */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* Scale up/down dla modala */
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.3s ease-out forwards;
+}
+
+.animate-scaleDown {
+  animation: scaleDown 0.3s ease-out forwards;
+}
+
+/* Pulse dla ikony ostrzeżenia */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0);
 }

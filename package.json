@@ -28,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@supabase/supabase-js": "^2.48.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
