@@ -12,6 +12,7 @@ const AnalysisPage = lazy(() => import('./features/analysis-archive/AnalysisPage
 const Guides = lazy(() => import('./pages/Guides'));
 const Lab = lazy(() => import('./pages/Lab'));
 const Community = lazy(() => import('./pages/Community'));
+const AnatomyPage = lazy(() => import('./pages/AnatomyPage'));
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +27,8 @@ export const router = createBrowserRouter([
       { path: 'analysis', element: <AnalysisPage /> },
       { path: 'guides', element: <Guides /> },
       { path: 'lab', element: <Lab /> },
-      { path: 'community', element: <Community /> }
+      { path: 'community', element: <Community /> },
+      { path: 'anatomy', element: <AnatomyPage /> }
     ]
   }
 ]);
