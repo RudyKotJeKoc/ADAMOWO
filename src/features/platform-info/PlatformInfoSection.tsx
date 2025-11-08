@@ -7,37 +7,31 @@ export function PlatformInfoSection(): ReactElement {
   const features = [
     {
       id: 'streaming',
-      icon: '📻',
       titleKey: 'platformInfo.features.streaming.title',
       descKey: 'platformInfo.features.streaming.description'
     },
     {
       id: 'podcasts',
-      icon: '🎧',
       titleKey: 'platformInfo.features.podcasts.title',
       descKey: 'platformInfo.features.podcasts.description'
     },
     {
       id: 'interactive',
-      icon: '🎯',
       titleKey: 'platformInfo.features.interactive.title',
       descKey: 'platformInfo.features.interactive.description'
     },
     {
       id: 'community',
-      icon: '🤝',
       titleKey: 'platformInfo.features.community.title',
       descKey: 'platformInfo.features.community.description'
     },
     {
       id: 'multilingual',
-      icon: '🌍',
       titleKey: 'platformInfo.features.multilingual.title',
       descKey: 'platformInfo.features.multilingual.description'
     },
     {
       id: 'pwa',
-      icon: '📱',
       titleKey: 'platformInfo.features.pwa.title',
       descKey: 'platformInfo.features.pwa.description'
     }
@@ -48,25 +42,25 @@ export function PlatformInfoSection(): ReactElement {
       id: 'eightSins',
       titleKey: 'platformInfo.tools.eightSins.title',
       descKey: 'platformInfo.tools.eightSins.description',
-      linkKey: 'platformInfo.tools.eightSins.link'
+      link: '/guides'
     },
     {
       id: 'violenceLoop',
       titleKey: 'platformInfo.tools.violenceLoop.title',
       descKey: 'platformInfo.tools.violenceLoop.description',
-      linkKey: 'platformInfo.tools.violenceLoop.link'
+      link: '/violence-loop'
     },
     {
       id: 'aiLab',
       titleKey: 'platformInfo.tools.aiLab.title',
       descKey: 'platformInfo.tools.aiLab.description',
-      linkKey: 'platformInfo.tools.aiLab.link'
+      link: '/lab'
     },
     {
       id: 'calendar',
       titleKey: 'platformInfo.tools.calendar.title',
       descKey: 'platformInfo.tools.calendar.description',
-      linkKey: 'platformInfo.tools.calendar.link'
+      link: '/community'
     }
   ];
 
@@ -123,9 +117,6 @@ export function PlatformInfoSection(): ReactElement {
                 key={feature.id}
                 className="group rounded-2xl border border-base-800/60 bg-base-950/60 p-6 transition-all hover:border-accent-500/40 hover:bg-base-900/70 hover:shadow-lg hover:shadow-accent-500/10"
               >
-                <div className="mb-4 text-4xl" aria-hidden="true">
-                  {feature.icon}
-                </div>
                 <h4 className="mb-3 text-xl font-semibold text-base-50 group-hover:text-accent-200">
                   {t(feature.titleKey)}
                 </h4>
@@ -152,7 +143,7 @@ export function PlatformInfoSection(): ReactElement {
                 <h4 className="mb-2 text-lg font-semibold text-accent-100">{t(tool.titleKey)}</h4>
                 <p className="mb-4 text-sm text-base-300">{t(tool.descKey)}</p>
                 <a
-                  href={`/${tool.linkKey.split('.').pop()}`}
+                  href={tool.link}
                   className="inline-flex items-center gap-2 text-sm font-medium text-accent-200 transition hover:text-accent-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
                 >
                   {t('platformInfo.tools.explore')}
