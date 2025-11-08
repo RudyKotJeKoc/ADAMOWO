@@ -1827,7 +1827,14 @@
     },
     "framework": {
       "title": "Metoda Analizy: Deklaracja → Działanie → Sprzeczność",
-      "intro": "Naucz się samodzielnie analizować sprzeczności w zachowaniach. Ten framework pomaga zdemaskować rozdźwięk między słowami a czynami.",
+      "intro": "Naucz się samodzielnie analizować sprzeczności",
+      "description": "Ten framework pomaga zdemaskować rozdźwięk między słowami a czynami. Wypełnij wszystkie trzy kroki, aby zobaczyć pełną analizę.",
+      "progress": "Postęp wypełnienia",
+      "characters": "znaków",
+      "hint": "Wskazówka",
+      "hint1": "Zapisuj dokładne cytaty: 'powiedział/a...', 'napisał/a...'. Im bardziej konkretnie, tym lepiej.",
+      "hint2": "Opisuj tylko fakty: 'wysłał pozew', 'zadzwonił na policję', 'wyłączył prąd'. Bez interpretacji.",
+      "hint3": "Zadaj pytanie: 'Czy działania wspierają deklarowane intencje?' Jeśli nie - masz dysonans.",
       "step1": {
         "title": "Co osoba MÓWI?",
         "description": "Zapisz dokładnie deklaracje, obietnice, słowa tej osoby. Co chce, żebyś usłyszał?",
@@ -1843,7 +1850,32 @@
         "description": "Przeanalizuj różnicę między słowami a czynami. Czy działania wspierają deklarowane intencje?",
         "placeholder": "Twoja analiza: Co jest priorytetem - naprawienie relacji czy walka? Czy działania są spójne z deklaracjami?..."
       },
-      "analyze": "Analizuj sprzeczność"
+      "analyzing": "Analizuję...",
+      "analyze": "Analizuj sprzeczność",
+      "clear": "Wyczyść",
+      "export": "Eksportuj",
+      "save": "Zapisz analizę",
+      "clearConfirm": "Czy na pewno chcesz wyczyścić formularz? Wszystkie dane zostaną utracone.",
+      "savedSuccess": "Analiza została zapisana!",
+      "results": {
+        "title": "Wyniki Analizy",
+        "intro": "Na podstawie Twojej analizy zidentyfikowaliśmy potencjalne wzorce manipulacji:",
+        "dissonance": "Zidentyfikowany Dysonans",
+        "dissonanceText": "Istnieje wyraźna sprzeczność między deklarowanymi intencjami a rzeczywistymi działaniami. Osoba deklaruje jedne wartości (np. pojednanie), ale jej czyny prowadzą do zupełnie odmiennych rezultatów (eskalacja, walka).",
+        "redFlags": "Czerwone Flagi",
+        "flag1": "Rozdwojenie komunikacji: słowa służą jako fasada dla odmiennych celów",
+        "flag2": "Priorytetyzacja celów ukrytych nad deklarowanymi",
+        "flag3": "Selektywne przedstawianie faktów w celu budowania narracji",
+        "recommendations": "Rekomendacje",
+        "rec1": "Dokumentuj zarówno słowa, jak i czyny - to pomoże zobaczyć wzorce",
+        "rec2": "Zwracaj uwagę na sprzeczności między deklaracjami a działaniami",
+        "rec3": "Rozważ skonsultowanie się ze specjalistą (psycholog, prawnik)",
+        "close": "Zamknij wyniki"
+      },
+      "savedAnalyses": "Zapisane analizy",
+      "loadAnalysis": "Wczytaj",
+      "deleteAnalysis": "Usuń",
+      "deleteConfirm": "Czy na pewno chcesz usunąć tę analizę?"
     },
     "severity": {
       "high": "Wysoki",

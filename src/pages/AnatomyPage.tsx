@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TriggerWarning } from '../features/anatomy/components/TriggerWarning';
 import { SchemaCard } from '../features/anatomy/components/SchemaCard';
+import { AnalysisWorksheet } from '../features/anatomy/components/AnalysisWorksheet';
 import { MANIPULATION_SCHEMAS } from '../features/anatomy/anatomy.data';
 import '../features/anatomy/anatomy.css';
 
@@ -84,8 +85,17 @@ export default function AnatomyPage(): JSX.Element {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════ */}
-        {/* FRAMEWORK SECTION (optional - can be added later) */}
+        {/* FRAMEWORK ANALIZY */}
         {/* ═══════════════════════════════════════════════════════════ */}
+        <section className="py-16 bg-base-900">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-4">{t('anatomy.framework.title')}</h2>
+            <p className="text-center text-base-300 mb-12 max-w-2xl mx-auto">
+              {t('anatomy.framework.intro')}
+            </p>
+            <AnalysisWorksheet />
+          </div>
+        </section>
 
         {/* ═══════════════════════════════════════════════════════════ */}
         {/* RESOURCES SECTION (optional - can be added later) */}
