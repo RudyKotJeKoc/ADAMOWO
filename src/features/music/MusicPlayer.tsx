@@ -188,49 +188,54 @@ export function MusicPlayer(): JSX.Element {
       <AudioEngine />
 
       {/* Header */}
-      <div className="rounded-2xl bg-gradient-to-br from-base-900/80 to-base-800/80 p-6 backdrop-blur-sm border border-base-700/50">
-        <div className="flex items-start justify-between">
+      <header className="rounded-2xl border border-base-700 bg-[radial-gradient(circle_at_top,_#1a1f3a,_#080b1e)] p-6 text-base-50 shadow-lg shadow-indigo-950/40">
+        <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-base-50 sm:text-4xl">
+            <h1 className="text-3xl font-semibold text-base-50 sm:text-4xl">
               {t('pages.lab.title', 'Lab')}
             </h1>
-            <p className="mt-2 text-base-200">
-              🎵 Odtwarzacz Muzyki - {allTracks.length} {allTracks.length === 1 ? 'utwór' : 'utworów'}
+            <p className="mt-2 text-sm text-base-300">
+              Odtwarzacz Muzyki • {allTracks.length} {allTracks.length === 1 ? 'utwór' : 'utworów'}
             </p>
           </div>
           <div className="text-right space-y-1">
             <div className="flex items-center gap-2 justify-end">
-              <span className={`h-2.5 w-2.5 rounded-full ${
-                status === 'playing' ? 'bg-green-500 animate-pulse' :
+              <span className={`h-2 w-2 rounded-full ${
+                status === 'playing' ? 'bg-accent-400 animate-pulse' :
                 status === 'loading' ? 'bg-yellow-500 animate-pulse' :
                 status === 'error' ? 'bg-red-500' : 'bg-base-600'
               }`} />
-              <p className="text-sm text-base-300 capitalize">{status}</p>
+              <p className="text-xs text-base-300 capitalize">{status}</p>
             </div>
-            <p className="text-sm text-base-400">
-              Kolejka: {queue.tracks.length} utworów
+            <p className="text-xs text-base-400">
+              {queue.tracks.length} w kolejce
             </p>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Player Card */}
-      <div className="rounded-2xl bg-gradient-to-br from-base-900 to-base-800 p-8 shadow-2xl border border-base-700/50">
+      <section
+        className="rounded-2xl border border-base-700 bg-[radial-gradient(circle_at_top,_#1a1f3a,_#080b1e)] p-8 text-base-50 shadow-lg shadow-indigo-950/40"
+        role="region"
+        aria-label="Odtwarzacz muzyki"
+      >
         {/* Current Track Info */}
         <div className="mb-8 grid gap-8 lg:grid-cols-[240px,1fr]">
           {/* Album Art */}
-          <div className="relative overflow-hidden rounded-2xl bg-base-950/50 shadow-2xl ring-2 ring-accent-500/20">
+          <div className="relative overflow-hidden rounded-xl bg-base-900/50 shadow-lg">
             <img
               src={currentTrack?.coverUrl || '/images/Icon.jpg'}
-              alt={currentTrack?.title || 'No track'}
-              className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+              alt={currentTrack?.title || 'Brak utworu'}
+              className="h-full w-full object-cover"
               width={240}
               height={240}
+              loading="lazy"
             />
             {status === 'playing' && (
-              <div className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-accent-500/90 px-3 py-1.5 text-xs font-bold text-base-950">
-                <span className="h-2 w-2 rounded-full bg-base-950 animate-pulse" />
-                PLAYING
+              <div className="absolute bottom-3 right-3 rounded-full bg-base-800/80 backdrop-blur-sm px-3 py-1.5 text-xs text-base-100 border border-accent-500/30">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-400 animate-pulse mr-1.5" />
+                Odtwarzanie
               </div>
             )}
             {status === 'loading' && (
@@ -243,23 +248,23 @@ export function MusicPlayer(): JSX.Element {
           {/* Track Details & Visualizer */}
           <div className="flex flex-col justify-between space-y-4">
             <div className="space-y-3">
-              <p className="text-xs font-bold uppercase tracking-widest text-accent-400">
-                🎵 Teraz Gra
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-300">
+                Teraz Gra
               </p>
-              <h2 className="text-3xl font-bold leading-tight text-base-50 sm:text-4xl">
+              <h2 className="text-3xl font-semibold leading-tight text-base-50 sm:text-4xl">
                 {currentTrack?.title || 'Wybierz utwór aby rozpocząć'}
               </h2>
-              <p className="text-lg text-base-200">
+              <p className="text-base text-base-200">
                 {currentTrack?.artist || 'Radio Adamowo'}
               </p>
               {currentTrack?.album && (
                 <p className="text-sm text-base-300">
-                  📀 Album: {currentTrack.album}
+                  Album: {currentTrack.album}
                 </p>
               )}
               {currentTrack?.genre && (
                 <p className="text-xs text-base-400">
-                  🎸 Gatunek: {currentTrack.genre} {currentTrack.category ? `• ${currentTrack.category}` : ''}
+                  {currentTrack.genre}{currentTrack.category ? ` • ${currentTrack.category}` : ''}
                 </p>
               )}
             </div>
@@ -297,8 +302,9 @@ export function MusicPlayer(): JSX.Element {
             type="button"
             onClick={previous}
             disabled={queue.currentIndex === 0 && queue.repeat === 'none'}
-            className="group rounded-full bg-gradient-to-br from-base-700 to-base-800 p-4 text-base-100 shadow-lg transition-all hover:from-base-600 hover:to-base-700 hover:scale-110 hover:shadow-xl disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 ring-2 ring-base-600/50 hover:ring-accent-500/50"
+            className="rounded-full border border-base-700 bg-base-900/50 p-4 text-base-100 shadow transition hover:border-accent-400 hover:bg-base-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-base-700 disabled:hover:bg-base-900/50"
             title="Poprzedni utwór"
+            aria-label="Poprzedni utwór"
           >
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
@@ -308,8 +314,10 @@ export function MusicPlayer(): JSX.Element {
           <button
             type="button"
             onClick={next}
-            className="group rounded-full bg-gradient-to-br from-accent-500 to-accent-600 p-6 text-base-950 shadow-2xl transition-all hover:from-accent-400 hover:to-accent-500 hover:scale-110 hover:shadow-accent-500/50 ring-4 ring-accent-400/30 hover:ring-accent-300/50"
+            className="rounded-full border-2 border-accent-400 bg-accent-500 p-6 text-base-950 shadow-lg transition hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-300"
             title={isPlaying ? 'Pauza' : 'Odtwórz'}
+            aria-label={isPlaying ? 'Pauza' : 'Odtwórz'}
+            aria-pressed={isPlaying}
           >
             {isPlaying ? (
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
@@ -325,8 +333,9 @@ export function MusicPlayer(): JSX.Element {
           <button
             type="button"
             onClick={next}
-            className="group rounded-full bg-gradient-to-br from-base-700 to-base-800 p-4 text-base-100 shadow-lg transition-all hover:from-base-600 hover:to-base-700 hover:scale-110 hover:shadow-xl ring-2 ring-base-600/50 hover:ring-accent-500/50"
+            className="rounded-full border border-base-700 bg-base-900/50 p-4 text-base-100 shadow transition hover:border-accent-400 hover:bg-base-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
             title="Następny utwór"
+            aria-label="Następny utwór"
           >
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M16 18h2V6h-2zm-11-7l8.5-6v12z"/>
@@ -339,23 +348,24 @@ export function MusicPlayer(): JSX.Element {
           <button
             type="button"
             onClick={handleShuffle}
-            className={`rounded-lg px-6 py-3 text-sm font-bold uppercase tracking-wide transition-all hover:scale-105 shadow-md ${
+            className={`rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide transition ${
               queue.shuffle
-                ? 'bg-gradient-to-r from-accent-500 to-accent-600 text-base-950 ring-2 ring-accent-400/50'
-                : 'bg-base-700 text-base-100 hover:bg-base-600'
-            }`}
+                ? 'border-2 border-accent-400 bg-accent-500 text-base-950 hover:bg-accent-400'
+                : 'border border-base-700 bg-base-900/50 text-base-200 hover:border-accent-400 hover:text-accent-200'
+            } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400`}
             title="Włącz/wyłącz losowe odtwarzanie"
+            aria-pressed={queue.shuffle}
           >
-            🔀 Shuffle {queue.shuffle ? 'ON' : 'OFF'}
+            Shuffle {queue.shuffle ? 'ON' : 'OFF'}
           </button>
 
           <button
             type="button"
             onClick={handlePlayRandom}
-            className="rounded-lg bg-gradient-to-r from-base-700 to-base-800 px-6 py-3 text-sm font-bold uppercase tracking-wide text-base-100 shadow-md transition-all hover:from-base-600 hover:to-base-700 hover:scale-105"
+            className="rounded-full border border-base-700 bg-base-900/50 px-5 py-2 text-sm font-semibold uppercase tracking-wide text-base-200 transition hover:border-accent-400 hover:text-accent-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
             title="Odtwórz losowy utwór"
           >
-            🎲 Losowy
+            Losowy
           </button>
 
           <button
@@ -366,23 +376,25 @@ export function MusicPlayer(): JSX.Element {
               const nextIndex = (currentIndex + 1) % modes.length;
               setRepeat(modes[nextIndex]);
             }}
-            className={`rounded-lg px-6 py-3 text-sm font-bold uppercase tracking-wide transition-all hover:scale-105 shadow-md ${
+            className={`rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide transition ${
               queue.repeat !== 'none'
-                ? 'bg-gradient-to-r from-accent-500 to-accent-600 text-base-950 ring-2 ring-accent-400/50'
-                : 'bg-base-700 text-base-100 hover:bg-base-600'
-            }`}
+                ? 'border-2 border-accent-400 bg-accent-500 text-base-950 hover:bg-accent-400'
+                : 'border border-base-700 bg-base-900/50 text-base-200 hover:border-accent-400 hover:text-accent-200'
+            } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400`}
             title={`Powtarzanie: ${queue.repeat}`}
+            aria-pressed={queue.repeat !== 'none'}
           >
-            🔁 {queue.repeat === 'one' ? 'Jeden' : queue.repeat === 'all' ? 'Wszystkie' : 'Wyłączone'}
+            {queue.repeat === 'one' ? 'Powtórz jeden' : queue.repeat === 'all' ? 'Powtórz wszystkie' : 'Bez powtórek'}
           </button>
 
           <button
             type="button"
             onClick={() => setShowQueue(!showQueue)}
-            className="rounded-lg bg-gradient-to-r from-base-700 to-base-800 px-6 py-3 text-sm font-bold uppercase tracking-wide text-base-100 shadow-md transition-all hover:from-base-600 hover:to-base-700 hover:scale-105"
+            className="rounded-full border border-base-700 bg-base-900/50 px-5 py-2 text-sm font-semibold uppercase tracking-wide text-base-200 transition hover:border-accent-400 hover:text-accent-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
             title="Pokaż/ukryj kolejkę odtwarzania"
+            aria-expanded={showQueue}
           >
-            📋 Kolejka {showQueue ? '▲' : '▼'}
+            Kolejka {showQueue ? '▲' : '▼'}
           </button>
         </div>
 
@@ -391,31 +403,31 @@ export function MusicPlayer(): JSX.Element {
           <button
             type="button"
             onClick={() => setMuted(!muted)}
-            className="rounded-lg bg-gradient-to-br from-base-700 to-base-800 p-3 text-xl transition-all hover:from-base-600 hover:to-base-700 hover:scale-110 shadow-md"
-            title={muted ? 'Wyłącz wyciszenie' : 'Wycisz'}
+            className="rounded-md border border-base-700 px-3 py-1 text-xs uppercase tracking-wide text-base-200 transition hover:border-accent-400 hover:text-accent-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
+            aria-pressed={muted}
+            aria-label={muted ? 'Wyłącz wyciszenie' : 'Wycisz'}
           >
-            {muted ? '🔇' : volume > 0.5 ? '🔊' : '🔉'}
+            {muted ? 'Wyłącz wyciszenie' : 'Wycisz'}
           </button>
 
           <label className="flex flex-1 max-w-md items-center gap-4">
-            <span className="text-sm font-bold uppercase tracking-wider text-accent-300">
+            <span className="text-xs font-semibold uppercase tracking-wide text-base-300">
               Głośność
             </span>
-            <div className="relative flex-1">
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value={muted ? 0 : volume}
-                onChange={handleVolumeChange}
-                className="h-3 w-full cursor-pointer appearance-none rounded-full bg-base-700 accent-accent-400 transition-all"
-                style={{
-                  background: `linear-gradient(to right, rgb(var(--color-accent-500)) 0%, rgb(var(--color-accent-500)) ${(muted ? 0 : volume) * 100}%, rgb(var(--color-base-700)) ${(muted ? 0 : volume) * 100}%, rgb(var(--color-base-700)) 100%)`
-                }}
-              />
-            </div>
-            <span className="w-16 text-right text-lg font-bold text-base-50">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={muted ? 0 : volume}
+              onChange={handleVolumeChange}
+              className="flex-1 accent-accent-400"
+              aria-valuemin={0}
+              aria-valuemax={1}
+              aria-valuenow={muted ? 0 : volume}
+              aria-label="Głośność"
+            />
+            <span className="w-12 text-right text-sm text-base-200">
               {Math.round((muted ? 0 : volume) * 100)}%
             </span>
           </label>
@@ -423,51 +435,47 @@ export function MusicPlayer(): JSX.Element {
 
         {/* Error Display */}
         {error && (
-          <div className="mt-6 rounded-xl bg-gradient-to-r from-red-900/20 to-red-800/20 border-2 border-red-500/50 px-6 py-4 text-center shadow-lg">
-            <p className="text-base font-bold text-red-300 flex items-center justify-center gap-2">
-              <span className="text-2xl">⚠️</span>
-              <span>Błąd: {error}</span>
+          <div className="mt-6 rounded-xl border-2 border-red-500/50 bg-red-900/20 px-6 py-4 shadow-lg" role="alert">
+            <p className="text-sm font-semibold text-red-300">
+              Błąd odtwarzania: {error}
             </p>
-            <p className="mt-2 text-sm text-red-400">
-              Odtwarzacz napotkał problem. Sprawdź połączenie internetowe i spróbuj ponownie.
+            <p className="mt-1 text-xs text-red-400">
+              Sprawdź połączenie internetowe i spróbuj ponownie.
             </p>
           </div>
         )}
-      </div>
+      </section>
 
       {/* Queue Display */}
       {showQueue && (
-        <div className="rounded-2xl bg-gradient-to-br from-base-900/95 to-base-800/95 p-8 backdrop-blur-md border border-base-700/50 shadow-2xl">
+        <section
+          className="rounded-2xl border border-base-700 bg-[radial-gradient(circle_at_top,_#1a1f3a,_#080b1e)] p-8 text-base-50 shadow-lg shadow-indigo-950/40"
+          role="region"
+          aria-label="Kolejka odtwarzania"
+        >
           <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-2xl font-bold text-base-50 flex items-center gap-3">
-              <span className="text-3xl">📋</span>
+            <h3 className="text-xl font-semibold text-base-50">
               Kolejka odtwarzania
             </h3>
-            <span className="rounded-full bg-accent-500/20 px-4 py-2 text-sm font-bold text-accent-300 ring-2 ring-accent-500/30">
+            <span className="rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5 text-xs font-semibold text-accent-300">
               {queue.tracks.length} {queue.tracks.length === 1 ? 'utwór' : 'utworów'}
             </span>
           </div>
 
-          <div
-            className="max-h-[500px] space-y-2 overflow-y-auto pr-2"
-            style={{
-              scrollbarWidth: 'thin',
-              scrollbarColor: 'rgba(var(--color-accent-500), 0.5) rgba(var(--color-base-800), 0.3)'
-            }}
-          >
+          <div className="max-h-[500px] space-y-2 overflow-y-auto pr-2">
             {queue.tracks.map((track, index) => (
               <button
                 key={`${track.id}-${index}`}
                 type="button"
                 onClick={() => jumpTo(index)}
-                className={`group w-full rounded-xl px-5 py-4 text-left transition-all duration-200 ${
+                className={`group w-full rounded-lg px-4 py-3 text-left transition ${
                   index === queue.currentIndex
-                    ? 'bg-gradient-to-r from-accent-500/30 to-accent-600/30 border-2 border-accent-500/60 shadow-lg scale-[1.02]'
-                    : 'bg-base-800/60 border border-base-700/30 hover:bg-base-700/80 hover:border-accent-500/30 hover:scale-[1.01]'
-                }`}
+                    ? 'border-2 border-accent-500/60 bg-accent-500/20'
+                    : 'border border-base-700/30 bg-base-800/40 hover:border-accent-500/30 hover:bg-base-800/60'
+                } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400`}
               >
-                <div className="flex items-center gap-4">
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
+                <div className="flex items-center gap-3">
+                  <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
                     index === queue.currentIndex
                       ? 'bg-accent-500 text-base-950'
                       : 'bg-base-700 text-base-300 group-hover:bg-base-600'
@@ -476,26 +484,26 @@ export function MusicPlayer(): JSX.Element {
                   </span>
 
                   <div className="flex-1 min-w-0">
-                    <p className={`font-bold truncate ${
+                    <p className={`font-semibold truncate text-sm ${
                       index === queue.currentIndex ? 'text-accent-100' : 'text-base-100'
                     }`}>
                       {track.title}
                     </p>
-                    <p className="text-sm text-base-300 truncate">
-                      {track.artist} {track.genre ? `• ${track.genre}` : ''}
+                    <p className="text-xs text-base-300 truncate">
+                      {track.artist}{track.genre ? ` • ${track.genre}` : ''}
                     </p>
                   </div>
 
                   {index === queue.currentIndex && (
-                    <span className="shrink-0 rounded-full bg-accent-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-base-950 shadow-lg animate-pulse">
-                      Gra teraz
+                    <span className="shrink-0 rounded-full border border-accent-500/50 bg-accent-500/20 px-3 py-1 text-xs font-semibold text-accent-200">
+                      Odtwarzanie
                     </span>
                   )}
                 </div>
               </button>
             ))}
           </div>
-        </div>
+        </section>
       )}
     </div>
   );
