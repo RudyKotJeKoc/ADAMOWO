@@ -1924,5 +1924,14 @@
       "leave": "Opuść stronę",
       "disclaimer": "To ostrzeżenie służy Twojemu bezpieczeństwu emocjonalnemu. Dbamy o Ciebie."
     }
+  },
+  "analytics": {
+    "label": "Licznik odwiedzin",
+    "visits": "odwiedzin",
+    "loading": "Ładowanie...",
+    "error": "Błąd podczas ładowania statystyk",
+    "icon": {
+      "label": "Ikona licznika odwiedzin"
+    }
   }
 }
