@@ -1,0 +1,111 @@
+/* src/features/anatomy/anatomy.css */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* GRADIENT TEXT */
+/* ═══════════════════════════════════════════════════════════ */
+
+.gradient-text {
+  background: linear-gradient(135deg, #f59e0b, #dc2626, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* ANIMACJE DLA SCHEMACARD.TSX */
+/* ═══════════════════════════════════════════════════════════ */
+
+/* Animacja fadeIn dla przykładów */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Animacja slideInUp dla rozwijanej treści */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SMOOTH TRANSITIONS DLA QUIZ FEEDBACK */
+/* ═══════════════════════════════════════════════════════════ */
+
+.quiz-feedback-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.quiz-feedback-enter-active {
+  max-height: 200px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* GLASS MORPHISM EFFECT (jeśli nie istnieje globalnie) */
+/* ═══════════════════════════════════════════════════════════ */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* DODATKOWE STYLE DLA RESPONSYWNOŚCI */
+/* ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .anatomy-schema-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .anatomy-schema-card .text-5xl {
+    font-size: 2.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* ACCESSIBILITY - FOCUS STATES */
+/* ═══════════════════════════════════════════════════════════ */
+
+.anatomy-schema-card button:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+.anatomy-schema-card input[type="radio"]:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}

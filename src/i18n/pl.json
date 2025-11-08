@@ -1620,6 +1620,18 @@
       "exampleFromDocs": "Przykład z dokumentacji",
       "showHideExample": "Pokaż/Ukryj przykład",
       "testYourKnowledge": "Sprawdź swoją wiedzę →",
+      "sources": "Źródła",
+      "footer": "Ten schemat należy do kategorii: {category}",
+      "example": {
+        "context": "Kontekst",
+        "behavior": "Zachowanie",
+        "analysis": "Analiza",
+        "sourceDocs": "Dokumenty źródłowe"
+      },
+      "quiz": {
+        "submit": "Sprawdź odpowiedź",
+        "tryAgain": "Spróbuj ponownie"
+      },
       "dualCommunication": {
         "title": "Rozdwojenie Komunikacji",
         "definition": "Prowadzenie dwóch równoległych, sprzecznych narracji: publicznej (miłość, troska, pojednanie) i prywatnej (władza, kontrola, zemsta). Język emocji używany instrumentalnie jako narzędzie, nie jako wyrażenie autentycznego uczucia.",
@@ -1843,6 +1855,11 @@
         "placeholder": "Twoja analiza: Co jest priorytetem - naprawienie relacji czy walka? Czy działania są spójne z deklaracjami?..."
       },
       "analyze": "Analizuj sprzeczność"
+    },
+    "severity": {
+      "high": "Wysoki",
+      "medium": "Średni",
+      "low": "Niski"
     },
     "categories": {
       "cognitive": "Dysonans poznawczy",
