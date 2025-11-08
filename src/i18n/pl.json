@@ -483,10 +483,7 @@
             "title": "Zebranie dowodów i interwencja"
           }
         ],
-        "resources": [
-          "Raport obserwacyjny rodziny Adamskich",
-          "Lista kontrolna sygnałów izolacji"
-        ]
+        "resources": ["Raport obserwacyjny rodziny Adamskich", "Lista kontrolna sygnałów izolacji"]
       },
       "calendarAnalysis": {
         "title": "Analiza Kalendarza: Kronika Eskalacji",
@@ -517,9 +514,7 @@
             "title": "Raport i omówienie"
           }
         ],
-        "resources": [
-          "Szablon kalendarza eskalacji"
-        ]
+        "resources": ["Szablon kalendarza eskalacji"]
       },
       "princeIngratitude": {
         "title": "\u201eKsiążę Niewdzięczność\u201d: Broń Narcyza",
@@ -545,9 +540,7 @@
             "note": "Ofiara zostaje ośmieszona przy świadkach."
           }
         ],
-        "resources": [
-          "Ćwiczenie refleksyjne: rozpoznaj narrację narcyza"
-        ]
+        "resources": ["Ćwiczenie refleksyjne: rozpoznaj narrację narcyza"]
       },
       "investigationDocs": {
         "title": "Śledztwo: Jak Dokumentować Manipulacje?",
@@ -577,10 +570,7 @@
             "title": "Przygotowanie raportu dla instytucji"
           }
         ],
-        "resources": [
-          "Arkusz ewidencji dowodów",
-          "Przewodnik do rozmów świadków"
-        ]
+        "resources": ["Arkusz ewidencji dowodów", "Przewodnik do rozmów świadków"]
       }
     }
   },
@@ -1391,7 +1381,6 @@
     },
     "backToTop": "Do góry",
     "rights": "© 2025 Radio Adamowo"
-
   },
   "familyPsychology": {
     "kicker": "Psychologia rodzinnych wzorców",
@@ -1637,7 +1626,7 @@
         "definition": "Prowadzenie dwóch równoległych, sprzecznych narracji: publicznej (miłość, troska, pojednanie) i prywatnej (władza, kontrola, zemsta). Język emocji używany instrumentalnie jako narzędzie, nie jako wyrażenie autentycznego uczucia.",
         "flags": {
           "wordsVsActions": "Słowa brzmią pięknie, ale czyny im przeczą",
-          "loveWithLegalAction": "„Chcę pojednania" + równoczesne kroki prawne",
+          "loveWithLegalAction": "\"Chcę pojednania\" + równoczesne kroki prawne",
           "instrumentalEmotions": "Język emocji używany instrumentalnie, włączany/wyłączany w zależności od kontekstu",
           "parallelActions": "Propozycja terapii + równoczesne gromadzenie materiału procesowego"
         },
@@ -1876,8 +1865,32 @@
     },
     "warning": {
       "title": "Uwaga: Trudne Treści",
-      "message": "Materiał zawiera opisy manipulacji emocjonalnej i konfliktów rodzinnych. Jeśli temat jest dla Ciebie trudny, przeczytaj w komfortowych warunkach. Możesz w każdej chwili przerwać lekturę.",
-      "accept": "Rozumiem, chcę kontynuować"
+      "subtitle": "Ważne informacje przed przystąpieniem do lektury",
+      "close": "Zamknij",
+      "message": "Materiał na tej stronie zawiera szczegółowe opisy manipulacji psychologicznej, konfliktów rodzinnych oraz instrumentalizacji instytucji. Treści mogą być trudne emocjonalnie, szczególnie dla osób, które doświadczyły podobnych sytuacji.",
+      "contains": "Strona zawiera",
+      "content1": "Opisy toksycznych relacji rodzinnych i manipulacji emocjonalnej",
+      "content2": "Analizy dysonansu poznawczego i mechanizmów psychologicznych",
+      "content3": "Przykłady z rzeczywistych dokumentów prawnych i zeznań",
+      "content4": "Treści dotyczące instrumentalizacji systemu prawnego",
+      "support": {
+        "title": "Nie jesteś sam/sama",
+        "message": "Jeśli przeżywasz podobną sytuację, pamiętaj, że istnieje profesjonalna pomoc. Ta strona nie zastępuje wsparcia specjalistów.",
+        "hotline": "Niebieska Linia: 800 120 002",
+        "chat": "Telefon Zaufania: 116 123",
+        "legal": "Pomoc prawna dostępna"
+      },
+      "recommendations": {
+        "title": "Zalecenia przed lekturą",
+        "rec1": "Przeczytaj materiał w bezpiecznym, komfortowym miejscu",
+        "rec2": "Możesz w każdej chwili przerwać lekturę i wrócić później",
+        "rec3": "Jeśli poczujesz się źle, skorzystaj z kontaktów pomocowych poniżej",
+        "rec4": "Rozważ wsparcie terapeuty przy przetwarzaniu trudnych treści"
+      },
+      "dontShowAgain": "Nie pokazuj ponownie tego ostrzeżenia (automatycznie przywróci się po 30 dniach)",
+      "accept": "Rozumiem, chcę kontynuować",
+      "leave": "Opuść stronę",
+      "disclaimer": "To ostrzeżenie służy Twojemu bezpieczeństwu emocjonalnemu. Dbamy o Ciebie."
     }
   }
 }
