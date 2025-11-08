@@ -1537,5 +1537,60 @@
       }
     },
     "closing": "Każda rodzina ma swoje schematy. Różnica między więzieniem a wolnością leży w tym, czy je widzimy."
+  },
+  "exploreMore": {
+    "label": "Odkryj więcej",
+    "title": "Kontynuuj eksplorację",
+    "description": "Polecane treści do dalszego zgłębiania tematu",
+    "paths": {
+      "beginners": {
+        "title": "Dla początkujących",
+        "description": "Zacznij od podstaw"
+      },
+      "interactive": {
+        "title": "Narzędzia interaktywne",
+        "description": "Praktyczne ćwiczenia i testy"
+      },
+      "deepDive": {
+        "title": "Pogłębiona analiza",
+        "description": "Zaawansowane materiały edukacyjne"
+      }
+    },
+    "suggestions": {
+      "fromHome": {
+        "live": "Posłuchaj transmisji na żywo",
+        "liveDesc": "24/7 muzyka i audycje edukacyjne",
+        "guides": "Odkryj poradniki",
+        "guidesDesc": "Biblioteka przypadków i mitologia narcyza",
+        "tools": "Wypróbuj narzędzia",
+        "toolsDesc": "Test 8 grzechów i pętla przemocy",
+        "studio": "Poznaj programy studia",
+        "studioDesc": "Cztery autorskie audycje",
+        "analysis": "Archiwum audycji",
+        "analysisDesc": "Ponad 100 godzin treści edukacyjnych",
+        "lab": "Laboratorium muzyki",
+        "labDesc": "Relaksująca muzyka terapeutyczna"
+      },
+      "fromGuides": {
+        "library": "Biblioteka przypadków",
+        "libraryDesc": "Rzeczywiste historie i analizy",
+        "mythology": "Mitologia Narcyza",
+        "mythologyDesc": "Symbole ostrzegawcze 4, 7, 8, 13",
+        "familyPsych": "Psychologia rodzinna",
+        "familyPsychDesc": "Transmisja międzypokoleniowa traumy",
+        "eightSins": "Test 8 grzechów",
+        "eightSinsDesc": "Rozpoznaj wzorce manipulacji",
+        "violenceLoop": "Pętla przemocy",
+        "violenceLoopDesc": "Cykl: idealizacja, dewaluacja, odrzucenie"
+      },
+      "fromTools": {
+        "community": "Dołącz do społeczności",
+        "communityDesc": "Kalendarz czerwonych flag i wsparcie",
+        "analysis": "Posłuchaj audycji",
+        "analysisDesc": "Eksperci omawiają przypadki",
+        "studio": "Poznaj prowadzących",
+        "studioDesc": "Psychologowie i dziennikarze"
+      }
+    }
   }
 }
