@@ -1592,5 +1592,275 @@
         "studioDesc": "Psychologowie i dziennikarze"
       }
     }
+  },
+  "anatomy": {
+    "hero": {
+      "title": "Anatomia Manipulacji",
+      "subtitle": "Rozpoznaj schematy. Nazwij mechanizmy. Odzyskaj kontrolę."
+    },
+    "audience": {
+      "conflict": {
+        "title": "Przeżywasz konflikt",
+        "description": "Jesteś w toksycznej relacji rodzinnej. Czujesz, że coś jest nie tak, ale nie potrafisz nazwać co. Ludzie Ci nie wierzą, bo 'przecież ona/on tak dobrze mówi'."
+      },
+      "support": {
+        "title": "Wspierasz bliskich",
+        "description": "Ktoś bliski przechodzi trudny konflikt i chcesz pomóc, ale nie wiesz jak. Szukasz języka do rozmowy o trudnych mechanizmach."
+      },
+      "professional": {
+        "title": "Pracujesz z ludźmi",
+        "description": "Jesteś psychologiem, terapeutą, prawnikiem rodzinnym, pracownikiem socjalnym lub mediatorem. Potrzebujesz narzędzi diagnostycznych."
+      },
+      "cta": "Rozpoznaj schematy"
+    },
+    "schemas": {
+      "sectionTitle": "6 Kluczowych Schematów Manipulacji",
+      "whatIsIt": "Co to jest?",
+      "howToRecognize": "Jak to rozpoznać?",
+      "exampleFromDocs": "Przykład z dokumentacji",
+      "showHideExample": "Pokaż/Ukryj przykład",
+      "testYourKnowledge": "Sprawdź swoją wiedzę →",
+      "dualCommunication": {
+        "title": "Rozdwojenie Komunikacji",
+        "definition": "Prowadzenie dwóch równoległych, sprzecznych narracji: publicznej (miłość, troska, pojednanie) i prywatnej (władza, kontrola, zemsta). Język emocji używany instrumentalnie jako narzędzie, nie jako wyrażenie autentycznego uczucia.",
+        "flags": {
+          "wordsVsActions": "Słowa brzmią pięknie, ale czyny im przeczą",
+          "loveWithLegalAction": "„Chcę pojednania" + równoczesne kroki prawne",
+          "instrumentalEmotions": "Język emocji używany instrumentalnie, włączany/wyłączany w zależności od kontekstu",
+          "parallelActions": "Propozycja terapii + równoczesne gromadzenie materiału procesowego"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Konflikt rodzinny - matka deklaruje chęć normalizacji relacji",
+            "behavior": "Deklaracja: 'Ja chcę, żeby było normalnie, jak zawsze. Zaproponowałam terapię rodzinną' (14.04). Równocześnie: prowadzenie kalendarza obciążającego syna od lutego, konsultacje z radcą prawnym ws. odwołania darowizny (lato 2021), uruchomienie procedury Niebieskiej Karty (29.07).",
+            "analysis": "To klasyczna strategia dwutorowa: performatywne pojednanie (propozycja terapii) służy jako fasada dla ukrytych działań agresywnych (przygotowania procesu). Propozycja była działaniem pozornym, obliczonym na stworzenie wrażenia dobrej woli, podczas gdy rzeczywisty cel to odebranie majątku."
+          },
+          "ex2": {
+            "context": "Troska o schorowanego męża jako deklarowany motyw",
+            "behavior": "Deklaracja troski o dobro męża. Rzeczywistość: instrumentalizacja jego stanu zdrowia - uzyskanie pełnomocnictwa (19.07) tuż po eskalacji konfliktu, wykorzystanie go do prowadzenia działań prawnych sprzecznych z jego własnymi zeznaniami ('Dariusz nie obraża mnie' vs. pozew o 'uporczywe znieważanie').",
+            "analysis": "Deklarowana troska jest fasadą dla przejęcia pełnej kontroli. Mąż zdegradowany do roli figuranta, którego stan zdrowia posłużył jako uzasadnienie do działań odwetowych. Pełnomocnictwo użyte do nadpisania jego własnej woli."
+          }
+        },
+        "quiz": {
+          "question": "Osoba mówi 'bardzo mi zależy na naprawie naszej relacji', ale równocześnie zbiera materiał na Ciebie do sprawy. Co to oznacza?",
+          "opt1": "Osoba jest zagubiona i nie wie, co robi",
+          "exp1": "Nie. Równoczesne prowadzenie dwóch sprzecznych działań (propozycja naprawy + przygotowania procesowe) wskazuje na strategię, nie zagubienie.",
+          "opt2": "To schemat rozdwojenia komunikacji - słowa służą jako fasada",
+          "exp2": "Dokładnie. Deklaracje pojednania są narzędziem do budowania wizerunku dobrej woli, podczas gdy prawdziwy cel (walka prawna) jest realizowany równolegle.",
+          "opt3": "To normalna ostrożność w konflikcie",
+          "exp3": "Nie. Normalna ostrożność to zabezpieczenie się, ale nie aktywne budowanie fasady pojednania przy równoczesnej eskalacji."
+        }
+      },
+      "emotionInstrumentalization": {
+        "title": "Instrumentalizacja Emocji",
+        "definition": "Strategiczne wykorzystywanie języka nacechowanego afektywnie (cierpienie, strach, krzywda) nie w celu wyrażenia autentycznych uczuć, ale jako narzędzia do wywołania pożądanej reakcji u odbiorców (współczucie, interwencja) i przekształcenia złożonego konfliktu w prostą dychotomię agresor-ofiara.",
+        "flags": {
+          "victimLanguage": "Częste używanie języka ofiary: 'serce mi pęka', 'obawiam się', 'on wie, że mnie to rani'",
+          "healthAsArgument": "Stan zdrowia psychicznego jako koronny argument wiarygodności ('leczymy się psychiatrycznie', 'depresja', 'utrata wagi')",
+          "dramaticScenarios": "Inscenizowanie sytuacji kryzysowych (oczekiwanie na policję 'w lesie obok posesji' zamiast w domu)",
+          "fearCreation": "Kreowanie atmosfery zagrożenia mimo braku realnej przemocy ('obawiam się syna', choć syn nigdy nie uderzył)"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Zawiadomienie na policji o znęcaniu się psychicznym",
+            "behavior": "Barbara: 'obawia się swojego syna', jest w 'silnym stresie', 'leczy się psychiatrycznie' z jego powodu. Równocześnie mąż Sylwester zeznaje: 'On mnie oraz żony nigdy nie uderzył'. To ona inicjowała konfrontacje (nocne wtargnięcie do pokoju Dariusza).",
+            "analysis": "Kreowanie aury zagrożenia było celowym zabiegiem psychologicznym, nie odzwierciedleniem rzeczywistości. Stan zdrowia użyty instrumentalnie - jako tarcza (nie można jej kwestionować, bo cierpi) i zarazem broń (jej cierpienie jest dowodem winy syna)."
+          },
+          "ex2": {
+            "context": "Interwencja policyjna w nocy 17/18 lipca 2021",
+            "behavior": "Zamiast czekać na patrol w domu, Barbara wraz z ojcem i siostrą oczekiwała 'w lesie obok posesji'. Dariusz był zamknięty w swoim pokoju. Interwencja nie doprowadziła do zatrzymania.",
+            "analysis": "Inscenizacja spektaklu na użytek organów ścigania. Gest miał stworzyć sugestywny obraz rodziny zmuszonej do ucieczki przed niebezpiecznym agresorem, co było całkowicie niezgodne z rzeczywistością."
+          },
+          "ex3": {
+            "context": "Zawiadomienie o niszczeniu ogrodu jako psychicznym znęcaniu się",
+            "behavior": "'On wie, że mnie to rani. On niszczy mi ogród, kwiaty oraz krzewy (...) Mój syn wie, że ja kocham rośliny, kwiaty dlatego chce mi to wszystko poniszczyć'.",
+            "analysis": "Przypisanie świadomej intencji zadawania psychicznego bólu. Zwykły konflikt o użytkowanie posesji przedstawiony jako celowy atak psychologiczny w najczulszy punkt. Wzmacnia pozycję ofiary i buduje podstawy pod zarzut 'znęcania się'."
+          }
+        },
+        "quiz": {
+          "question": "Osoba często mówi 'to mnie psychicznie niszczy', ale równocześnie aktywnie eskaluje konflikt. Jak to interpretować?",
+          "opt1": "Osoba rzeczywiście cierpi, więc wszystko jest usprawiedliwione",
+          "exp1": "Nie. Autentyczne cierpienie nie usprawiedliwia aktywnej eskalacji. Jeśli ktoś naprawdę chce zakończyć cierpienie, nie pogłębia konfliktu.",
+          "opt2": "To normalny sposób wyrażania frustracji",
+          "exp2": "Nie. Normalne wyrażanie frustracji to komunikacja o potrzebach. Instrumentalizacja to strategiczne używanie cierpienia jako narzędzia.",
+          "opt3": "To instrumentalizacja emocji - cierpienie jako taktyka",
+          "exp3": "Dokładnie. Sprzeczność między deklarowanym cierpieniem a eskalacją wskazuje, że emocje są używane jako narzędzie retoryczne, nie autentyczne wyrażenie."
+        }
+      },
+      "invertedTriage": {
+        "title": "Odwrócony Triaż Priorytetów",
+        "definition": "Wzorzec zachowania, w którym deklarowany priorytet (np. zdrowie bliskiej osoby) zostaje faktycznie zdegradowany do roli rekwizytu, podczas gdy prawdziwy, ukryty cel (np. zdobycie materiału dowodowego) jest podniesiony do rangi nadrzędnego priorytetu. Osoba świadomie naraża dobro innych dla celów procesowych.",
+        "flags": {
+          "urgentIgnored": "Sytuacja pilna/zagrażająca jest ignorowana lub spowalniana",
+          "evidenceOverCare": "Priorytet: zdobycie dowodu procesowego > dobro osoby w kryzysie",
+          "opportunisticTiming": "Wykorzystywanie sytuacji kryzysowych jako okazji do budowania narracji",
+          "dutyNeglect": "Zaniedbanie podstawowych obowiązków (np. opiekuna) dla celów strategicznych"
+        },
+        "examples": {
+          "ex1": {
+            "context": "21 maja 2021 - Sylwester Adamski wymaga pomocy medycznej",
+            "behavior": "Barbara jako opiekunka (świadczenie pielęgnacyjne 1800 zł/mies.) zamiast wezwać pogotowie żąda kluczyków od Dariusza, tworząc konfrontację. Priorytet: budowanie dowodu procesowego ('odmówił zawiezienia') > zdrowie męża. Dariusz ostatecznie SAM odbiera ojca ze szpitala. Barbara celowo POMIJA ten fakt w 'kalendarzu'.",
+            "analysis": "Modelowy przykład odwróconego triażu. Deklarowany stan nagły (zdrowie męża) zdegradowany do roli rekwizytu. Prawdziwy cel: sfabrykowanie krzywdy ('bezduszny syn nie pomógł'). Zachowanie Barbary to rażące zaniedbanie obowiązków opiekuna. Następnie fakt odebrania ojca przez Dariusza został wymazany z narracji - bo przeczyłby tezie o jego bezduszności."
+          }
+        },
+        "quiz": {
+          "question": "Opiekun chorej osoby nie wzywa pogotowia, tylko żąda pomocy od kogoś, z kim jest w sporze. Dlaczego?",
+          "opt1": "Opiekun jest zagubiony i nie wie, co robić",
+          "exp1": "Nie. Osoba pobierająca świadczenie opiekuńcze zna procedury. Wezwanie pogotowia to pierwsza i oczywista reakcja w nagłej sytuacji medycznej.",
+          "opt2": "Chce oszczędzić koszty karetki",
+          "exp2": "Nie. Karetka pogotowia w Polsce jest bezpłatna w nagłych przypadkach. Świadczenie opiekuńcze pokrywa właśnie takie obowiązki.",
+          "opt3": "To odwrócony triaż - cel procesowy > zdrowie",
+          "exp3": "Dokładnie. Priorytetem nie jest zdrowie, ale zbudowanie sytuacji, w której można będzie oskarżyć drugą stronę o brak pomocy. To instrumentalizacja kryzysu dla celów strategicznych."
+        }
+      },
+      "mirrorProjection": {
+        "title": "Projekcja Lustrzana",
+        "definition": "Mechanizm psychologiczny polegający na przypisywaniu innym osobom własnych, nieakceptowanych cech, myśli lub motywacji. W dynamice konfliktu służy do odwrócenia ról: agresor przedstawia siebie jako ofiarę, zarzucając przeciwnikowi dokładnie te zachowania, które sam przejawia.",
+        "flags": {
+          "accusationMirror": "Zarzuty wobec drugiej osoby są lustrzanym odbiciem własnych działań",
+          "roleReversal": "Sprawca przedstawia siebie jako ofiarę tego samego zachowania, które stosuje",
+          "deflection": "Uwaga odwrócona od własnych negatywnych działań poprzez oskarżenie innych",
+          "ownTraitsDenied": "Kategoryczne zaprzeczanie własnym cechom, które przypisuje się innym"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Zarzut o kontrolę i inwigilację",
+            "behavior": "Barbara oskarża syna o kontrolowanie jej za pomocą kamer. Rzeczywistość: ona sama prowadzi szczegółowy 'kalendarz' śledzący każdy ruch syna, posiada nagrania, wchodzi do jego pokoju w środku nocy (2:30), próbuje ingerować w jego związek.",
+            "analysis": "Klasyczna projekcja. To ona przejawia obsesyjno-kontrolujące zachowania, ale przypisuje je synowi. Monitoring zewnętrzny (kamery) to standardowe zabezpieczenie posesji. Jej inwigilacja to naruszanie prywatności dorosłego człowieka."
+          },
+          "ex2": {
+            "context": "Zarzut o agresję i wulgarność",
+            "behavior": "Barbara zarzuca synowi agresję. Rzeczywistość: to ona dokonała nocnego wtargnięcia do pokoju Dariusza (2:00), by zaatakować słownie jego kuzynkę Julię ('franca cholerna'). Sylwester zeznaje, że to Barbara inicjowała konfrontacje.",
+            "analysis": "Odwrócenie ról. Rzeczywista sprawczyni agresji słownej i prowokacji przedstawia się jako ofiarę. Reakcja obronna Dariusza (po prowokacji) jest przedstawiana jako bezpodstawny atak."
+          },
+          "ex3": {
+            "context": "Zarzut o brak empatii wobec chorego ojca",
+            "behavior": "Barbara zarzuca synowi brak empatii. Rzeczywistość: ona sama instrumentalnie wykorzystała chorobę męża (pełnomocnictwo 19.07 tuż po eskalacji), priorytetizowała cel procesowy nad jego zdrowiem (incydent 21.05), używała go jako narzędzia w sporze.",
+            "analysis": "Przypisanie braku empatii osobie, która faktycznie odebrała ojca ze szpitala. Prawdziwy brak empatii to instrumentalizacja chorego męża dla celów prawnych i finansowych."
+          }
+        },
+        "quiz": {
+          "question": "Osoba A oskarża osobę B o bycie 'kontrolującą', ale sama śledzi każdy ruch B. Co się dzieje?",
+          "opt1": "Osoba A ma prawo bronić się przed kontrolą",
+          "exp1": "Nie. Jeśli osoba A faktycznie odczuwałaby kontrolę, nie odpowiadałaby jeszcze większą kontrolą, tylko by się wycofała lub szukała rozwiązania.",
+          "opt2": "To projekcja lustrzana - A przypisuje B własne cechy",
+          "exp2": "Dokładnie. Oskarżenie o kontrolę jest projekcją własnych kontrolujących zachowań. To mechanizm obronny pozwalający na odwrócenie ról i uniknięcie odpowiedzialności.",
+          "opt3": "Obie osoby są równie kontrolujące",
+          "exp3": "Niekoniecznie. Projekcja polega właśnie na tym, że jedna osoba przypisuje drugiej zachowania, których ta nie przejawia (lub przejawia w znacznie mniejszym stopniu)."
+        }
+      },
+      "selectiveDocumentation": {
+        "title": "Selektywna Dokumentacja",
+        "definition": "Systematyczne gromadzenie materiału dowodowego w sposób tendencyjny: odnotowywanie wyłącznie negatywnych zachowań drugiej strony przy jednoczesnym pomijaniu lub minimalizowaniu własnych prowokacji oraz pozytywnych działań przeciwnika. Celem jest stworzenie pozoru obiektywnej dokumentacji przy faktycznym kreowaniu z góry założonej narracji.",
+        "flags": {
+          "onlyNegative": "Zapisywane są wyłącznie negatywne zachowania jednej strony",
+          "positiveOmitted": "Celowe pomijanie faktów korzystnych dla oskarżonej osoby",
+          "biasedLanguage": "Użycie pejoratywnych określeń i subiektywnych ocen przedstawianych jako fakty",
+          "intentionAssumed": "Przypisywanie złych intencji niejednoznacznym działaniom",
+          "prosecutorialTone": "Styl 'prokuratorski' - budowanie sprawy, nie opisywanie rzeczywistości"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Notatka z 29 marca w 'kalendarzu'",
+            "behavior": "'Darek Nachlany pił z Zauchą (...) po 22 zadzwoniliśmy po policję, bo chyba oszalał'. Użycie pejoratywnego określenia ('Nachlany') i subiektywnej oceny ('chyba oszalał') przedstawione jako obiektywny opis.",
+            "analysis": "To nie jest faktograficzna kronika, to aktywny proces oceniania i stygmatyzowania. Celem nie jest zapamiętanie, co się wydarzyło, ale stworzenie materiału obciążającego w formie pozornie neutralnej."
+          },
+          "ex2": {
+            "context": "Notatka z 11 kwietnia - 'czytanie w myślach'",
+            "behavior": "'W niedzielę były moje siostry (...) Specjalnie gdzieś pojechał amperą, żeby nie rozmawiać z Dorotą.' Fakt (pojechał) + interpretacja (specjalnie, żeby nie...) przedstawione jako jedno.",
+            "analysis": "Technika przypisywania negatywnych intencji. Nie dopuszcza żadnej innej możliwości (np. wcześniejsze plany). To tzw. błąd atrybucji - przypisanie wrogich motywów niejednoznacznemu zachowaniu. Powtarzający się wzorzec w jej narracji."
+          },
+          "ex3": {
+            "context": "Kalendarz luty-sierpień 2021",
+            "behavior": "Skrupulatnie odnotowane: konflikty, zachowania 'podejrzane', obraźliwe (jej zdaniem). Całkowicie pominięte: odbiór ojca ze szpitala przez Dariusza (21.05), jego inwestycje w nieruchomość, jakiekolwiek pozytywne interakcje.",
+            "analysis": "Kliniczny przykład błędu potwierdzenia (confirmation bias). Nie jest to kronika, to proces selekcji danych potwierdzających z góry przyjętą tezę o byciu ofiarą. Pominięcie odbioru ojca ze szpitala jest szczególnie rażące - to akt oczyszczania narracji z dowodów przeczących."
+          }
+        },
+        "quiz": {
+          "question": "Osoba prowadzi 'dziennik' konfliktu, ale zapisuje tylko złe rzeczy o drugiej stronie. To normalne?",
+          "opt1": "Tak, to sposób na poradzenie sobie ze stresem",
+          "exp1": "Nie w tym przypadku. Dziennik terapeutyczny koncentruje się na własnych uczuciach, nie na zbieraniu dowodów przeciwko komuś. To różnica między przetwarzaniem emocji a budowaniem sprawy.",
+          "opt2": "To selektywna dokumentacja - materiał procesowy, nie pamiętnik",
+          "exp2": "Dokładnie. Gdy 'dziennik' zawiera wyłącznie negatywne informacje o jednej osobie przy pomijaniu kontekstu i własnych prowokacji, to nie jest to autentyczna kronika, tylko tendencyjny materiał dowodowy tworzony z premedytacją.",
+          "opt3": "To pokazuje, że ta druga osoba jest naprawdę zła",
+          "exp3": "Nie. Selektywna dokumentacja mówi więcej o osobie prowadzącej, niż o osobie opisywanej. To potwierdzenie z góry przyjętej narracji, nie obiektywny obraz rzeczywistości."
+        }
+      },
+      "moralSelfLicensing": {
+        "title": "Moralne Samolicencjonowanie",
+        "definition": "Mechanizm psychologiczny polegający na przedstawianiu własnych, egoistycznych działań jako misji w imię wyższych wartości. Prywatna wendeta zostaje podniesiona do rangi moralitetu, co pozwala usprawiedliwić destrukcyjne działania i zdobyć poparcie otoczenia poprzez kooptację instytucji i opinii publicznej.",
+        "flags": {
+          "higherValues": "Odwoływanie się do wyższych wartości: 'sprawiedliwość', 'przywrócenie porządku', 'nauczka'",
+          "victimAsHero": "Autokreacja na bohatera walczącego za słuszną sprawę (z ofiary na bojowniczkę)",
+          "institutionWeapon": "Wykorzystanie instytucji państwowych jako 'narzędzia sprawiedliwości' (faktycznie: broni w prywatnej wojnie)",
+          "chorusOfSupport": "Angażowanie innych jako 'chóru poparcia' wzmacniającego pozycję moralną",
+          "privateVengeance": "Osobisty odwet przedstawiony jako przywracanie ładu i porządku"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Odwołanie darowizny jako 'kara za nieposłuszeństwo'",
+            "behavior": "Barbara ujmuje spór majątkowy w ramy moralne: 'rażąca niewdzięczność'. To prawno-moralna etykieta pozwalająca usprawiedliwić radykalne kroki (odwołanie darowizny) nie jako akt zemsty za osobiste urazy (związek syna z kuzynką), lecz jako sprawiedliwą konsekwencję niemoralnego postępowania.",
+            "analysis": "Prywatny odwet przedstawiony jako akt przywracania porządku. Barbara użyła art. 898 § 1 k.c. jako narzędzia moralnej zemsty, nie ochrony darczyńcy (którym był Sylwester, nie ona). To samolicencjonowanie - nadanie sobie prawa do działania destrukcyjnego poprzez moralne uzasadnienie."
+          },
+          "ex2": {
+            "context": "Wykorzystanie procedury Niebieskiej Karty i Policji",
+            "behavior": "Barbara pozycjonuje się jako obywatelka szukająca ochrony przed przemocą. Jednak już latem 2021 konsultowała z radcą prawnym strategię odwołania darowizny. Procedura NK uruchomiona po wyjeździe Dariusza (brak aktualnego zagrożenia). Celem nie była ochrona, ale zdobycie formalnych narzędzi do walki o majątek.",
+            "analysis": "Instrumentalizacja systemu państwowego. Instytucje ochrony ofiar przemocy potraktowane jako środek do osiągnięcia celu procesowego. To nadużycie systemu pod płaszczykiem 'walki o bezpieczeństwo'."
+          },
+          "ex3": {
+            "context": "Rodzina jako 'chór poparcia'",
+            "behavior": "W dokumentacji NK: rodzeństwo 'zaprzestało przyjazdów z obawy na zachowanie brata'. Artur i Monika nie mieszkali w domu, rzadko bywali. Ich 'lęk' został ukształtowany przez jednostronną narrację matki, nie osobiste doświadczenia.",
+            "analysis": "Angażowanie rodziny do społecznego wyizolowania Dariusza i wzmocnienia własnej pozycji moralnej. Kreowanie wrażenia, że zachowanie syna jest potępiane przez całe otoczenie. To budowanie 'koalicji' wzmacniającej legitymizację własnych działań."
+          }
+        },
+        "quiz": {
+          "question": "Osoba mówi 'robię to dla dobra rodziny', ale jej działania niszczą relacje. Jak to rozumieć?",
+          "opt1": "Osoba szczerze wierzy, że robi dobrze",
+          "exp1": "Możliwe, ale gdy 'dobro rodziny' to argument dla działań destrukcyjnych (procesy, publiczne upokorzenie), to raczej samolicencjonowanie - usprawiedliwienie zemsty poprzez odwołanie do wyższych wartości.",
+          "opt2": "To moralne samolicencjonowanie - dobro rodziny jako pretekst",
+          "exp2": "Dokładnie. Gdy ktoś destrukcyjne działania (procesy, odwołanie darowizny, instrumentalizacja instytucji) przedstawia jako 'walkę o wartości', to mechanizm samolicencjonowania. Prywatna wendeta zostaje moralnie usprawiedliwiona.",
+          "opt3": "To pokazuje, że rodzina naprawdę jest w niebezpieczeństwie",
+          "exp3": "Nie. Gdyby chodziło o realne dobro rodziny, działania dążyłyby do deeskalacji i naprawy. Tu jest odwrotnie - eskalacja pod płaszczykiem ochrony wartości."
+        }
+      }
+    },
+    "framework": {
+      "title": "Metoda Analizy: Deklaracja → Działanie → Sprzeczność",
+      "intro": "Naucz się samodzielnie analizować sprzeczności w zachowaniach. Ten framework pomaga zdemaskować rozdźwięk między słowami a czynami.",
+      "step1": {
+        "title": "Co osoba MÓWI?",
+        "description": "Zapisz dokładnie deklaracje, obietnice, słowa tej osoby. Co chce, żebyś usłyszał?",
+        "placeholder": "Np. 'Bardzo mi zależy na naprawie naszej relacji', 'Chcę tylko dobra dla ciebie', 'Robię to z troski'..."
+      },
+      "step2": {
+        "title": "Co osoba ROBI?",
+        "description": "Zapisz konkretne działania i zachowania - fakty, nie interpretacje.",
+        "placeholder": "Np. 'Wysłała pozew sądowy 3 dni po tej rozmowie', 'Zbiera na mnie materiał dowodowy', 'Nie wezwała pomocy medycznej, tylko zażądała ode mnie...'..."
+      },
+      "step3": {
+        "title": "Gdzie jest sprzeczność?",
+        "description": "Przeanalizuj różnicę między słowami a czynami. Czy działania wspierają deklarowane intencje?",
+        "placeholder": "Twoja analiza: Co jest priorytetem - naprawienie relacji czy walka? Czy działania są spójne z deklaracjami?..."
+      },
+      "analyze": "Analizuj sprzeczność"
+    },
+    "categories": {
+      "cognitive": "Dysonans poznawczy",
+      "emotional": "Manipulacja emocjonalna",
+      "institutional": "Instrumentalizacja instytucji"
+    },
+    "resources": {
+      "title": "Potrzebujesz Wsparcia?",
+      "subtitle": "Ta strona nie zastępuje pomocy profesjonalnej. W sytuacji zagrożenia zawsze kontaktuj się z odpowiednimi służbami.",
+      "blueLine": "Pomoc dla ofiar przemocy domowej. Całodobowy telefon i chat online.",
+      "trustLine": "Wsparcie dla osób w kryzysie psychicznym. Całodobowo, anonimowo.",
+      "legal": "Bezpłatne porady prawne w sprawach rodzinnych.",
+      "legalLink": "poradnie-prawne.pl"
+    },
+    "warning": {
+      "title": "Uwaga: Trudne Treści",
+      "message": "Materiał zawiera opisy manipulacji emocjonalnej i konfliktów rodzinnych. Jeśli temat jest dla Ciebie trudny, przeczytaj w komfortowych warunkach. Możesz w każdej chwili przerwać lekturę.",
+      "accept": "Rozumiem, chcę kontynuować"
+    }
   }
 }
