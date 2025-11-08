@@ -5,6 +5,7 @@ import { DocumentarySection } from '../features/documentary/DocumentarySection';
 import { FinalLessonSection } from '../features/final-lesson/FinalLessonSection';
 import { PlatformInfoSection } from '../features/platform-info/PlatformInfoSection';
 import { StudioSection } from '../features/studio/StudioSection';
+import { TimelineSection } from '../features/timeline/TimelineSection';
 import { TrackHighlightsSection } from '../features/track-highlights/TrackHighlightsSection';
 import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
 import { ExploreMore, type ExploreMoreLink } from '../components/ExploreMore';
@@ -17,34 +18,34 @@ export default function Home(): ReactElement {
       to: '/live',
       labelKey: 'exploreMore.suggestions.fromHome.live',
       descriptionKey: 'exploreMore.suggestions.fromHome.liveDesc',
-      badge: '24/7'
+      badge: '24/7',
     },
     {
       to: '/guides',
       labelKey: 'exploreMore.suggestions.fromHome.guides',
-      descriptionKey: 'exploreMore.suggestions.fromHome.guidesDesc'
+      descriptionKey: 'exploreMore.suggestions.fromHome.guidesDesc',
     },
     {
       to: '/violence-loop',
       labelKey: 'exploreMore.suggestions.fromHome.tools',
-      descriptionKey: 'exploreMore.suggestions.fromHome.toolsDesc'
+      descriptionKey: 'exploreMore.suggestions.fromHome.toolsDesc',
     },
     {
       to: '/studio',
       labelKey: 'exploreMore.suggestions.fromHome.studio',
-      descriptionKey: 'exploreMore.suggestions.fromHome.studioDesc'
+      descriptionKey: 'exploreMore.suggestions.fromHome.studioDesc',
     },
     {
       to: '/analysis',
       labelKey: 'exploreMore.suggestions.fromHome.analysis',
       descriptionKey: 'exploreMore.suggestions.fromHome.analysisDesc',
-      badge: '100+ godz'
+      badge: '100+ godz',
     },
     {
       to: '/lab',
       labelKey: 'exploreMore.suggestions.fromHome.lab',
-      descriptionKey: 'exploreMore.suggestions.fromHome.labDesc'
-    }
+      descriptionKey: 'exploreMore.suggestions.fromHome.labDesc',
+    },
   ];
 
   return (
@@ -54,6 +55,7 @@ export default function Home(): ReactElement {
         <p className="max-w-4xl text-lg leading-relaxed text-base-200">{t('pages.home.lead')}</p>
       </section>
 
+      <TimelineSection />
       <PlatformInfoSection />
       <TrackHighlightsSection />
       <DocumentarySection />
