@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { CurseOfEightSection } from '../features/curse-of-eight/CurseOfEightSection';
 import { DocumentarySection } from '../features/documentary/DocumentarySection';
 import { FinalLessonSection } from '../features/final-lesson/FinalLessonSection';
 import { PlatformInfoSection } from '../features/platform-info/PlatformInfoSection';
@@ -56,6 +57,7 @@ export default function Home(): ReactElement {
       </section>
 
       <TimelineSection />
+      <CurseOfEightSection />
       <PlatformInfoSection />
       <TrackHighlightsSection />
       <DocumentarySection />
