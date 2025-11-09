@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { AppFooter } from '../features/footer/AppFooter';
+import { Breadcrumbs } from './Breadcrumbs';
 import { Header } from './Header';
 import { usePageTracking } from '../hooks/usePageTracking';
 
@@ -21,9 +22,10 @@ export function AppShell(): JSX.Element {
         {t('header.skipToContent')}
       </a>
       <Header />
+      <Breadcrumbs />
       <main
         id="main-content"
-        className="container-responsive flex flex-1 flex-col gap-10 pb-16 pt-24"
+        className="container-responsive flex flex-1 flex-col gap-10 pb-16 pt-8"
         tabIndex={-1}
       >
         <Outlet />

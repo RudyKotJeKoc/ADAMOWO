@@ -8,6 +8,7 @@
     "studio": "Studio",
     "shows": "Shows",
     "guide": "Guide",
+    "anatomy": "Anatomy",
     "lab": "Lab",
     "community": "Community"
   },
@@ -1421,6 +1422,296 @@
       "formatNotSupported": "Format not supported",
       "permissionDenied": "Permission denied",
       "unknown": "Unknown error occurred"
+    }
+  },
+  "breadcrumbs": {
+    "label": "Breadcrumb navigation",
+    "home": "Home",
+    "analysis": "Analysis Archive",
+    "privacy": "Privacy Policy",
+    "methodology": "Methodology",
+    "aiPolicy": "AI Use Policy"
+  },
+  "search": {
+    "label": "Search the site",
+    "open": "Open search",
+    "close": "Close search",
+    "placeholder": "Search content...",
+    "hint": "Start typing to search through guides, tools, and pages",
+    "noResults": "No results found",
+    "types": {
+      "page": "Page",
+      "guide": "Guide",
+      "analysis": "Analysis",
+      "tool": "Tool"
+    },
+    "results": {
+      "live": {
+        "description": "Listen to live streaming radio and educational content"
+      },
+      "violenceLoop": {
+        "description": "Interactive visualization of violence cycle patterns"
+      },
+      "studio": {
+        "description": "Browse radio programs and studio content"
+      },
+      "shows": {
+        "description": "Explore all radio shows and episodes"
+      },
+      "guides": {
+        "description": "Practical guides on recognizing manipulation patterns"
+      },
+      "anatomy": {
+        "description": "Deep analysis of manipulation tactics and schemas"
+      },
+      "lab": {
+        "description": "AI-powered tools for understanding manipulation"
+      },
+      "community": {
+        "description": "Join the community and find support"
+      },
+      "analysis": {
+        "description": "Archive of case analyses and educational podcasts"
+      },
+      "privacy": {
+        "description": "Privacy policy and data protection information"
+      },
+      "aiPolicy": {
+        "description": "AI use policy, ethics, and safeguards"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy & Data Protection",
+    "description": "Learn how we protect your personal data and ensure your privacy when using Radio Adamowo's interactive tools and services.",
+    "lastUpdated": "Last updated",
+    "updateDate": "January 2025",
+    "notice": {
+      "title": "Your Privacy Matters",
+      "content": "Radio Adamowo is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your personal information."
+    },
+    "dataProtection": {
+      "title": "Data Protection Principles",
+      "content": "<p>We process personal data in accordance with GDPR and applicable data protection laws. Our core principles:</p><ul class='list-disc pl-6 space-y-2'><li>Data minimization: We only collect data necessary for our services</li><li>Purpose limitation: Data is used only for stated purposes</li><li>Transparency: We clearly communicate our data practices</li><li>Security: We implement appropriate technical and organizational measures</li><li>User rights: We respect and facilitate your data protection rights</li></ul>"
+    },
+    "personalData": {
+      "title": "Personal Data We Collect",
+      "content": "<p><strong>Automatically collected:</strong></p><ul class='list-disc pl-6 space-y-1'><li>IP address (anonymized)</li><li>Browser type and version</li><li>Device information</li><li>Pages visited and time spent</li><li>Referring URLs</li></ul><p class='mt-4'><strong>Voluntarily provided:</strong></p><ul class='list-disc pl-6 space-y-1'><li>Email address (if you subscribe to newsletter)</li><li>Feedback and survey responses</li><li>User-generated content in interactive tools</li></ul>"
+    },
+    "interactiveTools": {
+      "title": "Interactive Tools & Data Processing",
+      "content": "<p>When you use our interactive tools (AI Lab, Violence Loop, Eight Sins assessment), we process data as follows:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Local processing:</strong> Most interactions are processed locally in your browser</li><li><strong>No permanent storage:</strong> We do not permanently store your inputs or responses</li><li><strong>Session data:</strong> Temporary session data is automatically deleted when you close your browser</li><li><strong>Analytics:</strong> We collect anonymized usage statistics to improve our tools</li></ul>"
+    },
+    "cookies": {
+      "title": "Cookies & Local Storage",
+      "content": "<p>We use cookies and local storage for:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Essential cookies:</strong> Required for site functionality (theme preference, language selection)</li><li><strong>Analytics cookies:</strong> Help us understand how visitors use our site (anonymized)</li><li><strong>Performance cookies:</strong> Improve site speed and user experience</li></ul><p class='mt-4'>You can control cookies through your browser settings. Disabling essential cookies may affect site functionality.</p>"
+    },
+    "consent": {
+      "title": "Consent for Interactive Tools",
+      "description": "By using our interactive tools, you consent to the following data processing:",
+      "points": {
+        "aiLab": "AI Lab may process text inputs locally to generate educational responses",
+        "violenceLoop": "Violence Loop stores interaction patterns temporarily to personalize the experience",
+        "analytics": "Anonymous usage analytics help us improve tool effectiveness",
+        "storage": "Browser local storage may cache your preferences and progress"
+      },
+      "userControl": "You can withdraw consent at any time by clearing your browser data or contacting us."
+    },
+    "rights": {
+      "title": "Your Data Protection Rights",
+      "description": "Under GDPR, you have the following rights:",
+      "access": "Right to access your personal data",
+      "rectification": "Right to correct inaccurate data",
+      "erasure": "Right to request deletion of your data",
+      "portability": "Right to receive your data in a portable format",
+      "objection": "Right to object to data processing",
+      "withdraw": "Right to withdraw consent at any time"
+    },
+    "contact": {
+      "title": "Contact Us About Privacy",
+      "description": "For privacy-related questions or to exercise your rights, contact our data protection officer:",
+      "email": "Email"
+    },
+    "relatedLinks": {
+      "aiPolicy": "AI Use Policy",
+      "methodology": "Methodology & Sources"
+    }
+  },
+  "aiPolicy": {
+    "title": "AI Use Policy & Ethics",
+    "description": "Our commitment to responsible AI use, including voice reconstruction ethics, deepfake prevention, and safeguards for educational content.",
+    "lastUpdated": "Last updated",
+    "updateDate": "January 2025",
+    "warning": {
+      "title": "Important: Educational Use Only",
+      "content": "All AI-generated content on this platform is strictly for educational purposes. Misuse of AI tools for deception, harassment, or harm is prohibited and may be illegal."
+    },
+    "principles": {
+      "title": "Our AI Ethics Principles",
+      "description": "Radio Adamowo is committed to responsible AI use guided by these core principles:",
+      "educational": {
+        "title": "Educational Purpose",
+        "description": "AI is used exclusively to help users understand manipulation tactics, not to enable them"
+      },
+      "consent": {
+        "title": "Informed Consent",
+        "description": "Clear disclosure when AI-generated content is used, with explicit user consent required"
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Open communication about AI capabilities, limitations, and potential biases"
+      },
+      "safety": {
+        "title": "User Safety",
+        "description": "Safeguards to prevent misuse and protect vulnerable users from manipulation or harm"
+      },
+      "accountability": {
+        "title": "Accountability",
+        "description": "Regular audits, user feedback mechanisms, and commitment to addressing issues promptly"
+      }
+    },
+    "voiceReconstruction": {
+      "title": "Voice Reconstruction & Deepfake Prevention",
+      "description": "Voice synthesis and reconstruction technology requires special ethical consideration. Here's our approach:",
+      "dataSource": {
+        "title": "Data Sources",
+        "content": "All voice samples used for reconstruction are either: (1) Publicly available recordings with proper attribution, (2) Synthetic voices created specifically for educational use, or (3) Contributed with explicit written consent from the speaker."
+      },
+      "consent": {
+        "title": "Consent Requirements",
+        "point1": "Written consent is obtained from all individuals whose voices are reconstructed",
+        "point2": "Consent forms explicitly state educational use and potential AI reconstruction",
+        "point3": "Participants can withdraw consent at any time, resulting in immediate removal"
+      },
+      "safeguards": {
+        "title": "Technical Safeguards",
+        "watermarking": "Digital watermarking of all AI-generated audio to enable detection",
+        "disclosure": "Clear visual and audio indicators that content is AI-generated",
+        "noExport": "Restrictions on downloading or exporting reconstructed voices",
+        "monitoring": "Automated monitoring for misuse attempts",
+        "encryption": "Secure storage and transmission of voice data with encryption"
+      }
+    },
+    "aiLab": {
+      "title": "AI Lab Tool",
+      "description": "Our AI Lab simulates conversations with manipulative personas to help users recognize tactics. Here's how we ensure safety:",
+      "dataProcessing": {
+        "title": "Data Processing",
+        "local": "Conversations are processed locally when possible",
+        "noStorage": "We do not permanently store conversation content",
+        "noTraining": "User inputs are never used to train AI models",
+        "anonymized": "Any analytics collected are fully anonymized"
+      },
+      "limitations": {
+        "title": "Limitations & Disclaimers",
+        "content": "AI Lab provides educational simulations but cannot replicate the full complexity of human manipulation. It should complement, not replace, professional advice and human judgment."
+      }
+    },
+    "security": {
+      "title": "Data Security Measures",
+      "description": "We protect AI-related data with comprehensive security measures:",
+      "measures": {
+        "encryption": "End-to-end encryption for data transmission",
+        "access": "Strict access controls limiting who can view sensitive data",
+        "audit": "Regular security audits and vulnerability assessments",
+        "retention": "Minimal data retention with automatic deletion policies",
+        "breach": "Incident response plan for potential data breaches",
+        "thirdParty": "Vetting of third-party AI service providers"
+      }
+    },
+    "userControl": {
+      "title": "User Control & Opt-Out",
+      "description": "You maintain control over AI interactions:",
+      "optOut": "Opt out of AI features while still accessing other content",
+      "deleteData": "Request deletion of any data associated with AI interactions",
+      "report": "Report concerning AI behavior or potential misuse"
+    },
+    "contact": {
+      "title": "AI Ethics Concerns",
+      "description": "For questions about our AI use or to report concerns:",
+      "email": "Email"
+    },
+    "relatedLinks": {
+      "privacy": "Privacy Policy",
+      "methodology": "Methodology & Sources"
+    }
+  },
+  "methodology": {
+    "title": "Methodology & Sources",
+    "description": "Our evidence-based approach to understanding psychological manipulation, grounded in research, expert consultation, and survivor experiences.",
+    "approach": {
+      "title": "Our Methodology",
+      "description": "Radio Adamowo's content is developed using a rigorous, multidisciplinary approach:",
+      "evidence": {
+        "title": "Evidence-Based",
+        "description": "All content is grounded in peer-reviewed research, clinical studies, and established psychological theory"
+      },
+      "multidisciplinary": {
+        "title": "Multidisciplinary Perspective",
+        "description": "We integrate insights from psychology, neuroscience, trauma research, and legal studies"
+      },
+      "practical": {
+        "title": "Practical Application",
+        "description": "Academic research is translated into practical, actionable guidance for real-world situations"
+      },
+      "accessible": {
+        "title": "Accessible Communication",
+        "description": "Complex concepts are explained in clear, understandable language without oversimplification"
+      }
+    },
+    "sources": {
+      "title": "Key Sources & Research",
+      "description": "Our content draws from leading research in multiple fields:",
+      "categories": {
+        "psychology": "Psychology & Manipulation",
+        "trauma": "Trauma & Recovery",
+        "legal": "Legal & Advocacy"
+      },
+      "examples": {
+        "psychology1": "Narcissistic Personality Disorder research (DSM-5, ICD-11)",
+        "psychology2": "Coercive control and intimate partner violence studies",
+        "psychology3": "Cognitive biases and social influence research",
+        "trauma1": "Post-traumatic stress disorder (PTSD) and complex trauma",
+        "trauma2": "Judith Herman's work on trauma and recovery",
+        "legal1": "Domestic violence law and protective measures",
+        "legal2": "Psychological abuse recognition in legal systems"
+      }
+    },
+    "experts": {
+      "title": "Expert Consultation",
+      "description": "We consult with professionals across relevant fields:",
+      "types": {
+        "psychologists": "Clinical psychologists specializing in personality disorders",
+        "therapists": "Trauma therapists and PTSD specialists",
+        "legal": "Legal experts in domestic violence and family law",
+        "survivors": "Survivor advocates and support organizations"
+      }
+    },
+    "quality": {
+      "title": "Quality Assurance",
+      "description": "We maintain content accuracy through:",
+      "measures": {
+        "review": "Regular content reviews by subject matter experts",
+        "feedback": "User feedback integration and continuous improvement",
+        "updates": "Periodic updates to reflect new research and best practices",
+        "accuracy": "Fact-checking and citation verification"
+      }
+    },
+    "limitations": {
+      "title": "Limitations & Disclaimers",
+      "content": "While we strive for accuracy, our content has limitations:",
+      "point1": "Educational content does not constitute medical or legal advice",
+      "point2": "Individual situations vary; professional consultation is recommended",
+      "point3": "Research is ongoing; our understanding evolves with new evidence"
+    },
+    "feedback": {
+      "title": "Research Feedback",
+      "description": "We welcome feedback from researchers, professionals, and users:",
+      "email": "Email"
+    },
+    "relatedLinks": {
+      "privacy": "Privacy Policy",
+      "aiPolicy": "AI Use Policy"
     }
   },
   "footer": {
