@@ -620,6 +620,26 @@
         ]
       }
     },
+    "keyFindings": {
+      "title": "Belangrijkste Bevindingen",
+      "summary": "Vier waarschuwingssymbolen helpen fasen van narcistische manipulatie te herkennen: van idealisering (7), via opbouwen van afhankelijkheid (4), de terugkeerlus (8), tot escalatie van dreigingen (13).",
+      "finding1": {
+        "label": "Symbool 7: Herken het idealisatiepact",
+        "description": "Eis tijd om na te denken voordat je 'speciale' deals accepteert"
+      },
+      "finding2": {
+        "label": "Symbool 4: Breng afhankelijkheden in kaart",
+        "description": "Identificeer de 4 controlepijlers en zorg voor alternatieve steun"
+      },
+      "finding3": {
+        "label": "Symbool 8: Monitor beloften",
+        "description": "Volg echte veranderingen, niet alleen verklaringen na verzoening"
+      },
+      "finding4": {
+        "label": "Symbool 13: Bereid een veiligheidsplan voor",
+        "description": "Beveilig documenten en informeer vertrouwelingen over risico's"
+      }
+    },
     "controls": {
       "theme": {
         "label": "Thema",
@@ -1386,6 +1406,44 @@
     "error": "Fout bij laden van statistieken",
     "icon": {
       "label": "Bezoekteller icoon"
+    }
+  },
+  "contentType": {
+    "artistic": "Artistiek / Satirisch",
+    "expert": "Deskundige Analyse",
+    "guide": "Praktische Gids",
+    "tool": "Interactieve Tool",
+    "documentary": "Documentair Materiaal",
+    "educational": "Educatief Materiaal",
+    "caseStudy": "Casestudie",
+    "scientific": "Wetenschappelijke Inhoud"
+  },
+  "keyFindings": {
+    "title": "Belangrijkste Bevindingen",
+    "whatToDoNow": "Wat Nu Te Doen?",
+    "summary": "Samenvatting",
+    "quickNav": "Snelle Navigatie"
+  },
+  "author": {
+    "credit": {
+      "label": "Auteursinformatie"
+    },
+    "credentials": {
+      "label": "Kwalificaties"
+    },
+    "published": "Gepubliceerd",
+    "updated": "Bijgewerkt",
+    "examples": {
+      "psychologyExpert": {
+        "name": "Dr. Anna Kowalska",
+        "role": "Expert Familiepsychologie",
+        "bio": "Klinisch psycholoog met 15 jaar ervaring in het werken met slachtoffers van psychisch misbruik en narcisme. Gespecialiseerd in familietherapie en intergenerationele traumaoverdracht.",
+        "credentials": {
+          "phd": "PhD Klinische Psychologie",
+          "certification": "Gecertificeerd Familietherapeut",
+          "experience": "15+ jaar klinische praktijk"
+        }
+      }
     }
   }
 }

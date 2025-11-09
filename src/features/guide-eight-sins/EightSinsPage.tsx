@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ContentTypeLabel } from '@/components/ContentTypeLabel';
 import { eightSinsModules } from './guide.data';
 import { AnswerValue, ModuleAnswers } from './guide.schema';
 import { ProgressBar } from './ProgressBar';
@@ -54,6 +55,9 @@ export const EightSinsPage = (): JSX.Element => {
   return (
     <div className="space-y-6">
       <header className="rounded-3xl border border-base-700 bg-gradient-to-br from-base-900 via-base-950 to-base-900 p-8 text-base-100 shadow-xl">
+        <div className="mb-2">
+          <ContentTypeLabel type="tool" />
+        </div>
         <h1 className="text-3xl font-bold text-accent-200 sm:text-4xl">{t('guide.title')}</h1>
         <p className="mt-4 max-w-3xl text-base text-base-200">{t('guide.intro')}</p>
         <div className="mt-6 flex flex-wrap items-center gap-3">

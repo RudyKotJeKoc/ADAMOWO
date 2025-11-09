@@ -1,4 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { ContentTypeLabel } from '@/components/ContentTypeLabel';
+import { AuthorCredit } from '@/components/AuthorCredit';
 import { PSYCHOLOGY_SECTIONS } from './family-psychology.data';
 import { TransmissionDiagram } from './TransmissionDiagram';
 import { PatternIndicators } from './PatternIndicators';
@@ -23,7 +25,10 @@ export function FamilyPsychologySection({ sectionId }: FamilyPsychologySectionPr
       className="space-y-8 rounded-[2.5rem] border border-base-900 bg-gradient-to-br from-base-950/95 via-base-925/80 to-base-950/95 p-8 shadow-[0_0_64px_rgba(9,12,32,0.6)]"
     >
       <header className="space-y-4">
-        <p className="text-xs uppercase tracking-[0.4em] text-accent-200">{t('familyPsychology.kicker')}</p>
+        <div className="flex items-center gap-3">
+          <p className="text-xs uppercase tracking-[0.4em] text-accent-200">{t('familyPsychology.kicker')}</p>
+          <ContentTypeLabel type="scientific" />
+        </div>
         <div className="space-y-3">
           <h2 id="family-psychology-title" className="font-display text-3xl font-semibold text-base-50 sm:text-4xl">
             {t('familyPsychology.title')}
@@ -31,6 +36,24 @@ export function FamilyPsychologySection({ sectionId }: FamilyPsychologySectionPr
           <p className="max-w-3xl text-base leading-relaxed text-base-200">{t('familyPsychology.intro')}</p>
         </div>
       </header>
+
+      <AuthorCredit
+        authors={[
+          {
+            id: 'psychology-expert',
+            nameKey: 'author.examples.psychologyExpert.name',
+            roleKey: 'author.examples.psychologyExpert.role',
+            bioKey: 'author.examples.psychologyExpert.bio',
+            credentials: [
+              'author.examples.psychologyExpert.credentials.phd',
+              'author.examples.psychologyExpert.credentials.certification',
+              'author.examples.psychologyExpert.credentials.experience',
+            ],
+          },
+        ]}
+        publishedDate="2024-01-15"
+        updatedDate="2025-01-05"
+      />
 
       {/* Section 1: Mechanisms */}
       <div className="space-y-6">

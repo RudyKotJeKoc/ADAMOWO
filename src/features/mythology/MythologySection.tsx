@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ContentTypeLabel } from '@/components/ContentTypeLabel';
+import { KeyFindings } from '@/components/KeyFindings';
 import { SymbolCard } from './SymbolCard';
 import { SymbolDetails } from './SymbolDetails';
 import { MYTH_SYMBOLS } from './mythology.data';
@@ -40,7 +42,10 @@ export function MythologySection({ sectionId }: MythologySectionProps = {}): JSX
       className="space-y-8 rounded-[2.5rem] border border-base-925 bg-gradient-to-br from-base-950 via-base-925/80 to-base-950 p-8 shadow-[0_0_70px_rgba(8,12,28,0.6)]"
     >
       <header className="space-y-3">
-        <p className="text-xs uppercase tracking-[0.4em] text-accent-200">{t('mythology.kicker')}</p>
+        <div className="flex items-center gap-3">
+          <p className="text-xs uppercase tracking-[0.4em] text-accent-200">{t('mythology.kicker')}</p>
+          <ContentTypeLabel type="artistic" />
+        </div>
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <h2 id="mythology-section-title" className="font-display text-3xl font-semibold text-base-50 sm:text-4xl">
             {t('mythology.title')}
@@ -57,6 +62,37 @@ export function MythologySection({ sectionId }: MythologySectionProps = {}): JSX
           <SymbolDetails symbol={selectedSymbol} />
         </div>
       </div>
+
+      <KeyFindings
+        titleKey="mythology.keyFindings.title"
+        summaryKey="mythology.keyFindings.summary"
+        findings={[
+          {
+            id: 'symbol-7',
+            labelKey: 'mythology.keyFindings.finding1.label',
+            descriptionKey: 'mythology.keyFindings.finding1.description',
+            linkTo: undefined,
+          },
+          {
+            id: 'symbol-4',
+            labelKey: 'mythology.keyFindings.finding2.label',
+            descriptionKey: 'mythology.keyFindings.finding2.description',
+            linkTo: undefined,
+          },
+          {
+            id: 'symbol-8',
+            labelKey: 'mythology.keyFindings.finding3.label',
+            descriptionKey: 'mythology.keyFindings.finding3.description',
+            linkTo: undefined,
+          },
+          {
+            id: 'symbol-13',
+            labelKey: 'mythology.keyFindings.finding4.label',
+            descriptionKey: 'mythology.keyFindings.finding4.description',
+            linkTo: undefined,
+          },
+        ]}
+      />
     </section>
   );
 }

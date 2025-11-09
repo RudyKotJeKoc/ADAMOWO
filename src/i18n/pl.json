@@ -659,6 +659,26 @@
         ]
       }
     },
+    "keyFindings": {
+      "title": "Kluczowe wnioski",
+      "summary": "Cztery symbole ostrzegawcze pomagają rozpoznać fazy manipulacji narcystycznej: od idealizacji (7), przez budowanie zależności (4), pętlę powrotów (8), aż po zagrożenie eskalacją (13).",
+      "finding1": {
+        "label": "Symbol 7: Rozpoznaj pakt idealizacji",
+        "description": "Żądaj czasu na namysł przed akceptacją 'specjalnych' układów"
+      },
+      "finding2": {
+        "label": "Symbol 4: Mapuj zależności",
+        "description": "Zidentyfikuj 4 filary kontroli i zabezpiecz alternatywne wsparcie"
+      },
+      "finding3": {
+        "label": "Symbol 8: Monitoruj obietnice",
+        "description": "Śledź faktyczne zmiany, nie tylko deklaracje po powrocie"
+      },
+      "finding4": {
+        "label": "Symbol 13: Przygotuj plan bezpieczeństwa",
+        "description": "Zabezpiecz dokumenty i powiadom osoby zaufane o ryzyku"
+      }
+    },
     "controls": {
       "theme": {
         "label": "Motyw",
@@ -1932,6 +1952,44 @@
     "error": "Błąd podczas ładowania statystyk",
     "icon": {
       "label": "Ikona licznika odwiedzin"
+    }
+  },
+  "contentType": {
+    "artistic": "Fabularyzowane / Artystyczne",
+    "expert": "Analiza ekspercka",
+    "guide": "Poradnik praktyczny",
+    "tool": "Narzędzie interaktywne",
+    "documentary": "Materiał dokumentalny",
+    "educational": "Materiał edukacyjny",
+    "caseStudy": "Studium przypadku",
+    "scientific": "Treści naukowe"
+  },
+  "keyFindings": {
+    "title": "Kluczowe wnioski",
+    "whatToDoNow": "Co zrobić teraz?",
+    "summary": "Podsumowanie",
+    "quickNav": "Szybka nawigacja"
+  },
+  "author": {
+    "credit": {
+      "label": "Informacje o autorach"
+    },
+    "credentials": {
+      "label": "Kwalifikacje"
+    },
+    "published": "Opublikowano",
+    "updated": "Zaktualizowano",
+    "examples": {
+      "psychologyExpert": {
+        "name": "Dr Anna Kowalska",
+        "role": "Ekspertka ds. Psychologii Rodzinnej",
+        "bio": "Psycholożka kliniczna z 15-letnim doświadczeniem w pracy z ofiarami przemocy psychicznej i narcyzmu. Specjalizuje się w terapii rodzinnej i transmisji międzypokoleniowej traumy.",
+        "credentials": {
+          "phd": "PhD Psychologia Kliniczna",
+          "certification": "Certyfikowany Terapeuta Rodzinny",
+          "experience": "15+ lat praktyki klinicznej"
+        }
+      }
     }
   }
 }

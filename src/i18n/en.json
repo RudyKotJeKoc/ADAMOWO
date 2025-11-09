@@ -658,6 +658,26 @@
         ]
       }
     },
+    "keyFindings": {
+      "title": "Key Findings",
+      "summary": "Four warning symbols help identify phases of narcissistic manipulation: from idealization (7), through building dependency (4), the return loop (8), to threat escalation (13).",
+      "finding1": {
+        "label": "Symbol 7: Recognize the idealization pact",
+        "description": "Demand time to reflect before accepting 'special' deals"
+      },
+      "finding2": {
+        "label": "Symbol 4: Map dependencies",
+        "description": "Identify the 4 control pillars and secure alternative support"
+      },
+      "finding3": {
+        "label": "Symbol 8: Monitor promises",
+        "description": "Track actual changes, not just declarations after reconciliation"
+      },
+      "finding4": {
+        "label": "Symbol 13: Prepare a safety plan",
+        "description": "Secure documents and notify trusted individuals of risk"
+      }
+    },
     "controls": {
       "theme": {
         "label": "Theme",
@@ -1387,6 +1407,44 @@
     "error": "Error loading statistics",
     "icon": {
       "label": "Visit counter icon"
+    }
+  },
+  "contentType": {
+    "artistic": "Artistic / Satirical",
+    "expert": "Expert Analysis",
+    "guide": "Practical Guide",
+    "tool": "Interactive Tool",
+    "documentary": "Documentary Material",
+    "educational": "Educational Material",
+    "caseStudy": "Case Study",
+    "scientific": "Scientific Content"
+  },
+  "keyFindings": {
+    "title": "Key Findings",
+    "whatToDoNow": "What to Do Now?",
+    "summary": "Summary",
+    "quickNav": "Quick Navigation"
+  },
+  "author": {
+    "credit": {
+      "label": "Author Information"
+    },
+    "credentials": {
+      "label": "Credentials"
+    },
+    "published": "Published",
+    "updated": "Updated",
+    "examples": {
+      "psychologyExpert": {
+        "name": "Dr. Anna Kowalska",
+        "role": "Family Psychology Expert",
+        "bio": "Clinical psychologist with 15 years of experience working with victims of psychological abuse and narcissism. Specializes in family therapy and intergenerational trauma transmission.",
+        "credentials": {
+          "phd": "PhD Clinical Psychology",
+          "certification": "Certified Family Therapist",
+          "experience": "15+ years clinical practice"
+        }
+      }
     }
   }
 }
