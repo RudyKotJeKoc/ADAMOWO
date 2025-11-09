@@ -5,6 +5,7 @@ import { MessageList, type ConversationMessage } from './MessageList';
 import { UserInput } from './UserInput';
 import { AnalysisPanel } from './AnalysisPanel';
 import { evaluateMessage, TechniqueId } from './engine/rules';
+import { EthicsConsent } from './EthicsConsent';
 
 const createId = () =>
   (typeof crypto !== 'undefined' && 'randomUUID' in crypto
@@ -14,6 +15,7 @@ const createId = () =>
 export function SimulatorSection(): JSX.Element {
   const { t, i18n } = useTranslation();
   const [input, setInput] = useState('');
+  const [hasConsent, setHasConsent] = useState(false);
   const createWelcomeMessage = useMemo(
     () => () => ({
       id: createId(),
@@ -74,31 +76,44 @@ export function SimulatorSection(): JSX.Element {
   };
 
   return (
-    <section
-      role="region"
-      aria-labelledby="simulator-title"
-      className="space-y-8"
-    >
-      <header className="space-y-3">
-        <h2 id="simulator-title" className="text-2xl font-bold text-base-50">
-          {t('sim.title')}
-        </h2>
-        <p className="text-sm text-base-200">{t('sim.subtitle')}</p>
-      </header>
-      <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
-        <div className="space-y-4">
-          <MessageList
-            messages={messages}
-            userLabel={t('sim.userLabel')}
-            botLabel={t('sim.botLabel')}
-          />
-          <UserInput value={input} onChange={setInput} onSubmit={handleSend} onReset={resetConversation} />
-        </div>
-        <AnalysisPanel techniques={detectedTechniques} />
-      </div>
-      <p className="rounded-lg border border-base-800 bg-base-900/40 p-4 text-xs text-base-300">
-        {t('sim.disclaimer')}
-      </p>
-    </section>
+    <>
+      {!hasConsent && <EthicsConsent onConsent={() => setHasConsent(true)} />}
+      <section
+        role="region"
+        aria-labelledby="simulator-title"
+        className="space-y-8"
+      >
+        <header className="space-y-3">
+          <h2 id="simulator-title" className="text-2xl font-bold text-base-50">
+            {t('sim.title')}
+          </h2>
+          <p className="text-sm text-base-200">{t('sim.subtitle')}</p>
+        </header>
+        {hasConsent ? (
+          <>
+            <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
+              <div className="space-y-4">
+                <MessageList
+                  messages={messages}
+                  userLabel={t('sim.userLabel')}
+                  botLabel={t('sim.botLabel')}
+                />
+                <UserInput value={input} onChange={setInput} onSubmit={handleSend} onReset={resetConversation} />
+              </div>
+              <AnalysisPanel techniques={detectedTechniques} />
+            </div>
+            <p className="rounded-lg border border-base-800 bg-base-900/40 p-4 text-xs text-base-300">
+              {t('sim.disclaimer')}
+            </p>
+          </>
+        ) : (
+          <div className="rounded-xl border border-base-700 bg-base-900/50 p-8 text-center">
+            <p className="text-base-300">
+              {t('sim.awaitingConsent', 'Prosimy o zaakceptowanie zasad etycznych, aby korzystać z symulatora.')}
+            </p>
+          </div>
+        )}
+      </section>
+    </>
   );
 }

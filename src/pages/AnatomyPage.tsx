@@ -6,6 +6,7 @@ import { TriggerWarning } from '../features/anatomy/components/TriggerWarning';
 import { SchemaCard } from '../features/anatomy/components/SchemaCard';
 import { AnalysisWorksheet } from '../features/anatomy/components/AnalysisWorksheet';
 import { MANIPULATION_SCHEMAS } from '../features/anatomy/anatomy.data';
+import { HelpResources } from '../components/HelpResources';
 import '../features/anatomy/anatomy.css';
 
 export default function AnatomyPage(): JSX.Element {
@@ -98,8 +99,15 @@ export default function AnatomyPage(): JSX.Element {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════ */}
-        {/* RESOURCES SECTION (optional - can be added later) */}
+        {/* HELP RESOURCES SECTION */}
         {/* ═══════════════════════════════════════════════════════════ */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <HelpResources />
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

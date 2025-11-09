@@ -1056,7 +1056,40 @@
       },
       "default": "Doe niet zo dramatisch. Je verzint problemen."
     },
-    "disclaimer": "Alleen voor educatie. De simulator draait offline en slaat je invoer niet extern op."
+    "disclaimer": "Alleen voor educatie. De simulator draait offline en slaat je invoer niet extern op.",
+    "awaitingConsent": "Accepteer de ethische richtlijnen om de simulator te gebruiken.",
+    "ethics": {
+      "title": "Ethische richtlijnen en toestemming gebruiker",
+      "subtitle": "Lees de volgende informatie voordat je de simulator gebruikt",
+      "limitations": {
+        "title": "Beperkingen van de simulator",
+        "notReal": "De simulator gebruikt eenvoudige regels en patronen, het is geen geavanceerde AI",
+        "educational": "Deze tool is alleen voor educatieve doeleinden en vervangt geen therapie",
+        "simplified": "Antwoorden zijn vereenvoudigd en weerspiegelen niet de complexiteit van echte situaties",
+        "offline": "De simulator werkt offline - je gegevens worden NIET naar een server verstuurd"
+      },
+      "retrauma": {
+        "title": "Risico op retraumatisering",
+        "warning": "Gesimuleerde gesprekken kunnen moeilijke herinneringen en emoties oproepen die verband houden met echte ervaringen van manipulatie.",
+        "stop": "Stop als je:",
+        "feel": "Je overweldigd of van streek voelt",
+        "memories": "Ongewenste flashbacks of herinneringen ervaart",
+        "physical": "Fysieke stresssymptomen opmerkt (snelle hartslag, tremor)"
+      },
+      "purpose": {
+        "title": "Doel van de tool",
+        "description": "De simulator helpt gemeenschappelijke manipulatietechnieken te herkennen in een veilige, gecontroleerde omgeving. Het kan nuttig zijn als trainingshulpmiddel, maar mag niet worden gebruikt als vorm van zelftherapie."
+      },
+      "help": {
+        "title": "Professionele hulp",
+        "message": "Als je een moeilijke situatie doormaakt, neem dan contact op met een professional:"
+      },
+      "consent": {
+        "checkbox": "Ik heb de bovenstaande informatie gelezen en begrepen. Ik ben me bewust van de beperkingen van de tool en het risico op retraumatisering.",
+        "accept": "Ik begrijp en accepteer",
+        "decline": "Ga terug"
+      }
+    }
   },
   "rf": {
     "title": "Dagboek met rode vlaggen",
@@ -1378,6 +1411,49 @@
       "permissionDenied": "Toestemming geweigerd",
       "unknown": "Onbekende fout opgetreden"
     }
+  },
+  "media": {
+    "transcript": {
+      "title": "Transcriptie",
+      "show": "Toon transcriptie",
+      "hide": "Verberg transcriptie",
+      "search": "Zoek in transcriptie",
+      "searchPlaceholder": "Zoeken in transcriptie...",
+      "noResults": "Geen resultaten gevonden",
+      "jumpTo": "Ga naar {{time}}",
+      "resultsCount": "Gevonden: {{count}}",
+      "accessibility": "Transcripties verbeteren de toegankelijkheid voor mensen met gehoorproblemen en maken inhoud doorzoekbaar."
+    },
+    "fallback": {
+      "unsupported": "Je browser ondersteunt dit mediatype niet.",
+      "tryDownload": "Je kunt het bestand downloaden en afspelen in een externe speler:",
+      "download": "Bestand downloaden",
+      "modernBrowser": "Overweeg je browser bij te werken naar een nieuwere versie voor betere multimedia-ondersteuning.",
+      "alternativeFormats": "De volgende alternatieve formaten zijn beschikbaar:"
+    }
+  },
+  "helpResources": {
+    "title": "Hulpmiddelen",
+    "subtitle": "Als je een moeilijke situatie doormaakt, ben je niet alleen. Professionele hulp is beschikbaar.",
+    "needHelp": "Hulp nodig?",
+    "emergencyHotlines": "Hulplijnen",
+    "hotline": "Blauwe Lijn",
+    "hotlineDesc": "crisishulp, 24/7 beschikbaar",
+    "trustPhone": "Vertrouwenslijn",
+    "trustPhoneDesc": "emotionele ondersteuning",
+    "professionalHelp": "Professionele hulp",
+    "therapist": "Raadpleeg een psycholoog of therapeut gespecialiseerd in trauma",
+    "legal": "Gebruik gratis juridische hulp bij gratis juridische hulppunten",
+    "support": "Sluit je aan bij steungroepen voor mensen in vergelijkbare situaties",
+    "disclaimer": "Materialen op deze site zijn voor educatieve doeleinden en vervangen geen professionele psychologische of juridische hulp."
+  },
+  "safeReading": {
+    "hiddenTitle": "Inhoud verborgen voor je veiligheid",
+    "hiddenMessage": "Deze sectie bevat mogelijk moeilijke of traumatische inhoud. Je kunt het onthullen wanneer je je er klaar voor voelt.",
+    "showContent": "Toon inhoud",
+    "contentVisible": "Inhoud zichtbaar",
+    "hideContent": "Verberg inhoud",
+    "hide": "Verberg"
   },
   "analytics": {
     "label": "Bezoekteller",

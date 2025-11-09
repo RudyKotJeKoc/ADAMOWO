@@ -1095,7 +1095,40 @@
       },
       "default": "Nie rób scen. Wymyślasz problemy."
     },
-    "disclaimer": "Materiały edukacyjne. Symulator działa offline i nie wysyła twoich danych."
+    "disclaimer": "Materiały edukacyjne. Symulator działa offline i nie wysyła twoich danych.",
+    "awaitingConsent": "Prosimy o zaakceptowanie zasad etycznych, aby korzystać z symulatora.",
+    "ethics": {
+      "title": "Zasady etyczne i zgoda użytkownika",
+      "subtitle": "Przed użyciem symulatora, prosimy o zapoznanie się z poniższymi informacjami",
+      "limitations": {
+        "title": "Ograniczenia symulatora",
+        "notReal": "Symulator używa prostych reguł i wzorców, nie jest zaawansowanym AI",
+        "educational": "Narzędzie ma charakter wyłącznie edukacyjny i nie zastępuje terapii",
+        "simplified": "Odpowiedzi są uproszczone i nie oddają złożoności prawdziwych sytuacji",
+        "offline": "Symulator działa offline - Twoje dane NIE są wysyłane do żadnego serwera"
+      },
+      "retrauma": {
+        "title": "Ryzyko retraumatyzacji",
+        "warning": "Symulowane rozmowy mogą przywoływać trudne wspomnienia i emocje związane z realnymi doświadczeniami manipulacji.",
+        "stop": "Zatrzymaj się, jeśli:",
+        "feel": "Czujesz się przytłoczony/a lub zdenerwowany/a",
+        "memories": "Pojawiają się nieprzyjemne flashbacki lub wspomnienia",
+        "physical": "Odczuwasz fizyczne symptomy stresu (przyspieszone bicie serca, tremor)"
+      },
+      "purpose": {
+        "title": "Cel narzędzia",
+        "description": "Symulator pomaga rozpoznawać typowe techniki manipulacji w bezpiecznym, kontrolowanym środowisku. Może być pomocny jako narzędzie treningowe, ale nie powinien być używany jako forma terapii samodzielnej."
+      },
+      "help": {
+        "title": "Profesjonalna pomoc",
+        "message": "Jeśli przeżywasz trudną sytuację, skontaktuj się z profesjonalistą:"
+      },
+      "consent": {
+        "checkbox": "Przeczytałem/am i rozumiem powyższe informacje. Jestem świadomy/a ograniczeń narzędzia i ryzyka retraumatyzacji.",
+        "accept": "Rozumiem i akceptuję",
+        "decline": "Wróć"
+      }
+    }
   },
   "rf": {
     "title": "Dziennik Czerwonych Flag",
@@ -1924,6 +1957,49 @@
       "leave": "Opuść stronę",
       "disclaimer": "To ostrzeżenie służy Twojemu bezpieczeństwu emocjonalnemu. Dbamy o Ciebie."
     }
+  },
+  "media": {
+    "transcript": {
+      "title": "Transkrypcja",
+      "show": "Pokaż transkrypcję",
+      "hide": "Ukryj transkrypcję",
+      "search": "Przeszukaj transkrypcję",
+      "searchPlaceholder": "Szukaj w transkrypcji...",
+      "noResults": "Nie znaleziono wyników",
+      "jumpTo": "Przejdź do {{time}}",
+      "resultsCount": "Znaleziono: {{count}}",
+      "accessibility": "Transkrypcja poprawia dostępność dla osób z niepełnosprawnościami słuchu i ułatwia przeszukiwanie treści."
+    },
+    "fallback": {
+      "unsupported": "Twoja przeglądarka nie obsługuje odtwarzania tego typu mediów.",
+      "tryDownload": "Możesz pobrać plik i odtworzyć go w zewnętrznym odtwarzaczu:",
+      "download": "Pobierz plik",
+      "modernBrowser": "Rozważ aktualizację przeglądarki do nowszej wersji dla lepszej obsługi multimediów.",
+      "alternativeFormats": "Dostępne są następujące formaty alternatywne:"
+    }
+  },
+  "helpResources": {
+    "title": "Zasoby pomocowe",
+    "subtitle": "Jeśli przeżywasz trudną sytuację, nie jesteś sam/sama. Istnieje profesjonalna pomoc.",
+    "needHelp": "Potrzebujesz pomocy?",
+    "emergencyHotlines": "Linie telefoniczne",
+    "hotline": "Niebieska Linia",
+    "hotlineDesc": "pomoc w kryzysie, czynna 24/7",
+    "trustPhone": "Telefon Zaufania",
+    "trustPhoneDesc": "wsparcie emocjonalne",
+    "professionalHelp": "Pomoc specjalistyczna",
+    "therapist": "Skonsultuj się z psychologiem lub terapeutą specjalizującym się w traumie",
+    "legal": "Skorzystaj z bezpłatnej pomocy prawnej w Punktach Nieodpłatnej Pomocy Prawnej",
+    "support": "Dołącz do grup wsparcia dla osób w podobnej sytuacji",
+    "disclaimer": "Materiały na tej stronie mają charakter edukacyjny i nie zastępują profesjonalnej pomocy psychologicznej ani prawnej."
+  },
+  "safeReading": {
+    "hiddenTitle": "Zawartość ukryta dla Twojego bezpieczeństwa",
+    "hiddenMessage": "Ta sekcja zawiera potencjalnie trudne lub traumatyzujące treści. Możesz ją odsłonić, gdy poczujesz się gotowy/a.",
+    "showContent": "Odsłoń treść",
+    "contentVisible": "Treść odsłonięta",
+    "hideContent": "Ukryj treść",
+    "hide": "Ukryj"
   },
   "analytics": {
     "label": "Licznik odwiedzin",
