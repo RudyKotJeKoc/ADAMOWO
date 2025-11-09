@@ -241,7 +241,7 @@ export function PlatformInfoSection(): ReactElement {
               {t('platformInfo.cta.startListening')}
             </a>
             <a
-              href="/guide"
+              href="/guides"
               className="inline-flex items-center gap-2 rounded-full border border-accent-500 bg-transparent px-6 py-3 font-semibold text-accent-200 transition hover:bg-accent-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300"
             >
               {t('platformInfo.cta.exploreGuides')}

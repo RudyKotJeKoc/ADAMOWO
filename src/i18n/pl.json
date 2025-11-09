@@ -8,6 +8,7 @@
     "studio": "Studio",
     "shows": "Audycje",
     "guide": "Poradnik",
+    "anatomy": "Anatomia",
     "lab": "Laboratorium",
     "community": "Społeczność"
   },
@@ -1423,6 +1424,296 @@
       "formatNotSupported": "Format nieobsługiwany",
       "permissionDenied": "Brak uprawnień",
       "unknown": "Wystąpił nieznany błąd"
+    }
+  },
+  "breadcrumbs": {
+    "label": "Nawigacja okruszkowa",
+    "home": "Strona główna",
+    "analysis": "Archiwum analiz",
+    "privacy": "Polityka prywatności",
+    "methodology": "Metodologia",
+    "aiPolicy": "Polityka użycia AI"
+  },
+  "search": {
+    "label": "Przeszukaj stronę",
+    "open": "Otwórz wyszukiwarkę",
+    "close": "Zamknij wyszukiwarkę",
+    "placeholder": "Szukaj treści...",
+    "hint": "Zacznij pisać, aby przeszukać poradniki, narzędzia i strony",
+    "noResults": "Nie znaleziono wyników",
+    "types": {
+      "page": "Strona",
+      "guide": "Poradnik",
+      "analysis": "Analiza",
+      "tool": "Narzędzie"
+    },
+    "results": {
+      "live": {
+        "description": "Słuchaj radia na żywo i treści edukacyjnych"
+      },
+      "violenceLoop": {
+        "description": "Interaktywna wizualizacja pętli przemocy"
+      },
+      "studio": {
+        "description": "Przeglądaj audycje radiowe i treści studyjne"
+      },
+      "shows": {
+        "description": "Odkryj wszystkie audycje i odcinki"
+      },
+      "guides": {
+        "description": "Praktyczne poradniki rozpoznawania manipulacji"
+      },
+      "anatomy": {
+        "description": "Dogłębna analiza taktyk manipulacyjnych i schematów"
+      },
+      "lab": {
+        "description": "Narzędzia AI do zrozumienia manipulacji"
+      },
+      "community": {
+        "description": "Dołącz do społeczności i znajdź wsparcie"
+      },
+      "analysis": {
+        "description": "Archiwum analiz przypadków i podcastów edukacyjnych"
+      },
+      "privacy": {
+        "description": "Polityka prywatności i ochrona danych"
+      },
+      "aiPolicy": {
+        "description": "Polityka użycia AI, etyka i zabezpieczenia"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Polityka Prywatności i Ochrona Danych",
+    "description": "Dowiedz się, jak chronimy Twoje dane osobowe i zapewniamy Twoją prywatność podczas korzystania z interaktywnych narzędzi i usług Radio Adamowo.",
+    "lastUpdated": "Ostatnia aktualizacja",
+    "updateDate": "Styczeń 2025",
+    "notice": {
+      "title": "Twoja Prywatność Ma Znaczenie",
+      "content": "Radio Adamowo zobowiązuje się do ochrony Twojej prywatności. Ta polityka wyjaśnia, jakie dane zbieramy, jak ich używamy i jakie masz prawa dotyczące swoich danych osobowych."
+    },
+    "dataProtection": {
+      "title": "Zasady Ochrony Danych",
+      "content": "<p>Przetwarzamy dane osobowe zgodnie z RODO i obowiązującymi przepisami o ochronie danych. Nasze kluczowe zasady:</p><ul class='list-disc pl-6 space-y-2'><li>Minimalizacja danych: Zbieramy tylko dane niezbędne dla naszych usług</li><li>Ograniczenie celu: Dane są używane wyłącznie do określonych celów</li><li>Przejrzystość: Jasno komunikujemy nasze praktyki dotyczące danych</li><li>Bezpieczeństwo: Wdrażamy odpowiednie środki techniczne i organizacyjne</li><li>Prawa użytkownika: Szanujemy i wspieramy Twoje prawa do ochrony danych</li></ul>"
+    },
+    "personalData": {
+      "title": "Dane Osobowe, Które Zbieramy",
+      "content": "<p><strong>Zbierane automatycznie:</strong></p><ul class='list-disc pl-6 space-y-1'><li>Adres IP (zanonimizowany)</li><li>Typ i wersja przeglądarki</li><li>Informacje o urządzeniu</li><li>Odwiedzone strony i czas spędzony</li><li>Adresy URL pochodzące</li></ul><p class='mt-4'><strong>Dostarczone dobrowolnie:</strong></p><ul class='list-disc pl-6 space-y-1'><li>Adres e-mail (jeśli subskrybujesz newsletter)</li><li>Opinie i odpowiedzi na ankiety</li><li>Treści generowane przez użytkownika w narzędziach interaktywnych</li></ul>"
+    },
+    "interactiveTools": {
+      "title": "Narzędzia Interaktywne i Przetwarzanie Danych",
+      "content": "<p>Kiedy używasz nasze narzędzia interaktywne (AI Lab, Violence Loop, test Ośmiu Grzechów), przetwarzamy dane w następujący sposób:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Przetwarzanie lokalne:</strong> Większość interakcji jest przetwarzana lokalnie w Twojej przeglądarce</li><li><strong>Brak trwałego przechowywania:</strong> Nie przechowujemy trwale Twoich wejść ani odpowiedzi</li><li><strong>Dane sesji:</strong> Tymczasowe dane sesji są automatycznie usuwane po zamknięciu przeglądarki</li><li><strong>Analityka:</strong> Zbieramy zanonimizowane statystyki użycia, aby ulepszyć nasze narzędzia</li></ul>"
+    },
+    "cookies": {
+      "title": "Pliki Cookie i Pamięć Lokalna",
+      "content": "<p>Używamy plików cookie i pamięci lokalnej do:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Istotne pliki cookie:</strong> Wymagane do funkcjonowania witryny (preferencje motywu, wybór języka)</li><li><strong>Analityczne pliki cookie:</strong> Pomagają nam zrozumieć, jak odwiedzający korzystają z naszej witryny (zanonimizowane)</li><li><strong>Pliki cookie wydajności:</strong> Poprawiają szybkość witryny i doświadczenie użytkownika</li></ul><p class='mt-4'>Możesz kontrolować pliki cookie za pośrednictwem ustawień przeglądarki. Wyłączenie istotnych plików cookie może wpłynąć na funkcjonowanie witryny.</p>"
+    },
+    "consent": {
+      "title": "Zgoda na Narzędzia Interaktywne",
+      "description": "Korzystając z naszych interaktywnych narzędzi, wyrażasz zgodę na następujące przetwarzanie danych:",
+      "points": {
+        "aiLab": "AI Lab może przetwarzać wejścia tekstowe lokalnie, aby generować odpowiedzi edukacyjne",
+        "violenceLoop": "Violence Loop przechowuje wzorce interakcji tymczasowo, aby spersonalizować doświadczenie",
+        "analytics": "Zanonimizowana analityka użycia pomaga nam ulepszyć efektywność narzędzi",
+        "storage": "Pamięć lokalna przeglądarki może buforować Twoje preferencje i postęp"
+      },
+      "userControl": "Możesz wycofać zgodę w dowolnym momencie, usuwając dane przeglądarki lub kontaktując się z nami."
+    },
+    "rights": {
+      "title": "Twoje Prawa do Ochrony Danych",
+      "description": "Zgodnie z RODO masz następujące prawa:",
+      "access": "Prawo dostępu do swoich danych osobowych",
+      "rectification": "Prawo do poprawiania niedokładnych danych",
+      "erasure": "Prawo do zażądania usunięcia swoich danych",
+      "portability": "Prawo do otrzymania danych w przenośnym formacie",
+      "objection": "Prawo do sprzeciwu wobec przetwarzania danych",
+      "withdraw": "Prawo do wycofania zgody w dowolnym momencie"
+    },
+    "contact": {
+      "title": "Skontaktuj Się w Sprawie Prywatności",
+      "description": "W przypadku pytań dotyczących prywatności lub w celu wykonania swoich praw, skontaktuj się z naszym inspektorem ochrony danych:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "aiPolicy": "Polityka Użycia AI",
+      "methodology": "Metodologia i Źródła"
+    }
+  },
+  "aiPolicy": {
+    "title": "Polityka Użycia AI i Etyka",
+    "description": "Nasze zobowiązanie do odpowiedzialnego użycia sztucznej inteligencji, w tym etyki rekonstrukcji głosu, zapobiegania deepfakea i ochrony treści edukacyjnych.",
+    "lastUpdated": "Ostatnia aktualizacja",
+    "updateDate": "Styczeń 2025",
+    "warning": {
+      "title": "Ważne: Wyłącznie Użytek Edukacyjny",
+      "content": "Cała treść generowana przez sztuczną inteligencję na tej platformie jest ściśle na cele edukacyjne. Niedopuszczalne jest używanie narzędzi AI do oszustwa, molestowania lub wyrządzania szkody, co może być nielegalne."
+    },
+    "principles": {
+      "title": "Nasze Zasady Etyki AI",
+      "description": "Radio Adamowo zobowiązuje się do odpowiedzialnego użycia AI kierując się następującymi zasadami:",
+      "educational": {
+        "title": "Cel Edukacyjny",
+        "description": "AI jest używana wyłącznie do pomocy użytkownikom w zrozumieniu taktyk manipulacji, a nie do ich zastosowania"
+      },
+      "consent": {
+        "title": "Świadoma Zgoda",
+        "description": "Jasne ujawnienie gdy używane są treści generowane przez AI, z wymaganą wyraźną zgodą użytkownika"
+      },
+      "transparency": {
+        "title": "Przejrzystość",
+        "description": "Otwarta komunikacja na temat możliwości AI, ograniczeń i potencjalnych uprzedzeń"
+      },
+      "safety": {
+        "title": "Bezpieczeństwo Użytkownika",
+        "description": "Zabezpieczenia zapobiegające nadużyciom i chroniące wrażliwych użytkowników przed manipulacją lub szkodą"
+      },
+      "accountability": {
+        "title": "Odpowiedzialność",
+        "description": "Regularne audyty, mechanizmy zbierania opinii użytkowników i zobowiązanie do szybkiego rozwiązywania problemów"
+      }
+    },
+    "voiceReconstruction": {
+      "title": "Rekonstrukcja Głosu i Zapobieganie Deepfakea",
+      "description": "Technologia syntezy i rekonstrukcji głosu wymaga szczególnego rozważenia etycznego. Oto nasze podejście:",
+      "dataSource": {
+        "title": "Źródła Danych",
+        "content": "Wszystkie próbki głosu używane do rekonstrukcji to: (1) Publiczne nagrania z odpowiednim przypisaniem, (2) Syntetyczne głosy utworzone specjalnie na cele edukacyjne, lub (3) Udostępnione z wyraźną pisemną zgodą mówcy."
+      },
+      "consent": {
+        "title": "Wymogi Zgody",
+        "point1": "Pisemna zgoda jest uzyskiwana od wszystkich osób, których głosy są rekonstruowane",
+        "point2": "Formularze zgody wyraźnie wskazują cel edukacyjny i potencjalną rekonstrukcję AI",
+        "point3": "Uczestnicy mogą wycofać zgodę w dowolnym momencie, co powoduje natychmiastowe usunięcie"
+      },
+      "safeguards": {
+        "title": "Zabezpieczenia Techniczne",
+        "watermarking": "Cyfrowe znakowanie wodne całej treści audio generowanej przez AI, aby umożliwić wykrycie",
+        "disclosure": "Jasne wskaźniki wizualne i dźwiękowe, że treść została wygenerowana przez AI",
+        "noExport": "Ograniczenia dotyczące pobierania lub eksportowania rekonstruowanych głosów",
+        "monitoring": "Automatyczne monitorowanie w celu wykrycia prób nadużycia",
+        "encryption": "Bezpieczne przechowywanie i transmisja danych głosu z szyfrowaniem"
+      }
+    },
+    "aiLab": {
+      "title": "Narzędzie AI Lab",
+      "description": "Nasz AI Lab symuluje rozmowy z manipulacyjnymi postaciami, aby pomóc użytkownikom rozpoznać taktyki. Oto jak zapewniamy bezpieczeństwo:",
+      "dataProcessing": {
+        "title": "Przetwarzanie Danych",
+        "local": "Rozmowy są przetwarzane lokalnie, gdy jest to możliwe",
+        "noStorage": "Nie przechowujemy trwale treści rozmów",
+        "noTraining": "Wejścia użytkownika nigdy nie są używane do trenowania modeli AI",
+        "anonymized": "Każda zebrana analityka jest w pełni zanonimizowana"
+      },
+      "limitations": {
+        "title": "Ograniczenia i Zastrzeżenia",
+        "content": "AI Lab zapewnia symulacje edukacyjne, ale nie może replikować pełnej złożoności ludzkiej manipulacji. Powinno stanowić uzupełnienie, a nie zastępstwo, profesjonalnych porad i ludzkiego osądu."
+      }
+    },
+    "security": {
+      "title": "Środki Bezpieczeństwa Danych",
+      "description": "Chronimy dane związane z AI za pomocą kompleksowych środków bezpieczeństwa:",
+      "measures": {
+        "encryption": "Szyfrowanie end-to-end do transmisji danych",
+        "access": "Ścisłe kontrola dostępu ograniczająca dostęp do wrażliwych danych",
+        "audit": "Regularne audyty bezpieczeństwa i oceny luk w zabezpieczeniach",
+        "retention": "Minimalne przechowywanie danych z automatycznymi politykami usuwania",
+        "breach": "Plan reagowania na incydenty w przypadku potencjalnych naruszeń danych",
+        "thirdParty": "Weryfikacja dostawców usług AI trzecich stron"
+      }
+    },
+    "userControl": {
+      "title": "Kontrola Użytkownika i Rezygnacja",
+      "description": "Zachowujesz kontrolę nad interakcjami AI:",
+      "optOut": "Zrezygnuj z funkcji AI, zachowując dostęp do pozostałej treści",
+      "deleteData": "Zażądaj usunięcia wszystkich danych związanych z interakcjami AI",
+      "report": "Zgłoś problematyczne zachowanie AI lub potencjalne nadużycie"
+    },
+    "contact": {
+      "title": "Zagadnienia Etyki AI",
+      "description": "W przypadku pytań na temat naszego użytku AI lub zgłoszenia obaw:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "privacy": "Polityka Prywatności",
+      "methodology": "Metodologia i Źródła"
+    }
+  },
+  "methodology": {
+    "title": "Metodologia i Źródła",
+    "description": "Nasze oparte na dowodach podejście do zrozumienia psychologicznej manipulacji, ugruntowane w badaniach, konsultacjach ekspertów i doświadczeniach osób ocalałych.",
+    "approach": {
+      "title": "Nasza Metodologia",
+      "description": "Treść Radio Adamowo jest opracowywana przy użyciu rygorystycznego, wielodyscyplinarnego podejścia:",
+      "evidence": {
+        "title": "Oparte na Dowodach",
+        "description": "Cała treść jest ugruntowana w badaniach recenzowanych, studiach klinicznych i ustalonej teorii psychologicznej"
+      },
+      "multidisciplinary": {
+        "title": "Perspektywa Wielodyscyplinarna",
+        "description": "Integrujemy wglądy z psychologii, neuronauki, badań nad traumą i studiów prawnych"
+      },
+      "practical": {
+        "title": "Praktyczne Zastosowanie",
+        "description": "Badania akademickie są tłumaczone na praktyczne, praktyczne wytyczne na rzeczywiste sytuacje"
+      },
+      "accessible": {
+        "title": "Dostępna Komunikacja",
+        "description": "Złożone koncepcje są wyjaśniane w jasnym, zrozumiałym języku bez nadmiernego uproszczenia"
+      }
+    },
+    "sources": {
+      "title": "Główne Źródła i Badania",
+      "description": "Nasza treść czerpie z wiodących badań w wielu dziedzinach:",
+      "categories": {
+        "psychology": "Psychologia i Manipulacja",
+        "trauma": "Trauma i Uzdrowienie",
+        "legal": "Prawo i Rzecznictwo"
+      },
+      "examples": {
+        "psychology1": "Badania zaburzenia osobowości narcystycznej (DSM-5, ICD-11)",
+        "psychology2": "Studia dotyczące kontroli przymusu i przemocy w związkach intymnych",
+        "psychology3": "Badania uprzedzeń poznawczych i wpływu społecznego",
+        "trauma1": "Zaburzenie stresowe pourazowe (PTSD) i zespół stresu pourazowego",
+        "trauma2": "Praca Judith Herman na temat traumy i uzdrowienia",
+        "legal1": "Prawo dotyczące przemocy domowej i środki ochronne",
+        "legal2": "Uznawanie przemocy psychicznej w systemach prawnych"
+      }
+    },
+    "experts": {
+      "title": "Konsultacja Ekspercka",
+      "description": "Konsultujemy się z profesjonalistami z odpowiednich dziedzin:",
+      "types": {
+        "psychologists": "Psychologowie kliniczny specjalizujący się w zaburzeniach osobowości",
+        "therapists": "Terapeuci zajmujący się traumą i specjaliści PTSD",
+        "legal": "Eksperci prawni w zakresie przemocy domowej i prawa rodzinnego",
+        "survivors": "Rzecznicy osób ocalałych i organizacje wspierające"
+      }
+    },
+    "quality": {
+      "title": "Zapewnianie Jakości",
+      "description": "Utrzymujemy dokładność treści poprzez:",
+      "measures": {
+        "review": "Regularne przeglądy treści przez ekspertów merytorycznych",
+        "feedback": "Integracja opinii użytkowników i ciągłe doskonalenie",
+        "updates": "Okresowe aktualizacje odzwierciedlające nowe badania i najlepsze praktyki",
+        "accuracy": "Sprawdzanie faktów i weryfikacja cytowań"
+      }
+    },
+    "limitations": {
+      "title": "Ograniczenia i Zastrzeżenia",
+      "content": "Chociaż dążymy do dokładności, nasza treść ma ograniczenia:",
+      "point1": "Treść edukacyjna nie stanowi porady medycznej ani prawnej",
+      "point2": "Sytuacje indywidualne się różnią; zalecane jest konsultowanie się z profesjonalistą",
+      "point3": "Badania trwają; nasza wiedza rozwija się wraz z nowymi dowodami"
+    },
+    "feedback": {
+      "title": "Opinia Badawcza",
+      "description": "Przyjmujemy opinię od badaczy, profesjonalistów i użytkowników:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "privacy": "Polityka Prywatności",
+      "aiPolicy": "Polityka Użycia AI"
     }
   },
   "footer": {

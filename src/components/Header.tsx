@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { LangSwitch } from './LangSwitch';
 import { LogoGlasses } from './LogoGlasses';
+import { Search } from './Search';
 import { ThemeSwitch } from './ThemeSwitch';
 const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/live', labelKey: 'navigation.live' },
@@ -13,6 +14,7 @@ const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/studio', labelKey: 'navigation.studio' },
   { to: '/shows', labelKey: 'navigation.shows' },
   { to: '/guides', labelKey: 'navigation.guide' },
+  { to: '/anatomy', labelKey: 'navigation.anatomy' },
   { to: '/lab', labelKey: 'navigation.lab' },
   { to: '/community', labelKey: 'navigation.community' }
 ];
@@ -31,6 +33,7 @@ export function Header(): JSX.Element {
       '/studio': () => import('../pages/Studio'),
       '/shows': () => import('../pages/Shows'),
       '/guides': () => import('../pages/Guides'),
+      '/anatomy': () => import('../pages/AnatomyPage'),
       '/lab': () => import('../pages/Lab'),
       '/community': () => import('../pages/Community'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage')
@@ -145,6 +148,7 @@ export function Header(): JSX.Element {
         </nav>
 
         <div className="flex items-center gap-3">
+          <Search />
           <LangSwitch />
           <ThemeSwitch />
           <button
