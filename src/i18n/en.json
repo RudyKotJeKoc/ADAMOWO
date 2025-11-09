@@ -1115,7 +1115,40 @@
       },
       "default": "Don't make a scene. You're imagining issues again."
     },
-    "disclaimer": "Educational demo only. The simulator runs locally and does not store or transmit your input."
+    "disclaimer": "Educational demo only. The simulator runs locally and does not store or transmit your input.",
+    "awaitingConsent": "Please accept the ethical guidelines to use the simulator.",
+    "ethics": {
+      "title": "Ethical Guidelines and User Consent",
+      "subtitle": "Before using the simulator, please review the following information",
+      "limitations": {
+        "title": "Simulator Limitations",
+        "notReal": "The simulator uses simple rules and patterns, it is not advanced AI",
+        "educational": "This tool is for educational purposes only and does not replace therapy",
+        "simplified": "Responses are simplified and do not capture the complexity of real situations",
+        "offline": "The simulator runs offline - your data is NOT sent to any server"
+      },
+      "retrauma": {
+        "title": "Risk of Retraumatization",
+        "warning": "Simulated conversations may trigger difficult memories and emotions related to real experiences of manipulation.",
+        "stop": "Stop if you:",
+        "feel": "Feel overwhelmed or upset",
+        "memories": "Experience unwanted flashbacks or memories",
+        "physical": "Notice physical stress symptoms (rapid heartbeat, tremors)"
+      },
+      "purpose": {
+        "title": "Purpose of the Tool",
+        "description": "The simulator helps recognize common manipulation techniques in a safe, controlled environment. It can be helpful as a training tool, but should not be used as a form of self-therapy."
+      },
+      "help": {
+        "title": "Professional Help",
+        "message": "If you are experiencing a difficult situation, contact a professional:"
+      },
+      "consent": {
+        "checkbox": "I have read and understand the above information. I am aware of the tool's limitations and the risk of retraumatization.",
+        "accept": "I Understand and Accept",
+        "decline": "Go Back"
+      }
+    }
   },
   "rf": {
     "title": "Red Flag Journal",
@@ -1399,6 +1432,49 @@
     },
     "backToTop": "Back to top",
     "rights": "© 2025 Radio Adamowo"
+  },
+  "media": {
+    "transcript": {
+      "title": "Transcript",
+      "show": "Show Transcript",
+      "hide": "Hide Transcript",
+      "search": "Search Transcript",
+      "searchPlaceholder": "Search in transcript...",
+      "noResults": "No results found",
+      "jumpTo": "Jump to {{time}}",
+      "resultsCount": "Found: {{count}}",
+      "accessibility": "Transcripts improve accessibility for people with hearing disabilities and make content searchable."
+    },
+    "fallback": {
+      "unsupported": "Your browser does not support this media type.",
+      "tryDownload": "You can download the file and play it in an external player:",
+      "download": "Download File",
+      "modernBrowser": "Consider updating your browser to a newer version for better multimedia support.",
+      "alternativeFormats": "The following alternative formats are available:"
+    }
+  },
+  "helpResources": {
+    "title": "Help Resources",
+    "subtitle": "If you're experiencing a difficult situation, you are not alone. Professional help is available.",
+    "needHelp": "Need Help?",
+    "emergencyHotlines": "Hotlines",
+    "hotline": "Blue Line",
+    "hotlineDesc": "crisis help, available 24/7",
+    "trustPhone": "Trust Line",
+    "trustPhoneDesc": "emotional support",
+    "professionalHelp": "Professional Help",
+    "therapist": "Consult with a psychologist or therapist specializing in trauma",
+    "legal": "Use free legal help at Free Legal Aid Points",
+    "support": "Join support groups for people in similar situations",
+    "disclaimer": "Materials on this site are for educational purposes and do not replace professional psychological or legal help."
+  },
+  "safeReading": {
+    "hiddenTitle": "Content Hidden for Your Safety",
+    "hiddenMessage": "This section contains potentially difficult or traumatic content. You can reveal it when you feel ready.",
+    "showContent": "Show Content",
+    "contentVisible": "Content Visible",
+    "hideContent": "Hide Content",
+    "hide": "Hide"
   },
   "analytics": {
     "label": "Visit Counter",
