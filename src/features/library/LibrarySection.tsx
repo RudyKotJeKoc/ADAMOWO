@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ContentTypeLabel } from '@/components/ContentTypeLabel';
 import { LibraryCard } from './LibraryCard';
 import { LibraryDetails } from './LibraryDetails';
 import { LIBRARY_ENTRIES } from './library.data';
@@ -40,7 +41,10 @@ export function LibrarySection({ sectionId }: LibrarySectionProps = {}): JSX.Ele
       className="space-y-8 rounded-[2.5rem] border border-base-900 bg-gradient-to-br from-base-950/95 via-base-925/80 to-base-950/95 p-8 shadow-[0_0_64px_rgba(9,12,32,0.6)]"
     >
       <header className="space-y-3">
-        <p className="text-xs uppercase tracking-[0.4em] text-accent-200">{t('library.kicker')}</p>
+        <div className="flex items-center gap-3">
+          <p className="text-xs uppercase tracking-[0.4em] text-accent-200">{t('library.kicker')}</p>
+          <ContentTypeLabel type="case-study" />
+        </div>
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <h2 id="library-section-title" className="font-display text-3xl font-semibold text-base-50 sm:text-4xl">
             {t('library.title')}
