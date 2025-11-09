@@ -170,3 +170,5 @@ export function Methodology(): JSX.Element {
     </div>
   );
 }
+
+export default Methodology;

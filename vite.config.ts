@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      '@': path.resolve(__dirname, 'src'),
       'framer-motion': path.resolve(__dirname, 'src/vendor/framer-motion.tsx'),
     },
   },

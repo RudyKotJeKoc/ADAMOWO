@@ -198,3 +198,5 @@ export function AIPolicy(): JSX.Element {
     </div>
   );
 }
+
+export default AIPolicy;
