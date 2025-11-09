@@ -159,3 +159,5 @@ export function Privacy(): JSX.Element {
     </div>
   );
 }
+
+export default Privacy;

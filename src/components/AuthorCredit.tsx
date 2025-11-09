@@ -37,12 +37,12 @@ export function AuthorCredit({
   const { t, i18n } = useTranslation();
 
   const formatDate = (dateString: string): string => {
-    const date = new Date(dateString);
-    return new Intl.DateFormat(i18n.language, {
+    const formatter = new Intl.DateTimeFormat(i18n.language, {
+      day: '2-digit',
+      month: 'short',
       year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }).format(date);
+    });
+    return formatter.format(new Date(dateString));
   };
 
   return (
