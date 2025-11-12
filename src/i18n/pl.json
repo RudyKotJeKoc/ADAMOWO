@@ -90,7 +90,7 @@
       },
       "community": {
         "title": "Wsparcie Społeczności",
-        "description": "Bezpieczna przestrzeń do dzielenia się doświadczeniami, calendar wspólnotowy do dokumentowania wzorców przemocy, system komentarzy z moderacją, cytaty i historie osób które przeszły przez trudne doświadczenia."
+        "description": "Bezpieczna przestrzeń do dzielenia się doświadczeniami, kalendarz wspólnotowy do dokumentowania wzorców przemocy, system komentarzy z moderacją, cytaty i historie osób, które przeszły przez trudne doświadczenia."
       },
       "multilingual": {
         "title": "Wielojęzyczność",
@@ -2291,17 +2291,17 @@
   },
   "helpResources": {
     "title": "Zasoby pomocowe",
-    "subtitle": "Jeśli przeżywasz trudną sytuację, nie jesteś sam/sama. Istnieje profesjonalna pomoc.",
+    "subtitle": "Jeśli przeżywasz trudną sytuację, nie jesteś sam/sama. Profesjonalna pomoc jest dostępna i czeka na Ciebie.",
     "needHelp": "Potrzebujesz pomocy?",
     "emergencyHotlines": "Linie telefoniczne",
     "hotline": "Niebieska Linia",
-    "hotlineDesc": "pomoc w kryzysie, czynna 24/7",
+    "hotlineDesc": "wsparcie kryzysowe, dostępne 24 godziny na dobę, 7 dni w tygodniu",
     "trustPhone": "Telefon Zaufania",
-    "trustPhoneDesc": "wsparcie emocjonalne",
+    "trustPhoneDesc": "emocjonalne wsparcie i wysłuchanie",
     "professionalHelp": "Pomoc specjalistyczna",
-    "therapist": "Skonsultuj się z psychologiem lub terapeutą specjalizującym się w traumie",
-    "legal": "Skorzystaj z bezpłatnej pomocy prawnej w Punktach Nieodpłatnej Pomocy Prawnej",
-    "support": "Dołącz do grup wsparcia dla osób w podobnej sytuacji",
+    "therapist": "Skonsultuj się z psychologiem lub terapeutą specjalizującym się w pracy z traumą i przemocą psychiczną",
+    "legal": "Skorzystaj z bezpłatnej pomocy prawnej w Punktach Nieodpłatnej Pomocy Prawnej — są tam dla Ciebie",
+    "support": "Dołącz do grup wsparcia dla osób w podobnych sytuacjach — razem łatwiej przejść przez trudne chwile",
     "disclaimer": "Materiały na tej stronie mają charakter edukacyjny i nie zastępują profesjonalnej pomocy psychologicznej ani prawnej."
   },
   "safeReading": {
