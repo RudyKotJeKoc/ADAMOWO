@@ -10,7 +10,8 @@
     "guide": "Guide",
     "anatomy": "Anatomy",
     "lab": "Lab",
-    "community": "Community"
+    "community": "Community",
+    "help": "Help"
   },
   "header": {
     "skipToContent": "Skip to main content",
@@ -67,6 +68,54 @@
     },
     "shows": {
       "title": "Shows"
+    },
+    "help": {
+      "title": "Help & Support",
+      "lead": "If you are experiencing violence, a toxic relationship, or need emotional support, you are not alone. Below you will find a list of resources and phone numbers that can help.",
+      "emergency": {
+        "title": "Direct threat to life or health?",
+        "description": "If you are in a situation of immediate danger, call the emergency number immediately:",
+        "number": "Emergency number",
+        "police": "Police"
+      },
+      "additionalResources": {
+        "title": "Additional Resources"
+      },
+      "online": {
+        "title": "Online Help",
+        "blueLine": "Online chat, information about domestic violence and support centers",
+        "womenRights": "Free legal and psychological help for women"
+      },
+      "centers": {
+        "title": "Crisis Intervention Centers",
+        "description": "Crisis Intervention Centers offer free psychological, legal and social help. Find the nearest center:",
+        "findNearest": "Find nearest center"
+      },
+      "legal": {
+        "title": "Legal Help",
+        "freeHelp": "Free Legal Aid Points - free legal help for everyone",
+        "restrainingOrder": "Possibility of obtaining a restraining order against the perpetrator",
+        "divorce": "Help with divorce and alimony matters"
+      },
+      "shelters": {
+        "title": "Shelters and Support Centers",
+        "description": "If you need a safe place to live, contact:",
+        "womenShelter": "Women's Shelters - shelter for women with children",
+        "supportCenter": "Support Centers - help in regaining independence"
+      },
+      "safety": {
+        "title": "Safety Plan",
+        "intro": "If you are in a toxic or dangerous relationship, preparing a safety plan can save your life:",
+        "documents": "Prepare copies of important documents (ID, children's documents, contracts) and keep them in a safe place",
+        "money": "Set aside some money in a safe place (at a friend's, in a locker at work)",
+        "codeWord": "Establish a \"code word\" with a trusted person that will signal that you need help",
+        "escapeRoute": "Plan an escape route and a safe place you can go to",
+        "evidence": "Document violence (photos of injuries, text messages, recordings) - they can be evidence in court"
+      },
+      "note": {
+        "title": "Important note:",
+        "content": "The content on this page is informational and educational. It does not replace professional psychological, legal or medical help. If you need help, contact appropriate services or specialists."
+      }
     }
   },
   "platformInfo": {
@@ -588,23 +637,6 @@
       "actions": "How to respond"
     },
     "symbol": {
-      "7": {
-        "title": "Seven",
-        "subtitle": "Symbol of the perfect pact",
-        "meaning": [
-          "Promise of an exceptional agreement beyond social norms.",
-          "Declarations of total loyalty in exchange for control."
-        ],
-        "when": [
-          "When the narcissist proposes a secret collaboration or 'special' deal.",
-          "During sudden gifts after conflict periods.",
-          "Right before asking for a risky act of loyalty."
-        ],
-        "action": [
-          "Ask about real consequences and request time to reflect.",
-          "Consult a trusted person before accepting the terms."
-        ]
-      },
       "4": {
         "title": "Four",
         "subtitle": "Symbol of the closed network",
@@ -620,6 +652,23 @@
           "Map alternative support outside the abuser.",
           "Split dependencies: separate budget, alternate communication channels.",
           "Secure at least one pillar today."
+        ]
+      },
+      "7": {
+        "title": "Seven",
+        "subtitle": "Symbol of the perfect pact",
+        "meaning": [
+          "Promise of an exceptional agreement beyond social norms.",
+          "Declarations of total loyalty in exchange for control."
+        ],
+        "when": [
+          "When the narcissist proposes a secret collaboration or 'special' deal.",
+          "During sudden gifts after conflict periods.",
+          "Right before asking for a risky act of loyalty."
+        ],
+        "action": [
+          "Ask about real consequences and request time to reflect.",
+          "Consult a trusted person before accepting the terms."
         ]
       },
       "8": {
@@ -768,7 +817,6 @@
       }
     }
   },
-
   "guide": {
     "title": "Eight toxic sins",
     "intro": "This interactive guide helps you recognise behaviours that erode relationships and safety. Answer the questions to get personalised risk insights and recommended support.",
@@ -1727,14 +1775,14 @@
   "media": {
     "transcript": {
       "title": "Transcript",
-      "show": "Show Transcript",
-      "hide": "Hide Transcript",
-      "search": "Search Transcript",
+      "show": "Show",
+      "hide": "Hide",
+      "search": "Search transcript",
       "searchPlaceholder": "Search in transcript...",
       "noResults": "No results found",
       "jumpTo": "Jump to {{time}}",
       "resultsCount": "Found: {{count}}",
-      "accessibility": "Transcripts improve accessibility for people with hearing disabilities and make content searchable."
+      "accessibility": "Transcript improves accessibility for people with hearing disabilities and makes it easier to search content."
     },
     "fallback": {
       "unsupported": "Your browser does not support this media type.",
@@ -1742,6 +1790,16 @@
       "download": "Download File",
       "modernBrowser": "Consider updating your browser to a newer version for better multimedia support.",
       "alternativeFormats": "The following alternative formats are available:"
+    },
+    "download": {
+      "region": "Download media file",
+      "title": "Download file",
+      "titleProminent": "Playback problems?",
+      "description": "If you cannot play the file in your browser, download it.",
+      "descriptionProminent": "If you have playback problems, you can download the file and play it locally.",
+      "button": "Download file",
+      "ariaLabel": "Download {{title}}",
+      "browserNote": "Note: Some older browsers may not support streaming playback. After downloading the file, you can play it in any media player."
     }
   },
   "helpResources": {
@@ -1812,6 +1870,27 @@
           "experience": "15+ years clinical practice"
         }
       }
+    }
+  },
+  "emergency": {
+    "banner": {
+      "title": "Need urgent help?",
+      "blueLineShort": "Blue Line",
+      "trustPhoneShort": "Trust Phone",
+      "dismiss": "Close banner"
+    }
+  },
+  "content": {
+    "summary": {
+      "title": "Summary"
+    },
+    "warning": {
+      "title": "Content Warning",
+      "message": "The following content may be emotionally difficult and contain descriptions of traumatic situations.",
+      "topics": "Content relates to:",
+      "selfCare": "Remember to take care of yourself. If you feel you are not ready for this content, you can return to it later.",
+      "continue": "I understand, continue",
+      "goBack": "Go back"
     }
   }
 }

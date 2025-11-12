@@ -10,7 +10,8 @@
     "guide": "Poradnik",
     "anatomy": "Anatomia",
     "lab": "Laboratorium",
-    "community": "Społeczność"
+    "community": "Społeczność",
+    "help": "Pomoc"
   },
   "header": {
     "skipToContent": "Przejdź do treści głównej",
@@ -68,6 +69,54 @@
     },
     "shows": {
       "title": "Audycje"
+    },
+    "help": {
+      "title": "Pomoc i Wsparcie",
+      "lead": "Jeśli doświadczasz przemocy, toksycznej relacji lub potrzebujesz wsparcia emocjonalnego, nie jesteś sam/sama. Poniżej znajdziesz listę zasobów i numerów telefonów, które mogą pomóc.",
+      "emergency": {
+        "title": "Bezpośrednie zagrożenie życia lub zdrowia?",
+        "description": "Jeśli znajdujesz się w sytuacji bezpośredniego zagrożenia, natychmiast zadzwoń pod numer alarmowy:",
+        "number": "Numer alarmowy",
+        "police": "Policja"
+      },
+      "additionalResources": {
+        "title": "Dodatkowe Zasoby"
+      },
+      "online": {
+        "title": "Pomoc Online",
+        "blueLine": "Chat online, informacje o przemocy domowej i punktach pomocy",
+        "womenRights": "Bezpłatna pomoc prawna i psychologiczna dla kobiet"
+      },
+      "centers": {
+        "title": "Ośrodki Interwencji Kryzysowej",
+        "description": "Ośrodki Interwencji Kryzysowej oferują bezpłatną pomoc psychologiczną, prawną i socjalną. Znajdź najbliższy ośrodek:",
+        "findNearest": "Znajdź najbliższy ośrodek"
+      },
+      "legal": {
+        "title": "Pomoc Prawna",
+        "freeHelp": "Punkty Nieodpłatnej Pomocy Prawnej - bezpłatna pomoc prawna dla wszystkich",
+        "restrainingOrder": "Możliwość uzyskania nakazu zbliżenia się do sprawcy przemocy",
+        "divorce": "Pomoc w sprawach rozwodowych i alimentacyjnych"
+      },
+      "shelters": {
+        "title": "Domy i Ośrodki Wsparcia",
+        "description": "Jeśli potrzebujesz bezpiecznego miejsca do mieszkania, skontaktuj się z:",
+        "womenShelter": "Domy dla Kobiet - schronienie dla kobiet z dziećmi",
+        "supportCenter": "Ośrodki Wsparcia - pomoc w odzyskaniu samodzielności"
+      },
+      "safety": {
+        "title": "Plan Bezpieczeństwa",
+        "intro": "Jeśli znajdujesz się w toksycznej lub niebezpiecznej relacji, przygotowanie planu bezpieczeństwa może uratować Ci życie:",
+        "documents": "Przygotuj kopie ważnych dokumentów (dowód osobisty, dokumenty dzieci, umowy) i przechowuj je w bezpiecznym miejscu",
+        "money": "Odłóż trochę pieniędzy w bezpiecznym miejscu (u przyjaciela, w schowku w pracy)",
+        "codeWord": "Ustal z zaufaną osobą \"słowo kodowe\", które będzie sygnałem, że potrzebujesz pomocy",
+        "escapeRoute": "Zaplanuj trasę ucieczki i bezpieczne miejsce, do którego możesz się udać",
+        "evidence": "Dokumentuj przemoc (zdjęcia obrażeń, SMS-y, nagrania) - mogą być dowodem w sprawie"
+      },
+      "note": {
+        "title": "Ważna uwaga:",
+        "content": "Treści na tej stronie mają charakter informacyjny i edukacyjny. Nie zastępują profesjonalnej pomocy psychologicznej, prawnej ani medycznej. Jeśli potrzebujesz pomocy, skontaktuj się z odpowiednimi służbami lub specjalistami."
+      }
     }
   },
   "platformInfo": {
@@ -518,7 +567,7 @@
         "resources": ["Szablon kalendarza eskalacji"]
       },
       "princeIngratitude": {
-        "title": "\u201eKsiążę Niewdzięczność\u201d: Broń Narcyza",
+        "title": "„Książę Niewdzięczność”: Broń Narcyza",
         "summary": "Strategia nagłego odebrania łaski po okresie idealizacji, by wymusić całkowite podporządkowanie.",
         "content": [
           "Narcyz konstruuje scenariusz baśniowy: obietnice awansu, wspólnych projektów lub statusu. Ofiara otrzymuje 'tytuł księcia'.",
@@ -589,23 +638,6 @@
       "actions": "Jak reagować"
     },
     "symbol": {
-      "7": {
-        "title": "Siedem",
-        "subtitle": "Symbol idealnego paktu",
-        "meaning": [
-          "Obietnica wyjątkowego porozumienia ponad normami społecznymi.",
-          "Deklaracje totalnej lojalności w zamian za oddanie sterów."
-        ],
-        "when": [
-          "Gdy narcyz proponuje tajną współpracę lub 'specjalny' układ.",
-          "W momentach nagłych prezentów po okresie konfliktów.",
-          "Tuż przed prośbą o ryzykowny gest lojalności."
-        ],
-        "action": [
-          "Pytaj o realne konsekwencje umowy i proś o czas do namysłu.",
-          "Rozmawiaj z osobą zaufaną, zanim przystaniesz na warunki."
-        ]
-      },
       "4": {
         "title": "Cztery",
         "subtitle": "Symbol zamkniętej sieci",
@@ -621,6 +653,23 @@
           "Zmapuj, od kogo poza sprawcą możesz otrzymać wsparcie.",
           "Podziel zależności: osobny budżet, alternatywne kanały komunikacji.",
           "Sprawdź, które z czterech filarów możesz zabezpieczyć już dziś."
+        ]
+      },
+      "7": {
+        "title": "Siedem",
+        "subtitle": "Symbol idealnego paktu",
+        "meaning": [
+          "Obietnica wyjątkowego porozumienia ponad normami społecznymi.",
+          "Deklaracje totalnej lojalności w zamian za oddanie sterów."
+        ],
+        "when": [
+          "Gdy narcyz proponuje tajną współpracę lub 'specjalny' układ.",
+          "W momentach nagłych prezentów po okresie konfliktów.",
+          "Tuż przed prośbą o ryzykowny gest lojalności."
+        ],
+        "action": [
+          "Pytaj o realne konsekwencje umowy i proś o czas do namysłu.",
+          "Rozmawiaj z osobą zaufaną, zanim przystaniesz na warunki."
         ]
       },
       "8": {
@@ -2272,8 +2321,8 @@
   "media": {
     "transcript": {
       "title": "Transkrypcja",
-      "show": "Pokaż transkrypcję",
-      "hide": "Ukryj transkrypcję",
+      "show": "Pokaż",
+      "hide": "Ukryj",
       "search": "Przeszukaj transkrypcję",
       "searchPlaceholder": "Szukaj w transkrypcji...",
       "noResults": "Nie znaleziono wyników",
@@ -2287,6 +2336,16 @@
       "download": "Pobierz plik",
       "modernBrowser": "Rozważ aktualizację przeglądarki do nowszej wersji dla lepszej obsługi multimediów.",
       "alternativeFormats": "Dostępne są następujące formaty alternatywne:"
+    },
+    "download": {
+      "region": "Pobierz plik multimedialny",
+      "title": "Pobierz plik",
+      "titleProminent": "Problemy z odtwarzaniem?",
+      "description": "Jeśli nie możesz odtworzyć pliku w przeglądarce, pobierz go.",
+      "descriptionProminent": "Jeśli masz problemy z odtwarzaniem, możesz pobrać plik i odtworzyć go lokalnie.",
+      "button": "Pobierz plik",
+      "ariaLabel": "Pobierz {{title}}",
+      "browserNote": "Uwaga: Niektóre starsze przeglądarki mogą nie obsługiwać odtwarzania streamingu. Po pobraniu pliku możesz go odtworzyć w dowolnym odtwarzaczu multimedialnym."
     }
   },
   "helpResources": {
@@ -2357,6 +2416,27 @@
           "experience": "15+ lat praktyki klinicznej"
         }
       }
+    }
+  },
+  "emergency": {
+    "banner": {
+      "title": "Potrzebujesz pilnej pomocy?",
+      "blueLineShort": "Niebieska Linia",
+      "trustPhoneShort": "Telefon Zaufania",
+      "dismiss": "Zamknij banner"
+    }
+  },
+  "content": {
+    "summary": {
+      "title": "Podsumowanie"
+    },
+    "warning": {
+      "title": "Ostrzeżenie o treści",
+      "message": "Poniższa treść może być trudna emocjonalnie i zawierać opisy sytuacji traumatycznych.",
+      "topics": "Treść dotyczy:",
+      "selfCare": "Pamiętaj o dbaniu o siebie. Jeśli czujesz, że nie jesteś gotowy/a na tę treść, możesz wrócić do niej później.",
+      "continue": "Rozumiem, kontynuuj",
+      "goBack": "Wróć"
     }
   }
 }

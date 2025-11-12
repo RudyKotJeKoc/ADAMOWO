@@ -37,6 +37,43 @@
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
+
+  /* Content spacing for better readability */
+  .content-section {
+    @apply space-y-6 sm:space-y-8;
+  }
+
+  .content-paragraph {
+    @apply leading-relaxed text-base sm:text-lg;
+  }
+
+  /* Card components with better spacing */
+  .card-base {
+    @apply rounded-xl border border-base-800 bg-base-900/50 p-6 shadow-lg transition-shadow hover:shadow-xl;
+  }
+
+  .card-highlight {
+    @apply rounded-xl border border-accent-700/50 bg-gradient-to-br from-accent-950/30 to-accent-900/20 p-6 shadow-lg;
+  }
+
+  /* Improved heading hierarchy */
+  .heading-xl {
+    @apply text-3xl font-bold text-base-50 sm:text-4xl lg:text-5xl;
+  }
+
+  .heading-lg {
+    @apply text-2xl font-bold text-base-50 sm:text-3xl;
+  }
+
+  .heading-md {
+    @apply text-xl font-semibold text-base-100 sm:text-2xl;
+  }
+
+  /* Modal open state - prevent scroll */
+  .modal-open {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

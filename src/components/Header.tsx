@@ -16,7 +16,8 @@ const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/guides', labelKey: 'navigation.guide' },
   { to: '/anatomy', labelKey: 'navigation.anatomy' },
   { to: '/lab', labelKey: 'navigation.lab' },
-  { to: '/community', labelKey: 'navigation.community' }
+  { to: '/community', labelKey: 'navigation.community' },
+  { to: '/help', labelKey: 'navigation.help' },
 ];
 export function Header(): JSX.Element {
   const { t } = useTranslation();
@@ -36,7 +37,8 @@ export function Header(): JSX.Element {
       '/anatomy': () => import('../pages/AnatomyPage'),
       '/lab': () => import('../pages/Lab'),
       '/community': () => import('../pages/Community'),
-      '/analysis': () => import('../features/analysis-archive/AnalysisPage')
+      '/help': () => import('../pages/Help'),
+      '/analysis': () => import('../features/analysis-archive/AnalysisPage'),
     }),
     []
   );
@@ -80,44 +82,44 @@ export function Header(): JSX.Element {
   const toggleMenu = useCallback(() => setMenuOpen((prev) => !prev), []);
 
   const renderNavLinks = (variant: 'desktop' | 'mobile') => (
-      <ul
-        className={clsx('flex flex-col gap-4', {
-          'md:flex-row md:items-center md:gap-6': variant === 'desktop'
-        })}
-      >
-        {NAV_ITEMS.map((item) => (
-          <li key={item.to}>
-            <NavLink
-              to={item.to}
-              className={({ isActive }) =>
-                clsx(
-                  'relative inline-flex touch-target items-center justify-center rounded-full px-3 py-2 text-base font-medium transition-colors',
-                  variant === 'desktop'
-                    ? 'text-base-200 hover:text-base-50'
-                    : 'text-base-50 hover:text-accent-300',
-                  isActive && (variant === 'desktop' ? 'text-accent-300' : 'text-accent-200')
-                )
+    <ul
+      className={clsx('flex flex-col gap-4', {
+        'md:flex-row md:items-center md:gap-6': variant === 'desktop',
+      })}
+    >
+      {NAV_ITEMS.map((item) => (
+        <li key={item.to}>
+          <NavLink
+            to={item.to}
+            className={({ isActive }) =>
+              clsx(
+                'relative inline-flex touch-target items-center justify-center rounded-full px-3 py-2 text-base font-medium transition-colors',
+                variant === 'desktop'
+                  ? 'text-base-200 hover:text-base-50'
+                  : 'text-base-50 hover:text-accent-300',
+                isActive && (variant === 'desktop' ? 'text-accent-300' : 'text-accent-200')
+              )
+            }
+            onClick={variant === 'mobile' ? closeMenu : undefined}
+            onFocus={() => {
+              if (!prefetchedRef.current.has(item.to)) {
+                prefetchedRef.current.add(item.to);
+                void prefetchers[item.to]?.();
               }
-              onClick={variant === 'mobile' ? closeMenu : undefined}
-              onFocus={() => {
-                if (!prefetchedRef.current.has(item.to)) {
-                  prefetchedRef.current.add(item.to);
-                  void prefetchers[item.to]?.();
-                }
-              }}
-              onMouseEnter={() => {
-                if (!prefetchedRef.current.has(item.to)) {
-                  prefetchedRef.current.add(item.to);
-                  void prefetchers[item.to]?.();
-                }
-              }}
-            >
-              <span>{t(item.labelKey)}</span>
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    );
+            }}
+            onMouseEnter={() => {
+              if (!prefetchedRef.current.has(item.to)) {
+                prefetchedRef.current.add(item.to);
+                void prefetchers[item.to]?.();
+              }
+            }}
+          >
+            <span>{t(item.labelKey)}</span>
+          </NavLink>
+        </li>
+      ))}
+    </ul>
+  );
 
   const mobileMenuLabel = menuOpen ? t('header.closeMenu') : t('header.openMenu');
 
@@ -141,10 +143,12 @@ export function Header(): JSX.Element {
           </span>
         </NavLink>
 
-        <nav id={menuId} aria-label={t('header.navigation')} className="hidden flex-1 items-center justify-center md:flex">
-          <div className="flex items-center justify-center gap-6">
-            {renderNavLinks('desktop')}
-          </div>
+        <nav
+          id={menuId}
+          aria-label={t('header.navigation')}
+          className="hidden flex-1 items-center justify-center md:flex"
+        >
+          <div className="flex items-center justify-center gap-6">{renderNavLinks('desktop')}</div>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -163,7 +167,9 @@ export function Header(): JSX.Element {
             <motion.span
               className="flex flex-col items-center justify-center gap-1.5"
               animate={reduceMotion ? undefined : { rotate: menuOpen ? 90 : 0 }}
-              transition={reduceMotion ? undefined : { type: 'spring', stiffness: 260, damping: 28 }}
+              transition={
+                reduceMotion ? undefined : { type: 'spring', stiffness: 260, damping: 28 }
+              }
             >
               <span
                 className={clsx(
