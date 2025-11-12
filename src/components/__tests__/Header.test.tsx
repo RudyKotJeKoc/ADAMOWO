@@ -36,32 +36,50 @@ describe('Header', () => {
       addListener: vi.fn(),
       removeListener: vi.fn(),
       onchange: null,
-      dispatchEvent: () => false
+      dispatchEvent: () => false,
     }));
     await i18n.changeLanguage('en');
   });
 
-  it('renders navigation and toggles the mobile drawer', () => {
+  it('renders navigation and toggles the mobile drawer', async () => {
     renderHeader();
-    ['Live', 'Violence Loop', 'Shows'].forEach((label) =>
-      expect(screen.getByRole('link', { name: label })).toBeInTheDocument()
-    );
+    [
+      'Live',
+      'Violence Loop',
+      'Studio',
+      'Shows',
+      'Guide',
+      'Anatomy',
+      'Lab',
+      'Community',
+      'Help',
+    ].forEach((label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument());
     fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
     expect(screen.getByRole('dialog', { name: /main navigation/i })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /close menu/i }));
-    expect(screen.queryByRole('dialog', { name: /main navigation/i })).not.toBeInTheDocument();
+    // Wait for animation to complete
+    await vi.waitFor(
+      () => {
+        expect(screen.queryByRole('dialog', { name: /main navigation/i })).not.toBeInTheDocument();
+      },
+      { timeout: 500 }
+    );
   });
 
   it('sets focus on the first link inside the drawer', () => {
     renderHeader();
     fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
     const focusable = Array.from(
-      screen.getByRole('dialog', { name: /main navigation/i }).querySelectorAll<HTMLElement>(
-        "a[href],button:not([disabled])"
-      )
+      screen
+        .getByRole('dialog', { name: /main navigation/i })
+        .querySelectorAll<HTMLElement>('a[href],button:not([disabled])')
     );
     expect(document.activeElement).toBe(focusable[0]);
-    expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual(['Live', 'Violence Loop', 'Shows']);
+    expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual([
+      'Live',
+      'Violence Loop',
+      'Studio',
+    ]);
   });
 
   it('changes language and theme', async () => {
