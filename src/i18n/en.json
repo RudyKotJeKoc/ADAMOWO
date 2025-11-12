@@ -1746,17 +1746,17 @@
   },
   "helpResources": {
     "title": "Help Resources",
-    "subtitle": "If you're experiencing a difficult situation, you are not alone. Professional help is available.",
+    "subtitle": "If you're experiencing a difficult situation, you are not alone. Professional help is available and waiting for you.",
     "needHelp": "Need Help?",
     "emergencyHotlines": "Hotlines",
     "hotline": "Blue Line",
-    "hotlineDesc": "crisis help, available 24/7",
+    "hotlineDesc": "crisis support, available 24 hours a day, 7 days a week",
     "trustPhone": "Trust Line",
-    "trustPhoneDesc": "emotional support",
+    "trustPhoneDesc": "emotional support and listening",
     "professionalHelp": "Professional Help",
-    "therapist": "Consult with a psychologist or therapist specializing in trauma",
-    "legal": "Use free legal help at Free Legal Aid Points",
-    "support": "Join support groups for people in similar situations",
+    "therapist": "Consult with a psychologist or therapist who specializes in trauma and psychological abuse",
+    "legal": "Use free legal help at Free Legal Aid Points — they are there for you",
+    "support": "Join support groups for people in similar situations — together, it's easier to get through difficult times",
     "disclaimer": "Materials on this site are for educational purposes and do not replace professional psychological or legal help."
   },
   "safeReading": {
