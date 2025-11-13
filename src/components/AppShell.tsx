@@ -6,6 +6,7 @@ import { AppFooter } from '../features/footer/AppFooter';
 import { Breadcrumbs } from './Breadcrumbs';
 import { Header } from './Header';
 import { EmergencyBanner } from './EmergencyBanner';
+import { AdamowoHeader } from './AdamowoHeader';
 import { usePageTracking } from '../hooks/usePageTracking';
 
 export function AppShell(): JSX.Element {
@@ -23,6 +24,7 @@ export function AppShell(): JSX.Element {
         {t('header.skipToContent')}
       </a>
       <EmergencyBanner />
+      <AdamowoHeader />
       <Header />
       <Breadcrumbs />
       <main
