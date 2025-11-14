@@ -8,6 +8,30 @@ import {
   SpeakerWaveIcon,
 } from '@heroicons/react/24/solid';
 
+/**
+ * Elegant header component featuring the Adamowo.com branding with an integrated audio player.
+ *
+ * Displays the site's main branding with animated glow effects and a fully functional
+ * music player with controls for play/pause, next/previous track, and volume adjustment.
+ * The player automatically shuffles and plays through a collection of music tracks.
+ *
+ * @component
+ * @returns {JSX.Element} A header with branding and audio player controls
+ *
+ * @example
+ * ```tsx
+ * <AdamowoHeader />
+ * ```
+ *
+ * Features:
+ * - Animated branding with gradient text and glow effects
+ * - Audio playback with play/pause, next/previous controls
+ * - Volume control slider
+ * - Automatic track progression and shuffling
+ * - Error handling for missing audio files
+ * - Accessible button labels and controls
+ * - Responsive design with mobile optimization
+ */
 export function AdamowoHeader(): JSX.Element {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
@@ -67,6 +91,12 @@ export function AdamowoHeader(): JSX.Element {
     };
   }, [currentTrack]);
 
+  /**
+   * Toggles audio playback between play and pause states.
+   *
+   * Handles asynchronous play operations and manages playback state.
+   * Includes error handling for playback failures.
+   */
   const togglePlay = useCallback(async () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -85,11 +115,23 @@ export function AdamowoHeader(): JSX.Element {
     }
   }, [isPlaying]);
 
+  /**
+   * Advances to the next track in the shuffled playlist.
+   *
+   * Uses modulo arithmetic to loop back to the first track when reaching
+   * the end of the playlist. Automatically sets playback to active.
+   */
   const playNext = useCallback(() => {
     setCurrentTrackIndex((prev) => (prev + 1) % shuffledTracks.length);
     setIsPlaying(true);
   }, [shuffledTracks.length]);
 
+  /**
+   * Returns to the previous track in the shuffled playlist.
+   *
+   * Uses modulo arithmetic to loop to the last track when at the beginning
+   * of the playlist. Automatically sets playback to active.
+   */
   const playPrevious = useCallback(() => {
     setCurrentTrackIndex((prev) => (prev - 1 + shuffledTracks.length) % shuffledTracks.length);
     setIsPlaying(true);

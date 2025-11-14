@@ -7,6 +7,26 @@ import {
   ChartBarIcon
 } from '@heroicons/react/24/outline';
 
+/**
+ * Methodology page component explaining research approach and sources.
+ *
+ * Displays detailed information about the project's research methodology, including
+ * evidence-based approach, multidisciplinary sources, expert consultation, and quality
+ * assurance processes. Features organized sections covering psychology, trauma studies,
+ * legal frameworks, and limitations/disclaimers.
+ *
+ * Key Features:
+ * - Four-pillar approach (evidence-based, multidisciplinary, practical, accessible)
+ * - Detailed source categories (psychology, trauma, legal)
+ * - Expert consultation types (psychologists, therapists, legal, survivors)
+ * - Quality assurance measures (review, feedback, updates, accuracy)
+ * - Limitations and disclaimers section
+ * - Contact information for research feedback
+ * - Links to related Privacy and AI Policy pages
+ *
+ * @component
+ * @returns {JSX.Element} The methodology page with research approach and quality assurance details
+ */
 export function Methodology(): JSX.Element {
   const { t } = useTranslation();
 

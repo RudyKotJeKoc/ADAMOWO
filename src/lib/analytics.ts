@@ -1,5 +1,15 @@
 import { getSupabaseClient } from './supabaseClient';
 
+/**
+ * Represents a single page visit record.
+ * @interface PageVisit
+ * @property {number} [id] - Unique visit identifier (assigned by database)
+ * @property {string} path - URL path that was visited
+ * @property {string} [visited_at] - ISO timestamp of the visit
+ * @property {string} [user_agent] - Browser user agent string
+ * @property {string} [referrer] - Referrer URL if available
+ * @property {string} [session_id] - Unique session identifier for tracking unique visitors
+ */
 export interface PageVisit {
   id?: number;
   path: string;
@@ -9,6 +19,14 @@ export interface PageVisit {
   session_id?: string;
 }
 
+/**
+ * Aggregated visit statistics for a specific path.
+ * @interface VisitStats
+ * @property {number} total_visits - Total number of page views
+ * @property {number} unique_sessions - Number of unique visitor sessions
+ * @property {string} last_visit - ISO timestamp of the most recent visit
+ * @property {string} first_visit - ISO timestamp of the first recorded visit
+ */
 export interface VisitStats {
   total_visits: number;
   unique_sessions: number;
@@ -16,7 +34,12 @@ export interface VisitStats {
   first_visit: string;
 }
 
-// Generate or retrieve session ID from localStorage
+/**
+ * Generates or retrieves a persistent session UUID from localStorage.
+ * Creates a new UUID v4 if one doesn't exist.
+ * @returns {string} Session UUID for tracking unique visitors
+ * @private
+ */
 function getSessionId(): string {
   const SESSION_KEY = 'adamowo_session_id';
   let sessionId = localStorage.getItem(SESSION_KEY);
@@ -34,7 +57,13 @@ function getSessionId(): string {
   return sessionId;
 }
 
-// Track a page visit
+/**
+ * Tracks a page visit by inserting a record into the Supabase page_visits table.
+ * Includes session ID, user agent, and referrer information.
+ * Silently fails if Supabase is not configured.
+ * @param {string} path - URL path to track
+ * @returns {Promise<void>}
+ */
 export async function trackPageVisit(path: string): Promise<void> {
   const supabase = getSupabaseClient();
 
@@ -61,7 +90,11 @@ export async function trackPageVisit(path: string): Promise<void> {
   }
 }
 
-// Get total visit count for all pages
+/**
+ * Fetches the total visit count across all pages.
+ * Uses the Supabase RPC function 'get_total_visits'.
+ * @returns {Promise<number>} Total number of page visits, or 0 if unavailable
+ */
 export async function getTotalVisits(): Promise<number> {
   const supabase = getSupabaseClient();
 
@@ -85,7 +118,12 @@ export async function getTotalVisits(): Promise<number> {
   }
 }
 
-// Get visit count for a specific path
+/**
+ * Retrieves the visit count for a specific URL path.
+ * Uses the Supabase RPC function 'get_visits_by_path'.
+ * @param {string} path - URL path to query
+ * @returns {Promise<number>} Number of visits for the path, or 0 if unavailable
+ */
 export async function getVisitsByPath(path: string): Promise<number> {
   const supabase = getSupabaseClient();
 
@@ -109,7 +147,12 @@ export async function getVisitsByPath(path: string): Promise<number> {
   }
 }
 
-// Get visit statistics for a specific path
+/**
+ * Fetches comprehensive visit statistics for a specific path.
+ * Queries the 'page_visit_stats' view which includes aggregated data.
+ * @param {string} path - URL path to query
+ * @returns {Promise<VisitStats|null>} Visit statistics object, or null if unavailable
+ */
 export async function getVisitStats(path: string): Promise<VisitStats | null> {
   const supabase = getSupabaseClient();
 
@@ -137,7 +180,11 @@ export async function getVisitStats(path: string): Promise<VisitStats | null> {
   }
 }
 
-// Get all visit statistics grouped by path
+/**
+ * Retrieves all visit statistics grouped by path.
+ * Queries the 'page_visit_stats' view and returns data as a keyed record.
+ * @returns {Promise<Record<string, VisitStats>>} Object mapping paths to their visit stats, or empty object if unavailable
+ */
 export async function getAllVisitStats(): Promise<Record<string, VisitStats>> {
   const supabase = getSupabaseClient();
 

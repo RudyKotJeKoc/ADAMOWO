@@ -8,6 +8,27 @@ import {
   DocumentCheckIcon
 } from '@heroicons/react/24/outline';
 
+/**
+ * AI Policy page component detailing AI usage and ethical guidelines.
+ *
+ * Displays comprehensive information about how AI is used in the ADAMOWO project,
+ * including voice reconstruction ethics, deepfake prevention measures, AI Lab tool
+ * data processing, security practices, and user control options. Features a critical
+ * warning about non-professional advice and organized sections with icons.
+ *
+ * Key Features:
+ * - Critical warning about AI limitations and professional help
+ * - Five core principles (educational, consent, transparency, safety, accountability)
+ * - Voice reconstruction and deepfake prevention safeguards
+ * - AI Lab tool data processing transparency
+ * - Comprehensive data security measures
+ * - User control and opt-out options
+ * - Contact information for AI ethics inquiries
+ * - Links to related Privacy and Methodology pages
+ *
+ * @component
+ * @returns {JSX.Element} The AI policy page with ethical guidelines and safeguards
+ */
 export function AIPolicy(): JSX.Element {
   const { t } = useTranslation();
 

@@ -8,6 +8,24 @@ import { MythologySection } from '../features/mythology/MythologySection';
 import { FamilyPsychologySection } from '../features/family-psychology/FamilyPsychologySection';
 import { ExploreMore, type ExploreMoreLink } from '../components/ExploreMore';
 
+/**
+ * Guides page component providing educational resources and frameworks.
+ *
+ * Displays comprehensive guides covering library resources, mythology, family psychology,
+ * and the eight sins framework. Features anchor navigation to different sections and
+ * exploration links to related tools and content. Includes a call-to-action for the
+ * analysis section with audio content.
+ *
+ * Key Features:
+ * - Multiple educational sections (library, mythology, family psychology)
+ * - Eight Sins educational framework
+ * - Anchor navigation for quick section access
+ * - Related tools exploration suggestions
+ * - Integration with analysis audio content
+ *
+ * @component
+ * @returns {JSX.Element} The comprehensive guides page with multiple educational sections
+ */
 export default function Guides(): JSX.Element {
   const { t } = useTranslation();
 

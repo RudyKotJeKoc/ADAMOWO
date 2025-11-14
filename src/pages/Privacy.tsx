@@ -2,9 +2,33 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ShieldCheckIcon, UserGroupIcon, CogIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
 
+/**
+ * Privacy Policy page component.
+ *
+ * Displays the platform's privacy policy including data protection practices,
+ * personal data handling, interactive tools consent, cookies usage, and user rights.
+ * Features organized sections with icons and links to related policy documents.
+ *
+ * Key Features:
+ * - Comprehensive privacy policy sections
+ * - Important notice highlighting no personal data collection
+ * - Interactive tools consent information (AI Lab, Violence Loop, Analytics)
+ * - User rights under GDPR
+ * - Contact information for privacy inquiries
+ * - Links to related AI Policy and Methodology pages
+ *
+ * @component
+ * @returns {JSX.Element} The privacy policy page with sections and user rights information
+ */
 export function Privacy(): JSX.Element {
   const { t } = useTranslation();
 
+  /**
+   * Configuration for privacy policy sections.
+   * Each section has an icon, title key, and content key for i18n.
+   *
+   * @constant {Array<{icon: Component, titleKey: string, contentKey: string}>}
+   */
   const sections = [
     {
       icon: ShieldCheckIcon,
