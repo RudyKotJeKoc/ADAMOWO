@@ -9,6 +9,12 @@ import type {
   EpisodeResource
 } from './types';
 
+/**
+ * Raw database row structure from Supabase episodes table.
+ * Supports both snake_case and camelCase field names for compatibility.
+ * @typedef {Object} EpisodeRow
+ * @private
+ */
 type EpisodeRow = {
   id: string;
   title: string;
@@ -28,20 +34,51 @@ type EpisodeRow = {
   slug?: string | null;
 };
 
+/**
+ * Raw database row structure for episode chapters within the episodes table.
+ * Supports both snake_case and camelCase field names for compatibility.
+ * @typedef {Object} EpisodeChapterRow
+ * @private
+ */
 type EpisodeChapterRow = {
   title?: unknown;
   start_sec?: unknown;
   startSec?: unknown;
 };
 
+/**
+ * Minimal database row structure for fetching episode metadata (categories and tags).
+ * Used specifically for building filter metadata without loading full episode data.
+ * @typedef {Object} EpisodeMetadataRow
+ * @private
+ */
 type EpisodeMetadataRow = {
   category?: string | null;
   tags?: unknown;
 };
 
+/**
+ * Default page number for pagination when not specified.
+ * @constant {number}
+ * @private
+ */
 const DEFAULT_PAGE = 1;
+
+/**
+ * Default number of episodes per page when not specified.
+ * @constant {number}
+ * @private
+ */
 const DEFAULT_PAGE_SIZE = 10;
 
+/**
+ * Maps an unknown database value to an array of EpisodeChapter objects.
+ * Validates and parses chapter data, ensuring all required fields are present and valid.
+ * Filters out invalid chapters that lack title or valid startSec.
+ * @param {unknown} candidate - Raw chapter data from database (expected to be array)
+ * @returns {EpisodeChapter[] | undefined} Validated chapters array, or undefined if invalid/empty
+ * @private
+ */
 function mapChapters(candidate: unknown): EpisodeChapter[] | undefined {
   if (!Array.isArray(candidate)) {
     return undefined;
@@ -69,6 +106,14 @@ function mapChapters(candidate: unknown): EpisodeChapter[] | undefined {
   return mapped.length > 0 ? mapped : undefined;
 }
 
+/**
+ * Maps an unknown database value to an array of EpisodeResource objects.
+ * Validates and parses resource data, ensuring all required fields (label, url) are strings.
+ * Filters out invalid resources that lack required fields.
+ * @param {unknown} candidate - Raw resource data from database (expected to be array)
+ * @returns {EpisodeResource[] | undefined} Validated resources array, or undefined if invalid/empty
+ * @private
+ */
 function mapResources(candidate: unknown): EpisodeResource[] | undefined {
   if (!Array.isArray(candidate)) {
     return undefined;
@@ -90,6 +135,14 @@ function mapResources(candidate: unknown): EpisodeResource[] | undefined {
   return mapped.length > 0 ? mapped : undefined;
 }
 
+/**
+ * Maps a database row to the Episode type with proper type validation and defaults.
+ * Handles null values and field name variations (snake_case vs camelCase).
+ * Ensures all required Episode fields have valid values with appropriate fallbacks.
+ * @param {EpisodeRow} row - Raw database row
+ * @returns {Episode} Fully validated and mapped episode object
+ * @private
+ */
 function mapEpisodeRow(row: EpisodeRow): Episode {
   const tagsArray = Array.isArray(row.tags)
     ? (row.tags as unknown[]).filter((tag): tag is string => typeof tag === 'string')
@@ -134,8 +187,21 @@ function mapEpisodeRow(row: EpisodeRow): Episode {
   };
 }
 
+/**
+ * Cache for local episodes dataset to avoid re-parsing JSON on subsequent calls.
+ * Initialized to null and populated on first access.
+ * @type {Episode[] | null}
+ * @private
+ */
 let cachedLocalEpisodes: Episode[] | null = null;
 
+/**
+ * Loads and parses the local episodes dataset from JSON file.
+ * Uses caching to avoid re-parsing on subsequent calls.
+ * Used as fallback when Supabase is not available.
+ * @returns {Promise<Episode[]>} Array of all local episodes
+ * @private
+ */
 async function loadLocalEpisodesDataset(): Promise<Episode[]> {
   if (cachedLocalEpisodes) {
     return cachedLocalEpisodes;
@@ -146,10 +212,26 @@ async function loadLocalEpisodesDataset(): Promise<Episode[]> {
   return cachedLocalEpisodes;
 }
 
+/**
+ * Normalizes a string for case-insensitive comparison.
+ * Applies Unicode NFKD normalization and converts to lowercase.
+ * @param {string} value - String to normalize
+ * @returns {string} Normalized string in lowercase
+ * @private
+ */
 function normalize(value: string): string {
   return value.normalize('NFKD').toLowerCase();
 }
 
+/**
+ * Checks if an episode matches a search query string.
+ * Performs case-insensitive search across title and description fields.
+ * Returns true if query is empty/undefined or if found in either field.
+ * @param {Episode} episode - Episode to test
+ * @param {string} [query] - Search query string
+ * @returns {boolean} True if episode matches query or query is empty
+ * @private
+ */
 function matchesQuery(episode: Episode, query?: string): boolean {
   if (!query) {
     return true;
@@ -161,6 +243,14 @@ function matchesQuery(episode: Episode, query?: string): boolean {
   );
 }
 
+/**
+ * Checks if an episode's category is in the provided categories filter.
+ * Returns true if categories filter is empty/undefined or if episode's category is included.
+ * @param {Episode} episode - Episode to test
+ * @param {string[]} [categories] - Array of allowed category values
+ * @returns {boolean} True if episode matches category filter or filter is empty
+ * @private
+ */
 function matchesCategories(episode: Episode, categories?: string[]): boolean {
   if (!categories || categories.length === 0) {
     return true;
@@ -169,6 +259,14 @@ function matchesCategories(episode: Episode, categories?: string[]): boolean {
   return categories.includes(episode.category);
 }
 
+/**
+ * Checks if an episode has all of the provided tags (AND logic).
+ * Returns true if tags filter is empty/undefined or if episode has all specified tags.
+ * @param {Episode} episode - Episode to test
+ * @param {string[]} [tags] - Array of required tags
+ * @returns {boolean} True if episode has all tags or filter is empty
+ * @private
+ */
 function matchesTags(episode: Episode, tags?: string[]): boolean {
   if (!tags || tags.length === 0) {
     return true;
@@ -177,6 +275,15 @@ function matchesTags(episode: Episode, tags?: string[]): boolean {
   return tags.every((tag) => episode.tags.includes(tag));
 }
 
+/**
+ * Sorts an array of episodes according to the specified sort criteria.
+ * Creates a shallow copy before sorting to avoid mutating the original array.
+ * Supports sorting by publication date (newest/oldest) and duration (ascending/descending).
+ * @param {Episode[]} data - Episodes to sort
+ * @param {EpisodeSort} [sort='newest'] - Sort order: 'newest', 'oldest', 'durationAsc', or 'durationDesc'
+ * @returns {Episode[]} New sorted array of episodes
+ * @private
+ */
 function sortEpisodes(data: Episode[], sort: EpisodeSort = 'newest'): Episode[] {
   const sorted = [...data];
 
@@ -199,12 +306,30 @@ function sortEpisodes(data: Episode[], sort: EpisodeSort = 'newest'): Episode[] 
   return sorted;
 }
 
+/**
+ * Extracts a page of items from an array using zero-based pagination logic.
+ * Returns a slice of the array for the requested page and page size.
+ * @template T
+ * @param {T[]} data - Array to paginate
+ * @param {number} page - Page number (1-based)
+ * @param {number} pageSize - Number of items per page
+ * @returns {T[]} Slice of items for the requested page
+ * @private
+ */
 function paginate<T>(data: T[], page: number, pageSize: number): T[] {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
   return data.slice(start, end);
 }
 
+/**
+ * Computes filter metadata (categories and tags with counts) from an array of episodes.
+ * Aggregates unique categories and tags with their occurrence counts.
+ * Tags are sorted alphabetically in the result.
+ * @param {Episode[]} source - Episodes to analyze
+ * @returns {EpisodeFiltersMetadata} Metadata object with categories and tags arrays
+ * @private
+ */
 function computeMetadata(source: Episode[]): EpisodeFiltersMetadata {
   const categoryMap = new Map<string, number>();
   const tagMap = new Map<string, number>();
@@ -225,6 +350,13 @@ function computeMetadata(source: Episode[]): EpisodeFiltersMetadata {
   };
 }
 
+/**
+ * Applies default values to an episode query for page, pageSize, and sort fields.
+ * Validates that page and pageSize are positive numbers before using them.
+ * @param {EpisodeQuery} [query={}] - User-provided query parameters
+ * @returns {Required<Pick<EpisodeQuery, 'page' | 'pageSize' | 'sort'>> & EpisodeQuery} Query with defaults applied
+ * @private
+ */
 function withDefaults(query: EpisodeQuery = {}): Required<Pick<EpisodeQuery, 'page' | 'pageSize' | 'sort'>> & EpisodeQuery {
   return {
     page: query.page && query.page > 0 ? query.page : DEFAULT_PAGE,
@@ -234,6 +366,13 @@ function withDefaults(query: EpisodeQuery = {}): Required<Pick<EpisodeQuery, 'pa
   };
 }
 
+/**
+ * Fetches and filters episodes from the local JSON dataset.
+ * Applies filtering, sorting, and pagination to the local episodes data.
+ * Used as fallback when Supabase is not available.
+ * @param {EpisodeQuery} [query={}] - Query parameters for filtering, sorting, and pagination
+ * @returns {Promise<EpisodeQueryResult>} Query result with episodes, metadata, and pagination info
+ */
 export async function getLocalEpisodes(query: EpisodeQuery = {}): Promise<EpisodeQueryResult> {
   const { q, categories, tags, sort, page, pageSize } = withDefaults(query);
   const dataset = await loadLocalEpisodesDataset();
@@ -255,10 +394,26 @@ export async function getLocalEpisodes(query: EpisodeQuery = {}): Promise<Episod
   };
 }
 
+/**
+ * Escapes special characters in a string for use in SQL LIKE/ILIKE queries.
+ * Escapes backslash, percent, and underscore characters.
+ * @param {string} value - String to escape
+ * @returns {string} Escaped string safe for LIKE/ILIKE queries
+ * @private
+ */
 function escapeLikeValue(value: string): string {
   return value.replace(/[\\%_]/g, (match) => `\\${match}`);
 }
 
+/**
+ * Fetches filter metadata (categories and tags) from Supabase episodes table.
+ * Queries only category and tags fields to minimize data transfer.
+ * Computes aggregated counts for all unique categories and tags.
+ * @param {GenericSupabaseClient} client - Supabase client instance
+ * @returns {Promise<EpisodeFiltersMetadata>} Metadata object with categories and tags arrays
+ * @throws {Error} If Supabase query fails
+ * @private
+ */
 async function getSupabaseMetadata(client: GenericSupabaseClient): Promise<EpisodeFiltersMetadata> {
   const { data, error } = await client.from('episodes').select('category,tags');
 
@@ -283,6 +438,17 @@ async function getSupabaseMetadata(client: GenericSupabaseClient): Promise<Episo
   return computeMetadata(metadataEpisodes);
 }
 
+/**
+ * Fetches and filters episodes from Supabase with server-side filtering and pagination.
+ * Builds optimized Supabase queries with filters for search, categories, tags, and sorting.
+ * Performs pagination at the database level for efficient data transfer.
+ * Fetches metadata in parallel with episode query for optimal performance.
+ * @param {GenericSupabaseClient} client - Supabase client instance
+ * @param {EpisodeQuery} [query={}] - Query parameters for filtering, sorting, and pagination
+ * @returns {Promise<EpisodeQueryResult>} Query result with episodes, metadata, and pagination info
+ * @throws {Error} If Supabase query fails
+ * @private
+ */
 async function getSupabaseEpisodes(
   client: GenericSupabaseClient,
   query: EpisodeQuery = {}
@@ -341,6 +507,14 @@ async function getSupabaseEpisodes(
   };
 }
 
+/**
+ * Fetches episodes from Supabase or falls back to local dataset.
+ * Automatically detects Supabase availability and uses appropriate data source.
+ * Applies filtering, sorting, and pagination based on query parameters.
+ * @param {EpisodeQuery} [query={}] - Query parameters for filtering, sorting, and pagination
+ * @returns {Promise<EpisodeQueryResult>} Query result with episodes, metadata, and pagination info
+ * @throws {Error} If Supabase query fails (when Supabase is available)
+ */
 export async function getEpisodes(query: EpisodeQuery = {}): Promise<EpisodeQueryResult> {
   const client = getSupabaseClient();
 

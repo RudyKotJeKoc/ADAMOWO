@@ -2,6 +2,28 @@ import type { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HelpResources } from '../components/HelpResources';
 
+/**
+ * Help and Support page component providing crisis resources and safety information.
+ *
+ * Displays comprehensive help resources for individuals experiencing violence, toxic
+ * relationships, or in need of emotional support. Features emergency contact information,
+ * crisis hotlines, online support services, intervention centers, legal help, shelters,
+ * and a detailed safety planning guide.
+ *
+ * Key Features:
+ * - Prominent emergency alert section with direct call links (112, 997)
+ * - HelpResources component integration with crisis hotlines
+ * - Online support resources and websites
+ * - Crisis intervention centers directory
+ * - Legal assistance information
+ * - Shelter and support center resources
+ * - Comprehensive safety planning checklist
+ * - Important disclaimer about professional help
+ * - Fully accessible with ARIA labels and semantic HTML
+ *
+ * @component
+ * @returns {ReactElement} The help and support page with crisis resources and safety planning
+ */
 export default function Help(): ReactElement {
   const { t } = useTranslation();
 

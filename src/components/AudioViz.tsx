@@ -1,11 +1,55 @@
 import { useEffect, useRef } from 'react';
 
+/**
+ * Props for the AudioViz component.
+ *
+ * @interface
+ * @property {HTMLAudioElement | null} audio - The HTML audio element to visualize
+ * @property {boolean} active - Whether the visualization should be active and animating
+ * @property {string} ariaLabel - Accessible label for screen readers describing the visualization
+ */
 interface AudioVizProps {
   audio: HTMLAudioElement | null;
   active: boolean;
   ariaLabel: string;
 }
 
+/**
+ * Audio visualization component that creates an animated frequency spectrum display.
+ *
+ * Uses the Web Audio API to analyze audio frequency data and renders an animated
+ * bar chart visualization on a canvas element. Features smooth animations with
+ * gradient colors and glow effects that respond to the audio amplitude.
+ *
+ * @component
+ * @param {AudioVizProps} props - Component props
+ * @param {HTMLAudioElement | null} props.audio - The audio element to visualize
+ * @param {boolean} props.active - Whether the visualization is currently active
+ * @param {string} props.ariaLabel - Accessible label for the canvas
+ * @returns {JSX.Element} A canvas element displaying the audio visualization
+ *
+ * @example
+ * ```tsx
+ * const audioRef = useRef<HTMLAudioElement>(null);
+ *
+ * <audio ref={audioRef} src="/music/track.mp3" />
+ * <AudioViz
+ *   audio={audioRef.current}
+ *   active={isPlaying}
+ *   ariaLabel="Audio frequency visualization"
+ * />
+ * ```
+ *
+ * Features:
+ * - Real-time audio frequency analysis using Web Audio API
+ * - Smooth bar chart animation with 48 frequency bars
+ * - Gradient colors that shift with audio intensity
+ * - Glow effects on high-amplitude frequencies
+ * - Responsive to device pixel ratio for sharp rendering
+ * - Automatic cleanup of audio contexts and animation frames
+ * - Suspends audio context when inactive to save resources
+ * - Accessible with ARIA role and label
+ */
 export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number>();
@@ -44,6 +88,13 @@ export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Eleme
 
     let isMounted = true;
 
+    /**
+     * Initializes the Web Audio API context and analyser node.
+     *
+     * Creates an AudioContext, connects the audio element to an analyser node,
+     * and sets up the visualization rendering loop. Handles context resumption
+     * if it was previously suspended.
+     */
     const ensureContext = async (): Promise<void> => {
       if (!audioContextRef.current) {
         try {
@@ -87,6 +138,13 @@ export function AudioViz({ audio, active, ariaLabel }: AudioVizProps): JSX.Eleme
       const dataArray = new Uint8Array(bufferLength);
       previousDataRef.current = new Uint8Array(bufferLength);
 
+      /**
+       * Renders a single frame of the audio visualization.
+       *
+       * Analyzes frequency data from the audio, applies smoothing for fluid animation,
+       * and draws gradient-filled bars with glow effects on the canvas. Continuously
+       * requests animation frames to create smooth real-time visualization.
+       */
       const draw = (): void => {
         if (!isMounted) {
           return;

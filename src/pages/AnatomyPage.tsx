@@ -9,6 +9,25 @@ import { MANIPULATION_SCHEMAS } from '../features/anatomy/anatomy.data';
 import { HelpResources } from '../components/HelpResources';
 import '../features/anatomy/anatomy.css';
 
+/**
+ * Anatomy page component for analyzing manipulation patterns and toxic relationships.
+ *
+ * Displays detailed information about six manipulation schemas with interactive cards,
+ * an analysis framework/worksheet, and help resources. Features a trigger warning modal
+ * on initial page load due to sensitive content. Manages body scroll behavior when the
+ * modal is displayed.
+ *
+ * Key Features:
+ * - Trigger warning modal with scroll lock
+ * - Six manipulation schemas with expandable detailed information
+ * - Interactive schema cards based on real cases
+ * - Analysis worksheet framework for self-assessment
+ * - Help resources section with crisis support
+ * - Accessibility considerations for sensitive content
+ *
+ * @component
+ * @returns {JSX.Element} The manipulation anatomy analysis page with trigger warning and educational content
+ */
 export default function AnatomyPage(): JSX.Element {
   const { t } = useTranslation();
   const [expandedSchema, setExpandedSchema] = useState<string | null>(null);

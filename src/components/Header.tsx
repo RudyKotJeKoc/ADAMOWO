@@ -8,6 +8,15 @@ import { LangSwitch } from './LangSwitch';
 import { LogoGlasses } from './LogoGlasses';
 import { Search } from './Search';
 import { ThemeSwitch } from './ThemeSwitch';
+
+/**
+ * Navigation items configuration for the main header menu.
+ *
+ * Each item contains a route path and a translation key for internationalization.
+ * These items are used to generate both desktop and mobile navigation menus.
+ *
+ * @constant
+ */
 const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/live', labelKey: 'navigation.live' },
   { to: '/violence-loop', labelKey: 'navigation.violenceLoop' },
@@ -19,6 +28,36 @@ const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/community', labelKey: 'navigation.community' },
   { to: '/help', labelKey: 'navigation.help' },
 ];
+
+/**
+ * Main navigation header component with responsive menu and accessibility features.
+ *
+ * Provides a sticky navigation header with logo, desktop navigation menu, mobile hamburger
+ * menu, search functionality, language switcher, and theme switcher. Implements advanced
+ * accessibility features including focus trapping, keyboard navigation, and route prefetching
+ * for improved performance.
+ *
+ * @component
+ * @returns {JSX.Element} A responsive navigation header with mobile menu support
+ *
+ * @example
+ * ```tsx
+ * <Header />
+ * ```
+ *
+ * Features:
+ * - Sticky positioning with backdrop blur
+ * - Responsive design with separate desktop and mobile menus
+ * - Mobile hamburger menu with animated icon
+ * - Focus trap within mobile menu when open
+ * - Keyboard navigation (Tab, Shift+Tab, Escape)
+ * - Route prefetching on hover/focus for better performance
+ * - Active route highlighting
+ * - Search, language switcher, and theme switcher integration
+ * - Smooth animations with reduced motion support
+ * - Full ARIA support for screen readers
+ * - Touch-optimized button targets for mobile devices
+ */
 export function Header(): JSX.Element {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -81,6 +120,15 @@ export function Header(): JSX.Element {
 
   const toggleMenu = useCallback(() => setMenuOpen((prev) => !prev), []);
 
+  /**
+   * Renders navigation links for either desktop or mobile layout.
+   *
+   * Creates a list of navigation links with conditional styling based on the variant.
+   * Includes route prefetching on hover/focus for performance optimization.
+   *
+   * @param {('desktop' | 'mobile')} variant - The layout variant to render
+   * @returns {JSX.Element} A list of navigation links styled for the specified variant
+   */
   const renderNavLinks = (variant: 'desktop' | 'mobile') => (
     <ul
       className={clsx('flex flex-col gap-4', {

@@ -1,6 +1,12 @@
 import type { PlaylistItem } from './types';
 import { getSupabaseClient } from '../lib/supabaseClient';
 
+/**
+ * Raw database row structure from Supabase playlist table.
+ * Supports both snake_case and camelCase field names for compatibility.
+ * @typedef {Object} PlaylistRow
+ * @private
+ */
 type PlaylistRow = {
   id: string;
   title: string;
@@ -11,6 +17,13 @@ type PlaylistRow = {
   position: number;
 };
 
+/**
+ * Maps a database row to the PlaylistItem type.
+ * Handles null values and field name variations (snake_case vs camelCase).
+ * @param {PlaylistRow} row - Raw database row
+ * @returns {PlaylistItem} Mapped playlist item
+ * @private
+ */
 function mapPlaylistRow(row: PlaylistRow): PlaylistItem {
   return {
     id: row.id,
@@ -22,12 +35,24 @@ function mapPlaylistRow(row: PlaylistRow): PlaylistItem {
   };
 }
 
+/**
+ * Loads and parses the mock playlist data from JSON file.
+ * Used as fallback when Supabase is not available.
+ * @returns {Promise<PlaylistItem[]>} Sorted array of playlist items
+ * @private
+ */
 async function loadMockPlaylist(): Promise<PlaylistItem[]> {
   const module = await import('../assets/data/playlist.mock.json');
   const items = (module.default as PlaylistRow[]).map(mapPlaylistRow);
   return items.sort((a, b) => a.position - b.position);
 }
 
+/**
+ * Fetches the music playlist from Supabase or falls back to local mock data.
+ * Results are sorted by position in ascending order.
+ * @returns {Promise<PlaylistItem[]>} Array of playlist items sorted by position
+ * @throws {Error} If Supabase query fails (when Supabase is available)
+ */
 export async function getPlaylist(): Promise<PlaylistItem[]> {
   const client = getSupabaseClient();
 

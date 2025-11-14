@@ -12,6 +12,23 @@ import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSecti
 import { ExploreMore, type ExploreMoreLink } from '../components/ExploreMore';
 import { VisitCounter } from '../features/analytics/VisitCounter';
 
+/**
+ * Home page component that serves as the main landing page for the ADAMOWO platform.
+ *
+ * Displays an overview of the project with multiple feature sections including timeline,
+ * curse of eight, platform information, track highlights, documentary, final lesson,
+ * studio, and violence loop sections. Also includes navigation links to explore other
+ * areas of the platform and a visit counter for analytics.
+ *
+ * Key Features:
+ * - Comprehensive project introduction with multiple content sections
+ * - Dynamic explore more suggestions with badges
+ * - Visit counter for tracking site engagement
+ * - Multilingual support through i18n
+ *
+ * @component
+ * @returns {ReactElement} The home page with multiple feature sections and navigation
+ */
 export default function Home(): ReactElement {
   const { t } = useTranslation();
 
