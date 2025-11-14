@@ -4,9 +4,37 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../state/theme';
 import type { Theme } from '../utils/theme';
 
+/**
+ * Order of theme options in the theme switcher.
+ *
+ * @internal
+ */
 const THEME_ORDER: Theme[] = ['system', 'light', 'dark'];
+
+/**
+ * Icon mapping for each theme option.
+ *
+ * @internal
+ */
 const THEME_ICONS: Record<Theme, string> = { system: '🖥️', light: '🌞', dark: '🌙' };
 
+/**
+ * Theme switcher toggle component.
+ *
+ * Renders a segmented control allowing users to switch between system,
+ * light, and dark themes. Features:
+ * - Three theme options: system (auto), light, and dark
+ * - Animated indicator showing active selection
+ * - Icons and labels for each theme
+ * - Screen reader accessible with proper ARIA attributes
+ * - Shows resolved theme for system option (e.g., "System (Dark)")
+ * - Smooth transitions with Framer Motion layout animations
+ *
+ * The component uses LayoutGroup for shared layout animations between
+ * theme options, creating a smooth sliding indicator effect.
+ *
+ * @returns A theme switcher control with three segmented buttons
+ */
 export function ThemeSwitch(): JSX.Element {
   const { theme, resolvedTheme, setTheme } = useTheme();
   const { t } = useTranslation();

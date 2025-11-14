@@ -232,7 +232,19 @@ export function getPreviousTrack(queue: PlaylistQueue): AudioTrack | null {
 // PLAYBACK HISTORY
 // ============================================================================
 
+/**
+ * LocalStorage key for persisting playback history.
+ *
+ * @internal
+ */
 const HISTORY_STORAGE_KEY = 'adamowo-playback-history';
+
+/**
+ * Maximum number of history entries to retain in storage.
+ * Older entries are automatically pruned when this limit is exceeded.
+ *
+ * @internal
+ */
 const MAX_HISTORY_ENTRIES = 100;
 
 /**
@@ -464,6 +476,11 @@ export function sortTracks(
 // PLAYLIST PERSISTENCE
 // ============================================================================
 
+/**
+ * LocalStorage key for persisting custom user playlists.
+ *
+ * @internal
+ */
 const PLAYLISTS_STORAGE_KEY = 'adamowo-playlists';
 
 /**

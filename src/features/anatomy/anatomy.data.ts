@@ -2,6 +2,19 @@
 
 import { ManipulationSchema, AnalysisFramework } from './anatomy.schema';
 
+/**
+ * Complete catalog of manipulation patterns.
+ *
+ * Six documented manipulation schemas derived from real-world analysis:
+ * 1. Dual Communication - Contradictory words vs. actions
+ * 2. Emotion Instrumentalization - Weaponizing feelings
+ * 3. Inverted Triage - Prioritizing strategy over care
+ * 4. Mirror Projection - Accusing others of own behaviors
+ * 5. Selective Documentation - Biased record-keeping
+ * 6. Moral Self-Licensing - Justifying harm through righteousness
+ *
+ * Each schema includes definition, warning signs, examples, and quiz.
+ */
 export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
   // ═══════════════════════════════════════════════════════════
   // SCHEMAT 1: ROZDWOJENIE KOMUNIKACJI
@@ -433,6 +446,16 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
 // FRAMEWORK ANALIZY
 // ═══════════════════════════════════════════════════════════
 
+/**
+ * Three-step framework for analyzing manipulative situations.
+ *
+ * Guides users through systematic examination:
+ * 1. Identify the behavior pattern
+ * 2. Analyze the impact and intent
+ * 3. Determine appropriate response
+ *
+ * Each step includes prompts and placeholders for user reflection.
+ */
 export const ANALYSIS_FRAMEWORK: AnalysisFramework = {
   steps: [
     {
@@ -460,6 +483,17 @@ export const ANALYSIS_FRAMEWORK: AnalysisFramework = {
 // MAPOWANIE IKON (dla referencji)
 // ═══════════════════════════════════════════════════════════
 
+/**
+ * Icon-to-schema reference map.
+ *
+ * Maps icon names to emoji and their associated manipulation patterns:
+ * - 🎭 MasksIcon: Dual Communication
+ * - 💔 BrokenHeartIcon: Emotion Instrumentalization
+ * - ⚖️ ScalesIcon: Inverted Triage
+ * - 🪞 MirrorIcon: Mirror Projection
+ * - 📔 NotebookIcon: Selective Documentation
+ * - 🛡️ ShieldIcon: Moral Self-Licensing
+ */
 export const SCHEMA_ICON_MAP = {
   'MasksIcon': '🎭',        // Rozdwojenie komunikacji
   'BrokenHeartIcon': '💔',   // Instrumentalizacja emocji

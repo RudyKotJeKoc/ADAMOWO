@@ -8,6 +8,15 @@ import { LangSwitch } from './LangSwitch';
 import { LogoGlasses } from './LogoGlasses';
 import { Search } from './Search';
 import { ThemeSwitch } from './ThemeSwitch';
+
+/**
+ * Navigation menu configuration.
+ *
+ * Defines the primary navigation items displayed in both desktop and mobile
+ * layouts. Each item includes a route path and i18n translation key.
+ *
+ * @internal
+ */
 const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/live', labelKey: 'navigation.live' },
   { to: '/violence-loop', labelKey: 'navigation.violenceLoop' },
@@ -19,6 +28,24 @@ const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/community', labelKey: 'navigation.community' },
   { to: '/help', labelKey: 'navigation.help' },
 ];
+
+/**
+ * Main navigation header component.
+ *
+ * Renders the site header with:
+ * - Logo and site name linking to home
+ * - Desktop horizontal navigation menu
+ * - Mobile hamburger menu with slide-down panel
+ * - Search, language switch, and theme switch controls
+ * - Keyboard navigation support (Tab, Escape)
+ * - Route prefetching on hover/focus for improved performance
+ * - Focus trap within mobile menu when open
+ *
+ * The header uses a sticky position and backdrop blur for a modern floating effect.
+ * Navigation items are defined in NAV_ITEMS and rendered in both desktop and mobile layouts.
+ *
+ * @returns A sticky header element with navigation and controls
+ */
 export function Header(): JSX.Element {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);

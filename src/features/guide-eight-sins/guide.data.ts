@@ -1,5 +1,26 @@
 import { SinModuleData } from './guide.schema';
 
+/**
+ * Complete dataset for the Eight Sins assessment.
+ *
+ * Eight modules covering common manipulation patterns in relationships:
+ * 1. Financial Control & Economic Abuse
+ * 2. Emotional Manipulation & Guilt
+ * 3. Isolation & Social Control
+ * 4. Intimidation & Threats
+ * 5. Blame Shifting & Gaslighting
+ * 6. Surveillance & Privacy Violation
+ * 7. Using Children as Leverage
+ * 8. Minimizing & Denial
+ *
+ * Each module includes:
+ * - Descriptive content (title, description, examples)
+ * - 5 assessment questions (mix of yn, scale, multi types)
+ * - Severity thresholds (low/medium/high score boundaries)
+ * - Resource recommendations
+ *
+ * All text content uses translation keys for i18n support.
+ */
 export const eightSinsModules: SinModuleData[] = [
   {
     id: 'sin_1',
@@ -226,7 +247,7 @@ export const eightSinsModules: SinModuleData[] = [
         textKey: 'sin_5.q_3',
         options: [
           { key: 'sin_5.q_3.opt_1', weight: 2 },
-          { key: 'sin_5.q_3.opt_2', weight: 1 },
+          { key: 'sin_5.q_5.q_3.opt_2', weight: 1 },
           { key: 'sin_5.q_3.opt_3', weight: 2 }
         ]
       },

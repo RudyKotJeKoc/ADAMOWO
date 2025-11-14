@@ -8,6 +8,11 @@ import type {
   Thread
 } from './comments.schema';
 
+/**
+ * No-op storage implementation for SSR environments.
+ *
+ * @internal
+ */
 const FALLBACK_STORAGE: Storage = {
   getItem: () => null,
   setItem: () => undefined,
@@ -19,6 +24,14 @@ const FALLBACK_STORAGE: Storage = {
   }
 };
 
+/**
+ * Safe localStorage accessor with SSR fallback.
+ *
+ * Returns FALLBACK_STORAGE during server-side rendering or if
+ * localStorage is unavailable.
+ *
+ * @internal
+ */
 const storage = createJSONStorage(() => {
   if (typeof window === 'undefined') {
     return FALLBACK_STORAGE;
@@ -32,6 +45,16 @@ const storage = createJSONStorage(() => {
   }
 });
 
+/**
+ * Initial thread configuration for the community.
+ *
+ * Defines three default discussion threads:
+ * - general: Open discussion for all topics
+ * - boundaries: Setting and maintaining healthy limits
+ * - victories: Celebrating progress and wins
+ *
+ * @internal
+ */
 const defaultThreads: Record<string, Thread> = {
   general: {
     id: 'general',
@@ -56,6 +79,18 @@ const defaultThreads: Record<string, Thread> = {
   }
 };
 
+/**
+ * State shape and actions for the comments store.
+ *
+ * @property threads - Map of thread ID to thread data
+ * @property comments - Map of comment ID to comment data
+ * @property activeThreadId - Currently selected thread
+ * @property addComment - Create and add a new comment to a thread
+ * @property toggleHidden - Toggle comment visibility (moderation)
+ * @property toggleFlagged - Toggle comment flagged status (moderation)
+ * @property setActiveThread - Change the active thread
+ * @property reset - Clear all comments and reset to default state
+ */
 export type CommentsState = {
   threads: Record<string, Thread>;
   comments: Record<CommentId, Comment>;
@@ -67,6 +102,18 @@ export type CommentsState = {
   reset: () => void;
 };
 
+/**
+ * Creates a validated comment object.
+ *
+ * Trims input, validates lengths, and generates a unique ID.
+ * Throws if validation fails.
+ *
+ * @param input - Comment creation data
+ * @returns Fully formed comment object
+ * @throws Error if nickname or content are empty or content exceeds 500 chars
+ *
+ * @internal
+ */
 const createComment = ({ nickname, content }: CreateCommentInput): Comment => {
   const trimmedContent = content.trim();
   const trimmedNickname = nickname.trim();
@@ -91,6 +138,39 @@ const createComment = ({ nickname, content }: CreateCommentInput): Comment => {
   };
 };
 
+/**
+ * Zustand store for community comments feature.
+ *
+ * Manages discussion threads, comments, and moderation state with
+ * automatic persistence to localStorage. Provides CRUD operations
+ * for comments and moderation controls.
+ *
+ * State is partitioned to persist only threads, comments, and
+ * activeThreadId. Persisted data survives page reloads.
+ *
+ * @example
+ * ```tsx
+ * function CommentForm() {
+ *   const addComment = useCommentsStore(state => state.addComment);
+ *   const activeThreadId = useCommentsStore(state => state.activeThreadId);
+ *
+ *   const handleSubmit = (e) => {
+ *     e.preventDefault();
+ *     const comment = addComment({
+ *       nickname: 'User123',
+ *       content: 'This is helpful!',
+ *       threadId: activeThreadId
+ *     });
+ *
+ *     if (comment) {
+ *       console.log('Comment created:', comment.id);
+ *     }
+ *   };
+ *
+ *   return <form onSubmit={handleSubmit}>...</form>;
+ * }
+ * ```
+ */
 export const useCommentsStore = create<CommentsState>()(
   persist(
     (set, get) => ({

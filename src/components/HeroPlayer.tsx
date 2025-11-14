@@ -10,8 +10,26 @@ import { FALLBACK_NOW_PLAYING, getNowPlaying, subscribeNowPlaying } from '../dat
 import type { NowPlaying } from '../data/types';
 import { usePlayerStore } from '../state/player';
 
+/**
+ * Interval in milliseconds for polling now playing metadata.
+ *
+ * @internal
+ */
 const POLLING_INTERVAL = 15_000;
 
+/**
+ * Maps error messages to user-friendly localized strings.
+ *
+ * Analyzes error strings and returns appropriate translation keys based on
+ * error type (network, permission, timeout, media, etc.). Falls back to
+ * a generic error message if no specific match is found.
+ *
+ * @param error - Raw error message string or null
+ * @param t - i18n translation function
+ * @returns Localized user-friendly error message
+ *
+ * @internal
+ */
 const getErrorMessage = (error: string | null, t: (key: string) => string): string => {
   if (!error) return '';
 
@@ -37,6 +55,17 @@ const getErrorMessage = (error: string | null, t: (key: string) => string): stri
   return t('player.errors.generic');
 };
 
+/**
+ * Detects user's reduced motion preference.
+ *
+ * Listens to the prefers-reduced-motion media query and returns true when
+ * the user has requested reduced motion. Automatically updates when the
+ * system preference changes.
+ *
+ * @returns True if user prefers reduced motion, false otherwise
+ *
+ * @internal
+ */
 const usePrefersReducedMotion = (): boolean => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -61,6 +90,26 @@ const usePrefersReducedMotion = (): boolean => {
   return prefersReducedMotion;
 };
 
+/**
+ * Hero audio player component with live stream playback and visualization.
+ *
+ * A comprehensive audio player featuring:
+ * - Live stream playback with playlist support via LocalAudioClient
+ * - Real-time now playing metadata with polling and subscription
+ * - Visual audio waveform visualization
+ * - Play/pause, volume, and mute controls
+ * - Keyboard shortcuts (Space, M, Arrow Up/Down)
+ * - Error handling with user-friendly messages and retry functionality
+ * - Responsive layout with album artwork and track information
+ * - Accessibility features (ARIA labels, status announcements)
+ * - State persistence via Zustand store
+ *
+ * The player polls for metadata every 15 seconds and subscribes to real-time
+ * updates when available. It respects the user's reduced motion preferences
+ * for animations.
+ *
+ * @returns A section element containing the live audio player interface
+ */
 export function HeroPlayer(): JSX.Element {
   const { t } = useTranslation();
   const audioRef = useRef<HTMLAudioElement | null>(null);

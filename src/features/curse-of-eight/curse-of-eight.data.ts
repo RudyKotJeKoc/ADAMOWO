@@ -1,5 +1,21 @@
-// src/features/curse-of-eight/curse-of-eight.data.ts
+/**
+ * Curse of Eight Feature Data
+ *
+ * Data catalog documenting the symbolic and numerical significance of the
+ * number 8 in the Adamowo case. Tracks occurrences, cycle phases, cultural
+ * meanings, and statistical analysis.
+ */
 
+/**
+ * A documented occurrence of the number 8 in the case.
+ *
+ * @property id - Unique identifier for this occurrence
+ * @property icon - Emoji icon representing this occurrence
+ * @property title - Display title in Polish
+ * @property description - Brief summary of the occurrence
+ * @property details - Array of specific evidence points
+ * @property significance - Importance level of this occurrence
+ */
 export interface EightOccurrence {
   id: string;
   icon: string;
@@ -9,6 +25,15 @@ export interface EightOccurrence {
   significance: 'critical' | 'high' | 'medium';
 }
 
+/**
+ * A phase in the 8-year cycle from 2017 to 2025.
+ *
+ * @property id - Unique identifier for the phase
+ * @property title - Display title in Polish
+ * @property date - Key date or date range for this phase
+ * @property description - Explanation of what occurred in this phase
+ * @property symbol - Emoji symbol representing this phase
+ */
 export interface CyclePhase {
   id: string;
   title: string;
@@ -17,6 +42,17 @@ export interface CyclePhase {
   symbol: string;
 }
 
+/**
+ * Collection of documented occurrences of the number 8.
+ *
+ * Includes critical evidence such as:
+ * - Adamowo 8 address in all official documents
+ * - 8-year span from July 7, 2017 to July 7, 2025
+ * - July 17→18 transition marking the midpoint
+ * - August (8th month) as the month of legal actions
+ * - Birth dates and identification numbers
+ * - Financial values divisible by 8
+ */
 export const eightOccurrences: EightOccurrence[] = [
   {
     id: 'address',
@@ -125,6 +161,15 @@ export const eightOccurrences: EightOccurrence[] = [
   },
 ];
 
+/**
+ * Four-phase cycle spanning 8 years from 2017 to 2025.
+ *
+ * Represents the temporal structure of the case:
+ * 1. Phase 1: Beginning (July 7, 2017) - The gift/donation
+ * 2. Phase 2: Transformation (July 17→18, 2021) - Night of crisis
+ * 3. Phase 3: Sealing (August 2021) - Legal proceedings
+ * 4. Phase 4: Closure (July 7, 2025) - 8th anniversary
+ */
 export const cyclePhases: CyclePhase[] = [
   {
     id: 'phase-1',
@@ -158,6 +203,14 @@ export const cyclePhases: CyclePhase[] = [
   },
 ];
 
+/**
+ * Cultural and symbolic meanings of the number 8.
+ *
+ * Cross-cultural interpretations including:
+ * - Mathematical: Infinity symbol (∞) is a rotated 8
+ * - Mythological: Ouroboros (snake eating its tail)
+ * - Philosophical: Eternal return (Nietzschean concept)
+ */
 export const culturalMeanings = [
   {
     category: 'Matematyka',
@@ -176,6 +229,13 @@ export const culturalMeanings = [
   },
 ];
 
+/**
+ * Statistical analysis of the number 8's occurrence frequency.
+ *
+ * Notes that the probability of one digit appearing in so many
+ * critical moments of a single case is astronomically low,
+ * exceeding all norms of randomness.
+ */
 export const statisticalNote = `
 Statystyczne prawdopodobieństwo, że jedna cyfra pojawi się w TYLU kluczowych momentach jednej sprawy jest astronomicznie niskie.
 Częstotliwość występowania cyfry 8 w sprawie przekracza wszelkie normy przypadkowości.
