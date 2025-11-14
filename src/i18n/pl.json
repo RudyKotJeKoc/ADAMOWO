@@ -2434,9 +2434,154 @@
       "title": "Ostrzeżenie o treści",
       "message": "Poniższa treść może być trudna emocjonalnie i zawierać opisy sytuacji traumatycznych.",
       "topics": "Treść dotyczy:",
+      "topic": {
+        "violence": "przemoc",
+        "psychological": {
+          "abuse": "przemoc psychiczna"
+        }
+      },
       "selfCare": "Pamiętaj o dbaniu o siebie. Jeśli czujesz, że nie jesteś gotowy/a na tę treść, możesz wrócić do niej później.",
       "continue": "Rozumiem, kontynuuj",
       "goBack": "Wróć"
+    },
+    "section": {
+      "expand": "Rozwiń",
+      "collapse": "Zwiń",
+      "facts": {
+        "title": "Fakty i źródła",
+        "badge": "Sekcja faktograficzna",
+        "disclaimer": "Poniższe informacje przedstawiono w tonie neutralnym i reporterskim. Dane osobowe zostały zanonimizowane."
+      },
+      "chronology": {
+        "title": "Chronologia wydarzeń",
+        "badge": "Oś czasu"
+      },
+      "interpretation": {
+        "title": "Interpretacja i symbolika",
+        "badge": "Sekcja interpretacyjna",
+        "disclaimer": "INTERPRETACJA: Poniższa treść przedstawia subiektywną analizę i interpretację. Nie stanowi faktów, lecz opinię autora."
+      },
+      "resources": {
+        "title": "Zasoby i pomoc",
+        "badge": "Zasoby pomocowe",
+        "disclaimer": "Jeśli doświadczasz przemocy lub potrzebujesz wsparcia, poniżej znajdziesz numery pomocy i zasoby."
+      },
+      "legal": {
+        "title": "Informacje prawne",
+        "badge": "Klauzula prawna"
+      },
+      "summary": {
+        "title": "Podsumowanie (TL;DR)",
+        "badge": "Skrócone podsumowanie"
+      }
+    }
+  },
+  "document": {
+    "notice": {
+      "label": "Informacja o dokumentacji",
+      "title": "Dokumentacja źródłowa",
+      "availability": "szczegóły udostępnimy uprawnionym w celu weryfikacji; wersja publiczna została zanonimizowana.",
+      "anonymized": "Zanonimizowano",
+      "anonymization": {
+        "details": "Dane osobowe, adresy, numery identyfikacyjne i dokładne kwoty zostały ukryte lub zmienione w celu ochrony prywatności."
+      },
+      "verification": {
+        "title": "Weryfikacja dokumentów",
+        "instructions": "Strony uprawnione (uczestniczące w postępowaniu, ich pełnomocnicy, lub osoby posiadające uzasadniony interes prawny) mogą uzyskać dostęp do dokumentacji źródłowej w celu weryfikacji."
+      },
+      "contact": "Kontakt:",
+      "procedure": {
+        "label": "Procedura dostępu do dokumentów",
+        "step1": "Skontaktuj się z nami, podając swój interes prawny i rodzaj dokumentu.",
+        "step2": "Przedstaw dokument potwierdzający Twoją tożsamość i uprawnienie (np. pełnomocnictwo).",
+        "step3": "Po weryfikacji udostępnimy odpowiednie dokumenty w sposób bezpieczny."
+      },
+      "transparency": "Dla transparentności",
+      "disclaimer": "Publikacja nastąpiła w interesie publicznym. Jeśli uważasz, że publikacja narusza Twoje prawa, skontaktuj się z nami.",
+      "inline": {
+        "default": "Dokumentacja źródłowa: szczegóły udostępnimy uprawnionym w celu weryfikacji; wersja publiczna została zanonimizowana."
+      }
+    },
+    "type": {
+      "notarial": "Akta notarialne",
+      "court": "Akta sądowe",
+      "administrative": "Dokumenty administracyjne",
+      "financial": "Dokumenty finansowe",
+      "other": "Dokumentacja"
+    }
+  },
+  "violence": {
+    "warning": {
+      "default": {
+        "message": "Poniższy artykuł zawiera opisy przemocy psychicznej, manipulacji i innych trudnych doświadczeń. Jeśli te treści mogą być dla Ciebie trudne lub wyzwalające, rozważ przeczytanie go w bezpiecznym dla siebie momencie."
+      },
+      "resources": {
+        "label": "Zasoby pomocowe",
+        "title": "🆘 Gdzie szukać pomocy?",
+        "subtitle": "Jeśli doświadczasz przemocy lub potrzebujesz wsparcia, skontaktuj się z jedną z poniższych organizacji:",
+        "visit": "Odwiedź stronę"
+      },
+      "resource": {
+        "blueline": {
+          "name": "Niebieska Linia",
+          "desc": "Wsparcie kryzysowe dla ofiar przemocy domowej, dostępne 24/7"
+        },
+        "trustphone": {
+          "name": "Telefon Zaufania",
+          "desc": "Wsparcie emocjonalne i interwencja kryzysowa"
+        },
+        "womensrights": {
+          "name": "Centrum Praw Kobiet",
+          "desc": "Pomoc prawna, psychologiczna i doradztwo"
+        }
+      },
+      "emergency": {
+        "title": "W sytuacji bezpośredniego zagrożenia:",
+        "description": "Zadzwoń pod numer alarmowy 112 lub skontaktuj się z lokalną Policją. Twoje bezpieczeństwo jest priorytetem."
+      }
+    }
+  },
+  "media": {
+    "error": {
+      "code": "Kod błędu:",
+      "retry": "Spróbuj ponownie",
+      "copy": "Kopiuj",
+      "alternatives": "Alternatywne formaty:",
+      "transcript": "Transkrypcja:",
+      "troubleshooting": "Rozwiązywanie problemów",
+      "advanced": "Dla zaawansowanych",
+      "direct": {
+        "url": "Bezpośredni link do pliku:"
+      },
+      "audio": {
+        "title": "Nie udało się załadować audio",
+        "generic": "Wystąpił problem z załadowaniem audio. Spróbuj ponownie później.",
+        "simple": "Nie można załadować audio"
+      },
+      "video": {
+        "title": "Nie udało się załadować wideo",
+        "generic": "Wystąpił problem z załadowaniem wideo. Spróbuj ponownie później.",
+        "simple": "Nie można załadować wideo"
+      },
+      "aborted": "Pobieranie zostało przerwane przez użytkownika.",
+      "network": "Błąd sieci podczas pobierania pliku multimedialnego.",
+      "decode": "Plik multimedialny jest uszkodzony lub w nieobsługiwanym formacie.",
+      "unsupported": "Format pliku nie jest obsługiwany przez Twoją przeglądarkę.",
+      "unknown": "Nieznany błąd odtwarzania.",
+      "generic": "Wystąpił nieoczekiwany błąd.",
+      "tip": {
+        "refresh": "Odśwież stronę i spróbuj ponownie",
+        "connection": "Sprawdź swoje połączenie internetowe",
+        "browser": "Upewnij się, że Twoja przeglądarka jest zaktualizowana",
+        "formats": "Niektóre przeglądarki nie obsługują wszystkich formatów — spróbuj alternatywnego formatu powyżej",
+        "extensions": "Wyłącz blokery reklam lub rozszerzenia, które mogą blokować multimedia",
+        "browser": {
+          "switch": "Spróbuj innej przeglądarki (Chrome, Firefox, Safari, Edge)"
+        }
+      },
+      "transcript": {
+        "download": "Pobierz transkrypcję"
+      }
     }
   }
 }
