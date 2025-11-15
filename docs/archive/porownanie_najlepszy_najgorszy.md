@@ -2,15 +2,15 @@
 
 ## 📋 ZESTAWIENIE PODSTAWOWYCH DANYCH
 
-| Kryterium | 🏆 NAJLEPSZY<br/>`docs/developer/README.md` | ⚠️ NAJGORSZY<br/>`get_comments.php` |
-|-----------|---------------------------------------------|-------------------------------------|
-| **Punktacja** | 50.0/100 | 3.1/100 |
-| **Typ pliku** | Markdown (dokumentacja) | PHP (backend API) |
-| **Rozmiar** | 51,185 bajtów (50KB) | 1,372 bajtów (1.3KB) |
-| **Linie kodu** | 1,582 linii | 39 linii |
-| **Linie puste** | 321 | 11 |
-| **Komentarze** | 0 | 4 |
-| **Złożoność** | Wysoka (kompleksowa dokumentacja) | Niska (prosty endpoint) |
+| Kryterium       | 🏆 NAJLEPSZY<br/>`docs/developer/README.md` | ⚠️ NAJGORSZY<br/>`get_comments.php` |
+| --------------- | ------------------------------------------- | ----------------------------------- |
+| **Punktacja**   | 50.0/100                                    | 3.1/100                             |
+| **Typ pliku**   | Markdown (dokumentacja)                     | PHP (backend API)                   |
+| **Rozmiar**     | 51,185 bajtów (50KB)                        | 1,372 bajtów (1.3KB)                |
+| **Linie kodu**  | 1,582 linii                                 | 39 linii                            |
+| **Linie puste** | 321                                         | 11                                  |
+| **Komentarze**  | 0                                           | 4                                   |
+| **Złożoność**   | Wysoka (kompleksowa dokumentacja)           | Niska (prosty endpoint)             |
 
 ---
 
@@ -21,18 +21,22 @@
 #### ✅ DLACZEGO TO WZORZEC?
 
 **1. Profesjonalna struktura:**
+
 ```markdown
 # Radio Adamowo - Developer Guide
-*Complete technical documentation*
+
+_Complete technical documentation_
 
 ## Table of Contents
+
 1. [Architecture Overview](#architecture-overview)
 2. [Development Environment Setup](#development-environment-setup)
 3. [API Documentation](#api-documentation)
-...
+   ...
 ```
 
 **2. Kompleksowe diagramy:**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                     Frontend Layer                         │
@@ -42,6 +46,7 @@
 ```
 
 **3. Praktyczne przykłady kodu:**
+
 ```php
 // Database Migration Script
 class DatabaseMigrator {
@@ -52,12 +57,14 @@ class DatabaseMigrator {
 ```
 
 **4. Szczegółowe instrukcje:**
+
 - Krok po kroku setup environment
 - API endpoints documentation
 - Security considerations
 - Deployment procedures
 
 #### 🎯 PUNKTACJA DETAILOWA:
+
 - **Markdown headers:** 15/15 (100+ nagłówków)
 - **Code blocks:** 15/15 (50+ bloków kodu)
 - **Links:** 10/10 (80+ linków)
@@ -72,6 +79,7 @@ class DatabaseMigrator {
 #### ❌ DLACZEGO TO ANTYWZORZEC?
 
 **1. Krityczne luki bezpieczeństwa:**
+
 ```php
 <?php
 // ❌ NIEBEZPIECZNE: CORS wildcard
@@ -83,6 +91,7 @@ header('Access-Control-Allow-Origin: *');
 ```
 
 **2. Problematyczna implementacja:**
+
 ```php
 // ❌ Słaba walidacja
 $date = filter_input(INPUT_GET, 'date', FILTER_SANITIZE_STRING);
@@ -95,6 +104,7 @@ if (!$conn) {
 ```
 
 **3. Brakujące best practices:**
+
 - Brak logging mechanizmu
 - Brak proper error reporting
 - Brak input validation schema
@@ -102,6 +112,7 @@ if (!$conn) {
 - Brak caching headers
 
 #### 🎯 PUNKTACJA DETAILOWA:
+
 - **Functions:** 3/15 (tylko 1 główna funkcja)
 - **Security measures:** 0/20 (krytyczny brak)
 - **Error handling:** 2/10 (minimalne)
@@ -115,35 +126,40 @@ if (!$conn) {
 
 ### DOKUMENTACJA vs KOD
 
-| Aspekt | README.md (Dokumentacja) | get_comments.php (Kod) |
-|--------|---------------------------|------------------------|
-| **Cel** | Edukacja i przewodnictwo | Funkcjonalność biznesowa |
-| **Odbiorcy** | Developerzy, nowi zespół members | End users (przez API) |
-| **Konsekwencje błędów** | Konfuzja, zmarnowany czas | Luki bezpieczeństwa, system compromise |
-| **Częstość zmian** | Rzadko (na major updates) | Często (na feature requests) |
-| **Testowanie** | Manual review | Automated + manual testing |
+| Aspekt                  | README.md (Dokumentacja)         | get_comments.php (Kod)                 |
+| ----------------------- | -------------------------------- | -------------------------------------- |
+| **Cel**                 | Edukacja i przewodnictwo         | Funkcjonalność biznesowa               |
+| **Odbiorcy**            | Developerzy, nowi zespół members | End users (przez API)                  |
+| **Konsekwencje błędów** | Konfuzja, zmarnowany czas        | Luki bezpieczeństwa, system compromise |
+| **Częstość zmian**      | Rzadko (na major updates)        | Często (na feature requests)           |
+| **Testowanie**          | Manual review                    | Automated + manual testing             |
 
 ### POZIOM PROFESJONALIZMU
 
 #### 🏆 README.md - Enterprise Level
+
 ```markdown
 ### Design Principles
 
 #### **Security First**
+
 - Defense in depth strategy
 - Input validation at all layers
 - Output encoding for XSS prevention
 - CSRF protection on all forms
 - Rate limiting to prevent abuse
 ```
-*Pokazuje głębokie zrozumienie security best practices*
 
-#### ⚠️ get_comments.php - Hobby Level  
+_Pokazuje głębokie zrozumienie security best practices_
+
+#### ⚠️ get_comments.php - Hobby Level
+
 ```php
 $date = filter_input(INPUT_GET, 'date', FILTER_SANITIZE_STRING);
 // Podstawowa sanityzacja bez głębszej walidacji
 ```
-*Pokazuje surface-level understanding bezpieczeństwa*
+
+_Pokazuje surface-level understanding bezpieczeństwa_
 
 ---
 
@@ -189,20 +205,21 @@ $date = filter_input(INPUT_GET, 'date', FILTER_SANITIZE_STRING);
 ### Immediate Actions (1-3 dni):
 
 1. **Fix get_comments.php:**
+
    ```php
    // ✅ SECURE VERSION
    <?php
    declare(strict_types=1);
-   
+
    require_once 'security/RateLimiter.php';
    require_once 'security/CSRFValidator.php';
-   
+
    $rateLimiter = new RateLimiter();
    if (!$rateLimiter->check($_SERVER['REMOTE_ADDR'])) {
        http_response_code(429);
        exit(json_encode(['error' => 'Rate limit exceeded']));
    }
-   
+
    // Specific CORS policy
    $allowedOrigins = ['https://radioadamowo.pl'];
    $origin = $_SERVER['HTTP_ORIGIN'] ?? '';

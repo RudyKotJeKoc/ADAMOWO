@@ -1,11 +1,13 @@
 # Radio Adamowo - Comprehensive Enhanced Project
 
 ## Overview
+
 This is the consolidated and enhanced version of Radio Adamowo, combining the best features from all project versions to create a comprehensive, modern web radio application with educational content about psychological manipulation and toxic relationships.
 
 ## Key Features Integrated
 
 ### 🎵 Advanced Audio System
+
 - **Multi-format streaming** with HLS.js and fallback support
 - **Web Audio API** with real-time visualizations
 - **Media Session API** for system-level media controls
@@ -14,6 +16,7 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 - **Audio context management** with proper browser support
 
 ### 🔒 Enterprise-Grade Security
+
 - **CSRF Protection** with synchronized token pattern
 - **SQL Injection Prevention** using PDO prepared statements
 - **Rate Limiting** (20 req/min for tokens, 10 req/min for comments)
@@ -22,6 +25,7 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 - **Environment-based configuration** for sensitive data
 
 ### 📱 Progressive Web Application
+
 - **Full PWA compliance** with service worker
 - **Offline-first architecture** with intelligent caching
 - **Installable application** with proper manifest
@@ -29,6 +33,7 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 - **Performance optimized** with code splitting and lazy loading
 
 ### 🎨 Modern User Experience
+
 - **GSAP animations** and transitions
 - **Interactive visualizations** with Canvas and WebGL
 - **Tailwind CSS** with custom design system
@@ -37,6 +42,7 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 - **Accessibility** features and ARIA labels
 
 ### 💬 Interactive Features
+
 - **Calendar-based comment system** with persistent data
 - **Real-time content updates** via AJAX
 - **AI simulation components** for educational scenarios
@@ -44,6 +50,7 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 - **Social sharing integration**
 
 ### 📊 Educational Content
+
 - **Structured educational framework** about manipulation
 - **Case study analysis** with interactive elements
 - **Progressive disclosure** of complex topics
@@ -82,6 +89,7 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 ## Technology Stack
 
 ### Frontend
+
 - **Vite** - Modern build tool with HMR
 - **Vanilla JavaScript** - No framework dependencies
 - **Tailwind CSS** - Utility-first CSS framework
@@ -90,15 +98,18 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 - **Chart.js** - Data visualization library
 
 ### Backend
+
 - **PHP 8+** - Server-side processing
 - **PDO** - Database abstraction layer
 - **Session management** - CSRF and authentication
 
 ### Database
+
 - **MySQL/MariaDB** - Relational database
 - **Optimized schemas** - With proper indexes and constraints
 
 ### DevOps
+
 - **Environment variables** - Secure configuration
 - **Docker support** - Containerized deployment
 - **CI/CD ready** - Automated testing and deployment
@@ -122,6 +133,7 @@ This is the consolidated and enhanced version of Radio Adamowo, combining the be
 ## Installation & Deployment
 
 ### Quick Start
+
 ```bash
 git clone https://github.com/RudyKotJeKoc/ADAMOWO.git
 cd ADAMOWO
@@ -130,12 +142,14 @@ npm run dev
 ```
 
 ### Production Build
+
 ```bash
 npm run build
 npm run preview
 ```
 
 ### Environment Setup
+
 ```bash
 export DB_HOST=localhost
 export DB_USER=radio_adamowo
@@ -174,14 +188,17 @@ export FRONTEND_URL=https://yourdomain.com
 - [ ] Advanced content management system
 
 ## License
+
 MIT License - See LICENSE file for details
 
 ## Contributing
+
 Please read CONTRIBUTING.md for contribution guidelines
 
 ---
 
 **Radio Adamowo Team**
+
 - Website: https://radioadamowo.pl
 - Email: contact@radioadamowo.pl
 - Support: support@radioadamowo.pl

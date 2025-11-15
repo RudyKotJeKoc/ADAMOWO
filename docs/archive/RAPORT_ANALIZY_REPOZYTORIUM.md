@@ -25,17 +25,17 @@
 
 ### 📊 Statystyki Projektu
 
-| Metryka | Wartość |
-|---------|---------|
-| **Całkowita liczba plików** | 405 |
-| **Pliki aktywne (używane)** | ~320 (79%) |
-| **Pliki potencjalnie nieużywane** | ~85 (21%) |
-| **Rozmiar projektu** | ~3.2 MB (bez node_modules) |
-| **Potencjalna redukcja** | ~600 KB (18%) |
-| **Główne katalogi** | 13 |
-| **Komponenty React** | 36 |
-| **Features (moduły)** | 23 |
-| **Strony** | 13 |
+| Metryka                           | Wartość                    |
+| --------------------------------- | -------------------------- |
+| **Całkowita liczba plików**       | 405                        |
+| **Pliki aktywne (używane)**       | ~320 (79%)                 |
+| **Pliki potencjalnie nieużywane** | ~85 (21%)                  |
+| **Rozmiar projektu**              | ~3.2 MB (bez node_modules) |
+| **Potencjalna redukcja**          | ~600 KB (18%)              |
+| **Główne katalogi**               | 13                         |
+| **Komponenty React**              | 36                         |
+| **Features (moduły)**             | 23                         |
+| **Strony**                        | 13                         |
 
 ### 🎯 Główne Wnioski
 
@@ -161,6 +161,7 @@ ADAMOWO/
 9. `/help` - Pomoc
 
 **Dodatkowe trasy (nie w głównej nawigacji):**
+
 - `/analysis` - Archiwum analiz
 - `/privacy` - Polityka prywatności
 - `/ai-policy` - Polityka AI
@@ -172,35 +173,35 @@ ADAMOWO/
 
 ### 3.1 Frontend
 
-| Technologia | Wersja | Rola |
-|-------------|--------|------|
-| **React** | 18.3.1 | Framework UI |
-| **TypeScript** | 5.6.3 | Typowanie statyczne |
-| **Vite** | 5.4.8 | Build tool + dev server |
-| **Tailwind CSS** | 3.4.13 | Utility-first CSS |
-| **Framer Motion** | 12.23.24 | Animacje |
-| **React Router** | 6.26.1 | Routing |
-| **Zustand** | 4.5.4 | Zarządzanie stanem |
-| **i18next** | 23.11.5 | Internacjonalizacja |
+| Technologia       | Wersja   | Rola                    |
+| ----------------- | -------- | ----------------------- |
+| **React**         | 18.3.1   | Framework UI            |
+| **TypeScript**    | 5.6.3    | Typowanie statyczne     |
+| **Vite**          | 5.4.8    | Build tool + dev server |
+| **Tailwind CSS**  | 3.4.13   | Utility-first CSS       |
+| **Framer Motion** | 12.23.24 | Animacje                |
+| **React Router**  | 6.26.1   | Routing                 |
+| **Zustand**       | 4.5.4    | Zarządzanie stanem      |
+| **i18next**       | 23.11.5  | Internacjonalizacja     |
 
 ### 3.2 Backend
 
-| Technologia | Wersja | Rola |
-|-------------|--------|------|
+| Technologia  | Wersja | Rola                     |
+| ------------ | ------ | ------------------------ |
 | **Supabase** | 2.48.1 | BaaS (baza danych, auth) |
-| **PHP** | - | API endpoints (v1) |
-| **HLS.js** | 1.5.7 | Streaming audio |
+| **PHP**      | -      | API endpoints (v1)       |
+| **HLS.js**   | 1.5.7  | Streaming audio          |
 
 ### 3.3 Narzędzia Deweloperskie
 
-| Narzędzie | Wersja | Rola |
-|-----------|--------|------|
-| **ESLint** | 9.13.0 | Linting kodu |
-| **Prettier** | 3.3.3 | Formatowanie kodu |
-| **Vitest** | 2.1.3 | Testy jednostkowe |
-| **Testing Library** | 16.0.0 | Testy komponentów React |
-| **Husky** | 9.1.6 | Git hooks |
-| **lint-staged** | 15.2.10 | Pre-commit linting |
+| Narzędzie           | Wersja  | Rola                    |
+| ------------------- | ------- | ----------------------- |
+| **ESLint**          | 9.13.0  | Linting kodu            |
+| **Prettier**        | 3.3.3   | Formatowanie kodu       |
+| **Vitest**          | 2.1.3   | Testy jednostkowe       |
+| **Testing Library** | 16.0.0  | Testy komponentów React |
+| **Husky**           | 9.1.6   | Git hooks               |
+| **lint-staged**     | 15.2.10 | Pre-commit linting      |
 
 ### 3.4 PWA i Performance
 
@@ -527,17 +528,17 @@ web_app_best_practices_summary.md
 
 ### 5.2 Szacowane Oszczędności
 
-| Kategoria | Pliki | Rozmiar |
-|-----------|-------|---------|
-| Legacy PHP | 8 | ~50 KB |
-| Legacy JS | 3 | ~72 KB |
-| Duplikaty JSON/SQL | 6 | ~68 KB |
-| Nieużywane CSS | 2 | ~23 KB |
-| Placeholdery | 15 | ~10 KB |
-| Pliki systemowe | 1 | 8 KB |
-| **SUMA do usunięcia** | **35** | **~231 KB** |
-| Dokumentacja (przenieść) | ~20 plików | ~350 KB |
-| **RAZEM** | **~55** | **~580 KB (18%)** |
+| Kategoria                | Pliki      | Rozmiar           |
+| ------------------------ | ---------- | ----------------- |
+| Legacy PHP               | 8          | ~50 KB            |
+| Legacy JS                | 3          | ~72 KB            |
+| Duplikaty JSON/SQL       | 6          | ~68 KB            |
+| Nieużywane CSS           | 2          | ~23 KB            |
+| Placeholdery             | 15         | ~10 KB            |
+| Pliki systemowe          | 1          | 8 KB              |
+| **SUMA do usunięcia**    | **35**     | **~231 KB**       |
+| Dokumentacja (przenieść) | ~20 plików | ~350 KB           |
+| **RAZEM**                | **~55**    | **~580 KB (18%)** |
 
 ---
 
@@ -546,6 +547,7 @@ web_app_best_practices_summary.md
 ### 6.1 Proponowana Nowa Struktura
 
 #### Przed:
+
 ```
 ADAMOWO/
 ├── [ROOT] - 60+ plików (PHP, JS, CSS, MD, JSON, SQL)
@@ -555,6 +557,7 @@ ADAMOWO/
 ```
 
 #### Po:
+
 ```
 ADAMOWO/
 ├── [ROOT] - tylko pliki konfiguracyjne + README.md
@@ -579,12 +582,14 @@ ADAMOWO/
 ### 6.2 Plan Migracji
 
 #### Krok 1: Utwórz Backup
+
 ```bash
 ./scripts/cleanup/create-backup.sh
 # Wybierz opcję 3 (backup tylko nieużywanych plików)
 ```
 
 #### Krok 2: Utwórz Nowe Katalogi
+
 ```bash
 mkdir -p docs/archive/analysis
 mkdir -p docs/archive/guides
@@ -592,6 +597,7 @@ mkdir -p scripts/cleanup/results
 ```
 
 #### Krok 3: Przenieś Dokumentację
+
 ```bash
 # Analizy
 mv ANALIZA_TLUMACZEN.md docs/archive/analysis/
@@ -613,6 +619,7 @@ mv deconstructing_vague_software_requests.md docs/archive/guides/
 ```
 
 #### Krok 4: Usuń Nieużywane Pliki
+
 ```bash
 ./scripts/cleanup/safe-delete.sh
 # Wybierz poziom czyszczenia (zalecane: 3 - agresywne)
@@ -620,6 +627,7 @@ mv deconstructing_vague_software_requests.md docs/archive/guides/
 ```
 
 #### Krok 5: Weryfikacja
+
 ```bash
 # Sprawdź czy aplikacja działa
 pnpm dev
@@ -638,6 +646,7 @@ git commit -m "chore: clean up unused files and reorganize documentation"
 ### 6.3 Konwencja Nazewnictwa (Rekomendacje)
 
 #### Pliki w Root:
+
 ```
 ✅ ZACHOWAJ: README.md, CONTRIBUTING.md, SECURITY.md, LICENSE
 ✅ ZACHOWAJ: Wszystkie pliki *.config.* (vite, tailwind, eslint, etc.)
@@ -647,6 +656,7 @@ git commit -m "chore: clean up unused files and reorganize documentation"
 ```
 
 #### Nazwy Katalogów:
+
 ```
 ✅ UŻYWAJ: kebab-case (polana-klamstw, analysis-archive)
 ✅ UŻYWAJ: jednoznacznych nazw (features, components, pages)
@@ -734,13 +744,13 @@ const NAV_ITEMS = [
 
 ### 7.6 Szacowany Czas Implementacji
 
-| Faza | Zadania | Czas |
-|------|---------|------|
-| **Faza 1** | Przygotowanie (struktura, typy, dane) | 1-2h |
-| **Faza 2** | Komponenty (Reader, TOC, Navigation) | 2-3h |
-| **Faza 3** | Integracja (routing, nawigacja, style) | 1h |
-| **Faza 4** | Dopracowanie (testy, a11y, responsive) | 1h |
-| **RAZEM** | | **4-6h** |
+| Faza       | Zadania                                | Czas     |
+| ---------- | -------------------------------------- | -------- |
+| **Faza 1** | Przygotowanie (struktura, typy, dane)  | 1-2h     |
+| **Faza 2** | Komponenty (Reader, TOC, Navigation)   | 2-3h     |
+| **Faza 3** | Integracja (routing, nawigacja, style) | 1h       |
+| **Faza 4** | Dopracowanie (testy, a11y, responsive) | 1h       |
+| **RAZEM**  |                                        | **4-6h** |
 
 ### 7.7 Checklist Przed Wdrożeniem
 
@@ -765,11 +775,13 @@ Wszystkie skrypty znajdują się w `/scripts/cleanup/`:
 **Funkcja:** Automatyczne skanowanie nieużywanych plików
 
 **Użycie:**
+
 ```bash
 ./scripts/cleanup/find-unused-files.sh
 ```
 
 **Wyniki:**
+
 - Generuje raporty w `/scripts/cleanup/results/`
 - Znajduje: nieużywane obrazy, CSS, JS, multimedia, pliki tymczasowe
 - Tworzy podsumowanie z licznikami
@@ -779,16 +791,19 @@ Wszystkie skrypty znajdują się w `/scripts/cleanup/`:
 **Funkcja:** Tworzenie bezpiecznego backupu przed czyszczeniem
 
 **Użycie:**
+
 ```bash
 ./scripts/cleanup/create-backup.sh
 ```
 
 **Opcje:**
+
 1. Pełny backup (z node_modules)
 2. Backup produkcyjny (bez node_modules, dist, build)
 3. **Backup tylko nieużywanych plików (zalecane)**
 
 **Rezultat:**
+
 - Backup w `../backups/ADAMOWO_backup_YYYYMMDD_HHMMSS.tar.gz`
 - README z instrukcjami przywracania
 
@@ -797,17 +812,20 @@ Wszystkie skrypty znajdują się w `/scripts/cleanup/`:
 **Funkcja:** Bezpieczne usuwanie nieużywanych plików z opcją przywrócenia
 
 **Użycie:**
+
 ```bash
 ./scripts/cleanup/safe-delete.sh
 ```
 
 **Poziomy czyszczenia:**
-1. **Bezpieczne** - tylko pliki tymczasowe (.DS_Store, Thumbs.db, *.bak)
-2. **Umiarkowane** - + duplikaty (*-optimized, *-backup, *-comprehensive)
+
+1. **Bezpieczne** - tylko pliki tymczasowe (.DS_Store, Thumbs.db, \*.bak)
+2. **Umiarkowane** - + duplikaty (_-optimized, _-backup, \*-comprehensive)
 3. **Agresywne** - + legacy PHP/JS, nieużywane CSS
 4. **Pełne** - wszystko powyżej + placeholdery obrazów
 
 **Akcje:**
+
 1. **Przenieś do .trash (zalecane)** - można przywrócić
 2. Usuń na stałe (nieodwracalne)
 
@@ -851,11 +869,13 @@ cp -r .trash/* .   # Przywróć pliki z trash
 #### ✅ DO ZROBIENIA TERAZ:
 
 1. **Utwórz backup**
+
    ```bash
    ./scripts/cleanup/create-backup.sh
    ```
 
 2. **Usuń pliki tymczasowe i systemowe**
+
    ```bash
    # Bezpiecznie usuń
    find . -name ".DS_Store" -delete
@@ -863,6 +883,7 @@ cp -r .trash/* .   # Przywróć pliki z trash
    ```
 
 3. **Usuń duplikaty z sufiksami**
+
    ```bash
    # Te pliki są 100% duplikatami
    rm *-optimized.php *-optimized.json *-optimized.js
@@ -871,6 +892,7 @@ cp -r .trash/* .   # Przywróć pliki z trash
    ```
 
 4. **Uruchom skanowanie**
+
    ```bash
    ./scripts/cleanup/find-unused-files.sh
    ```
@@ -1003,28 +1025,31 @@ cp -r .trash/* .   # Przywróć pliki z trash
 
 Po zakończeniu czyszczenia i reorganizacji:
 
-| Metryka | Przed | Cel | Sukces |
-|---------|-------|-----|--------|
-| Pliki w root (non-config) | ~60 | <10 | ✅ jeśli <10 |
-| Nieużywane pliki | ~85 | 0 | ✅ jeśli 0 |
-| Rozmiar projektu | 3.2 MB | <2.7 MB | ✅ jeśli <2.7 MB |
-| Dokumentacja w /docs/ | 3 katalogi | 5 katalogów | ✅ jeśli zorganizowana |
-| Lighthouse Performance | ? | >90 | ✅ jeśli >90 |
-| Test coverage | ? | >80% | ✅ jeśli >80% |
+| Metryka                   | Przed      | Cel         | Sukces                 |
+| ------------------------- | ---------- | ----------- | ---------------------- |
+| Pliki w root (non-config) | ~60        | <10         | ✅ jeśli <10           |
+| Nieużywane pliki          | ~85        | 0           | ✅ jeśli 0             |
+| Rozmiar projektu          | 3.2 MB     | <2.7 MB     | ✅ jeśli <2.7 MB       |
+| Dokumentacja w /docs/     | 3 katalogi | 5 katalogów | ✅ jeśli zorganizowana |
+| Lighthouse Performance    | ?          | >90         | ✅ jeśli >90           |
+| Test coverage             | ?          | >80%        | ✅ jeśli >80%          |
 
 ### 10.3 Wsparcie i Pytania
 
 **Dokumentacja techniczna:**
+
 - `/docs/developer/README.md`
 - `/docs/POLANA_KLAMSTW_INTEGRATION_PLAN.md`
 - Ten raport: `/RAPORT_ANALIZY_REPOZYTORIUM.md`
 
 **Skrypty pomocnicze:**
+
 - `/scripts/cleanup/find-unused-files.sh`
 - `/scripts/cleanup/create-backup.sh`
 - `/scripts/cleanup/safe-delete.sh`
 
 **W razie problemów:**
+
 1. Przywróć backup: `tar -xzf backup.tar.gz`
 2. Przywróć pliki z .trash: `cp -r .trash/* .`
 3. Sprawdź logi: `pnpm dev` (komunikaty błędów)

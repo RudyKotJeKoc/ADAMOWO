@@ -34,7 +34,7 @@
       "url": "/?section=podcasts",
       "icons": [
         {
-          "src": "/images/icons/podcast-shortcut-96x96.png", 
+          "src": "/images/icons/podcast-shortcut-96x96.png",
           "sizes": "96x96",
           "type": "image/png",
           "purpose": "any"
@@ -49,7 +49,7 @@
       "icons": [
         {
           "src": "/images/icons/calendar-shortcut-96x96.png",
-          "sizes": "96x96", 
+          "sizes": "96x96",
           "type": "image/png",
           "purpose": "any"
         }
@@ -65,14 +65,14 @@
     },
     {
       "src": "/images/icons/icon-96x96.png",
-      "sizes": "96x96", 
+      "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "src": "/images/icons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/png", 
+      "type": "image/png",
       "purpose": "any"
     },
     {
@@ -95,7 +95,7 @@
     },
     {
       "src": "/images/icons/icon-384x384.png",
-      "sizes": "384x384", 
+      "sizes": "384x384",
       "type": "image/png",
       "purpose": "any"
     },
@@ -112,7 +112,7 @@
       "purpose": "maskable"
     },
     {
-      "src": "/images/icons/maskable-icon-512x512.png", 
+      "src": "/images/icons/maskable-icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -139,7 +139,7 @@
       "label": "Radio Adamowo - Ekran główny na komputerze"
     },
     {
-      "src": "/images/screenshots/mobile-home.png", 
+      "src": "/images/screenshots/mobile-home.png",
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
@@ -147,7 +147,7 @@
     },
     {
       "src": "/images/screenshots/desktop-player.png",
-      "sizes": "1280x720", 
+      "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Odtwarzacz audio z wizualizacjami"
@@ -155,7 +155,7 @@
     {
       "src": "/images/screenshots/mobile-calendar.png",
       "sizes": "390x844",
-      "type": "image/png", 
+      "type": "image/png",
       "form_factor": "narrow",
       "label": "Kalendarz z komentarzami"
     }
@@ -178,7 +178,7 @@
       "action": "/",
       "accept": {
         "audio/mpeg": [".mp3"],
-        "audio/wav": [".wav"], 
+        "audio/wav": [".wav"],
         "audio/ogg": [".ogg"],
         "application/x-mpegURL": [".m3u8"]
       }
@@ -204,10 +204,7 @@
   "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"],
   "id": "/",
   "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
-  "permissions": [
-    "notifications",
-    "audio-playback"
-  ],
+  "permissions": ["notifications", "audio-playback"],
   "features": {
     "audio": {
       "required": true,
@@ -237,7 +234,7 @@
       "api_version": "1.0",
       "supported_browsers": {
         "chrome": ">=90",
-        "firefox": ">=88", 
+        "firefox": ">=88",
         "safari": ">=14",
         "edge": ">=90"
       },
