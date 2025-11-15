@@ -1770,7 +1770,8 @@
     "links": {
       "documentation": "Dokumentacja",
       "privacy": "Prywatność i cookies",
-      "methodology": "Metodologia i źródła"
+      "methodology": "Metodologia i źródła",
+      "support": "Wsparcie 🍕"
     },
     "backToTop": "Do góry",
     "rights": "© 2025 Radio Adamowo"
@@ -2583,5 +2584,16 @@
         "download": "Pobierz transkrypcję"
       }
     }
+  },
+  "donation": {
+    "title": "Wesprzyj Wilka Pizzą",
+    "description": "Radio Adamowo powstaje dzięki pasji i niezliczonym godzinom pracy. Jeśli nasza misja edukacyjna jest dla Ciebie wartościowa, możesz wesprzeć wilka pizzą – to mały gest, który daje nam energię do dalszej pracy.",
+    "feature1": "Wspierasz rozwój platformy edukacyjnej",
+    "feature2": "Pomagasz w tworzeniu wartościowych treści",
+    "feature3": "Dajesz nam siłę do nocnych sesji kodowania",
+    "feature4": "Stajesz się częścią naszej misji",
+    "cta": "Postaw Pizzę Wilkowi",
+    "subtitle": "Każda pizza przybliża nas do lepszego świata",
+    "thanks": "Dziękujemy za każde wsparcie – naprawdę robi różnicę! 🐺💙"
   }
 }

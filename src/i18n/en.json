@@ -1767,7 +1767,8 @@
     "links": {
       "documentation": "Documentation",
       "privacy": "Privacy & cookies",
-      "methodology": "Methodology & sources"
+      "methodology": "Methodology & sources",
+      "support": "Support 🍕"
     },
     "backToTop": "Back to top",
     "rights": "© 2025 Radio Adamowo"
@@ -1892,5 +1893,16 @@
       "continue": "I understand, continue",
       "goBack": "Go back"
     }
+  },
+  "donation": {
+    "title": "Support the Wolf with Pizza",
+    "description": "Radio Adamowo is built with passion and countless hours of work. If our educational mission is valuable to you, you can support the wolf with a pizza – a small gesture that gives us energy to keep going.",
+    "feature1": "Support the development of the educational platform",
+    "feature2": "Help create valuable content",
+    "feature3": "Fuel our late-night coding sessions",
+    "feature4": "Become part of our mission",
+    "cta": "Buy the Wolf a Pizza",
+    "subtitle": "Every pizza brings us closer to a better world",
+    "thanks": "Thank you for every bit of support – it truly makes a difference! 🐺💙"
   }
 }

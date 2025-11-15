@@ -14,6 +14,7 @@ const Lab = lazy(() => import('./pages/Lab'));
 const Community = lazy(() => import('./pages/Community'));
 const AnatomyPage = lazy(() => import('./pages/AnatomyPage'));
 const Help = lazy(() => import('./pages/Help'));
+const Support = lazy(() => import('./pages/Support'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const AIPolicy = lazy(() => import('./pages/AIPolicy'));
 const Methodology = lazy(() => import('./pages/Methodology'));
@@ -34,6 +35,7 @@ export const router = createBrowserRouter([
       { path: 'community', element: <Community /> },
       { path: 'anatomy', element: <AnatomyPage /> },
       { path: 'help', element: <Help /> },
+      { path: 'support', element: <Support /> },
       { path: 'privacy', element: <Privacy /> },
       { path: 'ai-policy', element: <AIPolicy /> },
       { path: 'methodology', element: <Methodology /> },
