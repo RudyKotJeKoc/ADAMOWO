@@ -27,6 +27,11 @@ export function AppFooter(): ReactElement {
         id: 'methodology',
         href: '/methodology',
         label: t('footer.links.methodology')
+      },
+      {
+        id: 'support',
+        href: '/support',
+        label: t('footer.links.support')
       }
     ],
     [t]

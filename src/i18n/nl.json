@@ -1518,7 +1518,8 @@
     "links": {
       "documentation": "Documentatie",
       "privacy": "Privacy en cookies",
-      "methodology": "Methodologie en bronnen"
+      "methodology": "Methodologie en bronnen",
+      "support": "Steun 🍕"
     },
     "backToTop": "Terug naar boven",
     "rights": "© 2025 Radio Adamowo"
@@ -1812,5 +1813,16 @@
         }
       }
     }
+  },
+  "donation": {
+    "title": "Ondersteun de Wolf met Pizza",
+    "description": "Radio Adamowo wordt gebouwd met passie en talloze uren werk. Als onze educatieve missie waardevol voor je is, kun je de wolf ondersteunen met een pizza – een klein gebaar dat ons energie geeft om door te gaan.",
+    "feature1": "Ondersteun de ontwikkeling van het educatieve platform",
+    "feature2": "Help bij het creëren van waardevolle inhoud",
+    "feature3": "Geef brandstof voor onze late-night codesessies",
+    "feature4": "Word deel van onze missie",
+    "cta": "Koop een Pizza voor de Wolf",
+    "subtitle": "Elke pizza brengt ons dichter bij een betere wereld",
+    "thanks": "Bedankt voor elke vorm van steun – het maakt echt een verschil! 🐺💙"
   }
 }
