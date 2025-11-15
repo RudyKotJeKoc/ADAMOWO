@@ -1,0 +1,10 @@
+{
+  "id": "10",
+  "number": 10,
+  "title": "Rozdział 10",
+  "subtitle": "[Dodaj podtytuł]",
+  "content": "# Rozdział 10: [Tytuł]\n\n[MIEJSCE NA TREŚĆ ROZDZIAŁU 10 - EDYTUJ TUTAJ]\n\nTo miejsce na pełną treść rozdziału. Możesz użyć formatowania Markdown:\n\n- **Pogrubienie**\n- *Kursywa*\n- Paragrafy\n- Dialogi\n\n---\n\n\"Dialog postaci,\" powiedziała bohaterka.\n\nOto jak będzie wyglądać tekst w rozdziale.",
+  "estimatedReadingTime": 10,
+  "publishDate": "2025-11-15",
+  "notes": "Rozdział 10 - miejsce na notatki autora"
+}

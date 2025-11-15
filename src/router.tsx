@@ -9,6 +9,7 @@ const ViolenceLoop = lazy(() => import('./pages/ViolenceLoop'));
 const Studio = lazy(() => import('./pages/Studio'));
 const Shows = lazy(() => import('./pages/Shows'));
 const AnalysisPage = lazy(() => import('./features/analysis-archive/AnalysisPage'));
+const PolanaKlamstw = lazy(() => import('./pages/PolanaKlamstw'));
 const Guides = lazy(() => import('./pages/Guides'));
 const Lab = lazy(() => import('./pages/Lab'));
 const Community = lazy(() => import('./pages/Community'));
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
       { path: 'studio/:program?', element: <Studio /> },
       { path: 'shows', element: <Shows /> },
       { path: 'analysis', element: <AnalysisPage /> },
+      { path: 'polana-klamstw/:chapterId?', element: <PolanaKlamstw /> },
       { path: 'guides', element: <Guides /> },
       { path: 'lab', element: <Lab /> },
       { path: 'community', element: <Community /> },
