@@ -13,6 +13,7 @@ import type { EightOccurrence, CyclePhase } from './curse-of-eight.data';
 export function CurseOfEightSection(): ReactElement {
   const [selectedOccurrence, setSelectedOccurrence] = useState<string | null>(null);
   const [selectedPhase, setSelectedPhase] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <section
@@ -51,14 +52,45 @@ export function CurseOfEightSection(): ReactElement {
             ma ucieczki. Dom, którego numer - <strong>ósemka</strong> - od zawsze szeptał o tym, co
             nieuniknione: wiecznym powrocie do początku.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-base-200">
-            Ósemka. Symbol matematycznej nieskończoności (∞). W mitologii - <em>Uroboros</em>, wąż
-            pożerający własny ogon. W sadze Adamskich - pętla konfliktu, która zatoczyła pełne koło
-            przez osiem lat, by powrócić tam, gdzie się zaczęła.
-          </p>
+          {!isExpanded && (
+            <p className="mt-4 text-sm leading-relaxed text-base-200">
+              Ósemka pojawia się w tej sprawie 9 razy: w adresie, datach, numerach dokumentów i
+              cyklach wydarzeń. To zbyt wiele, by to był przypadek...
+            </p>
+          )}
+          {isExpanded && (
+            <p className="mt-4 text-sm leading-relaxed text-base-200">
+              Ósemka. Symbol matematycznej nieskończoności (∞). W mitologii - <em>Uroboros</em>, wąż
+              pożerający własny ogon. W sadze Adamskich - pętla konfliktu, która zatoczyła pełne koło
+              przez osiem lat, by powrócić tam, gdzie się zaczęła.
+            </p>
+          )}
         </div>
 
-        {/* Eight Occurrences */}
+        {/* Expand/Collapse Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="group flex items-center gap-3 rounded-xl border border-accent-500/40 bg-gradient-to-br from-accent-500/20 via-accent-400/10 to-transparent px-6 py-3 font-semibold text-accent-200 transition-all hover:border-accent-400/60 hover:from-accent-500/30 hover:shadow-lg hover:shadow-accent-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
+            aria-expanded={isExpanded}
+          >
+            <span>{isExpanded ? 'Zwiń analizę' : 'Rozwiń pełną analizę'}</span>
+            <span
+              className={clsx(
+                'text-xl transition-transform duration-300',
+                isExpanded ? 'rotate-180' : ''
+              )}
+              aria-hidden="true"
+            >
+              ▼
+            </span>
+          </button>
+        </div>
+
+        {/* Expandable Content */}
+        {isExpanded && (
+          <div className="space-y-10 animate-in fade-in slide-in-from-top-4 duration-500">
+            {/* Eight Occurrences */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-base-50">♾️ Odkrycie: Ósemka Wszędzie</h3>
 
@@ -286,6 +318,8 @@ POCZĄTEK    TRANSFORMACJA
             </p>
           </div>
         </div>
+          </div>
+        )}
       </div>
     </section>
   );
