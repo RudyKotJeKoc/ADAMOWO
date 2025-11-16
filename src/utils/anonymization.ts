@@ -28,7 +28,7 @@ export function anonymizeName(name: string, options: AnonymizationOptions = {}):
 
   if (options.partial) {
     const parts = name.trim().split(/\s+/);
-    return parts.map(part => part[0] + '.').join(' ');
+    return parts.map((part) => part[0] + '.').join(' ');
   }
 
   return '[imię i nazwisko]';
@@ -66,7 +66,10 @@ export function anonymizeAddress(address: string, options: AnonymizationOptions 
  * @example anonymizeMonetaryValue("1234567.89 PLN") → "~1.2M PLN" (partial)
  * @example anonymizeMonetaryValue("1234567.89 PLN") → "[kwota]" (full)
  */
-export function anonymizeMonetaryValue(value: string | number, options: AnonymizationOptions = {}): string {
+export function anonymizeMonetaryValue(
+  value: string | number,
+  options: AnonymizationOptions = {}
+): string {
   if (value === null || value === undefined) return '';
 
   if (options.replacement) {
@@ -128,7 +131,10 @@ export function anonymizeIdNumber(
  * @example anonymizePhoneNumber("+48 123 456 789") → "+48 *** *** 789" (partial)
  * @example anonymizePhoneNumber("+48 123 456 789") → "[numer telefonu]" (full)
  */
-export function anonymizePhoneNumber(phoneNumber: string, options: AnonymizationOptions = {}): string {
+export function anonymizePhoneNumber(
+  phoneNumber: string,
+  options: AnonymizationOptions = {}
+): string {
   if (!phoneNumber?.trim()) return phoneNumber;
 
   if (options.replacement) {
@@ -172,10 +178,13 @@ export function anonymizeEmail(email: string, options: AnonymizationOptions = {}
 
 /**
  * Anonymizes court case numbers and document signatures
- * @example anonymizeDocumentSignature("I C 1234/23") → "I C ***/23" (partial)
- * @example anonymizeDocumentSignature("I C 1234/23") → "[sygnatura akt]" (full)
+ * @example anonymizeDocumentSignature("I C 1234/23")
+ * @example anonymizeDocumentSignature("I C 1234/23")
  */
-export function anonymizeDocumentSignature(signature: string, options: AnonymizationOptions = {}): string {
+export function anonymizeDocumentSignature(
+  signature: string,
+  options: AnonymizationOptions = {}
+): string {
   if (!signature?.trim()) return signature;
 
   if (options.replacement) {
@@ -208,8 +217,20 @@ export function anonymizeDate(date: string | Date, options: AnonymizationOptions
 
   if (options.partial) {
     const d = typeof date === 'string' ? new Date(date) : date;
-    const months = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec',
-                    'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień'];
+    const months = [
+      'styczeń',
+      'luty',
+      'marzec',
+      'kwiecień',
+      'maj',
+      'czerwiec',
+      'lipiec',
+      'sierpień',
+      'wrzesień',
+      'październik',
+      'listopad',
+      'grudzień',
+    ];
     return `${months[d.getMonth()]} ${d.getFullYear()}`;
   }
 
@@ -229,9 +250,17 @@ export function anonymizeDate(date: string | Date, options: AnonymizationOptions
  *   pesel: {type: 'PESEL', partial: true}
  * })
  */
-export function anonymizeObject<T extends Record<string, any>>(
+export function anonymizeObject<T extends Record<string, unknown>>(
   obj: T,
-  fieldConfig: Record<keyof T, 'name' | 'address' | 'monetary' | 'phone' | 'email' | { type: string; options?: AnonymizationOptions }>
+  fieldConfig: Record<
+    keyof T,
+    | 'name'
+    | 'address'
+    | 'monetary'
+    | 'phone'
+    | 'email'
+    | { type: string; options?: AnonymizationOptions }
+  >
 ): T {
   const result = { ...obj };
 
@@ -283,7 +312,7 @@ export function anonymizeObject<T extends Record<string, any>>(
       }
     }
 
-    result[field as keyof T] = anonymized as any;
+    result[field as keyof T] = anonymized as T[keyof T];
   }
 
   return result;
