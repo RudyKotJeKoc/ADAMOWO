@@ -8,6 +8,7 @@ import type { TimelinePhase, TimelineDiscovery } from './timeline.data';
 export function TimelineSection(): ReactElement {
   const [selectedPhase, setSelectedPhase] = useState<string | null>(null);
   const [selectedDiscovery, setSelectedDiscovery] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <section
@@ -44,7 +45,30 @@ export function TimelineSection(): ReactElement {
           </p>
         </div>
 
-        {/* Timeline Phases */}
+        {/* Expand/Collapse Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="group flex items-center gap-3 rounded-xl border border-accent-500/40 bg-gradient-to-br from-accent-500/20 via-accent-400/10 to-transparent px-6 py-3 font-semibold text-accent-200 transition-all hover:border-accent-400/60 hover:from-accent-500/30 hover:shadow-lg hover:shadow-accent-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
+            aria-expanded={isExpanded}
+          >
+            <span>{isExpanded ? 'Zwiń analizę' : 'Zobacz pełną oś czasu'}</span>
+            <span
+              className={clsx(
+                'text-xl transition-transform duration-300',
+                isExpanded ? 'rotate-180' : ''
+              )}
+              aria-hidden="true"
+            >
+              ▼
+            </span>
+          </button>
+        </div>
+
+        {/* Expandable Content */}
+        {isExpanded && (
+          <div className="space-y-10 animate-in fade-in slide-in-from-top-4 duration-500">
+            {/* Timeline Phases */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-base-50">📊 Oś Czasu: Kluczowe Momenty</h3>
 
@@ -171,6 +195,8 @@ export function TimelineSection(): ReactElement {
             </p>
           </div>
         </div>
+          </div>
+        )}
       </div>
     </section>
   );
