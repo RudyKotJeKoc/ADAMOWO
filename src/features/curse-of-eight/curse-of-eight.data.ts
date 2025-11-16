@@ -103,9 +103,8 @@ export const eightOccurrences: EightOccurrence[] = [
     title: 'PESEL: Zakodowana Ósemka',
     description: 'Numery PESEL zawierające ósemkę',
     details: [
-      'Barbara Adamska: 68120308684** (68, 08, końcówka 8)',
-      'Sylwester Adamski: 56112800135** (data urodzenia 28)',
-      '28 listopada → 2+8 = 10 → 1+0 = 1',
+      'Numery PESEL głównych postaci zawierają symboliczne wystąpienia cyfry 8',
+      'Data urodzenia jednej z postaci: 28 listopada → 2+8 = 10 → 1+0 = 1',
       'Zakodowana w numerach identyfikacyjnych głównych postaci',
     ],
     significance: 'medium',
