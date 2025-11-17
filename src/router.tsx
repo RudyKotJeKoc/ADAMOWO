@@ -9,6 +9,8 @@ const ViolenceLoop = lazy(() => import('./pages/ViolenceLoop'));
 const Studio = lazy(() => import('./pages/Studio'));
 const Shows = lazy(() => import('./pages/Shows'));
 const AnalysisPage = lazy(() => import('./features/analysis-archive/AnalysisPage'));
+const Analyses = lazy(() => import('./pages/Analyses'));
+const Programs = lazy(() => import('./pages/Programs'));
 const Guides = lazy(() => import('./pages/Guides'));
 const Lab = lazy(() => import('./pages/Lab'));
 const Community = lazy(() => import('./pages/Community'));
@@ -30,11 +32,14 @@ export const router = createBrowserRouter([
       { path: 'studio/:program?', element: <Studio /> },
       { path: 'shows', element: <Shows /> },
       { path: 'analysis', element: <AnalysisPage /> },
+      { path: 'analizy', element: <Analyses /> },
+      { path: 'programy', element: <Programs /> },
       { path: 'guides', element: <Guides /> },
       { path: 'lab', element: <Lab /> },
       { path: 'community', element: <Community /> },
       { path: 'anatomy', element: <AnatomyPage /> },
       { path: 'help', element: <Help /> },
+      { path: 'pomoc', element: <Help /> }, // Polish alias for /help
       { path: 'support', element: <Support /> },
       { path: 'privacy', element: <Privacy /> },
       { path: 'ai-policy', element: <AIPolicy /> },
