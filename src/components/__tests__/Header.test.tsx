@@ -45,9 +45,9 @@ describe('Header', () => {
     renderHeader();
     [
       'Live',
+      'Analizy',
+      'Programy',
       'Violence Loop',
-      'Studio',
-      'Shows',
       'Guide',
       'Anatomy',
       'Lab',
@@ -77,8 +77,8 @@ describe('Header', () => {
     expect(document.activeElement).toBe(focusable[0]);
     expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual([
       'Live',
-      'Violence Loop',
-      'Studio',
+      'Analizy',
+      'Programy',
     ]);
   });
 

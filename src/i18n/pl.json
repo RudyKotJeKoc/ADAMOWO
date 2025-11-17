@@ -4,6 +4,8 @@
   },
   "navigation": {
     "live": "Na Żywo",
+    "analizy": "Analizy",
+    "programy": "Programy",
     "violenceLoop": "Pętla Przemocy",
     "studio": "Studio",
     "shows": "Audycje",
@@ -61,6 +63,17 @@
         "explore": {
           "label": "Poznaj Więcej"
         }
+      },
+      "analizyTeaser": {
+        "title": "Dogłębne Analizy",
+        "description": "Odkryj naszą bibliotekę kompleksowych analiz – od symboliki numerycznej w sprawie Adamowo, przez mechanizmy pętli przemocy, po głębokie studium przypadków manipulacji psychicznej.",
+        "viewAll": "Zobacz wszystkie"
+      },
+      "programyTeaser": {
+        "title": "Programy Edukacyjne",
+        "description": "Cztery główne programy edukacyjne prowadzone przez ekspertów – strukturalne kursy o manipulacji psychicznej, toksycznych relacjach i ścieżkach wyjścia z przemocy.",
+        "viewAll": "Zobacz wszystkie programy",
+        "learnMore": "Dowiedz się więcej"
       }
     },
     "live": {
@@ -1961,6 +1974,10 @@
       "fromHome": {
         "live": "Posłuchaj transmisji na żywo",
         "liveDesc": "24/7 muzyka i audycje edukacyjne",
+        "analizy": "Dogłębne analizy",
+        "analizyDesc": "Kompleksowe studium manipulacji i wzorców",
+        "programy": "Programy edukacyjne",
+        "programyDesc": "Cztery główne moduły prowadzone przez ekspertów",
         "guides": "Odkryj poradniki",
         "guidesDesc": "Biblioteka przypadków i mitologia narcyza",
         "tools": "Wypróbuj narzędzia",
@@ -2613,5 +2630,66 @@
     "cta": "Postaw Pizzę Wilkowi",
     "subtitle": "Każda pizza przybliża nas do lepszego świata",
     "thanks": "Dziękujemy za każde wsparcie – naprawdę robi różnicę! 🐺💙"
+  },
+  "analizy": {
+    "title": "Analizy",
+    "description": "Biblioteka treści głębokich – dogłębne analizy manipulacji psychicznej, dokumentacja przypadków i eksploracja wzorców. Każda analiza to kompleksowe studium zaprojektowane dla użytkowników poszukujących wiedzy eksperta.",
+    "searchLabel": "Szukaj analiz",
+    "searchPlaceholder": "Szukaj po tytule, tagach lub słowach kluczowych...",
+    "filterByCategory": "Filtruj po kategorii",
+    "allCategories": "Wszystkie",
+    "featured": "Wyróżnione",
+    "allAnalyses": "Wszystkie analizy",
+    "searchResults": "Wyniki wyszukiwania",
+    "resultsCount": "wyników",
+    "noResults": "Nie znaleziono analiz spełniających kryteria.",
+    "readMore": "Czytaj pełną analizę",
+    "readingMinutes": "min",
+    "categories": {
+      "manipulacja": {
+        "name": "Manipulacja",
+        "description": "Techniki i wzorce manipulacji psychicznej"
+      },
+      "dokumentacja": {
+        "name": "Dokumentacja",
+        "description": "Studium przypadków i dokumentacja dowodowa"
+      },
+      "psychologia": {
+        "name": "Psychologia",
+        "description": "Analiza psychologiczna i mechanizmy"
+      },
+      "prawo": {
+        "name": "Prawo",
+        "description": "Aspekty prawne i systemowe"
+      },
+      "wzorce": {
+        "name": "Wzorce",
+        "description": "Cykle, pętle i wzorce powtarzalne"
+      },
+      "inne": {
+        "name": "Inne",
+        "description": "Pozostałe analizy"
+      }
+    }
+  },
+  "programy": {
+    "title": "Programy Edukacyjne",
+    "description": "Nasze programy to nie zwykłe audycje radiowe – to strukturalne moduły edukacyjne prowadzone przez ekspertów. Każdy program oferuje unikalne perspektywy na manipulację psychiczną, toksyczne relacje i ścieżki wyjścia z przemocy.",
+    "whatYouLearn": "Czego się nauczysz",
+    "hosts": "Prowadzący",
+    "schedule": "Harmonogram",
+    "goToProgram": "Przejdź do programu",
+    "additionalInfo": {
+      "title": "Dlaczego \"programy\", a nie \"audycje\"?",
+      "description": "Traktujemy nasze programy jako strukturalne moduły edukacyjne, nie jako zwykłą ramówkę radiową. Każdy program to przemyślany kurs prowadzony przez specjalistów, z jasnym celem edukacyjnym i progresją tematów. To podejście podnosi wartość treści i lepiej komunikuje edukacyjny charakter platformy."
+    }
+  },
+  "footer": {
+    "helpline": {
+      "title": "Potrzebujesz pomocy?",
+      "niebiekskaLinia": "Niebieska Linia",
+      "telefonZaufania": "Telefon Zaufania",
+      "moreResources": "Więcej zasobów pomocy"
+    }
   }
 }

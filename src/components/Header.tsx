@@ -19,14 +19,14 @@ import { ThemeSwitch } from './ThemeSwitch';
  */
 const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/live', labelKey: 'navigation.live' },
+  { to: '/analizy', labelKey: 'navigation.analizy' },
+  { to: '/programy', labelKey: 'navigation.programy' },
   { to: '/violence-loop', labelKey: 'navigation.violenceLoop' },
-  { to: '/studio', labelKey: 'navigation.studio' },
-  { to: '/shows', labelKey: 'navigation.shows' },
   { to: '/guides', labelKey: 'navigation.guide' },
   { to: '/anatomy', labelKey: 'navigation.anatomy' },
   { to: '/lab', labelKey: 'navigation.lab' },
   { to: '/community', labelKey: 'navigation.community' },
-  { to: '/help', labelKey: 'navigation.help' },
+  { to: '/pomoc', labelKey: 'navigation.help' },
 ];
 
 /**
@@ -69,6 +69,8 @@ export function Header(): JSX.Element {
   const prefetchers = useMemo(
     () => ({
       '/live': () => import('../pages/Live'),
+      '/analizy': () => import('../pages/Analyses'),
+      '/programy': () => import('../pages/Programs'),
       '/violence-loop': () => import('../pages/ViolenceLoop'),
       '/studio': () => import('../pages/Studio'),
       '/shows': () => import('../pages/Shows'),
@@ -76,6 +78,7 @@ export function Header(): JSX.Element {
       '/anatomy': () => import('../pages/AnatomyPage'),
       '/lab': () => import('../pages/Lab'),
       '/community': () => import('../pages/Community'),
+      '/pomoc': () => import('../pages/Help'),
       '/help': () => import('../pages/Help'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage'),
     }),

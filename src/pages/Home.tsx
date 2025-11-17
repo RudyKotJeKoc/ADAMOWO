@@ -8,14 +8,14 @@ import {
   RocketLaunchIcon,
 } from '@heroicons/react/24/outline';
 
-import { CurseOfEightSection } from '../features/curse-of-eight/CurseOfEightSection';
 import { DocumentarySection } from '../features/documentary/DocumentarySection';
 import { FinalLessonSection } from '../features/final-lesson/FinalLessonSection';
 import { PlatformInfoSection } from '../features/platform-info/PlatformInfoSection';
-import { StudioSection } from '../features/studio/StudioSection';
 import { TimelineSection } from '../features/timeline/TimelineSection';
 import { TrackHighlightsSection } from '../features/track-highlights/TrackHighlightsSection';
 import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
+import { AnalysisTeaser } from '../features/analizy/AnalysisTeaser';
+import { ProgramsTeaser } from '../features/programy/ProgramsTeaser';
 import { ExploreMore, type ExploreMoreLink } from '../components/ExploreMore';
 import { VisitCounter } from '../features/analytics/VisitCounter';
 import { Tabs, type TabItem } from '../components/Tabs';
@@ -66,9 +66,14 @@ export default function Home(): ReactElement {
       descriptionKey: 'exploreMore.suggestions.fromHome.toolsDesc',
     },
     {
-      to: '/studio',
-      labelKey: 'exploreMore.suggestions.fromHome.studio',
-      descriptionKey: 'exploreMore.suggestions.fromHome.studioDesc',
+      to: '/analizy',
+      labelKey: 'exploreMore.suggestions.fromHome.analizy',
+      descriptionKey: 'exploreMore.suggestions.fromHome.analizyDesc',
+    },
+    {
+      to: '/programy',
+      labelKey: 'exploreMore.suggestions.fromHome.programy',
+      descriptionKey: 'exploreMore.suggestions.fromHome.programyDesc',
     },
     {
       to: '/analysis',
@@ -129,7 +134,7 @@ export default function Home(): ReactElement {
       badge: 'Nowe',
       content: (
         <div className="space-y-12">
-          <CurseOfEightSection />
+          <AnalysisTeaser />
           <TrackHighlightsSection />
           <DocumentarySection />
           <FinalLessonSection />
@@ -143,7 +148,7 @@ export default function Home(): ReactElement {
       content: (
         <div className="space-y-12">
           <ViolenceLoopSection />
-          <StudioSection />
+          <ProgramsTeaser />
         </div>
       ),
     },
