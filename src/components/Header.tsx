@@ -182,14 +182,10 @@ export function Header(): JSX.Element {
     >
       <div className="container-responsive flex items-center justify-between gap-4 py-4">
         <NavLink to="/" className="group flex items-center gap-3" aria-label={t('header.home')}>
-          <motion.span
-            className="rounded-full bg-base-900/70 p-2 transition group-hover:bg-base-850 group-focus-visible:bg-base-850"
-            whileHover={reduceMotion ? undefined : { scale: 1.02 }}
-            whileFocus={reduceMotion ? undefined : { scale: 1.02 }}
-          >
+          <span className="rounded bg-base-900/70 p-2 transition-colors duration-150 group-hover:bg-base-850 group-focus-visible:bg-base-850">
             <LogoGlasses className="h-9 w-auto" />
-          </motion.span>
-          <span className="font-display text-lg font-semibold tracking-wide text-base-100">
+          </span>
+          <span className="font-display text-base font-semibold uppercase tracking-wide text-base-100">
             Radio Adamowo
           </span>
         </NavLink>
