@@ -42,7 +42,25 @@
   "pages": {
     "home": {
       "title": "Radio Adamowo",
-      "lead": "Een educatief webradioplatform dat 24/7 uitzendt, gericht op het analyseren van psychologische manipulatie en toxische relaties. Onze missie is het bieden van educatieve inhoud die luisteraars helpt patronen van psychologisch misbruik te herkennen en begrijpen. We bieden livestreaming, analytische podcasts, interactieve tools en gemeenschapsondersteuning in drie talen."
+      "lead": "Een educatief webradioplatform dat 24/7 uitzendt, gericht op het analyseren van psychologische manipulatie en toxische relaties. Onze missie is het bieden van educatieve inhoud die luisteraars helpt patronen van psychologisch misbruik te herkennen en begrijpen. We bieden livestreaming, analytische podcasts, interactieve tools en gemeenschapsondersteuning in drie talen.",
+      "tabs": {
+        "start": {
+          "label": "Start",
+          "quickAccess": "Snelle toegang"
+        },
+        "about": {
+          "label": "Over het project"
+        },
+        "content": {
+          "label": "Educatieve inhoud"
+        },
+        "tools": {
+          "label": "Gereedschap"
+        },
+        "explore": {
+          "label": "Ontdek meer"
+        }
+      }
     },
     "live": {
       "title": "Livestream"
