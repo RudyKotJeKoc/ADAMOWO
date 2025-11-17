@@ -1,5 +1,12 @@
 import type { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
+import {
+  HomeIcon,
+  InformationCircleIcon,
+  AcademicCapIcon,
+  WrenchScrewdriverIcon,
+  RocketLaunchIcon,
+} from '@heroicons/react/24/outline';
 
 import { CurseOfEightSection } from '../features/curse-of-eight/CurseOfEightSection';
 import { DocumentarySection } from '../features/documentary/DocumentarySection';
@@ -11,23 +18,32 @@ import { TrackHighlightsSection } from '../features/track-highlights/TrackHighli
 import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
 import { ExploreMore, type ExploreMoreLink } from '../components/ExploreMore';
 import { VisitCounter } from '../features/analytics/VisitCounter';
+import { Tabs, type TabItem } from '../components/Tabs';
 
 /**
  * Home page component that serves as the main landing page for the ADAMOWO platform.
  *
- * Displays an overview of the project with multiple feature sections including timeline,
- * curse of eight, platform information, track highlights, documentary, final lesson,
- * studio, and violence loop sections. Also includes navigation links to explore other
- * areas of the platform and a visit counter for analytics.
+ * Implements a modern tabbed interface to organize content into logical sections,
+ * reducing cognitive load and improving user navigation. Content is divided into
+ * "Above the Fold" hero section and categorized tabs for easy access.
  *
  * Key Features:
- * - Comprehensive project introduction with multiple content sections
+ * - Tabbed interface for organized content navigation
+ * - "Above the Fold" hero section with key information
+ * - Comprehensive project sections organized by category
  * - Dynamic explore more suggestions with badges
  * - Visit counter for tracking site engagement
  * - Multilingual support through i18n
+ * - Mobile-first responsive design
+ *
+ * Architecture Changes (following UX best practices):
+ * - Replaced long scrolling page with tab-based navigation
+ * - Prioritized content visibility (Priority A content above fold)
+ * - Grouped related sections together
+ * - Improved information hierarchy
  *
  * @component
- * @returns {ReactElement} The home page with multiple feature sections and navigation
+ * @returns {ReactElement} The restructured home page with tabbed interface
  */
 export default function Home(): ReactElement {
   const { t } = useTranslation();
@@ -67,26 +83,86 @@ export default function Home(): ReactElement {
     },
   ];
 
-  return (
-    <div className="space-y-12">
-      <section className="space-y-4">
-        <h1 className="text-3xl font-bold text-base-50 sm:text-4xl">{t('pages.home.title')}</h1>
-        <p className="max-w-4xl text-lg leading-relaxed text-base-200">{t('pages.home.lead')}</p>
-        <div className="pt-4">
-          <VisitCounter />
+  const tabs: TabItem[] = [
+    {
+      id: 'start',
+      label: t('pages.home.tabs.start.label', 'Start'),
+      icon: <HomeIcon className="h-5 w-5" />,
+      content: (
+        <div className="space-y-8">
+          {/* Above the Fold Hero Section - Priority A Content */}
+          <section className="space-y-4">
+            <h1 className="text-3xl font-bold text-base-50 sm:text-4xl">{t('pages.home.title')}</h1>
+            <p className="max-w-4xl text-lg leading-relaxed text-base-200">
+              {t('pages.home.lead')}
+            </p>
+            <div className="pt-4">
+              <VisitCounter />
+            </div>
+          </section>
+
+          {/* Quick Access Cards */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ExploreMore
+              title={t('pages.home.tabs.start.quickAccess', 'Szybki dostęp')}
+              links={explorePaths.slice(0, 3)}
+            />
+          </div>
         </div>
-      </section>
+      ),
+    },
+    {
+      id: 'about',
+      label: t('pages.home.tabs.about.label', 'O Projekcie'),
+      icon: <InformationCircleIcon className="h-5 w-5" />,
+      content: (
+        <div className="space-y-12">
+          <TimelineSection />
+          <PlatformInfoSection />
+        </div>
+      ),
+    },
+    {
+      id: 'content',
+      label: t('pages.home.tabs.content.label', 'Treści Edukacyjne'),
+      icon: <AcademicCapIcon className="h-5 w-5" />,
+      badge: 'Nowe',
+      content: (
+        <div className="space-y-12">
+          <CurseOfEightSection />
+          <TrackHighlightsSection />
+          <DocumentarySection />
+          <FinalLessonSection />
+        </div>
+      ),
+    },
+    {
+      id: 'tools',
+      label: t('pages.home.tabs.tools.label', 'Narzędzia'),
+      icon: <WrenchScrewdriverIcon className="h-5 w-5" />,
+      content: (
+        <div className="space-y-12">
+          <ViolenceLoopSection />
+          <StudioSection />
+        </div>
+      ),
+    },
+    {
+      id: 'explore',
+      label: t('pages.home.tabs.explore.label', 'Poznaj Więcej'),
+      icon: <RocketLaunchIcon className="h-5 w-5" />,
+      content: (
+        <div className="space-y-8">
+          <ExploreMore title={t('exploreMore.title')} links={explorePaths} />
+        </div>
+      ),
+    },
+  ];
 
-      <TimelineSection />
-      <CurseOfEightSection />
-      <PlatformInfoSection />
-      <TrackHighlightsSection />
-      <DocumentarySection />
-      <FinalLessonSection />
-      <StudioSection />
-      <ViolenceLoopSection />
-
-      <ExploreMore title={t('exploreMore.title')} links={explorePaths} />
+  return (
+    <div className="space-y-8">
+      {/* Tabbed Interface */}
+      <Tabs tabs={tabs} defaultActiveId="start" variant="pills" />
     </div>
   );
 }
