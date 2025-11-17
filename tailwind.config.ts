@@ -2,41 +2,60 @@ import type { Config } from 'tailwindcss';
 
 export default {
   darkMode: 'class',
-  content: [
-    './index.html',
-    './src/**/*.{ts,tsx}'
-  ],
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
+        // Ciemne studio śledcze - prawie czarne tła
         base: {
-          50: '#f3f5ff',
-          100: '#e7eaff',
-          200: '#c5cae4',
-          300: '#a3aac9',
-          400: '#818aaf',
-          500: '#5f6a94',
-          600: '#46517a',
-          700: '#2d3760',
-          800: '#182148',
-          850: '#111831',
-          900: '#0c1125',
-          950: '#0a0e27'
+          50: '#f8fafc', // Bardzo jasny tekst (białawy)
+          100: '#f1f5f9', // Jasny tekst
+          200: '#cbd5e1', // Średni jasny
+          300: '#94a3b8', // Średni
+          400: '#64748b', // Przygaszony
+          500: '#475569', // Ciemny tekst
+          600: '#334155', // Bardzo ciemny tekst
+          700: '#1e293b', // Ciemna powierzchnia
+          800: '#0f172a', // Bardzo ciemna powierzchnia
+          850: '#0a0f1e', // Prawie czarna powierzchnia
+          900: '#020617', // Tło główne (slate-950)
+          950: '#020617', // Tło główne (slate-950)
         },
+        // Złote/bursztynowe akcenty (jak theme_color #f59e0b)
         accent: {
-          300: '#fbbf24',
-          400: '#f59e0b',
-          500: '#d97706',
-          600: '#b45309'
-        }
+          200: '#fcd34d', // Jasny bursztyn
+          300: '#fbbf24', // Bursztyn
+          400: '#f59e0b', // Główny accent (theme_color)
+          500: '#d97706', // Ciemniejszy accent
+          600: '#b45309', // Bardzo ciemny accent
+          700: '#92400e', // Prawie brązowy
+        },
+        // Czerwony tylko dla ON AIR / alarmów / red flags
+        danger: {
+          400: '#f87171', // Jasny czerwony
+          500: '#ef4444', // Czerwony
+          600: '#dc2626', // Ciemny czerwony
+          700: '#b91c1c', // Bardzo ciemny czerwony
+        },
       },
       fontFamily: {
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif']
+        // Czysty, czytelny font dla treści
+        sans: [
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'sans-serif',
+        ],
+        // Maszynowy/dokumentowy font dla nagłówków i etykiet
+        display: ['IBM Plex Mono', 'Courier New', 'ui-monospace', 'monospace'],
+        // Dodatkowy font dla specjalnych elementów (opcjonalny)
+        mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        focus: '0 0 0 3px rgba(255, 107, 53, 0.45)'
-      }
-    }
-  }
+        focus: '0 0 0 3px rgba(245, 158, 11, 0.4)', // Accent focus
+      },
+    },
+  },
 } satisfies Config;
