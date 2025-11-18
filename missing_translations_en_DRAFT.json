@@ -1,0 +1,398 @@
+{
+  "analizy": {
+    "title": "Analyses",
+    "description": "Deep content library – comprehensive analyses of psychological manipulation, case documentation, and pattern exploration. Each analysis is a thorough study designed for users seeking expert knowledge.",
+    "searchLabel": "Search analyses",
+    "searchPlaceholder": "Search by title, tags, or keywords...",
+    "filterByCategory": "Filter by category",
+    "allCategories": "All",
+    "featured": "Featured",
+    "allAnalyses": "All analyses",
+    "searchResults": "Search results",
+    "resultsCount": "results",
+    "noResults": "No analyses matching the criteria were found.",
+    "readMore": "Read full analysis",
+    "readingMinutes": "min",
+    "categories": {
+      "manipulacja": {
+        "name": "Manipulation",
+        "description": "Techniques and patterns of psychological manipulation"
+      },
+      "dokumentacja": {
+        "name": "Documentation",
+        "description": "Case studies and evidentiary documentation"
+      },
+      "psychologia": {
+        "name": "Psychology",
+        "description": "Psychological analysis and mechanisms"
+      },
+      "prawo": {
+        "name": "Law",
+        "description": "Legal and systemic aspects"
+      },
+      "wzorce": {
+        "name": "Patterns",
+        "description": "Cycles, loops, and recurring patterns"
+      },
+      "inne": {
+        "name": "Other",
+        "description": "Other analyses"
+      }
+    }
+  },
+  "anatomy": {
+    "hero": {
+      "title": "Anatomy of Manipulation",
+      "subtitle": "Recognize the patterns. Name the mechanisms. Reclaim control."
+    },
+    "audience": {
+      "conflict": {
+        "title": "You're experiencing conflict",
+        "description": "You're in a toxic family relationship. You sense something is wrong but can't name it. People don't believe you because 'they speak so well.'"
+      },
+      "support": {
+        "title": "You're supporting loved ones",
+        "description": "Someone close is going through a difficult conflict and you want to help, but don't know how. You're looking for language to discuss difficult mechanisms."
+      },
+      "professional": {
+        "title": "You work with people",
+        "description": "You're a psychologist, therapist, family lawyer, social worker, or mediator. You need diagnostic tools."
+      },
+      "cta": "Recognize the patterns"
+    },
+    "schemas": {
+      "sectionTitle": "6 Key Manipulation Schemas",
+      "whatIsIt": "What is it?",
+      "howToRecognize": "How to recognize it?",
+      "exampleFromDocs": "Example from documentation",
+      "showHideExample": "Show/Hide example",
+      "testYourKnowledge": "Test your knowledge →",
+      "sources": "Sources",
+      "footer": "This schema belongs to the category: {category}",
+      "example": {
+        "context": "Context",
+        "behavior": "Behavior",
+        "analysis": "Analysis",
+        "sourceDocs": "Source documents"
+      },
+      "quiz": {
+        "submit": "Check answer",
+        "tryAgain": "Try again"
+      },
+      "dualCommunication": {
+        "title": "Dual Communication",
+        "definition": "Conducting two parallel, contradictory narratives: public (love, care, reconciliation) and private (power, control, revenge). Emotional language used instrumentally as a tool, not as an expression of authentic feeling.",
+        "flags": {
+          "wordsVsActions": "Words sound beautiful, but actions contradict them",
+          "loveWithLegalAction": "\"I want reconciliation\" + simultaneous legal actions",
+          "instrumentalEmotions": "Emotional language used instrumentally, turned on/off depending on context",
+          "parallelActions": "Therapy proposal + simultaneous gathering of litigation material"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Family conflict - mother declares desire to normalize relations",
+            "behavior": "Declaration: 'I want things to be normal, like always. I proposed family therapy' (14.04). Simultaneously: maintaining incriminating calendar against son since February, consultations with legal counsel regarding gift revocation (summer 2021), initiating Blue Card procedure (29.07).",
+            "analysis": "This is a classic dual-track strategy: performative reconciliation (therapy proposal) serves as a facade for hidden aggressive actions (litigation preparation). The proposal was a decoy action, calculated to create an impression of good will, while the actual goal is property seizure."
+          },
+          "ex2": {
+            "context": "Concern for ailing husband as declared motive",
+            "behavior": "Declaration of concern for husband's welfare. Reality: instrumentalization of his health condition - obtaining power of attorney (19.07) right after conflict escalation, using him to conduct legal actions contradicting his own testimony ('Dariusz doesn't insult me' vs. lawsuit for 'persistent abuse').",
+            "analysis": "Declared concern is a facade for seizing full control. Husband degraded to the role of figurehead, whose health condition served as justification for retaliatory actions. Power of attorney used to override his own will."
+          }
+        },
+        "quiz": {
+          "question": "A person says 'I really care about fixing our relationship' but simultaneously collects evidence against you for a case. What does this mean?",
+          "opt1": "The person is confused and doesn't know what they're doing",
+          "exp1": "No. Simultaneously conducting two contradictory actions (repair proposal + litigation preparation) indicates strategy, not confusion.",
+          "opt2": "This is dual communication schema - words serve as a facade",
+          "exp2": "Exactly. Reconciliation declarations are a tool for building an image of good will, while the real goal (legal battle) is pursued in parallel.",
+          "opt3": "This is normal caution in conflict",
+          "exp3": "No. Normal caution is self-protection, but not actively building a reconciliation facade while simultaneously escalating."
+        }
+      },
+      "emotionInstrumentalization": {
+        "title": "Instrumentalization of Emotions",
+        "definition": "Strategic use of affectively charged language (suffering, fear, harm) not to express authentic feelings, but as a tool to elicit desired reactions from recipients (sympathy, intervention) and transform a complex conflict into a simple aggressor-victim dichotomy.",
+        "flags": {
+          "victimLanguage": "Frequent use of victim language: 'my heart is breaking', 'I'm afraid', 'he knows it hurts me'",
+          "healthAsArgument": "Mental health condition as primary credibility argument ('we're receiving psychiatric treatment', 'depression', 'weight loss')",
+          "dramaticScenarios": "Staging crisis situations (waiting for police 'in the woods near the property' instead of at home)",
+          "fearCreation": "Creating atmosphere of threat despite absence of real violence ('I fear my son', though son never struck anyone)"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Police report about psychological abuse",
+            "behavior": "Barbara: 'fears her son', is under 'severe stress', 'receives psychiatric treatment' because of him. Simultaneously, husband Sylwester testifies: 'He never struck me or my wife'. She initiated confrontations (nocturnal intrusion into Dariusz's room).",
+            "analysis": "Creating an aura of threat was a deliberate psychological ploy, not a reflection of reality. Health condition used instrumentally - as a shield (she cannot be questioned because she suffers) and simultaneously as a weapon (her suffering is proof of son's guilt)."
+          },
+          "ex2": {
+            "context": "Police intervention on night of July 17/18, 2021",
+            "behavior": "Instead of waiting for patrol at home, Barbara along with father and sister waited 'in the woods near the property'. Dariusz was locked in his room. Intervention did not lead to arrest.",
+            "analysis": "Staging a spectacle for law enforcement. The gesture was meant to create a suggestive image of a family forced to flee from a dangerous aggressor, which was completely inconsistent with reality."
+          },
+          "ex3": {
+            "context": "Report of garden destruction as psychological abuse",
+            "behavior": "'He knows it hurts me. He destroys my garden, flowers and bushes (...) My son knows I love plants, flowers, that's why he wants to destroy it all for me'.",
+            "analysis": "Attribution of conscious intent to cause psychological pain. An ordinary property use dispute presented as a deliberate psychological attack on the most sensitive spot. Strengthens victim position and builds foundations for 'abuse' charges."
+          }
+        },
+        "quiz": {
+          "question": "A person often says 'this is psychologically destroying me' but simultaneously actively escalates the conflict. How to interpret this?",
+          "opt1": "The person truly suffers, so everything is justified",
+          "exp1": "No. Authentic suffering does not justify active escalation. If someone truly wants to end suffering, they don't deepen the conflict.",
+          "opt2": "This is normal way of expressing frustration",
+          "exp2": "No. Normal expression of frustration is communicating about needs. Instrumentalization is strategic use of suffering as a tool.",
+          "opt3": "This is instrumentalization of emotions - suffering as a tactic",
+          "exp3": "Exactly. The contradiction between declared suffering and escalation indicates that emotions are used as a rhetorical tool, not authentic expression."
+        }
+      },
+      "invertedTriage": {
+        "title": "Inverted Triage of Priorities",
+        "definition": "Behavioral pattern in which the declared priority (e.g., close person's health) is actually degraded to the role of a prop, while the true, hidden goal (e.g., obtaining evidentiary material) is elevated to paramount priority. Person consciously jeopardizes others' welfare for litigation purposes.",
+        "flags": {
+          "urgentIgnored": "Urgent/threatening situation is ignored or delayed",
+          "evidenceOverCare": "Priority: obtaining litigation evidence > welfare of person in crisis",
+          "opportunisticTiming": "Exploiting crisis situations as opportunities to build narrative",
+          "dutyNeglect": "Neglect of basic duties (e.g., caregiver) for strategic purposes"
+        },
+        "examples": {
+          "ex1": {
+            "context": "May 21, 2021 - Sylwester Adamski requires medical assistance",
+            "behavior": "Barbara as caregiver (nursing benefit 1800 PLN/month) instead of calling ambulance demands keys from Dariusz, creating confrontation. Priority: building litigation evidence ('refused to transport') > husband's health. Dariusz ultimately HIMSELF picks up father from hospital. Barbara deliberately OMITS this fact in 'calendar'.",
+            "analysis": "Model example of inverted triage. Declared emergency (husband's health) degraded to role of prop. Real goal: fabricating harm ('heartless son didn't help'). Barbara's behavior constitutes gross neglect of caregiver duties. Then the fact of Dariusz picking up father was erased from narrative - because it contradicted the thesis of his heartlessness."
+          }
+        },
+        "quiz": {
+          "question": "Caregiver of sick person doesn't call ambulance, but demands help from someone they're in dispute with. Why?",
+          "opt1": "Caregiver is confused and doesn't know what to do",
+          "exp1": "No. Person receiving caregiving benefit knows procedures. Calling ambulance is the first and obvious response in a medical emergency.",
+          "opt2": "Wants to save ambulance costs",
+          "exp2": "No. Ambulance in Poland is free in emergencies. Caregiving benefit covers exactly such duties.",
+          "opt3": "This is inverted triage - litigation goal > health",
+          "exp3": "Exactly. The priority is not health, but creating a situation where the other party can be accused of lack of help. This is crisis instrumentalization for strategic purposes."
+        }
+      },
+      "mirrorProjection": {
+        "title": "Mirror Projection",
+        "definition": "Psychological mechanism of attributing to others one's own unacceptable traits, thoughts, or motivations. In conflict dynamics, serves to reverse roles: aggressor presents themselves as victim, accusing opponent of exactly those behaviors they themselves exhibit.",
+        "flags": {
+          "accusationMirror": "Accusations against the other person are mirror reflections of own actions",
+          "roleReversal": "Perpetrator presents themselves as victim of same behavior they employ",
+          "deflection": "Attention diverted from own negative actions by accusing others",
+          "ownTraitsDenied": "Categorical denial of own traits attributed to others"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Accusation of control and surveillance",
+            "behavior": "Barbara accuses son of controlling her with cameras. Reality: she herself keeps detailed 'calendar' tracking son's every move, possesses recordings, enters his room in middle of night (2:30), tries to interfere in his relationship.",
+            "analysis": "Classic projection. She exhibits obsessive-controlling behaviors but attributes them to son. External monitoring (cameras) is standard property security. Her surveillance is violation of adult person's privacy."
+          },
+          "ex2": {
+            "context": "Accusation of aggression and vulgarity",
+            "behavior": "Barbara accuses son of aggression. Reality: she committed nocturnal intrusion into Dariusz's room (2:00) to verbally attack his cousin Julia ('damn French woman'). Sylwester testifies that Barbara initiated confrontations.",
+            "analysis": "Role reversal. Actual perpetrator of verbal aggression and provocation presents herself as victim. Dariusz's defensive reaction (after provocation) is presented as unprovoked attack."
+          },
+          "ex3": {
+            "context": "Accusation of lack of empathy toward sick father",
+            "behavior": "Barbara accuses son of lack of empathy. Reality: she herself instrumentally exploited husband's illness (power of attorney 19.07 right after escalation), prioritized litigation goal over his health (May 21 incident), used him as tool in dispute.",
+            "analysis": "Attribution of lack of empathy to person who actually picked up father from hospital. Real lack of empathy is instrumentalization of sick husband for legal and financial purposes."
+          }
+        },
+        "quiz": {
+          "question": "Person A accuses person B of being 'controlling', but herself tracks B's every move. What's happening?",
+          "opt1": "Person A has right to defend against control",
+          "exp1": "No. If person A truly felt controlled, they wouldn't respond with even greater control, but would withdraw or seek solution.",
+          "opt2": "This is mirror projection - A attributes to B own traits",
+          "exp2": "Exactly. Accusation of control is projection of own controlling behaviors. It's a defense mechanism allowing role reversal and avoiding responsibility.",
+          "opt3": "Both persons are equally controlling",
+          "exp3": "Not necessarily. Projection consists precisely in one person attributing to another behaviors that the other doesn't exhibit (or exhibits to much lesser degree)."
+        }
+      },
+      "selectiveDocumentation": {
+        "title": "Selective Documentation",
+        "definition": "Systematic gathering of evidentiary material in biased manner: recording exclusively negative behaviors of the other party while simultaneously omitting or minimizing own provocations and opponent's positive actions. Goal is to create appearance of objective documentation while actually constructing predetermined narrative.",
+        "flags": {
+          "onlyNegative": "Only negative behaviors of one party are recorded",
+          "positiveOmitted": "Deliberate omission of facts favorable to accused person",
+          "biasedLanguage": "Use of pejorative terms and subjective evaluations presented as facts",
+          "intentionAssumed": "Attributing malicious intentions to ambiguous actions",
+          "prosecutorialTone": "Prosecutorial style - building case, not describing reality"
+        },
+        "examples": {
+          "ex1": {
+            "context": "March 29 note in 'calendar'",
+            "behavior": "'Darek Drunk was drinking with Zaucha (...) after 10 PM we called police because he went crazy'. Use of pejorative term ('Drunk') and subjective evaluation ('went crazy') presented as objective description.",
+            "analysis": "This is not factual chronicle, it's active process of evaluation and stigmatization. Goal is not remembering what happened, but creating incriminating material in seemingly neutral form."
+          },
+          "ex2": {
+            "context": "April 11 note - 'mind reading'",
+            "behavior": "'On Sunday my sisters came (...) He deliberately went somewhere with the Ampera so he wouldn't talk to Dorota.' Fact (went somewhere) + interpretation (deliberately, so that...) presented as one.",
+            "analysis": "Technique of attributing negative intentions. Doesn't allow any other possibility (e.g., prior plans). This is attribution error - assigning hostile motives to ambiguous behavior. Recurring pattern in her narrative."
+          },
+          "ex3": {
+            "context": "Calendar February-August 2021",
+            "behavior": "Meticulously recorded: conflicts, 'suspicious' behaviors, offensive (in her opinion). Completely omitted: father's hospital pickup by Dariusz (21.05), his property investments, any positive interactions.",
+            "analysis": "Clinical example of confirmation bias. This is not a chronicle, it's process of selecting data confirming predetermined thesis of being victim. Omission of father's hospital pickup is particularly egregious - it's cleansing narrative of contradictory evidence."
+          }
+        },
+        "quiz": {
+          "question": "Person keeps 'diary' of conflict, but only records bad things about other party. Is this normal?",
+          "opt1": "Yes, it's a way to cope with stress",
+          "exp1": "Not in this case. Therapeutic diary focuses on own feelings, not collecting evidence against someone. It's difference between processing emotions and building case.",
+          "opt2": "This is selective documentation - litigation material, not diary",
+          "exp2": "Exactly. When 'diary' contains exclusively negative information about one person while omitting context and own provocations, it's not authentic chronicle, but biased evidentiary material created with premeditation.",
+          "opt3": "This shows that other person is really bad",
+          "exp3": "No. Selective documentation says more about person keeping it than person described. It's confirmation of predetermined narrative, not objective picture of reality."
+        }
+      },
+      "moralSelfLicensing": {
+        "title": "Moral Self-Licensing",
+        "definition": "Psychological mechanism of presenting one's own selfish actions as mission in name of higher values. Private vendetta is elevated to morality rank, which allows justifying destructive actions and gaining environment support through co-opting institutions and public opinion.",
+        "flags": {
+          "higherValues": "Appeals to higher values: 'justice', 'restoring order', 'teaching a lesson'",
+          "victimAsHero": "Self-creation as hero fighting for just cause (from victim to fighter)",
+          "institutionWeapon": "Use of state institutions as 'justice tool' (actually: weapon in private war)",
+          "chorusOfSupport": "Engaging others as 'chorus of support' strengthening moral position",
+          "privateVengeance": "Personal revenge presented as restoring order and law"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Gift revocation as 'punishment for disobedience'",
+            "behavior": "Barbara frames property dispute in moral terms: 'flagrant ingratitude'. This legal-moral label allows justifying radical steps (gift revocation) not as act of revenge for personal grievances (son's relationship with cousin), but as just consequence of immoral conduct.",
+            "analysis": "Private revenge presented as act of restoring order. Barbara used Art. 898 § 1 Civil Code as tool of moral vengeance, not donor protection (who was Sylwester, not her). This is self-licensing - granting oneself right to destructive action through moral justification."
+          },
+          "ex2": {
+            "context": "Use of Blue Card procedure and Police",
+            "behavior": "Barbara positions herself as citizen seeking protection from violence. However, already in summer 2021 she consulted with legal counsel on gift revocation strategy. Blue Card procedure initiated after Dariusz's departure (no current threat). Goal was not protection, but obtaining formal tools for property battle.",
+            "analysis": "Instrumentalization of state system. Domestic violence victim protection institutions treated as means to achieve litigation goal. This is system abuse under guise of 'fighting for safety'."
+          },
+          "ex3": {
+            "context": "Family as 'chorus of support'",
+            "behavior": "In Blue Card documentation: siblings 'stopped visits out of fear of brother's behavior'. Artur and Monika didn't live at home, rarely visited. Their 'fear' was shaped by mother's one-sided narrative, not personal experience.",
+            "analysis": "Engaging family to socially isolate Dariusz and strengthen own moral position. Creating impression that son's behavior is condemned by entire environment. This is building 'coalition' strengthening legitimacy of own actions."
+          }
+        },
+        "quiz": {
+          "question": "Person says 'I'm doing this for family's good', but their actions destroy relationships. How to understand this?",
+          "opt1": "Person sincerely believes they're doing good",
+          "exp1": "Possible, but when 'family's good' is argument for destructive actions (lawsuits, public humiliation), it's rather self-licensing - justifying revenge through appeal to higher values.",
+          "opt2": "This is moral self-licensing - family's good as pretext",
+          "exp2": "Exactly. When someone presents destructive actions (lawsuits, gift revocation, institution instrumentalization) as 'fighting for values', it's self-licensing mechanism. Private vendetta becomes morally justified.",
+          "opt3": "This shows family is really in danger",
+          "exp3": "No. If it was about real family welfare, actions would aim for de-escalation and repair. Here it's opposite - escalation under guise of protecting values."
+        }
+      }
+    },
+    "framework": {
+      "title": "Analysis Method: Declaration → Action → Contradiction",
+      "intro": "Learn to independently analyze contradictions",
+      "description": "This framework helps unmask the discrepancy between words and deeds. Complete all three steps to see full analysis.",
+      "progress": "Completion progress",
+      "characters": "characters",
+      "hint": "Hint",
+      "hint1": "Record exact quotes: 'said...', 'wrote...'. The more specific, the better.",
+      "hint2": "Describe only facts: 'filed lawsuit', 'called police', 'turned off electricity'. No interpretations.",
+      "hint3": "Ask the question: 'Do actions support declared intentions?' If not - you have dissonance.",
+      "step1": {
+        "title": "What does the person SAY?",
+        "description": "Record exactly the declarations, promises, words of this person. What do they want you to hear?",
+        "placeholder": "E.g., 'I really care about fixing our relationship', 'I only want what's best for you', 'I'm doing this out of concern'..."
+      },
+      "step2": {
+        "title": "What does the person DO?",
+        "description": "Record specific actions and behaviors - facts, not interpretations.",
+        "placeholder": "E.g., 'Filed lawsuit 3 days after that conversation', 'Collecting evidentiary material against me', 'Didn't call medical help, but demanded from me...'..."
+      },
+      "step3": {
+        "title": "Where is the contradiction?",
+        "description": "Analyze the difference between words and deeds. Do actions support declared intentions?",
+        "placeholder": "Your analysis: What is the priority - fixing relationship or fighting? Are actions consistent with declarations?..."
+      },
+      "analyzing": "Analyzing...",
+      "analyze": "Analyze contradiction",
+      "clear": "Clear",
+      "export": "Export",
+      "save": "Save analysis",
+      "clearConfirm": "Are you sure you want to clear the form? All data will be lost.",
+      "savedSuccess": "Analysis has been saved!",
+      "results": {
+        "title": "Analysis Results",
+        "intro": "Based on your analysis, we've identified potential manipulation patterns:",
+        "dissonance": "Identified Dissonance",
+        "dissonanceText": "There is clear contradiction between declared intentions and actual actions. Person declares certain values (e.g., reconciliation), but their deeds lead to completely different outcomes (escalation, fighting).",
+        "redFlags": "Red Flags",
+        "flag1": "Dual communication: words serve as facade for different goals",
+        "flag2": "Prioritization of hidden goals over declared ones",
+        "flag3": "Selective presentation of facts to build narrative",
+        "recommendations": "Recommendations",
+        "rec1": "Document both words and deeds - this will help see patterns",
+        "rec2": "Pay attention to contradictions between declarations and actions",
+        "rec3": "Consider consulting with specialist (psychologist, lawyer)",
+        "close": "Close results"
+      },
+      "savedAnalyses": "Saved analyses",
+      "loadAnalysis": "Load",
+      "deleteAnalysis": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this analysis?"
+    },
+    "severity": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "categories": {
+      "cognitive": "Cognitive dissonance",
+      "emotional": "Emotional manipulation",
+      "institutional": "Instrumentalization of institutions"
+    },
+    "resources": {
+      "title": "Need Support?",
+      "subtitle": "This page does not replace professional help. In case of threat, always contact appropriate services.",
+      "blueLine": "Help for domestic violence victims. 24/7 phone and online chat.",
+      "trustLine": "Support for people in psychological crisis. 24/7, anonymous.",
+      "legal": "Free legal advice in family matters.",
+      "legalLink": "legal-aid-clinics.com"
+    },
+    "warning": {
+      "title": "Warning: Difficult Content",
+      "subtitle": "Important information before proceeding to read",
+      "close": "Close",
+      "message": "Material on this page contains detailed descriptions of psychological manipulation, family conflicts, and institution instrumentalization. Content may be emotionally difficult, especially for people who have experienced similar situations.",
+      "contains": "Page contains",
+      "content1": "Descriptions of toxic family relationships and emotional manipulation",
+      "content2": "Analyses of cognitive dissonance and psychological mechanisms",
+      "content3": "Examples from actual legal documents and testimonies",
+      "content4": "Content regarding instrumentalization of legal system",
+      "support": {
+        "title": "You are not alone",
+        "message": "If you're experiencing similar situation, remember that professional help exists. This page does not replace specialist support.",
+        "hotline": "Blue Line: 800 120 002",
+        "chat": "Trust Phone: 116 123",
+        "legal": "Legal aid available"
+      },
+      "recommendations": {
+        "title": "Recommendations before reading",
+        "rec1": "Read material in safe, comfortable place",
+        "rec2": "You can interrupt reading at any time and return later",
+        "rec3": "If you feel unwell, use help contacts below",
+        "rec4": "Consider therapist support when processing difficult content"
+      },
+      "dontShowAgain": "Don't show this warning again (will automatically restore after 30 days)",
+      "accept": "I understand, I want to continue",
+      "leave": "Leave page",
+      "disclaimer": "This warning serves your emotional safety. We care about you."
+    }
+  },
+  "programy": {
+    "title": "Educational Programs",
+    "description": "Our programs are not ordinary radio broadcasts – they are structured educational modules led by experts. Each program offers unique perspectives on psychological manipulation, toxic relationships, and paths out of violence.",
+    "whatYouLearn": "What you'll learn",
+    "hosts": "Hosts",
+    "schedule": "Schedule",
+    "goToProgram": "Go to program",
+    "additionalInfo": {
+      "title": "Why \"programs\" and not \"broadcasts\"?",
+      "description": "We treat our programs as structured educational modules, not as ordinary radio programming. Each program is a thoughtfully designed course led by specialists, with clear educational goal and topic progression. This approach elevates content value and better communicates the platform's educational character."
+    }
+  }
+}
