@@ -10,6 +10,7 @@
     "studio": "Studio",
     "shows": "Audycje",
     "guide": "Poradnik",
+    "polanaKlamstw": "Polana Kłamstw",
     "anatomy": "Anatomia",
     "lab": "Laboratorium",
     "community": "Społeczność",
@@ -41,6 +42,31 @@
       "nl": "Niderlandzki",
       "en": "Angielski"
     }
+  },
+  "polanaKlamstw": {
+    "title": "Polana Kłamstw",
+    "subtitle": "Baśń współczesna o tym, jak echo może być silniejsze niż głos, a wolność cenniejsza niż majątek.",
+    "tableOfContents": "Spis Treści",
+    "prolog": "Prolog",
+    "chapter": "Rozdział",
+    "epilog": "Epilog",
+    "previousChapter": "Poprzedni rozdział",
+    "nextChapter": "Następny rozdział",
+    "backToContents": "Powrót do spisu treści",
+    "continueReading": "Kontynuować czytanie od ostatniego rozdziału?",
+    "chaptersRead": "rozdziałów przeczytanych",
+    "totalReadingTime": "Całkowity czas czytania",
+    "contentWarning": "Ostrzeżenie o treści",
+    "contentWarningText": "Ta opowieść porusza trudne tematy rodzinne, w tym manipulację psychologiczną, konflikty rodzinne i działanie systemu prawnego. Treści mogą być trudne dla osób, które doświadczyły podobnych sytuacji.",
+    "warningTopic1": "Manipulacja psychologiczna",
+    "warningTopic2": "Konflikt rodzinny",
+    "warningTopic3": "Trudności systemu prawnego",
+    "warningTopic4": "Znęcanie się emocjonalne",
+    "genre": "Gatunek",
+    "timespan": "Okres",
+    "chapters": "Rozdziałów",
+    "totalWords": "Słów",
+    "themes": "Główne tematy"
   },
   "pages": {
     "home": {

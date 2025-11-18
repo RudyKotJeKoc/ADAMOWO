@@ -20,6 +20,7 @@ const Support = lazy(() => import('./pages/Support'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const AIPolicy = lazy(() => import('./pages/AIPolicy'));
 const Methodology = lazy(() => import('./pages/Methodology'));
+const PolanaKlamstw = lazy(() => import('./pages/PolanaKlamstw'));
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
       { path: 'analizy', element: <Analyses /> },
       { path: 'programy', element: <Programs /> },
       { path: 'guides', element: <Guides /> },
+      { path: 'polana-klamstw/:chapterId?', element: <PolanaKlamstw /> },
       { path: 'lab', element: <Lab /> },
       { path: 'community', element: <Community /> },
       { path: 'anatomy', element: <AnatomyPage /> },
