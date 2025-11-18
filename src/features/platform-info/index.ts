@@ -1,1 +1,0 @@
-export { PlatformInfoSection } from './PlatformInfoSection';
