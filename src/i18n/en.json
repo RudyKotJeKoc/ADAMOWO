@@ -4,10 +4,13 @@
   },
   "navigation": {
     "live": "Live",
+    "analizy": "Analyses",
+    "programy": "Programs",
     "violenceLoop": "Violence Loop",
     "studio": "Studio",
     "shows": "Shows",
     "guide": "Guide",
+    "polanaKlamstw": "Glade of Lies",
     "anatomy": "Anatomy",
     "lab": "Lab",
     "community": "Community",
@@ -39,6 +42,31 @@
       "nl": "Dutch",
       "en": "English"
     }
+  },
+  "polanaKlamstw": {
+    "title": "Glade of Lies",
+    "subtitle": "A contemporary fairytale about how echo can be stronger than voice, and freedom more precious than wealth.",
+    "tableOfContents": "Table of Contents",
+    "prolog": "Prologue",
+    "chapter": "Chapter",
+    "epilog": "Epilogue",
+    "previousChapter": "Previous chapter",
+    "nextChapter": "Next chapter",
+    "backToContents": "Back to table of contents",
+    "continueReading": "Continue reading from the last chapter?",
+    "chaptersRead": "chapters read",
+    "totalReadingTime": "Total reading time",
+    "contentWarning": "Content Warning",
+    "contentWarningText": "This story addresses difficult family topics, including psychological manipulation, family conflicts, and the legal system's functioning. Content may be challenging for those who have experienced similar situations.",
+    "warningTopic1": "Psychological manipulation",
+    "warningTopic2": "Family conflict",
+    "warningTopic3": "Legal system difficulties",
+    "warningTopic4": "Emotional abuse",
+    "genre": "Genre",
+    "timespan": "Period",
+    "chapters": "Chapters",
+    "totalWords": "Words",
+    "themes": "Main themes"
   },
   "pages": {
     "home": {

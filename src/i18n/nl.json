@@ -4,13 +4,17 @@
   },
   "navigation": {
     "live": "Live",
+    "analizy": "Analyses",
+    "programy": "Programma's",
     "violenceLoop": "Geweldscyclus",
     "studio": "Studio",
     "shows": "Programma's",
     "guide": "Gids",
+    "polanaKlamstw": "Weide van Leugens",
     "anatomy": "Anatomie",
     "lab": "Lab",
-    "community": "Gemeenschap"
+    "community": "Gemeenschap",
+    "help": "Hulp"
   },
   "header": {
     "skipToContent": "Ga naar de hoofdinhoud",
@@ -38,6 +42,31 @@
       "nl": "Nederlands",
       "en": "Engels"
     }
+  },
+  "polanaKlamstw": {
+    "title": "Weide van Leugens",
+    "subtitle": "Een hedendaagse sprookje over hoe echo sterker kan zijn dan stem, en vrijheid kostbaarder dan rijkdom.",
+    "tableOfContents": "Inhoudsopgave",
+    "prolog": "Proloog",
+    "chapter": "Hoofdstuk",
+    "epilog": "Epiloog",
+    "previousChapter": "Vorig hoofdstuk",
+    "nextChapter": "Volgend hoofdstuk",
+    "backToContents": "Terug naar inhoudsopgave",
+    "continueReading": "Doorgaan met lezen vanaf het laatste hoofdstuk?",
+    "chaptersRead": "hoofdstukken gelezen",
+    "totalReadingTime": "Totale leestijd",
+    "contentWarning": "Inhoudswaarschuwing",
+    "contentWarningText": "Dit verhaal behandelt moeilijke familiale onderwerpen, waaronder psychologische manipulatie, familieconflicten en het functioneren van het rechtssysteem. De inhoud kan uitdagend zijn voor degenen die vergelijkbare situaties hebben meegemaakt.",
+    "warningTopic1": "Psychologische manipulatie",
+    "warningTopic2": "Familieconflict",
+    "warningTopic3": "Juridische systeemproblemen",
+    "warningTopic4": "Emotioneel misbruik",
+    "genre": "Genre",
+    "timespan": "Periode",
+    "chapters": "Hoofdstukken",
+    "totalWords": "Woorden",
+    "themes": "Belangrijkste thema's"
   },
   "pages": {
     "home": {

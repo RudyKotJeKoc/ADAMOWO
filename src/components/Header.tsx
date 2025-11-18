@@ -23,6 +23,7 @@ const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/programy', labelKey: 'navigation.programy' },
   { to: '/violence-loop', labelKey: 'navigation.violenceLoop' },
   { to: '/guides', labelKey: 'navigation.guide' },
+  { to: '/polana-klamstw', labelKey: 'navigation.polanaKlamstw' },
   { to: '/anatomy', labelKey: 'navigation.anatomy' },
   { to: '/lab', labelKey: 'navigation.lab' },
   { to: '/community', labelKey: 'navigation.community' },
