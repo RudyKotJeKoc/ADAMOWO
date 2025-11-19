@@ -48,6 +48,15 @@ export default {
           'Segoe UI',
           'sans-serif',
         ],
+        // Font dla body/treści (zgodny z --font-body)
+        body: [
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'sans-serif',
+        ],
         // Maszynowy/dokumentowy font dla nagłówków i etykiet
         display: ['IBM Plex Mono', 'Courier New', 'ui-monospace', 'monospace'],
         // Dodatkowy font dla specjalnych elementów (opcjonalny)
