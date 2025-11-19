@@ -11,12 +11,12 @@ import { useTranslation } from 'react-i18next';
 import './ContentSection.css';
 
 export type ContentSectionType =
-  | 'facts'           // Neutral, factual reporting
-  | 'chronology'      // Timeline of events
-  | 'interpretation'  // Opinion, literary analysis
-  | 'resources'       // Help resources and links
-  | 'legal'           // Legal notices and disclaimers
-  | 'summary';        // TL;DR summary
+  | 'facts' // Neutral, factual reporting
+  | 'chronology' // Timeline of events
+  | 'interpretation' // Opinion, literary analysis
+  | 'resources' // Help resources and links
+  | 'legal' // Legal notices and disclaimers
+  | 'summary'; // TL;DR summary
 
 export interface ContentSectionProps {
   /** Section type determines styling and warning labels */
@@ -90,16 +90,16 @@ export function ContentSection({
               aria-controls={`section-${type}-content`}
             >
               <span className="visually-hidden">
-                {isCollapsed ? t('content.section.expand', 'Rozwiń') : t('content.section.collapse', 'Zwiń')}
+                {isCollapsed
+                  ? t('content.section.expand', 'Rozwiń')
+                  : t('content.section.collapse', 'Zwiń')}
               </span>
               <span aria-hidden="true">{isCollapsed ? '▼' : '▲'}</span>
             </button>
           )}
         </div>
 
-        {subtitle && (
-          <p className="content-section__subtitle">{subtitle}</p>
-        )}
+        {subtitle && <p className="content-section__subtitle">{subtitle}</p>}
 
         {config.disclaimer && (
           <div className={`content-section__disclaimer content-section__disclaimer--${type}`}>
@@ -131,6 +131,7 @@ interface SectionConfig {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getSectionConfig(type: ContentSectionType, t: any): SectionConfig {
   switch (type) {
     case 'facts':
@@ -217,7 +218,11 @@ export function FactsSection({ title, children, ...props }: Omit<ContentSectionP
   );
 }
 
-export function ChronologySection({ title, children, ...props }: Omit<ContentSectionProps, 'type'>) {
+export function ChronologySection({
+  title,
+  children,
+  ...props
+}: Omit<ContentSectionProps, 'type'>) {
   return (
     <ContentSection type="chronology" title={title} {...props}>
       {children}
@@ -225,7 +230,11 @@ export function ChronologySection({ title, children, ...props }: Omit<ContentSec
   );
 }
 
-export function InterpretationSection({ title, children, ...props }: Omit<ContentSectionProps, 'type'>) {
+export function InterpretationSection({
+  title,
+  children,
+  ...props
+}: Omit<ContentSectionProps, 'type'>) {
   return (
     <ContentSection type="interpretation" title={title} {...props}>
       {children}

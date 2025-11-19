@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { screen, waitFor, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 
@@ -12,13 +12,13 @@ const mockUseRecentEpisodes = vi.fn();
 
 vi.mock('../useRecentEpisodes', () => ({
   useRecentEpisodes: (programId: ProgramId | null, options?: { limit?: number }) =>
-    mockUseRecentEpisodes(programId, options)
+    mockUseRecentEpisodes(programId, options),
 }));
 
 vi.mock('../../analysis-archive/AnalysisPlayer', () => ({
   AnalysisPlayer: ({ episode }: { episode: Episode | null }) => (
     <div data-testid="analysis-player">{episode?.title ?? 'none'}</div>
-  )
+  ),
 }));
 
 const sampleEpisodes: Episode[] = [
@@ -33,15 +33,19 @@ const sampleEpisodes: Episode[] = [
     audioUrl: 'https://example.com/audio.mp3',
     coverUrl: undefined,
     publishedAt: '2024-02-10T10:00:00.000Z',
-    programId: 'heart'
-  }
+    programId: 'heart',
+  },
 ];
 
 describe('ProgramPage', () => {
-beforeEach(() => {
-  mockUseRecentEpisodes.mockClear();
-  mockUseRecentEpisodes.mockReturnValue({ episodes: sampleEpisodes, isLoading: false, error: null });
-});
+  beforeEach(() => {
+    mockUseRecentEpisodes.mockClear();
+    mockUseRecentEpisodes.mockReturnValue({
+      episodes: sampleEpisodes,
+      isLoading: false,
+      error: null,
+    });
+  });
 
   it('renders program details with hosts, schedule and recent episodes', async () => {
     await renderWithI18n(
@@ -51,12 +55,21 @@ beforeEach(() => {
     );
 
     expect(mockUseRecentEpisodes).toHaveBeenCalledWith('heart', { limit: 5 });
-    expect(screen.getByRole('heading', { level: 1, name: en.studio.heart.title })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 1, name: en.studio.heart.title })
+    ).toBeInTheDocument();
     expect(screen.getByText(en.studio.heart.description['0'])).toBeInTheDocument();
     expect(screen.getByText(en.studio.heart.hosts.nadia.name)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 2, name: en.studio.schedule.title })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: en.studio.program.viewArchive })).toHaveAttribute('href', '/analysis');
-    expect(screen.getByText(sampleEpisodes[0].title)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 2, name: en.studio.schedule.title })
+    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: en.studio.program.viewArchive })).toHaveAttribute(
+      'href',
+      '/analysis'
+    );
+
+    const recentEpisodesSection = screen.getByRole('region', { name: /recent episodes/i });
+    expect(within(recentEpisodesSection).getByText(sampleEpisodes[0].title)).toBeInTheDocument();
 
     await waitFor(() => {
       expect(screen.getByTestId('analysis-player')).toHaveTextContent(sampleEpisodes[0].title);
@@ -71,6 +84,9 @@ beforeEach(() => {
     );
 
     expect(screen.getByText(en.studio.notFound.title)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: en.studio.notFound.back })).toHaveAttribute('href', '/studio');
+    expect(screen.getByRole('link', { name: en.studio.notFound.back })).toHaveAttribute(
+      'href',
+      '/studio'
+    );
   });
 });

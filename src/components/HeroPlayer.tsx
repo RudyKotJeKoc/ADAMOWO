@@ -130,7 +130,7 @@ export function HeroPlayer(): JSX.Element {
     setMuted,
     setStatus,
     setError,
-    setCurrentTrack
+    setCurrentTrack,
   } = usePlayerStore((state) => ({
     playing: state.playing,
     volume: state.volume,
@@ -144,7 +144,7 @@ export function HeroPlayer(): JSX.Element {
     setMuted: state.setMuted,
     setStatus: state.setStatus,
     setError: state.setError,
-    setCurrentTrack: state.setCurrentTrack
+    setCurrentTrack: state.setCurrentTrack,
   }));
 
   useEffect(() => {
@@ -195,7 +195,7 @@ export function HeroPlayer(): JSX.Element {
           title: track.title,
           artist: track.artist,
           url: track.url,
-          coverUrl: track.coverUrl
+          coverUrl: track.coverUrl,
         });
         setError(null);
       },
@@ -206,7 +206,7 @@ export function HeroPlayer(): JSX.Element {
         setStatus('error');
         setError(message);
         setPlaying(false);
-      }
+      },
     });
 
     audioClientRef.current = client;
@@ -251,9 +251,7 @@ export function HeroPlayer(): JSX.Element {
     };
 
     const handleError = (): void => {
-      const mediaError = audio.error
-        ? `Media error: ${audio.error.code}`
-        : 'Playback error';
+      const mediaError = audio.error ? `Media error: ${audio.error.code}` : 'Playback error';
       setError(mediaError);
       setStatus('error');
       setPlaying(false);
@@ -302,13 +300,16 @@ export function HeroPlayer(): JSX.Element {
           } else {
             setError(null);
             setStatus('buffering');
-            void audio.play().then(() => setPlaying(true)).catch(() => {
-              setStatus('error');
-              setError('Playback failed');
-            });
+            void audio
+              .play()
+              .then(() => setPlaying(true))
+              .catch(() => {
+                setStatus('error');
+                setError('Playback failed');
+              });
           }
           break;
-        case 'm':
+        case 'm': {
           event.preventDefault();
           const nextMuted = !muted;
           setMuted(nextMuted);
@@ -318,7 +319,8 @@ export function HeroPlayer(): JSX.Element {
             setVolume(0.5);
           }
           break;
-        case 'arrowup':
+        }
+        case 'arrowup': {
           event.preventDefault();
           const newVolumeUp = Math.min(1, volume + 0.1);
           setVolume(newVolumeUp);
@@ -328,12 +330,14 @@ export function HeroPlayer(): JSX.Element {
             audio.muted = false;
           }
           break;
-        case 'arrowdown':
+        }
+        case 'arrowdown': {
           event.preventDefault();
           const newVolumeDown = Math.max(0, volume - 0.1);
           setVolume(newVolumeDown);
           audio.volume = newVolumeDown;
           break;
+        }
         default:
           break;
       }
@@ -348,7 +352,9 @@ export function HeroPlayer(): JSX.Element {
   const statusLabel = useMemo(() => {
     switch (status) {
       case 'playing':
-        return currentTrack ? `${currentTrack.artist} - ${currentTrack.title}` : t('player.playing');
+        return currentTrack
+          ? `${currentTrack.artist} - ${currentTrack.title}`
+          : t('player.playing');
       case 'buffering':
         return t('player.buffering');
       case 'error':
@@ -450,15 +456,12 @@ export function HeroPlayer(): JSX.Element {
     () =>
       t('player.artworkAlt', {
         title: nowPlaying.title,
-        artist: nowPlaying.artist ?? nowPlayingDetails
+        artist: nowPlaying.artist ?? nowPlayingDetails,
       }),
     [nowPlaying.artist, nowPlaying.title, nowPlayingDetails, t]
   );
 
-  const friendlyErrorMessage = useMemo(
-    () => getErrorMessage(error, t),
-    [error, t]
-  );
+  const friendlyErrorMessage = useMemo(() => getErrorMessage(error, t), [error, t]);
 
   return (
     <section
@@ -479,10 +482,7 @@ export function HeroPlayer(): JSX.Element {
           />
           <Tooltip content={t('player.tooltips.live')}>
             <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-accent-500/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-base-950 shadow-md">
-              <span
-                className="h-2 w-2 rounded-full bg-base-950 animate-pulse"
-                aria-hidden="true"
-              />
+              <span className="h-2 w-2 rounded-full bg-base-950 animate-pulse" aria-hidden="true" />
               {t('player.live')}
             </span>
           </Tooltip>
@@ -571,7 +571,10 @@ export function HeroPlayer(): JSX.Element {
             </p>
             {status === 'error' && (
               <>
-                <span className="text-accent-300 bg-accent-500/10 px-3 py-1 rounded-full text-xs" role="alert">
+                <span
+                  className="text-accent-300 bg-accent-500/10 px-3 py-1 rounded-full text-xs"
+                  role="alert"
+                >
                   {friendlyErrorMessage}
                 </span>
                 <button
@@ -597,12 +600,7 @@ export function HeroPlayer(): JSX.Element {
           </details>
         </div>
       </div>
-      <audio
-        ref={audioRef}
-        preload="none"
-        crossOrigin="anonymous"
-        aria-hidden="true"
-      />
+      <audio ref={audioRef} preload="none" crossOrigin="anonymous" aria-hidden="true" />
     </section>
   );
 }

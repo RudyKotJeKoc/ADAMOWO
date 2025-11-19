@@ -81,7 +81,7 @@ export async function loadDefaultPlaylist(): Promise<AudioTrack[]> {
   for (const url of defaultUrls) {
     try {
       return await loadPlaylistFromUrl(url);
-    } catch (error) {
+    } catch {
       console.warn(`Failed to load from ${url}, trying next...`);
     }
   }
@@ -367,7 +367,9 @@ export async function checkTrackAvailability(track: AudioTrack): Promise<MediaAv
 /**
  * Check availability for all tracks in playlist
  */
-export async function checkPlaylistAvailability(tracks: AudioTrack[]): Promise<MediaAvailability[]> {
+export async function checkPlaylistAvailability(
+  tracks: AudioTrack[]
+): Promise<MediaAvailability[]> {
   const checks = tracks.map((track) => checkTrackAvailability(track));
   return Promise.all(checks);
 }

@@ -16,7 +16,7 @@ import {
   useAudioEngineStore,
   usePlaylistQueueStore,
   selectCurrentTrack,
-  selectProgress
+  selectProgress,
 } from '../../state/media';
 import type { AudioTrack } from '../media/media.schema';
 
@@ -129,7 +129,7 @@ export function MusicPlayer(): JSX.Element {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [setQueue, toggleShuffle, queue.shuffle]);
 
   // Handle shuffle
   const handleShuffle = () => {
@@ -158,7 +158,6 @@ export function MusicPlayer(): JSX.Element {
       setMuted(false);
     }
   };
-
 
   // Loading state
   if (loading) {
@@ -200,16 +199,20 @@ export function MusicPlayer(): JSX.Element {
           </div>
           <div className="text-right space-y-1">
             <div className="flex items-center gap-2 justify-end">
-              <span className={`h-2 w-2 rounded-full ${
-                status === 'playing' ? 'bg-accent-400 animate-pulse' :
-                status === 'loading' ? 'bg-yellow-500 animate-pulse' :
-                status === 'error' ? 'bg-red-500' : 'bg-base-600'
-              }`} />
+              <span
+                className={`h-2 w-2 rounded-full ${
+                  status === 'playing'
+                    ? 'bg-accent-400 animate-pulse'
+                    : status === 'loading'
+                      ? 'bg-yellow-500 animate-pulse'
+                      : status === 'error'
+                        ? 'bg-red-500'
+                        : 'bg-base-600'
+                }`}
+              />
               <p className="text-xs text-base-300 capitalize">{status}</p>
             </div>
-            <p className="text-xs text-base-400">
-              {queue.tracks.length} w kolejce
-            </p>
+            <p className="text-xs text-base-400">{queue.tracks.length} w kolejce</p>
           </div>
         </div>
       </header>
@@ -254,17 +257,14 @@ export function MusicPlayer(): JSX.Element {
               <h2 className="text-3xl font-semibold leading-tight text-base-50 sm:text-4xl">
                 {currentTrack?.title || 'Wybierz utwór aby rozpocząć'}
               </h2>
-              <p className="text-base text-base-200">
-                {currentTrack?.artist || 'Radio Adamowo'}
-              </p>
+              <p className="text-base text-base-200">{currentTrack?.artist || 'Radio Adamowo'}</p>
               {currentTrack?.album && (
-                <p className="text-sm text-base-300">
-                  Album: {currentTrack.album}
-                </p>
+                <p className="text-sm text-base-300">Album: {currentTrack.album}</p>
               )}
               {currentTrack?.genre && (
                 <p className="text-xs text-base-400">
-                  {currentTrack.genre}{currentTrack.category ? ` • ${currentTrack.category}` : ''}
+                  {currentTrack.genre}
+                  {currentTrack.category ? ` • ${currentTrack.category}` : ''}
                 </p>
               )}
             </div>
@@ -291,7 +291,9 @@ export function MusicPlayer(): JSX.Element {
           <div className="mt-2 flex justify-between text-xs text-base-400">
             <span>Postęp: {Math.round(progress)}%</span>
             {queue.currentIndex >= 0 && (
-              <span>Utwór {queue.currentIndex + 1} z {queue.tracks.length}</span>
+              <span>
+                Utwór {queue.currentIndex + 1} z {queue.tracks.length}
+              </span>
             )}
           </div>
         </div>
@@ -307,7 +309,7 @@ export function MusicPlayer(): JSX.Element {
             aria-label="Poprzedni utwór"
           >
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
             </svg>
           </button>
 
@@ -321,11 +323,11 @@ export function MusicPlayer(): JSX.Element {
           >
             {isPlaying ? (
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
               </svg>
             ) : (
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
+                <path d="M8 5v14l11-7z" />
               </svg>
             )}
           </button>
@@ -338,7 +340,7 @@ export function MusicPlayer(): JSX.Element {
             aria-label="Następny utwór"
           >
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M16 18h2V6h-2zm-11-7l8.5-6v12z"/>
+              <path d="M16 18h2V6h-2zm-11-7l8.5-6v12z" />
             </svg>
           </button>
         </div>
@@ -384,7 +386,11 @@ export function MusicPlayer(): JSX.Element {
             title={`Powtarzanie: ${queue.repeat}`}
             aria-pressed={queue.repeat !== 'none'}
           >
-            {queue.repeat === 'one' ? 'Powtórz jeden' : queue.repeat === 'all' ? 'Powtórz wszystkie' : 'Bez powtórek'}
+            {queue.repeat === 'one'
+              ? 'Powtórz jeden'
+              : queue.repeat === 'all'
+                ? 'Powtórz wszystkie'
+                : 'Bez powtórek'}
           </button>
 
           <button
@@ -435,10 +441,11 @@ export function MusicPlayer(): JSX.Element {
 
         {/* Error Display */}
         {error && (
-          <div className="mt-6 rounded-xl border-2 border-red-500/50 bg-red-900/20 px-6 py-4 shadow-lg" role="alert">
-            <p className="text-sm font-semibold text-red-300">
-              Błąd odtwarzania: {error}
-            </p>
+          <div
+            className="mt-6 rounded-xl border-2 border-red-500/50 bg-red-900/20 px-6 py-4 shadow-lg"
+            role="alert"
+          >
+            <p className="text-sm font-semibold text-red-300">Błąd odtwarzania: {error}</p>
             <p className="mt-1 text-xs text-red-400">
               Sprawdź połączenie internetowe i spróbuj ponownie.
             </p>
@@ -454,9 +461,7 @@ export function MusicPlayer(): JSX.Element {
           aria-label="Kolejka odtwarzania"
         >
           <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-xl font-semibold text-base-50">
-              Kolejka odtwarzania
-            </h3>
+            <h3 className="text-xl font-semibold text-base-50">Kolejka odtwarzania</h3>
             <span className="rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5 text-xs font-semibold text-accent-300">
               {queue.tracks.length} {queue.tracks.length === 1 ? 'utwór' : 'utworów'}
             </span>
@@ -475,22 +480,27 @@ export function MusicPlayer(): JSX.Element {
                 } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400`}
               >
                 <div className="flex items-center gap-3">
-                  <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
-                    index === queue.currentIndex
-                      ? 'bg-accent-500 text-base-950'
-                      : 'bg-base-700 text-base-300 group-hover:bg-base-600'
-                  }`}>
+                  <span
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
+                      index === queue.currentIndex
+                        ? 'bg-accent-500 text-base-950'
+                        : 'bg-base-700 text-base-300 group-hover:bg-base-600'
+                    }`}
+                  >
                     {index === queue.currentIndex ? '▶' : index + 1}
                   </span>
 
                   <div className="flex-1 min-w-0">
-                    <p className={`font-semibold truncate text-sm ${
-                      index === queue.currentIndex ? 'text-accent-100' : 'text-base-100'
-                    }`}>
+                    <p
+                      className={`font-semibold truncate text-sm ${
+                        index === queue.currentIndex ? 'text-accent-100' : 'text-base-100'
+                      }`}
+                    >
                       {track.title}
                     </p>
                     <p className="text-xs text-base-300 truncate">
-                      {track.artist}{track.genre ? ` • ${track.genre}` : ''}
+                      {track.artist}
+                      {track.genre ? ` • ${track.genre}` : ''}
                     </p>
                   </div>
 

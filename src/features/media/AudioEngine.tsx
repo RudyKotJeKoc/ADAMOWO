@@ -10,7 +10,7 @@
  * - Error handling and retry logic
  */
 
-import { useEffect, useRef, useCallback, useMemo } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { useAudioEngineStore, usePlaylistQueueStore } from '../../state/media';
 import type { AudioTrack, AudioCache, AudioEngineEvent, AudioAnalysisData } from './media.schema';
 
@@ -28,7 +28,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     config,
     status,
     currentTrack,
-    nextTrack,
     volume,
     muted,
     setStatus,
@@ -67,7 +66,9 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
   const initializeAudioContext = useCallback(() => {
     if (audioContextRef.current) return audioContextRef.current;
 
-    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    const AudioContextClass =
+      window.AudioContext ||
+      ((window as unknown as Record<string, unknown>).webkitAudioContext as typeof AudioContext);
     if (!AudioContextClass) {
       setError('Web Audio API not supported');
       return null;
@@ -124,10 +125,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     },
     [config.cacheSize]
   );
-
-  const clearCache = useCallback(() => {
-    cacheRef.current.clear();
-  }, []);
 
   // ============================================================================
   // AUDIO LOADING
@@ -256,55 +253,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
       addToHistory,
     ]
   );
-
-  const pause = useCallback(() => {
-    const ctx = audioContextRef.current;
-    const source = currentSourceRef.current;
-
-    if (ctx && source) {
-      pauseTimeRef.current = ctx.currentTime - startTimeRef.current;
-      source.stop();
-      currentSourceRef.current = null;
-      setStatus('paused');
-      stopTimeUpdates();
-      onEvent?.({ type: 'pause' });
-    }
-  }, [setStatus, onEvent]);
-
-  const resume = useCallback(() => {
-    if (!currentTrack) return;
-
-    const ctx = audioContextRef.current;
-    if (!ctx) return;
-
-    const cached = getCachedBuffer(currentTrack.id);
-    if (!cached) {
-      play(currentTrack);
-      return;
-    }
-
-    const gainNode = ctx.createGain();
-    gainNode.gain.value = muted ? 0 : volume;
-    currentGainRef.current = gainNode;
-
-    const source = createSource(cached, gainNode);
-    currentSourceRef.current = source;
-
-    source.onended = () => {
-      if (currentSourceRef.current === source) {
-        onEvent?.({ type: 'trackEnd', track: currentTrack });
-        addToHistory(currentTrack);
-        handleTrackEnd();
-      }
-    };
-
-    source.start(0, pauseTimeRef.current);
-    startTimeRef.current = ctx.currentTime - pauseTimeRef.current;
-
-    setStatus('playing');
-    startTimeUpdates();
-    onEvent?.({ type: 'play' });
-  }, [currentTrack, volume, muted, getCachedBuffer, createSource, play, setStatus, onEvent, addToHistory]);
 
   const stop = useCallback(() => {
     const source = currentSourceRef.current;
@@ -488,7 +436,8 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
             frequencyData.slice(midEnd).reduce((sum, val) => sum + val, 0) /
             ((frequencyData.length - midEnd) * 255);
 
-          const averageFrequency = frequencyData.reduce((sum, val) => sum + val, 0) / frequencyData.length;
+          const averageFrequency =
+            frequencyData.reduce((sum, val) => sum + val, 0) / frequencyData.length;
           const peakFrequency = Math.max(...frequencyData);
 
           onAnalysisUpdate({

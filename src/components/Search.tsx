@@ -63,68 +63,68 @@ export function Search(): JSX.Element {
       title: t('navigation.live'),
       path: '/live',
       description: t('search.results.live.description'),
-      type: 'page'
+      type: 'page',
     },
     {
       title: t('navigation.violenceLoop'),
       path: '/violence-loop',
       description: t('search.results.violenceLoop.description'),
-      type: 'tool'
+      type: 'tool',
     },
     {
       title: t('navigation.studio'),
       path: '/studio',
       description: t('search.results.studio.description'),
-      type: 'page'
+      type: 'page',
     },
     {
       title: t('navigation.shows'),
       path: '/shows',
       description: t('search.results.shows.description'),
-      type: 'page'
+      type: 'page',
     },
     {
       title: t('navigation.guide'),
       path: '/guides',
       description: t('search.results.guides.description'),
-      type: 'guide'
+      type: 'guide',
     },
     {
       title: t('navigation.anatomy'),
       path: '/anatomy',
       description: t('search.results.anatomy.description'),
-      type: 'guide'
+      type: 'guide',
     },
     {
       title: t('navigation.lab'),
       path: '/lab',
       description: t('search.results.lab.description'),
-      type: 'tool'
+      type: 'tool',
     },
     {
       title: t('navigation.community'),
       path: '/community',
       description: t('search.results.community.description'),
-      type: 'page'
+      type: 'page',
     },
     {
       title: t('breadcrumbs.analysis'),
       path: '/analysis',
       description: t('search.results.analysis.description'),
-      type: 'analysis'
+      type: 'analysis',
     },
     {
       title: t('breadcrumbs.privacy'),
       path: '/privacy',
       description: t('search.results.privacy.description'),
-      type: 'page'
+      type: 'page',
     },
     {
       title: t('breadcrumbs.aiPolicy'),
       path: '/ai-policy',
       description: t('search.results.aiPolicy.description'),
-      type: 'page'
-    }
+      type: 'page',
+    },
   ];
 
   /**
@@ -135,20 +135,23 @@ export function Search(): JSX.Element {
    *
    * @param {string} searchQuery - The search term to filter by
    */
-  const handleSearch = useCallback((searchQuery: string) => {
-    if (!searchQuery.trim()) {
-      setResults([]);
-      return;
-    }
+  const handleSearch = useCallback(
+    (searchQuery: string) => {
+      if (!searchQuery.trim()) {
+        setResults([]);
+        return;
+      }
 
-    const filtered = searchIndex.filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+      const filtered = searchIndex.filter(
+        (item) =>
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
-    setResults(filtered);
-  }, []);
+      setResults(filtered);
+    },
+    [searchIndex]
+  );
 
   /**
    * Opens the search dialog and focuses the search input.

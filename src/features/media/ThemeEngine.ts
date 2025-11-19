@@ -10,7 +10,7 @@
  * - Custom color palette generation
  */
 
-import type { ThemeConfig, AnimationConfig, AudioAnalysisData } from './media.schema';
+import type { ThemeConfig, AudioAnalysisData } from './media.schema';
 
 // ============================================================================
 // THEME TYPES
@@ -240,10 +240,10 @@ export class ThemeEngine {
 
     this.audioData = analysisData;
 
-    const { bassLevel, midLevel, trebleLevel, averageFrequency } = analysisData;
+    const { bassLevel, midLevel, trebleLevel } = analysisData;
 
     // Generate audio-reactive colors
-    const reactiveTheme = this.generateAudioReactiveTheme(bassLevel, midLevel, trebleLevel, averageFrequency);
+    const reactiveTheme = this.generateAudioReactiveTheme(bassLevel, midLevel, trebleLevel);
 
     // Apply reactive theme
     this.applyAudioReactiveTheme(reactiveTheme);
@@ -256,7 +256,6 @@ export class ThemeEngine {
    * @param bass - Bass frequency level (0-1)
    * @param mid - Mid-range frequency level (0-1)
    * @param treble - Treble frequency level (0-1)
-   * @param avgFreq - Average frequency across spectrum
    * @returns Audio-reactive theme with frequency-mapped colors
    *
    * @internal
@@ -264,8 +263,7 @@ export class ThemeEngine {
   private generateAudioReactiveTheme(
     bass: number,
     mid: number,
-    treble: number,
-    avgFreq: number
+    treble: number
   ): AudioReactiveTheme {
     // Map audio levels to color adjustments
     const intensity = this.getIntensityMultiplier();

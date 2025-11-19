@@ -47,9 +47,7 @@ export function DocumentNotice({
 }: DocumentNoticeProps) {
   const { t } = useTranslation();
 
-  const typeLabel =
-    customTypeLabel ||
-    getDocumentTypeLabel(documentType, t);
+  const typeLabel = customTypeLabel || getDocumentTypeLabel(documentType, t);
 
   return (
     <aside
@@ -162,7 +160,10 @@ export function DocumentNotice({
 }
 
 // Helper function for document type labels
-function getDocumentTypeLabel(type: string, t: any): string {
+function getDocumentTypeLabel(
+  type: string,
+  t: (key: string, defaultValue: string) => string
+): string {
   switch (type) {
     case 'notarial':
       return t('document.type.notarial', 'Akta notarialne');
@@ -188,10 +189,11 @@ export function InlineDocumentNotice({ children }: { children?: React.ReactNode 
       <span className="inline-document-notice__icon" aria-hidden="true">
         📄
       </span>
-      {children || t(
-        'document.notice.inline.default',
-        'Dokumentacja źródłowa: szczegóły udostępnimy uprawnionym w celu weryfikacji; wersja publiczna została zanonimizowana.'
-      )}
+      {children ||
+        t(
+          'document.notice.inline.default',
+          'Dokumentacja źródłowa: szczegóły udostępnimy uprawnionym w celu weryfikacji; wersja publiczna została zanonimizowana.'
+        )}
     </p>
   );
 }
