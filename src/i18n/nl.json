@@ -114,6 +114,54 @@
     },
     "shows": {
       "title": "Programma's"
+    },
+    "help": {
+      "title": "Hulp & Ondersteuning",
+      "lead": "Als je geweld ervaart, in een toxische relatie zit of emotionele ondersteuning nodig hebt, ben je niet alleen. Hieronder vind je een lijst met bronnen en telefoonnummers die kunnen helpen.",
+      "emergency": {
+        "title": "Directe bedreiging voor leven of gezondheid?",
+        "description": "Als je in een situatie van direct gevaar bent, bel onmiddellijk het alarmnummer:",
+        "number": "Alarmnummer",
+        "police": "Politie"
+      },
+      "additionalResources": {
+        "title": "Aanvullende Bronnen"
+      },
+      "online": {
+        "title": "Online Hulp",
+        "blueLine": "Online chat, informatie over huiselijk geweld en steuncentra",
+        "womenRights": "Gratis juridische en psychologische hulp voor vrouwen"
+      },
+      "centers": {
+        "title": "Crisisinterventiecentra",
+        "description": "Crisisinterventiecentra bieden gratis psychologische, juridische en sociale hulp. Vind het dichtstbijzijnde centrum:",
+        "findNearest": "Vind dichtstbijzijnd centrum"
+      },
+      "legal": {
+        "title": "Juridische Hulp",
+        "freeHelp": "Gratis Juridische Hulppunten - gratis juridische hulp voor iedereen",
+        "restrainingOrder": "Mogelijkheid om een contactverbod tegen de dader te verkrijgen",
+        "divorce": "Hulp bij echtscheiding en alimentatiezaken"
+      },
+      "shelters": {
+        "title": "Opvangcentra en Ondersteuningscentra",
+        "description": "Als je een veilige plek nodig hebt om te wonen, neem contact op met:",
+        "womenShelter": "Vrouwenopvang - opvang voor vrouwen met kinderen",
+        "supportCenter": "Ondersteuningscentra - hulp bij het herwinnen van onafhankelijkheid"
+      },
+      "safety": {
+        "title": "Veiligheidsplan",
+        "intro": "Als je in een toxische of gevaarlijke relatie zit, kan het voorbereiden van een veiligheidsplan je leven redden:",
+        "documents": "Bereid kopieën van belangrijke documenten voor (ID, documenten van kinderen, contracten) en bewaar ze op een veilige plek",
+        "money": "Zet wat geld opzij op een veilige plek (bij een vriend, in een kluisje op het werk)",
+        "codeWord": "Stel een \"codewoord\" vast met een vertrouwde persoon dat signaleert dat je hulp nodig hebt",
+        "escapeRoute": "Plan een vluchtroute en een veilige plek waar je naartoe kunt",
+        "evidence": "Documenteer geweld (foto's van verwondingen, tekstberichten, opnames) - ze kunnen bewijs zijn in de rechtszaal"
+      },
+      "note": {
+        "title": "Belangrijke opmerking:",
+        "content": "De inhoud op deze pagina is informatief en educatief. Het vervangt geen professionele psychologische, juridische of medische hulp. Als je hulp nodig hebt, neem contact op met de juiste diensten of specialisten."
+      }
     }
   },
   "platformInfo": {
@@ -1859,6 +1907,27 @@
           "experience": "15+ jaar klinische praktijk"
         }
       }
+    }
+  },
+  "emergency": {
+    "banner": {
+      "title": "Dringende hulp nodig?",
+      "blueLineShort": "Blauwe Lijn",
+      "trustPhoneShort": "Vertrouwenstelefoon",
+      "dismiss": "Banner sluiten"
+    }
+  },
+  "content": {
+    "summary": {
+      "title": "Samenvatting"
+    },
+    "warning": {
+      "title": "Inhoudswaarschuwing",
+      "message": "De volgende inhoud kan emotioneel moeilijk zijn en beschrijvingen van traumatische situaties bevatten.",
+      "topics": "Inhoud heeft betrekking op:",
+      "selfCare": "Vergeet niet voor jezelf te zorgen. Als je het gevoel hebt dat je nog niet klaar bent voor deze inhoud, kun je er later naar terugkeren.",
+      "continue": "Ik begrijp het, ga door",
+      "goBack": "Ga terug"
     }
   },
   "donation": {
