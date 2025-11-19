@@ -2,9 +2,8 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 /**
  * Generic Supabase client type with flexible typing for any database schema.
- * @typedef {SupabaseClient<any, any, any>} GenericSupabaseClient
  */
-export type GenericSupabaseClient = SupabaseClient<any, any, any>;
+export type GenericSupabaseClient = SupabaseClient;
 
 /**
  * Cached Supabase client instance.
@@ -59,7 +58,7 @@ export function getSupabaseClient(): GenericSupabaseClient | null {
   }
 
   cachedClient = createClient(config.url, config.key, {
-    auth: { persistSession: false }
+    auth: { persistSession: false },
   });
 
   return cachedClient;

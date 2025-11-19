@@ -14,7 +14,6 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSlideshowStore } from '../../state/media';
-import type { MediaItem } from './media.schema';
 
 interface SlideshowProps {
   className?: string;
@@ -66,7 +65,8 @@ export function Slideshow({
     }
 
     // Determine interval based on current item type
-    const interval = currentItem?.type === 'video' ? currentItem.duration || config.interval : config.interval;
+    const interval =
+      currentItem?.type === 'video' ? currentItem.duration || config.interval : config.interval;
 
     intervalRef.current = setInterval(() => {
       handleNext();
@@ -234,10 +234,16 @@ export function Slideshow({
 
     if (container.requestFullscreen) {
       container.requestFullscreen();
-    } else if ((container as any).webkitRequestFullscreen) {
-      (container as any).webkitRequestFullscreen();
-    } else if ((container as any).mozRequestFullScreen) {
-      (container as any).mozRequestFullScreen();
+    } else if (
+      'webkitRequestFullscreen' in container &&
+      typeof container.webkitRequestFullscreen === 'function'
+    ) {
+      container.webkitRequestFullscreen();
+    } else if (
+      'mozRequestFullScreen' in container &&
+      typeof container.mozRequestFullScreen === 'function'
+    ) {
+      container.mozRequestFullScreen();
     }
 
     setIsFullscreen(true);
@@ -246,10 +252,16 @@ export function Slideshow({
   const exitFullscreen = useCallback(() => {
     if (document.exitFullscreen) {
       document.exitFullscreen();
-    } else if ((document as any).webkitExitFullscreen) {
-      (document as any).webkitExitFullscreen();
-    } else if ((document as any).mozCancelFullScreen) {
-      (document as any).mozCancelFullScreen();
+    } else if (
+      'webkitExitFullscreen' in document &&
+      typeof document.webkitExitFullscreen === 'function'
+    ) {
+      document.webkitExitFullscreen();
+    } else if (
+      'mozCancelFullScreen' in document &&
+      typeof document.mozCancelFullScreen === 'function'
+    ) {
+      document.mozCancelFullScreen();
     }
 
     setIsFullscreen(false);
@@ -298,7 +310,9 @@ export function Slideshow({
   if (items.length === 0) {
     return (
       <div className={`flex items-center justify-center bg-base-900 rounded-lg p-8 ${className}`}>
-        <p className="text-base-400">{t('multimedia.slideshow.noItems', 'No media items to display')}</p>
+        <p className="text-base-400">
+          {t('multimedia.slideshow.noItems', 'No media items to display')}
+        </p>
       </div>
     );
   }
@@ -313,7 +327,9 @@ export function Slideshow({
       {/* Main display area */}
       <div className="relative aspect-video bg-base-900">
         {currentItem ? (
-          <div className={`absolute inset-0 flex items-center justify-center ${getTransitionClass()}`}>
+          <div
+            className={`absolute inset-0 flex items-center justify-center ${getTransitionClass()}`}
+          >
             {currentItem.type === 'image' ? (
               <img
                 src={currentItem.url}
@@ -330,7 +346,10 @@ export function Slideshow({
                 muted={false}
                 playsInline
               >
-                {t('multimedia.slideshow.videoNotSupported', 'Your browser does not support video playback')}
+                {t(
+                  'multimedia.slideshow.videoNotSupported',
+                  'Your browser does not support video playback'
+                )}
               </video>
             )}
 
@@ -345,8 +364,12 @@ export function Slideshow({
         {/* Media info overlay */}
         {currentItem && (currentItem.title || currentItem.description) && (
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-base-950/90 to-transparent p-4">
-            {currentItem.title && <h3 className="text-base-100 font-medium">{currentItem.title}</h3>}
-            {currentItem.description && <p className="text-base-400 text-sm mt-1">{currentItem.description}</p>}
+            {currentItem.title && (
+              <h3 className="text-base-100 font-medium">{currentItem.title}</h3>
+            )}
+            {currentItem.description && (
+              <p className="text-base-400 text-sm mt-1">{currentItem.description}</p>
+            )}
           </div>
         )}
       </div>
@@ -378,9 +401,16 @@ export function Slideshow({
         <button
           onClick={() => setPlaying(!isPlaying)}
           className="px-4 py-2 bg-accent-500 hover:bg-accent-600 text-base-950 font-medium rounded-lg transition-colors"
-          aria-label={isPlaying ? t('multimedia.slideshow.pause', 'Pause') : t('multimedia.slideshow.play', 'Play')}
+          aria-label={
+            isPlaying
+              ? t('multimedia.slideshow.pause', 'Pause')
+              : t('multimedia.slideshow.play', 'Play')
+          }
         >
-          {isPlaying ? '⏸' : '▶'} {isPlaying ? t('multimedia.slideshow.pause', 'Pause') : t('multimedia.slideshow.play', 'Play')}
+          {isPlaying ? '⏸' : '▶'}{' '}
+          {isPlaying
+            ? t('multimedia.slideshow.pause', 'Pause')
+            : t('multimedia.slideshow.play', 'Play')}
         </button>
 
         {config.showProgress && (
@@ -402,7 +432,11 @@ export function Slideshow({
         <button
           onClick={isFullscreen ? exitFullscreen : enterFullscreen}
           className="px-4 py-2 bg-base-800 hover:bg-base-700 text-base-100 rounded-lg transition-colors"
-          aria-label={isFullscreen ? t('multimedia.slideshow.exitFullscreen', 'Exit fullscreen') : t('multimedia.slideshow.fullscreen', 'Fullscreen')}
+          aria-label={
+            isFullscreen
+              ? t('multimedia.slideshow.exitFullscreen', 'Exit fullscreen')
+              : t('multimedia.slideshow.fullscreen', 'Fullscreen')
+          }
         >
           {isFullscreen ? '⤓' : '⤢'}
         </button>
@@ -416,7 +450,9 @@ export function Slideshow({
               key={item.id}
               onClick={() => handleJumpTo(index)}
               className={`flex-shrink-0 w-20 h-20 rounded overflow-hidden border-2 transition-all ${
-                index === currentIndex ? 'border-accent-500 ring-2 ring-accent-500/50' : 'border-transparent hover:border-base-600'
+                index === currentIndex
+                  ? 'border-accent-500 ring-2 ring-accent-500/50'
+                  : 'border-transparent hover:border-base-600'
               }`}
               aria-label={`${t('multimedia.slideshow.goTo', 'Go to')} ${item.title || `slide ${index + 1}`}`}
             >

@@ -89,11 +89,7 @@ export function MediaErrorFallback({
 
         {/* Retry button */}
         {onRetry && (
-          <button
-            className="media-error-fallback__retry-btn"
-            onClick={onRetry}
-            type="button"
-          >
+          <button className="media-error-fallback__retry-btn" onClick={onRetry} type="button">
             🔄 {t('media.error.retry', 'Spróbuj ponownie')}
           </button>
         )}
@@ -153,18 +149,8 @@ export function MediaErrorFallback({
               {t('media.error.troubleshooting', 'Rozwiązywanie problemów')}
             </summary>
             <ul className="media-error-fallback__tips">
-              <li>
-                {t(
-                  'media.error.tip.refresh',
-                  'Odśwież stronę i spróbuj ponownie'
-                )}
-              </li>
-              <li>
-                {t(
-                  'media.error.tip.connection',
-                  'Sprawdź swoje połączenie internetowe'
-                )}
-              </li>
+              <li>{t('media.error.tip.refresh', 'Odśwież stronę i spróbuj ponownie')}</li>
+              <li>{t('media.error.tip.connection', 'Sprawdź swoje połączenie internetowe')}</li>
               <li>
                 {t(
                   'media.error.tip.browser',
@@ -227,7 +213,11 @@ export function MediaErrorFallback({
 
 // Helper functions
 
-function getErrorMessage(error: string | Error | MediaError | null | undefined, mediaType: string, t: any): string {
+function getErrorMessage(
+  error: string | Error | MediaError | null | undefined,
+  mediaType: string,
+  t: (key: string, defaultValue: string) => string
+): string {
   if (!error) {
     return t(
       `media.error.${mediaType}.generic`,
@@ -251,9 +241,15 @@ function getErrorMessage(error: string | Error | MediaError | null | undefined, 
       case 2: // MEDIA_ERR_NETWORK
         return t('media.error.network', 'Błąd sieci podczas pobierania pliku multimedialnego.');
       case 3: // MEDIA_ERR_DECODE
-        return t('media.error.decode', 'Plik multimedialny jest uszkodzony lub w nieobsługiwanym formacie.');
+        return t(
+          'media.error.decode',
+          'Plik multimedialny jest uszkodzony lub w nieobsługiwanym formacie.'
+        );
       case 4: // MEDIA_ERR_SRC_NOT_SUPPORTED
-        return t('media.error.unsupported', 'Format pliku nie jest obsługiwany przez Twoją przeglądarkę.');
+        return t(
+          'media.error.unsupported',
+          'Format pliku nie jest obsługiwany przez Twoją przeglądarkę.'
+        );
       default:
         return t('media.error.unknown', 'Nieznany błąd odtwarzania.');
     }
@@ -268,7 +264,7 @@ function getErrorCode(error: string | Error | MediaError | null | undefined): st
   if (typeof error === 'string') return null;
 
   if (error instanceof Error && 'code' in error) {
-    return String((error as any).code);
+    return String((error as Error & { code: number | string }).code);
   }
 
   if ('code' in error) {
@@ -281,14 +277,18 @@ function getErrorCode(error: string | Error | MediaError | null | undefined): st
 /**
  * Simplified version for inline use
  */
-export function SimpleMediaError({ mediaType, onRetry }: { mediaType: 'audio' | 'video'; onRetry?: () => void }) {
+export function SimpleMediaError({
+  mediaType,
+  onRetry,
+}: {
+  mediaType: 'audio' | 'video';
+  onRetry?: () => void;
+}) {
   const { t } = useTranslation();
 
   return (
     <div className="simple-media-error">
-      <span className="simple-media-error__icon">
-        {mediaType === 'audio' ? '🔇' : '📹'}
-      </span>
+      <span className="simple-media-error__icon">{mediaType === 'audio' ? '🔇' : '📹'}</span>
       <p className="simple-media-error__message">
         {t(
           `media.error.${mediaType}.simple`,

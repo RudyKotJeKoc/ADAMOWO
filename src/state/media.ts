@@ -293,7 +293,7 @@ const defaultQueue: PlaylistQueue = {
  */
 export const usePlaylistQueueStore = create<PlaylistQueueStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       queue: defaultQueue,
 
       setQueue: (tracks) =>
@@ -607,7 +607,8 @@ export const useRatingStore = create<RatingStore>()(
 
       removeRating: (trackId) =>
         set((state) => {
-          const { [trackId]: _, ...rest } = state.ratings;
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { [trackId]: _removed, ...rest } = state.ratings;
           return { ratings: rest };
         }),
 
@@ -704,7 +705,8 @@ export const selectHasPrevious = (state: PlaylistQueueStore) => {
  * @param {SlideshowStore} state - Slideshow store state
  * @returns {SlideshowItem | null} Current slide or null
  */
-export const selectCurrentSlide = (state: SlideshowStore) => state.items[state.currentIndex] || null;
+export const selectCurrentSlide = (state: SlideshowStore) =>
+  state.items[state.currentIndex] || null;
 
 /**
  * Calculates slideshow progress as a percentage.

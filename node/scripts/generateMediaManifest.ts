@@ -40,7 +40,7 @@ interface AudioTrack {
   title: string;
   artist: string;
   url: string;
-  [key: string]: any;
+  [key: string]: string | number | boolean | object;
 }
 
 interface MediaManifest {

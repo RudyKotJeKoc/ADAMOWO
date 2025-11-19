@@ -68,29 +68,6 @@ export function AdamowoHeader(): JSX.Element {
     audio.volume = volume;
   }, [volume]);
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const handleEnded = () => {
-      playNext();
-    };
-
-    const handleError = () => {
-      // If track doesn't exist, try next one
-      console.log(`Track not found: ${currentTrack}, trying next...`);
-      playNext();
-    };
-
-    audio.addEventListener('ended', handleEnded);
-    audio.addEventListener('error', handleError);
-
-    return () => {
-      audio.removeEventListener('ended', handleEnded);
-      audio.removeEventListener('error', handleError);
-    };
-  }, [currentTrack]);
-
   /**
    * Toggles audio playback between play and pause states.
    *
@@ -136,6 +113,28 @@ export function AdamowoHeader(): JSX.Element {
     setCurrentTrackIndex((prev) => (prev - 1 + shuffledTracks.length) % shuffledTracks.length);
     setIsPlaying(true);
   }, [shuffledTracks.length]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleEnded = () => {
+      playNext();
+    };
+
+    const handleError = () => {
+      console.log(`Track not found: ${currentTrack}, trying next...`);
+      playNext();
+    };
+
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('error', handleError);
+
+    return () => {
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('error', handleError);
+    };
+  }, [currentTrack, playNext]);
 
   useEffect(() => {
     const audio = audioRef.current;
