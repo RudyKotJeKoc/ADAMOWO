@@ -4,10 +4,13 @@
   },
   "navigation": {
     "live": "Na Żywo",
+    "analizy": "Analizy",
+    "programy": "Programy",
     "violenceLoop": "Pętla Przemocy",
     "studio": "Studio",
     "shows": "Audycje",
     "guide": "Poradnik",
+    "polanaKlamstw": "Polana Kłamstw",
     "anatomy": "Anatomia",
     "lab": "Laboratorium",
     "community": "Społeczność",
@@ -40,10 +43,64 @@
       "en": "Angielski"
     }
   },
+  "polanaKlamstw": {
+    "title": "Polana Kłamstw",
+    "subtitle": "Baśń współczesna o tym, jak echo może być silniejsze niż głos, a wolność cenniejsza niż majątek.",
+    "tableOfContents": "Spis Treści",
+    "prolog": "Prolog",
+    "chapter": "Rozdział",
+    "epilog": "Epilog",
+    "previousChapter": "Poprzedni rozdział",
+    "nextChapter": "Następny rozdział",
+    "backToContents": "Powrót do spisu treści",
+    "continueReading": "Kontynuować czytanie od ostatniego rozdziału?",
+    "chaptersRead": "rozdziałów przeczytanych",
+    "totalReadingTime": "Całkowity czas czytania",
+    "contentWarning": "Ostrzeżenie o treści",
+    "contentWarningText": "Ta opowieść porusza trudne tematy rodzinne, w tym manipulację psychologiczną, konflikty rodzinne i działanie systemu prawnego. Treści mogą być trudne dla osób, które doświadczyły podobnych sytuacji.",
+    "warningTopic1": "Manipulacja psychologiczna",
+    "warningTopic2": "Konflikt rodzinny",
+    "warningTopic3": "Trudności systemu prawnego",
+    "warningTopic4": "Znęcanie się emocjonalne",
+    "genre": "Gatunek",
+    "timespan": "Okres",
+    "chapters": "Rozdziałów",
+    "totalWords": "Słów",
+    "themes": "Główne tematy"
+  },
   "pages": {
     "home": {
       "title": "Radio Adamowo",
-      "lead": "Edukacyjna platforma radiowa działająca 24/7, poświęcona analizie manipulacji psychicznej i toksycznych relacji. Naszą misją jest dostarczanie treści edukacyjnych, które pomagają słuchaczom rozpoznawać i rozumieć wzorce przemocy psychicznej. Oferujemy transmisję na żywo, analityczne audycje, interaktywne narzędzia oraz wsparcie społeczności w trzech językach."
+      "lead": "Edukacyjna platforma radiowa działająca 24/7, poświęcona analizie manipulacji psychicznej i toksycznych relacji. Naszą misją jest dostarczanie treści edukacyjnych, które pomagają słuchaczom rozpoznawać i rozumieć wzorce przemocy psychicznej. Oferujemy transmisję na żywo, analityczne audycje, interaktywne narzędzia oraz wsparcie społeczności w trzech językach.",
+      "tabs": {
+        "start": {
+          "label": "Start",
+          "quickAccess": "Szybki dostęp"
+        },
+        "about": {
+          "label": "O Projekcie"
+        },
+        "content": {
+          "label": "Treści Edukacyjne"
+        },
+        "tools": {
+          "label": "Narzędzia"
+        },
+        "explore": {
+          "label": "Poznaj Więcej"
+        }
+      },
+      "analizyTeaser": {
+        "title": "Dogłębne Analizy",
+        "description": "Odkryj naszą bibliotekę kompleksowych analiz – od symboliki numerycznej w sprawie Adamowo, przez mechanizmy pętli przemocy, po głębokie studium przypadków manipulacji psychicznej.",
+        "viewAll": "Zobacz wszystkie"
+      },
+      "programyTeaser": {
+        "title": "Programy Edukacyjne",
+        "description": "Cztery główne programy edukacyjne prowadzone przez ekspertów – strukturalne kursy o manipulacji psychicznej, toksycznych relacjach i ścieżkach wyjścia z przemocy.",
+        "viewAll": "Zobacz wszystkie programy",
+        "learnMore": "Dowiedz się więcej"
+      }
     },
     "live": {
       "title": "Transmisja na żywo"
@@ -1770,7 +1827,8 @@
     "links": {
       "documentation": "Dokumentacja",
       "privacy": "Prywatność i cookies",
-      "methodology": "Metodologia i źródła"
+      "methodology": "Metodologia i źródła",
+      "support": "Wsparcie 🍕"
     },
     "backToTop": "Do góry",
     "rights": "© 2025 Radio Adamowo"
@@ -1942,6 +2000,10 @@
       "fromHome": {
         "live": "Posłuchaj transmisji na żywo",
         "liveDesc": "24/7 muzyka i audycje edukacyjne",
+        "analizy": "Dogłębne analizy",
+        "analizyDesc": "Kompleksowe studium manipulacji i wzorców",
+        "programy": "Programy edukacyjne",
+        "programyDesc": "Cztery główne moduły prowadzone przez ekspertów",
         "guides": "Odkryj poradniki",
         "guidesDesc": "Biblioteka przypadków i mitologia narcyza",
         "tools": "Wypróbuj narzędzia",
@@ -2434,9 +2496,226 @@
       "title": "Ostrzeżenie o treści",
       "message": "Poniższa treść może być trudna emocjonalnie i zawierać opisy sytuacji traumatycznych.",
       "topics": "Treść dotyczy:",
+      "topic": {
+        "violence": "przemoc",
+        "psychological": {
+          "abuse": "przemoc psychiczna"
+        }
+      },
       "selfCare": "Pamiętaj o dbaniu o siebie. Jeśli czujesz, że nie jesteś gotowy/a na tę treść, możesz wrócić do niej później.",
       "continue": "Rozumiem, kontynuuj",
       "goBack": "Wróć"
+    },
+    "section": {
+      "expand": "Rozwiń",
+      "collapse": "Zwiń",
+      "facts": {
+        "title": "Fakty i źródła",
+        "badge": "Sekcja faktograficzna",
+        "disclaimer": "Poniższe informacje przedstawiono w tonie neutralnym i reporterskim. Dane osobowe zostały zanonimizowane."
+      },
+      "chronology": {
+        "title": "Chronologia wydarzeń",
+        "badge": "Oś czasu"
+      },
+      "interpretation": {
+        "title": "Interpretacja i symbolika",
+        "badge": "Sekcja interpretacyjna",
+        "disclaimer": "INTERPRETACJA: Poniższa treść przedstawia subiektywną analizę i interpretację. Nie stanowi faktów, lecz opinię autora."
+      },
+      "resources": {
+        "title": "Zasoby i pomoc",
+        "badge": "Zasoby pomocowe",
+        "disclaimer": "Jeśli doświadczasz przemocy lub potrzebujesz wsparcia, poniżej znajdziesz numery pomocy i zasoby."
+      },
+      "legal": {
+        "title": "Informacje prawne",
+        "badge": "Klauzula prawna"
+      },
+      "summary": {
+        "title": "Podsumowanie (TL;DR)",
+        "badge": "Skrócone podsumowanie"
+      }
+    }
+  },
+  "document": {
+    "notice": {
+      "label": "Informacja o dokumentacji",
+      "title": "Dokumentacja źródłowa",
+      "availability": "szczegóły udostępnimy uprawnionym w celu weryfikacji; wersja publiczna została zanonimizowana.",
+      "anonymized": "Zanonimizowano",
+      "anonymization": {
+        "details": "Dane osobowe, adresy, numery identyfikacyjne i dokładne kwoty zostały ukryte lub zmienione w celu ochrony prywatności."
+      },
+      "verification": {
+        "title": "Weryfikacja dokumentów",
+        "instructions": "Strony uprawnione (uczestniczące w postępowaniu, ich pełnomocnicy, lub osoby posiadające uzasadniony interes prawny) mogą uzyskać dostęp do dokumentacji źródłowej w celu weryfikacji."
+      },
+      "contact": "Kontakt:",
+      "procedure": {
+        "label": "Procedura dostępu do dokumentów",
+        "step1": "Skontaktuj się z nami, podając swój interes prawny i rodzaj dokumentu.",
+        "step2": "Przedstaw dokument potwierdzający Twoją tożsamość i uprawnienie (np. pełnomocnictwo).",
+        "step3": "Po weryfikacji udostępnimy odpowiednie dokumenty w sposób bezpieczny."
+      },
+      "transparency": "Dla transparentności",
+      "disclaimer": "Publikacja nastąpiła w interesie publicznym. Jeśli uważasz, że publikacja narusza Twoje prawa, skontaktuj się z nami.",
+      "inline": {
+        "default": "Dokumentacja źródłowa: szczegóły udostępnimy uprawnionym w celu weryfikacji; wersja publiczna została zanonimizowana."
+      }
+    },
+    "type": {
+      "notarial": "Akta notarialne",
+      "court": "Akta sądowe",
+      "administrative": "Dokumenty administracyjne",
+      "financial": "Dokumenty finansowe",
+      "other": "Dokumentacja"
+    }
+  },
+  "violence": {
+    "warning": {
+      "default": {
+        "message": "Poniższy artykuł zawiera opisy przemocy psychicznej, manipulacji i innych trudnych doświadczeń. Jeśli te treści mogą być dla Ciebie trudne lub wyzwalające, rozważ przeczytanie go w bezpiecznym dla siebie momencie."
+      },
+      "resources": {
+        "label": "Zasoby pomocowe",
+        "title": "🆘 Gdzie szukać pomocy?",
+        "subtitle": "Jeśli doświadczasz przemocy lub potrzebujesz wsparcia, skontaktuj się z jedną z poniższych organizacji:",
+        "visit": "Odwiedź stronę"
+      },
+      "resource": {
+        "blueline": {
+          "name": "Niebieska Linia",
+          "desc": "Wsparcie kryzysowe dla ofiar przemocy domowej, dostępne 24/7"
+        },
+        "trustphone": {
+          "name": "Telefon Zaufania",
+          "desc": "Wsparcie emocjonalne i interwencja kryzysowa"
+        },
+        "womensrights": {
+          "name": "Centrum Praw Kobiet",
+          "desc": "Pomoc prawna, psychologiczna i doradztwo"
+        }
+      },
+      "emergency": {
+        "title": "W sytuacji bezpośredniego zagrożenia:",
+        "description": "Zadzwoń pod numer alarmowy 112 lub skontaktuj się z lokalną Policją. Twoje bezpieczeństwo jest priorytetem."
+      }
+    }
+  },
+  "media": {
+    "error": {
+      "code": "Kod błędu:",
+      "retry": "Spróbuj ponownie",
+      "copy": "Kopiuj",
+      "alternatives": "Alternatywne formaty:",
+      "transcript": "Transkrypcja:",
+      "troubleshooting": "Rozwiązywanie problemów",
+      "advanced": "Dla zaawansowanych",
+      "direct": {
+        "url": "Bezpośredni link do pliku:"
+      },
+      "audio": {
+        "title": "Nie udało się załadować audio",
+        "generic": "Wystąpił problem z załadowaniem audio. Spróbuj ponownie później.",
+        "simple": "Nie można załadować audio"
+      },
+      "video": {
+        "title": "Nie udało się załadować wideo",
+        "generic": "Wystąpił problem z załadowaniem wideo. Spróbuj ponownie później.",
+        "simple": "Nie można załadować wideo"
+      },
+      "aborted": "Pobieranie zostało przerwane przez użytkownika.",
+      "network": "Błąd sieci podczas pobierania pliku multimedialnego.",
+      "decode": "Plik multimedialny jest uszkodzony lub w nieobsługiwanym formacie.",
+      "unsupported": "Format pliku nie jest obsługiwany przez Twoją przeglądarkę.",
+      "unknown": "Nieznany błąd odtwarzania.",
+      "generic": "Wystąpił nieoczekiwany błąd.",
+      "tip": {
+        "refresh": "Odśwież stronę i spróbuj ponownie",
+        "connection": "Sprawdź swoje połączenie internetowe",
+        "browser": "Upewnij się, że Twoja przeglądarka jest zaktualizowana",
+        "formats": "Niektóre przeglądarki nie obsługują wszystkich formatów — spróbuj alternatywnego formatu powyżej",
+        "extensions": "Wyłącz blokery reklam lub rozszerzenia, które mogą blokować multimedia",
+        "browser": {
+          "switch": "Spróbuj innej przeglądarki (Chrome, Firefox, Safari, Edge)"
+        }
+      },
+      "transcript": {
+        "download": "Pobierz transkrypcję"
+      }
+    }
+  },
+  "donation": {
+    "title": "Wesprzyj Wilka Pizzą",
+    "description": "Radio Adamowo powstaje dzięki pasji i niezliczonym godzinom pracy. Jeśli nasza misja edukacyjna jest dla Ciebie wartościowa, możesz wesprzeć wilka pizzą – to mały gest, który daje nam energię do dalszej pracy.",
+    "feature1": "Wspierasz rozwój platformy edukacyjnej",
+    "feature2": "Pomagasz w tworzeniu wartościowych treści",
+    "feature3": "Dajesz nam siłę do nocnych sesji kodowania",
+    "feature4": "Stajesz się częścią naszej misji",
+    "cta": "Postaw Pizzę Wilkowi",
+    "subtitle": "Każda pizza przybliża nas do lepszego świata",
+    "thanks": "Dziękujemy za każde wsparcie – naprawdę robi różnicę! 🐺💙"
+  },
+  "analizy": {
+    "title": "Analizy",
+    "description": "Biblioteka treści głębokich – dogłębne analizy manipulacji psychicznej, dokumentacja przypadków i eksploracja wzorców. Każda analiza to kompleksowe studium zaprojektowane dla użytkowników poszukujących wiedzy eksperta.",
+    "searchLabel": "Szukaj analiz",
+    "searchPlaceholder": "Szukaj po tytule, tagach lub słowach kluczowych...",
+    "filterByCategory": "Filtruj po kategorii",
+    "allCategories": "Wszystkie",
+    "featured": "Wyróżnione",
+    "allAnalyses": "Wszystkie analizy",
+    "searchResults": "Wyniki wyszukiwania",
+    "resultsCount": "wyników",
+    "noResults": "Nie znaleziono analiz spełniających kryteria.",
+    "readMore": "Czytaj pełną analizę",
+    "readingMinutes": "min",
+    "categories": {
+      "manipulacja": {
+        "name": "Manipulacja",
+        "description": "Techniki i wzorce manipulacji psychicznej"
+      },
+      "dokumentacja": {
+        "name": "Dokumentacja",
+        "description": "Studium przypadków i dokumentacja dowodowa"
+      },
+      "psychologia": {
+        "name": "Psychologia",
+        "description": "Analiza psychologiczna i mechanizmy"
+      },
+      "prawo": {
+        "name": "Prawo",
+        "description": "Aspekty prawne i systemowe"
+      },
+      "wzorce": {
+        "name": "Wzorce",
+        "description": "Cykle, pętle i wzorce powtarzalne"
+      },
+      "inne": {
+        "name": "Inne",
+        "description": "Pozostałe analizy"
+      }
+    }
+  },
+  "programy": {
+    "title": "Programy Edukacyjne",
+    "description": "Nasze programy to nie zwykłe audycje radiowe – to strukturalne moduły edukacyjne prowadzone przez ekspertów. Każdy program oferuje unikalne perspektywy na manipulację psychiczną, toksyczne relacje i ścieżki wyjścia z przemocy.",
+    "whatYouLearn": "Czego się nauczysz",
+    "hosts": "Prowadzący",
+    "schedule": "Harmonogram",
+    "goToProgram": "Przejdź do programu",
+    "additionalInfo": {
+      "title": "Dlaczego \"programy\", a nie \"audycje\"?",
+      "description": "Traktujemy nasze programy jako strukturalne moduły edukacyjne, nie jako zwykłą ramówkę radiową. Każdy program to przemyślany kurs prowadzony przez specjalistów, z jasnym celem edukacyjnym i progresją tematów. To podejście podnosi wartość treści i lepiej komunikuje edukacyjny charakter platformy."
+    }
+  },
+  "footer": {
+    "helpline": {
+      "title": "Potrzebujesz pomocy?",
+      "niebiekskaLinia": "Niebieska Linia",
+      "telefonZaufania": "Telefon Zaufania",
+      "moreResources": "Więcej zasobów pomocy"
     }
   }
 }

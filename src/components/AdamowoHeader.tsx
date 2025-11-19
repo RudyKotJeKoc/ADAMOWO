@@ -8,6 +8,30 @@ import {
   SpeakerWaveIcon,
 } from '@heroicons/react/24/solid';
 
+/**
+ * Elegant header component featuring the Adamowo.com branding with an integrated audio player.
+ *
+ * Displays the site's main branding with animated glow effects and a fully functional
+ * music player with controls for play/pause, next/previous track, and volume adjustment.
+ * The player automatically shuffles and plays through a collection of music tracks.
+ *
+ * @component
+ * @returns {JSX.Element} A header with branding and audio player controls
+ *
+ * @example
+ * ```tsx
+ * <AdamowoHeader />
+ * ```
+ *
+ * Features:
+ * - Animated branding with gradient text and glow effects
+ * - Audio playback with play/pause, next/previous controls
+ * - Volume control slider
+ * - Automatic track progression and shuffling
+ * - Error handling for missing audio files
+ * - Accessible button labels and controls
+ * - Responsive design with mobile optimization
+ */
 export function AdamowoHeader(): JSX.Element {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
@@ -67,6 +91,12 @@ export function AdamowoHeader(): JSX.Element {
     };
   }, [currentTrack]);
 
+  /**
+   * Toggles audio playback between play and pause states.
+   *
+   * Handles asynchronous play operations and manages playback state.
+   * Includes error handling for playback failures.
+   */
   const togglePlay = useCallback(async () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -85,11 +115,23 @@ export function AdamowoHeader(): JSX.Element {
     }
   }, [isPlaying]);
 
+  /**
+   * Advances to the next track in the shuffled playlist.
+   *
+   * Uses modulo arithmetic to loop back to the first track when reaching
+   * the end of the playlist. Automatically sets playback to active.
+   */
   const playNext = useCallback(() => {
     setCurrentTrackIndex((prev) => (prev + 1) % shuffledTracks.length);
     setIsPlaying(true);
   }, [shuffledTracks.length]);
 
+  /**
+   * Returns to the previous track in the shuffled playlist.
+   *
+   * Uses modulo arithmetic to loop to the last track when at the beginning
+   * of the playlist. Automatically sets playback to active.
+   */
   const playPrevious = useCallback(() => {
     setCurrentTrackIndex((prev) => (prev - 1 + shuffledTracks.length) % shuffledTracks.length);
     setIsPlaying(true);
@@ -109,46 +151,57 @@ export function AdamowoHeader(): JSX.Element {
   }, [currentTrack, isPlaying]);
 
   return (
-    <div className="border-b border-accent-500/20 bg-gradient-to-r from-base-950 via-base-900 to-base-950">
+    <div className="border-b border-base-800/50 bg-base-950">
       <div className="container-responsive py-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          {/* Elegant Adamowo.com branding */}
+          {/* Radio Adamowo branding z lampką ON AIR */}
           <motion.div
-            className="flex items-center gap-3"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            className="flex items-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="relative">
+            {/* ON AIR lampka - delikatny puls */}
+            <div className="flex flex-col items-center gap-1">
               <motion.div
-                className="absolute -inset-2 rounded-full bg-gradient-to-r from-accent-500 to-accent-300 opacity-20 blur-xl"
+                className="h-3 w-3 rounded-full bg-danger-600 shadow-lg shadow-danger-500/50"
                 animate={{
-                  opacity: [0.2, 0.3, 0.2],
-                  scale: [1, 1.05, 1],
+                  opacity: [0.9, 1, 0.9],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 2,
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
               />
-              <h1 className="relative font-display text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-accent-300 via-accent-200 to-accent-300 md:text-5xl">
-                Adamowo.com
+              <span className="font-display text-[10px] font-medium uppercase tracking-wider text-danger-600">
+                ON AIR
+              </span>
+            </div>
+
+            {/* Logo */}
+            <div className="relative">
+              <h1 className="font-display text-3xl font-bold tracking-tight text-accent-400 md:text-4xl">
+                Radio Adamowo
               </h1>
+              <p className="font-mono text-xs text-base-400 uppercase tracking-widest mt-0.5">
+                Studio Śledcze
+              </p>
             </div>
           </motion.div>
 
-          {/* Audio player controls */}
+          {/* Audio player controls - prostsze, hardware'owe */}
           <motion.div
-            className="flex items-center gap-3 rounded-full border border-accent-500/30 bg-base-900/50 px-6 py-3 backdrop-blur-sm"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center gap-3 rounded border border-base-800 bg-base-900/80 px-6 py-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
+            {/* Przyciski - hardware'owy design, proste kształty */}
             <button
               type="button"
               onClick={playPrevious}
-              className="touch-target inline-flex h-10 w-10 items-center justify-center rounded-full text-accent-200 transition hover:bg-accent-500/20 hover:text-accent-100 focus-visible:ring-2 focus-visible:ring-accent-400"
+              className="touch-target inline-flex h-9 w-9 items-center justify-center rounded text-base-200 transition-colors duration-150 hover:bg-base-800 hover:text-accent-400 focus-visible:ring-2 focus-visible:ring-accent-400"
               aria-label="Previous track"
             >
               <BackwardIcon className="h-5 w-5" />
@@ -157,27 +210,28 @@ export function AdamowoHeader(): JSX.Element {
             <button
               type="button"
               onClick={togglePlay}
-              className="touch-target inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent-500 text-base-950 transition hover:bg-accent-400 focus-visible:ring-2 focus-visible:ring-accent-400"
+              className="touch-target inline-flex h-10 w-10 items-center justify-center rounded bg-accent-500/90 text-base-950 transition-colors duration-150 hover:bg-accent-500 focus-visible:ring-2 focus-visible:ring-accent-400"
               aria-label={isPlaying ? 'Pause' : 'Play'}
             >
               {isPlaying ? (
-                <PauseIcon className="h-6 w-6" />
+                <PauseIcon className="h-5 w-5" />
               ) : (
-                <PlayIcon className="ml-1 h-6 w-6" />
+                <PlayIcon className="ml-0.5 h-5 w-5" />
               )}
             </button>
 
             <button
               type="button"
               onClick={playNext}
-              className="touch-target inline-flex h-10 w-10 items-center justify-center rounded-full text-accent-200 transition hover:bg-accent-500/20 hover:text-accent-100 focus-visible:ring-2 focus-visible:ring-accent-400"
+              className="touch-target inline-flex h-9 w-9 items-center justify-center rounded text-base-200 transition-colors duration-150 hover:bg-base-800 hover:text-accent-400 focus-visible:ring-2 focus-visible:ring-accent-400"
               aria-label="Next track"
             >
               <ForwardIcon className="h-5 w-5" />
             </button>
 
-            <div className="ml-2 flex items-center gap-2">
-              <SpeakerWaveIcon className="h-5 w-5 text-accent-300" />
+            {/* Volume control */}
+            <div className="ml-2 flex items-center gap-2 border-l border-base-800 pl-3">
+              <SpeakerWaveIcon className="h-4 w-4 text-base-400" />
               <input
                 type="range"
                 min="0"
@@ -185,7 +239,7 @@ export function AdamowoHeader(): JSX.Element {
                 step="0.01"
                 value={volume}
                 onChange={(e) => setVolume(parseFloat(e.target.value))}
-                className="h-1 w-20 cursor-pointer appearance-none rounded-full bg-base-700 accent-accent-500"
+                className="h-1 w-20 cursor-pointer appearance-none rounded bg-base-800 accent-accent-500"
                 aria-label="Volume control"
               />
             </div>

@@ -4,10 +4,13 @@
   },
   "navigation": {
     "live": "Live",
+    "analizy": "Analyses",
+    "programy": "Programs",
     "violenceLoop": "Violence Loop",
     "studio": "Studio",
     "shows": "Shows",
     "guide": "Guide",
+    "polanaKlamstw": "Glade of Lies",
     "anatomy": "Anatomy",
     "lab": "Lab",
     "community": "Community",
@@ -40,10 +43,53 @@
       "en": "English"
     }
   },
+  "polanaKlamstw": {
+    "title": "Glade of Lies",
+    "subtitle": "A contemporary fairytale about how echo can be stronger than voice, and freedom more precious than wealth.",
+    "tableOfContents": "Table of Contents",
+    "prolog": "Prologue",
+    "chapter": "Chapter",
+    "epilog": "Epilogue",
+    "previousChapter": "Previous chapter",
+    "nextChapter": "Next chapter",
+    "backToContents": "Back to table of contents",
+    "continueReading": "Continue reading from the last chapter?",
+    "chaptersRead": "chapters read",
+    "totalReadingTime": "Total reading time",
+    "contentWarning": "Content Warning",
+    "contentWarningText": "This story addresses difficult family topics, including psychological manipulation, family conflicts, and the legal system's functioning. Content may be challenging for those who have experienced similar situations.",
+    "warningTopic1": "Psychological manipulation",
+    "warningTopic2": "Family conflict",
+    "warningTopic3": "Legal system difficulties",
+    "warningTopic4": "Emotional abuse",
+    "genre": "Genre",
+    "timespan": "Period",
+    "chapters": "Chapters",
+    "totalWords": "Words",
+    "themes": "Main themes"
+  },
   "pages": {
     "home": {
       "title": "Radio Adamowo",
-      "lead": "An educational web radio platform streaming 24/7, focused on analyzing psychological manipulation and toxic relationships. Our mission is to provide educational content that helps listeners recognize and understand patterns of psychological abuse. We offer live streaming, analytical podcasts, interactive tools, and community support in three languages."
+      "lead": "An educational web radio platform streaming 24/7, focused on analyzing psychological manipulation and toxic relationships. Our mission is to provide educational content that helps listeners recognize and understand patterns of psychological abuse. We offer live streaming, analytical podcasts, interactive tools, and community support in three languages.",
+      "tabs": {
+        "start": {
+          "label": "Start",
+          "quickAccess": "Quick Access"
+        },
+        "about": {
+          "label": "About the Project"
+        },
+        "content": {
+          "label": "Educational Content"
+        },
+        "tools": {
+          "label": "Tools"
+        },
+        "explore": {
+          "label": "Explore More"
+        }
+      }
     },
     "live": {
       "title": "Live Stream"
@@ -1767,7 +1813,8 @@
     "links": {
       "documentation": "Documentation",
       "privacy": "Privacy & cookies",
-      "methodology": "Methodology & sources"
+      "methodology": "Methodology & sources",
+      "support": "Support 🍕"
     },
     "backToTop": "Back to top",
     "rights": "© 2025 Radio Adamowo"
@@ -1892,5 +1939,16 @@
       "continue": "I understand, continue",
       "goBack": "Go back"
     }
+  },
+  "donation": {
+    "title": "Support the Wolf with Pizza",
+    "description": "Radio Adamowo is built with passion and countless hours of work. If our educational mission is valuable to you, you can support the wolf with a pizza – a small gesture that gives us energy to keep going.",
+    "feature1": "Support the development of the educational platform",
+    "feature2": "Help create valuable content",
+    "feature3": "Fuel our late-night coding sessions",
+    "feature4": "Become part of our mission",
+    "cta": "Buy the Wolf a Pizza",
+    "subtitle": "Every pizza brings us closer to a better world",
+    "thanks": "Thank you for every bit of support – it truly makes a difference! 🐺💙"
   }
 }

@@ -1,23 +1,26 @@
+/**
+ * Audio Player State Management
+ *
+ * Zustand store for managing basic audio player state including playback control,
+ * volume, track information, and player status.
+ */
+
 import { create } from 'zustand';
 
 /**
- * Player status states.
- *
- * - 'idle': Player is not active
- * - 'buffering': Player is loading audio data
- * - 'playing': Audio is currently playing
- * - 'error': Player encountered an error
+ * Represents the current status of the audio player.
+ * @typedef {'idle' | 'buffering' | 'playing' | 'error'} PlayerStatus
  */
 export type PlayerStatus = 'idle' | 'buffering' | 'playing' | 'error';
 
 /**
- * Represents the currently loaded track in the player.
- *
- * @property id - Unique identifier for the track
- * @property title - Track title
- * @property artist - Artist name
- * @property url - URL to the audio file
- * @property coverUrl - Optional URL to the cover image
+ * Represents the currently playing track.
+ * @interface CurrentTrack
+ * @property {string} id - Unique track identifier
+ * @property {string} title - Track title
+ * @property {string} artist - Artist name
+ * @property {string} url - URL to the audio file
+ * @property {string} [coverUrl] - Optional URL to the track's cover art
  */
 export interface CurrentTrack {
   id: string;
@@ -28,23 +31,22 @@ export interface CurrentTrack {
 }
 
 /**
- * Player state interface for the Zustand store.
- * Manages global audio player state including playback, volume, and current track.
- *
- * @property playing - Whether audio is currently playing
- * @property volume - Volume level (0.0 to 1.0)
- * @property muted - Whether audio is muted
- * @property playlistUrl - URL to the current playlist JSON
- * @property status - Current player status
- * @property error - Error message if status is 'error', null otherwise
- * @property currentTrack - Currently loaded track, null if none
- * @property setPlaying - Sets the playing state
- * @property setVolume - Sets the volume level (0.0 to 1.0)
- * @property setMuted - Sets the muted state
- * @property setStatus - Sets the player status
- * @property setError - Sets or clears the error message
- * @property setPlaylistUrl - Sets the playlist URL
- * @property setCurrentTrack - Sets the current track
+ * Audio player state and actions interface.
+ * @interface PlayerState
+ * @property {boolean} playing - Whether audio is currently playing
+ * @property {number} volume - Volume level (0 to 1)
+ * @property {boolean} muted - Whether audio is muted
+ * @property {string} playlistUrl - URL to the playlist JSON file
+ * @property {PlayerStatus} status - Current player status
+ * @property {string | null} error - Error message if status is 'error', null otherwise
+ * @property {CurrentTrack | null} currentTrack - Currently playing track, or null if none
+ * @property {function(boolean): void} setPlaying - Sets playing state
+ * @property {function(number): void} setVolume - Sets volume level (0 to 1)
+ * @property {function(boolean): void} setMuted - Sets muted state
+ * @property {function(PlayerStatus): void} setStatus - Sets player status
+ * @property {function(string | null): void} setError - Sets error message
+ * @property {function(string): void} setPlaylistUrl - Sets playlist URL
+ * @property {function(CurrentTrack | null): void} setCurrentTrack - Sets current track
  */
 export interface PlayerState {
   playing: boolean;
@@ -65,30 +67,24 @@ export interface PlayerState {
 
 /**
  * Default playlist URL pointing to local music folder.
- *
- * @internal
+ * @constant {string}
+ * @private
  */
 const DEFAULT_PLAYLIST_URL = '/music/playlist.json';
 
 /**
- * Zustand store for global audio player state.
- * Provides centralized state management for the audio player component.
- *
+ * Zustand store hook for audio player state management.
+ * Provides access to player state and actions for controlling playback.
+ * @hook
+ * @returns {PlayerState} Player state and actions
  * @example
- * ```typescript
- * // In a component:
- * const { playing, currentTrack, setPlaying } = usePlayerStore();
+ * const { playing, setPlaying, currentTrack, volume } = usePlayerStore();
  *
- * // Toggle playback
- * const handlePlayPause = () => {
- *   setPlaying(!playing);
- * };
+ * // Play/pause toggle
+ * const togglePlay = () => setPlaying(!playing);
  *
- * // Display current track
- * if (currentTrack) {
- *   console.log(`Now playing: ${currentTrack.title} by ${currentTrack.artist}`);
- * }
- * ```
+ * // Set volume to 50%
+ * setVolume(0.5);
  */
 export const usePlayerStore = create<PlayerState>((set) => ({
   playing: false,

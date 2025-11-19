@@ -9,14 +9,18 @@ const ViolenceLoop = lazy(() => import('./pages/ViolenceLoop'));
 const Studio = lazy(() => import('./pages/Studio'));
 const Shows = lazy(() => import('./pages/Shows'));
 const AnalysisPage = lazy(() => import('./features/analysis-archive/AnalysisPage'));
+const Analyses = lazy(() => import('./pages/Analyses'));
+const Programs = lazy(() => import('./pages/Programs'));
 const Guides = lazy(() => import('./pages/Guides'));
 const Lab = lazy(() => import('./pages/Lab'));
 const Community = lazy(() => import('./pages/Community'));
 const AnatomyPage = lazy(() => import('./pages/AnatomyPage'));
 const Help = lazy(() => import('./pages/Help'));
+const Support = lazy(() => import('./pages/Support'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const AIPolicy = lazy(() => import('./pages/AIPolicy'));
 const Methodology = lazy(() => import('./pages/Methodology'));
+const PolanaKlamstw = lazy(() => import('./pages/PolanaKlamstw'));
 
 export const router = createBrowserRouter([
   {
@@ -29,11 +33,16 @@ export const router = createBrowserRouter([
       { path: 'studio/:program?', element: <Studio /> },
       { path: 'shows', element: <Shows /> },
       { path: 'analysis', element: <AnalysisPage /> },
+      { path: 'analizy', element: <Analyses /> },
+      { path: 'programy', element: <Programs /> },
       { path: 'guides', element: <Guides /> },
+      { path: 'polana-klamstw/:chapterId?', element: <PolanaKlamstw /> },
       { path: 'lab', element: <Lab /> },
       { path: 'community', element: <Community /> },
       { path: 'anatomy', element: <AnatomyPage /> },
       { path: 'help', element: <Help /> },
+      { path: 'pomoc', element: <Help /> }, // Polish alias for /help
+      { path: 'support', element: <Support /> },
       { path: 'privacy', element: <Privacy /> },
       { path: 'ai-policy', element: <AIPolicy /> },
       { path: 'methodology', element: <Methodology /> },

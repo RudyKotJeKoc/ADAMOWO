@@ -9,6 +9,41 @@ import { EmergencyBanner } from './EmergencyBanner';
 import { AdamowoHeader } from './AdamowoHeader';
 import { usePageTracking } from '../hooks/usePageTracking';
 
+/**
+ * Main application layout shell component that wraps all pages.
+ *
+ * Provides the consistent layout structure for the entire application, including
+ * the emergency banner, Adamowo header with audio player, main navigation header,
+ * breadcrumb navigation, main content area, and footer. Also implements accessibility
+ * features like skip-to-content links and automatic page tracking.
+ *
+ * @component
+ * @returns {JSX.Element} The complete application shell with nested routing
+ *
+ * @example
+ * ```tsx
+ * <BrowserRouter>
+ *   <Routes>
+ *     <Route path="/" element={<AppShell />}>
+ *       <Route index element={<Home />} />
+ *       <Route path="live" element={<Live />} />
+ *     </Route>
+ *   </Routes>
+ * </BrowserRouter>
+ * ```
+ *
+ * Features:
+ * - Skip-to-content link for keyboard navigation accessibility
+ * - Emergency banner for important announcements
+ * - Adamowo branding header with integrated audio player
+ * - Main navigation header with menu and search
+ * - Breadcrumb navigation for context awareness
+ * - Main content area with React Router outlet
+ * - Application footer
+ * - Automatic page visit tracking via analytics
+ * - Responsive container layout
+ * - Semantic HTML structure with ARIA attributes
+ */
 export function AppShell(): JSX.Element {
   const { t } = useTranslation();
 

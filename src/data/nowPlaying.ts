@@ -4,10 +4,10 @@ import { getSupabaseClient } from '../lib/supabaseClient';
 import type { NowPlaying } from './types';
 
 /**
- * Internal database row type for now_playing table.
- * Supports both snake_case and camelCase property names for flexibility.
- *
- * @internal
+ * Raw database row structure from Supabase now_playing table.
+ * Supports both snake_case and camelCase field names for compatibility.
+ * @typedef {Object} NowPlayingRow
+ * @private
  */
 type NowPlayingRow = {
   title?: string | null;
@@ -21,8 +21,9 @@ type NowPlayingRow = {
 };
 
 /**
- * Fallback now playing data used when database is unavailable or returns no data.
- * Provides default Radio Adamowo branding.
+ * Default "Now Playing" data used when no active track is available
+ * or when Supabase is not configured.
+ * @constant {NowPlaying}
  */
 export const FALLBACK_NOW_PLAYING: NowPlaying = {
   title: 'Radio Adamowo',
@@ -34,14 +35,11 @@ export const FALLBACK_NOW_PLAYING: NowPlaying = {
 };
 
 /**
- * Maps a database row to a NowPlaying object.
- * Handles both snake_case and camelCase property names.
- * Trims whitespace from string fields and provides fallback values.
- *
- * @param row - Database row to map, can be null or undefined
- * @returns Mapped NowPlaying object with fallback values if row is empty
- *
- * @internal
+ * Maps a database row to the NowPlaying type with fallback values.
+ * Handles null/undefined fields and field name variations (snake_case vs camelCase).
+ * @param {NowPlayingRow} [row] - Raw database row
+ * @returns {NowPlaying} Mapped now playing data with fallbacks applied
+ * @private
  */
 function mapNowPlayingRow(row?: NowPlayingRow | null): NowPlaying {
   if (!row) {
@@ -59,12 +57,10 @@ function mapNowPlayingRow(row?: NowPlayingRow | null): NowPlaying {
 }
 
 /**
- * Loads mock now playing data from a JSON file.
- * Used when Supabase client is not available (e.g., in development or offline mode).
- *
- * @returns Promise resolving to mock NowPlaying data
- *
- * @internal
+ * Loads mock "now playing" data from JSON file.
+ * Used as fallback when Supabase is not available.
+ * @returns {Promise<NowPlaying>} Mock now playing data
+ * @private
  */
 async function loadMockNowPlaying(): Promise<NowPlaying> {
   const module = await import('../assets/data/nowPlaying.mock.json');
@@ -73,18 +69,11 @@ async function loadMockNowPlaying(): Promise<NowPlaying> {
 }
 
 /**
- * Fetches the currently playing track information.
- * Attempts to fetch from Supabase database, falls back to mock data if unavailable.
- * Returns the most recent now_playing record from the database.
- *
- * @returns Promise resolving to the current NowPlaying information
- * @throws Error if database query fails (when Supabase is available)
- *
- * @example
- * ```typescript
- * const nowPlaying = await getNowPlaying();
- * console.log(`Now playing: ${nowPlaying.title} by ${nowPlaying.artist}`);
- * ```
+ * Fetches the most recent "now playing" record from Supabase.
+ * Falls back to mock data if Supabase is not available.
+ * Returns the most recently started track based on started_at timestamp.
+ * @returns {Promise<NowPlaying>} Current now playing information
+ * @throws {Error} If Supabase query fails (when Supabase is available)
  */
 export async function getNowPlaying(): Promise<NowPlaying> {
   const client = getSupabaseClient();
@@ -108,9 +97,10 @@ export async function getNowPlaying(): Promise<NowPlaying> {
 }
 
 /**
- * Callback function type for now playing subscriptions.
- *
- * @param payload - Updated NowPlaying data
+ * Callback function type for now playing subscription updates.
+ * @callback SubscribeCallback
+ * @param {NowPlaying} payload - Updated now playing data
+ * @private
  */
 type SubscribeCallback = (payload: NowPlaying) => void;
 
@@ -122,22 +112,20 @@ type SubscribeCallback = (payload: NowPlaying) => void;
 type RealtimePayload = RealtimePostgresChangesPayload<NowPlayingRow>;
 
 /**
- * Subscribes to real-time updates of the now playing information.
- * Uses Supabase realtime channels to listen for database changes.
- * Returns a no-op unsubscribe function if Supabase client is unavailable.
+ * Sets up a real-time subscription to now_playing table changes via Supabase Realtime.
+ * Listens for INSERT, UPDATE, and DELETE events on the now_playing table.
+ * Returns a no-op unsubscribe function if Supabase is not available.
  *
- * @param callback - Function to call when now playing data changes
- * @returns Unsubscribe function to stop listening for updates
+ * @param {SubscribeCallback} callback - Function called when now playing data changes
+ * @returns {Function} Unsubscribe function to clean up the subscription
  *
  * @example
- * ```typescript
  * const unsubscribe = subscribeNowPlaying((nowPlaying) => {
- *   console.log(`Track changed: ${nowPlaying.title}`);
+ *   console.log('Now playing:', nowPlaying.title);
  * });
  *
- * // Later, to stop listening:
+ * // Later: clean up
  * unsubscribe();
- * ```
  */
 export function subscribeNowPlaying(callback: SubscribeCallback): () => void {
   const client = getSupabaseClient();

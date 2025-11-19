@@ -1,5 +1,15 @@
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Live streaming page component.
+ *
+ * Displays a placeholder for the planned 24/7 live streaming experience.
+ * This page will eventually feature real-time audio/video streaming content
+ * related to the ADAMOWO project.
+ *
+ * @component
+ * @returns {JSX.Element} The live streaming page
+ */
 export default function Live(): JSX.Element {
   const { t } = useTranslation();
 

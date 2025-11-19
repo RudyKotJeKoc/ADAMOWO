@@ -1,12 +1,12 @@
 /**
- * Represents a single music track in the playlist.
- *
- * @property id - Unique identifier for the track
- * @property title - Display title of the track
- * @property artist - Artist or creator name
- * @property url - Direct URL to the audio file
- * @property coverUrl - Optional URL to album art or cover image
- * @property duration - Optional track duration in seconds
+ * Represents an audio track with metadata.
+ * @interface Track
+ * @property {string} id - Unique track identifier
+ * @property {string} title - Track title
+ * @property {string} artist - Artist name
+ * @property {string} url - URL to the audio file
+ * @property {string} [coverUrl] - Optional URL to the cover image
+ * @property {number} [duration] - Optional track duration in seconds
  */
 export interface Track {
   id: string;
@@ -18,15 +18,13 @@ export interface Track {
 }
 
 /**
- * Configuration options for creating a local audio client.
- *
- * @property onReady - Callback fired when a track is ready to play
- * @property onError - Callback fired when an error occurs with error message
- * @property onTrackChange - Callback fired when the current track changes
- * @property onPlaylistLoaded - Callback fired when the playlist is successfully loaded
- * @property shuffle - Whether to shuffle the playlist on load (default: false)
- *
- * @internal
+ * Configuration options for the local audio client.
+ * @interface LocalAudioClientOptions
+ * @property {Function} [onReady] - Called when a track is ready to play
+ * @property {Function} [onError] - Called when an error occurs with error message
+ * @property {Function} [onTrackChange] - Called when the current track changes
+ * @property {Function} [onPlaylistLoaded] - Called when the playlist is successfully loaded
+ * @property {boolean} [shuffle] - Whether to shuffle the playlist on load (default: false)
  */
 interface LocalAudioClientOptions {
   onReady?: () => void;
@@ -37,15 +35,14 @@ interface LocalAudioClientOptions {
 }
 
 /**
- * Client API for controlling local audio playback.
- * Provides methods to manage playlist navigation, track information, and lifecycle.
- *
- * @property destroy - Cleanup method to remove event listeners and stop playback
- * @property retry - Retry loading the current track after an error
- * @property nextTrack - Skip to the next track in the playlist
- * @property previousTrack - Go back to the previous track in the playlist
- * @property getCurrentTrack - Get the currently playing track
- * @property getPlaylist - Get a copy of the full playlist
+ * Public API interface for controlling the local audio player.
+ * @interface LocalAudioClient
+ * @property {Function} destroy - Cleans up event listeners and stops playback
+ * @property {Function} retry - Retries loading the current track
+ * @property {Function} nextTrack - Advances to the next track in the playlist
+ * @property {Function} previousTrack - Goes back to the previous track
+ * @property {Function} getCurrentTrack - Returns the currently loaded track
+ * @property {Function} getPlaylist - Returns a copy of the current playlist array
  */
 export interface LocalAudioClient {
   destroy: () => void;
@@ -57,42 +54,32 @@ export interface LocalAudioClient {
 }
 
 /**
- * Creates a local audio client for managing playlist playback.
- * Automatically loads the playlist from the specified URL and manages track transitions.
- * The client handles audio events, error recovery, and playlist navigation.
+ * Creates a local audio client that manages playlist loading, track navigation,
+ * and event handling for an HTMLAudioElement.
  *
- * The factory function sets up event listeners for the HTMLAudioElement and returns
- * an API object with methods to control playback. The playlist is loaded asynchronously
- * and the first track is automatically loaded once ready.
+ * Features:
+ * - Automatic playlist loading from JSON
+ * - Track navigation (next, previous)
+ * - Optional shuffle mode
+ * - Automatic track advancement on track end
+ * - Error handling with specific error messages
+ * - Event callbacks for ready, error, track change, and playlist loaded
  *
- * @param audio - HTMLAudioElement instance to control
- * @param playlistUrl - URL to fetch the playlist JSON from (default: '/music/playlist.json')
- * @param options - Optional configuration for callbacks and shuffle behavior
- * @returns LocalAudioClient API object with control methods
+ * @param {HTMLAudioElement} audio - The HTML5 audio element to control
+ * @param {string} [playlistUrl='/music/playlist.json'] - URL to fetch the playlist JSON from
+ * @param {LocalAudioClientOptions} [options={}] - Configuration options with callbacks
+ * @returns {LocalAudioClient} Client instance with methods to control playback
  *
  * @example
- * ```typescript
- * const audioElement = document.getElementById('audio') as HTMLAudioElement;
- *
- * const client = createLocalAudioClient(audioElement, '/music/playlist.json', {
- *   onReady: () => console.log('Track ready to play'),
- *   onError: (msg) => console.error('Audio error:', msg),
+ * const audio = new Audio();
+ * const client = createLocalAudioClient(audio, '/music/playlist.json', {
+ *   onReady: () => console.log('Ready to play'),
  *   onTrackChange: (track) => console.log('Now playing:', track.title),
- *   onPlaylistLoaded: (tracks) => console.log('Loaded', tracks.length, 'tracks'),
  *   shuffle: true
  * });
  *
- * // Navigate playlist
- * client.nextTrack();
- * client.previousTrack();
- *
- * // Get current state
- * const current = client.getCurrentTrack();
- * const playlist = client.getPlaylist();
- *
- * // Cleanup when done
+ * // Later: clean up
  * client.destroy();
- * ```
  */
 export function createLocalAudioClient(
   audio: HTMLAudioElement,

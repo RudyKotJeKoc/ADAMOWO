@@ -23,30 +23,21 @@ import type {
 // ============================================================================
 
 /**
- * Audio engine store interface extending the base state with configuration and actions.
- * Manages the complete lifecycle of audio playback including transitions and error handling.
- *
- * @property status - Current playback status ('idle' | 'loading' | 'playing' | 'paused' | 'error')
- * @property currentTrack - Currently playing track, null if none
- * @property nextTrack - Next track queued for playback, null if none
- * @property currentTime - Current playback position in seconds
- * @property duration - Total track duration in seconds
- * @property volume - Volume level (0.0 to 1.0)
- * @property muted - Whether audio is muted
- * @property error - Error message if status is 'error', null otherwise
- * @property isTransitioning - Whether a crossfade transition is in progress
- * @property config - Audio engine configuration settings
- * @property setStatus - Sets the playback status
- * @property setCurrentTrack - Sets the currently playing track
- * @property setNextTrack - Sets the next track in queue
- * @property setCurrentTime - Updates the current playback position
- * @property setDuration - Sets the total track duration
- * @property setVolume - Sets the volume level (0.0 to 1.0)
- * @property setMuted - Sets the muted state
- * @property setError - Sets or clears the error message
- * @property setTransitioning - Sets the transition state
- * @property updateConfig - Partially updates the configuration
- * @property reset - Resets the store to default state
+ * Extended audio engine store interface combining state and actions.
+ * @interface AudioEngineStore
+ * @extends AudioEngineState
+ * @property {AudioEngineConfig} config - Audio engine configuration settings
+ * @property {function(AudioEngineState['status']): void} setStatus - Updates player status
+ * @property {function(AudioTrack | null): void} setCurrentTrack - Sets the currently playing track
+ * @property {function(AudioTrack | null): void} setNextTrack - Sets the next track to be played
+ * @property {function(number): void} setCurrentTime - Updates current playback time in seconds
+ * @property {function(number): void} setDuration - Sets total track duration in seconds
+ * @property {function(number): void} setVolume - Sets volume level (0 to 1)
+ * @property {function(boolean): void} setMuted - Sets muted state
+ * @property {function(string | null): void} setError - Sets error message or clears it
+ * @property {function(boolean): void} setTransitioning - Sets transition state during crossfade
+ * @property {function(Partial<AudioEngineConfig>): void} updateConfig - Partially updates configuration
+ * @property {function(): void} reset - Resets state to default values
  */
 interface AudioEngineStore extends AudioEngineState {
   config: AudioEngineConfig;
@@ -65,10 +56,9 @@ interface AudioEngineStore extends AudioEngineState {
 }
 
 /**
- * Default audio engine state.
- * Initializes the audio engine in idle state with no tracks loaded.
- *
- * @internal
+ * Default initial state for the audio engine.
+ * @constant {AudioEngineState}
+ * @private
  */
 const defaultAudioEngineState: AudioEngineState = {
   status: 'idle',
@@ -83,10 +73,9 @@ const defaultAudioEngineState: AudioEngineState = {
 };
 
 /**
- * Default audio engine configuration.
- * Configures crossfade duration, track preloading, caching, and visualization.
- *
- * @internal
+ * Default configuration for the audio engine.
+ * @constant {AudioEngineConfig}
+ * @private
  */
 const defaultAudioEngineConfig: AudioEngineConfig = {
   crossfadeDuration: 3000, // 3 seconds
@@ -98,29 +87,19 @@ const defaultAudioEngineConfig: AudioEngineConfig = {
 };
 
 /**
- * Zustand store for audio engine state management.
- * Provides centralized control over audio playback with persistence for user preferences.
- * Volume, mute state, and configuration are persisted to localStorage.
- *
+ * Zustand store hook for audio engine state management.
+ * Manages playback state, track information, volume, and audio configuration.
+ * Persists volume, muted state, and config to localStorage.
+ * @hook
+ * @returns {AudioEngineStore} Audio engine state and actions
  * @example
- * ```typescript
- * // In a component:
- * const { currentTrack, status, setCurrentTrack, setStatus } = useAudioEngineStore();
- *
- * // Start playing a track
- * const playTrack = (track: AudioTrack) => {
- *   setCurrentTrack(track);
- *   setStatus('playing');
- * };
+ * const { status, currentTrack, setVolume, updateConfig } = useAudioEngineStore();
  *
  * // Update volume
- * const { setVolume, volume } = useAudioEngineStore();
- * setVolume(0.5); // Set to 50%
+ * setVolume(0.5);
  *
- * // Configure crossfade
- * const { updateConfig } = useAudioEngineStore();
- * updateConfig({ crossfadeDuration: 5000 }); // 5 second crossfade
- * ```
+ * // Enable crossfade
+ * updateConfig({ crossfadeDuration: 5000 });
  */
 export const useAudioEngineStore = create<AudioEngineStore>()(
   persist(
@@ -159,14 +138,13 @@ export const useAudioEngineStore = create<AudioEngineStore>()(
 // ============================================================================
 
 /**
- * Visualizer store interface for managing audio visualization settings and state.
- * Controls the visual representation of audio frequency data.
- *
- * @property config - Visualizer configuration including mode, FFT settings, and colors
- * @property isActive - Whether the visualizer is currently active
- * @property setMode - Sets the visualization mode
- * @property setActive - Enables or disables the visualizer
- * @property updateConfig - Partially updates the configuration
+ * Audio visualizer store interface for managing visualization state and configuration.
+ * @interface VisualizerStore
+ * @property {VisualizerConfig} config - Visualizer configuration settings
+ * @property {boolean} isActive - Whether the visualizer is currently active
+ * @property {function(VisualizerMode): void} setMode - Sets visualization mode
+ * @property {function(boolean): void} setActive - Activates or deactivates the visualizer
+ * @property {function(Partial<VisualizerConfig>): void} updateConfig - Partially updates configuration
  */
 interface VisualizerStore {
   config: VisualizerConfig;
@@ -178,10 +156,9 @@ interface VisualizerStore {
 }
 
 /**
- * Default visualizer configuration.
- * Sets up 2D bar visualization with amber color scheme matching the brand.
- *
- * @internal
+ * Default configuration for the audio visualizer.
+ * @constant {VisualizerConfig}
+ * @private
  */
 const defaultVisualizerConfig: VisualizerConfig = {
   mode: '2d-bars',
@@ -200,28 +177,27 @@ const defaultVisualizerConfig: VisualizerConfig = {
 };
 
 /**
- * Zustand store for audio visualizer settings.
- * Manages visualization mode, activity state, and configuration with localStorage persistence.
- *
+ * Zustand store hook for audio visualizer state management.
+ * Manages visualizer mode, configuration, and active state.
+ * Persists all settings to localStorage.
+ * @hook
+ * @returns {VisualizerStore} Visualizer state and actions
  * @example
- * ```typescript
- * // In a component:
  * const { config, isActive, setMode, updateConfig } = useVisualizerStore();
  *
  * // Change visualization mode
- * setMode('3d-waveform');
+ * setMode('3d-spectrum');
  *
- * // Update FFT size for more detail
- * updateConfig({ fftSize: 512 });
- *
- * // Customize colors
+ * // Update color scheme
  * updateConfig({
  *   colorScheme: {
- *     ...config.colorScheme,
- *     primary: '#00ff00'
+ *     primary: '#3b82f6',
+ *     secondary: '#2563eb',
+ *     accent: '#60a5fa',
+ *     background: '#1e293b',
+ *     gradient: ['#3b82f6', '#2563eb', '#1d4ed8']
  *   }
  * });
- * ```
  */
 export const useVisualizerStore = create<VisualizerStore>()(
   persist(
@@ -250,20 +226,19 @@ export const useVisualizerStore = create<VisualizerStore>()(
 // ============================================================================
 
 /**
- * Playlist queue store interface for managing track playback order and history.
- * Handles queue navigation, shuffle, repeat modes, and playback history.
- *
- * @property queue - Complete queue state including tracks, index, and playback modes
- * @property setQueue - Replaces the entire queue with new tracks
- * @property addToQueue - Appends a track to the end of the queue
- * @property removeFromQueue - Removes a track by ID from the queue
- * @property clearQueue - Removes all tracks from the queue
- * @property next - Advances to the next track respecting repeat settings
- * @property previous - Goes back to the previous track respecting repeat settings
- * @property jumpTo - Jumps to a specific track index in the queue
- * @property toggleShuffle - Toggles shuffle mode on/off
- * @property setRepeat - Sets the repeat mode ('none' | 'one' | 'all')
- * @property addToHistory - Adds a track to playback history (max 50 tracks)
+ * Playlist queue store interface for managing playback queue and navigation.
+ * @interface PlaylistQueueStore
+ * @property {PlaylistQueue} queue - Current playlist queue state
+ * @property {function(AudioTrack[]): void} setQueue - Replaces entire queue with new tracks
+ * @property {function(AudioTrack): void} addToQueue - Adds a track to the end of the queue
+ * @property {function(string): void} removeFromQueue - Removes a track by ID from the queue
+ * @property {function(): void} clearQueue - Clears all tracks from the queue
+ * @property {function(): void} next - Advances to the next track in the queue
+ * @property {function(): void} previous - Goes back to the previous track in the queue
+ * @property {function(number): void} jumpTo - Jumps to a specific track index in the queue
+ * @property {function(): void} toggleShuffle - Toggles shuffle mode on/off
+ * @property {function(PlaylistQueue['repeat']): void} setRepeat - Sets repeat mode (none, one, all)
+ * @property {function(AudioTrack): void} addToHistory - Adds a track to playback history
  */
 interface PlaylistQueueStore {
   queue: PlaylistQueue;
@@ -281,10 +256,9 @@ interface PlaylistQueueStore {
 }
 
 /**
- * Default playlist queue state.
- * Initializes an empty queue with no shuffle or repeat.
- *
- * @internal
+ * Default initial state for the playlist queue.
+ * @constant {PlaylistQueue}
+ * @private
  */
 const defaultQueue: PlaylistQueue = {
   currentIndex: 0,
@@ -295,32 +269,27 @@ const defaultQueue: PlaylistQueue = {
 };
 
 /**
- * Zustand store for playlist queue management.
- * Handles track ordering, navigation, shuffle, repeat modes, and playback history
- * with localStorage persistence.
- *
+ * Zustand store hook for playlist queue management.
+ * Manages the playback queue, navigation, shuffle, repeat, and playback history.
+ * Persists entire queue state to localStorage.
+ * @hook
+ * @returns {PlaylistQueueStore} Playlist queue state and actions
  * @example
- * ```typescript
- * // In a component:
- * const { queue, setQueue, next, toggleShuffle } = usePlaylistQueueStore();
+ * const { queue, next, previous, addToQueue, setRepeat } = usePlaylistQueueStore();
  *
- * // Load a playlist
- * const tracks: AudioTrack[] = [...];
- * setQueue(tracks);
+ * // Add a track to the queue
+ * addToQueue({
+ *   id: '123',
+ *   title: 'My Song',
+ *   artist: 'Artist Name',
+ *   url: '/music/song.mp3'
+ * });
  *
- * // Navigate playback
- * next(); // Move to next track
+ * // Navigate to next track
+ * next();
  *
- * // Enable shuffle and repeat
- * toggleShuffle();
+ * // Enable repeat all
  * setRepeat('all');
- *
- * // Jump to specific track
- * jumpTo(5); // Play track at index 5
- *
- * // Check current track
- * const currentTrack = queue.tracks[queue.currentIndex];
- * ```
  */
 export const usePlaylistQueueStore = create<PlaylistQueueStore>()(
   persist(
@@ -436,21 +405,17 @@ export const usePlaylistQueueStore = create<PlaylistQueueStore>()(
 // ============================================================================
 
 /**
- * Slideshow store interface for managing image/content slideshow state and playback.
- * Controls slideshow navigation, auto-play, transitions, and configuration.
- *
- * @property currentIndex - Index of the currently displayed slide
- * @property items - Array of slideshow items (images, content, etc.)
- * @property isPlaying - Whether the slideshow is auto-playing
- * @property isTransitioning - Whether a slide transition is in progress
- * @property config - Slideshow configuration including timing and transition effects
- * @property setItems - Replaces all slideshow items and resets to first slide
- * @property setCurrentIndex - Jumps to a specific slide index
- * @property setPlaying - Starts or stops auto-play
- * @property setTransitioning - Sets the transition state
- * @property next - Advances to the next slide respecting loop settings
- * @property previous - Goes back to the previous slide respecting loop settings
- * @property updateConfig - Partially updates the configuration
+ * Slideshow store interface for managing image slideshow state and configuration.
+ * @interface SlideshowStore
+ * @extends SlideshowState
+ * @property {SlideshowConfig} config - Slideshow configuration settings
+ * @property {function(SlideshowState['items']): void} setItems - Sets slideshow items
+ * @property {function(number): void} setCurrentIndex - Sets current slide index
+ * @property {function(boolean): void} setPlaying - Sets playing state
+ * @property {function(boolean): void} setTransitioning - Sets transition state
+ * @property {function(): void} next - Advances to next slide
+ * @property {function(): void} previous - Goes back to previous slide
+ * @property {function(Partial<SlideshowConfig>): void} updateConfig - Partially updates configuration
  */
 interface SlideshowStore extends SlideshowState {
   config: SlideshowConfig;
@@ -465,10 +430,9 @@ interface SlideshowStore extends SlideshowState {
 }
 
 /**
- * Default slideshow state.
- * Initializes an empty slideshow that is not playing.
- *
- * @internal
+ * Default initial state for the slideshow.
+ * @constant {SlideshowState}
+ * @private
  */
 const defaultSlideshowState: SlideshowState = {
   currentIndex: 0,
@@ -478,10 +442,9 @@ const defaultSlideshowState: SlideshowState = {
 };
 
 /**
- * Default slideshow configuration.
- * Sets up auto-play with 5-second intervals and fade transitions.
- *
- * @internal
+ * Default configuration for the slideshow.
+ * @constant {SlideshowConfig}
+ * @private
  */
 const defaultSlideshowConfig: SlideshowConfig = {
   autoPlay: true,
@@ -495,31 +458,25 @@ const defaultSlideshowConfig: SlideshowConfig = {
 };
 
 /**
- * Zustand store for slideshow state management.
- * Manages slideshow playback, navigation, and configuration with localStorage persistence
- * for user preferences.
- *
+ * Zustand store hook for slideshow management.
+ * Manages slideshow items, navigation, transitions, and configuration.
+ * Persists only config to localStorage.
+ * @hook
+ * @returns {SlideshowStore} Slideshow state and actions
  * @example
- * ```typescript
- * // In a component:
- * const { items, currentIndex, setItems, next, setPlaying } = useSlideshowStore();
+ * const { items, currentIndex, next, setPlaying, updateConfig } = useSlideshowStore();
  *
- * // Load slideshow items
- * const slides = [
- *   { id: '1', url: '/images/slide1.jpg', caption: 'First slide' },
- *   { id: '2', url: '/images/slide2.jpg', caption: 'Second slide' }
- * ];
- * setItems(slides);
+ * // Set slideshow items
+ * setItems([
+ *   { id: '1', url: '/images/slide1.jpg', alt: 'First slide' },
+ *   { id: '2', url: '/images/slide2.jpg', alt: 'Second slide' }
+ * ]);
  *
- * // Start auto-play
- * setPlaying(true);
- *
- * // Navigate manually
+ * // Navigate to next slide
  * next();
  *
  * // Configure slideshow
  * updateConfig({ interval: 3000, transition: 'slide' });
- * ```
  */
 export const useSlideshowStore = create<SlideshowStore>()(
   persist(
@@ -591,15 +548,14 @@ export const useSlideshowStore = create<SlideshowStore>()(
 // ============================================================================
 
 /**
- * Rating store interface for managing user track ratings and comments.
- * Stores ratings locally with sync status for future backend integration.
- *
- * @property ratings - Record mapping track IDs to their ratings
- * @property setRating - Sets or updates a rating for a track (1-5 stars)
- * @property removeRating - Removes a rating for a track
- * @property getRating - Retrieves the rating for a specific track
- * @property getAllRatings - Retrieves all ratings as an array
- * @property clearRatings - Removes all ratings
+ * Track rating store interface for managing user ratings and feedback.
+ * @interface RatingStore
+ * @property {Record<string, TrackRating>} ratings - Map of track IDs to rating objects
+ * @property {function(string, number, string?): void} setRating - Sets or updates a track rating
+ * @property {function(string): void} removeRating - Removes a rating for a track
+ * @property {function(string): TrackRating | undefined} getRating - Gets rating for a specific track
+ * @property {function(): TrackRating[]} getAllRatings - Gets all ratings as an array
+ * @property {function(): void} clearRatings - Clears all ratings
  */
 interface RatingStore {
   ratings: Record<string, TrackRating>; // trackId -> rating
@@ -612,31 +568,23 @@ interface RatingStore {
 }
 
 /**
- * Zustand store for track rating management.
- * Stores user ratings (1-5 stars) and optional comments with localStorage persistence.
- * Ratings are clamped to 1-5 range and include sync status for future backend integration.
- *
+ * Zustand store hook for track rating management.
+ * Manages user ratings and comments for tracks with persistence.
+ * Ratings are clamped to 1-5 range.
+ * Persists all ratings to localStorage.
+ * @hook
+ * @returns {RatingStore} Rating state and actions
  * @example
- * ```typescript
- * // In a component:
- * const { setRating, getRating, getAllRatings } = useRatingStore();
+ * const { ratings, setRating, getRating, removeRating } = useRatingStore();
  *
  * // Rate a track
- * setRating('track-123', 5, 'Amazing track!');
+ * setRating('track-123', 5, 'Amazing song!');
  *
- * // Get a specific rating
- * const rating = getRating('track-123');
- * if (rating) {
- *   console.log(`Rating: ${rating.rating}/5 - ${rating.comment}`);
- * }
- *
- * // Get all ratings
- * const allRatings = getAllRatings();
- * const averageRating = allRatings.reduce((sum, r) => sum + r.rating, 0) / allRatings.length;
+ * // Get a rating
+ * const trackRating = getRating('track-123');
  *
  * // Remove a rating
  * removeRating('track-123');
- * ```
  */
 export const useRatingStore = create<RatingStore>()(
   persist(
@@ -679,44 +627,43 @@ export const useRatingStore = create<RatingStore>()(
 // SELECTORS (Performance optimization)
 // ============================================================================
 
+// Audio Engine Selectors
+
 /**
- * Selects the currently playing track from the audio engine store.
- *
- * @param state - Audio engine store state
- * @returns Currently playing track, or null if none
+ * Selects the currently playing track from audio engine state.
+ * @param {AudioEngineStore} state - Audio engine store state
+ * @returns {AudioTrack | null} Current track or null
  */
 export const selectCurrentTrack = (state: AudioEngineStore) => state.currentTrack;
 
 /**
- * Selects whether audio is currently playing.
- *
- * @param state - Audio engine store state
- * @returns true if status is 'playing', false otherwise
+ * Determines if audio is currently playing.
+ * @param {AudioEngineStore} state - Audio engine store state
+ * @returns {boolean} True if status is 'playing'
  */
 export const selectIsPlaying = (state: AudioEngineStore) => state.status === 'playing';
 
 /**
  * Selects the current volume level.
- *
- * @param state - Audio engine store state
- * @returns Volume level (0.0 to 1.0)
+ * @param {AudioEngineStore} state - Audio engine store state
+ * @returns {number} Volume level (0 to 1)
  */
 export const selectVolume = (state: AudioEngineStore) => state.volume;
 
 /**
- * Selects the playback progress as a percentage.
- *
- * @param state - Audio engine store state
- * @returns Progress percentage (0-100), or 0 if duration is unknown
+ * Calculates playback progress as a percentage.
+ * @param {AudioEngineStore} state - Audio engine store state
+ * @returns {number} Progress percentage (0 to 100)
  */
 export const selectProgress = (state: AudioEngineStore) =>
   state.duration > 0 ? (state.currentTime / state.duration) * 100 : 0;
 
+// Queue Selectors
+
 /**
  * Selects the current track from the playlist queue.
- *
- * @param state - Playlist queue store state
- * @returns Current track from queue, or null if queue is empty
+ * @param {PlaylistQueueStore} state - Playlist queue store state
+ * @returns {AudioTrack | null} Current queue track or null
  */
 export const selectCurrentQueueTrack = (state: PlaylistQueueStore) => {
   const { queue } = state;
@@ -724,19 +671,16 @@ export const selectCurrentQueueTrack = (state: PlaylistQueueStore) => {
 };
 
 /**
- * Selects the total number of tracks in the queue.
- *
- * @param state - Playlist queue store state
- * @returns Number of tracks in queue
+ * Gets the total number of tracks in the queue.
+ * @param {PlaylistQueueStore} state - Playlist queue store state
+ * @returns {number} Number of tracks in queue
  */
 export const selectQueueLength = (state: PlaylistQueueStore) => state.queue.tracks.length;
 
 /**
- * Selects whether there is a next track available.
- * Considers repeat mode when determining availability.
- *
- * @param state - Playlist queue store state
- * @returns true if next track is available (including when repeat is 'all')
+ * Determines if there is a next track available in the queue.
+ * @param {PlaylistQueueStore} state - Playlist queue store state
+ * @returns {boolean} True if next track is available
  */
 export const selectHasNext = (state: PlaylistQueueStore) => {
   const { currentIndex, tracks, repeat } = state.queue;
@@ -744,30 +688,28 @@ export const selectHasNext = (state: PlaylistQueueStore) => {
 };
 
 /**
- * Selects whether there is a previous track available.
- * Considers repeat mode when determining availability.
- *
- * @param state - Playlist queue store state
- * @returns true if previous track is available (including when repeat is 'all')
+ * Determines if there is a previous track available in the queue.
+ * @param {PlaylistQueueStore} state - Playlist queue store state
+ * @returns {boolean} True if previous track is available
  */
 export const selectHasPrevious = (state: PlaylistQueueStore) => {
   const { currentIndex, repeat } = state.queue;
   return currentIndex > 0 || repeat === 'all';
 };
 
+// Slideshow Selectors
+
 /**
  * Selects the current slide from the slideshow.
- *
- * @param state - Slideshow store state
- * @returns Current slide item, or null if slideshow is empty
+ * @param {SlideshowStore} state - Slideshow store state
+ * @returns {SlideshowItem | null} Current slide or null
  */
 export const selectCurrentSlide = (state: SlideshowStore) => state.items[state.currentIndex] || null;
 
 /**
- * Selects the slideshow progress as a percentage.
- *
- * @param state - Slideshow store state
- * @returns Progress percentage (0-100), or 0 if slideshow is empty
+ * Calculates slideshow progress as a percentage.
+ * @param {SlideshowStore} state - Slideshow store state
+ * @returns {number} Progress percentage (0 to 100)
  */
 export const selectSlideshowProgress = (state: SlideshowStore) =>
   state.items.length > 0 ? ((state.currentIndex + 1) / state.items.length) * 100 : 0;

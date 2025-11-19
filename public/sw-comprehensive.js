@@ -549,6 +549,144 @@ async function precacheTracks(tracks) {
 }
 
 // ============================================================================
+// INDEXEDDB FOR RATINGS
+// ============================================================================
+
+const RATINGS_DB_NAME = 'adamowo-ratings';
+const RATINGS_DB_VERSION = 1;
+const RATINGS_STORE_NAME = 'pending-ratings';
+
+/**
+ * Open or create IndexedDB for ratings
+ */
+function openRatingsDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(RATINGS_DB_NAME, RATINGS_DB_VERSION);
+
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result;
+
+      // Create object store if it doesn't exist
+      if (!db.objectStoreNames.contains(RATINGS_STORE_NAME)) {
+        const store = db.createObjectStore(RATINGS_STORE_NAME, {
+          keyPath: 'id',
+          autoIncrement: true
+        });
+
+        // Create indexes
+        store.createIndex('trackId', 'trackId', { unique: false });
+        store.createIndex('synced', 'synced', { unique: false });
+        store.createIndex('timestamp', 'timestamp', { unique: false });
+
+        console.log('[SW] Created ratings object store');
+      }
+    };
+  });
+}
+
+/**
+ * Get all pending (unsynced) ratings from IndexedDB
+ */
+async function getPendingRatings() {
+  try {
+    const db = await openRatingsDB();
+
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction([RATINGS_STORE_NAME], 'readonly');
+      const store = transaction.objectStore(RATINGS_STORE_NAME);
+      const index = store.index('synced');
+      const request = index.getAll(false); // Get all where synced = false
+
+      request.onsuccess = () => resolve(request.result || []);
+      request.onerror = () => reject(request.error);
+
+      transaction.oncomplete = () => db.close();
+    });
+  } catch (error) {
+    console.error('[SW] Error getting pending ratings:', error);
+    return [];
+  }
+}
+
+/**
+ * Mark rating as synced in IndexedDB
+ */
+async function markRatingAsSynced(ratingId) {
+  try {
+    const db = await openRatingsDB();
+
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction([RATINGS_STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(RATINGS_STORE_NAME);
+      const getRequest = store.get(ratingId);
+
+      getRequest.onsuccess = () => {
+        const rating = getRequest.result;
+        if (rating) {
+          rating.synced = true;
+          rating.syncedAt = Date.now();
+          const updateRequest = store.put(rating);
+
+          updateRequest.onsuccess = () => resolve(true);
+          updateRequest.onerror = () => reject(updateRequest.error);
+        } else {
+          resolve(false);
+        }
+      };
+
+      getRequest.onerror = () => reject(getRequest.error);
+      transaction.oncomplete = () => db.close();
+    });
+  } catch (error) {
+    console.error('[SW] Error marking rating as synced:', error);
+    return false;
+  }
+}
+
+/**
+ * Delete synced ratings older than specified days
+ */
+async function cleanupSyncedRatings(daysToKeep = 30) {
+  try {
+    const db = await openRatingsDB();
+    const cutoffTime = Date.now() - (daysToKeep * 24 * 60 * 60 * 1000);
+
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction([RATINGS_STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(RATINGS_STORE_NAME);
+      const index = store.index('synced');
+      const request = index.openCursor(IDBKeyRange.only(true));
+
+      let deletedCount = 0;
+
+      request.onsuccess = (event) => {
+        const cursor = event.target.result;
+        if (cursor) {
+          const rating = cursor.value;
+          if (rating.syncedAt && rating.syncedAt < cutoffTime) {
+            cursor.delete();
+            deletedCount++;
+          }
+          cursor.continue();
+        } else {
+          console.log(`[SW] Cleaned up ${deletedCount} old synced ratings`);
+          resolve(deletedCount);
+        }
+      };
+
+      request.onerror = () => reject(request.error);
+      transaction.oncomplete = () => db.close();
+    });
+  } catch (error) {
+    console.error('[SW] Error cleaning up synced ratings:', error);
+    return 0;
+  }
+}
+
+// ============================================================================
 // BACKGROUND SYNC (if supported)
 // ============================================================================
 
@@ -562,9 +700,98 @@ if ('sync' in self.registration) {
   });
 }
 
+/**
+ * Synchronize pending ratings with backend
+ * Implements retry logic with exponential backoff
+ */
 async function syncRatings() {
-  // TODO: Implement rating synchronization with backend
-  console.log('[SW] Syncing ratings...');
+  console.log('[SW] Starting ratings synchronization...');
+
+  try {
+    // Get all pending ratings from IndexedDB
+    const pendingRatings = await getPendingRatings();
+
+    if (pendingRatings.length === 0) {
+      console.log('[SW] No pending ratings to sync');
+      return;
+    }
+
+    console.log(`[SW] Found ${pendingRatings.length} pending ratings to sync`);
+
+    // Prepare payload for API
+    const payload = {
+      ratings: pendingRatings.map((rating) => ({
+        trackId: rating.trackId,
+        rating: rating.rating,
+        timestamp: rating.timestamp,
+        userId: rating.userId || null,
+        sessionId: rating.sessionId || null,
+      })),
+    };
+
+    // Attempt to sync with retry logic
+    const maxRetries = 3;
+    let lastError = null;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        console.log(`[SW] Sync attempt ${attempt + 1}/${maxRetries + 1}`);
+
+        // Send to API endpoint
+        const response = await fetch('/api/v1/ratings/sync', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error(`API responded with status ${response.status}: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log('[SW] Ratings synced successfully:', result);
+
+        // Mark all ratings as synced
+        const syncPromises = pendingRatings.map((rating) =>
+          markRatingAsSynced(rating.id)
+        );
+        await Promise.all(syncPromises);
+
+        console.log('[SW] Marked all ratings as synced');
+
+        // Cleanup old synced ratings
+        await cleanupSyncedRatings(30);
+
+        // Success - exit retry loop
+        return;
+
+      } catch (error) {
+        lastError = error;
+        console.error(`[SW] Sync attempt ${attempt + 1} failed:`, error);
+
+        // If this is not the last attempt, wait before retrying
+        if (attempt < maxRetries) {
+          // Exponential backoff: 2s, 4s, 8s
+          const backoffDelay = Math.pow(2, attempt + 1) * 1000;
+          console.log(`[SW] Retrying in ${backoffDelay}ms...`);
+
+          await new Promise((resolve) => setTimeout(resolve, backoffDelay));
+        }
+      }
+    }
+
+    // All retries failed
+    throw new Error(`Failed to sync ratings after ${maxRetries + 1} attempts: ${lastError.message}`);
+
+  } catch (error) {
+    console.error('[SW] Rating synchronization failed:', error);
+
+    // Re-throw to signal Background Sync API that sync failed
+    // This will cause the browser to retry later automatically
+    throw error;
+  }
 }
 
 // ============================================================================

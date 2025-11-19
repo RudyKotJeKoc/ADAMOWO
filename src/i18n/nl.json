@@ -4,13 +4,17 @@
   },
   "navigation": {
     "live": "Live",
+    "analizy": "Analyses",
+    "programy": "Programma's",
     "violenceLoop": "Geweldscyclus",
     "studio": "Studio",
     "shows": "Programma's",
     "guide": "Gids",
+    "polanaKlamstw": "Weide van Leugens",
     "anatomy": "Anatomie",
     "lab": "Lab",
-    "community": "Gemeenschap"
+    "community": "Gemeenschap",
+    "help": "Hulp"
   },
   "header": {
     "skipToContent": "Ga naar de hoofdinhoud",
@@ -39,10 +43,53 @@
       "en": "Engels"
     }
   },
+  "polanaKlamstw": {
+    "title": "Weide van Leugens",
+    "subtitle": "Een hedendaagse sprookje over hoe echo sterker kan zijn dan stem, en vrijheid kostbaarder dan rijkdom.",
+    "tableOfContents": "Inhoudsopgave",
+    "prolog": "Proloog",
+    "chapter": "Hoofdstuk",
+    "epilog": "Epiloog",
+    "previousChapter": "Vorig hoofdstuk",
+    "nextChapter": "Volgend hoofdstuk",
+    "backToContents": "Terug naar inhoudsopgave",
+    "continueReading": "Doorgaan met lezen vanaf het laatste hoofdstuk?",
+    "chaptersRead": "hoofdstukken gelezen",
+    "totalReadingTime": "Totale leestijd",
+    "contentWarning": "Inhoudswaarschuwing",
+    "contentWarningText": "Dit verhaal behandelt moeilijke familiale onderwerpen, waaronder psychologische manipulatie, familieconflicten en het functioneren van het rechtssysteem. De inhoud kan uitdagend zijn voor degenen die vergelijkbare situaties hebben meegemaakt.",
+    "warningTopic1": "Psychologische manipulatie",
+    "warningTopic2": "Familieconflict",
+    "warningTopic3": "Juridische systeemproblemen",
+    "warningTopic4": "Emotioneel misbruik",
+    "genre": "Genre",
+    "timespan": "Periode",
+    "chapters": "Hoofdstukken",
+    "totalWords": "Woorden",
+    "themes": "Belangrijkste thema's"
+  },
   "pages": {
     "home": {
       "title": "Radio Adamowo",
-      "lead": "Een educatief webradioplatform dat 24/7 uitzendt, gericht op het analyseren van psychologische manipulatie en toxische relaties. Onze missie is het bieden van educatieve inhoud die luisteraars helpt patronen van psychologisch misbruik te herkennen en begrijpen. We bieden livestreaming, analytische podcasts, interactieve tools en gemeenschapsondersteuning in drie talen."
+      "lead": "Een educatief webradioplatform dat 24/7 uitzendt, gericht op het analyseren van psychologische manipulatie en toxische relaties. Onze missie is het bieden van educatieve inhoud die luisteraars helpt patronen van psychologisch misbruik te herkennen en begrijpen. We bieden livestreaming, analytische podcasts, interactieve tools en gemeenschapsondersteuning in drie talen.",
+      "tabs": {
+        "start": {
+          "label": "Start",
+          "quickAccess": "Snelle toegang"
+        },
+        "about": {
+          "label": "Over het project"
+        },
+        "content": {
+          "label": "Educatieve inhoud"
+        },
+        "tools": {
+          "label": "Gereedschap"
+        },
+        "explore": {
+          "label": "Ontdek meer"
+        }
+      }
     },
     "live": {
       "title": "Livestream"
@@ -67,6 +114,54 @@
     },
     "shows": {
       "title": "Programma's"
+    },
+    "help": {
+      "title": "Hulp & Ondersteuning",
+      "lead": "Als je geweld ervaart, in een toxische relatie zit of emotionele ondersteuning nodig hebt, ben je niet alleen. Hieronder vind je een lijst met bronnen en telefoonnummers die kunnen helpen.",
+      "emergency": {
+        "title": "Directe bedreiging voor leven of gezondheid?",
+        "description": "Als je in een situatie van direct gevaar bent, bel onmiddellijk het alarmnummer:",
+        "number": "Alarmnummer",
+        "police": "Politie"
+      },
+      "additionalResources": {
+        "title": "Aanvullende Bronnen"
+      },
+      "online": {
+        "title": "Online Hulp",
+        "blueLine": "Online chat, informatie over huiselijk geweld en steuncentra",
+        "womenRights": "Gratis juridische en psychologische hulp voor vrouwen"
+      },
+      "centers": {
+        "title": "Crisisinterventiecentra",
+        "description": "Crisisinterventiecentra bieden gratis psychologische, juridische en sociale hulp. Vind het dichtstbijzijnde centrum:",
+        "findNearest": "Vind dichtstbijzijnd centrum"
+      },
+      "legal": {
+        "title": "Juridische Hulp",
+        "freeHelp": "Gratis Juridische Hulppunten - gratis juridische hulp voor iedereen",
+        "restrainingOrder": "Mogelijkheid om een contactverbod tegen de dader te verkrijgen",
+        "divorce": "Hulp bij echtscheiding en alimentatiezaken"
+      },
+      "shelters": {
+        "title": "Opvangcentra en Ondersteuningscentra",
+        "description": "Als je een veilige plek nodig hebt om te wonen, neem contact op met:",
+        "womenShelter": "Vrouwenopvang - opvang voor vrouwen met kinderen",
+        "supportCenter": "Ondersteuningscentra - hulp bij het herwinnen van onafhankelijkheid"
+      },
+      "safety": {
+        "title": "Veiligheidsplan",
+        "intro": "Als je in een toxische of gevaarlijke relatie zit, kan het voorbereiden van een veiligheidsplan je leven redden:",
+        "documents": "Bereid kopieën van belangrijke documenten voor (ID, documenten van kinderen, contracten) en bewaar ze op een veilige plek",
+        "money": "Zet wat geld opzij op een veilige plek (bij een vriend, in een kluisje op het werk)",
+        "codeWord": "Stel een \"codewoord\" vast met een vertrouwde persoon dat signaleert dat je hulp nodig hebt",
+        "escapeRoute": "Plan een vluchtroute en een veilige plek waar je naartoe kunt",
+        "evidence": "Documenteer geweld (foto's van verwondingen, tekstberichten, opnames) - ze kunnen bewijs zijn in de rechtszaal"
+      },
+      "note": {
+        "title": "Belangrijke opmerking:",
+        "content": "De inhoud op deze pagina is informatief en educatief. Het vervangt geen professionele psychologische, juridische of medische hulp. Als je hulp nodig hebt, neem contact op met de juiste diensten of specialisten."
+      }
     }
   },
   "platformInfo": {
@@ -1518,7 +1613,8 @@
     "links": {
       "documentation": "Documentatie",
       "privacy": "Privacy en cookies",
-      "methodology": "Methodologie en bronnen"
+      "methodology": "Methodologie en bronnen",
+      "support": "Steun 🍕"
     },
     "backToTop": "Terug naar boven",
     "rights": "© 2025 Radio Adamowo"
@@ -1812,5 +1908,37 @@
         }
       }
     }
+  },
+  "emergency": {
+    "banner": {
+      "title": "Dringende hulp nodig?",
+      "blueLineShort": "Blauwe Lijn",
+      "trustPhoneShort": "Vertrouwenstelefoon",
+      "dismiss": "Banner sluiten"
+    }
+  },
+  "content": {
+    "summary": {
+      "title": "Samenvatting"
+    },
+    "warning": {
+      "title": "Inhoudswaarschuwing",
+      "message": "De volgende inhoud kan emotioneel moeilijk zijn en beschrijvingen van traumatische situaties bevatten.",
+      "topics": "Inhoud heeft betrekking op:",
+      "selfCare": "Vergeet niet voor jezelf te zorgen. Als je het gevoel hebt dat je nog niet klaar bent voor deze inhoud, kun je er later naar terugkeren.",
+      "continue": "Ik begrijp het, ga door",
+      "goBack": "Ga terug"
+    }
+  },
+  "donation": {
+    "title": "Ondersteun de Wolf met Pizza",
+    "description": "Radio Adamowo wordt gebouwd met passie en talloze uren werk. Als onze educatieve missie waardevol voor je is, kun je de wolf ondersteunen met een pizza – een klein gebaar dat ons energie geeft om door te gaan.",
+    "feature1": "Ondersteun de ontwikkeling van het educatieve platform",
+    "feature2": "Help bij het creëren van waardevolle inhoud",
+    "feature3": "Geef brandstof voor onze late-night codesessies",
+    "feature4": "Word deel van onze missie",
+    "cta": "Koop een Pizza voor de Wolf",
+    "subtitle": "Elke pizza brengt ons dichter bij een betere wereld",
+    "thanks": "Bedankt voor elke vorm van steun – het maakt echt een verschil! 🐺💙"
   }
 }

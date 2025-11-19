@@ -1,12 +1,12 @@
 /**
- * Represents a single item in the playlist.
- *
- * @property id - Unique identifier for the playlist item
- * @property title - Title of the track
- * @property artist - Optional artist name
- * @property url - URL to the audio file
- * @property coverUrl - Optional URL to the cover image
- * @property position - Position in the playlist (0-indexed)
+ * Represents a single item in the music playlist.
+ * @typedef {Object} PlaylistItem
+ * @property {string} id - Unique playlist item identifier
+ * @property {string} title - Track title
+ * @property {string} [artist] - Artist name
+ * @property {string} url - URL to the audio file
+ * @property {string} [coverUrl] - URL to the cover image
+ * @property {number} position - Position in the playlist (for ordering)
  */
 export type PlaylistItem = {
   id: string;
@@ -19,13 +19,13 @@ export type PlaylistItem = {
 
 /**
  * Represents the currently playing track information.
- *
- * @property title - Title of the currently playing track
- * @property artist - Optional artist name
- * @property track - Optional track identifier
- * @property coverUrl - Optional URL to the cover image
- * @property startedAt - ISO 8601 timestamp when the track started playing
- * @property duration - Optional duration in seconds
+ * @typedef {Object} NowPlaying
+ * @property {string} title - Track or show title
+ * @property {string} [artist] - Artist or presenter name
+ * @property {string} [track] - Specific track name (if different from title)
+ * @property {string} [coverUrl] - URL to the cover image
+ * @property {string} startedAt - ISO timestamp when the track started playing
+ * @property {number} [duration] - Track duration in seconds
  */
 export type NowPlaying = {
   title: string;
@@ -37,10 +37,10 @@ export type NowPlaying = {
 };
 
 /**
- * Represents a chapter or segment within an episode.
- *
- * @property title - Title of the chapter
- * @property startSec - Starting time of the chapter in seconds
+ * Represents a chapter marker within an episode.
+ * @typedef {Object} EpisodeChapter
+ * @property {string} title - Chapter title or description
+ * @property {number} startSec - Start time in seconds from episode beginning
  */
 export type EpisodeChapter = {
   title: string;
@@ -48,10 +48,10 @@ export type EpisodeChapter = {
 };
 
 /**
- * Represents an external resource or reference associated with an episode.
- *
- * @property label - Display label for the resource
- * @property url - URL to the resource
+ * Represents an external resource link associated with an episode.
+ * @typedef {Object} EpisodeResource
+ * @property {string} label - Display label for the resource link
+ * @property {string} url - URL to the external resource
  */
 export type EpisodeResource = {
   label: string;
@@ -59,20 +59,20 @@ export type EpisodeResource = {
 };
 
 /**
- * Represents a complete episode with all its metadata.
- *
- * @property id - Unique identifier for the episode
- * @property title - Episode title
- * @property category - Category classification of the episode
- * @property tags - Array of tags for categorization and search
- * @property description - Detailed description of the episode
- * @property durationSec - Duration in seconds
- * @property audioUrl - URL to the audio file
- * @property coverUrl - Optional URL to the episode cover image
- * @property publishedAt - ISO 8601 timestamp when the episode was published
- * @property chapters - Optional array of chapter markers
- * @property resources - Optional array of related resources
- * @property slug - Optional URL-friendly identifier
+ * Complete episode data structure with metadata, content, and references.
+ * @typedef {Object} Episode
+ * @property {string} id - Unique episode identifier
+ * @property {string} title - Episode title
+ * @property {string} category - Primary category (e.g., 'analysis', 'education')
+ * @property {string[]} tags - Array of topic tags for filtering
+ * @property {string} description - Episode description or summary
+ * @property {number} durationSec - Episode duration in seconds
+ * @property {string} audioUrl - URL to the audio file
+ * @property {string} [coverUrl] - URL to the cover image
+ * @property {string} publishedAt - ISO timestamp of publication date
+ * @property {EpisodeChapter[]} [chapters] - Optional chapter markers
+ * @property {EpisodeResource[]} [resources] - Optional external resource links
+ * @property {string} [slug] - URL-friendly slug for routing
  */
 export type Episode = {
   id: string;
@@ -90,24 +90,20 @@ export type Episode = {
 };
 
 /**
- * Sorting options for episode queries.
- *
- * - 'newest': Sort by publication date (newest first)
- * - 'oldest': Sort by publication date (oldest first)
- * - 'durationAsc': Sort by duration (shortest first)
- * - 'durationDesc': Sort by duration (longest first)
+ * Sort order options for episode queries.
+ * @typedef {'newest'|'oldest'|'durationAsc'|'durationDesc'} EpisodeSort
  */
 export type EpisodeSort = 'newest' | 'oldest' | 'durationAsc' | 'durationDesc';
 
 /**
- * Query parameters for filtering and searching episodes.
- *
- * @property q - Optional search query string
- * @property categories - Optional array of categories to filter by
- * @property tags - Optional array of tags to filter by
- * @property sort - Optional sort order (defaults to 'newest')
- * @property page - Optional page number for pagination (1-indexed)
- * @property pageSize - Optional number of results per page
+ * Query parameters for filtering and paginating episodes.
+ * @typedef {Object} EpisodeQuery
+ * @property {string} [q] - Text search query (searches title, description, tags)
+ * @property {string[]} [categories] - Filter by categories
+ * @property {string[]} [tags] - Filter by tags (all must match)
+ * @property {EpisodeSort} [sort] - Sort order (default: 'newest')
+ * @property {number} [page] - Page number (1-indexed, default: 1)
+ * @property {number} [pageSize] - Number of items per page (default: 10)
  */
 export type EpisodeQuery = {
   q?: string;
@@ -119,10 +115,10 @@ export type EpisodeQuery = {
 };
 
 /**
- * Metadata about available filter options and their counts.
- *
- * @property categories - Available categories with episode counts
- * @property tags - Available tags with episode counts
+ * Metadata about available filter options with counts.
+ * @typedef {Object} EpisodeFiltersMetadata
+ * @property {Array<{value: string, count: number}>} categories - Available categories with episode counts
+ * @property {Array<{value: string, count: number}>} tags - Available tags with episode counts
  */
 export type EpisodeFiltersMetadata = {
   categories: { value: string; count: number }[];
@@ -130,13 +126,13 @@ export type EpisodeFiltersMetadata = {
 };
 
 /**
- * Result of an episode query including episodes and pagination metadata.
- *
- * @property episodes - Array of episodes matching the query
- * @property total - Total number of episodes matching the query (across all pages)
- * @property page - Current page number (1-indexed)
- * @property pageSize - Number of results per page
- * @property metadata - Filter metadata including available categories and tags with counts
+ * Paginated query result containing episodes and metadata.
+ * @typedef {Object} EpisodeQueryResult
+ * @property {Episode[]} episodes - Array of matching episodes
+ * @property {number} total - Total number of matching episodes (across all pages)
+ * @property {number} page - Current page number (1-indexed)
+ * @property {number} pageSize - Number of items per page
+ * @property {EpisodeFiltersMetadata} metadata - Available filter options with counts
  */
 export type EpisodeQueryResult = {
   episodes: Episode[];

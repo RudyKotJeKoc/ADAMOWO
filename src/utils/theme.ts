@@ -1,17 +1,20 @@
 /**
- * Theme preference type.
+ * Represents the theme preference options available to the user.
+ * - 'light': Forces light theme
+ * - 'dark': Forces dark theme
+ * - 'system': Follows system preference (default)
  *
- * - 'light': Light theme
- * - 'dark': Dark theme
- * - 'system': Follow system preference
+ * @typedef {'light' | 'dark' | 'system'} Theme
  */
 export type Theme = 'light' | 'dark' | 'system';
 
 /**
- * Resolved theme type (after system preference is evaluated).
+ * Represents a resolved theme value that is either light or dark.
+ * This is computed from a Theme value when the theme is 'system',
+ * by checking the system preference. For explicit 'light' or 'dark'
+ * themes, the resolved value is the same as the input.
  *
- * - 'light': Light theme
- * - 'dark': Dark theme
+ * @typedef {'light' | 'dark'} ResolvedTheme
  */
 export type ResolvedTheme = 'light' | 'dark';
 
@@ -30,12 +33,17 @@ const STORAGE_KEY = 'radio-adamowo-theme';
 const MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 /**
- * Gets the system's preferred color scheme.
- * Defaults to 'dark' if window.matchMedia is not available.
+ * Detects the system's color scheme preference.
+ * Checks the user's OS-level theme preference using the CSS media query 'prefers-color-scheme'.
+ * Returns 'dark' if dark mode is preferred, otherwise 'light'.
+ * In server-side rendering environments where window is undefined, defaults to 'dark'.
  *
- * @returns System's preferred theme ('dark' or 'light')
+ * @private
+ * @returns {ResolvedTheme} Either 'light' or 'dark' based on system preference
  *
- * @internal
+ * @example
+ * const systemTheme = getSystemPreference();
+ * // Returns 'dark' if user has dark mode enabled in their OS settings
  */
 const getSystemPreference = (): ResolvedTheme => {
   if (typeof window !== 'undefined' && window.matchMedia) {
@@ -46,18 +54,20 @@ const getSystemPreference = (): ResolvedTheme => {
 };
 
 /**
- * Reads the stored theme preference from localStorage.
- * Returns null if no theme is stored or if localStorage is unavailable.
+ * Attempts to read the user's stored theme preference from localStorage.
+ * Only available in browser environments. Returns null if no valid theme is stored,
+ * if an error occurs while accessing localStorage, or in SSR contexts.
  *
- * @returns Stored theme preference, or null if not found
+ * @returns {Theme | null} The stored theme ('light', 'dark', or 'system'), or null if not found or invalid
+ * @throws Does not throw - errors are caught and logged as warnings
  *
  * @example
- * ```typescript
- * const theme = readStoredTheme();
- * if (theme) {
- *   console.log(`User prefers ${theme} theme`);
+ * const storedTheme = readStoredTheme();
+ * if (storedTheme) {
+ *   applyTheme(storedTheme);
+ * } else {
+ *   applyTheme('system'); // Use system preference as fallback
  * }
- * ```
  */
 export const readStoredTheme = (): Theme | null => {
   if (typeof window === 'undefined') {
@@ -77,15 +87,17 @@ export const readStoredTheme = (): Theme | null => {
 };
 
 /**
- * Persists the theme preference to localStorage.
- * Silently fails if localStorage is unavailable.
+ * Persists the user's theme preference to localStorage.
+ * Only available in browser environments. Silently handles errors that may occur
+ * due to storage quota exceeded or private browsing mode restrictions.
  *
- * @param theme - Theme preference to save
+ * @param {Theme} theme - The theme preference to store ('light', 'dark', or 'system')
+ * @returns {void}
+ * @throws Does not throw - errors are caught and logged as warnings
  *
  * @example
- * ```typescript
- * persistTheme('dark');
- * ```
+ * persistTheme('dark'); // Saves user's dark mode preference
+ * persistTheme('system'); // Saves user's preference to follow system theme
  */
 export const persistTheme = (theme: Theme): void => {
   if (typeof window === 'undefined') {
@@ -100,35 +112,37 @@ export const persistTheme = (theme: Theme): void => {
 };
 
 /**
- * Resolves a theme to its concrete value.
- * If theme is 'system', returns the system preference.
+ * Resolves a theme preference to a concrete value.
+ * If the theme is 'system', returns the current system color scheme preference.
+ * For 'light' or 'dark', returns the value as-is.
  *
- * @param theme - Theme to resolve
- * @returns Resolved theme ('light' or 'dark')
+ * @param {Theme} theme - The theme preference to resolve
+ * @returns {ResolvedTheme} Either 'light' or 'dark'
  *
  * @example
- * ```typescript
- * resolveTheme('system'); // Returns 'dark' if system prefers dark mode
- * resolveTheme('light');  // Returns 'light'
- * ```
+ * resolveTheme('light'); // Returns 'light'
+ * resolveTheme('system'); // Returns 'dark' or 'light' depending on OS preference
+ * resolveTheme('dark'); // Returns 'dark'
  */
 export const resolveTheme = (theme: Theme): ResolvedTheme =>
   theme === 'system' ? getSystemPreference() : theme;
 
 /**
- * Applies the theme to the document by setting CSS classes and data attributes.
- * Updates document.documentElement with:
- * - 'dark' class (if dark theme)
- * - data-theme attribute (original theme value)
- * - data-theme-resolved attribute (resolved theme value)
+ * Applies a theme to the DOM by updating the document root element.
+ * Sets CSS classes, data attributes for styling and script queries.
+ * Safe for server-side rendering - silently no-ops if document is undefined.
  *
- * @param theme - Theme to apply
+ * This function:
+ * - Toggles the 'dark' CSS class based on the resolved theme
+ * - Sets data-theme attribute to the user's preference ('light', 'dark', or 'system')
+ * - Sets data-theme-resolved attribute to the concrete theme ('light' or 'dark')
+ *
+ * @param {Theme} theme - The theme preference to apply
+ * @returns {void}
  *
  * @example
- * ```typescript
- * applyTheme('dark');   // Adds 'dark' class to <html>
- * applyTheme('system'); // Adds 'dark' class if system prefers dark mode
- * ```
+ * applyTheme('dark'); // Applies dark theme and sets attributes
+ * // Results in: <html class="dark" data-theme="dark" data-theme-resolved="dark">
  */
 export const applyTheme = (theme: Theme): void => {
   if (typeof document === 'undefined') {
@@ -143,17 +157,19 @@ export const applyTheme = (theme: Theme): void => {
 };
 
 /**
- * Initializes the theme on page load.
- * Reads stored theme or defaults to 'system', then applies it.
+ * Initializes the application theme on page load.
+ * Reads the stored theme preference and applies it to the DOM.
+ * If no stored preference exists, defaults to 'system' theme.
  *
- * @returns The initialized theme value
+ * This should be called early in the application lifecycle, ideally in a
+ * synchronous script before the page renders to prevent theme flash.
+ *
+ * @returns {Theme} The theme that was initialized and applied
  *
  * @example
- * ```typescript
- * // In app initialization:
+ * // In main.tsx or script tag in HTML head
  * const theme = initTheme();
- * console.log(`Theme initialized to: ${theme}`);
- * ```
+ * console.log('Theme initialized:', theme); // 'system', 'light', or 'dark'
  */
 export const initTheme = (): Theme => {
   const stored = readStoredTheme();
@@ -163,18 +179,25 @@ export const initTheme = (): Theme => {
 };
 
 /**
- * Toggles to the next theme in the cycle: system → light → dark → system.
+ * Cycles to the next theme in the theme rotation.
+ * Follows the cycle: 'system' → 'light' → 'dark' → 'system' → ...
  *
- * @param current - Current theme value
- * @returns Next theme in the cycle
+ * Useful for theme toggle buttons or cycling through theme options.
+ * The caller is responsible for persisting the returned theme value if needed.
+ *
+ * @param {Theme} current - The current theme preference
+ * @returns {Theme} The next theme in the cycle
  *
  * @example
- * ```typescript
- * let theme = 'system';
- * theme = toggleTheme(theme); // Returns 'light'
- * theme = toggleTheme(theme); // Returns 'dark'
- * theme = toggleTheme(theme); // Returns 'system'
- * ```
+ * let currentTheme = 'system';
+ * currentTheme = toggleTheme(currentTheme); // Returns 'light'
+ * currentTheme = toggleTheme(currentTheme); // Returns 'dark'
+ * currentTheme = toggleTheme(currentTheme); // Returns 'system'
+ *
+ * // In a theme toggle button:
+ * const newTheme = toggleTheme(currentTheme);
+ * setTheme(newTheme);
+ * persistTheme(newTheme);
  */
 export const toggleTheme = (current: Theme): Theme => {
   switch (current) {
@@ -188,39 +211,51 @@ export const toggleTheme = (current: Theme): Theme => {
 };
 
 /**
- * Exported storage key for theme persistence.
- * Same value as internal STORAGE_KEY constant.
+ * The key used to store theme preferences in localStorage.
+ * Value: 'radio-adamowo-theme'
+ *
+ * @type {string}
+ * @constant
  */
 export const THEME_STORAGE_KEY = STORAGE_KEY;
 
 /**
- * Callback function type for system theme change events.
+ * Callback function type for system theme preference change events.
+ * Called when the system's color scheme preference changes (e.g., user switches
+ * between light and dark mode in their OS settings) while the app theme is set to 'system'.
  *
- * @param theme - New resolved theme value
+ * @typedef {Function} ThemeChangeHandler
+ * @param {ResolvedTheme} theme - The new resolved theme ('light' or 'dark')
+ * @returns {void}
  *
- * @internal
+ * @example
+ * const handleThemeChange: ThemeChangeHandler = (theme) => {
+ *   console.log('System theme changed to:', theme);
+ *   updateUI(theme);
+ * };
  */
 type ThemeChangeHandler = (theme: ResolvedTheme) => void;
 
 /**
- * Subscribes to system theme changes using the prefers-color-scheme media query.
- * Returns an unsubscribe function to stop listening.
+ * Subscribes to changes in the system's color scheme preference.
+ * Listens for OS-level theme changes (e.g., user switches dark mode on/off)
+ * and calls the handler when changes occur.
  *
- * @param handler - Callback function to invoke when system theme changes
- * @returns Unsubscribe function to stop listening
+ * Uses the 'prefers-color-scheme' media query with fallback support for
+ * older browsers. In environments without window or matchMedia support,
+ * returns a no-op cleanup function.
+ *
+ * @param {ThemeChangeHandler} handler - Callback to invoke when system theme changes
+ * @returns {() => void} Cleanup function to unsubscribe from theme changes
  *
  * @example
- * ```typescript
- * const unsubscribe = subscribeToSystemTheme((newTheme) => {
- *   console.log(`System theme changed to: ${newTheme}`);
- *   if (currentTheme === 'system') {
- *     applyTheme('system');
- *   }
+ * const unsubscribe = subscribeToSystemTheme((theme) => {
+ *   console.log('System changed to:', theme);
+ *   applyTheme('system'); // Re-apply if using system theme
  * });
  *
- * // Later, to stop listening:
+ * // Later, when component unmounts:
  * unsubscribe();
- * ```
  */
 export const subscribeToSystemTheme = (handler: ThemeChangeHandler): (() => void) => {
   if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {

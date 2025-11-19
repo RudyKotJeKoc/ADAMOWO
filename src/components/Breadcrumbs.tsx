@@ -15,13 +15,14 @@ const routeLabels: Record<string, string> = {
   studio: 'navigation.studio',
   shows: 'navigation.shows',
   guides: 'navigation.guide',
+  'polana-klamstw': 'navigation.polanaKlamstw',
   anatomy: 'navigation.anatomy',
   lab: 'navigation.lab',
   community: 'navigation.community',
   analysis: 'breadcrumbs.analysis',
   privacy: 'breadcrumbs.privacy',
   methodology: 'breadcrumbs.methodology',
-  'ai-policy': 'breadcrumbs.aiPolicy'
+  'ai-policy': 'breadcrumbs.aiPolicy',
 };
 
 export function Breadcrumbs(): JSX.Element | null {
@@ -42,7 +43,7 @@ export function Breadcrumbs(): JSX.Element | null {
 
     return {
       label: t(labelKey, { defaultValue: segment.charAt(0).toUpperCase() + segment.slice(1) }),
-      path
+      path,
     };
   });
 

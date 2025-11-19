@@ -10,41 +10,54 @@ import { Search } from './Search';
 import { ThemeSwitch } from './ThemeSwitch';
 
 /**
- * Navigation menu configuration.
+ * Navigation items configuration for the main header menu.
  *
- * Defines the primary navigation items displayed in both desktop and mobile
- * layouts. Each item includes a route path and i18n translation key.
+ * Each item contains a route path and a translation key for internationalization.
+ * These items are used to generate both desktop and mobile navigation menus.
  *
- * @internal
+ * @constant
  */
 const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/live', labelKey: 'navigation.live' },
+  { to: '/analizy', labelKey: 'navigation.analizy' },
+  { to: '/programy', labelKey: 'navigation.programy' },
   { to: '/violence-loop', labelKey: 'navigation.violenceLoop' },
-  { to: '/studio', labelKey: 'navigation.studio' },
-  { to: '/shows', labelKey: 'navigation.shows' },
   { to: '/guides', labelKey: 'navigation.guide' },
+  { to: '/polana-klamstw', labelKey: 'navigation.polanaKlamstw' },
   { to: '/anatomy', labelKey: 'navigation.anatomy' },
   { to: '/lab', labelKey: 'navigation.lab' },
   { to: '/community', labelKey: 'navigation.community' },
-  { to: '/help', labelKey: 'navigation.help' },
+  { to: '/pomoc', labelKey: 'navigation.help' },
 ];
 
 /**
- * Main navigation header component.
+ * Main navigation header component with responsive menu and accessibility features.
  *
- * Renders the site header with:
- * - Logo and site name linking to home
- * - Desktop horizontal navigation menu
- * - Mobile hamburger menu with slide-down panel
- * - Search, language switch, and theme switch controls
- * - Keyboard navigation support (Tab, Escape)
- * - Route prefetching on hover/focus for improved performance
+ * Provides a sticky navigation header with logo, desktop navigation menu, mobile hamburger
+ * menu, search functionality, language switcher, and theme switcher. Implements advanced
+ * accessibility features including focus trapping, keyboard navigation, and route prefetching
+ * for improved performance.
+ *
+ * @component
+ * @returns {JSX.Element} A responsive navigation header with mobile menu support
+ *
+ * @example
+ * ```tsx
+ * <Header />
+ * ```
+ *
+ * Features:
+ * - Sticky positioning with backdrop blur
+ * - Responsive design with separate desktop and mobile menus
+ * - Mobile hamburger menu with animated icon
  * - Focus trap within mobile menu when open
- *
- * The header uses a sticky position and backdrop blur for a modern floating effect.
- * Navigation items are defined in NAV_ITEMS and rendered in both desktop and mobile layouts.
- *
- * @returns A sticky header element with navigation and controls
+ * - Keyboard navigation (Tab, Shift+Tab, Escape)
+ * - Route prefetching on hover/focus for better performance
+ * - Active route highlighting
+ * - Search, language switcher, and theme switcher integration
+ * - Smooth animations with reduced motion support
+ * - Full ARIA support for screen readers
+ * - Touch-optimized button targets for mobile devices
  */
 export function Header(): JSX.Element {
   const { t } = useTranslation();
@@ -57,6 +70,8 @@ export function Header(): JSX.Element {
   const prefetchers = useMemo(
     () => ({
       '/live': () => import('../pages/Live'),
+      '/analizy': () => import('../pages/Analyses'),
+      '/programy': () => import('../pages/Programs'),
       '/violence-loop': () => import('../pages/ViolenceLoop'),
       '/studio': () => import('../pages/Studio'),
       '/shows': () => import('../pages/Shows'),
@@ -64,6 +79,7 @@ export function Header(): JSX.Element {
       '/anatomy': () => import('../pages/AnatomyPage'),
       '/lab': () => import('../pages/Lab'),
       '/community': () => import('../pages/Community'),
+      '/pomoc': () => import('../pages/Help'),
       '/help': () => import('../pages/Help'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage'),
     }),
@@ -108,6 +124,15 @@ export function Header(): JSX.Element {
 
   const toggleMenu = useCallback(() => setMenuOpen((prev) => !prev), []);
 
+  /**
+   * Renders navigation links for either desktop or mobile layout.
+   *
+   * Creates a list of navigation links with conditional styling based on the variant.
+   * Includes route prefetching on hover/focus for performance optimization.
+   *
+   * @param {('desktop' | 'mobile')} variant - The layout variant to render
+   * @returns {JSX.Element} A list of navigation links styled for the specified variant
+   */
   const renderNavLinks = (variant: 'desktop' | 'mobile') => (
     <ul
       className={clsx('flex flex-col gap-4', {
@@ -158,14 +183,10 @@ export function Header(): JSX.Element {
     >
       <div className="container-responsive flex items-center justify-between gap-4 py-4">
         <NavLink to="/" className="group flex items-center gap-3" aria-label={t('header.home')}>
-          <motion.span
-            className="rounded-full bg-base-900/70 p-2 transition group-hover:bg-base-850 group-focus-visible:bg-base-850"
-            whileHover={reduceMotion ? undefined : { scale: 1.02 }}
-            whileFocus={reduceMotion ? undefined : { scale: 1.02 }}
-          >
+          <span className="rounded bg-base-900/70 p-2 transition-colors duration-150 group-hover:bg-base-850 group-focus-visible:bg-base-850">
             <LogoGlasses className="h-9 w-auto" />
-          </motion.span>
-          <span className="font-display text-lg font-semibold tracking-wide text-base-100">
+          </span>
+          <span className="font-display text-base font-semibold uppercase tracking-wide text-base-100">
             Radio Adamowo
           </span>
         </NavLink>
