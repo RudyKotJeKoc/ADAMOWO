@@ -99,6 +99,15 @@ export function createLocalAudioClient(
   let currentTrackIndex = 0;
   let isLoading = false;
 
+  /**
+   * Shuffles an array using the Fisher-Yates algorithm.
+   * Creates a new shuffled copy without modifying the original array.
+   *
+   * @param array - Array to shuffle
+   * @returns New shuffled array
+   *
+   * @internal
+   */
   const shuffleArray = <T,>(array: T[]): T[] => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -108,6 +117,16 @@ export function createLocalAudioClient(
     return shuffled;
   };
 
+  /**
+   * Loads the playlist from the configured URL.
+   * Fetches the playlist JSON, optionally shuffles it, and loads the first track.
+   * Calls onPlaylistLoaded callback on success or onError callback on failure.
+   * Prevents concurrent loading by checking the isLoading flag.
+   *
+   * @returns Promise that resolves when playlist loading completes
+   *
+   * @internal
+   */
   const loadPlaylist = async (): Promise<void> => {
     if (destroyed || isLoading) {
       return;
@@ -138,6 +157,16 @@ export function createLocalAudioClient(
     }
   };
 
+  /**
+   * Loads a specific track from the playlist by index.
+   * Sets the audio element's source to the track URL and calls load().
+   * Wraps the index using modulo to support circular navigation.
+   * Calls onTrackChange callback with the newly loaded track.
+   *
+   * @param index - Zero-based index of the track to load
+   *
+   * @internal
+   */
   const loadTrack = (index: number): void => {
     if (destroyed || playlist.length === 0) {
       return;
@@ -152,18 +181,37 @@ export function createLocalAudioClient(
     onTrackChange?.(track);
   };
 
+  /**
+   * Event handler for the 'canplay' audio event.
+   * Fires the onReady callback when a track is buffered and ready to play.
+   *
+   * @internal
+   */
   const handleCanPlay = (): void => {
     if (!destroyed) {
       onReady?.();
     }
   };
 
+  /**
+   * Event handler for the 'ended' audio event.
+   * Automatically advances to the next track when the current track finishes.
+   *
+   * @internal
+   */
   const handleEnded = (): void => {
     if (!destroyed) {
       nextTrack();
     }
   };
 
+  /**
+   * Event handler for the 'error' audio event.
+   * Translates MediaError codes into user-friendly error messages
+   * and calls the onError callback.
+   *
+   * @internal
+   */
   const handleError = (): void => {
     if (destroyed) {
       return;
@@ -192,6 +240,13 @@ export function createLocalAudioClient(
     onError?.(message);
   };
 
+  /**
+   * Advances to the next track in the playlist.
+   * Wraps to the first track when reaching the end.
+   * Part of the public LocalAudioClient API.
+   *
+   * @internal
+   */
   const nextTrack = (): void => {
     if (destroyed || playlist.length === 0) {
       return;
@@ -201,6 +256,13 @@ export function createLocalAudioClient(
     loadTrack(nextIndex);
   };
 
+  /**
+   * Goes back to the previous track in the playlist.
+   * Wraps to the last track when at the beginning.
+   * Part of the public LocalAudioClient API.
+   *
+   * @internal
+   */
   const previousTrack = (): void => {
     if (destroyed || playlist.length === 0) {
       return;
@@ -212,6 +274,14 @@ export function createLocalAudioClient(
     loadTrack(prevIndex);
   };
 
+  /**
+   * Gets the currently loaded track.
+   * Part of the public LocalAudioClient API.
+   *
+   * @returns Current track object, or null if no tracks are loaded
+   *
+   * @internal
+   */
   const getCurrentTrack = (): Track | null => {
     if (playlist.length === 0) {
       return null;
@@ -219,6 +289,15 @@ export function createLocalAudioClient(
     return playlist[currentTrackIndex];
   };
 
+  /**
+   * Gets a copy of the entire playlist.
+   * Returns a new array to prevent external modification.
+   * Part of the public LocalAudioClient API.
+   *
+   * @returns Copy of the playlist array
+   *
+   * @internal
+   */
   const getPlaylist = (): Track[] => {
     return [...playlist];
   };
@@ -232,6 +311,10 @@ export function createLocalAudioClient(
   loadPlaylist();
 
   return {
+    /**
+     * Cleans up the audio client by removing event listeners and stopping playback.
+     * Should be called when the audio client is no longer needed to prevent memory leaks.
+     */
     destroy: () => {
       destroyed = true;
       audio.removeEventListener('canplay', handleCanPlay);
@@ -240,6 +323,10 @@ export function createLocalAudioClient(
       audio.pause();
       audio.src = '';
     },
+    /**
+     * Retries loading the current track.
+     * Useful for recovery after network errors or playback failures.
+     */
     retry: () => {
       if (destroyed) {
         return;

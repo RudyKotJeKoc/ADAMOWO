@@ -1,5 +1,23 @@
 import type { MythSymbol } from './mythology.schema';
 
+/**
+ * Collection of mythological symbols and their interpretations.
+ *
+ * Defines the four sacred numbers (7, 4, 8, 13) with comprehensive
+ * guidance on their meanings, when they appear, and how to respond.
+ * All content uses i18n keys for multilingual support.
+ *
+ * Symbol meanings:
+ * - 7: Completion of cycles, spiritual completion, divine timing
+ * - 4: Foundation, stability, four cardinal directions, balance
+ * - 8: Infinity, eternal return, Ouroboros, transformation
+ * - 13: Death and rebirth, transformation, breaking of old patterns
+ *
+ * Each symbol includes:
+ * - Core meanings and interpretations
+ * - Situations when the symbol manifests
+ * - Recommended actions and responses
+ */
 export const MYTH_SYMBOLS: MythSymbol[] = [
   {
     id: 7,

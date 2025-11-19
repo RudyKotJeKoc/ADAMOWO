@@ -6,6 +6,14 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
  */
 export type GenericSupabaseClient = SupabaseClient<any, any, any>;
 
+/**
+ * Cached Supabase client instance.
+ * - undefined: not yet initialized
+ * - null: configuration is missing
+ * - GenericSupabaseClient: successfully initialized client
+ *
+ * @internal
+ */
 let cachedClient: GenericSupabaseClient | null | undefined;
 
 /**

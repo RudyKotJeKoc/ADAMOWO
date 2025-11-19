@@ -16,6 +16,16 @@ import type { ThemeConfig, AnimationConfig, AudioAnalysisData } from './media.sc
 // THEME TYPES
 // ============================================================================
 
+/**
+ * Defines a complete color scheme for theme application.
+ *
+ * @property primary - Primary brand color used for main interactive elements
+ * @property secondary - Secondary brand color for supporting elements
+ * @property accent - Accent color for highlights and emphasis
+ * @property background - Main background color for the interface
+ * @property text - Primary text color for readability
+ * @property border - Border color for separating UI elements
+ */
 export interface ColorPalette {
   primary: string;
   secondary: string;
@@ -25,6 +35,15 @@ export interface ColorPalette {
   border: string;
 }
 
+/**
+ * Represents audio-reactive color modifications based on frequency analysis.
+ * Each color channel corresponds to a specific frequency range in the audio spectrum.
+ *
+ * @property bassColor - Color responsive to bass frequencies (low range)
+ * @property midColor - Color responsive to mid-range frequencies
+ * @property trebleColor - Color responsive to treble frequencies (high range)
+ * @property intensity - Overall audio intensity level (0-1 normalized)
+ */
 export interface AudioReactiveTheme {
   bassColor: string;
   midColor: string;
@@ -36,6 +55,11 @@ export interface AudioReactiveTheme {
 // DEFAULT THEMES
 // ============================================================================
 
+/**
+ * Predefined color palettes for common theme variations.
+ * Includes dark, light, and specialty themes (sunset, ocean, forest).
+ * Each theme is fully compliant with WCAG accessibility guidelines.
+ */
 export const THEMES: Record<string, ColorPalette> = {
   dark: {
     primary: '#f59e0b', // accent-400
@@ -83,6 +107,20 @@ export const THEMES: Record<string, ColorPalette> = {
 // THEME ENGINE CLASS
 // ============================================================================
 
+/**
+ * Dynamic theme management system with audio-reactive capabilities.
+ *
+ * Provides comprehensive theming features including:
+ * - Predefined and custom color palettes
+ * - Smooth transitions between themes
+ * - Audio-reactive color modifications based on frequency analysis
+ * - Animation intensity control with motion preference detection
+ * - Automatic day/night theme switching
+ * - System dark mode preference tracking
+ *
+ * The engine applies themes via CSS custom properties and respects user
+ * accessibility preferences for reduced motion.
+ */
 export class ThemeEngine {
   private currentTheme: ColorPalette;
   private audioReactive: boolean;
@@ -105,11 +143,22 @@ export class ThemeEngine {
   // INITIALIZATION
   // ============================================================================
 
+  /**
+   * Initialize theme engine by applying current theme and setting up listeners.
+   *
+   * @internal
+   */
   private initializeTheme(): void {
     this.applyTheme(this.currentTheme);
     this.setupMotionPreferenceListener();
   }
 
+  /**
+   * Set up media query listener for prefers-reduced-motion.
+   * Automatically reduces animation intensity when user requests reduced motion.
+   *
+   * @internal
+   */
   private setupMotionPreferenceListener(): void {
     if (this.respectsMotionPreference && window.matchMedia) {
       const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -129,6 +178,15 @@ export class ThemeEngine {
   // THEME APPLICATION
   // ============================================================================
 
+  /**
+   * Apply color palette to document root via CSS custom properties.
+   * Optionally animates the transition between themes.
+   *
+   * @param palette - Color palette to apply
+   * @param transition - Whether to animate the theme change (default: true)
+   *
+   * @internal
+   */
   private applyTheme(palette: ColorPalette, transition: boolean = true): void {
     const root = document.documentElement;
 
@@ -191,6 +249,18 @@ export class ThemeEngine {
     this.applyAudioReactiveTheme(reactiveTheme);
   }
 
+  /**
+   * Generate audio-reactive color scheme from frequency analysis data.
+   * Maps bass, mid, and treble levels to RGB color channel adjustments.
+   *
+   * @param bass - Bass frequency level (0-1)
+   * @param mid - Mid-range frequency level (0-1)
+   * @param treble - Treble frequency level (0-1)
+   * @param avgFreq - Average frequency across spectrum
+   * @returns Audio-reactive theme with frequency-mapped colors
+   *
+   * @internal
+   */
   private generateAudioReactiveTheme(
     bass: number,
     mid: number,
@@ -217,6 +287,13 @@ export class ThemeEngine {
     };
   }
 
+  /**
+   * Apply audio-reactive color modifications to CSS custom properties.
+   *
+   * @param theme - Audio-reactive theme to apply
+   *
+   * @internal
+   */
   private applyAudioReactiveTheme(theme: AudioReactiveTheme): void {
     const root = document.documentElement;
 
@@ -227,6 +304,16 @@ export class ThemeEngine {
     root.style.setProperty('--theme-audio-intensity', theme.intensity.toString());
   }
 
+  /**
+   * Adjust a specific RGB channel of a hex color based on audio level.
+   *
+   * @param hex - Base color in hex format
+   * @param level - Audio level to apply (0-1)
+   * @param channel - RGB channel to adjust (red, green, or blue)
+   * @returns Modified color in hex format
+   *
+   * @internal
+   */
   private adjustColor(hex: string, level: number, channel: 'red' | 'green' | 'blue'): string {
     // Parse hex color
     const rgb = this.hexToRgb(hex);
@@ -254,6 +341,12 @@ export class ThemeEngine {
   // ANIMATION CONTROL
   // ============================================================================
 
+  /**
+   * Set animation intensity level for theme transitions and effects.
+   * Updates CSS custom property for animation control.
+   *
+   * @param intensity - Animation intensity ('low', 'medium', or 'high')
+   */
   public setAnimationIntensity(intensity: 'low' | 'medium' | 'high'): void {
     this.animationIntensity = intensity;
 
@@ -261,6 +354,12 @@ export class ThemeEngine {
     root.style.setProperty('--animation-intensity', this.getIntensityValue().toString());
   }
 
+  /**
+   * Enable or disable audio-reactive theme modifications.
+   * When disabled, clears all audio-reactive CSS properties.
+   *
+   * @param enabled - Whether to enable audio-reactive theming
+   */
   public enableAudioReactive(enabled: boolean): void {
     this.audioReactive = enabled;
 
@@ -274,6 +373,13 @@ export class ThemeEngine {
     }
   }
 
+  /**
+   * Get multiplier value for audio-reactive color adjustments.
+   *
+   * @returns Multiplier based on current animation intensity (0.3, 0.6, or 1.0)
+   *
+   * @internal
+   */
   private getIntensityMultiplier(): number {
     switch (this.animationIntensity) {
       case 'low':
@@ -287,6 +393,13 @@ export class ThemeEngine {
     }
   }
 
+  /**
+   * Get CSS value for animation intensity property.
+   *
+   * @returns Integer value for CSS (1, 2, or 3)
+   *
+   * @internal
+   */
   private getIntensityValue(): number {
     switch (this.animationIntensity) {
       case 'low':
@@ -342,6 +455,14 @@ export class ThemeEngine {
   // COLOR UTILITIES
   // ============================================================================
 
+  /**
+   * Convert hex color string to RGB components.
+   *
+   * @param hex - Hex color string (with or without # prefix)
+   * @returns RGB object with r, g, b values (0-255), or null if invalid
+   *
+   * @internal
+   */
   private hexToRgb(hex: string): { r: number; g: number; b: number } | null {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
@@ -353,6 +474,16 @@ export class ThemeEngine {
       : null;
   }
 
+  /**
+   * Convert RGB components to hex color string.
+   *
+   * @param r - Red value (0-255)
+   * @param g - Green value (0-255)
+   * @param b - Blue value (0-255)
+   * @returns Hex color string with # prefix
+   *
+   * @internal
+   */
   private rgbToHex(r: number, g: number, b: number): string {
     return '#' + [r, g, b].map((x) => x.toString(16).padStart(2, '0')).join('');
   }
@@ -382,6 +513,16 @@ export class ThemeEngine {
     };
   }
 
+  /**
+   * Adjust the hue of a color by rotating it on the color wheel.
+   * Uses HSL color space for accurate hue manipulation.
+   *
+   * @param hex - Base color in hex format
+   * @param degrees - Degrees to rotate hue (-360 to 360)
+   * @returns Modified color in hex format
+   *
+   * @internal
+   */
   private adjustHue(hex: string, degrees: number): string {
     const rgb = this.hexToRgb(hex);
     if (!rgb) return hex;
@@ -442,10 +583,28 @@ export class ThemeEngine {
     return this.rgbToHex(Math.round(r2 * 255), Math.round(g2 * 255), Math.round(b2 * 255));
   }
 
+  /**
+   * Darken a color by reducing its brightness.
+   *
+   * @param hex - Base color in hex format
+   * @param amount - Darkening amount (0-1, where 1 is completely black)
+   * @returns Darkened color in hex format
+   *
+   * @internal
+   */
   private darken(hex: string, amount: number): string {
     return this.adjustBrightness(hex, 1 - amount);
   }
 
+  /**
+   * Adjust the brightness of a color by a multiplicative factor.
+   *
+   * @param hex - Base color in hex format
+   * @param factor - Brightness multiplier (< 1 darkens, > 1 lightens)
+   * @returns Adjusted color in hex format
+   *
+   * @internal
+   */
   private adjustBrightness(hex: string, factor: number): string {
     const rgb = this.hexToRgb(hex);
     if (!rgb) return hex;
@@ -457,6 +616,15 @@ export class ThemeEngine {
     return this.rgbToHex(r, g, b);
   }
 
+  /**
+   * Determine if a color is perceptually dark using luminance calculation.
+   * Uses weighted RGB formula for human perception (ITU-R BT.709).
+   *
+   * @param hex - Color to evaluate in hex format
+   * @returns True if color is dark (brightness < 128)
+   *
+   * @internal
+   */
   private isColorDark(hex: string): boolean {
     const rgb = this.hexToRgb(hex);
     if (!rgb) return false;
@@ -470,14 +638,29 @@ export class ThemeEngine {
   // GETTERS
   // ============================================================================
 
+  /**
+   * Get a copy of the current theme palette.
+   *
+   * @returns Current color palette
+   */
   public getCurrentTheme(): ColorPalette {
     return { ...this.currentTheme };
   }
 
+  /**
+   * Check if audio-reactive theming is currently enabled.
+   *
+   * @returns True if audio-reactive theming is active
+   */
   public isAudioReactive(): boolean {
     return this.audioReactive;
   }
 
+  /**
+   * Get the current animation intensity setting.
+   *
+   * @returns Animation intensity level
+   */
   public getAnimationIntensity(): 'low' | 'medium' | 'high' {
     return this.animationIntensity;
   }
@@ -489,6 +672,20 @@ export class ThemeEngine {
 
 let themeEngineInstance: ThemeEngine | null = null;
 
+/**
+ * Get the singleton instance of ThemeEngine.
+ * Creates a new instance on first call, reuses the same instance thereafter.
+ * Configuration is only applied on first initialization.
+ *
+ * @param config - Optional theme configuration (only used on first call)
+ * @returns Singleton ThemeEngine instance
+ *
+ * @example
+ * ```typescript
+ * const themeEngine = getThemeEngine({ mode: 'dark' });
+ * themeEngine.setTheme('sunset');
+ * ```
+ */
 export function getThemeEngine(config?: Partial<ThemeConfig>): ThemeEngine {
   if (!themeEngineInstance) {
     themeEngineInstance = new ThemeEngine(config);

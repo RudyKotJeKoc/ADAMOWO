@@ -1,3 +1,13 @@
+/**
+ * A phase in the timeline representing a period of time.
+ *
+ * @property id - Unique phase identifier
+ * @property title - Display title for the phase
+ * @property dateRange - Human-readable date range (e.g., "2017" or "2017-2021")
+ * @property description - Brief description of what happened during this phase
+ * @property events - Significant events that occurred in this phase
+ * @property color - Tailwind gradient classes for visual styling
+ */
 export type TimelinePhase = {
   id: string;
   title: string;
@@ -7,6 +17,14 @@ export type TimelinePhase = {
   color: string;
 };
 
+/**
+ * A significant event within a timeline phase.
+ *
+ * @property date - Human-readable date of the event
+ * @property title - Brief title describing the event
+ * @property description - Detailed description of what happened
+ * @property importance - Optional severity indicator for visual emphasis
+ */
 export type TimelineEvent = {
   date: string;
   title: string;
@@ -14,6 +32,17 @@ export type TimelineEvent = {
   importance?: 'low' | 'medium' | 'high' | 'critical';
 };
 
+/**
+ * An analytical discovery or pattern identified in the timeline.
+ *
+ * @property id - Unique discovery identifier
+ * @property number - Sequential discovery number for ordering
+ * @property title - Discovery title
+ * @property emoji - Icon emoji for visual identification
+ * @property description - Brief summary of the discovery
+ * @property details - Array of detailed points explaining the discovery
+ * @property color - Tailwind gradient classes for visual styling
+ */
 export type TimelineDiscovery = {
   id: string;
   number: number;
@@ -24,6 +53,22 @@ export type TimelineDiscovery = {
   color: string;
 };
 
+/**
+ * Complete timeline of events across five major phases.
+ *
+ * Chronologically organized phases:
+ * 1. FAZA I: Fundament (2017) - Symbolic beginning with gift deed
+ * 2. Okres Spokoju (2017-2021) - Four years of calm
+ * 3. FAZA II: Katalizator (Feb 2021) - Operation Calendar begins
+ * 4. FAZA III: Eskalacja (Mar-Jul 2021) - Precisely planned actions
+ * 5. FAZA IV: Prawny Blitzkrieg (Aug 2021) - 72-hour contradiction
+ * 6. FAZA V: Egzekucja (Oct 2021) - Plan finalization
+ *
+ * Each phase includes:
+ * - Temporal boundaries and description
+ * - Critical events with importance levels
+ * - Visual styling through gradient colors
+ */
 export const timelinePhases: TimelinePhase[] = [
   {
     id: 'foundation',
@@ -152,6 +197,23 @@ export const timelinePhases: TimelinePhase[] = [
   },
 ];
 
+/**
+ * Analytical discoveries revealing patterns in the timeline.
+ *
+ * Six major discoveries:
+ * 1. Sprzeczność 72 Godzin - How testimony changed in 3 days
+ * 2. Pułapka Zaplanowanego Wyjazdu - NK filed day after departure
+ * 3. Odwrócony Triaż Priorytetów - Evidence gathering over health
+ * 4. Magiczne Liczby - Symbolic dates forming impossible patterns
+ * 5. Sekwencja Przejmowania Kontroli - Each step building on previous
+ * 6. Teatr z Widzem - Why wait in forest with prepared witness
+ *
+ * Each discovery includes:
+ * - Descriptive title and emoji
+ * - Summary of the pattern
+ * - Detailed breakdown of supporting evidence
+ * - Visual styling through gradient colors
+ */
 export const discoveries: TimelineDiscovery[] = [
   {
     id: 'contradiction-72h',

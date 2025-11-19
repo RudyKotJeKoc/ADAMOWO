@@ -1,5 +1,20 @@
 import type { ProgramDictionary, ProgramId } from './studio.schema';
 
+/**
+ * Complete catalog of all studio programs.
+ *
+ * Contains metadata for all four programs:
+ * - team: Team discussions on relationship dynamics
+ * - heart: Heart-centered emotional healing
+ * - psych: Psychological analysis and expert commentary
+ * - welcome: Welcome program for new listeners
+ *
+ * Each program includes:
+ * - Title, subtitle, and description (via translation keys)
+ * - Brand color and icon
+ * - Host information
+ * - Broadcast schedule with live/replay markers
+ */
 export const PROGRAMS: ProgramDictionary = {
   team: {
     id: 'team',
@@ -65,8 +80,40 @@ export const PROGRAMS: ProgramDictionary = {
   }
 };
 
+/**
+ * Array of all programs in the catalog.
+ *
+ * Useful for iteration over all programs (e.g., rendering program lists).
+ * Order matches the object values from PROGRAMS.
+ */
 export const PROGRAM_LIST = Object.values(PROGRAMS);
 
+/**
+ * Retrieves program metadata by ID.
+ *
+ * Returns null if programId is null/undefined or if the ID
+ * doesn't match any known program.
+ *
+ * @param programId - Program identifier to lookup
+ * @returns Program metadata or null if not found
+ *
+ * @example
+ * ```ts
+ * import { getProgramMeta } from './studio.data';
+ *
+ * const program = getProgramMeta('team');
+ * if (program) {
+ *   console.log(program.titleKey); // 'studio.team.title'
+ *   console.log(program.color); // '#4c6ef5'
+ * }
+ *
+ * const invalid = getProgramMeta(null);
+ * console.log(invalid); // null
+ *
+ * const unknown = getProgramMeta('unknown' as any);
+ * console.log(unknown); // null
+ * ```
+ */
 export function getProgramMeta(programId: ProgramId | null | undefined) {
   if (!programId) {
     return null;

@@ -18,7 +18,18 @@ export type Theme = 'light' | 'dark' | 'system';
  */
 export type ResolvedTheme = 'light' | 'dark';
 
+/**
+ * LocalStorage key for theme persistence.
+ *
+ * @internal
+ */
 const STORAGE_KEY = 'radio-adamowo-theme';
+
+/**
+ * Media query for detecting dark mode preference.
+ *
+ * @internal
+ */
 const MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 /**

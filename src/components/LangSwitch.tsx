@@ -1,8 +1,31 @@
 import clsx from 'clsx';
 import { LayoutGroup, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+
+/**
+ * Supported language codes for the language switcher.
+ *
+ * @internal
+ */
 const LANG_CODES = ['pl', 'nl', 'en'] as const;
 
+/**
+ * Language switcher toggle component.
+ *
+ * Renders a segmented control allowing users to switch between available
+ * languages (Polish, Dutch, English). Features:
+ * - Three language options with uppercase codes (PL, NL, EN)
+ * - Animated indicator showing active selection
+ * - Screen reader accessible with full language names and proper lang attributes
+ * - Smooth transitions with Framer Motion layout animations
+ * - Automatic language preference persistence via i18next
+ *
+ * The component uses LayoutGroup for shared layout animations between
+ * language options, creating a smooth sliding indicator effect when the
+ * active language changes.
+ *
+ * @returns A language switcher control with three segmented buttons
+ */
 export function LangSwitch(): JSX.Element {
   const { i18n, t } = useTranslation();
   const current = i18n.resolvedLanguage ?? i18n.language;

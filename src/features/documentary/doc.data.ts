@@ -1,5 +1,23 @@
 import type { DocMeta } from './doc.schema';
 
+/**
+ * Documentary metadata configuration.
+ *
+ * Defines the documentary's title, description, supplementary resources,
+ * and chapter markers for timeline navigation. All text content uses
+ * i18n keys for multilingual support.
+ *
+ * Resources include:
+ * - Timeline PDF guide
+ * - Character profile article
+ * - Legal brief document
+ *
+ * Chapters mark key sections:
+ * - Prologue (0:00)
+ * - Escalation (5:12)
+ * - Intervention (14:06)
+ * - Aftermath (21:38)
+ */
 export const documentaryMeta: DocMeta = {
   titleKey: 'documentary.title',
   descriptionKey: 'documentary.description',

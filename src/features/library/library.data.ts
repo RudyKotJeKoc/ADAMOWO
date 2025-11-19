@@ -1,5 +1,22 @@
 import type { LibraryEntry } from './library.schema';
 
+/**
+ * Collection of educational library entries.
+ *
+ * Comprehensive catalog of case studies, analysis tools, and documentation
+ * resources for the community. Each entry includes:
+ * - Detailed content sections
+ * - Practical tips for application
+ * - Chronological timelines
+ * - Related documents and resources
+ * - Categorization tags
+ *
+ * Current entries:
+ * 1. case_adamscy - Case study of the Adamski family dynamics
+ * 2. calendar_analysis - Timeline and pattern analysis methodology
+ * 3. prince_ingratitude - Analysis of manipulation tactics
+ * 4. investigation_docs - Documentation and evidence gathering guide
+ */
 export const LIBRARY_ENTRIES: LibraryEntry[] = [
   {
     id: 'case_adamscy',

@@ -104,6 +104,11 @@ export async function getNowPlaying(): Promise<NowPlaying> {
  */
 type SubscribeCallback = (payload: NowPlaying) => void;
 
+/**
+ * Supabase realtime payload type for now_playing table changes.
+ *
+ * @internal
+ */
 type RealtimePayload = RealtimePostgresChangesPayload<NowPlayingRow>;
 
 /**
