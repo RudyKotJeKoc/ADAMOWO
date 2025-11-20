@@ -540,7 +540,10 @@
             "title": "Bewijs verzameld en interventie"
           }
         ],
-        "resources": ["Observatierapport familie Adamski", "Checklist signalen van isolatie"]
+        "resources": [
+          "Observatierapport familie Adamski",
+          "Checklist signalen van isolatie"
+        ]
       },
       "calendarAnalysis": {
         "title": "Kalenderanalyse: kroniek van escalatie",
@@ -571,7 +574,9 @@
             "title": "Rapport en nabespreking"
           }
         ],
-        "resources": ["Template escalatiekalender"]
+        "resources": [
+          "Template escalatiekalender"
+        ]
       },
       "princeIngratitude": {
         "title": "'Prins Ondankbaar': wapen van de narcist",
@@ -597,7 +602,9 @@
             "note": "Het slachtoffer wordt belachelijk gemaakt voor getuigen."
           }
         ],
-        "resources": ["Reflectie-oefening: ontmasker de narratief van de narcist"]
+        "resources": [
+          "Reflectie-oefening: ontmasker de narratief van de narcist"
+        ]
       },
       "investigationDocs": {
         "title": "Onderzoek: manipulaties documenteren",
@@ -627,7 +634,10 @@
             "title": "Rapport voor instanties"
           }
         ],
-        "resources": ["Werkblad bewijslijst", "Handleiding getuigeninterviews"]
+        "resources": [
+          "Werkblad bewijslijst",
+          "Handleiding getuigeninterviews"
+        ]
       }
     }
   },
@@ -1940,5 +1950,670 @@
     "cta": "Koop een Pizza voor de Wolf",
     "subtitle": "Elke pizza brengt ons dichter bij een betere wereld",
     "thanks": "Bedankt voor elke vorm van steun – het maakt echt een verschil! 🐺💙"
+  },
+  "familyPsychology": {
+    "kicker": "Psychologie van familiepatronen",
+    "title": "Mechanismen die families regeren",
+    "intro": "Sommige families functioneren als een systeem van emotioneel verbonden vaten — spanningen die niet zijn verwerkt, gaan verder. Dit educatieve hoofdstuk onderzoekt intergenerationele transmissie, emotionele projectie en afweermechanismen die familierelaties door de decennia heen vormgeven.",
+    "sections": {
+      "mechanisms": {
+        "title": "Familie-echo: hoe een perpetuum mobile van emoties ontstaat",
+        "content": [
+          "Een familie is een systeem waarin elk lid een bepaalde rol speelt. Wanneer een van de ouders emotioneel geweld of dominantie toepast, leren kinderen twee basisoverlevingsstrategieën: vluchten of het patroon herhalen. Deze afweermechanismen, hoewel functioneel in de kindertijd, worden een probleem in het volwassen leven.",
+          "Intergenerationele transmissie is een proces waarbij onbewuste emotionele patronen worden doorgegeven als een familiegen. Een persoon die vluchtte van een dominante ouder, kan zelf dominant worden ten opzichte van zijn eigen kinderen — niet uit kwade wil, maar door gebrek aan andere hulpmiddelen om met stress om te gaan.",
+          "Belangrijke psychologische concepten die helpen deze mechanismen te begrijpen zijn: projectie (het overbrengen van eigen emoties op anderen), rationalisatie (het rechtvaardigen van onaanvaardbaar gedrag), gaslighting (manipulatie van de werkelijkheid), passieve agressie (verborgen uiting van woede) en afweermechanismen beschreven door Anna Freud."
+        ]
+      },
+      "recognition": {
+        "title": "Hoe herken je dat je iemands patroon herhaalt",
+        "content": [
+          "Er zijn karakteristieke kenmerken van communicatie die signaleren dat een persoon onbewust een toxisch relationeel patroon kan herhalen. Hier zijn er een paar:"
+        ]
+      },
+      "observer": {
+        "title": "Perspectief van de waarnemer – wanneer iemand het patroon ziet",
+        "description": "Het komt vaak voor dat een persoon van buitenaf – een partner, vriend of therapeut – het patroon eerder ziet dan de persoon die verstrikt is in het familiesysteem. Zo'n persoon wordt een symbolische 'waarnemer' die het probleem probeert te benoemen en de bron ervan aan te wijzen.",
+        "mechanism": "Als reactie op het benoemen van de waarheid door de waarnemer, reageert de persoon die door het patroon wordt getroffen vaak met agressie, schuldafwenteling of verbreken van contact. Dit is een klassiek afweermechanisme: de waarheid doet het meest pijn aan degene die het nog niet heeft geaccepteerd.",
+        "mechanismTitle": "Afweermechanisme",
+        "truth": "De waarheid doet het meest pijn aan degene die het nog niet heeft geaccepteerd.",
+        "symbolicTitle": "Symbolische waarnemer (bijv. het personage Bożena)",
+        "symbolicDescription": "Een persoon die het patroon ziet, het benoemt en probeert te helpen, maar wordt aangevallen of afgewezen. Het is niet haar schuld – het familiesysteem verdedigt zich tegen verandering."
+      },
+      "curse": {
+        "title": "Vloek van de Heks – transgenerationele metafoor",
+        "metaphorTitle": "Spiegel van generaties",
+        "explanation": "In Slavische folklore betekende de 'vloek van de heks' een vloek die van generatie op generatie overgaat, treffend degenen die niet weten hoe het te doorbreken. In familiepsychologie is dit een metafoor voor het systeem van emotionele transmissie: woede, angst, gevoel van onrecht en behoefte aan controle gaan over van grootouders naar ouders, en dan naar kinderen.",
+        "primaryWound": "In elke familie bestaat er een 'primaire wond' — een moment waarin iemand werd gedomineerd, verraden, genegeerd of vernederd. Opeenvolgende generaties reproduceren onbewust deze emotie in nieuwe rollen: het slachtoffer wordt de agressor, en de waarnemer wordt het slachtoffer.",
+        "breakingPoint": "De vloek verliest zijn kracht op het moment dat iemand het mechanisme ziet en weigert deel te nemen.",
+        "quoteTitle": "Voorbeeld van emotionele recursie – geval X (anoniem)",
+        "quote": "Ik kon het niet met haar uithouden – net zoals zij het niet kon uithouden met haar vader.",
+        "quoteAttribution": "— fragment uit casedocumentatie, identiteit verborgen"
+      },
+      "liberation": {
+        "title": "Hoe je vrij komt – bewustzijnsoefening",
+        "content": [
+          "Bevrijding van het familiepatroon vereist geen wraak of confrontatie. Het vereist bewustzijn, moed en consequent werk aan jezelf. Hier zijn eenvoudige stappen die kunnen helpen in het bevrijdingsproces:"
+        ],
+        "stepsTitle": "Stappen naar bevrijding",
+        "steps": [
+          "Maak een relatiekaart: wie controleerde wie, wie vluchtte, wie zweeg. Schrijf dit op papier of in de vorm van een diagram. Visualisatie onthult vaak patronen die voorheen onzichtbaar waren.",
+          "Schrijf de herhalende zinnen op die je in de familie hoorde (bijv. 'je weet niet wat je te wachten staat', 'ik verdedig mezelf alleen', 'jij begon'). Dit zijn systeemmarkeringen – zinnen die van generatie op generatie overgaan.",
+          "Maak een symbolisch gebaar om de cyclus te sluiten: schrijf een brief (die niet verzonden hoeft te worden), vernietig oude notities of zeg gewoon hardop: 'Ik zie dit patroon en ik zal het niet voortzetten'.",
+          "Onthoud: bewustzijn ≠ wraak. Bewustzijn = vrijheid. Het zien van het mechanisme betekent niet dat je iemand moet veroordelen. Het betekent dat je een andere weg kunt kiezen."
+        ],
+        "reminder": "Bewustzijn ≠ wraak. Bewustzijn = vrijheid."
+      }
+    },
+    "transmission": {
+      "title": "Diagram van intergenerationele transmissie",
+      "father": {
+        "name": "Vader",
+        "mechanism": "Dominantie en emotionele druk"
+      },
+      "barbara": {
+        "name": "Barbara",
+        "mechanism": "Vlucht voor druk, vervolgens herhaling van dominante stijl"
+      },
+      "son": {
+        "name": "Zoon",
+        "mechanism": "Afsnijding op zoek naar rust"
+      },
+      "partner": {
+        "name": "Partner (Julia)",
+        "mechanism": "Reflectie van patroon, poging om het te stoppen door bewustzijn"
+      },
+      "note": "Elke pijl vertegenwoordigt de overdracht van een onbewust emotioneel patroon"
+    },
+    "patterns": {
+      "title": "Indicatoren van herhaling van iemands patroon",
+      "caseLabel": "Voorbeeld van Barbara-type defensieve communicatie (universeel patroon)",
+      "affectWriting": {
+        "title": "Schrijven in affect en morele toon",
+        "description": "Berichten of uitspraken geladen met sterke emoties, beschuldigingen en morele verontwaardiging. Gebrek aan emotionele afstand en reflectie op eigen motivaties."
+      },
+      "blameShifting": {
+        "title": "Schuld op anderen afschuiven",
+        "description": "Consistent jezelf voorstellen als slachtoffer, terwijl anderen de schuld krijgen van alle problemen. Gebrek aan vermogen om verantwoordelijkheid te nemen voor eigen acties."
+      },
+      "revengeThreats": {
+        "title": "Dreigingen met 'vergelding' als manier om controle terug te krijgen",
+        "description": "Gebruik van dreigingen (juridisch, emotioneel, sociaal) als middel om druk uit te oefenen. Doel: herstel van gevoel van macht en controle over de situatie."
+      },
+      "politeMasking": {
+        "title": "Een agressieve uitspraak eindigen met een beleefde wens",
+        "description": "Agressie maskeren met schijnbare beleefdheid (bijv. 'hartelijke groeten' na een reeks beschuldigingen). Dit contrast signaleert intern conflict en gebrek aan authenticiteit."
+      },
+      "pastJustification": {
+        "title": "Beroep doen op het verleden als rechtvaardiging",
+        "description": "Argumentatie van het type 'het was al kapot' of 'jij begon' dient om huidige acties te rationaliseren en verantwoordelijkheid voor eigen keuzes te vermijden."
+      }
+    },
+    "communication": {
+      "title": "Hoe te reageren op Barbara-type emotionele berichten",
+      "note": "Bewuste communicatie is geen spel om te winnen, maar een poging tot begrip en bescherming van eigen grenzen.",
+      "impulsive": {
+        "type": "A: Impulsieve reactie (escalatie)",
+        "description": "Antwoorden in emoties, wederzijdse beschuldigingen, strijd om het laatste woord.",
+        "example": "Voorbeeld: 'Jij bent het probleem!', 'Je doet dit altijd!', 'Je bent zelf een manipulator!' — leidt tot escalatie en versterkt het conflict."
+      },
+      "assertive": {
+        "type": "B: Assertieve reactie (grenzen)",
+        "description": "Kalm grenzen stellen zonder defensief of aanvallend te worden.",
+        "example": "Voorbeeld: 'Ik begrijp dat je van streek bent, maar ik zal dit gesprek niet voortzetten in de huidige vorm. Ik sta open voor een rustig gesprek wanneer je er klaar voor bent.'"
+      },
+      "conscious": {
+        "type": "C: Bewuste reactie (emotionele spiegel)",
+        "description": "Het mechanisme benoemen zonder de persoon te veroordelen, met medeleven voor hun moeilijkheden.",
+        "example": "Voorbeeld: 'Ik zie dat je sterke emoties voelt. Dit kan een echo zijn van wat je zelf in het verleden hebt meegemaakt. Ik ben hier als je wilt praten, maar ik kan geen verantwoordelijkheid nemen voor iets dat ik niet heb gedaan.'"
+      }
+    },
+    "concepts": {
+      "title": "Belangrijke psychologische concepten",
+      "list": "Projectie • Rationalisatie • Gaslighting • Passieve agressie • Intergenerationele transmissie • Afweermechanismen (Anna Freud)"
+    },
+    "references": {
+      "title": "Wetenschappelijke en educatieve links",
+      "projection": {
+        "term": "Projectie",
+        "url": "https://nl.wikipedia.org/wiki/Projectie_(psychologie)"
+      },
+      "gaslighting": {
+        "term": "Gaslighting",
+        "url": "https://nl.wikipedia.org/wiki/Gaslighting"
+      },
+      "transmission": {
+        "term": "Intergenerationele transmissie",
+        "url": "https://www.therapie.nl/afweermechanismen"
+      },
+      "passiveAggressive": {
+        "term": "Passieve agressie",
+        "url": "https://nl.wikipedia.org/wiki/Passief-agressief_gedrag"
+      },
+      "defenseMechanisms": {
+        "term": "Afweermechanismen",
+        "url": "https://nl.wikipedia.org/wiki/Afweermechanisme"
+      }
+    },
+    "closing": "Elke familie heeft zijn patronen. Het verschil tussen gevangenis en vrijheid ligt in of we ze zien."
+  },
+  "analizy": {
+    "title": "Analyses",
+    "description": "Bibliotheek van diepgaande inhoud – grondige analyses van psychologische manipulatie, casedocumentatie en exploratie van patronen. Elke analyse is een uitgebreide studie ontworpen voor gebruikers die op zoek zijn naar expertkennis.",
+    "searchLabel": "Zoek analyses",
+    "searchPlaceholder": "Zoek op titel, tags of trefwoorden...",
+    "filterByCategory": "Filter op categorie",
+    "allCategories": "Alle",
+    "featured": "Uitgelicht",
+    "allAnalyses": "Alle analyses",
+    "searchResults": "Zoekresultaten",
+    "resultsCount": "resultaten",
+    "noResults": "Geen analyses gevonden die aan de criteria voldoen.",
+    "readMore": "Lees volledige analyse",
+    "readingMinutes": "min",
+    "categories": {
+      "manipulacja": {
+        "name": "Manipulatie",
+        "description": "Technieken en patronen van psychologische manipulatie"
+      },
+      "dokumentacja": {
+        "name": "Documentatie",
+        "description": "Casestudies en bewijsdocumentatie"
+      },
+      "psychologia": {
+        "name": "Psychologie",
+        "description": "Psychologische analyse en mechanismen"
+      },
+      "prawo": {
+        "name": "Recht",
+        "description": "Juridische en systemische aspecten"
+      },
+      "wzorce": {
+        "name": "Patronen",
+        "description": "Cycli, lussen en herhaalbare patronen"
+      },
+      "inne": {
+        "name": "Overig",
+        "description": "Andere analyses"
+      }
+    }
+  },
+  "programy": {
+    "title": "Educatieve Programma's",
+    "description": "Onze programma's zijn geen gewone radio-uitzendingen – het zijn structurele educatieve modules geleid door experts. Elk programma biedt unieke perspectieven op psychologische manipulatie, toxische relaties en wegen uit geweld.",
+    "whatYouLearn": "Wat je leert",
+    "hosts": "Presentatoren",
+    "schedule": "Schema",
+    "goToProgram": "Ga naar programma",
+    "additionalInfo": {
+      "title": "Waarom \"programma's\" en niet \"uitzendingen\"?",
+      "description": "We behandelen onze programma's als structurele educatieve modules, niet als gewone radio-uitzendingen. Elk programma is een doordachte cursus geleid door specialisten, met een duidelijk educatief doel en thema-progressie. Deze aanpak verhoogt de waarde van de inhoud en communiceert beter het educatieve karakter van het platform."
+    }
+  },
+  "violence": {
+    "warning": {
+      "default": {
+        "message": "Het onderstaande artikel bevat beschrijvingen van psychologisch geweld, manipulatie en andere moeilijke ervaringen. Als deze inhoud moeilijk of triggerend voor je kan zijn, overweeg dan om het te lezen op een voor jou veilig moment."
+      },
+      "resources": {
+        "label": "Hulpbronnen",
+        "title": "🆘 Waar hulp zoeken?",
+        "subtitle": "Als je geweld ervaart of ondersteuning nodig hebt, neem dan contact op met een van de onderstaande organisaties:",
+        "visit": "Bezoek website"
+      },
+      "resource": {
+        "blueline": {
+          "name": "Blijf Groep",
+          "desc": "Crisisondersteuning voor slachtoffers van huiselijk geweld, 24/7 beschikbaar"
+        },
+        "trustphone": {
+          "name": "Vertrouwenstelefoon",
+          "desc": "Emotionele ondersteuning en crisisinterventie"
+        },
+        "womensrights": {
+          "name": "Vrouwenrechtencentrum",
+          "desc": "Juridische hulp, psychologische en adviesondersteuning"
+        }
+      },
+      "emergency": {
+        "title": "In geval van directe dreiging:",
+        "description": "Bel alarmnummer 112 of neem contact op met de lokale politie. Jouw veiligheid is prioriteit."
+      }
+    }
+  },
+  "document": {
+    "notice": {
+      "label": "Informatie over documentatie",
+      "title": "Brondocumentatie",
+      "availability": "details zullen worden verstrekt aan bevoegde partijen voor verificatie; de publieke versie is geanonimiseerd.",
+      "anonymized": "Geanonimiseerd",
+      "anonymization": {
+        "details": "Persoonlijke gegevens, adressen, identificatienummers en exacte bedragen zijn verborgen of gewijzigd om privacy te beschermen."
+      },
+      "verification": {
+        "title": "Verificatie van documenten",
+        "instructions": "Bevoegde partijen (deelnemers aan de procedure, hun gemachtigden, of personen met gerechtvaardigd juridisch belang) kunnen toegang krijgen tot brondocumentatie voor verificatiedoeleinden."
+      },
+      "contact": "Contact:",
+      "procedure": {
+        "label": "Documenttoegangsprocedure",
+        "step1": "Neem contact met ons op, vermeld je juridisch belang en type document.",
+        "step2": "Overleg een document dat je identiteit en autorisatie bevestigt (bijv. volmacht).",
+        "step3": "Na verificatie zullen we de relevante documenten op een veilige manier verstrekken."
+      },
+      "transparency": "Voor transparantie",
+      "disclaimer": "Publicatie vond plaats in het openbaar belang. Als je denkt dat de publicatie je rechten schendt, neem dan contact met ons op.",
+      "inline": {
+        "default": "Brondocumentatie: details zullen worden verstrekt aan bevoegde partijen voor verificatie; de publieke versie is geanonimiseerd."
+      }
+    },
+    "type": {
+      "notarial": "Notariële akten",
+      "court": "Gerechtelijke stukken",
+      "administrative": "Administratieve documenten",
+      "financial": "Financiële documenten",
+      "other": "Documentatie"
+    }
+  },
+  "exploreMore": {
+    "label": "Ontdek meer",
+    "title": "Ga verder met verkennen",
+    "description": "Aanbevolen inhoud voor verdere verdieping in het onderwerp",
+    "paths": {
+      "beginners": {
+        "title": "Voor beginners",
+        "description": "Begin met de basis"
+      },
+      "interactive": {
+        "title": "Interactieve tools",
+        "description": "Praktische oefeningen en tests"
+      },
+      "deepDive": {
+        "title": "Diepgaande analyse",
+        "description": "Geavanceerde educatieve materialen"
+      }
+    },
+    "suggestions": {
+      "fromHome": {
+        "live": "Luister naar live uitzending",
+        "liveDesc": "24/7 muziek en educatieve programma's",
+        "analizy": "Diepgaande analyses",
+        "analizyDesc": "Uitgebreide studie van manipulatie en patronen",
+        "programy": "Educatieve programma's",
+        "programyDesc": "Vier hoofdmodules geleid door experts",
+        "guides": "Ontdek gidsen",
+        "guidesDesc": "Bibliotheek van cases en mythologie van Narcissus",
+        "tools": "Probeer tools",
+        "toolsDesc": "Test van 8 zonden en geweldslus",
+        "studio": "Leer de studioprogramma's kennen",
+        "studioDesc": "Vier eigen programma's",
+        "analysis": "Programma-archief",
+        "analysisDesc": "Meer dan 100 uur educatieve inhoud",
+        "lab": "Muzieklab",
+        "labDesc": "Ontspannende therapeutische muziek"
+      },
+      "fromGuides": {
+        "library": "Casusbibliotheek",
+        "libraryDesc": "Echte verhalen en analyses",
+        "mythology": "Mythologie van Narcissus",
+        "mythologyDesc": "Waarschuwingssymbolen 4, 7, 8, 13",
+        "familyPsych": "Familiepsychologie",
+        "familyPsychDesc": "Intergenerationele traumaoverdracht",
+        "eightSins": "Test van 8 zonden",
+        "eightSinsDesc": "Herken manipulatiepatronen",
+        "violenceLoop": "Geweldslus",
+        "violenceLoopDesc": "Cyclus: idealisatie, devaluatie, verwerping"
+      },
+      "fromTools": {
+        "community": "Sluit je aan bij de gemeenschap",
+        "communityDesc": "Kalender van rode vlaggen en ondersteuning",
+        "analysis": "Luister naar programma's",
+        "analysisDesc": "Experts bespreken cases",
+        "studio": "Leer de presentatoren kennen",
+        "studioDesc": "Psychologen en journalisten"
+      }
+    }
+  },
+  "anatomy": {
+    "hero": {
+      "title": "Anatomie van Manipulatie",
+      "subtitle": "Herken patronen. Benoem mechanismen. Herwin controle."
+    },
+    "audience": {
+      "conflict": {
+        "title": "Je ervaart conflict",
+        "description": "Je zit in een toxische familierelatie. Je voelt dat er iets niet klopt, maar je kunt niet benoemen wat. Mensen geloven je niet, want 'hij/zij praat zo goed'."
+      },
+      "support": {
+        "title": "Je ondersteunt dierbaren",
+        "description": "Iemand dichtbij gaat door een moeilijk conflict en je wilt helpen, maar weet niet hoe. Je zoekt naar taal om over moeilijke mechanismen te praten."
+      },
+      "professional": {
+        "title": "Je werkt met mensen",
+        "description": "Je bent psycholoog, therapeut, familieadvocaat, maatschappelijk werker of mediator. Je hebt diagnostische hulpmiddelen nodig."
+      },
+      "cta": "Herken patronen"
+    },
+    "schemas": {
+      "sectionTitle": "6 Belangrijke Manipulatiepatronen",
+      "whatIsIt": "Wat is het?",
+      "howToRecognize": "Hoe herken je het?",
+      "exampleFromDocs": "Voorbeeld uit documentatie",
+      "showHideExample": "Voorbeeld tonen/verbergen",
+      "testYourKnowledge": "Test je kennis →",
+      "sources": "Bronnen",
+      "footer": "Dit patroon behoort tot de categorie: {category}",
+      "example": {
+        "context": "Context",
+        "behavior": "Gedrag",
+        "analysis": "Analyse",
+        "sourceDocs": "Brondocumenten"
+      },
+      "quiz": {
+        "submit": "Controleer antwoord",
+        "tryAgain": "Probeer opnieuw"
+      },
+      "dualCommunication": {
+        "title": "Gespleten Communicatie",
+        "definition": "Het voeren van twee parallelle, tegenstrijdige narratieven: publiek (liefde, zorg, verzoening) en privé (macht, controle, wraak). Emotietaal instrumenteel gebruikt als middel, niet als expressie van authentiek gevoel.",
+        "flags": {
+          "wordsVsActions": "Woorden klinken mooi, maar daden spreken ze tegen",
+          "loveWithLegalAction": "\"Ik wil verzoening\" + gelijktijdige juridische stappen",
+          "instrumentalEmotions": "Emotietaal instrumenteel gebruikt, in-/uitgeschakeld afhankelijk van context",
+          "parallelActions": "Therapievoorstel + gelijktijdig verzamelen van procesmateriaal"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Familieconflict - moeder verklaart wens tot normalisatie van relaties",
+            "behavior": "Verklaring: 'Ik wil dat het normaal is, zoals altijd. Ik heb familietherapie voorgesteld' (14.04). Tegelijkertijd: bijhouden van kalender belastend voor zoon vanaf februari, consultaties met juridisch adviseur over herroeping schenking (zomer 2021), activering Blauwe Kaart procedure (29.07).",
+            "analysis": "Dit is klassieke tweesporenstrategie: performatieve verzoening (therapievoorstel) dient als façade voor verborgen agressieve acties (procedurale voorbereidingen). Het voorstel was een schijnactie, berekend om de indruk van goede wil te wekken, terwijl het werkelijke doel het afnemen van eigendom was."
+          },
+          "ex2": {
+            "context": "Zorg voor zieke echtgenoot als verklaard motief",
+            "behavior": "Verklaring van zorg voor welzijn echtgenoot. Werkelijkheid: instrumentalisering van zijn gezondheidstoestand - verkrijgen van volmacht (19.07) kort na escalatie conflict, gebruik ervan voor juridische acties in strijd met zijn eigen verklaringen ('Dariusz beledigt mij niet' vs. claim wegens 'hardnekkige belediging').",
+            "analysis": "Verklaarde zorg is façade voor volledige controle. Echtgenoot gedegradeerd tot rol van figurant, wiens gezondheidstoestand werd gebruikt als rechtvaardiging voor vergeldingsacties. Volmacht gebruikt om zijn eigen wil te overschrijven."
+          }
+        },
+        "quiz": {
+          "question": "Iemand zegt 'ik wil onze relatie echt herstellen', maar verzamelt tegelijkertijd materiaal tegen je voor een rechtszaak. Wat betekent dit?",
+          "opt1": "De persoon is in de war en weet niet wat hij/zij doet",
+          "exp1": "Nee. Gelijktijdig voeren van twee tegenstrijdige acties (herstelvoorstel + procesvoorbereidingen) wijst op strategie, niet verwarring.",
+          "opt2": "Dit is gespleten communicatiepatroon - woorden dienen als façade",
+          "exp2": "Precies. Verzoeningsverklaringen zijn een middel om een beeld van goede wil op te bouwen, terwijl het echte doel (juridische strijd) parallel wordt gerealiseerd.",
+          "opt3": "Dit is normale voorzichtigheid in een conflict",
+          "exp3": "Nee. Normale voorzichtigheid is jezelf beschermen, maar niet actief een verzoeningsfaçade opbouwen bij gelijktijdige escalatie."
+        }
+      },
+      "emotionInstrumentalization": {
+        "title": "Instrumentalisering van Emoties",
+        "definition": "Strategisch gebruik van affectief geladen taal (lijden, angst, pijn) niet om authentieke gevoelens uit te drukken, maar als middel om gewenste reactie bij ontvangers op te roepen (medelijden, interventie) en complex conflict om te vormen tot simpele dichotomie agressor-slachtoffer.",
+        "flags": {
+          "victimLanguage": "Veelvuldig gebruik van slachtoffertaal: 'mijn hart breekt', 'ik ben bang', 'hij weet dat dit me pijn doet'",
+          "healthAsArgument": "Geestelijke gezondheidstoestand als kroonargument voor geloofwaardigheid ('we worden psychiatrisch behandeld', 'depressie', 'gewichtsverlies')",
+          "dramaticScenarios": "Enscenering van crisissituaties (wachten op politie 'in bos naast terrein' in plaats van thuis)",
+          "fearCreation": "Creëren van dreigende sfeer ondanks afwezigheid van reëel geweld ('ik ben bang voor mijn zoon', hoewel zoon nooit heeft geslagen)"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Melding bij politie van psychologisch misbruik",
+            "behavior": "Barbara: 'is bang voor haar zoon', is in 'ernstige stress', 'wordt psychiatrisch behandeld' vanwege hem. Tegelijkertijd verklaart echtgenoot Sylwester: 'Hij heeft mij noch mijn vrouw ooit geslagen'. Zij initieerde confrontaties (nachtelijke inbraak in kamer van Dariusz).",
+            "analysis": "Creëren van dreigende sfeer was opzettelijke psychologische handeling, geen weerspiegeling van werkelijkheid. Gezondheidstoestand instrumenteel gebruikt - als schild (ze kan niet in vraag worden gesteld, want ze lijdt) en tegelijk als wapen (haar lijden is bewijs van schuld van zoon)."
+          },
+          "ex2": {
+            "context": "Politie-interventie in nacht 17/18 juli 2021",
+            "behavior": "In plaats van op patrouille thuis te wachten, wachtte Barbara samen met vader en zus 'in bos naast terrein'. Dariusz was opgesloten in zijn kamer. Interventie leidde niet tot arrestatie.",
+            "analysis": "Enscenering van spektakel voor opsporingsinstanties. Gebaar bedoeld om suggestief beeld te creëren van familie gedwongen tot vlucht voor gevaarlijke agressor, wat volledig in strijd was met werkelijkheid."
+          },
+          "ex3": {
+            "context": "Melding van vernieling tuin als psychologisch misbruik",
+            "behavior": "'Hij weet dat dit me pijn doet. Hij vernielt mijn tuin, bloemen en struiken (...) Mijn zoon weet dat ik van planten en bloemen houd, daarom wil hij dit alles vernietigen'.",
+            "analysis": "Toekenning van bewuste intentie om psychologische pijn te veroorzaken. Gewoon conflict over gebruik van terrein voorgesteld als opzettelijke psychologische aanval op gevoeligste punt. Versterkt slachtofferpositie en legt basis voor beschuldiging van 'misbruik'."
+          }
+        },
+        "quiz": {
+          "question": "Iemand zegt vaak 'dit vernietigt me psychologisch', maar escaleert tegelijkertijd actief het conflict. Hoe dit te interpreteren?",
+          "opt1": "De persoon lijdt echt, dus alles is gerechtvaardigd",
+          "exp1": "Nee. Authentiek lijden rechtvaardigt geen actieve escalatie. Als iemand echt het lijden wil beëindigen, verdiept hij/zij het conflict niet.",
+          "opt2": "Dit is normale manier om frustratie te uiten",
+          "exp2": "Nee. Normale uiting van frustratie is communicatie over behoeften. Instrumentalisering is strategisch gebruik van lijden als middel.",
+          "opt3": "Dit is instrumentalisering van emoties - lijden als tactiek",
+          "exp3": "Precies. Tegenstrijdigheid tussen verklaard lijden en escalatie wijst erop dat emoties worden gebruikt als retorisch middel, niet als authentieke expressie."
+        }
+      },
+      "invertedTriage": {
+        "title": "Omgekeerde Prioritering",
+        "definition": "Gedragspatroon waarbij verklaarde prioriteit (bijv. gezondheid van dierbare) feitelijk wordt gedegradeerd tot rol van rekwisiet, terwijl werkelijk, verborgen doel (bijv. verkrijgen van bewijsmateriaal) wordt verheven tot hoogste prioriteit. Persoon stelt bewust welzijn van anderen op het spel voor procedurele doeleinden.",
+        "flags": {
+          "urgentIgnored": "Urgente/bedreigende situatie wordt genegeerd of vertraagd",
+          "evidenceOverCare": "Prioriteit: verkrijgen van procesbewijs > welzijn van persoon in crisis",
+          "opportunisticTiming": "Gebruik van crisissituaties als gelegenheid om narratief op te bouwen",
+          "dutyNeglect": "Verwaarlozing van basale verplichtingen (bijv. verzorger) voor strategische doelen"
+        },
+        "examples": {
+          "ex1": {
+            "context": "21 mei 2021 - Sylwester Adamski heeft medische hulp nodig",
+            "behavior": "Barbara als verzorger (verzorgingsuitkering 1800 zł/mnd.) eist in plaats van ambulance te bellen sleutels van Dariusz, waardoor confrontatie ontstaat. Prioriteit: opbouwen van procesbewijs ('weigerde te brengen') > gezondheid echtgenoot. Dariusz haalt uiteindelijk ZELF vader op uit ziekenhuis. Barbara laat dit feit opzettelijk WEG in 'kalender'.",
+            "analysis": "Modelvoorbeeld van omgekeerde prioritering. Verklaarde noodsituatie (gezondheid echtgenoot) gedegradeerd tot rekwisiet. Werkelijk doel: fabriceren van onrecht ('harteloze zoon hielp niet'). Gedrag van Barbara is ernstige verwaarlozing van verzorgerplichten. Vervolgens werd feit dat Dariusz vader ophaalde gewist uit narratief - want het zou these van zijn harteloosheid tegenspreken."
+          }
+        },
+        "quiz": {
+          "question": "Verzorger van zieke persoon belt geen ambulance, maar eist hulp van iemand met wie ruzie bestaat. Waarom?",
+          "opt1": "Verzorger is in de war en weet niet wat te doen",
+          "exp1": "Nee. Persoon die verzorgingsuitkering ontvangt kent procedures. Ambulance bellen is eerste en voor de hand liggende reactie in medische noodsituatie.",
+          "opt2": "Wil kosten van ambulance besparen",
+          "exp2": "Nee. Ambulance is gratis bij noodgevallen in Nederland/Polen. Verzorgingsuitkering dekt precies zulke verplichtingen.",
+          "opt3": "Dit is omgekeerde prioritering - procedureel doel > gezondheid",
+          "exp3": "Precies. Prioriteit is niet gezondheid, maar creëren van situatie waarin andere partij kan worden beschuldigd van gebrek aan hulp. Dit is instrumentalisering van crisis voor strategische doelen."
+        }
+      },
+      "mirrorProjection": {
+        "title": "Spiegelprojectie",
+        "definition": "Psychologisch mechanisme waarbij eigen, onaanvaardbare eigenschappen, gedachten of motivaties aan anderen worden toegeschreven. In conflictdynamiek dient het om rollen om te keren: agressor presenteert zichzelf als slachtoffer, terwijl hij tegenstander precies die gedragingen verwijt die hij zelf vertoont.",
+        "flags": {
+          "accusationMirror": "Beschuldigingen aan andere persoon zijn spiegelbeeld van eigen acties",
+          "roleReversal": "Dader presenteert zichzelf als slachtoffer van hetzelfde gedrag dat hij/zij toepast",
+          "deflection": "Aandacht afgeleid van eigen negatieve acties door anderen te beschuldigen",
+          "ownTraitsDenied": "Categorische ontkenning van eigen eigenschappen die aan anderen worden toegeschreven"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Beschuldiging van controle en bewaking",
+            "behavior": "Barbara beschuldigt zoon van haar controleren met camera's. Werkelijkheid: zij zelf houdt gedetailleerde 'kalender' bij die elke beweging van zoon volgt, bezit opnames, komt midden in de nacht (2:30) zijn kamer binnen, probeert in zijn relatie te interfereren.",
+            "analysis": "Klassieke projectie. Zij vertoont obsessief-controlerend gedrag, maar schrijft het aan zoon toe. Externe monitoring (camera's) is standaard beveiliging van terrein. Haar bewaking is schending van privacy van volwassen persoon."
+          },
+          "ex2": {
+            "context": "Beschuldiging van agressie en vulgariteit",
+            "behavior": "Barbara beschuldigt zoon van agressie. Werkelijkheid: zij brak 's nachts binnen in kamer van Dariusz (2:00) om zijn nicht Julia verbaal aan te vallen ('Franse hoer'). Sylwester verklaart dat Barbara confrontaties initieerde.",
+            "analysis": "Omkering van rollen. Werkelijke dader van verbale agressie en provocatie presenteert zich als slachtoffer. Defensieve reactie van Dariusz (na provocatie) wordt voorgesteld als ongefundeerde aanval."
+          },
+          "ex3": {
+            "context": "Beschuldiging van gebrek aan empathie voor zieke vader",
+            "behavior": "Barbara beschuldigt zoon van gebrek aan empathie. Werkelijkheid: zij zelf heeft ziekte van echtgenoot instrumenteel gebruikt (volmacht 19.07 kort na escalatie), gezondheid ondergeschikt gemaakt aan procedureel doel (incident 21.05), hem gebruikt als middel in conflict.",
+            "analysis": "Toekenning van gebrek aan empathie aan persoon die feitelijk vader uit ziekenhuis haalde. Werkelijk gebrek aan empathie is instrumentalisering van zieke echtgenoot voor juridische en financiële doelen."
+          }
+        },
+        "quiz": {
+          "question": "Persoon A beschuldigt persoon B van 'controlerend' zijn, maar volgt zelf elke beweging van B. Wat gebeurt er?",
+          "opt1": "Persoon A heeft recht zich te verdedigen tegen controle",
+          "exp1": "Nee. Als persoon A werkelijk controle zou ervaren, zou hij/zij niet reageren met nog meer controle, maar zich terugtrekken of oplossing zoeken.",
+          "opt2": "Dit is spiegelprojectie - A schrijft B eigen eigenschappen toe",
+          "exp2": "Precies. Beschuldiging van controle is projectie van eigen controlerend gedrag. Dit is afweermechanisme dat omkering van rollen mogelijk maakt en verantwoordelijkheid vermijdt.",
+          "opt3": "Beide personen zijn even controlerend",
+          "exp3": "Niet noodzakelijk. Projectie bestaat juist in toekennen aan ander van gedrag dat deze niet vertoont (of in veel mindere mate vertoont)."
+        }
+      },
+      "selectiveDocumentation": {
+        "title": "Selectieve Documentatie",
+        "definition": "Systematisch verzamelen van bewijsmateriaal op tendentieuze wijze: uitsluitend noteren van negatieve gedragingen van andere partij bij gelijktijdig weglaten of minimaliseren van eigen provocaties en positieve acties van tegenstander. Doel is schijn van objectieve documentatie wekken bij feitelijk creëren van vooraf aangenomen narratief.",
+        "flags": {
+          "onlyNegative": "Uitsluitend negatieve gedragingen van één partij worden genoteerd",
+          "positiveOmitted": "Opzettelijk weglaten van feiten gunstig voor beschuldigde persoon",
+          "biasedLanguage": "Gebruik van pejoratieve termen en subjectieve oordelen voorgesteld als feiten",
+          "intentionAssumed": "Toekennen van slechte intenties aan ambigue handelingen",
+          "prosecutorialTone": "'Aanklager'-stijl - opbouwen van zaak, niet beschrijven van werkelijkheid"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Notitie van 29 maart in 'kalender'",
+            "behavior": "'Darek Dronken dronk met Zaucha (...) na 22 belden we politie, want hij was waarschijnlijk gek geworden'. Gebruik van pejoratieve benaming ('Dronken') en subjectief oordeel ('waarschijnlijk gek geworden') voorgesteld als objectieve beschrijving.",
+            "analysis": "Dit is geen feitelijke kroniek, dit is actief proces van beoordelen en stigmatiseren. Doel is niet onthouden wat gebeurde, maar creëren van belastend materiaal in schijnbaar neutrale vorm."
+          },
+          "ex2": {
+            "context": "Notitie van 11 april - 'gedachten lezen'",
+            "behavior": "'Op zondag waren mijn zussen er (...) Hij reed opzettelijk ergens heen met ampera, om niet met Dorota te praten.' Feit (reed weg) + interpretatie (opzettelijk, om niet...) voorgesteld als één.",
+            "analysis": "Techniek van toekennen van negatieve intenties. Laat geen andere mogelijkheid toe (bijv. eerdere plannen). Dit is zogenaamde attributiefout - toekennen van vijandige motieven aan ambigue gedrag. Herhalend patroon in haar narratief."
+          },
+          "ex3": {
+            "context": "Kalender februari-augustus 2021",
+            "behavior": "Nauwgezet genoteerd: conflicten, 'verdacht' gedrag, beledigend (volgens haar). Volledig weggelaten: ophalen vader uit ziekenhuis door Dariusz (21.05), zijn investeringen in onroerend goed, welke positieve interacties dan ook.",
+            "analysis": "Klinisch voorbeeld van bevestigingsbias (confirmation bias). Dit is geen kroniek, dit is proces van selectie van gegevens die vooraf aangenomen these van slachtoffer zijn bevestigen. Weglaten van ophalen vader uit ziekenhuis is bijzonder grof - dit is zuiveren van narratief van tegenbewijs."
+          }
+        },
+        "quiz": {
+          "question": "Iemand houdt 'dagboek' van conflict bij, maar noteert alleen slechte dingen over andere partij. Is dit normaal?",
+          "opt1": "Ja, dit is manier om met stress om te gaan",
+          "exp1": "Niet in dit geval. Therapeutisch dagboek concentreert zich op eigen gevoelens, niet op verzamelen van bewijs tegen iemand. Dit is verschil tussen verwerken van emoties en opbouwen van zaak.",
+          "opt2": "Dit is selectieve documentatie - procesmateriaal, geen dagboek",
+          "exp2": "Precies. Wanneer 'dagboek' uitsluitend negatieve informatie over één persoon bevat bij weglaten van context en eigen provocaties, is dit geen authentieke kroniek, maar tendentieus bewijsmateriaal met voorbedachten rade gecreëerd.",
+          "opt3": "Dit toont dat die andere persoon echt slecht is",
+          "exp3": "Nee. Selectieve documentatie zegt meer over persoon die bijhoudt dan over beschreven persoon. Dit is bevestiging van vooraf aangenomen narratief, geen objectief beeld van werkelijkheid."
+        }
+      },
+      "moralSelfLicensing": {
+        "title": "Morele Zelfautorisatie",
+        "definition": "Psychologisch mechanisme waarbij eigen, egoïstische handelingen worden voorgesteld als missie in naam van hogere waarden. Privévete wordt verheven tot moraliteit, waardoor destructieve acties kunnen worden gerechtvaardigd en steun van omgeving kan worden verkregen door coöptatie van instellingen en publieke opinie.",
+        "flags": {
+          "higherValues": "Beroep op hogere waarden: 'gerechtigheid', 'herstel van orde', 'les leren'",
+          "victimAsHero": "Zelfcreatie als held die vecht voor rechtvaardige zaak (van slachtoffer naar strijder)",
+          "institutionWeapon": "Gebruik van staatsinstellingen als 'gerechtigheidsinstrum ent' (feitelijk: wapen in privéoorlog)",
+          "chorusOfSupport": "Betrekken van anderen als 'koor van steun' dat morele positie versterkt",
+          "privateVengeance": "Persoonlijke wraak voorgesteld als herstel van orde en regels"
+        },
+        "examples": {
+          "ex1": {
+            "context": "Herroeping schenking als 'straf voor ongehoorzaamheid'",
+            "behavior": "Barbara plaatst vermogensconflict in moreel kader: 'grove ondankbaarheid'. Dit is juridisch-moreel etiket dat radicale stappen (herroeping schenking) mogelijk maakt te rechtvaardigen niet als wraakact voor persoonlijke grieven (relatie zoon met nicht), maar als rechtvaardige consequentie van immoreel gedrag.",
+            "analysis": "Privéwraak voorgesteld als herstel van orde. Barbara gebruikte art. 898 § 1 BW als instrument van morele wraak, niet bescherming van schenker (die was Sylwester, niet zij). Dit is zelfautorisatie - zichzelf recht geven op destructieve actie door morele rechtvaardiging."
+          },
+          "ex2": {
+            "context": "Gebruik van Blauwe Kaart procedure en Politie",
+            "behavior": "Barbara positioneert zich als burger die bescherming zoekt tegen geweld. Echter zomer 2021 consulteerde zij al met juridisch adviseur over strategie herroeping schenking. BK-procedure geactiveerd na vertrek van Dariusz (geen actuele dreiging). Doel was niet bescherming, maar verkrijgen van formele instrumenten voor strijd om eigendom.",
+            "analysis": "Instrumentalisering van staatssysteem. Instellingen voor bescherming van slachtoffers van geweld behandeld als middel om procedureel doel te bereiken. Dit is misbruik van systeem onder dekmantel van 'strijd voor veiligheid'."
+          },
+          "ex3": {
+            "context": "Familie als 'koor van steun'",
+            "behavior": "In BK-documentatie: broers en zussen 'stopten met bezoeken uit angst voor gedrag van broer'. Artur en Monika woonden niet in huis, kwamen zelden. Hun 'angst' werd gevormd door eenzijdig narratief van moeder, niet door persoonlijke ervaring.",
+            "analysis": "Betrekken van familie bij sociaal isoleren van Dariusz en versterken van eigen morele positie. Creëren van indruk dat gedrag van zoon door hele omgeving wordt veroordeeld. Dit is opbouwen van 'coalitie' die legitimiteit van eigen acties versterkt."
+          }
+        },
+        "quiz": {
+          "question": "Iemand zegt 'ik doe dit voor het welzijn van de familie', maar zijn/haar acties vernietigen relaties. Hoe dit te begrijpen?",
+          "opt1": "Persoon gelooft oprecht dat hij/zij goed doet",
+          "exp1": "Mogelijk, maar wanneer 'welzijn van familie' argument is voor destructieve acties (processen, publieke vernedering), is dit eerder zelfautorisatie - rechtvaardiging van wraak door beroep op hogere waarden.",
+          "opt2": "Dit is morele zelfautorisatie - welzijn van familie als voorwendsel",
+          "exp2": "Precies. Wanneer iemand destructieve acties (processen, herroeping schenking, instrumentalisering van instellingen) voorstelt als 'strijd voor waarden', is dit mechanisme van zelfautorisatie. Privévete wordt moreel gerechtvaardigd.",
+          "opt3": "Dit toont dat familie werkelijk in gevaar is",
+          "exp3": "Nee. Als het werkelijk om welzijn van familie zou gaan, zouden acties gericht zijn op de-escalatie en herstel. Hier is het omgekeerde - escalatie onder dekmantel van bescherming van waarden."
+        }
+      }
+    },
+    "framework": {
+      "title": "Analysemethode: Verklaring → Actie → Tegenstrijdigheid",
+      "intro": "Leer zelf tegenstrijdigheden te analyseren",
+      "description": "Dit framework helpt de discrepantie tussen woorden en daden te ontmaskeren. Vul alle drie stappen in om volledige analyse te zien.",
+      "progress": "Voortgang invulling",
+      "characters": "tekens",
+      "hint": "Tip",
+      "hint1": "Noteer exacte citaten: 'hij/zij zei...', 'schreef...'. Hoe specifieker, hoe beter.",
+      "hint2": "Beschrijf alleen feiten: 'diende claim in', 'belde politie', 'zette stroom uit'. Zonder interpretatie.",
+      "hint3": "Stel vraag: 'Ondersteunen acties verklaarde intenties?' Zo niet - je hebt dissonantie.",
+      "step1": {
+        "title": "Wat zegt de persoon?",
+        "description": "Noteer precies verklaringen, beloften, woorden van deze persoon. Wat wil hij/zij dat je hoort?",
+        "placeholder": "Bijv. 'Het is me heel belangrijk onze relatie te herstellen', 'Ik wil alleen het beste voor je', 'Ik doe dit uit zorg'..."
+      },
+      "step2": {
+        "title": "Wat doet de persoon?",
+        "description": "Noteer concrete acties en gedragingen - feiten, geen interpretaties.",
+        "placeholder": "Bijv. 'Diende rechtszaak in 3 dagen na dit gesprek', 'Verzamelt bewijsmateriaal tegen mij', 'Belde geen medische hulp, maar eiste van mij...'..."
+      },
+      "step3": {
+        "title": "Waar is de tegenstrijdigheid?",
+        "description": "Analyseer verschil tussen woorden en daden. Ondersteunen acties verklaarde intenties?",
+        "placeholder": "Je analyse: Wat is prioriteit - herstel van relatie of strijd? Zijn acties consistent met verklaringen?..."
+      },
+      "analyzing": "Analyseren...",
+      "analyze": "Analyseer tegenstrijdigheid",
+      "clear": "Wissen",
+      "export": "Exporteren",
+      "save": "Bewaar analyse",
+      "clearConfirm": "Weet je zeker dat je het formulier wilt wissen? Alle gegevens gaan verloren.",
+      "savedSuccess": "Analyse is opgeslagen!",
+      "results": {
+        "title": "Analyseresultaten",
+        "intro": "Op basis van je analyse hebben we potentiële manipulatiepatronen geïdentificeerd:",
+        "dissonance": "Geïdentificeerde Dissonantie",
+        "dissonanceText": "Er bestaat duidelijke tegenstrijdigheid tussen verklaarde intenties en werkelijke acties. Persoon verklaart bepaalde waarden (bijv. verzoening), maar zijn/haar daden leiden tot volledig andere resultaten (escalatie, strijd).",
+        "redFlags": "Rode Vlaggen",
+        "flag1": "Gespleten communicatie: woorden dienen als façade voor andere doelen",
+        "flag2": "Prioritering van verborgen doelen boven verklaarde",
+        "flag3": "Selectieve presentatie van feiten om narratief op te bouwen",
+        "recommendations": "Aanbevelingen",
+        "rec1": "Documenteer zowel woorden als daden - dit helpt patronen te zien",
+        "rec2": "Let op tegenstrijdigheden tussen verklaringen en acties",
+        "rec3": "Overweeg consultatie met specialist (psycholoog, advocaat)",
+        "close": "Resultaten sluiten"
+      },
+      "savedAnalyses": "Opgeslagen analyses",
+      "loadAnalysis": "Laden",
+      "deleteAnalysis": "Verwijderen",
+      "deleteConfirm": "Weet je zeker dat je deze analyse wilt verwijderen?"
+    },
+    "severity": {
+      "high": "Hoog",
+      "medium": "Gemiddeld",
+      "low": "Laag"
+    },
+    "categories": {
+      "cognitive": "Cognitieve dissonantie",
+      "emotional": "Emotionele manipulatie",
+      "institutional": "Instrumentalisering van instellingen"
+    },
+    "resources": {
+      "title": "Heb je Ondersteuning Nodig?",
+      "subtitle": "Deze pagina vervangt geen professionele hulp. In geval van dreiging neem altijd contact op met relevante diensten.",
+      "blueLine": "Hulp voor slachtoffers van huiselijk geweld. 24/7 telefoon en online chat.",
+      "trustLine": "Ondersteuning voor mensen in psychische crisis. 24/7, anoniem.",
+      "legal": "Gratis juridisch advies in familiezaken.",
+      "legalLink": "rechtswinkels.nl"
+    },
+    "warning": {
+      "title": "Waarschuwing: Moeilijke Inhoud",
+      "subtitle": "Belangrijke informatie voor het lezen",
+      "close": "Sluiten",
+      "message": "Materiaal op deze pagina bevat gedetailleerde beschrijvingen van psychologische manipulatie, familieconflicten en instrumentalisering van instellingen. Inhoud kan emotioneel moeilijk zijn, vooral voor mensen die vergelijkbare situaties hebben meegemaakt.",
+      "contains": "Pagina bevat",
+      "content1": "Beschrijvingen van toxische familierelaties en emotionele manipulatie",
+      "content2": "Analyses van cognitieve dissonantie en psychologische mechanismen",
+      "content3": "Voorbeelden uit echte juridische documenten en verklaringen",
+      "content4": "Inhoud over instrumentalisering van rechtssysteem",
+      "support": {
+        "title": "Je bent niet alleen",
+        "message": "Als je vergelijkbare situatie meemaakt, onthoud dat er professionele hulp bestaat. Deze pagina vervangt geen ondersteuning van specialisten.",
+        "hotline": "Blijf Groep: 088 233 1800",
+        "chat": "Vertrouwenstelefoon: 0800 0113",
+        "legal": "Juridische hulp beschikbaar"
+      },
+      "recommendations": {
+        "title": "Aanbevelingen voor het lezen",
+        "rec1": "Lees materiaal op veilige, comfortabele plek",
+        "rec2": "Je kunt op elk moment stoppen met lezen en later terugkomen",
+        "rec3": "Als je je niet goed voelt, gebruik hulpcontacten hieronder",
+        "rec4": "Overweeg ondersteuning van therapeut bij verwerken van moeilijke inhoud"
+      },
+      "dontShowAgain": "Deze waarschuwing niet meer tonen (wordt automatisch hersteld na 30 dagen)",
+      "accept": "Ik begrijp het, ik wil doorgaan",
+      "leave": "Verlaat pagina",
+      "disclaimer": "Deze waarschuwing dient je emotionele veiligheid. We zorgen voor je."
+    }
   }
 }
