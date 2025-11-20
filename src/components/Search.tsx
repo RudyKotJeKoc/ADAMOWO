@@ -260,12 +260,12 @@ export function Search(): JSX.Element {
       <button
         type="button"
         onClick={handleOpen}
-        className="inline-flex items-center gap-2 rounded-full border border-base-700 bg-base-900/80 px-3 py-2 text-sm text-base-300 transition hover:border-accent-500 hover:text-accent-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
+        className="flex-shrink-0 inline-flex items-center gap-1 sm:gap-2 rounded-full border border-base-700 bg-base-900/80 px-2 sm:px-3 py-2 text-sm text-base-300 transition hover:border-accent-500 hover:text-accent-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
         aria-label={t('search.open')}
       >
         <MagnifyingGlassIcon className="h-4 w-4" aria-hidden="true" />
         <span className="hidden sm:inline">{t('search.placeholder')}</span>
-        <kbd className="hidden rounded bg-base-800 px-1.5 py-0.5 text-xs font-mono text-base-400 sm:inline">
+        <kbd className="hidden rounded bg-base-800 px-1.5 py-0.5 text-xs font-mono text-base-400 md:inline">
           ⌘K
         </kbd>
       </button>

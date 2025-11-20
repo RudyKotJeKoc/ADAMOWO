@@ -199,7 +199,7 @@ export function Header(): JSX.Element {
           <div className="flex items-center justify-center gap-6">{renderNavLinks('desktop')}</div>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
           <Search />
           <LangSwitch />
           <ThemeSwitch />
