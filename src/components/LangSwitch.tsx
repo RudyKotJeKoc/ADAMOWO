@@ -30,9 +30,9 @@ export function LangSwitch(): JSX.Element {
   const { i18n, t } = useTranslation();
   const current = i18n.resolvedLanguage ?? i18n.language;
   return (
-    <div className="relative" role="group" aria-label={t('controls.language.label')}>
+    <div className="relative flex-shrink-0" role="group" aria-label={t('controls.language.label')}>
       <LayoutGroup>
-        <div className="relative flex items-center gap-1 rounded-full border border-base-700 bg-base-900/80 px-1 py-1 text-xs font-semibold uppercase tracking-wide text-base-200 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-base-900/70">
+        <div className="relative flex items-center gap-0.5 sm:gap-1 rounded-full border border-base-700 bg-base-900/80 px-0.5 sm:px-1 py-1 text-xs font-semibold uppercase tracking-wide text-base-200 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-base-900/70">
           {LANG_CODES.map((code) => {
             const isActive = current === code;
             const label = t(`controls.language.${code}`);
@@ -43,7 +43,7 @@ export function LangSwitch(): JSX.Element {
                 key={code}
                 type="button"
                 className={clsx(
-                  'relative inline-flex min-w-[2.75rem] items-center justify-center rounded-full px-2.5 py-1.5 transition focus-visible:shadow-focus',
+                  'relative inline-flex min-w-[2rem] sm:min-w-[2.5rem] items-center justify-center rounded-full px-1.5 sm:px-2.5 py-1.5 transition focus-visible:shadow-focus',
                   isActive ? 'text-base-950' : 'text-base-200 hover:text-base-50'
                 )}
                 aria-pressed={isActive}
