@@ -5,6 +5,7 @@
   "navigation": {
     "live": "Live",
     "analizy": "Analyses",
+    "taxonomy": "Taxonomie",
     "programy": "Programma's",
     "violenceLoop": "Geweldscyclus",
     "studio": "Studio",
@@ -2668,6 +2669,74 @@
       "accept": "Ik begrijp het, ik wil doorgaan",
       "leave": "Verlaat pagina",
       "disclaimer": "Deze waarschuwing dient je emotionele veiligheid. We zorgen voor je."
+    }
+  },
+  "taxonomy": {
+    "title": "Anatomie van Manipulatie: Taxonomie van Systemische Mechanismen",
+    "lead": "Deze analyse vormt een deconstructie van psychologische, juridische en organisatorische tactieken geïdentificeerd tijdens het Adamowo-onderzoek. Het onderstaande lexicon definieert concrete aanvalsvectoren – van bedrijfsgaslighting tot juridische engineering. Dit is geen theorie, dit is een kaart van systeemfouten.",
+    "footer": {
+      "title": "Methodologische Opmerking",
+      "content": "Deze taxonomie werd ontwikkeld op basis van documentatie, getuigenissen en analyse van echte gevallen. Elke tactiek beschrijft specifieke systemische mechanismen geïdentificeerd tijdens het onderzoek. Dit zijn geen theoretische constructies – dit zijn gedocumenteerde actiepatronen."
+    },
+    "categories": {
+      "corporate": {
+        "name": "Bedrijfsomgeving (Industriële Sabotage)",
+        "description": "Manipulatietactieken in zakelijke omgeving – van informatiecorruptie tot opzettelijke infrastructuurvernietiging en eliminatie van concurrentie."
+      },
+      "legalFamily": {
+        "name": "Juridische en Familie Engineering",
+        "description": "Gebruik van rechtssysteem en familierelaties als agressie-instrumenten – van bewijsprovocatie tot procesverraad."
+      },
+      "institutional": {
+        "name": "Institutionele Pathologie",
+        "description": "Systemische disfunctiemechanismen in publieke instellingen – contextblindheid, intimidatie en moreel relativisme."
+      }
+    },
+    "tactics": {
+      "informationalCorruption": {
+        "name": "Informatiecorruptie",
+        "description": "Financiële gratificatie aanbieden in ruil voor het verbergen van kritieke managementfouten en het nalaten van waarschuwingen over de staat van de faciliteit."
+      },
+      "organicGaslighting": {
+        "name": "Organische Gaslighting",
+        "description": "Methodisch negeren van waarschuwingssignalen (SOS) en overbelasten van een werknemer met taken om burn-out te veroorzaken en kritiek het zwijgen op te leggen."
+      },
+      "proceduralFiction": {
+        "name": "Procedurele Fictie",
+        "description": "Echte engineering vervangen door bureaucratie (lege rapporten, fictieve controlesystemen), een rookgordijn creërend voor incompetentie."
+      },
+      "hostileAssetLiquidation": {
+        "name": "Vijandige Activa Liquidatie",
+        "description": "Opzettelijke vernietiging van infrastructuur en blokkeren van technische initiatieven om potentiële concurrentie te elimineren (\"verschroeide aarde\")."
+      },
+      "obsessiveDocumentation": {
+        "name": "Obsessieve Documentatie",
+        "description": "Creëren van selectieve, valse ex ante documentatie uitsluitend ontworpen voor toekomstige rechtszaken (\"Heksenkalender\")."
+      },
+      "evidentialProvocation": {
+        "name": "Bewijsprovocatie",
+        "description": "Ensceneren van stressvolle situaties (bijv. nachtelijke inbreuken, afsluiten van nutsvoorzieningen) om de defensieve reactie van het slachtoffer als \"aggressie\" vast te leggen."
+      },
+      "dependentInstrumentalization": {
+        "name": "Afhankelijke Instrumentalisering",
+        "description": "Exploiteren van ziekte van dierbaren en goedkope volmachten om vijandige vastgoedacties te legitimeren (\"Pokémon Sleutel\")."
+      },
+      "proceduralBetrayal": {
+        "name": "Procesverraad",
+        "description": "Manipulaties op de cliënt-advocaat lijn, die nadelige wilsverklaringen afdwingen die vooroordelen creëren in andere zaken."
+      },
+      "systemicContextBlindness": {
+        "name": "Systemische Contextblindheid",
+        "description": "Legitimering van het narratief van de agressor door autoriteiten door de oorsprong van het conflict te negeren en zich uitsluitend te richten op provocatie-effecten."
+      },
+      "institutionalIntimidation": {
+        "name": "Institutionele Intimidatie",
+        "description": "Gebruik van informationeel en fysiek voordeel door personeel van publieke faciliteiten om naleving af te dwingen."
+      },
+      "moralRelativism": {
+        "name": "Moreel Relativisme",
+        "description": "Sociale acceptatie van kleine fraudes, leidend tot erosie van vertrouwen in instellingen en isolatie van individuen die principes volgen."
+      }
     }
   }
 }

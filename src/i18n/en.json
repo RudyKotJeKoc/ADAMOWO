@@ -5,6 +5,7 @@
   "navigation": {
     "live": "Live",
     "analizy": "Analyses",
+    "taxonomy": "Taxonomy",
     "programy": "Programs",
     "violenceLoop": "Violence Loop",
     "studio": "Studio",
@@ -2014,5 +2015,73 @@
     "cta": "Buy the Wolf a Pizza",
     "subtitle": "Every pizza brings us closer to a better world",
     "thanks": "Thank you for every bit of support – it truly makes a difference! 🐺💙"
+  },
+  "taxonomy": {
+    "title": "Anatomy of Manipulation: Taxonomy of Systemic Mechanisms",
+    "lead": "This analysis constitutes a deconstruction of psychological, legal, and organizational tactics identified during the Adamowo investigation. The lexicon below defines concrete attack vectors – from corporate gaslighting to legal engineering. This is not theory, this is a map of system failures.",
+    "footer": {
+      "title": "Methodological Note",
+      "content": "This taxonomy was developed based on documentation, testimonies, and analysis of real cases. Each tactic describes specific systemic mechanisms identified during the investigation. These are not theoretical constructs – these are documented patterns of actions."
+    },
+    "categories": {
+      "corporate": {
+        "name": "Corporate Environment (Industrial Sabotage)",
+        "description": "Manipulation tactics in business environment – from informational corruption to deliberate infrastructure destruction and competition elimination."
+      },
+      "legalFamily": {
+        "name": "Legal and Family Engineering",
+        "description": "Using the legal system and family relationships as aggression tools – from evidential provocation to procedural betrayal."
+      },
+      "institutional": {
+        "name": "Institutional Pathology",
+        "description": "Systemic dysfunction mechanisms in public institutions – context blindness, intimidation, and moral relativism."
+      }
+    },
+    "tactics": {
+      "informationalCorruption": {
+        "name": "Informational Corruption",
+        "description": "Offering financial gratification in exchange for hiding critical management errors and failing to alert about facility conditions."
+      },
+      "organicGaslighting": {
+        "name": "Organic Gaslighting",
+        "description": "Methodically ignoring warning signals (SOS) and overloading an employee with tasks to induce burnout and silence criticism."
+      },
+      "proceduralFiction": {
+        "name": "Procedural Fiction",
+        "description": "Replacing real engineering with bureaucracy (empty reports, fictitious control systems), creating a smokescreen for incompetence."
+      },
+      "hostileAssetLiquidation": {
+        "name": "Hostile Asset Liquidation",
+        "description": "Deliberate destruction of infrastructure and blocking technical initiatives to eliminate potential competition (\"scorched earth\")."
+      },
+      "obsessiveDocumentation": {
+        "name": "Obsessive Documentation",
+        "description": "Creating selective, false ex ante documentation designed exclusively for future litigation (\"Witch's Calendar\")."
+      },
+      "evidentialProvocation": {
+        "name": "Evidential Provocation",
+        "description": "Staging stressful situations (e.g., night intrusions, cutting off utilities) to record the victim's defensive reaction as \"aggression\"."
+      },
+      "dependentInstrumentalization": {
+        "name": "Dependent Instrumentalization",
+        "description": "Exploiting the illness of loved ones and cheap powers of attorney to legitimize hostile property actions (\"Pokémon Key\")."
+      },
+      "proceduralBetrayal": {
+        "name": "Procedural Betrayal",
+        "description": "Manipulations on the client-attorney line, forcing disadvantageous declarations of will that create prejudice in other cases."
+      },
+      "systemicContextBlindness": {
+        "name": "Systemic Context Blindness",
+        "description": "Legitimization of the aggressor's narrative by authorities by ignoring the conflict genesis and focusing solely on provocation effects."
+      },
+      "institutionalIntimidation": {
+        "name": "Institutional Intimidation",
+        "description": "Using informational and physical advantage by public facility staff to force compliance."
+      },
+      "moralRelativism": {
+        "name": "Moral Relativism",
+        "description": "Social acceptance of petty frauds, leading to erosion of trust in institutions and isolation of individuals who follow principles."
+      }
+    }
   }
 }

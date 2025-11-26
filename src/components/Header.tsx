@@ -20,6 +20,7 @@ import { ThemeSwitch } from './ThemeSwitch';
 const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/live', labelKey: 'navigation.live' },
   { to: '/analizy', labelKey: 'navigation.analizy' },
+  { to: '/taksonomia', labelKey: 'navigation.taxonomy' },
   { to: '/programy', labelKey: 'navigation.programy' },
   { to: '/violence-loop', labelKey: 'navigation.violenceLoop' },
   { to: '/guides', labelKey: 'navigation.guide' },
@@ -71,6 +72,8 @@ export function Header(): JSX.Element {
     () => ({
       '/live': () => import('../pages/Live'),
       '/analizy': () => import('../pages/Analyses'),
+      '/taksonomia': () => import('../pages/ManipulationTaxonomy'),
+      '/taxonomy': () => import('../pages/ManipulationTaxonomy'),
       '/programy': () => import('../pages/Programs'),
       '/violence-loop': () => import('../pages/ViolenceLoop'),
       '/studio': () => import('../pages/Studio'),

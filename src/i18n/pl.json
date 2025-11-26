@@ -5,6 +5,7 @@
   "navigation": {
     "live": "Na Żywo",
     "analizy": "Analizy",
+    "taxonomy": "Taksonomia",
     "programy": "Programy",
     "violenceLoop": "Pętla Przemocy",
     "studio": "Studio",
@@ -2759,6 +2760,74 @@
       "inne": {
         "name": "Inne",
         "description": "Pozostałe analizy"
+      }
+    }
+  },
+  "taxonomy": {
+    "title": "Anatomia Manipulacji: Taksonomia Mechanizmów Systemowych",
+    "lead": "Analiza ta stanowi dekonstrukcję taktyk psychologicznych, prawnych i organizacyjnych zidentyfikowanych w toku śledztwa Adamowo. Poniższy leksykon definiuje konkretne wektory ataku – od korporacyjnego gaslightingu po inżynierię prawną. To nie teoria, to mapa błędów systemu.",
+    "footer": {
+      "title": "Nota metodologiczna",
+      "content": "Niniejsza taksonomia została opracowana w oparciu o dokumentację, zeznania i analizę rzeczywistych przypadków. Każda taktyka opisuje konkretne mechanizmy systemowe zidentyfikowane w toku śledztwa. Nie są to konstrukcje teoretyczne – to udokumentowane wzorce działań."
+    },
+    "categories": {
+      "corporate": {
+        "name": "Środowisko Korporacyjne (Sabotaż Przemysłowy)",
+        "description": "Taktyki manipulacji w środowisku biznesowym – od korupcji informacyjnej po celowe niszczenie infrastruktury i eliminację konkurencji."
+      },
+      "legalFamily": {
+        "name": "Inżynieria Prawna i Rodzinna",
+        "description": "Wykorzystywanie systemu prawnego i relacji rodzinnych jako narzędzia agresji – od prowokacji dowodowych po zdradę procesową."
+      },
+      "institutional": {
+        "name": "Patologia Instytucjonalna",
+        "description": "Systemowe mechanizmy dysfunkcji w instytucjach publicznych – ślepota na kontekst, zastraszanie i relatywizm moralny."
+      }
+    },
+    "tactics": {
+      "informationalCorruption": {
+        "name": "Korupcja informacyjna",
+        "description": "Oferowanie gratyfikacji finansowej w zamian za ukrywanie krytycznych błędów zarządczych i zaniechanie alarmowania o stanie zakładu."
+      },
+      "organicGaslighting": {
+        "name": "Organiczny gaslighting",
+        "description": "Metodyczne ignorowanie sygnałów ostrzegawczych (SOS) i dociążanie pracownika zadaniami w celu wywołania wypalenia i uciszenia krytyki."
+      },
+      "proceduralFiction": {
+        "name": "Fikcja proceduralna",
+        "description": "Zastępowanie realnej inżynierii biurokracją (puste raporty, fikcyjne systemy kontroli), tworzące zasłonę dymną dla niekompetencji."
+      },
+      "hostileAssetLiquidation": {
+        "name": "Wroga likwidacja aktywów",
+        "description": "Celowe niszczenie infrastruktury i blokowanie inicjatyw technicznych, aby wyeliminować potencjalną konkurencję (\"spalona ziemia\")."
+      },
+      "obsessiveDocumentation": {
+        "name": "Obsesyjne dokumentowanie",
+        "description": "Tworzenie selektywnej, fałszywej dokumentacji ex ante, projektowanej wyłącznie pod przyszły proces sądowy (\"Kalendarz Wiedźmy\")."
+      },
+      "evidentialProvocation": {
+        "name": "Prowokacja dowodowa",
+        "description": "Inscenizowanie sytuacji stresowych (np. nocne wtargnięcia, odcinanie mediów) w celu nagrania reakcji obronnej ofiary jako \"agresji\"."
+      },
+      "dependentInstrumentalization": {
+        "name": "Instrumentalizacja osoby zależnej",
+        "description": "Wykorzystywanie stanów chorobowych bliskich i tanich pełnomocnictw do legitymizowania wrogich działań majątkowych (\"Kluczyk do Pokémona\")."
+      },
+      "proceduralBetrayal": {
+        "name": "Zdrada procesowa",
+        "description": "Manipulacje na linii klient-adwokat, zmuszające do niekorzystnych oświadczeń woli, które tworzą prejudykat w innych sprawach."
+      },
+      "systemicContextBlindness": {
+        "name": "Systemowa ślepota na kontekst",
+        "description": "Legitymizacja narracji agresora przez służby poprzez ignorowanie genezy konfliktu i skupienie się wyłącznie na skutkach prowokacji."
+      },
+      "institutionalIntimidation": {
+        "name": "Zastraszanie instytucjonalne",
+        "description": "Wykorzystywanie przewagi informacyjnej i fizycznej przez personel placówek publicznych w celu wymuszenia uległości."
+      },
+      "moralRelativism": {
+        "name": "Relatywizm moralny",
+        "description": "Społeczne przyzwolenie na drobne oszustwa, prowadzące do erozji zaufania do instytucji i izolacji jednostek przestrzegających zasad."
       }
     }
   },

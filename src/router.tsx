@@ -10,6 +10,7 @@ const Studio = lazy(() => import('./pages/Studio'));
 const Shows = lazy(() => import('./pages/Shows'));
 const AnalysisPage = lazy(() => import('./features/analysis-archive/AnalysisPage'));
 const Analyses = lazy(() => import('./pages/Analyses'));
+const ManipulationTaxonomy = lazy(() => import('./pages/ManipulationTaxonomy'));
 const Programs = lazy(() => import('./pages/Programs'));
 const Guides = lazy(() => import('./pages/Guides'));
 const Lab = lazy(() => import('./pages/Lab'));
@@ -34,6 +35,8 @@ export const router = createBrowserRouter([
       { path: 'shows', element: <Shows /> },
       { path: 'analysis', element: <AnalysisPage /> },
       { path: 'analizy', element: <Analyses /> },
+      { path: 'taxonomy', element: <ManipulationTaxonomy /> },
+      { path: 'taksonomia', element: <ManipulationTaxonomy /> },
       { path: 'programy', element: <Programs /> },
       { path: 'guides', element: <Guides /> },
       { path: 'polana-klamstw/:chapterId?', element: <PolanaKlamstw /> },
