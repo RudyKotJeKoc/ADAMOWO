@@ -5,6 +5,8 @@
   "navigation": {
     "live": "Live",
     "analizy": "Analyses",
+    "taxonomy": "Taxonomie",
+    "caseStudy": "Casestudy",
     "programy": "Programma's",
     "violenceLoop": "Geweldscyclus",
     "studio": "Studio",
@@ -2669,5 +2671,244 @@
       "leave": "Verlaat pagina",
       "disclaimer": "Deze waarschuwing dient je emotionele veiligheid. We zorgen voor je."
     }
+  },
+  "taxonomy": {
+    "title": "Anatomie van Manipulatie: Taxonomie van Systemische Mechanismen",
+    "lead": "Deze analyse vormt een deconstructie van psychologische, juridische en organisatorische tactieken geïdentificeerd tijdens het Adamowo-onderzoek. Het onderstaande lexicon definieert concrete aanvalsvectoren – van bedrijfsgaslighting tot juridische engineering. Dit is geen theorie, dit is een kaart van systeemfouten.",
+    "footer": {
+      "title": "Methodologische Opmerking",
+      "content": "Deze taxonomie werd ontwikkeld op basis van documentatie, getuigenissen en analyse van echte gevallen. Elke tactiek beschrijft specifieke systemische mechanismen geïdentificeerd tijdens het onderzoek. Dit zijn geen theoretische constructies – dit zijn gedocumenteerde actiepatronen."
+    },
+    "categories": {
+      "corporate": {
+        "name": "Bedrijfsomgeving (Industriële Sabotage)",
+        "description": "Manipulatietactieken in zakelijke omgeving – van informatiecorruptie tot opzettelijke infrastructuurvernietiging en eliminatie van concurrentie."
+      },
+      "legalFamily": {
+        "name": "Juridische en Familie Engineering",
+        "description": "Gebruik van rechtssysteem en familierelaties als agressie-instrumenten – van bewijsprovocatie tot procesverraad."
+      },
+      "institutional": {
+        "name": "Institutionele Pathologie",
+        "description": "Systemische disfunctiemechanismen in publieke instellingen – contextblindheid, intimidatie en moreel relativisme."
+      }
+    },
+    "tactics": {
+      "informationalCorruption": {
+        "name": "Informatiecorruptie",
+        "description": "Financiële gratificatie aanbieden in ruil voor het verbergen van kritieke managementfouten en het nalaten van waarschuwingen over de staat van de faciliteit."
+      },
+      "organicGaslighting": {
+        "name": "Organische Gaslighting",
+        "description": "Methodisch negeren van waarschuwingssignalen (SOS) en overbelasten van een werknemer met taken om burn-out te veroorzaken en kritiek het zwijgen op te leggen."
+      },
+      "proceduralFiction": {
+        "name": "Procedurele Fictie",
+        "description": "Echte engineering vervangen door bureaucratie (lege rapporten, fictieve controlesystemen), een rookgordijn creërend voor incompetentie."
+      },
+      "hostileAssetLiquidation": {
+        "name": "Vijandige Activa Liquidatie",
+        "description": "Opzettelijke vernietiging van infrastructuur en blokkeren van technische initiatieven om potentiële concurrentie te elimineren (\"verschroeide aarde\")."
+      },
+      "obsessiveDocumentation": {
+        "name": "Obsessieve Documentatie",
+        "description": "Creëren van selectieve, valse ex ante documentatie uitsluitend ontworpen voor toekomstige rechtszaken (\"Heksenkalender\")."
+      },
+      "evidentialProvocation": {
+        "name": "Bewijsprovocatie",
+        "description": "Ensceneren van stressvolle situaties (bijv. nachtelijke inbreuken, afsluiten van nutsvoorzieningen) om de defensieve reactie van het slachtoffer als \"aggressie\" vast te leggen."
+      },
+      "dependentInstrumentalization": {
+        "name": "Afhankelijke Instrumentalisering",
+        "description": "Exploiteren van ziekte van dierbaren en goedkope volmachten om vijandige vastgoedacties te legitimeren (\"Pokémon Sleutel\")."
+      },
+      "proceduralBetrayal": {
+        "name": "Procesverraad",
+        "description": "Manipulaties op de cliënt-advocaat lijn, die nadelige wilsverklaringen afdwingen die vooroordelen creëren in andere zaken."
+      },
+      "systemicContextBlindness": {
+        "name": "Systemische Contextblindheid",
+        "description": "Legitimering van het narratief van de agressor door autoriteiten door de oorsprong van het conflict te negeren en zich uitsluitend te richten op provocatie-effecten."
+      },
+      "institutionalIntimidation": {
+        "name": "Institutionele Intimidatie",
+        "description": "Gebruik van informationeel en fysiek voordeel door personeel van publieke faciliteiten om naleving af te dwingen."
+      },
+      "moralRelativism": {
+        "name": "Moreel Relativisme",
+        "description": "Sociale acceptatie van kleine fraudes, leidend tot erosie van vertrouwen in instellingen en isolatie van individuen die principes volgen."
+      }
+    }
+  },
+  "caseStudy": {
+    "label": "Casestudy",
+    "title": "Analytisch Rapport: Casestudy van Instrumentalisering van het Rechtssysteem en Psychologische Manipulatie",
+    "subtitle": "De Anatomie van Psychosociale Oorlogvoering",
+    "intro": "Dit document is een gespecialiseerde analyse van een casus die ver buiten de kaders van een typisch familieconflict treedt. Het betreft een studie naar methodische psychosociale oorlogvoering. Het doel is de deconstructie van complexe manipulatiemechanismen, juridische instrumentalisering en systeemfalen. Deze analyse toont aan hoe beschermingsmechanismen (zoals de \"Blauwe Kaart\"-procedure) wapens werden in een privévendetta.",
+    "section1": {
+      "title": "I. Architectuur van Manipulatie: Profiel en Methodologie",
+      "intro": "Het strategisch begrijpen van het psychologisch profiel van de hoofdinitiator (Barbara A.) is fundamenteel. Haar acties waren geen impulsen, maar onderdeel van een \"koud, geordend plan\" om controle over zoon en vermogen te herwinnen.",
+      "sub1": {
+        "title": "1.1. Psychologisch Profiel: Archetype \"De Verslindende Moeder\"",
+        "content": "De acties passen in het Jungiaanse archetype van de Devouring Mother. In plaats van het kind los te laten, probeert zij het symbolisch te verzwelgen. De onafhankelijkheid van de zoon werd gezien als een persoonlijke aanval. Ze creëerde een pathologisch emotioneel incest (enmeshment), waarbij het ouderlijk huis veranderde in een gevangenis van schuldgevoel."
+      },
+      "sub2": {
+        "title": "1.2. Methodische Deconstructie van Tactieken",
+        "table": {
+          "tactic": "Tactiek",
+          "description": "Beschrijving",
+          "goal": "Doel"
+        },
+        "tactics": {
+          "obsessiveDoc": {
+            "name": "Obsessieve Documentatie (\"De Heksenkalender\")",
+            "desc": "Een selectief register van valse beschuldigingen, ex ante opgesteld als script voor de rechtszaak.",
+            "goal": "Vervaardigen van bewijsmateriaal."
+          },
+          "provocation": {
+            "name": "Provocatie & Escalatie",
+            "desc": "'s Nachts binnenvallen (02:30u) of stroom afsluiten in bijzijn van politie.",
+            "goal": "Reactive Abuse uitlokken – de verdediging van het slachtoffer framen als agressie."
+          },
+          "blackmail": {
+            "name": "Emotionele & Juridische Chantage",
+            "desc": "Dreigen met herroeping van schenking \"als straf\".",
+            "goal": "Het slachtoffer in permanente staat van onzekerheid houden."
+          },
+          "reverseTriage": {
+            "name": "Omgekeerde Triage",
+            "desc": "Tijdens medisch noodgeval van haar man prioriteit geven aan ruzie over autosleutels om dit te noteren.",
+            "goal": "Documentatie boven hulpverlening."
+          }
+        }
+      },
+      "sub3": {
+        "title": "1.3. Symboliek van de \"Ketel van Leed\"",
+        "content": "Het centrale instrument was de metaforische \"Ketel van Leed\" (Kocioł Krzywd). Een reservoir waarin grieven, oude wonden en verzinsels constant werden \"opgewarmd\" om de sfeer te vergiftigen en acties te rechtvaardigen."
+      }
+    },
+    "section2": {
+      "title": "II. Instrumentalisering van de Omgeving",
+      "intro": "De privévendetta werd gelegitimeerd door familieleden te transformeren tot marionetten.",
+      "sub1": {
+        "title": "2.1. Casestudy: Sylwester A. – Een Tragische Marionet",
+        "point1": {
+          "title": "Fundament van Afhankelijkheid",
+          "content": "Zijn toestand na een beroerte (cognitieve beperkingen) maakte hem manipuleerbaar."
+        },
+        "point2": {
+          "title": "De Machtsovername",
+          "content": "Verkrijgen van een notariële volmacht (\"De sleutel tot haar Pokémon\") twee dagen na het starten van de Blauwe Kaart-procedure."
+        },
+        "point3": {
+          "title": "Bewijs van Manipulatie",
+          "content": "Op 3 augustus verklaart Sylwester aan de politie dat zijn zoon hem niet beledigt. Op 6 augustus wordt namens hem een brief verstuurd met het tegenovergestelde. De handgeschreven toevoeging \"Voor het geval mijn bewustzijn wordt betwist...\" is een klassieke Freudiaanse projectie van schuld."
+        }
+      },
+      "sub2": {
+        "title": "2.2. De Rol van Bijfiguren",
+        "role1": {
+          "title": "De Inspirator (\"Ekster Dorota\")",
+          "content": "De zus die adviseerde om de \"kalender\" te voeren en juridische valstrikken te zetten."
+        },
+        "role2": {
+          "title": "De Familiale Echo (\"Ooievaars met Geknipte Vleugels\")",
+          "content": "Broers en zussen die passief het valse narratief van de moeder overnamen en de isolatie van de broer legitimeerden."
+        }
+      }
+    },
+    "section3": {
+      "title": "III. Systemische Escalatie: Falen van Instituties",
+      "intro": "Het conflict escaleerde toen staatsinstellingen, bedoeld voor bescherming, wapens werden tegen Dariusz A.",
+      "sub1": {
+        "title": "3.1. Politie en de \"Blauwe Kaart\" (Niebieska Karta)",
+        "content": "De procedure werd niet gestart voor bescherming, maar als munitie voor een civiele rechtszaak. De politie (\"Smurfen\") negeerde de context van provocaties (bv. het opzettelijk uitschakelen van elektriciteit) en legitimeerde zo het narratief van de agressor."
+      },
+      "sub2": {
+        "title": "3.2. Verraad van het Rechtssysteem (Advocaten)",
+        "betrayal1": {
+          "title": "Het Oerverraad (Adv. \"Hyena\")",
+          "content": "Dwingt de cliënt 5 minuten voor de zitting schuld te bekennen in een strafzaak met de valse belofte van \"einde conflict\". Dit creëerde een prejudicieel vonnis dat later tegen hem werd gebruikt."
+        },
+        "betrayal2": {
+          "title": "Secundair Verraad (Adv. \"Ree\")",
+          "content": "Passiviteit en sabotage om de reputatie van zijn collega te beschermen, in plaats van de belangen van de cliënt."
+        }
+      },
+      "sub3": {
+        "title": "3.3. Gerechtelijke Dwaling (Rechtbank Eerste Aanleg)",
+        "error1": "Blind vertrouwen in het prejudicaat: Het strafvonnis werd onkritisch overgenomen.",
+        "error2": "Fundamentele Rechtsdwaling: Het verwarren van \"Persoonlijk Vruchtgebruik\" (Służebność) met een \"Lijfrente/Verzorgingscontract\" (Dożywocie), waardoor fictieve financiële verplichtingen werden gecreëerd."
+      }
+    },
+    "section4": {
+      "title": "IV. Traject van het Slachtoffer: Reactie op Beknelling",
+      "intro": "De acties van Dariusz A. waren geen agressie, maar verdedigingsmechanismen.",
+      "sub1": {
+        "title": "4.1. Investering en Goede Wil",
+        "financial": {
+          "label": "Financieel",
+          "content": "Investeringen van 160.000 - 255.000 PLN in woningrenovatie (zonnepanelen, dak, isolatie)."
+        },
+        "care": {
+          "label": "Zorg",
+          "content": "Terugkeer uit emigratie om voor de vader te zorgen na diens beroerte."
+        }
+      },
+      "sub2": {
+        "title": "4.2. Verdediging geframed als Agressie",
+        "table": {
+          "action": "Actie",
+          "reality": "Werkelijkheid"
+        },
+        "actions": {
+          "cameras": {
+            "action": "Camera's installeren",
+            "reality": "Reactie op diefstal van gereedschap en inbreuk op privacy."
+          },
+          "avoidance": {
+            "action": "Contact vermijden",
+            "reality": "De-escalatie. Slapen in de werkplaats om provocaties te ontlopen."
+          },
+          "destruction": {
+            "action": "Vernieling (dichtlassen toilet)",
+            "reality": "Een wanhopige, symbolische daad van onmacht betreffende een buitentoilet."
+          }
+        }
+      },
+      "sub3": {
+        "title": "4.3. Diagnose en de Paradox van Bevrijding",
+        "diagnosis": {
+          "label": "Diagnose",
+          "content": "C-PTSS (Complex Post-Traumatische Stress Stoornis) als rationele reactie op 4 jaar systemisch misbruik."
+        },
+        "capitulation": {
+          "label": "Strategische Capitulatie",
+          "content": "Het afzien van hoger beroep was geen nederlaag, maar een \"prijs voor vrijheid\"."
+        }
+      }
+    },
+    "section5": {
+      "label": "Conclusies",
+      "title": "V. Conclusies: De Pyrrhusoverwinning",
+      "sub1": {
+        "title": "5.1. Analyse van het Resultaat",
+        "barbara": {
+          "title": "De Lege Overwinning (Barbara)",
+          "content": "Ze heeft het huis, maar ook de eenzaamheid en een \"tikkende tijdbom\": de verplichting om de investeringen (ca. 250k PLN) terug te betalen."
+        },
+        "dariusz": {
+          "title": "Vrijheid in Verlies (Dariusz)",
+          "content": "Door het gevecht te staken, herwon hij controle over zijn leven en geestelijke gezondheid."
+        }
+      },
+      "sub2": {
+        "title": "5.2. Aanbevelingen voor Professionals",
+        "rec1": "Herken machtsdynamiek (controle vs. zorg).",
+        "rec2": "Het rechtssysteem moet oog hebben voor psychologische context om instrumentalisering te voorkomen.",
+        "rec3": "Soms is \"het slagveld verlaten\" de enige overwinning."
+      }
+    },
+    "footer": "Analytisch Rapport – Radio Adamowo Research"
   }
 }

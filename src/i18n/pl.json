@@ -5,6 +5,8 @@
   "navigation": {
     "live": "Na Żywo",
     "analizy": "Analizy",
+    "taxonomy": "Taksonomia",
+    "caseStudy": "Studium Przypadku",
     "programy": "Programy",
     "violenceLoop": "Pętla Przemocy",
     "studio": "Studio",
@@ -2761,6 +2763,245 @@
         "description": "Pozostałe analizy"
       }
     }
+  },
+  "taxonomy": {
+    "title": "Anatomia Manipulacji: Taksonomia Mechanizmów Systemowych",
+    "lead": "Analiza ta stanowi dekonstrukcję taktyk psychologicznych, prawnych i organizacyjnych zidentyfikowanych w toku śledztwa Adamowo. Poniższy leksykon definiuje konkretne wektory ataku – od korporacyjnego gaslightingu po inżynierię prawną. To nie teoria, to mapa błędów systemu.",
+    "footer": {
+      "title": "Nota metodologiczna",
+      "content": "Niniejsza taksonomia została opracowana w oparciu o dokumentację, zeznania i analizę rzeczywistych przypadków. Każda taktyka opisuje konkretne mechanizmy systemowe zidentyfikowane w toku śledztwa. Nie są to konstrukcje teoretyczne – to udokumentowane wzorce działań."
+    },
+    "categories": {
+      "corporate": {
+        "name": "Środowisko Korporacyjne (Sabotaż Przemysłowy)",
+        "description": "Taktyki manipulacji w środowisku biznesowym – od korupcji informacyjnej po celowe niszczenie infrastruktury i eliminację konkurencji."
+      },
+      "legalFamily": {
+        "name": "Inżynieria Prawna i Rodzinna",
+        "description": "Wykorzystywanie systemu prawnego i relacji rodzinnych jako narzędzia agresji – od prowokacji dowodowych po zdradę procesową."
+      },
+      "institutional": {
+        "name": "Patologia Instytucjonalna",
+        "description": "Systemowe mechanizmy dysfunkcji w instytucjach publicznych – ślepota na kontekst, zastraszanie i relatywizm moralny."
+      }
+    },
+    "tactics": {
+      "informationalCorruption": {
+        "name": "Korupcja informacyjna",
+        "description": "Oferowanie gratyfikacji finansowej w zamian za ukrywanie krytycznych błędów zarządczych i zaniechanie alarmowania o stanie zakładu."
+      },
+      "organicGaslighting": {
+        "name": "Organiczny gaslighting",
+        "description": "Metodyczne ignorowanie sygnałów ostrzegawczych (SOS) i dociążanie pracownika zadaniami w celu wywołania wypalenia i uciszenia krytyki."
+      },
+      "proceduralFiction": {
+        "name": "Fikcja proceduralna",
+        "description": "Zastępowanie realnej inżynierii biurokracją (puste raporty, fikcyjne systemy kontroli), tworzące zasłonę dymną dla niekompetencji."
+      },
+      "hostileAssetLiquidation": {
+        "name": "Wroga likwidacja aktywów",
+        "description": "Celowe niszczenie infrastruktury i blokowanie inicjatyw technicznych, aby wyeliminować potencjalną konkurencję (\"spalona ziemia\")."
+      },
+      "obsessiveDocumentation": {
+        "name": "Obsesyjne dokumentowanie",
+        "description": "Tworzenie selektywnej, fałszywej dokumentacji ex ante, projektowanej wyłącznie pod przyszły proces sądowy (\"Kalendarz Wiedźmy\")."
+      },
+      "evidentialProvocation": {
+        "name": "Prowokacja dowodowa",
+        "description": "Inscenizowanie sytuacji stresowych (np. nocne wtargnięcia, odcinanie mediów) w celu nagrania reakcji obronnej ofiary jako \"agresji\"."
+      },
+      "dependentInstrumentalization": {
+        "name": "Instrumentalizacja osoby zależnej",
+        "description": "Wykorzystywanie stanów chorobowych bliskich i tanich pełnomocnictw do legitymizowania wrogich działań majątkowych (\"Kluczyk do Pokémona\")."
+      },
+      "proceduralBetrayal": {
+        "name": "Zdrada procesowa",
+        "description": "Manipulacje na linii klient-adwokat, zmuszające do niekorzystnych oświadczeń woli, które tworzą prejudykat w innych sprawach."
+      },
+      "systemicContextBlindness": {
+        "name": "Systemowa ślepota na kontekst",
+        "description": "Legitymizacja narracji agresora przez służby poprzez ignorowanie genezy konfliktu i skupienie się wyłącznie na skutkach prowokacji."
+      },
+      "institutionalIntimidation": {
+        "name": "Zastraszanie instytucjonalne",
+        "description": "Wykorzystywanie przewagi informacyjnej i fizycznej przez personel placówek publicznych w celu wymuszenia uległości."
+      },
+      "moralRelativism": {
+        "name": "Relatywizm moralny",
+        "description": "Społeczne przyzwolenie na drobne oszustwa, prowadzące do erozji zaufania do instytucji i izolacji jednostek przestrzegających zasad."
+      }
+    }
+  },
+  "caseStudy": {
+    "label": "Studium Przypadku",
+    "title": "Raport Analityczny: Studium Przypadku Instrumentalizacji Systemu Prawnego i Manipulacji Psychologicznej",
+    "subtitle": "Anatomia Psychospołecznej Wojny",
+    "intro": "Niniejszy dokument stanowi specjalistyczną analizę przypadku wykraczającego daleko poza ramy typowego konfliktu rodzinnego. Jest to studium metodycznej wojny psychospołecznej. Celem jest dekonstrukcja złożonych mechanizmów manipulacji, instrumentalizacji prawnej i zawodności systemu. Analiza pokazuje, jak mechanizmy ochronne (takie jak procedura \"Niebieskiej Karty\") stały się bronią w prywatnej wendecie.",
+    "section1": {
+      "title": "I. Architektura Manipulacji: Profil i Metodologia",
+      "intro": "Strategiczne zrozumienie profilu psychologicznego głównego inicjatora (Barbara A.) jest fundamentalne. Jej działania nie były impulsami, lecz częścią \"zimnego, uporządkowanego planu\" odzyskania kontroli nad synem i majątkiem.",
+      "sub1": {
+        "title": "1.1. Profil Psychologiczny: Archetyp \"Pożerającej Matki\"",
+        "content": "Działania wpisują się w jungowski archetyp Pożerającej Matki (Devouring Mother). Zamiast puścić dziecko wolno, próbuje symbolicznie je pochłonąć. Niezależność syna była postrzegana jako osobisty atak. Stworzyła patologiczny emocjonalny kazirodztwo (enmeshment), gdzie dom rodzinny zamienił się w więzienie poczucia winy."
+      },
+      "sub2": {
+        "title": "1.2. Metodyczna Dekonstrukcja Taktyk",
+        "table": {
+          "tactic": "Taktyka",
+          "description": "Opis",
+          "goal": "Cel"
+        },
+        "tactics": {
+          "obsessiveDoc": {
+            "name": "Obsesyjna Dokumentacja (\"Kalendarz Wiedźmy\")",
+            "desc": "Selektywny rejestr fałszywych oskarżeń, sporządzany ex ante jako scenariusz na proces sądowy.",
+            "goal": "Wytworzenie materiału dowodowego."
+          },
+          "provocation": {
+            "name": "Prowokacja i Eskalacja",
+            "desc": "Wtargnięcia nocne (02:30) lub wyłączanie prądu w obecności policji.",
+            "goal": "Wywołanie Reactive Abuse – oprawienie obrony ofiary jako agresji."
+          },
+          "blackmail": {
+            "name": "Szantaż Emocjonalny i Prawny",
+            "desc": "Groźby odwołania darowizny \"jako kara\".",
+            "goal": "Utrzymanie ofiary w permanentnym stanie niepewności."
+          },
+          "reverseTriage": {
+            "name": "Odwrócony Triaż",
+            "desc": "Podczas nagłego stanu zdrowia męża priorytetowe traktowanie sporu o kluczyki do zapisu w kalendarzu.",
+            "goal": "Dokumentacja przed pomocą."
+          }
+        }
+      },
+      "sub3": {
+        "title": "1.3. Symbolika \"Kotła Krzywd\"",
+        "content": "Centralnym instrumentem był metaforyczny \"Kocioł Krzywd\". Rezerwuar, w którym urazy, stare rany i zmyślenia były stale \"podgrzewane\", by zatruwać atmosferę i usprawiedliwiać działania."
+      }
+    },
+    "section2": {
+      "title": "II. Instrumentalizacja Otoczenia",
+      "intro": "Prywatna wendeta została legitymizowana poprzez transformację członków rodziny w marionetki.",
+      "sub1": {
+        "title": "2.1. Studium Przypadku: Sylwester A. – Tragiczna Marionetka",
+        "point1": {
+          "title": "Fundament Zależności",
+          "content": "Jego stan po udarze (ograniczenia poznawcze) uczynił go podatnym na manipulację."
+        },
+        "point2": {
+          "title": "Przejęcie Władzy",
+          "content": "Uzyskanie pełnomocnictwa notarialnego (\"Kluczyk do jej Pokémona\") dwa dni po wszczęciu procedury Niebieskiej Karty."
+        },
+        "point3": {
+          "title": "Dowód Manipulacji",
+          "content": "3 sierpnia Sylwester zeznaje policji, że syn go nie obraża. 6 sierpnia wysyłane jest w jego imieniu pismo z przeciwnym twierdzeniem. Odręczny dopisek \"Na wypadek kwestionowania mojej świadomości...\" to klasyczna freudowska projekcja winy."
+        }
+      },
+      "sub2": {
+        "title": "2.2. Rola Postaci Drugoplanowych",
+        "role1": {
+          "title": "Inspiratorka (\"Sroka Dorota\")",
+          "content": "Siostra doradzająca prowadzenie \"kalendarza\" i stawianie prawnych pułapek."
+        },
+        "role2": {
+          "title": "Rodzinne Echo (\"Bociany z Podciętymi Skrzydłami\")",
+          "content": "Rodzeństwo pasywnie przejmujące fałszywą narrację matki i legitymizujące izolację brata."
+        }
+      }
+    },
+    "section3": {
+      "title": "III. Eskalacja Systemowa: Zawodność Instytucji",
+      "intro": "Konflikt eskalował, gdy instytucje państwowe, zaprojektowane do ochrony, stały się bronią przeciwko Dariuszowi A.",
+      "sub1": {
+        "title": "3.1. Policja i \"Niebieska Karta\"",
+        "content": "Procedura nie została wszczęta dla ochrony, lecz jako amunicja do sprawy cywilnej. Policja (\"Smerfy\") zignorowała kontekst prowokacji (np. celowe wyłączanie prądu), legitymizując narrację agresora."
+      },
+      "sub2": {
+        "title": "3.2. Zdrada Systemu Prawnego (Adwokaci)",
+        "betrayal1": {
+          "title": "Zdrada Pierwotna (Adw. \"Hiena\")",
+          "content": "Zmuszenie klienta 5 minut przed rozprawą do przyznania się do winy w sprawie karnej pod fałszywą obietnicą \"zakończenia konfliktu\". Stworzyło to prejudykat używany później przeciwko niemu."
+        },
+        "betrayal2": {
+          "title": "Zdrada Wtórna (Adw. \"Sarna\")",
+          "content": "Pasywność i sabotaż w celu ochrony reputacji kolegi zamiast reprezentowania interesów klienta."
+        }
+      },
+      "sub3": {
+        "title": "3.3. Błąd Sądowy (Sąd I Instancji)",
+        "error1": "Ślepe zaufanie do prejudykatu: wyrok karny został bezkrytycznie przyjęty.",
+        "error2": "Fundamentalny błąd prawny: pomylenie \"Służebności Osobistej\" ze \"Zobowiązaniem Dożywocia\", tworząc fikcyjne zobowiązania finansowe."
+      }
+    },
+    "section4": {
+      "title": "IV. Trajektoria Ofiary: Reakcja na Zaciśnięcie",
+      "intro": "Działania Dariusza A. nie były agresją, lecz mechanizmami obronnymi.",
+      "sub1": {
+        "title": "4.1. Inwestycja i Dobra Wola",
+        "financial": {
+          "label": "Finansowo",
+          "content": "Inwestycje 160.000 - 255.000 PLN w remont domu (panele słoneczne, dach, izolacja)."
+        },
+        "care": {
+          "label": "Opieka",
+          "content": "Powrót z emigracji, by opiekować się ojcem po jego udarze."
+        }
+      },
+      "sub2": {
+        "title": "4.2. Obrona Oprawiona jako Agresja",
+        "table": {
+          "action": "Działanie",
+          "reality": "Rzeczywistość"
+        },
+        "actions": {
+          "cameras": {
+            "action": "Instalacja kamer",
+            "reality": "Reakcja na kradzież narzędzi i naruszenie prywatności."
+          },
+          "avoidance": {
+            "action": "Unikanie kontaktu",
+            "reality": "Deeskalacja. Spanie w warsztacie, by uniknąć prowokacji."
+          },
+          "destruction": {
+            "action": "Dewastacja (zalutowanie toalety)",
+            "reality": "Desperacki, symboliczny akt bezsilności dotyczący zewnętrznej toalety."
+          }
+        }
+      },
+      "sub3": {
+        "title": "4.3. Diagnoza i Paradoks Wyzwolenia",
+        "diagnosis": {
+          "label": "Diagnoza",
+          "content": "C-PTSD (Złożony Zespół Stresu Pourazowego) jako racjonalna odpowiedź na 4 lata systemowego maltretowania."
+        },
+        "capitulation": {
+          "label": "Strategiczna Kapitulacja",
+          "content": "Rezygnacja z apelacji nie była porażką, lecz \"ceną za wolność\"."
+        }
+      }
+    },
+    "section5": {
+      "label": "Wnioski",
+      "title": "V. Wnioski: Pyrrusowe Zwycięstwo",
+      "sub1": {
+        "title": "5.1. Analiza Wyniku",
+        "barbara": {
+          "title": "Puste Zwycięstwo (Barbara)",
+          "content": "Ma dom, ale też samotność i \"tykającą bombę\": obowiązek zwrotu inwestycji (ok. 250k PLN)."
+        },
+        "dariusz": {
+          "title": "Wolność w Stracie (Dariusz)",
+          "content": "Przerywając walkę, odzyskał kontrolę nad swoim życiem i zdrowiem psychicznym."
+        }
+      },
+      "sub2": {
+        "title": "5.2. Rekomendacje dla Profesjonalistów",
+        "rec1": "Rozpoznawanie dynamiki władzy (kontrola vs. troska).",
+        "rec2": "System prawny musi uwzględniać kontekst psychologiczny, by zapobiegać instrumentalizacji.",
+        "rec3": "Czasami \"opuszczenie pola walki\" jest jedynym zwycięstwem."
+      }
+    },
+    "footer": "Raport Analityczny – Radio Adamowo Research"
   },
   "programy": {
     "title": "Programy Edukacyjne",
