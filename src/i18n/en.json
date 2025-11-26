@@ -6,6 +6,7 @@
     "live": "Live",
     "analizy": "Analyses",
     "taxonomy": "Taxonomy",
+    "caseStudy": "Case Study",
     "programy": "Programs",
     "violenceLoop": "Violence Loop",
     "studio": "Studio",
@@ -2083,5 +2084,176 @@
         "description": "Social acceptance of petty frauds, leading to erosion of trust in institutions and isolation of individuals who follow principles."
       }
     }
+  },
+  "caseStudy": {
+    "label": "Case Study",
+    "title": "Analytical Report: Case Study of Legal System Instrumentalization and Psychological Manipulation",
+    "subtitle": "The Anatomy of Psychosocial Warfare",
+    "intro": "This document is a specialized analysis of a case that extends far beyond the framework of a typical family conflict. It is a study of methodical psychosocial warfare. The goal is the deconstruction of complex manipulation mechanisms, legal instrumentalization, and system failure. This analysis demonstrates how protective mechanisms (such as the \"Blue Card\" procedure) became weapons in a private vendetta.",
+    "section1": {
+      "title": "I. Architecture of Manipulation: Profile and Methodology",
+      "intro": "Strategically understanding the psychological profile of the main initiator (Barbara A.) is fundamental. Her actions were not impulses, but part of a \"cold, ordered plan\" to regain control over her son and assets.",
+      "sub1": {
+        "title": "1.1. Psychological Profile: Archetype \"The Devouring Mother\"",
+        "content": "The actions fit the Jungian archetype of the Devouring Mother. Instead of letting the child go, she tries to symbolically devour it. The son's independence was seen as a personal attack. She created pathological emotional incest (enmeshment), where the parental home turned into a prison of guilt."
+      },
+      "sub2": {
+        "title": "1.2. Methodical Deconstruction of Tactics",
+        "table": {
+          "tactic": "Tactic",
+          "description": "Description",
+          "goal": "Goal"
+        },
+        "tactics": {
+          "obsessiveDoc": {
+            "name": "Obsessive Documentation (\"The Witch's Calendar\")",
+            "desc": "A selective register of false accusations, drafted ex ante as a script for the lawsuit.",
+            "goal": "Fabrication of evidence."
+          },
+          "provocation": {
+            "name": "Provocation & Escalation",
+            "desc": "Night intrusions (02:30) or cutting off electricity in the presence of police.",
+            "goal": "Elicit Reactive Abuse – frame the victim's defense as aggression."
+          },
+          "blackmail": {
+            "name": "Emotional & Legal Blackmail",
+            "desc": "Threatening to revoke the donation \"as punishment\".",
+            "goal": "Keep the victim in a permanent state of uncertainty."
+          },
+          "reverseTriage": {
+            "name": "Reverse Triage",
+            "desc": "During her husband's medical emergency, prioritizing a dispute over car keys for documentation.",
+            "goal": "Documentation over assistance."
+          }
+        }
+      },
+      "sub3": {
+        "title": "1.3. Symbolism of the \"Cauldron of Grievances\"",
+        "content": "The central instrument was the metaphorical \"Cauldron of Grievances\" (Kocioł Krzywd). A reservoir in which grievances, old wounds, and fabrications were constantly \"heated up\" to poison the atmosphere and justify actions."
+      }
+    },
+    "section2": {
+      "title": "II. Instrumentalization of the Environment",
+      "intro": "The private vendetta was legitimized by transforming family members into puppets.",
+      "sub1": {
+        "title": "2.1. Case Study: Sylwester A. – A Tragic Puppet",
+        "point1": {
+          "title": "Foundation of Dependency",
+          "content": "His condition after a stroke (cognitive limitations) made him manipulable."
+        },
+        "point2": {
+          "title": "The Power Takeover",
+          "content": "Obtaining a notarial power of attorney (\"The key to her Pokémon\") two days after initiating the Blue Card procedure."
+        },
+        "point3": {
+          "title": "Proof of Manipulation",
+          "content": "On August 3, Sylwester tells police that his son does not insult him. On August 6, a letter is sent in his name claiming the opposite. The handwritten addition \"In case my consciousness is questioned...\" is a classic Freudian projection of guilt."
+        }
+      },
+      "sub2": {
+        "title": "2.2. The Role of Supporting Characters",
+        "role1": {
+          "title": "The Inspirer (\"Magpie Dorota\")",
+          "content": "The sister who advised keeping the \"calendar\" and setting legal traps."
+        },
+        "role2": {
+          "title": "The Family Echo (\"Storks with Clipped Wings\")",
+          "content": "Siblings who passively adopted the mother's false narrative and legitimized the brother's isolation."
+        }
+      }
+    },
+    "section3": {
+      "title": "III. Systemic Escalation: Failure of Institutions",
+      "intro": "The conflict escalated when state institutions, designed for protection, became weapons against Dariusz A.",
+      "sub1": {
+        "title": "3.1. Police and the \"Blue Card\" (Niebieska Karta)",
+        "content": "The procedure was not initiated for protection, but as ammunition for a civil lawsuit. The police (\"Smurfs\") ignored the context of provocations (e.g., deliberately cutting off electricity) and thus legitimized the aggressor's narrative."
+      },
+      "sub2": {
+        "title": "3.2. Betrayal of the Legal System (Lawyers)",
+        "betrayal1": {
+          "title": "The Original Betrayal (Atty. \"Hyena\")",
+          "content": "Forces the client to plead guilty in a criminal case 5 minutes before the hearing with the false promise of \"ending the conflict.\" This created a prejudicial verdict later used against him."
+        },
+        "betrayal2": {
+          "title": "Secondary Betrayal (Atty. \"Deer\")",
+          "content": "Passivity and sabotage to protect the reputation of his colleague, instead of representing the client's interests."
+        }
+      },
+      "sub3": {
+        "title": "3.3. Judicial Error (Court of First Instance)",
+        "error1": "Blind trust in the precedent: The criminal verdict was uncritically adopted.",
+        "error2": "Fundamental Legal Error: Confusing \"Personal Usufruct\" (Służebność) with a \"Life Annuity/Care Contract\" (Dożywocie), creating fictitious financial obligations."
+      }
+    },
+    "section4": {
+      "title": "IV. Victim's Trajectory: Response to Entrapment",
+      "intro": "Dariusz A.'s actions were not aggression, but defense mechanisms.",
+      "sub1": {
+        "title": "4.1. Investment and Good Will",
+        "financial": {
+          "label": "Financial",
+          "content": "Investments of 160,000 - 255,000 PLN in home renovation (solar panels, roof, insulation)."
+        },
+        "care": {
+          "label": "Care",
+          "content": "Return from emigration to care for his father after his stroke."
+        }
+      },
+      "sub2": {
+        "title": "4.2. Defense Framed as Aggression",
+        "table": {
+          "action": "Action",
+          "reality": "Reality"
+        },
+        "actions": {
+          "cameras": {
+            "action": "Installing cameras",
+            "reality": "Response to theft of tools and privacy invasion."
+          },
+          "avoidance": {
+            "action": "Avoiding contact",
+            "reality": "De-escalation. Sleeping in the workshop to avoid provocations."
+          },
+          "destruction": {
+            "action": "Destruction (welding toilet shut)",
+            "reality": "A desperate, symbolic act of helplessness concerning an outdoor toilet."
+          }
+        }
+      },
+      "sub3": {
+        "title": "4.3. Diagnosis and the Paradox of Liberation",
+        "diagnosis": {
+          "label": "Diagnosis",
+          "content": "C-PTSD (Complex Post-Traumatic Stress Disorder) as a rational response to 4 years of systemic abuse."
+        },
+        "capitulation": {
+          "label": "Strategic Capitulation",
+          "content": "Abandoning the appeal was not defeat, but a \"price for freedom\"."
+        }
+      }
+    },
+    "section5": {
+      "label": "Conclusions",
+      "title": "V. Conclusions: The Pyrrhic Victory",
+      "sub1": {
+        "title": "5.1. Analysis of the Outcome",
+        "barbara": {
+          "title": "The Empty Victory (Barbara)",
+          "content": "She has the house, but also loneliness and a \"ticking time bomb\": the obligation to repay the investments (approx. 250k PLN)."
+        },
+        "dariusz": {
+          "title": "Freedom in Loss (Dariusz)",
+          "content": "By stopping the fight, he regained control over his life and mental health."
+        }
+      },
+      "sub2": {
+        "title": "5.2. Recommendations for Professionals",
+        "rec1": "Recognize power dynamics (control vs. care).",
+        "rec2": "The legal system must consider psychological context to prevent instrumentalization.",
+        "rec3": "Sometimes \"leaving the battlefield\" is the only victory."
+      }
+    },
+    "footer": "Analytical Report – Radio Adamowo Research"
   }
 }
