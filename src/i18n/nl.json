@@ -540,10 +540,7 @@
             "title": "Bewijs verzameld en interventie"
           }
         ],
-        "resources": [
-          "Observatierapport familie Adamski",
-          "Checklist signalen van isolatie"
-        ]
+        "resources": ["Observatierapport familie Adamski", "Checklist signalen van isolatie"]
       },
       "calendarAnalysis": {
         "title": "Kalenderanalyse: kroniek van escalatie",
@@ -574,9 +571,7 @@
             "title": "Rapport en nabespreking"
           }
         ],
-        "resources": [
-          "Template escalatiekalender"
-        ]
+        "resources": ["Template escalatiekalender"]
       },
       "princeIngratitude": {
         "title": "'Prins Ondankbaar': wapen van de narcist",
@@ -602,9 +597,7 @@
             "note": "Het slachtoffer wordt belachelijk gemaakt voor getuigen."
           }
         ],
-        "resources": [
-          "Reflectie-oefening: ontmasker de narratief van de narcist"
-        ]
+        "resources": ["Reflectie-oefening: ontmasker de narratief van de narcist"]
       },
       "investigationDocs": {
         "title": "Onderzoek: manipulaties documenteren",
@@ -634,10 +627,7 @@
             "title": "Rapport voor instanties"
           }
         ],
-        "resources": [
-          "Werkblad bewijslijst",
-          "Handleiding getuigeninterviews"
-        ]
+        "resources": ["Werkblad bewijslijst", "Handleiding getuigeninterviews"]
       }
     }
   },
@@ -1110,6 +1100,70 @@
       "boundariesDescription": "Praktische tips om stevig te blijven staan.",
       "victories": "Kleine overwinningen",
       "victoriesDescription": "Vier stappen waar je trots op bent."
+    }
+  },
+  "analysis": {
+    "page": {
+      "title": "Analyse-archief",
+      "lead": "Diepgaande analyses van gevallen, manipulatietechnieken en patronen van psychologisch geweld. Alle afleveringen beschikbaar met transcripties en aanvullende bronnen."
+    },
+    "filters": {
+      "title": "Filters",
+      "searchLabel": "Zoeken",
+      "searchPlaceholder": "Zoek op titel of beschrijving...",
+      "categoriesLabel": "Categorieën",
+      "tagsLabel": "Tags",
+      "sortLabel": "Sorteer",
+      "sortNewest": "Nieuwste",
+      "sortOldest": "Oudste",
+      "sortDurationAsc": "Kortste",
+      "sortDurationDesc": "Langste",
+      "results": "{{count}} afleveringen"
+    },
+    "categories": {
+      "AktDarowania": "Schenkingsakte",
+      "SłużebnośćUwiązania": "Dienstbaarheid Verstrengeling",
+      "SprawaAdamskich": "Adamski-zaak",
+      "BronNarcyza": "Wapen van de Narcist",
+      "Sledztwo": "Onderzoek"
+    },
+    "list": {
+      "ariaLabel": "Lijst met analyse-afleveringen"
+    },
+    "pagination": {
+      "pageIndicator": "Pagina {{page}} van {{pages}}",
+      "previous": "Vorige",
+      "next": "Volgende"
+    },
+    "actions": {
+      "listen": "Luisteren",
+      "listenEpisode": "Aflevering beluisteren",
+      "currentlyPlaying": "Nu aan het afspelen"
+    },
+    "player": {
+      "title": "Analyse-speler",
+      "play": "Afspelen",
+      "pause": "Pauzeren",
+      "mute": "Dempen",
+      "unmute": "Geluid aan",
+      "volume": "Volume",
+      "progress": "Afspeelvoortgang",
+      "nowPlaying": "Nu aan het spelen",
+      "idle": "Selecteer een aflevering om te beluisteren",
+      "chapters": "Hoofdstukken"
+    },
+    "details": {
+      "published": "Gepubliceerd",
+      "unknownDate": "Onbekende datum",
+      "chapters": "Hoofdstukken",
+      "seekTo": "Spring naar {{time}}",
+      "resources": "Aanvullende bronnen",
+      "emptyTitle": "Geen aflevering geselecteerd",
+      "emptyHint": "Selecteer een aflevering uit de lijst aan de linkerkant om details te zien en te luisteren."
+    },
+    "state": {
+      "loading": "Afleveringen laden...",
+      "empty": "Geen afleveringen voldoen aan de zoekcriteria."
     }
   },
   "sim": {

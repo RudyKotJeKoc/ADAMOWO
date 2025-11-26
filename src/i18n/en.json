@@ -1140,6 +1140,70 @@
       "victoriesDescription": "Celebrate the steps you are proud of."
     }
   },
+  "analysis": {
+    "page": {
+      "title": "Analysis Archive",
+      "lead": "In-depth analyses of cases, manipulation techniques, and patterns of psychological violence. All episodes available with transcripts and additional resources."
+    },
+    "filters": {
+      "title": "Filters",
+      "searchLabel": "Search",
+      "searchPlaceholder": "Search by title or description...",
+      "categoriesLabel": "Categories",
+      "tagsLabel": "Tags",
+      "sortLabel": "Sort",
+      "sortNewest": "Newest",
+      "sortOldest": "Oldest",
+      "sortDurationAsc": "Shortest",
+      "sortDurationDesc": "Longest",
+      "results": "{{count}} episodes"
+    },
+    "categories": {
+      "AktDarowania": "Act of Donation",
+      "SłużebnośćUwiązania": "Servitude Entanglement",
+      "SprawaAdamskich": "Adamski Case",
+      "BronNarcyza": "Narcissist's Weapon",
+      "Sledztwo": "Investigation"
+    },
+    "list": {
+      "ariaLabel": "Analysis episodes list"
+    },
+    "pagination": {
+      "pageIndicator": "Page {{page}} of {{pages}}",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "actions": {
+      "listen": "Listen",
+      "listenEpisode": "Listen to episode",
+      "currentlyPlaying": "Currently playing"
+    },
+    "player": {
+      "title": "Analysis player",
+      "play": "Play",
+      "pause": "Pause",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "volume": "Volume",
+      "progress": "Playback progress",
+      "nowPlaying": "Now playing",
+      "idle": "Select an episode to listen",
+      "chapters": "Chapters"
+    },
+    "details": {
+      "published": "Published",
+      "unknownDate": "Unknown date",
+      "chapters": "Chapters",
+      "seekTo": "Jump to {{time}}",
+      "resources": "Additional resources",
+      "emptyTitle": "No episode selected",
+      "emptyHint": "Select an episode from the list on the left to see details and listen."
+    },
+    "state": {
+      "loading": "Loading episodes...",
+      "empty": "No episodes match the search criteria."
+    }
+  },
   "sim": {
     "title": "Conversation simulator with a manipulator",
     "subtitle": "Practise spotting manipulation patterns. Responses are generated offline from simple rules.",

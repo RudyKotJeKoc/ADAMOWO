@@ -1152,6 +1152,70 @@
       "victoriesDescription": "Świętuj kroki, z których jesteś dumny/a."
     }
   },
+  "analysis": {
+    "page": {
+      "title": "Archiwum Analiz",
+      "lead": "Dogłębne analizy przypadków, technik manipulacji i wzorców przemocy psychicznej. Wszystkie odcinki dostępne z transkrypcjami i zasobami dodatkowymi."
+    },
+    "filters": {
+      "title": "Filtry",
+      "searchLabel": "Szukaj",
+      "searchPlaceholder": "Wyszukaj po tytule lub opisie...",
+      "categoriesLabel": "Kategorie",
+      "tagsLabel": "Tagi",
+      "sortLabel": "Sortuj",
+      "sortNewest": "Najnowsze",
+      "sortOldest": "Najstarsze",
+      "sortDurationAsc": "Najkrótsze",
+      "sortDurationDesc": "Najdłuższe",
+      "results": "{{count}} odcinków"
+    },
+    "categories": {
+      "AktDarowania": "Akt Darowania",
+      "SłużebnośćUwiązania": "Służebność Uwiązania",
+      "SprawaAdamskich": "Sprawa Adamskich",
+      "BronNarcyza": "Broń Narcyza",
+      "Sledztwo": "Śledztwo"
+    },
+    "list": {
+      "ariaLabel": "Lista odcinków analiz"
+    },
+    "pagination": {
+      "pageIndicator": "Strona {{page}} z {{pages}}",
+      "previous": "Poprzednia",
+      "next": "Następna"
+    },
+    "actions": {
+      "listen": "Posłuchaj",
+      "listenEpisode": "Posłuchaj odcinka",
+      "currentlyPlaying": "Aktualnie odtwarzane"
+    },
+    "player": {
+      "title": "Odtwarzacz analiz",
+      "play": "Odtwórz",
+      "pause": "Wstrzymaj",
+      "mute": "Wycisz",
+      "unmute": "Przywróć dźwięk",
+      "volume": "Głośność",
+      "progress": "Postęp odtwarzania",
+      "nowPlaying": "Teraz gramy",
+      "idle": "Wybierz odcinek do odsłuchania",
+      "chapters": "Rozdziały"
+    },
+    "details": {
+      "published": "Opublikowano",
+      "unknownDate": "Data nieznana",
+      "chapters": "Rozdziały",
+      "seekTo": "Przejdź do {{time}}",
+      "resources": "Zasoby dodatkowe",
+      "emptyTitle": "Brak wybranego odcinka",
+      "emptyHint": "Wybierz odcinek z listy po lewej stronie, aby zobaczyć szczegóły i odsłuchać."
+    },
+    "state": {
+      "loading": "Ładowanie odcinków...",
+      "empty": "Brak odcinków spełniających kryteria wyszukiwania."
+    }
+  },
   "sim": {
     "title": "Symulator rozmowy z manipulatorem",
     "subtitle": "Trenuj rozpoznawanie technik manipulacji. Odpowiedzi powstają lokalnie na podstawie prostych reguł.",
