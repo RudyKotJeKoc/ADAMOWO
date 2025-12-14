@@ -16,6 +16,8 @@
     "anatomy": "Anatomia",
     "lab": "Laboratorium",
     "community": "Społeczność",
+    "media": "Multimedia",
+    "sitemap": "Mapa strony",
     "help": "Pomoc"
   },
   "header": {
@@ -175,6 +177,99 @@
       "note": {
         "title": "Ważna uwaga:",
         "content": "Treści na tej stronie mają charakter informacyjny i edukacyjny. Nie zastępują profesjonalnej pomocy psychologicznej, prawnej ani medycznej. Jeśli potrzebujesz pomocy, skontaktuj się z odpowiednimi służbami lub specjalistami."
+      }
+    },
+    "mediaHub": {
+      "badge": "Nowe odtwarzacze",
+      "title": "Centrum multimediów",
+      "lead": "Nowoczesne odtwarzacze audio i wideo z pełną obsługą HTML5, transkryptami i możliwością pobrania treści bez komunikatu o braku wsparcia.",
+      "audio": {
+        "label": "Audycja",
+        "title": "Laboratorium AI: wprowadzenie",
+        "description": "Pełny odtwarzacz HTML5 z napisem alternatywnym, kontrolą głośności i linkiem do pobrania, aby uniknąć komunikatu „przeglądarka nie obsługuje audio”.",
+        "playerLabel": "Odtwarzacz podcastu Laboratorium AI",
+        "fallback": "Twoja przeglądarka nie obsługuje elementu audio. Skorzystaj z pobrania poniżej.",
+        "transcript": "Przykładowy odcinek opisuje, w jaki sposób Laboratorium AI pomaga analizować czerwone flagi w rozmowach. Odtwarzacz wspiera klawiaturę i skróty systemowe.",
+        "downloadLabel": "Pobierz plik audio",
+        "downloadDescription": "MP3, 320 kbps"
+      },
+      "video": {
+        "label": "Wideo",
+        "title": "Intro do pętli przemocy",
+        "description": "Lekki odtwarzacz HTML5 z podpisem alternatywnym i transkrypcją zapewnia kompatybilność bez komunikatu o braku wsparcia wideo.",
+        "playerLabel": "Odtwarzacz wideo: Intro do pętli przemocy",
+        "fallback": "Twoja przeglądarka nie obsługuje elementu wideo. Użyj linku do pobrania poniżej.",
+        "transcript": "Wideo demonstruje, jak drobne gesty i daty w kalendarzu mogą eskalować napięcia. Materiał zawiera podpisy osadzone w playerze systemowym.",
+        "downloadLabel": "Pobierz plik wideo",
+        "downloadDescription": "WEBM, 720p"
+      }
+    },
+    "sitemap": {
+      "badge": "Mapa strony i kontakt",
+      "title": "Znajdź wszystko w jednym miejscu",
+      "lead": "Szybki dostęp do wszystkich kluczowych sekcji: audycji, analiz, studia, narzędzi, laboratoriów AI oraz kontaktu z zespołem.",
+      "cta": "Przejdź do sekcji",
+      "sections": {
+        "audioVideo": {
+          "title": "Audio i wideo",
+          "description": "Słuchaj audycji na żywo, sprawdź nowe odcinki oraz Laboratorium AI."
+        },
+        "analysis": {
+          "title": "Analizy",
+          "description": "Dostęp do archiwum analiz, najnowszych osi czasu i Klątwy Ósemki."
+        },
+        "research": {
+          "title": "Studio i badania",
+          "description": "Studio, studium przypadku i rozdziały Polany Kłamstw."
+        },
+        "support": {
+          "title": "Wsparcie i społeczność",
+          "description": "Poradniki, sekcja pomocy i miejsce dla społeczności."
+        },
+        "about": {
+          "title": "Zespół",
+          "description": "Poznaj ekspertów stojących za treściami i narzędziami."
+        }
+      },
+      "links": {
+        "live": "Na żywo",
+        "mediaHub": "Media",
+        "lab": "Laboratorium AI",
+        "analysis": "Archiwum analiz",
+        "analizy": "Analizy",
+        "timeline": "Oś czasu konfliktu",
+        "curse": "Klątwa Ósemki",
+        "studio": "Studio",
+        "caseStudy": "Studium przypadku",
+        "polana": "Polana Kłamstw",
+        "guides": "Poradniki",
+        "help": "Pomoc",
+        "community": "Społeczność",
+        "about": "O nas",
+        "contact": "Kontakt"
+      },
+      "about": {
+        "title": "O nas",
+        "copy": "Radio Adamowo to interdyscyplinarny zespół: psycholożka specjalizująca się w przemocy emocjonalnej, dziennikarz śledczy oraz inżynier danych rozwijający Laboratorium AI.",
+        "roles": {
+          "psychologist": "Psycholożka",
+          "reporter": "Dziennikarz",
+          "engineer": "Inżynier danych"
+        },
+        "names": {
+          "psychologist": "dr Anna Kowalska",
+          "reporter": "Jan Nowicki",
+          "engineer": "Ewa Zielińska"
+        },
+        "focus": {
+          "psychologist": "profilaktyka przemocy, superwizja treści",
+          "reporter": "reportaże, weryfikacja źródeł",
+          "engineer": "AI Lab, automaty transkrypcji"
+        }
+      },
+      "contact": {
+        "title": "Kontakt",
+        "copy": "Masz pytania lub chcesz współpracować? Napisz do nas:"
       }
     }
   },
@@ -1889,15 +1984,12 @@
     }
   },
   "footer": {
-    "navigation": "Nawigacja w stopce",
-    "links": {
-      "documentation": "Dokumentacja",
-      "privacy": "Prywatność i cookies",
-      "methodology": "Metodologia i źródła",
-      "support": "Wsparcie 🍕"
-    },
-    "backToTop": "Do góry",
-    "rights": "© 2025 Radio Adamowo"
+    "helpline": {
+      "title": "Potrzebujesz pomocy?",
+      "niebiekskaLinia": "Niebieska Linia",
+      "telefonZaufania": "Telefon Zaufania",
+      "moreResources": "Więcej zasobów pomocy"
+    }
   },
   "familyPsychology": {
     "kicker": "Psychologia rodzinnych wzorców",
@@ -2447,33 +2539,44 @@
     }
   },
   "media": {
-    "transcript": {
-      "title": "Transkrypcja",
-      "show": "Pokaż",
-      "hide": "Ukryj",
-      "search": "Przeszukaj transkrypcję",
-      "searchPlaceholder": "Szukaj w transkrypcji...",
-      "noResults": "Nie znaleziono wyników",
-      "jumpTo": "Przejdź do {{time}}",
-      "resultsCount": "Znaleziono: {{count}}",
-      "accessibility": "Transkrypcja poprawia dostępność dla osób z niepełnosprawnościami słuchu i ułatwia przeszukiwanie treści."
-    },
-    "fallback": {
-      "unsupported": "Twoja przeglądarka nie obsługuje odtwarzania tego typu mediów.",
-      "tryDownload": "Możesz pobrać plik i odtworzyć go w zewnętrznym odtwarzaczu:",
-      "download": "Pobierz plik",
-      "modernBrowser": "Rozważ aktualizację przeglądarki do nowszej wersji dla lepszej obsługi multimediów.",
-      "alternativeFormats": "Dostępne są następujące formaty alternatywne:"
-    },
-    "download": {
-      "region": "Pobierz plik multimedialny",
-      "title": "Pobierz plik",
-      "titleProminent": "Problemy z odtwarzaniem?",
-      "description": "Jeśli nie możesz odtworzyć pliku w przeglądarce, pobierz go.",
-      "descriptionProminent": "Jeśli masz problemy z odtwarzaniem, możesz pobrać plik i odtworzyć go lokalnie.",
-      "button": "Pobierz plik",
-      "ariaLabel": "Pobierz {{title}}",
-      "browserNote": "Uwaga: Niektóre starsze przeglądarki mogą nie obsługiwać odtwarzania streamingu. Po pobraniu pliku możesz go odtworzyć w dowolnym odtwarzaczu multimedialnym."
+    "error": {
+      "code": "Kod błędu:",
+      "retry": "Spróbuj ponownie",
+      "copy": "Kopiuj",
+      "alternatives": "Alternatywne formaty:",
+      "transcript": {
+        "download": "Pobierz transkrypcję"
+      },
+      "troubleshooting": "Rozwiązywanie problemów",
+      "advanced": "Dla zaawansowanych",
+      "direct": {
+        "url": "Bezpośredni link do pliku:"
+      },
+      "audio": {
+        "title": "Nie udało się załadować audio",
+        "generic": "Wystąpił problem z załadowaniem audio. Spróbuj ponownie później.",
+        "simple": "Nie można załadować audio"
+      },
+      "video": {
+        "title": "Nie udało się załadować wideo",
+        "generic": "Wystąpił problem z załadowaniem wideo. Spróbuj ponownie później.",
+        "simple": "Nie można załadować wideo"
+      },
+      "aborted": "Pobieranie zostało przerwane przez użytkownika.",
+      "network": "Błąd sieci podczas pobierania pliku multimedialnego.",
+      "decode": "Plik multimedialny jest uszkodzony lub w nieobsługiwanym formacie.",
+      "unsupported": "Format pliku nie jest obsługiwany przez Twoją przeglądarkę.",
+      "unknown": "Nieznany błąd odtwarzania.",
+      "generic": "Wystąpił nieoczekiwany błąd.",
+      "tip": {
+        "refresh": "Odśwież stronę i spróbuj ponownie",
+        "connection": "Sprawdź swoje połączenie internetowe",
+        "browser": {
+          "switch": "Spróbuj innej przeglądarki (Chrome, Firefox, Safari, Edge)"
+        },
+        "formats": "Niektóre przeglądarki nie obsługują wszystkich formatów — spróbuj alternatywnego formatu powyżej",
+        "extensions": "Wyłącz blokery reklam lub rozszerzenia, które mogą blokować multimedia"
+      }
     }
   },
   "helpResources": {
@@ -2666,49 +2769,6 @@
       "emergency": {
         "title": "W sytuacji bezpośredniego zagrożenia:",
         "description": "Zadzwoń pod numer alarmowy 112 lub skontaktuj się z lokalną Policją. Twoje bezpieczeństwo jest priorytetem."
-      }
-    }
-  },
-  "media": {
-    "error": {
-      "code": "Kod błędu:",
-      "retry": "Spróbuj ponownie",
-      "copy": "Kopiuj",
-      "alternatives": "Alternatywne formaty:",
-      "transcript": "Transkrypcja:",
-      "troubleshooting": "Rozwiązywanie problemów",
-      "advanced": "Dla zaawansowanych",
-      "direct": {
-        "url": "Bezpośredni link do pliku:"
-      },
-      "audio": {
-        "title": "Nie udało się załadować audio",
-        "generic": "Wystąpił problem z załadowaniem audio. Spróbuj ponownie później.",
-        "simple": "Nie można załadować audio"
-      },
-      "video": {
-        "title": "Nie udało się załadować wideo",
-        "generic": "Wystąpił problem z załadowaniem wideo. Spróbuj ponownie później.",
-        "simple": "Nie można załadować wideo"
-      },
-      "aborted": "Pobieranie zostało przerwane przez użytkownika.",
-      "network": "Błąd sieci podczas pobierania pliku multimedialnego.",
-      "decode": "Plik multimedialny jest uszkodzony lub w nieobsługiwanym formacie.",
-      "unsupported": "Format pliku nie jest obsługiwany przez Twoją przeglądarkę.",
-      "unknown": "Nieznany błąd odtwarzania.",
-      "generic": "Wystąpił nieoczekiwany błąd.",
-      "tip": {
-        "refresh": "Odśwież stronę i spróbuj ponownie",
-        "connection": "Sprawdź swoje połączenie internetowe",
-        "browser": "Upewnij się, że Twoja przeglądarka jest zaktualizowana",
-        "formats": "Niektóre przeglądarki nie obsługują wszystkich formatów — spróbuj alternatywnego formatu powyżej",
-        "extensions": "Wyłącz blokery reklam lub rozszerzenia, które mogą blokować multimedia",
-        "browser": {
-          "switch": "Spróbuj innej przeglądarki (Chrome, Firefox, Safari, Edge)"
-        }
-      },
-      "transcript": {
-        "download": "Pobierz transkrypcję"
       }
     }
   },
@@ -3013,14 +3073,6 @@
     "additionalInfo": {
       "title": "Dlaczego \"programy\", a nie \"audycje\"?",
       "description": "Traktujemy nasze programy jako strukturalne moduły edukacyjne, nie jako zwykłą ramówkę radiową. Każdy program to przemyślany kurs prowadzony przez specjalistów, z jasnym celem edukacyjnym i progresją tematów. To podejście podnosi wartość treści i lepiej komunikuje edukacyjny charakter platformy."
-    }
-  },
-  "footer": {
-    "helpline": {
-      "title": "Potrzebujesz pomocy?",
-      "niebiekskaLinia": "Niebieska Linia",
-      "telefonZaufania": "Telefon Zaufania",
-      "moreResources": "Więcej zasobów pomocy"
     }
   }
 }

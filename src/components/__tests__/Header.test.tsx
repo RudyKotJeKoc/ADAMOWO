@@ -45,13 +45,18 @@ describe('Header', () => {
     renderHeader();
     [
       'Live',
-      'Analizy',
-      'Programy',
+      'Analyses',
+      'Taxonomy',
+      'Case Study',
+      'Programs',
       'Violence Loop',
       'Guide',
+      'Glade of Lies',
       'Anatomy',
       'Lab',
       'Community',
+      'Media',
+      'Sitemap',
       'Help',
     ].forEach((label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument());
     fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
@@ -77,8 +82,8 @@ describe('Header', () => {
     expect(document.activeElement).toBe(focusable[0]);
     expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual([
       'Live',
-      'Analizy',
-      'Programy',
+      'Analyses',
+      'Taxonomy',
     ]);
   });
 

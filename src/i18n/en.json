@@ -16,6 +16,8 @@
     "anatomy": "Anatomy",
     "lab": "Lab",
     "community": "Community",
+    "media": "Media",
+    "sitemap": "Sitemap",
     "help": "Help"
   },
   "header": {
@@ -163,6 +165,99 @@
       "note": {
         "title": "Important note:",
         "content": "The content on this page is informational and educational. It does not replace professional psychological, legal or medical help. If you need help, contact appropriate services or specialists."
+      }
+    },
+    "mediaHub": {
+      "badge": "New players",
+      "title": "Media hub",
+      "lead": "Modern HTML5 audio and video players with transcripts and download options—no more unsupported browser messages.",
+      "audio": {
+        "label": "Podcast",
+        "title": "AI Lab: introduction",
+        "description": "Full HTML5 player with accessible labels and download link to avoid “browser does not support audio” messages.",
+        "playerLabel": "AI Lab podcast player",
+        "fallback": "Your browser cannot play audio. Use the download link below.",
+        "transcript": "This sample episode explains how AI Lab helps surface red flags in conversations. Keyboard and system shortcuts are supported.",
+        "downloadLabel": "Download audio file",
+        "downloadDescription": "MP3, 320 kbps"
+      },
+      "video": {
+        "label": "Video",
+        "title": "Violence loop intro",
+        "description": "Lightweight HTML5 video with accessible alternative text and transcript to avoid unsupported video errors.",
+        "playerLabel": "Video player: violence loop intro",
+        "fallback": "Your browser cannot play video. Use the download link below.",
+        "transcript": "The video shows how calendar dates and gestures escalate tension. Captions are provided by the system player.",
+        "downloadLabel": "Download video file",
+        "downloadDescription": "WEBM, 720p"
+      }
+    },
+    "sitemap": {
+      "badge": "Sitemap & contact",
+      "title": "Find everything in one place",
+      "lead": "Quick access to all key sections: live shows, analyses, studio, tools, AI Lab, and direct contact.",
+      "cta": "Go to section",
+      "sections": {
+        "audioVideo": {
+          "title": "Audio & video",
+          "description": "Listen live, check new episodes, and explore the AI Lab."
+        },
+        "analysis": {
+          "title": "Analyses",
+          "description": "Access the archive, timelines, and Curse of Eight deep dives."
+        },
+        "research": {
+          "title": "Studio & research",
+          "description": "Studio hub, case studies, and Field of Lies chapters."
+        },
+        "support": {
+          "title": "Support & community",
+          "description": "Guides, help center, and community resources."
+        },
+        "about": {
+          "title": "Team",
+          "description": "Meet the experts behind the content and tools."
+        }
+      },
+      "links": {
+        "live": "Live",
+        "mediaHub": "Media",
+        "lab": "AI Lab",
+        "analysis": "Analysis archive",
+        "analizy": "Analyses",
+        "timeline": "Conflict timeline",
+        "curse": "Curse of Eight",
+        "studio": "Studio",
+        "caseStudy": "Case study",
+        "polana": "Field of Lies",
+        "guides": "Guides",
+        "help": "Help",
+        "community": "Community",
+        "about": "About us",
+        "contact": "Contact"
+      },
+      "about": {
+        "title": "About us",
+        "copy": "Radio Adamowo is an interdisciplinary team: a psychologist focused on emotional abuse, an investigative reporter, and a data engineer building the AI Lab.",
+        "roles": {
+          "psychologist": "Psychologist",
+          "reporter": "Reporter",
+          "engineer": "Data engineer"
+        },
+        "names": {
+          "psychologist": "Dr. Anna Kowalska",
+          "reporter": "Jan Nowicki",
+          "engineer": "Ewa Zielińska"
+        },
+        "focus": {
+          "psychologist": "violence prevention, content review",
+          "reporter": "investigations, source verification",
+          "engineer": "AI Lab, transcription pipelines"
+        }
+      },
+      "contact": {
+        "title": "Contact",
+        "copy": "Questions or partnership ideas? Reach us at:"
       }
     }
   },
