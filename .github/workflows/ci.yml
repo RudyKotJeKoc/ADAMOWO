@@ -15,28 +15,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.12.2
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Run linter
-        run: pnpm lint
+        run: npm run lint
 
       - name: Run tests
-        run: pnpm test
+        run: npm test
 
       - name: Build project
-        run: pnpm build
+        run: npm run build
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -55,22 +50,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.12.2
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Build project
-        run: pnpm build
+        run: npm run build
 
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
