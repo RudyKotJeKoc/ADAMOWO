@@ -13,6 +13,7 @@
     "shows": "Shows",
     "guide": "Guide",
     "polanaKlamstw": "Glade of Lies",
+    "teatrAbsurdu": "Theatre of the Absurd",
     "anatomy": "Anatomy",
     "lab": "Lab",
     "community": "Community",
@@ -2255,5 +2256,53 @@
       }
     },
     "footer": "Analytical Report – Radio Adamowo Research"
+  },
+  "teatrAbsurdu": {
+    "title": "Theatre of the Absurd: When Life Becomes Art",
+    "lead": "Theatre of the Absurd – a dramatic form that emerged in the mid-20th century, breaking with conventional logic and language. But what happens when absurdity leaves the stage and enters our lives? This analysis examines the uncanny parallels between Theatre of the Absurd and real-life scenarios of psychological manipulation.",
+    "intro": {
+      "title": "What is Theatre of the Absurd?",
+      "content": "Theatre of the Absurd is a theatrical movement that challenges traditional dramatic structure, dialogue logic, and the meaning of communication. Absurdist plays present a world without clear meaning, where characters are trapped in senseless situations, repeating purposeless actions, and language loses its communicative function. What once was an artistic convention can now serve as a metaphor for understanding manipulation mechanisms."
+    },
+    "parallels": {
+      "title": "Parallels: Theatre and Manipulation"
+    },
+    "sections": {
+      "meaninglessness": {
+        "title": "Meaninglessness and Disorientation",
+        "description": "In Theatre of the Absurd, characters often find themselves in situations devoid of logical sense – conversations lead nowhere, actions bring no results. Similarly in manipulation: gaslighting creates a reality where the victim cannot find logical coherence. \"I never said that\", \"you're overreacting\", \"you made it all up\" – the manipulator's statements shatter the sense of reality, leaving the victim in a state of disorientation characteristic of absurdist drama characters."
+      },
+      "circularLogic": {
+        "title": "Circularity and Powerlessness",
+        "description": "In Beckett's \"Waiting for Godot\", characters are trapped in an infinite wait that never ends. Every day they repeat the same actions, holding the illusion that \"today will be different\". This is a mirror reflection of the cycle of violence in toxic relationships: hope for change, short-lived improvement, return to old patterns, renewed hope. The victim of manipulation, like Beckett's characters, is trapped in a cycle that leads nowhere."
+      },
+      "languageBreakdown": {
+        "title": "Language Breakdown",
+        "description": "In Ionesco's \"The Bald Soprano\", language ceases to fulfill its communicative function – characters speak sentences that carry no meaning, they dialogue but don't communicate. In emotional manipulation we see a similar mechanism: the manipulator uses words, but their meaning is elastic, variable, replaced depending on the situation. Language becomes a tool not of communication, but of control. Victims of manipulation often feel they \"cannot communicate\", even though they use the same words."
+      },
+      "powerlessness": {
+        "title": "Powerlessness and Lack of Agency",
+        "description": "Characters in Theatre of the Absurd are powerless in the face of the world around them – they cannot change it or understand it. In manipulative relationships, the victim also experiences a loss of agency: every attempt at change, every argument, every attempt at rational conversation leads nowhere. The manipulator denies, reverses, blames. The victim feels like an actor in an absurdist play where the script is imposed from above and their role is devoid of influence over the course of events."
+      }
+    },
+    "playwrights": {
+      "title": "Key Playwrights",
+      "beckett": {
+        "parallel": "Beckett shows how hope for change can become a prison. In manipulative relationships, the victim waits for \"Godot\" – the moment of change that never comes, but hope itself sustains the relationship."
+      },
+      "ionesco": {
+        "parallel": "Ionesco unmasks the absurdity of everyday life and conformism. In the context of manipulation: seemingly \"normal\" conversations that hide toxic structures of power and control."
+      },
+      "pinter": {
+        "parallel": "Pinter creates an atmosphere of threat through the unspoken – what is not said is as important as words. In emotional manipulation, silence, implications, and ambiguity are tools of control."
+      },
+      "genet": {
+        "parallel": "Genet explores social roles and their performance. In toxic relationships, people often play imposed roles: victim, perpetrator, rescuer – maintaining a theatrical spectacle instead of an authentic relationship."
+      }
+    },
+    "conclusion": {
+      "title": "Absurdity as a Tool of Understanding",
+      "content": "Recognizing absurdity in everyday interactions can be the first step to liberation from manipulation. When you notice that the conversation leads nowhere, that arguments go in circles, and language loses meaning – you may be participating in an absurdist spectacle. The difference is that you can leave the audience."
+    }
   }
 }

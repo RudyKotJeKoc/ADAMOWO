@@ -45,10 +45,14 @@ describe('Header', () => {
     renderHeader();
     [
       'Live',
-      'Analizy',
-      'Programy',
+      'Analyses',
+      'Taxonomy',
+      'Case Study',
+      'Programs',
       'Violence Loop',
       'Guide',
+      'Glade of Lies',
+      'Theatre of the Absurd',
       'Anatomy',
       'Lab',
       'Community',
@@ -77,8 +81,8 @@ describe('Header', () => {
     expect(document.activeElement).toBe(focusable[0]);
     expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual([
       'Live',
-      'Analizy',
-      'Programy',
+      'Analyses',
+      'Taxonomy',
     ]);
   });
 

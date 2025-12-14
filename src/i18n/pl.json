@@ -13,6 +13,7 @@
     "shows": "Audycje",
     "guide": "Poradnik",
     "polanaKlamstw": "Polana Kłamstw",
+    "teatrAbsurdu": "Teatr Absurdu",
     "anatomy": "Anatomia",
     "lab": "Laboratorium",
     "community": "Społeczność",
@@ -3021,6 +3022,54 @@
       "niebiekskaLinia": "Niebieska Linia",
       "telefonZaufania": "Telefon Zaufania",
       "moreResources": "Więcej zasobów pomocy"
+    }
+  },
+  "teatrAbsurdu": {
+    "title": "Teatr Absurdu: Kiedy Życie Staje Się Sztuką",
+    "lead": "Teatr absurdu – forma dramatyczna powstała w połowie XX wieku, która zrywa z konwencjonalną logiką i językiem. Ale co się dzieje, gdy absurd opuszcza scenę i wkracza do naszego życia? Ta analiza bada niesamowite podobieństwa między teatrem absurdu a rzeczywistymi scenariuszami manipulacji psychologicznej.",
+    "intro": {
+      "title": "Czym jest Teatr Absurdu?",
+      "content": "Teatr absurdu to ruch teatralny, który kwestionuje tradycyjną strukturę dramatyczną, logikę dialogu i sens komunikacji. Sztuki absurdystów przedstawiają świat bez wyraźnego znaczenia, gdzie bohaterowie uwięzieni są w bezsensownych sytuacjach, powtarzają bezcelowe działania, a język traci swoją komunikacyjną funkcję. To, co kiedyś było artystyczną konwencją, dziś może służyć jako metafora dla zrozumienia mechanizmów manipulacji."
+    },
+    "parallels": {
+      "title": "Paralele: Teatr a Manipulacja"
+    },
+    "sections": {
+      "meaninglessness": {
+        "title": "Bezsensowność i Dezorientacja",
+        "description": "W teatrze absurdu bohaterowie często znajdują się w sytuacjach pozbawionych logicznego sensu – rozmowy prowadzą donikąd, działania nie przynoszą rezultatów. Podobnie w manipulacji: gaslighting polega na tworzeniu rzeczywistości, w której ofiara nie może znaleźć logicznej spójności. \"Nigdy tego nie powiedziałem\", \"przesadzasz\", \"to wszystko wymyśliłaś\" – wypowiedzi manipulatora rozbijają poczucie rzeczywistości, pozostawiając ofiarę w stanie dezorientacji charakterystycznym dla bohaterów absurdystycznych dramatów."
+      },
+      "circularLogic": {
+        "title": "Cykliczność i Bezsilność",
+        "description": "W \"Czekając na Godota\" Becketta bohaterowie uwięzieni są w nieskończonym oczekiwaniu, które nigdy się nie kończy. Każdego dnia powtarzają te same czynności, mając iluzję, że \"dziś będzie inaczej\". To lustrzane odbicie pętli przemocy w toksycznych związkach: nadzieja na zmianę, krótkotrwała poprawa, powrót do starych wzorców, ponowna nadzieja. Ofiara manipulacji, podobnie jak bohaterowie Becketta, uwięziona jest w cyklu, który nie prowadzi do żadnego rozwiązania."
+      },
+      "languageBreakdown": {
+        "title": "Rozpad Języka",
+        "description": "W \"Łysej śpiewaczce\" Ionesco język przestaje pełnić swoją funkcję komunikacyjną – bohaterowie wypowiadają zdania, które nie niosą znaczenia, dialogują, ale nie komunikują się. W manipulacji emocjonalnej widzimy podobny mechanizm: manipulator używa słów, ale ich znaczenie jest elastyczne, zmienne, podmieniane w zależności od sytuacji. Język staje się narzędziem nie komunikacji, ale kontroli. Ofiary manipulacji często odczuwają, że \"nie mogą się dogadać\", choć używają tych samych słów."
+      },
+      "powerlessness": {
+        "title": "Bezsilność i Brak Sprawczości",
+        "description": "Bohaterowie teatru absurdu są bezsilni wobec świata, który ich otacza – nie mogą go zmienić ani zrozumieć. W manipulacyjnych relacjach ofiara również doświadcza utraty sprawczości: każda próba zmiany, każdy argument, każda próba racjonalnej rozmowy prowadzi donikąd. Manipulator neguje, odwraca, obwinia. Ofiara czuje się jak aktor w absurdystycznej sztuce, w której scenariusz jest z góry narzucony, a jej rola – pozbawiona wpływu na przebieg wydarzeń."
+      }
+    },
+    "playwrights": {
+      "title": "Kluczowi Dramatopisarze",
+      "beckett": {
+        "parallel": "Beckett pokazuje, jak nadzieja na zmianę może stać się więzieniem. W manipulacyjnych związkach ofiara czeka na \"Godota\" – moment zmiany, który nigdy nie nadchodzi, ale sama nadzieja podtrzymuje związek."
+      },
+      "ionesco": {
+        "parallel": "Ionesco demaskuje absurd codzienności i konformizmu. W kontekście manipulacji: pozornie \"normalne\" rozmowy, które kryją w sobie toksyczne struktury władzy i kontroli."
+      },
+      "pinter": {
+        "parallel": "Pinter tworzy atmosferę zagrożenia przez niewypowiedziane – to, czego się nie mówi, jest równie ważne jak słowa. W manipulacji emocjonalnej cisza, niedopowiedzenia i dwuznaczność są narzędziami kontroli."
+      },
+      "genet": {
+        "parallel": "Genet eksploruje role społeczne i ich performance. W toksycznych związkach osoby często odgrywają narzucone role: ofiara, oprawca, ratownik – utrzymując teatralny spektakl zamiast autentycznej relacji."
+      }
+    },
+    "conclusion": {
+      "title": "Absurd jako Narzędzie Zrozumienia",
+      "content": "Rozpoznanie absurdu w codziennych interakcjach może być pierwszym krokiem do uwolnienia się od manipulacji. Kiedy dostrzeżesz, że rozmowa nie prowadzi donikąd, że argumenty krążą w kółko, a język traci znaczenie – możesz właśnie uczestniczyć w absurdystycznym spektaklu. Różnica polega na tym, że możesz opuścić widownię."
     }
   }
 }
