@@ -29,6 +29,8 @@ const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/anatomy', labelKey: 'navigation.anatomy' },
   { to: '/lab', labelKey: 'navigation.lab' },
   { to: '/community', labelKey: 'navigation.community' },
+  { to: '/media', labelKey: 'navigation.media' },
+  { to: '/mapa-strony', labelKey: 'navigation.sitemap' },
   { to: '/pomoc', labelKey: 'navigation.help' },
 ];
 
@@ -86,6 +88,8 @@ export function Header(): JSX.Element {
       '/anatomy': () => import('../pages/AnatomyPage'),
       '/lab': () => import('../pages/Lab'),
       '/community': () => import('../pages/Community'),
+      '/media': () => import('../pages/MediaHub'),
+      '/mapa-strony': () => import('../pages/Sitemap'),
       '/pomoc': () => import('../pages/Help'),
       '/help': () => import('../pages/Help'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage'),

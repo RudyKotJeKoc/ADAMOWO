@@ -16,6 +16,8 @@
     "anatomy": "Anatomie",
     "lab": "Lab",
     "community": "Gemeenschap",
+    "media": "Media",
+    "sitemap": "Sitemap",
     "help": "Hulp"
   },
   "header": {
@@ -163,6 +165,99 @@
       "note": {
         "title": "Belangrijke opmerking:",
         "content": "De inhoud op deze pagina is informatief en educatief. Het vervangt geen professionele psychologische, juridische of medische hulp. Als je hulp nodig hebt, neem contact op met de juiste diensten of specialisten."
+      }
+    },
+    "mediaHub": {
+      "badge": "Nieuwe spelers",
+      "title": "Mediahub",
+      "lead": "Moderne HTML5 audio- en videospelers met transcripties en downloadopties – zonder foutmeldingen over ontbrekende ondersteuning.",
+      "audio": {
+        "label": "Podcast",
+        "title": "AI Lab: introductie",
+        "description": "Volwaardige HTML5-speler met toegankelijke labels en downloadlink om “browser ondersteunt audio niet” te elimineren.",
+        "playerLabel": "AI Lab podcastspeler",
+        "fallback": "Je browser kan audio niet afspelen. Gebruik de downloadlink hieronder.",
+        "transcript": "Deze aflevering laat zien hoe AI Lab rode vlaggen in gesprekken helpt opsporen. Toetsenbordbediening is ingeschakeld.",
+        "downloadLabel": "Audiobestand downloaden",
+        "downloadDescription": "MP3, 320 kbps"
+      },
+      "video": {
+        "label": "Video",
+        "title": "Intro geweldscyclus",
+        "description": "Lichtgewicht HTML5-video met alternatief label en transcript om foutmeldingen over video te vermijden.",
+        "playerLabel": "Videospeler: intro geweldscyclus",
+        "fallback": "Je browser kan video niet afspelen. Gebruik de downloadlink hieronder.",
+        "transcript": "De video toont hoe kalenderdata en gebaren spanning opbouwen. Ondertitels levert de systeemspeler.",
+        "downloadLabel": "Videobestand downloaden",
+        "downloadDescription": "WEBM, 720p"
+      }
+    },
+    "sitemap": {
+      "badge": "Sitemap & contact",
+      "title": "Alles op één plek",
+      "lead": "Snelle toegang tot alle hoofdsecties: live-uitzendingen, analyses, studio, tools, AI Lab en direct contact.",
+      "cta": "Ga naar sectie",
+      "sections": {
+        "audioVideo": {
+          "title": "Audio & video",
+          "description": "Luister live, bekijk nieuwe afleveringen en het AI Lab."
+        },
+        "analysis": {
+          "title": "Analyses",
+          "description": "Toegang tot archief, tijdlijnen en de Vloek van Acht."
+        },
+        "research": {
+          "title": "Studio & onderzoek",
+          "description": "Studio-overzicht, casestudy en hoofdstukken van de Weide van Leugens."
+        },
+        "support": {
+          "title": "Hulp & community",
+          "description": "Handleidingen, helpcentrum en communitybronnen."
+        },
+        "about": {
+          "title": "Team",
+          "description": "Ontmoet de experts achter de content en tools."
+        }
+      },
+      "links": {
+        "live": "Live",
+        "mediaHub": "Media",
+        "lab": "AI Lab",
+        "analysis": "Analyse-archief",
+        "analizy": "Analyses",
+        "timeline": "Conflicttijdlijn",
+        "curse": "Vloek van Acht",
+        "studio": "Studio",
+        "caseStudy": "Casestudy",
+        "polana": "Weide van Leugens",
+        "guides": "Handleidingen",
+        "help": "Hulp",
+        "community": "Community",
+        "about": "Over ons",
+        "contact": "Contact"
+      },
+      "about": {
+        "title": "Over ons",
+        "copy": "Radio Adamowo is een interdisciplinair team: een psychologe gespecialiseerd in emotioneel geweld, een onderzoeksjournalist en een data-engineer die het AI Lab bouwt.",
+        "roles": {
+          "psychologist": "Psychologe",
+          "reporter": "Journalist",
+          "engineer": "Data-engineer"
+        },
+        "names": {
+          "psychologist": "dr. Anna Kowalska",
+          "reporter": "Jan Nowicki",
+          "engineer": "Ewa Zielińska"
+        },
+        "focus": {
+          "psychologist": "preventie van geweld, contentreview",
+          "reporter": "reportages, bronverificatie",
+          "engineer": "AI Lab, transcriptiepijplijnen"
+        }
+      },
+      "contact": {
+        "title": "Contact",
+        "copy": "Vragen of samenwerken? Neem contact op via:"
       }
     }
   },

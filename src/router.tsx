@@ -23,6 +23,10 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 const AIPolicy = lazy(() => import('./pages/AIPolicy'));
 const Methodology = lazy(() => import('./pages/Methodology'));
 const PolanaKlamstw = lazy(() => import('./pages/PolanaKlamstw'));
+const CurseOfEightContent = lazy(() => import('./pages/CurseOfEightContent'));
+const TimelineContent = lazy(() => import('./pages/TimelineContent'));
+const MediaHub = lazy(() => import('./pages/MediaHub'));
+const Sitemap = lazy(() => import('./pages/Sitemap'));
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +57,10 @@ export const router = createBrowserRouter([
       { path: 'privacy', element: <Privacy /> },
       { path: 'ai-policy', element: <AIPolicy /> },
       { path: 'methodology', element: <Methodology /> },
+      { path: 'curse-of-eight-content', element: <CurseOfEightContent /> },
+      { path: 'timeline-content', element: <TimelineContent /> },
+      { path: 'media', element: <MediaHub /> },
+      { path: 'mapa-strony', element: <Sitemap /> },
     ],
   },
 ]);
