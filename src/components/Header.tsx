@@ -31,6 +31,7 @@ const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
   { to: '/community', labelKey: 'navigation.community' },
   { to: '/media', labelKey: 'navigation.media' },
   { to: '/mapa-strony', labelKey: 'navigation.sitemap' },
+  { to: '/teatr-absurdu', labelKey: 'navigation.teatr' },
   { to: '/pomoc', labelKey: 'navigation.help' },
 ];
 
@@ -93,6 +94,9 @@ export function Header(): JSX.Element {
       '/pomoc': () => import('../pages/Help'),
       '/help': () => import('../pages/Help'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage'),
+      '/teatr-absurdu': () => import('../pages/TeatrAbsurdu'),
+      '/teatr-absurdu/spektakl': () => import('../features/teatr-absurdu/SpektaklPage'),
+      '/teatr-absurdu/analiza': () => import('../features/teatr-absurdu/AnalizaPage'),
     }),
     []
   );

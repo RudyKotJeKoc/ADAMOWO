@@ -18,6 +18,7 @@
     "community": "Społeczność",
     "media": "Multimedia",
     "sitemap": "Mapa strony",
+    "teatr": "Teatr Absurdu",
     "help": "Pomoc"
   },
   "header": {
@@ -3073,6 +3074,43 @@
     "additionalInfo": {
       "title": "Dlaczego \"programy\", a nie \"audycje\"?",
       "description": "Traktujemy nasze programy jako strukturalne moduły edukacyjne, nie jako zwykłą ramówkę radiową. Każdy program to przemyślany kurs prowadzony przez specjalistów, z jasnym celem edukacyjnym i progresją tematów. To podejście podnosi wartość treści i lepiej komunikuje edukacyjny charakter platformy."
+    }
+  },
+  "teatr": {
+    "meta": {
+      "title": "Teatr Absurdu - Dom z Papieru i Pianki",
+      "description": "Kabaret rodzinny w trzech aktach. Satyra oparta na rzeczywistych wydarzeniach z polskiego wymiaru sprawiedliwości."
+    },
+    "title": "Dom z Papieru i Pianki Montażowej",
+    "subtitle": "Kabaret Rodzinny w Trzech Aktach",
+    "tagline": "Za cenę dwóch kaw u notariusza kupiłem sobie bilet do piekła",
+    "warning": {
+      "title": "Uwaga",
+      "content": "Poniższy materiał to satyra oparta na rzeczywistych wydarzeniach. Wszystkie fakty (daty, kwoty, cytaty) są autentyczne i udokumentowane. Zmieniono tylko formę narracji — z protokołu sądowego na scenariusz teatralny."
+    },
+    "acts": {
+      "fullPlay": {
+        "title": "Spektakl Pełny",
+        "description": "Trzy akty, prolog i epilog. Kompletna historia od darowizny do wyroku.",
+        "button": "Czytaj"
+      },
+      "analysis": {
+        "title": "Analiza Przedmeczowa",
+        "description": "Zestawienie sił, taktyk i uzbrojenia. Kto miał co w arsenale?",
+        "button": "Analiza"
+      },
+      "documentary": {
+        "title": "Wersja Dokumentalna",
+        "description": "Fakty bez metafor. Protokóły, wyroki, zeznania.",
+        "button": "Dowody"
+      }
+    },
+    "context": {
+      "title": "Kontekst dla nowych widzów",
+      "paragraph1": "Ta historia to rzeczywisty przypadek konfliktu rodzinnego, który przeszedł przez polski wymiar sprawiedliwości (2021-2025). Sprawa dotyczyła cofnięcia darowizny gospodarstwa z powodu \"rażącej niewdzięczności\".",
+      "question": "Dlaczego satyra?",
+      "answer": "Bo czasem jedynym sposobem na przeżycie absurdu jest śmiech. A system, który pozwala na wykorzystanie \"Niebieskiej Karty\" jako dowodu w sporze majątkowym, zasługuje na kabaret.",
+      "link": "Przeczytaj pełną chronologię wydarzeń (wersja poważna)"
     }
   }
 }

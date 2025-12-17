@@ -18,6 +18,7 @@
     "community": "Gemeenschap",
     "media": "Media",
     "sitemap": "Sitemap",
+    "teatr": "Theater van het Absurde",
     "help": "Hulp"
   },
   "header": {
@@ -3005,5 +3006,42 @@
       }
     },
     "footer": "Analytisch Rapport – Radio Adamowo Research"
+  },
+  "teatr": {
+    "meta": {
+      "title": "Theater van het Absurde - Huis van Papier en Schuim",
+      "description": "Familiecabaret in drie bedrijven. Satire gebaseerd op echte gebeurtenissen uit het Poolse rechtssysteem."
+    },
+    "title": "Huis van Papier en Montageschuim",
+    "subtitle": "Familiecabaret in Drie Bedrijven",
+    "tagline": "Voor de prijs van twee kopjes koffie bij de notaris kocht ik mezelf een ticket naar de hel",
+    "warning": {
+      "title": "Waarschuwing",
+      "content": "Het volgende materiaal is satire gebaseerd op echte gebeurtenissen. Alle feiten (data, bedragen, citaten) zijn authentiek en gedocumenteerd. Alleen de verhalende vorm is veranderd — van gerechtelijke protocollen naar theatraal script."
+    },
+    "acts": {
+      "fullPlay": {
+        "title": "Volledige Voorstelling",
+        "description": "Drie bedrijven, proloog en epiloog. Volledig verhaal van schenking tot vonnis.",
+        "button": "Lees"
+      },
+      "analysis": {
+        "title": "Pre-Fight Analyse",
+        "description": "Vergelijking van krachten, tactieken en bewapening. Wie had wat in het arsenaal?",
+        "button": "Analyse"
+      },
+      "documentary": {
+        "title": "Documentaire Versie",
+        "description": "Feiten zonder metaforen. Protocollen, vonnissen, getuigenissen.",
+        "button": "Bewijs"
+      }
+    },
+    "context": {
+      "title": "Context voor nieuwe kijkers",
+      "paragraph1": "Dit verhaal is een echte zaak van familieconflict die door het Poolse rechtssysteem ging (2021-2025). De zaak betrof de herroeping van een boerderijschenking wegens \"grove ondankbaarheid\".",
+      "question": "Waarom satire?",
+      "answer": "Omdat soms de enige manier om absurditeit te overleven lachen is. En een systeem dat het gebruik van een \"Blauwe Kaart\" als bewijs in een eigendomsgeschil toestaat, verdient cabaret.",
+      "link": "Lees de volledige chronologie van gebeurtenissen (serieuze versie)"
+    }
   }
 }
