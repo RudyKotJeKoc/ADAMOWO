@@ -18,6 +18,7 @@
     "community": "Community",
     "media": "Media",
     "sitemap": "Sitemap",
+    "teatr": "Theater of the Absurd",
     "help": "Help"
   },
   "header": {
@@ -2350,5 +2351,42 @@
       }
     },
     "footer": "Analytical Report – Radio Adamowo Research"
+  },
+  "teatr": {
+    "meta": {
+      "title": "Theater of the Absurd - House of Paper and Foam",
+      "description": "Family cabaret in three acts. Satire based on real events from the Polish justice system."
+    },
+    "title": "House of Paper and Mounting Foam",
+    "subtitle": "Family Cabaret in Three Acts",
+    "tagline": "For the price of two coffees at the notary, I bought myself a ticket to hell",
+    "warning": {
+      "title": "Warning",
+      "content": "The following material is satire based on real events. All facts (dates, amounts, quotes) are authentic and documented. Only the narrative form has been changed — from court protocols to theatrical script."
+    },
+    "acts": {
+      "fullPlay": {
+        "title": "Full Play",
+        "description": "Three acts, prologue and epilogue. Complete story from donation to verdict.",
+        "button": "Read"
+      },
+      "analysis": {
+        "title": "Pre-Fight Analysis",
+        "description": "Comparison of forces, tactics and armament. Who had what in the arsenal?",
+        "button": "Analysis"
+      },
+      "documentary": {
+        "title": "Documentary Version",
+        "description": "Facts without metaphors. Protocols, verdicts, testimonies.",
+        "button": "Evidence"
+      }
+    },
+    "context": {
+      "title": "Context for new viewers",
+      "paragraph1": "This story is a real case of family conflict that went through the Polish justice system (2021-2025). The case concerned the revocation of a farm donation due to \"gross ingratitude\".",
+      "question": "Why satire?",
+      "answer": "Because sometimes the only way to survive absurdity is laughter. And a system that allows the use of a \"Blue Card\" as evidence in a property dispute deserves cabaret.",
+      "link": "Read the full chronology of events (serious version)"
+    }
   }
 }

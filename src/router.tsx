@@ -27,6 +27,9 @@ const CurseOfEightContent = lazy(() => import('./pages/CurseOfEightContent'));
 const TimelineContent = lazy(() => import('./pages/TimelineContent'));
 const MediaHub = lazy(() => import('./pages/MediaHub'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
+const TeatrAbsurdu = lazy(() => import('./pages/TeatrAbsurdu'));
+const SpektaklPage = lazy(() => import('./features/teatr-absurdu/SpektaklPage'));
+const AnalizaPage = lazy(() => import('./features/teatr-absurdu/AnalizaPage'));
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +64,10 @@ export const router = createBrowserRouter([
       { path: 'timeline-content', element: <TimelineContent /> },
       { path: 'media', element: <MediaHub /> },
       { path: 'mapa-strony', element: <Sitemap /> },
+      // Teatr Absurdu section
+      { path: 'teatr-absurdu', element: <TeatrAbsurdu /> },
+      { path: 'teatr-absurdu/spektakl', element: <SpektaklPage /> },
+      { path: 'teatr-absurdu/analiza', element: <AnalizaPage /> },
     ],
   },
 ]);
