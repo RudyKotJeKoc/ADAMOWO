@@ -10,30 +10,41 @@ import { Search } from './Search';
 import { ThemeSwitch } from './ThemeSwitch';
 
 /**
- * Navigation items configuration for the main header menu.
+ * Navigation items configuration organized into thematic groups.
  *
- * Each item contains a route path and a translation key for internationalization.
- * These items are used to generate both desktop and mobile navigation menus.
+ * Items are grouped by category to improve desktop navigation layout and reduce overflow.
+ * The mobile navigation displays all items in a flat list.
  *
  * @constant
  */
-const NAV_ITEMS: Array<{ to: string; labelKey: string }> = [
-  { to: '/live', labelKey: 'navigation.live' },
-  { to: '/analizy', labelKey: 'navigation.analizy' },
-  { to: '/taksonomia', labelKey: 'navigation.taxonomy' },
-  { to: '/case-study', labelKey: 'navigation.caseStudy' },
-  { to: '/programy', labelKey: 'navigation.programy' },
-  { to: '/violence-loop', labelKey: 'navigation.violenceLoop' },
-  { to: '/guides', labelKey: 'navigation.guide' },
-  { to: '/polana-klamstw', labelKey: 'navigation.polanaKlamstw' },
-  { to: '/anatomy', labelKey: 'navigation.anatomy' },
-  { to: '/lab', labelKey: 'navigation.lab' },
-  { to: '/community', labelKey: 'navigation.community' },
-  { to: '/media', labelKey: 'navigation.media' },
-  { to: '/mapa-strony', labelKey: 'navigation.sitemap' },
-  { to: '/teatr-absurdu', labelKey: 'navigation.teatr' },
-  { to: '/pomoc', labelKey: 'navigation.help' },
-];
+const NAV_GROUPS = {
+  education: [
+    { to: '/analizy', labelKey: 'navigation.analizy' },
+    { to: '/taksonomia', labelKey: 'navigation.taxonomy' },
+    { to: '/case-study', labelKey: 'navigation.caseStudy' },
+    { to: '/anatomy', labelKey: 'navigation.anatomy' },
+  ],
+  tools: [
+    { to: '/guides', labelKey: 'navigation.guide' },
+    { to: '/lab', labelKey: 'navigation.lab' },
+    { to: '/polana-klamstw', labelKey: 'navigation.polanaKlamstw' },
+  ],
+  content: [
+    { to: '/programy', labelKey: 'navigation.programy' },
+    { to: '/teatr-absurdu', labelKey: 'navigation.teatr' },
+    { to: '/media', labelKey: 'navigation.media' },
+  ],
+  info: [
+    { to: '/community', labelKey: 'navigation.community' },
+    { to: '/pomoc', labelKey: 'navigation.help' },
+    { to: '/mapa-strony', labelKey: 'navigation.sitemap' },
+  ],
+};
+
+/**
+ * Flat list of all navigation items for mobile menu.
+ */
+const NAV_ITEMS = Object.values(NAV_GROUPS).flat();
 
 /**
  * Main navigation header component with responsive menu and accessibility features.
@@ -74,7 +85,6 @@ export function Header(): JSX.Element {
 
   const prefetchers = useMemo(
     () => ({
-      '/live': () => import('../pages/Live'),
       '/analizy': () => import('../pages/Analyses'),
       '/taksonomia': () => import('../pages/ManipulationTaxonomy'),
       '/taxonomy': () => import('../pages/ManipulationTaxonomy'),
@@ -82,7 +92,6 @@ export function Header(): JSX.Element {
       '/casestudy': () => import('../pages/CaseStudyReport'),
       '/studium-przypadku': () => import('../pages/CaseStudyReport'),
       '/programy': () => import('../pages/Programs'),
-      '/violence-loop': () => import('../pages/ViolenceLoop'),
       '/studio': () => import('../pages/Studio'),
       '/shows': () => import('../pages/Shows'),
       '/guides': () => import('../pages/Guides'),
@@ -140,50 +149,69 @@ export function Header(): JSX.Element {
   const toggleMenu = useCallback(() => setMenuOpen((prev) => !prev), []);
 
   /**
-   * Renders navigation links for either desktop or mobile layout.
-   *
-   * Creates a list of navigation links with conditional styling based on the variant.
-   * Includes route prefetching on hover/focus for performance optimization.
-   *
-   * @param {('desktop' | 'mobile')} variant - The layout variant to render
-   * @returns {JSX.Element} A list of navigation links styled for the specified variant
+   * Renders a single navigation link with prefetching.
    */
-  const renderNavLinks = (variant: 'desktop' | 'mobile') => (
-    <ul
-      className={clsx('flex flex-col gap-4', {
-        'md:flex-row md:items-center md:gap-6': variant === 'desktop',
-      })}
+  const renderNavLink = (item: { to: string; labelKey: string }, variant: 'desktop' | 'mobile') => (
+    <NavLink
+      to={item.to}
+      className={({ isActive }) =>
+        clsx(
+          'relative inline-flex touch-target items-center justify-center rounded-full px-3 py-2 text-sm font-medium transition-colors',
+          variant === 'desktop'
+            ? 'text-base-200 hover:text-base-50'
+            : 'text-base-50 hover:text-accent-300',
+          isActive && (variant === 'desktop' ? 'text-accent-300' : 'text-accent-200')
+        )
+      }
+      onClick={variant === 'mobile' ? closeMenu : undefined}
+      onFocus={() => {
+        if (!prefetchedRef.current.has(item.to)) {
+          prefetchedRef.current.add(item.to);
+          void prefetchers[item.to]?.();
+        }
+      }}
+      onMouseEnter={() => {
+        if (!prefetchedRef.current.has(item.to)) {
+          prefetchedRef.current.add(item.to);
+          void prefetchers[item.to]?.();
+        }
+      }}
     >
+      <span>{t(item.labelKey)}</span>
+    </NavLink>
+  );
+
+  /**
+   * Renders grouped desktop navigation with two rows to prevent overflow.
+   */
+  const renderDesktopNav = () => (
+    <div className="flex w-full max-w-5xl flex-col gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        {NAV_GROUPS.education.map((item) => (
+          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
+        ))}
+        {NAV_GROUPS.tools.map((item) => (
+          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
+        ))}
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        {NAV_GROUPS.content.map((item) => (
+          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
+        ))}
+        {NAV_GROUPS.info.map((item) => (
+          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
+        ))}
+      </div>
+    </div>
+  );
+
+  /**
+   * Renders mobile navigation as a flat vertical list.
+   */
+  const renderMobileNav = () => (
+    <ul className="flex flex-col gap-4">
       {NAV_ITEMS.map((item) => (
-        <li key={item.to}>
-          <NavLink
-            to={item.to}
-            className={({ isActive }) =>
-              clsx(
-                'relative inline-flex touch-target items-center justify-center rounded-full px-3 py-2 text-base font-medium transition-colors',
-                variant === 'desktop'
-                  ? 'text-base-200 hover:text-base-50'
-                  : 'text-base-50 hover:text-accent-300',
-                isActive && (variant === 'desktop' ? 'text-accent-300' : 'text-accent-200')
-              )
-            }
-            onClick={variant === 'mobile' ? closeMenu : undefined}
-            onFocus={() => {
-              if (!prefetchedRef.current.has(item.to)) {
-                prefetchedRef.current.add(item.to);
-                void prefetchers[item.to]?.();
-              }
-            }}
-            onMouseEnter={() => {
-              if (!prefetchedRef.current.has(item.to)) {
-                prefetchedRef.current.add(item.to);
-                void prefetchers[item.to]?.();
-              }
-            }}
-          >
-            <span>{t(item.labelKey)}</span>
-          </NavLink>
-        </li>
+        <li key={item.to}>{renderNavLink(item, 'mobile')}</li>
       ))}
     </ul>
   );
@@ -211,7 +239,7 @@ export function Header(): JSX.Element {
           aria-label={t('header.navigation')}
           className="hidden flex-1 items-center justify-center md:flex"
         >
-          <div className="flex items-center justify-center gap-6">{renderNavLinks('desktop')}</div>
+          {renderDesktopNav()}
         </nav>
 
         <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
@@ -271,13 +299,13 @@ export function Header(): JSX.Element {
               role="dialog"
               aria-modal="true"
               aria-label={t('header.navigation')}
-              className="space-y-6 border-t border-base-800 bg-base-900/95 px-4 pb-8 pt-6 text-base-100 shadow-lg"
+              className="space-y-6 border-t border-base-800 bg-base-900/95 px-4 pb-8 pt-6 text-base-100 shadow-lg backdrop-blur-sm"
               initial={reduceMotion ? { opacity: 1 } : { y: -12, opacity: 0 }}
               animate={reduceMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
               exit={reduceMotion ? { opacity: 0 } : { y: -12, opacity: 0 }}
               transition={reduceMotion ? { duration: 0 } : { duration: 0.2 }}
             >
-              {renderNavLinks('mobile')}
+              {renderMobileNav()}
             </motion.div>
           </motion.div>
         ) : null}

@@ -44,20 +44,19 @@ describe('Header', () => {
   it('renders navigation and toggles the mobile drawer', async () => {
     renderHeader();
     [
-      'Live',
       'Analyses',
       'Taxonomy',
       'Case Study',
-      'Programs',
-      'Violence Loop',
-      'Guide',
-      'Glade of Lies',
       'Anatomy',
+      'Guide',
       'Lab',
-      'Community',
+      'Glade of Lies',
+      'Programs',
+      'Theater of the Absurd',
       'Media',
-      'Sitemap',
+      'Community',
       'Help',
+      'Sitemap',
     ].forEach((label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument());
     fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
     expect(screen.getByRole('dialog', { name: /main navigation/i })).toBeInTheDocument();
@@ -81,16 +80,16 @@ describe('Header', () => {
     );
     expect(document.activeElement).toBe(focusable[0]);
     expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual([
-      'Live',
       'Analyses',
       'Taxonomy',
+      'Case Study',
     ]);
   });
 
   it('changes language and theme', async () => {
     renderHeader();
     fireEvent.click(screen.getByRole('button', { name: 'Dutch' }));
-    expect(await screen.findByRole('link', { name: 'Geweldscyclus' })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: 'Analyses' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /donkere modus/i }));
     expect(document.documentElement.classList.contains('dark')).toBe(true);
   });
