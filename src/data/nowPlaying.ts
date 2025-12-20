@@ -2,6 +2,7 @@ import type { RealtimePostgresChangesPayload } from '@supabase/supabase-js';
 
 import { getSupabaseClient } from '../lib/supabaseClient';
 import type { NowPlaying } from './types';
+import IMAGE_PATHS from '../config/imageMap';
 
 /**
  * Raw database row structure from Supabase now_playing table.
@@ -29,7 +30,7 @@ export const FALLBACK_NOW_PLAYING: NowPlaying = {
   title: 'Radio Adamowo',
   artist: 'Live',
   track: undefined,
-  coverUrl: '/images/Icon.jpg',
+  coverUrl: IMAGE_PATHS.placeholders.cover,
   startedAt: '2024-01-01T00:00:00Z',
   duration: undefined
 };

@@ -1,9 +1,10 @@
-const CACHE_NAME = 'radio-adamowo-v1';
+const CACHE_NAME = 'radio-adamowo-v2-images';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/music/playlist.json',
-  '/images/Icon.jpg',
+  '/assets/images/placeholders/default-cover.jpg',
+  '/assets/images/icons/favicon.ico',
 ];
 
 // Install event - cache core assets

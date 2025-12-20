@@ -19,6 +19,7 @@ import {
   selectProgress,
 } from '../../state/media';
 import type { AudioTrack } from '../media/media.schema';
+import IMAGE_PATHS from '../../config/imageMap';
 
 interface PlaylistTrack {
   id: string;
@@ -52,7 +53,7 @@ async function loadPlaylist(): Promise<AudioTrack[]> {
       artist: track.artist,
       album: track.album || 'Radio Adamowo',
       url: track.url,
-      coverUrl: track.coverUrl || '/images/Icon.jpg',
+      coverUrl: track.coverUrl || IMAGE_PATHS.placeholders.cover,
       genre: track.genre || 'Various',
       category: track.category || 'Music',
       duration: track.duration,
@@ -228,7 +229,7 @@ export function MusicPlayer(): JSX.Element {
           {/* Album Art */}
           <div className="relative overflow-hidden rounded-xl bg-base-900/50 shadow-lg">
             <img
-              src={currentTrack?.coverUrl || '/images/Icon.jpg'}
+              src={currentTrack?.coverUrl || IMAGE_PATHS.placeholders.cover}
               alt={currentTrack?.title || 'Brak utworu'}
               className="h-full w-full object-cover"
               width={240}
