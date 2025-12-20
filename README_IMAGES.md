@@ -24,16 +24,16 @@ Centralny system zarządzania grafikami, który pozwala zarządzać wszystkimi o
 ```
 /public/assets/images/
 ├── icons/              # Ikony aplikacji, favicons, PWA manifest icons
-│   ├── favicon.ico
-│   ├── icon-512x512.png
-│   ├── icon-192x192.png
-│   ├── icon-144x144.png
-│   ├── apple-touch-icon.png
-│   ├── maskable-icon-512x512.png
-│   ├── favicon.svg
-│   ├── play-shortcut-96x96.png
-│   ├── podcast-shortcut-96x96.png
-│   └── calendar-shortcut-96x96.png
+│   ├── favicon.ico                ✅ (używany)
+│   ├── icon-pwa-master.svg        ✅ (master PWA icon, używany)
+│   ├── icon-512x512.png           ⚠️ (opcjonalny PNG, nie wygenerowany)
+│   ├── icon-192x192.png           ⚠️ (opcjonalny PNG, nie wygenerowany)
+│   ├── icon-144x144.png           ⚠️ (opcjonalny PNG, nie wygenerowany)
+│   ├── apple-touch-icon.png       ⚠️ (opcjonalny PNG, nie wygenerowany)
+│   ├── maskable-icon-512x512.png  ⚠️ (opcjonalny PNG, nie wygenerowany)
+│   ├── play-shortcut-96x96.png    ❌ (brak, opcjonalny)
+│   ├── podcast-shortcut-96x96.png ❌ (brak, opcjonalny)
+│   └── calendar-shortcut-96x96.png ❌ (brak, opcjonalny)
 │
 ├── covers/             # Okładki albumów, playlisty, muzyka
 │   ├── disco-001.jpg
@@ -59,7 +59,9 @@ Centralny system zarządzania grafikami, który pozwala zarządzać wszystkimi o
 │   └── mobile-calendar.png
 │
 └── placeholders/       # Obrazy fallback
-    ├── default-cover.jpg       (używany)
+    ├── cover-sunset-waves.svg     ✅ (default cover, używany)
+    ├── cover-purple-frequency.svg ✅ (wariant purple)
+    ├── cover-golden-hour.svg      ✅ (wariant golden)
     ├── default-avatar.jpg
     └── default-thumbnail.jpg
 ```
@@ -148,11 +150,15 @@ function Logo() {
 
 | Sekcja Strony | Plik Obrazu | Klucz w Mapie | Aktualny Status |
 |---------------|-------------|---------------|-----------------|
-| **Favicon (HTML)** | `/assets/images/icons/favicon.ico` | `icons.favicon` | ✅ Aktywny |
-| **PWA Ikona 512** | `/assets/images/icons/icon-512x512.png` | `icons.app512` | ⚠️ Placeholder (do wymiany) |
-| **PWA Ikona 192** | `/assets/images/icons/icon-192x192.png` | `icons.app192` | ⚠️ Placeholder (do wymiany) |
-| **Apple Touch Icon** | `/assets/images/icons/apple-touch-icon.png` | `icons.appleTouchIcon` | ⚠️ Placeholder (do wymiany) |
-| **Domyślna okładka muzyczna** | `/assets/images/placeholders/default-cover.jpg` | `placeholders.cover` | ⚠️ Placeholder (130B ASCII) |
+| **Favicon (HTML)** | `/assets/images/icons/favicon.ico` | `icons.favicon` | ✅ Aktywny (228KB) |
+| **PWA Ikona Master (SVG)** | `/assets/images/icons/icon-pwa-master.svg` | `icons.master` | ✅ Aktywny (3.2KB) |
+| **PWA Ikona SVG** | `/assets/images/icons/icon-pwa-master.svg` | `icons.faviconSvg` | ✅ Aktywny (manifest) |
+| **Domyślna okładka (SVG)** | `/assets/images/placeholders/cover-sunset-waves.svg` | `placeholders.cover` | ✅ Aktywny (1.9KB) |
+| **Okładka Purple Variant** | `/assets/images/placeholders/cover-purple-frequency.svg` | `placeholders.coverPurple` | ✅ Aktywny (2.8KB) |
+| **Okładka Golden Variant** | `/assets/images/placeholders/cover-golden-hour.svg` | `placeholders.coverGolden` | ✅ Aktywny (2.8KB) |
+| **PWA Ikona 512 (PNG)** | `/assets/images/icons/icon-512x512.png` | `icons.app512` | ❌ Opcjonalny (nie utworzony) |
+| **PWA Ikona 192 (PNG)** | `/assets/images/icons/icon-192x192.png` | `icons.app192` | ❌ Opcjonalny (nie utworzony) |
+| **Apple Touch Icon (PNG)** | `/assets/images/icons/apple-touch-icon.png` | `icons.appleTouchIcon` | ❌ Opcjonalny (nie utworzony) |
 | **Logo radia (główne)** | `/assets/images/ui/logo-radio-main.svg` | `ui.logoMain` | ❌ Brak (do dodania) |
 | **Tło playera** | `/assets/images/ui/player-background.jpg` | `ui.playerBackground` | ❌ Brak (opcjonalne) |
 | **Tło studia** | `/assets/images/ui/studio-background.jpg` | `ui.studioBackground` | ❌ Brak (do dodania) |
@@ -245,54 +251,73 @@ $ ls -lh public/images/Icon.jpg
 3. **Logi w konsoli** - ostrzeżenia o wykrytych placeholderach
 4. **Brak błędów UI** - użytkownik widzi fallback zamiast broken image
 
-### Jak Naprawić?
+### ✅ Rozwiązanie Wdrożone (2025-12-20)
 
-```bash
-# 1. Wygeneruj prawdziwe ikony PWA (wszystkie rozmiary)
-npm install -g pwa-asset-generator
-pwa-asset-generator logo-source.png public/assets/images/icons/
+**Problem został rozwiązany** poprzez stworzenie SVG placeholderów:
 
-# 2. Stwórz domyślną okładkę 512x512
-# (używając Figma, Canva, Photoshop, etc.)
+1. **Master Ikona PWA** - `icon-pwa-master.svg` (3.2KB)
+   - Mikrofon w stylu neonu pomarańczowego
+   - Skalowalna do dowolnego rozmiaru
+   - Używana w manifest.json i jako favicon
 
-# 3. Dodaj okładki albumów
-cp disco-cover.jpg public/assets/images/covers/disco-001.jpg
-```
+2. **3 Warianty Cover Placeholderów** (SVG, 1.9-2.8KB każdy):
+   - **Sunset Waves** - diagonalny gradient pomarańczowy (domyślny)
+   - **Purple Frequency** - horyzontalne pasma fioletowe
+   - **Golden Hour** - ciepły złoty bokeh
+
+**Korzyści SVG:**
+- ✅ Małe pliki (1.9-3.2KB vs 130B placeholdery)
+- ✅ Prawdziwe grafiki (nie ASCII text)
+- ✅ Skalowalne do dowolnego rozmiaru
+- ✅ Wspierane przez wszystkie nowoczesne przeglądarki (Chrome 90+, Safari 14.5+, Firefox 88+)
+- ✅ Brak błędów 404 w PWA
+- ✅ System automatycznie używa fallbacku
+
+**Opcjonalna Konwersja PNG:**
+Jeśli potrzebujesz PNG dla starszych urządzeń, zobacz: `docs/SVG_TO_PNG_CONVERSION.md`
 
 ---
 
 ## 📊 Statystyki Obecnego Stanu
 
-### Obrazy (Stan po czyszczeniu)
-- ✅ **Usunięte:** 15 nieużywanych placeholderów
+### Obrazy (Stan po SVG Placeholderach - 2025-12-20)
+- ✅ **Usunięte:** 15 nieużywanych ASCII placeholderów
 - ✅ **Skonsolidowane:** `/images/` → `/assets/images/`
-- ⚠️ **Do zastąpienia:** 24 placeholdery
-- ❌ **Brakujące:** 18+ plików (manifest, okładki)
+- ✅ **Dodane SVG:** 4 nowe pliki (ikona + 3 cover variants)
+- ✅ **Rozmiar SVG:** 10.7KB total (vs 520B ASCII placeholders)
+- ✅ **Rozwiązane:** Błędy 404 w PWA manifest
+- ⚠️ **Opcjonalnie:** PNG versions dla legacy devices (zobacz `docs/SVG_TO_PNG_CONVERSION.md`)
 
 ### Komponenty (Zaktualizowane)
-- ✅ `MusicPlayer.tsx` - używa `IMAGE_PATHS.placeholders.cover`
-- ✅ `nowPlaying.ts` - używa `IMAGE_PATHS.placeholders.cover`
+- ✅ `MusicPlayer.tsx` - używa `IMAGE_PATHS.placeholders.cover` (sunset-waves.svg)
+- ✅ `nowPlaying.ts` - używa `IMAGE_PATHS.placeholders.cover` (sunset-waves.svg)
 - ✅ `index.html` - używa `/assets/images/icons/favicon.ico`
-- ✅ `public/sw.js` - cachuje nowe ścieżki
+- ✅ `imageMap.ts` - dodano referencje do wszystkich SVG-ów
+- ✅ `manifest.json` - zaktualizowano ścieżki do icon-pwa-master.svg
+- ✅ `public/sw.js` - cachuje wszystkie SVG (v3-svg-placeholders)
 
 ---
 
 ## 🔮 Następne Kroki (TODOs)
 
-### Priorytet KRYTYCZNY 🔴
-1. **Zastąp placeholder default-cover.jpg** - Najbardziej używany obraz w aplikacji
-2. **Wygeneruj ikony PWA** - App nie instaluje się jako PWA
-3. **Dodaj tło studia** - `styles.css` referencjonuje nieistniejące `studio.png`
+### ✅ Zakończone (2025-12-20)
+1. ~~**Zastąp placeholder default-cover.jpg**~~ - **GOTOWE**: Użyto `cover-sunset-waves.svg`
+2. ~~**Wygeneruj ikony PWA**~~ - **GOTOWE**: Utworzono `icon-pwa-master.svg` (SVG działa w PWA)
+3. ~~**Napraw błędy 404 w manifest**~~ - **GOTOWE**: Wszystkie ścieżki zaktualizowane
 
 ### Priorytet WYSOKI 🟡
-4. Dodaj okładki albumów (disco, hiphop, kids)
-5. Stwórz screenshoty PWA (4 pliki)
-6. Dodaj logo radia (SVG + PNG warianty)
+1. **Dodaj tło studia** - `styles.css` referencjonuje nieistniejące `studio.png`
+2. Dodaj okładki albumów (disco, hiphop, kids) - 3 pliki
+3. Stwórz screenshoty PWA (4 pliki) - desktop-home, mobile-home, etc.
+4. Dodaj logo radia (SVG + PNG warianty)
 
 ### Priorytet ŚREDNI 🟢
-7. Dodaj hero images (opcjonalnie)
-8. Stwórz avatary placeholders
-9. Rozważ WebP dla kompresji
+5. Dodaj hero images (opcjonalnie)
+6. Stwórz avatary placeholders
+7. Rozważ WebP dla kompresji
+
+### Opcjonalne (Jeśli potrzebne)
+8. Konwertuj SVG → PNG dla legacy devices (zobacz `docs/SVG_TO_PNG_CONVERSION.md`)
 
 ---
 

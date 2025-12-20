@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Neon glow effect -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Orange gradient for neon -->
+    <linearGradient id="neonOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Background gradient -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#1a1f3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#080b1e;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGradient)"/>
+
+  <!-- Subtle texture overlay -->
+  <rect width="512" height="512" rx="96" fill="#000000" opacity="0.2"/>
+
+  <!-- Sound waves (outer) -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#neonOrange)" stroke-width="2" opacity="0.15" filter="url(#neonGlow)"/>
+  <circle cx="256" cy="256" r="170" fill="none" stroke="url(#neonOrange)" stroke-width="2" opacity="0.25" filter="url(#neonGlow)"/>
+  <circle cx="256" cy="256" r="140" fill="none" stroke="url(#neonOrange)" stroke-width="3" opacity="0.35" filter="url(#neonGlow)"/>
+
+  <!-- Microphone body -->
+  <g filter="url(#neonGlow)">
+    <!-- Mic capsule (top sphere) -->
+    <ellipse cx="256" cy="180" rx="45" ry="50" fill="url(#neonOrange)"/>
+
+    <!-- Mic grille lines -->
+    <line x1="226" y1="170" x2="226" y2="190" stroke="#080b1e" stroke-width="3" opacity="0.4"/>
+    <line x1="241" y1="165" x2="241" y2="195" stroke="#080b1e" stroke-width="3" opacity="0.4"/>
+    <line x1="256" y1="163" x2="256" y2="197" stroke="#080b1e" stroke-width="3" opacity="0.4"/>
+    <line x1="271" y1="165" x2="271" y2="195" stroke="#080b1e" stroke-width="3" opacity="0.4"/>
+    <line x1="286" y1="170" x2="286" y2="190" stroke="#080b1e" stroke-width="3" opacity="0.4"/>
+
+    <!-- Mic body (vertical) -->
+    <rect x="238" y="220" width="36" height="80" rx="4" fill="url(#neonOrange)"/>
+
+    <!-- Mic connector -->
+    <rect x="233" y="300" width="46" height="15" rx="7" fill="url(#neonOrange)"/>
+
+    <!-- Stand mount -->
+    <circle cx="256" cy="330" r="20" fill="url(#neonOrange)"/>
+    <circle cx="256" cy="330" r="12" fill="#080b1e" opacity="0.6"/>
+
+    <!-- Stand arm -->
+    <rect x="250" y="330" width="12" height="60" fill="url(#neonOrange)"/>
+
+    <!-- Base -->
+    <ellipse cx="256" cy="385" rx="40" ry="8" fill="url(#neonOrange)" opacity="0.6"/>
+  </g>
+
+  <!-- Additional glow highlights -->
+  <circle cx="256" cy="180" r="45" fill="url(#neonOrange)" opacity="0.3" filter="url(#neonGlow)"/>
+</svg>

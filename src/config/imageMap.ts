@@ -18,13 +18,14 @@ export const IMAGE_PATHS = {
   // Icons - Application icons, favicons, PWA manifest icons
   icons: {
     favicon: '/assets/images/icons/favicon.ico',
+    faviconSvg: '/assets/images/icons/icon-pwa-master.svg',
+    master: '/assets/images/icons/icon-pwa-master.svg',
     app512: '/assets/images/icons/icon-512x512.png',
     app192: '/assets/images/icons/icon-192x192.png',
     app144: '/assets/images/icons/icon-144x144.png',
     appleTouchIcon: '/assets/images/icons/apple-touch-icon.png',
     maskable512: '/assets/images/icons/maskable-icon-512x512.png',
     maskable192: '/assets/images/icons/maskable-icon-192x192.png',
-    faviconSvg: '/assets/images/icons/favicon.svg',
   },
 
   // Covers - Album covers, playlist covers, default music covers
@@ -61,7 +62,10 @@ export const IMAGE_PATHS = {
 
   // Placeholders - Fallback images when real images are missing
   placeholders: {
-    cover: '/assets/images/placeholders/default-cover.jpg',
+    cover: '/assets/images/placeholders/cover-sunset-waves.svg',
+    coverSunset: '/assets/images/placeholders/cover-sunset-waves.svg',
+    coverPurple: '/assets/images/placeholders/cover-purple-frequency.svg',
+    coverGolden: '/assets/images/placeholders/cover-golden-hour.svg',
     avatar: '/assets/images/placeholders/default-avatar.jpg',
     thumbnail: '/assets/images/placeholders/default-thumbnail.jpg',
   },

@@ -1,10 +1,14 @@
-const CACHE_NAME = 'radio-adamowo-v2-images';
+const CACHE_NAME = 'radio-adamowo-v3-svg-placeholders';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
+  '/manifest.json',
   '/music/playlist.json',
-  '/assets/images/placeholders/default-cover.jpg',
   '/assets/images/icons/favicon.ico',
+  '/assets/images/icons/icon-pwa-master.svg',
+  '/assets/images/placeholders/cover-sunset-waves.svg',
+  '/assets/images/placeholders/cover-purple-frequency.svg',
+  '/assets/images/placeholders/cover-golden-hour.svg',
 ];
 
 // Install event - cache core assets

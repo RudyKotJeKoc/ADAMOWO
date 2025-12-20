@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Central golden glow -->
+    <radialGradient id="goldenGlow" cx="45%" cy="55%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.8" />
+      <stop offset="25%" style="stop-color:#f59e0b;stop-opacity:0.6" />
+      <stop offset="60%" style="stop-color:#d97706;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </radialGradient>
+
+    <!-- Edge vignette -->
+    <radialGradient id="darkVignette" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0" />
+      <stop offset="70%" style="stop-color:#080b1e;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#080b1e;stop-opacity:0.9" />
+    </radialGradient>
+
+    <!-- Bokeh blur -->
+    <filter id="bokeh" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="80"/>
+    </filter>
+
+    <!-- Soft blur -->
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <!-- Base dark background -->
+  <rect width="1024" height="1024" fill="#080b1e"/>
+
+  <!-- Central golden glow (as if from ON AIR sign) -->
+  <rect width="1024" height="1024" fill="url(#goldenGlow)"/>
+
+  <!-- Bokeh light spots (blurred circles simulating studio lights) -->
+  <circle cx="300" cy="250" r="80" fill="#f59e0b" opacity="0.4" filter="url(#bokeh)"/>
+  <circle cx="700" cy="400" r="100" fill="#fbbf24" opacity="0.3" filter="url(#bokeh)"/>
+  <circle cx="200" cy="700" r="60" fill="#d97706" opacity="0.35" filter="url(#bokeh)"/>
+  <circle cx="800" cy="150" r="70" fill="#f59e0b" opacity="0.25" filter="url(#bokeh)"/>
+  <circle cx="500" cy="850" r="90" fill="#fbbf24" opacity="0.2" filter="url(#bokeh)"/>
+
+  <!-- Blurred equipment silhouettes -->
+  <g opacity="0.1" filter="url(#softBlur)">
+    <!-- Microphone silhouette left -->
+    <ellipse cx="150" cy="400" rx="40" ry="50" fill="#000000"/>
+    <rect x="130" y="445" width="40" height="100" rx="5" fill="#000000"/>
+
+    <!-- Microphone silhouette right -->
+    <ellipse cx="850" cy="600" rx="35" ry="45" fill="#000000"/>
+    <rect x="833" y="640" width="34" height="90" rx="4" fill="#000000"/>
+  </g>
+
+  <!-- Dark vignette overlay -->
+  <rect width="1024" height="1024" fill="url(#darkVignette)"/>
+
+  <!-- Subtle grain texture -->
+  <rect width="1024" height="1024" fill="#000000" opacity="0.1"/>
+
+  <!-- Very subtle horizontal light streaks (studio atmosphere) -->
+  <rect x="0" y="400" width="1024" height="4" fill="#f59e0b" opacity="0.1" filter="url(#softBlur)"/>
+  <rect x="0" y="550" width="1024" height="3" fill="#fbbf24" opacity="0.08" filter="url(#softBlur)"/>
+</svg>
