@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Main diagonal gradient -->
+    <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080b1e;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#1a1f3a;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#f59e0b;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:0.8" />
+    </linearGradient>
+
+    <!-- Overlay gradient for depth -->
+    <radialGradient id="depthOverlay" cx="30%" cy="70%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#080b1e;stop-opacity:0.8" />
+    </radialGradient>
+
+    <!-- Blur filter for atmospheric effect -->
+    <filter id="atmosphericBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="60"/>
+    </filter>
+  </defs>
+
+  <!-- Base gradient -->
+  <rect width="1024" height="1024" fill="url(#sunsetGradient)"/>
+
+  <!-- Atmospheric light streaks -->
+  <ellipse cx="200" cy="800" rx="400" ry="200" fill="#f59e0b" opacity="0.2" filter="url(#atmosphericBlur)" transform="rotate(-25 200 800)"/>
+  <ellipse cx="750" cy="300" rx="350" ry="180" fill="#fbbf24" opacity="0.15" filter="url(#atmosphericBlur)" transform="rotate(15 750 300)"/>
+
+  <!-- Depth overlay -->
+  <rect width="1024" height="1024" fill="url(#depthOverlay)"/>
+
+  <!-- Subtle texture noise -->
+  <rect width="1024" height="1024" fill="#000000" opacity="0.15"/>
+
+  <!-- Subtle microphone silhouette hint (barely visible) -->
+  <g opacity="0.08" transform="translate(750, 200)">
+    <ellipse cx="0" cy="0" rx="30" ry="35" fill="#fbbf24"/>
+    <rect x="-15" y="30" width="30" height="60" rx="3" fill="#fbbf24"/>
+  </g>
+</svg>

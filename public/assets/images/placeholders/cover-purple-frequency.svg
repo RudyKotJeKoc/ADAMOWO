@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Base gradient navy to black -->
+    <linearGradient id="baseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#080b1e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple frequency gradient -->
+    <linearGradient id="purpleFreq" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0" />
+    </linearGradient>
+
+    <!-- Orange rim light gradient -->
+    <linearGradient id="orangeRim" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1024" height="1024" fill="url(#baseGradient)"/>
+
+  <!-- Frequency bands (horizontal) -->
+  <rect x="0" y="150" width="1024" height="40" fill="url(#purpleFreq)" filter="url(#softGlow)"/>
+  <rect x="0" y="250" width="1024" height="25" fill="url(#purpleFreq)" opacity="0.7" filter="url(#softGlow)"/>
+  <rect x="0" y="320" width="1024" height="50" fill="url(#purpleFreq)" opacity="0.5" filter="url(#softGlow)"/>
+  <rect x="0" y="430" width="1024" height="30" fill="url(#purpleFreq)" opacity="0.6" filter="url(#softGlow)"/>
+  <rect x="0" y="520" width="1024" height="45" fill="url(#purpleFreq)" opacity="0.8" filter="url(#softGlow)"/>
+  <rect x="0" y="630" width="1024" height="20" fill="url(#purpleFreq)" opacity="0.4" filter="url(#softGlow)"/>
+  <rect x="0" y="720" width="1024" height="55" fill="url(#purpleFreq)" opacity="0.6" filter="url(#softGlow)"/>
+  <rect x="0" y="840" width="1024" height="35" fill="url(#purpleFreq)" opacity="0.5" filter="url(#softGlow)"/>
+
+  <!-- Orange rim light from right edge -->
+  <rect x="800" y="0" width="224" height="1024" fill="url(#orangeRim)" filter="url(#softGlow)"/>
+
+  <!-- Atmospheric texture -->
+  <rect width="1024" height="1024" fill="#000000" opacity="0.2"/>
+
+  <!-- Subtle foam panel texture (barely visible grid) -->
+  <g opacity="0.03" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="256" x2="1024" y2="256"/>
+    <line x1="0" y1="512" x2="1024" y2="512"/>
+    <line x1="0" y1="768" x2="1024" y2="768"/>
+    <line x1="256" y1="0" x2="256" y2="1024"/>
+    <line x1="512" y1="0" x2="512" y2="1024"/>
+    <line x1="768" y1="0" x2="768" y2="1024"/>
+  </g>
+</svg>

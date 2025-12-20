@@ -13,16 +13,21 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/images/Icon.jpg",
-      "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "src": "/assets/images/icons/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
     },
     {
-      "src": "/images/Icon.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "src": "/assets/images/icons/icon-pwa-master.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/icons/icon-pwa-master.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [],
@@ -34,9 +39,9 @@
       "url": "/studio",
       "icons": [
         {
-          "src": "/images/Icon.jpg",
-          "sizes": "192x192",
-          "type": "image/jpeg"
+          "src": "/assets/images/icons/icon-pwa-master.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
         }
       ]
     },
@@ -47,9 +52,9 @@
       "url": "/violence-loop",
       "icons": [
         {
-          "src": "/images/Icon.jpg",
-          "sizes": "192x192",
-          "type": "image/jpeg"
+          "src": "/assets/images/icons/icon-pwa-master.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
         }
       ]
     }
