@@ -105,16 +105,14 @@ export function getImagePath<T extends ImageCategory>(
  *
  * @param category - Image category (icons, covers, etc.)
  * @param key - Image key within category
- * @param fallback - Fallback category and key if primary image is missing
  * @returns Image path or fallback path
  *
  * @example
- * getImageWithFallback('covers', 'disco001', ['placeholders', 'cover'])
+ * getImageWithFallback('covers', 'disco001')
  */
 export function getImageWithFallback<T extends ImageCategory>(
   category: T,
-  key: ImageKey<T>,
-  fallback: [ImageCategory, string] = ['placeholders', 'cover']
+  key: ImageKey<T>
 ): string {
   const primaryPath = IMAGE_PATHS[category][key] as string;
 

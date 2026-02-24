@@ -268,6 +268,21 @@ const defaultQueue: PlaylistQueue = {
   repeat: 'none',
 };
 
+const MIN_HISTORY_CAPACITY = 1;
+
+function getUnplayedTrackIndices(tracks: AudioTrack[], history: AudioTrack[]): number[] {
+  const playedTrackIds = new Set(history.map((track) => track.id));
+  return tracks
+    .map((track, index) => ({ track, index }))
+    .filter(({ track }) => !playedTrackIds.has(track.id))
+    .map(({ index }) => index);
+}
+
+function getRandomTrackIndex(indices: number[]): number {
+  const randomOffset = Math.floor(Math.random() * indices.length);
+  return indices[randomOffset];
+}
+
 /**
  * Zustand store hook for playlist queue management.
  * Manages the playback queue, navigation, shuffle, repeat, and playback history.
@@ -333,6 +348,20 @@ export const usePlaylistQueueStore = create<PlaylistQueueStore>()(
 
           if (repeat === 'one') {
             nextIndex = currentIndex;
+          } else if (queue.shuffle) {
+            const unplayedTrackIndices = getUnplayedTrackIndices(tracks, queue.history);
+
+            if (unplayedTrackIndices.length > 0) {
+              nextIndex = getRandomTrackIndex(unplayedTrackIndices);
+              return {
+                queue: { ...queue, currentIndex: nextIndex },
+              };
+            }
+
+            nextIndex = getRandomTrackIndex(tracks.map((_, index) => index));
+            return {
+              queue: { ...queue, currentIndex: nextIndex, history: [] },
+            };
           } else if (currentIndex < tracks.length - 1) {
             nextIndex = currentIndex + 1;
           } else if (repeat === 'all') {
@@ -390,7 +419,10 @@ export const usePlaylistQueueStore = create<PlaylistQueueStore>()(
         set((state) => ({
           queue: {
             ...state.queue,
-            history: [track, ...state.queue.history.slice(0, 49)], // Keep last 50
+            history: [track, ...state.queue.history].slice(
+              0,
+              Math.max(state.queue.tracks.length, MIN_HISTORY_CAPACITY)
+            ),
           },
         })),
     }),
