@@ -1,0 +1,26 @@
+[
+  {
+    "id": "jingle-001",
+    "title": "Jingle Adamowo – Cisza",
+    "artist": "Radio Adamowo",
+    "album": "Jingle",
+    "year": 2017,
+    "url": "/music/whisper-2017.mp3",
+    "coverUrl": "/images/Icon.jpg",
+    "duration": 15,
+    "genre": "Jingle",
+    "category": "Jingle"
+  },
+  {
+    "id": "jingle-002",
+    "title": "Jingle Adamowo – Intro",
+    "artist": "Radio Adamowo",
+    "album": "Jingle",
+    "year": 2017,
+    "url": "/music/whisper-2017.mp3",
+    "coverUrl": "/images/Icon.jpg",
+    "duration": 15,
+    "genre": "Jingle",
+    "category": "Jingle"
+  }
+]

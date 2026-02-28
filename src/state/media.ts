@@ -657,6 +657,60 @@ export const useRatingStore = create<RatingStore>()(
 );
 
 // ============================================================================
+// JINGLE STORE
+// ============================================================================
+
+/**
+ * Jingle store interface for managing jingle playback configuration.
+ * @interface JingleStore
+ * @property {AudioTrack[]} jingleTracks - List of available jingle tracks
+ * @property {number} jingleInterval - Play a jingle every N main tracks
+ * @property {boolean} enabled - Whether jingle playback is enabled
+ * @property {function(AudioTrack[]): void} setJingleTracks - Sets jingle track list
+ * @property {function(number): void} setJingleInterval - Sets the playback interval
+ * @property {function(boolean): void} setEnabled - Enables or disables jingle playback
+ */
+interface JingleStore {
+  jingleTracks: AudioTrack[];
+  jingleInterval: number;
+  enabled: boolean;
+  setJingleTracks: (tracks: AudioTrack[]) => void;
+  setJingleInterval: (interval: number) => void;
+  setEnabled: (enabled: boolean) => void;
+}
+
+/**
+ * Zustand store hook for jingle playback configuration.
+ * Persists interval and enabled state to localStorage.
+ * @hook
+ * @returns {JingleStore} Jingle state and actions
+ * @example
+ * const { jingleInterval, enabled, setJingleInterval } = useJingleStore();
+ * setJingleInterval(5); // play a jingle every 5 main tracks
+ */
+export const useJingleStore = create<JingleStore>()(
+  persist(
+    (set) => ({
+      jingleTracks: [],
+      jingleInterval: 3,
+      enabled: true,
+
+      setJingleTracks: (jingleTracks) => set({ jingleTracks }),
+      setJingleInterval: (jingleInterval) =>
+        set({ jingleInterval: Math.max(1, Math.min(20, jingleInterval)) }),
+      setEnabled: (enabled) => set({ enabled }),
+    }),
+    {
+      name: 'adamowo-jingle',
+      partialize: (state) => ({
+        jingleInterval: state.jingleInterval,
+        enabled: state.enabled,
+      }),
+    }
+  )
+);
+
+// ============================================================================
 // SELECTORS (Performance optimization)
 // ============================================================================
 

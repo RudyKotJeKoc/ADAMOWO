@@ -48,6 +48,7 @@ export interface AudioTrack {
     hasSignLanguage?: boolean;
     triggerWarnings?: string[];
   };
+  isJingle?: boolean;
 }
 
 /**
