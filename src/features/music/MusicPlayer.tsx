@@ -15,6 +15,7 @@ import { AudioVisualizer } from '../media/AudioVisualizer';
 import {
   useAudioEngineStore,
   usePlaylistQueueStore,
+  useJingleStore,
   selectCurrentTrack,
   selectProgress,
 } from '../../state/media';
@@ -37,13 +38,13 @@ interface PlaylistTrack {
 }
 
 /**
- * Load tracks from playlist.json
+ * Load tracks from a playlist JSON file
  */
-async function loadPlaylist(): Promise<AudioTrack[]> {
+async function loadPlaylistFromUrl(url: string, isJingle = false): Promise<AudioTrack[]> {
   try {
-    const response = await fetch('/music/playlist.json');
+    const response = await fetch(url);
     if (!response.ok) {
-      throw new Error('Failed to load playlist');
+      throw new Error(`Failed to load playlist from ${url}`);
     }
     const data: PlaylistTrack[] = await response.json();
 
@@ -57,11 +58,38 @@ async function loadPlaylist(): Promise<AudioTrack[]> {
       genre: track.genre || 'Various',
       category: track.category || 'Music',
       duration: track.duration,
+      ...(isJingle ? { isJingle: true } : {}),
     }));
   } catch (error) {
-    console.error('Failed to load playlist:', error);
+    console.error(`Failed to load playlist from ${url}:`, error);
     return [];
   }
+}
+
+/**
+ * Weave jingle tracks into the main track list at regular intervals.
+ * Example: interval=3, main=[A,B,C,D,E,F], jingles=[J1,J2]
+ * Result: [A,B,C,J1,D,E,F,J2]
+ */
+function weaveJingles(
+  mainTracks: AudioTrack[],
+  jingleTracks: AudioTrack[],
+  interval: number
+): AudioTrack[] {
+  if (!jingleTracks.length || interval <= 0) return mainTracks;
+
+  const result: AudioTrack[] = [];
+  let jingleIndex = 0;
+
+  for (let i = 0; i < mainTracks.length; i++) {
+    result.push(mainTracks[i]);
+    if ((i + 1) % interval === 0) {
+      result.push({ ...jingleTracks[jingleIndex % jingleTracks.length], isJingle: true });
+      jingleIndex++;
+    }
+  }
+
+  return result;
 }
 
 /**
@@ -79,6 +107,7 @@ function shuffleArray<T>(array: T[]): T[] {
 export function MusicPlayer(): JSX.Element {
   const { t } = useTranslation();
   const [showQueue, setShowQueue] = useState(false);
+  const [showJingleSettings, setShowJingleSettings] = useState(false);
   const [loading, setLoading] = useState(true);
   const [allTracks, setAllTracks] = useState<AudioTrack[]>([]);
 
@@ -101,21 +130,36 @@ export function MusicPlayer(): JSX.Element {
   const setRepeat = usePlaylistQueueStore((state) => state.setRepeat);
   const jumpTo = usePlaylistQueueStore((state) => state.jumpTo);
 
+  // Jingle Store
+  const jingleTracks = useJingleStore((state) => state.jingleTracks);
+  const jingleInterval = useJingleStore((state) => state.jingleInterval);
+  const jingleEnabled = useJingleStore((state) => state.enabled);
+  const setJingleTracks = useJingleStore((state) => state.setJingleTracks);
+  const setJingleInterval = useJingleStore((state) => state.setJingleInterval);
+  const setJingleEnabled = useJingleStore((state) => state.setEnabled);
+
   const isPlaying = useMemo(() => status === 'playing', [status]);
 
-  // Load playlist on mount
+  // Load playlist and jingles on mount
   useEffect(() => {
     let mounted = true;
 
     const init = async () => {
       setLoading(true);
-      const tracks = await loadPlaylist();
+
+      const [tracks, jingles] = await Promise.all([
+        loadPlaylistFromUrl('/music/playlist.json'),
+        loadPlaylistFromUrl('/music/jingle/playlist.json', true),
+      ]);
 
       if (mounted && tracks.length > 0) {
         setAllTracks(tracks);
+        setJingleTracks(jingles);
+
         // Auto-shuffle on startup for random playback
         const shuffled = shuffleArray(tracks);
-        setQueue(shuffled);
+        const withJingles = jingles.length > 0 ? weaveJingles(shuffled, jingles, jingleInterval) : shuffled;
+        setQueue(withJingles);
         // Enable shuffle mode
         if (!queue.shuffle) {
           toggleShuffle();
@@ -130,19 +174,35 @@ export function MusicPlayer(): JSX.Element {
     return () => {
       mounted = false;
     };
-  }, [setQueue, toggleShuffle, queue.shuffle]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Handle shuffle
   const handleShuffle = () => {
     if (!queue.shuffle) {
-      // Enable shuffle - randomize queue
+      // Enable shuffle - randomize queue and weave jingles
       const shuffled = shuffleArray(allTracks);
-      setQueue(shuffled);
+      const withJingles = jingleEnabled && jingleTracks.length > 0
+        ? weaveJingles(shuffled, jingleTracks, jingleInterval)
+        : shuffled;
+      setQueue(withJingles);
     } else {
-      // Disable shuffle - restore original order
-      setQueue(allTracks);
+      // Disable shuffle - restore original order with jingles
+      const withJingles = jingleEnabled && jingleTracks.length > 0
+        ? weaveJingles(allTracks, jingleTracks, jingleInterval)
+        : allTracks;
+      setQueue(withJingles);
     }
     toggleShuffle();
+  };
+
+  // Rebuild queue when jingle settings change (interval or enabled)
+  const rebuildQueueWithJingles = (newInterval: number, newEnabled: boolean) => {
+    const mainTracks = queue.tracks.filter((t) => !t.isJingle);
+    const withJingles = newEnabled && jingleTracks.length > 0
+      ? weaveJingles(mainTracks, jingleTracks, newInterval)
+      : mainTracks;
+    setQueue(withJingles);
   };
 
   // Handle play random
@@ -252,9 +312,16 @@ export function MusicPlayer(): JSX.Element {
           {/* Track Details & Visualizer */}
           <div className="flex flex-col justify-between space-y-4">
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-300">
-                Teraz Gra
-              </p>
+              <div className="flex items-center gap-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-300">
+                  Teraz Gra
+                </p>
+                {currentTrack?.isJingle && (
+                  <span className="rounded-full border border-purple-500/50 bg-purple-500/20 px-2.5 py-0.5 text-xs font-semibold text-purple-300">
+                    🎵 Jingle
+                  </span>
+                )}
+              </div>
               <h2 className="text-3xl font-semibold leading-tight text-base-50 sm:text-4xl">
                 {currentTrack?.title || 'Wybierz utwór aby rozpocząć'}
               </h2>
@@ -403,7 +470,93 @@ export function MusicPlayer(): JSX.Element {
           >
             Kolejka {showQueue ? '▲' : '▼'}
           </button>
+
+          <button
+            type="button"
+            onClick={() => setShowJingleSettings(!showJingleSettings)}
+            className={`rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide transition ${
+              jingleEnabled
+                ? 'border-2 border-purple-500 bg-purple-500/20 text-purple-200 hover:bg-purple-500/30'
+                : 'border border-base-700 bg-base-900/50 text-base-200 hover:border-purple-500/50 hover:text-purple-300'
+            } focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400`}
+            title="Ustawienia jingle"
+            aria-expanded={showJingleSettings}
+          >
+            🎵 Jingle {showJingleSettings ? '▲' : '▼'}
+          </button>
         </div>
+
+        {/* Jingle Settings Panel */}
+        {showJingleSettings && (
+          <div className="mb-8 rounded-xl border border-purple-500/30 bg-purple-950/20 p-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-semibold text-purple-200 uppercase tracking-wide">
+                🎵 Ustawienia Jingle
+              </h3>
+              <span className="text-xs text-base-400">
+                {jingleTracks.length} {jingleTracks.length === 1 ? 'jingle' : 'jingle'} załadowanych
+              </span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-6">
+              {/* Enable/Disable toggle */}
+              <label className="flex items-center gap-3 cursor-pointer">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const newEnabled = !jingleEnabled;
+                    setJingleEnabled(newEnabled);
+                    rebuildQueueWithJingles(jingleInterval, newEnabled);
+                  }}
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition ${
+                    jingleEnabled ? 'bg-purple-500' : 'bg-base-700'
+                  }`}
+                  role="switch"
+                  aria-checked={jingleEnabled}
+                  aria-label="Włącz/wyłącz jingle"
+                >
+                  <span
+                    className={`inline-block h-4 w-4 rounded-full bg-white shadow transition-transform ${
+                      jingleEnabled ? 'translate-x-6' : 'translate-x-1'
+                    }`}
+                  />
+                </button>
+                <span className="text-sm text-base-200">
+                  Jingle {jingleEnabled ? 'włączone' : 'wyłączone'}
+                </span>
+              </label>
+
+              {/* Interval control */}
+              <label className="flex items-center gap-3">
+                <span className="text-sm text-base-300 whitespace-nowrap">
+                  Co ile utworów:
+                </span>
+                <input
+                  type="number"
+                  min={1}
+                  max={20}
+                  value={jingleInterval}
+                  onChange={(e) => {
+                    const newInterval = Math.max(1, Math.min(20, parseInt(e.target.value) || 1));
+                    setJingleInterval(newInterval);
+                    rebuildQueueWithJingles(newInterval, jingleEnabled);
+                  }}
+                  className="w-16 rounded-lg border border-purple-500/40 bg-base-900/50 px-3 py-1.5 text-center text-sm text-base-100 focus:border-purple-400 focus:outline-none"
+                  aria-label="Interwał jingle"
+                />
+                <span className="text-xs text-base-400">
+                  (1–20)
+                </span>
+              </label>
+            </div>
+
+            <p className="text-xs text-base-400">
+              {jingleEnabled
+                ? `Jingle będzie odtwarzany co ${jingleInterval} ${jingleInterval === 1 ? 'utwór' : 'utwory/ów'} z głównej playlisty.`
+                : 'Jingle są wyłączone. Włącz, aby odtwarzać jingle w regularnych odstępach.'}
+            </p>
+          </div>
+        )}
 
         {/* Volume Control */}
         <div className="flex items-center justify-center gap-4 rounded-xl bg-base-950/30 p-6 border border-base-700/30">
@@ -476,25 +629,35 @@ export function MusicPlayer(): JSX.Element {
                 onClick={() => jumpTo(index)}
                 className={`group w-full rounded-lg px-4 py-3 text-left transition ${
                   index === queue.currentIndex
-                    ? 'border-2 border-accent-500/60 bg-accent-500/20'
-                    : 'border border-base-700/30 bg-base-800/40 hover:border-accent-500/30 hover:bg-base-800/60'
+                    ? track.isJingle
+                      ? 'border-2 border-purple-500/60 bg-purple-500/20'
+                      : 'border-2 border-accent-500/60 bg-accent-500/20'
+                    : track.isJingle
+                      ? 'border border-purple-700/30 bg-purple-900/20 hover:border-purple-500/30 hover:bg-purple-900/30'
+                      : 'border border-base-700/30 bg-base-800/40 hover:border-accent-500/30 hover:bg-base-800/60'
                 } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400`}
               >
                 <div className="flex items-center gap-3">
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
                       index === queue.currentIndex
-                        ? 'bg-accent-500 text-base-950'
-                        : 'bg-base-700 text-base-300 group-hover:bg-base-600'
+                        ? track.isJingle
+                          ? 'bg-purple-500 text-white'
+                          : 'bg-accent-500 text-base-950'
+                        : track.isJingle
+                          ? 'bg-purple-900/50 text-purple-300'
+                          : 'bg-base-700 text-base-300 group-hover:bg-base-600'
                     }`}
                   >
-                    {index === queue.currentIndex ? '▶' : index + 1}
+                    {index === queue.currentIndex ? '▶' : track.isJingle ? '🎵' : index + 1}
                   </span>
 
                   <div className="flex-1 min-w-0">
                     <p
                       className={`font-semibold truncate text-sm ${
-                        index === queue.currentIndex ? 'text-accent-100' : 'text-base-100'
+                        index === queue.currentIndex
+                          ? track.isJingle ? 'text-purple-200' : 'text-accent-100'
+                          : track.isJingle ? 'text-purple-300' : 'text-base-100'
                       }`}
                     >
                       {track.title}
@@ -505,11 +668,19 @@ export function MusicPlayer(): JSX.Element {
                     </p>
                   </div>
 
-                  {index === queue.currentIndex && (
-                    <span className="shrink-0 rounded-full border border-accent-500/50 bg-accent-500/20 px-3 py-1 text-xs font-semibold text-accent-200">
+                  {index === queue.currentIndex ? (
+                    <span className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold border ${
+                      track.isJingle
+                        ? 'border-purple-500/50 bg-purple-500/20 text-purple-200'
+                        : 'border-accent-500/50 bg-accent-500/20 text-accent-200'
+                    }`}>
                       Odtwarzanie
                     </span>
-                  )}
+                  ) : track.isJingle ? (
+                    <span className="shrink-0 rounded-full border border-purple-700/40 bg-purple-900/20 px-2.5 py-0.5 text-xs text-purple-400">
+                      Jingle
+                    </span>
+                  ) : null}
                 </div>
               </button>
             ))}
