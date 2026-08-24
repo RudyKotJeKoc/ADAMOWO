@@ -46,8 +46,6 @@ export function AdamowoHeader(): JSX.Element {
     for (let i = 1; i <= 50; i++) {
       tracks.push(`/music/Utwor (${i}).mp3`);
     }
-    // Also include the existing whisper file
-    tracks.push('/music/whisper-2017.mp3');
     return tracks;
   }, []);
 

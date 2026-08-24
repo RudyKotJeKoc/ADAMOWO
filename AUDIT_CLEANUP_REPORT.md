@@ -182,15 +182,7 @@ Przeprowadzono kompleksowy audyt repozytorium pod kątem nieużywanych plików. 
 
 ### Standalone HTML Gateway Pages
 
-```
-? /polana-klamstw-gateway-nl.html (holenderski)
-? /polana-klamstw-gateway-en.html (angielski)
-? /polana-klamstw-brama-sylvestrosa.html (polski)
-```
-
-**Status:** Nie zintegrowane z aplikacją React
-**Możliwe zastosowanie:** Osobne landing pages dla SEO/marketingu
-**Pytanie:** Czy te strony są świadomie trzymane jako osobne entry points?
+**Status:** Usunięte w ramach porządkowania i anonimizacji treści (nie były zintegrowane z aplikacją React).
 
 ---
 

@@ -44,7 +44,7 @@ describe('comments store', () => {
 
   it('toggles hidden status locally', () => {
     const { addComment, activeThreadId, toggleHidden } = useCommentsStore.getState();
-    const created = addComment({ nickname: 'Basia', content: 'Ukryj mnie', threadId: activeThreadId });
+    const created = addComment({ nickname: 'Zosia', content: 'Ukryj mnie', threadId: activeThreadId });
     expect(created).not.toBeNull();
 
     toggleHidden(created!.id);

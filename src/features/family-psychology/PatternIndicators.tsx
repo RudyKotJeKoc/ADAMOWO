@@ -13,7 +13,7 @@ export function PatternIndicators(): JSX.Element {
         {PATTERN_INDICATORS.map((indicator, index) => (
           <div
             key={index}
-            className="case-barbara rounded-xl border border-base-800 bg-gradient-to-r from-base-925/80 to-base-950/80 p-5 transition-all hover:border-accent-500/40 hover:shadow-lg"
+            className="pattern-transmission rounded-xl border border-base-800 bg-gradient-to-r from-base-925/80 to-base-950/80 p-5 transition-all hover:border-accent-500/40 hover:shadow-lg"
           >
             <div className="flex items-start gap-4">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-500/20 text-accent-400">

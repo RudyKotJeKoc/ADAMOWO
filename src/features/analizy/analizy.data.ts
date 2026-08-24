@@ -58,37 +58,6 @@ export const ANALYSIS_CATEGORIES: AnalysisCategoryInfo[] = [
  */
 export const ANALYSES: AnalysisMetadata[] = [
   {
-    id: 'curse-of-eight',
-    title: 'Klątwa Ósemki',
-    subtitle: 'Anatomia symboliki numerycznej w sprawie Adamowo',
-    category: 'wzorce',
-    subcategory: 'Symbolika i wzorce numeryczne',
-    teaser:
-      'Głęboka analiza niezwykłych zbieżności numerycznych w sprawie rodziny Adamskich. Od adresu Adamowo 8, przez ośmioletni cykl konfliktu, aż po kluczowe daty w ósmym miesiącu – eksploracja tego, jak cyfra 8 przenika wszystkie wymiary tej historii.',
-    icon: '♾️',
-    readingTime: 25,
-    date: '2024-11-15',
-    tags: ['symbolika', 'numerologia', 'wzorce', 'analiza przypadku', 'Adamowo', 'ósemka', 'cykl'],
-    featured: true,
-    contentPath: '/curse-of-eight-content',
-    badge: 'Popularne',
-  },
-  {
-    id: 'timeline-adamowo',
-    title: 'Oś Czasu: Sprawa Adamowo',
-    subtitle: 'Chronologiczna rekonstrukcja wydarzeń',
-    category: 'dokumentacja',
-    subcategory: 'Studium przypadku',
-    teaser:
-      'Szczegółowa chronologia kluczowych wydarzeń w sprawie rodziny Adamskich, od aktu darowizny w 2017 roku po współczesność. Dokumentacja oparta na protokołach, zeznaniach i oficjalnych dokumentach.',
-    icon: '📅',
-    readingTime: 15,
-    date: '2024-11-10',
-    tags: ['chronologia', 'dokumentacja', 'Adamowo', 'studium przypadku'],
-    featured: false,
-    contentPath: '/timeline-content',
-  },
-  {
     id: 'violence-loop-theory',
     title: 'Teoria Pętli Przemocy',
     subtitle: 'Mechanizmy cyklicznej przemocy psychicznej',

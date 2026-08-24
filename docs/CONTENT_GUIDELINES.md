@@ -116,6 +116,10 @@ import { SummarySection } from '@/components/ContentSection';
 
 ## Anonimizacja danych
 
+### Zakaz pseudonimów przypisanych do osób
+
+Nie zastępuj danych osobowych stałym, powtarzalnym przezwiskiem lub pseudonimem przypisanym do konkretnej osoby (np. nadanym jej w narracji przydomkiem zwierzęcym lub bajkowym). Taki pseudonim, używany konsekwentnie w wielu miejscach serwisu, sam staje się identyfikatorem i pozwala rozpoznać osobę tak samo jak imię i nazwisko. Do anonimizacji używaj wyłącznie neutralnych ról funkcyjnych (np. "matka", "opiekun", "pełnomocnik") lub generycznych oznaczeń wygenerowanych funkcjami poniżej — nigdy trwałej ksywki.
+
 ### Funkcje pomocnicze
 
 ```tsx

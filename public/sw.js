@@ -1,4 +1,4 @@
-const CACHE_NAME = 'radio-adamowo-v3-svg-placeholders';
+const CACHE_NAME = 'radio-adamowo-v4-clean';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

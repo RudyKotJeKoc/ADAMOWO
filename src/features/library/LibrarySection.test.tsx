@@ -23,8 +23,8 @@ describe('LibrarySection', () => {
     expect(screen.getByRole('heading', { name: 'Biblioteka Przypadków' })).toBeInTheDocument();
     const cards = screen.getAllByRole('button', { name: /Zobacz —/ });
     expect(cards).toHaveLength(4);
-    expect(screen.getByRole('heading', { name: 'Sprawa Adamskich: Wprowadzenie' })).toBeInTheDocument();
-    expect(screen.getByText('Rodzina Adamskich zgłosiła serię subtelnych, lecz narastających aktów izolacji i dewaluacji ze strony głowy rodziny.')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Studium przypadku: izolacja rodzinna' })).toBeInTheDocument();
+    expect(screen.getByText('Rodzina zgłosiła serię subtelnych, lecz narastających aktów izolacji i dewaluacji ze strony głowy rodziny.')).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: 'Streszczenie' })).toHaveAttribute('aria-selected', 'true');
   });
 

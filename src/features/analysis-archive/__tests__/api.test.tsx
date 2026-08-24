@@ -83,7 +83,7 @@ describe('analysis-archive/api', () => {
         {
           id: 'episode-2',
           title: 'Episode 2',
-          category: 'SprawaAdamskich',
+          category: 'Sledztwo',
           tags: [],
           description: 'desc',
           durationSec: 60,

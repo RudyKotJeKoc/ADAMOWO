@@ -16,7 +16,6 @@ import type { Episode, EpisodeCategory, EpisodeFiltersMetadata, EpisodeQuery, Ep
 const CATEGORY_VALUES: EpisodeCategory[] = [
   'AktDarowania',
   'SłużebnośćUwiązania',
-  'SprawaAdamskich',
   'BronNarcyza',
   'Sledztwo'
 ];
@@ -47,7 +46,7 @@ function isEpisodeCategory(value: string): value is EpisodeCategory {
 function adaptEpisode(episode: BaseEpisode): Episode {
   const safeCategory: EpisodeCategory = isEpisodeCategory(episode.category)
     ? episode.category
-    : 'SprawaAdamskich';
+    : 'Sledztwo';
 
   if (!isEpisodeCategory(episode.category)) {
     console.warn('[analysis-archive] Unknown episode category received:', episode.category, '- using fallback:', safeCategory);

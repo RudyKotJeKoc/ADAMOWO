@@ -36,7 +36,7 @@ export type LibraryTimelineItem = { when: string; title: string; note?: string }
  * @property tags - Categorization tags for filtering (optional, can be i18n keys)
  */
 export type LibraryEntry = {
-  id: 'case_adamscy' | 'calendar_analysis' | 'prince_ingratitude' | 'investigation_docs';
+  id: 'family_isolation_case' | 'calendar_analysis' | 'prince_ingratitude' | 'investigation_docs';
   titleKey: string;
   summaryKey: string;
   contentKeys: string[];

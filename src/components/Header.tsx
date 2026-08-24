@@ -21,17 +21,14 @@ const NAV_GROUPS = {
   education: [
     { to: '/analizy', labelKey: 'navigation.analizy' },
     { to: '/taksonomia', labelKey: 'navigation.taxonomy' },
-    { to: '/case-study', labelKey: 'navigation.caseStudy' },
     { to: '/anatomy', labelKey: 'navigation.anatomy' },
   ],
   tools: [
     { to: '/guides', labelKey: 'navigation.guide' },
     { to: '/lab', labelKey: 'navigation.lab' },
-    { to: '/polana-klamstw', labelKey: 'navigation.polanaKlamstw' },
   ],
   content: [
     { to: '/programy', labelKey: 'navigation.programy' },
-    { to: '/teatr-absurdu', labelKey: 'navigation.teatr' },
     { to: '/media', labelKey: 'navigation.media' },
   ],
   info: [
@@ -88,9 +85,6 @@ export function Header(): JSX.Element {
       '/analizy': () => import('../pages/Analyses'),
       '/taksonomia': () => import('../pages/ManipulationTaxonomy'),
       '/taxonomy': () => import('../pages/ManipulationTaxonomy'),
-      '/case-study': () => import('../pages/CaseStudyReport'),
-      '/casestudy': () => import('../pages/CaseStudyReport'),
-      '/studium-przypadku': () => import('../pages/CaseStudyReport'),
       '/programy': () => import('../pages/Programs'),
       '/studio': () => import('../pages/Studio'),
       '/shows': () => import('../pages/Shows'),
@@ -103,9 +97,6 @@ export function Header(): JSX.Element {
       '/pomoc': () => import('../pages/Help'),
       '/help': () => import('../pages/Help'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage'),
-      '/teatr-absurdu': () => import('../pages/TeatrAbsurdu'),
-      '/teatr-absurdu/spektakl': () => import('../features/teatr-absurdu/SpektaklPage'),
-      '/teatr-absurdu/analiza': () => import('../features/teatr-absurdu/AnalizaPage'),
     }),
     []
   );

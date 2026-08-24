@@ -63,7 +63,7 @@ export const PSYCHOLOGY_SECTIONS: FamilyPsychologySection[] = [
  *
  * Maps the flow of traumatic patterns through family generations:
  * 1. Father (grandfather) - Original trauma source
- * 2. Barbara - Received and internalized patterns
+ * 2. Generation two - Received and internalized patterns
  * 3. Son (protagonist) - Inherited behavioral scripts
  * 4. Partner - Cycle continuation risk
  */
@@ -73,8 +73,8 @@ export const TRANSMISSION_CHAIN: TransmissionNode[] = [
     mechanismKey: 'familyPsychology.transmission.father.mechanism'
   },
   {
-    nameKey: 'familyPsychology.transmission.barbara.name',
-    mechanismKey: 'familyPsychology.transmission.barbara.mechanism'
+    nameKey: 'familyPsychology.transmission.generationTwo.name',
+    mechanismKey: 'familyPsychology.transmission.generationTwo.mechanism'
   },
   {
     nameKey: 'familyPsychology.transmission.son.name',

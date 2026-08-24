@@ -50,14 +50,14 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
         context: 'anatomy.schemas.dualCommunication.examples.ex1.context',
         behavior: 'anatomy.schemas.dualCommunication.examples.ex1.behavior',
         analysis: 'anatomy.schemas.dualCommunication.examples.ex1.analysis',
-        sourceDocs: ['Notatka 14.04', 'Pełnomocnictwo 19.07.2021']
+        sourceDocs: ['Notatka z dziennika', 'Pełnomocnictwo']
       },
       {
         id: 'dc-ex-2',
         context: 'anatomy.schemas.dualCommunication.examples.ex2.context',
         behavior: 'anatomy.schemas.dualCommunication.examples.ex2.behavior',
         analysis: 'anatomy.schemas.dualCommunication.examples.ex2.analysis',
-        sourceDocs: ['Zawiadomienie 27.07', 'Konsultacje z radcą prawnym']
+        sourceDocs: ['Zawiadomienie', 'Konsultacje z radcą prawnym']
       }
     ],
     quiz: {
@@ -116,21 +116,21 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
         context: 'anatomy.schemas.emotionInstrumentalization.examples.ex1.context',
         behavior: 'anatomy.schemas.emotionInstrumentalization.examples.ex1.behavior',
         analysis: 'anatomy.schemas.emotionInstrumentalization.examples.ex1.analysis',
-        sourceDocs: ['Zawiadomienie 27.07.2021', 'Zeznania Sylwestra']
+        sourceDocs: ['Zawiadomienie', 'Zeznania ojca']
       },
       {
         id: 'ei-ex-2',
         context: 'anatomy.schemas.emotionInstrumentalization.examples.ex2.context',
         behavior: 'anatomy.schemas.emotionInstrumentalization.examples.ex2.behavior',
         analysis: 'anatomy.schemas.emotionInstrumentalization.examples.ex2.analysis',
-        sourceDocs: ['Dokumentacja NK', 'Interwencja 17/18.07.2021']
+        sourceDocs: ['Dokumentacja procedury ochronnej', 'Nocna interwencja policji']
       },
       {
         id: 'ei-ex-3',
         context: 'anatomy.schemas.emotionInstrumentalization.examples.ex3.context',
         behavior: 'anatomy.schemas.emotionInstrumentalization.examples.ex3.behavior',
         analysis: 'anatomy.schemas.emotionInstrumentalization.examples.ex3.analysis',
-        sourceDocs: ['Zawiadomienie 27.07', 'Cytat o roślinach']
+        sourceDocs: ['Zawiadomienie', 'Cytat ze zgłoszenia']
       }
     ],
     quiz: {
@@ -189,7 +189,7 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
         context: 'anatomy.schemas.invertedTriage.examples.ex1.context',
         behavior: 'anatomy.schemas.invertedTriage.examples.ex1.behavior',
         analysis: 'anatomy.schemas.invertedTriage.examples.ex1.analysis',
-        sourceDocs: ['Notatki 21-22.05.2021', 'Obowiązki opiekuna']
+        sourceDocs: ['Notatki z dziennika', 'Obowiązki opiekuna']
       }
     ],
     quiz: {
@@ -248,7 +248,7 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
         context: 'anatomy.schemas.mirrorProjection.examples.ex1.context',
         behavior: 'anatomy.schemas.mirrorProjection.examples.ex1.behavior',
         analysis: 'anatomy.schemas.mirrorProjection.examples.ex1.analysis',
-        sourceDocs: ['Kalendarz', 'Notatka 10.02 (wtargnięcie 2:30)']
+        sourceDocs: ['Dziennik wydarzeń', 'Notatka o nocnym wtargnięciu']
       },
       {
         id: 'mp-ex-2',
@@ -262,7 +262,7 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
         context: 'anatomy.schemas.mirrorProjection.examples.ex3.context',
         behavior: 'anatomy.schemas.mirrorProjection.examples.ex3.behavior',
         analysis: 'anatomy.schemas.mirrorProjection.examples.ex3.analysis',
-        sourceDocs: ['Notatki 21-22.05', 'Pełnomocnictwo 19.07']
+        sourceDocs: ['Notatki z dziennika', 'Pełnomocnictwo']
       }
     ],
     quiz: {
@@ -325,21 +325,21 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
         context: 'anatomy.schemas.selectiveDocumentation.examples.ex1.context',
         behavior: 'anatomy.schemas.selectiveDocumentation.examples.ex1.behavior',
         analysis: 'anatomy.schemas.selectiveDocumentation.examples.ex1.analysis',
-        sourceDocs: ['Kalendarz', 'Notatka 29.03']
+        sourceDocs: ['Dziennik wydarzeń', 'Wpis w dzienniku']
       },
       {
         id: 'sd-ex-2',
         context: 'anatomy.schemas.selectiveDocumentation.examples.ex2.context',
         behavior: 'anatomy.schemas.selectiveDocumentation.examples.ex2.behavior',
         analysis: 'anatomy.schemas.selectiveDocumentation.examples.ex2.analysis',
-        sourceDocs: ['Kalendarz', 'Notatka 11.04']
+        sourceDocs: ['Dziennik wydarzeń', 'Wpis w dzienniku']
       },
       {
         id: 'sd-ex-3',
         context: 'anatomy.schemas.selectiveDocumentation.examples.ex3.context',
         behavior: 'anatomy.schemas.selectiveDocumentation.examples.ex3.behavior',
         analysis: 'anatomy.schemas.selectiveDocumentation.examples.ex3.analysis',
-        sourceDocs: ['Kalendarz luty-sierpień', 'Brak wpisów o pomocy']
+        sourceDocs: ['Dziennik wydarzeń z kilku miesięcy', 'Brak wpisów o pomocy']
       }
     ],
     quiz: {
@@ -409,14 +409,14 @@ export const MANIPULATION_SCHEMAS: ManipulationSchema[] = [
         context: 'anatomy.schemas.moralSelfLicensing.examples.ex2.context',
         behavior: 'anatomy.schemas.moralSelfLicensing.examples.ex2.behavior',
         analysis: 'anatomy.schemas.moralSelfLicensing.examples.ex2.analysis',
-        sourceDocs: ['NK', 'Zawiadomienie', 'Konsultacje prawne']
+        sourceDocs: ['Procedura ochronna', 'Zawiadomienie', 'Konsultacje prawne']
       },
       {
         id: 'msl-ex-3',
         context: 'anatomy.schemas.moralSelfLicensing.examples.ex3.context',
         behavior: 'anatomy.schemas.moralSelfLicensing.examples.ex3.behavior',
         analysis: 'anatomy.schemas.moralSelfLicensing.examples.ex3.analysis',
-        sourceDocs: ['Dokumentacja NK', 'Zeznania rodzeństwa']
+        sourceDocs: ['Dokumentacja sprawy', 'Zeznania rodzeństwa']
       }
     ],
     quiz: {

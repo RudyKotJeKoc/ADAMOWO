@@ -27,14 +27,12 @@ export type Chapter = {
  *
  * - 'AktDarowania': Episode about the Act of Donation
  * - 'SłużebnośćUwiązania': Episode about Servitude and Entanglement
- * - 'SprawaAdamskich': Episode about the Adamski Case
  * - 'BronNarcyza': Episode about Narcissist's Weapon
  * - 'Sledztwo': Episode about Investigation
  */
 export type EpisodeCategory =
   | 'AktDarowania'
   | 'SłużebnośćUwiązania'
-  | 'SprawaAdamskich'
   | 'BronNarcyza'
   | 'Sledztwo';
 
