@@ -6,19 +6,16 @@
     "live": "Na Żywo",
     "analizy": "Analizy",
     "taxonomy": "Taksonomia",
-    "caseStudy": "Studium Przypadku",
     "programy": "Programy",
     "violenceLoop": "Pętla Przemocy",
     "studio": "Studio",
     "shows": "Audycje",
     "guide": "Poradnik",
-    "polanaKlamstw": "Polana Kłamstw",
     "anatomy": "Anatomia",
     "lab": "Laboratorium",
     "community": "Społeczność",
     "media": "Multimedia",
     "sitemap": "Mapa strony",
-    "teatr": "Teatr Absurdu",
     "help": "Pomoc"
   },
   "header": {
@@ -48,31 +45,6 @@
       "en": "Angielski"
     }
   },
-  "polanaKlamstw": {
-    "title": "Polana Kłamstw",
-    "subtitle": "Baśń współczesna o tym, jak echo może być silniejsze niż głos, a wolność cenniejsza niż majątek.",
-    "tableOfContents": "Spis Treści",
-    "prolog": "Prolog",
-    "chapter": "Rozdział",
-    "epilog": "Epilog",
-    "previousChapter": "Poprzedni rozdział",
-    "nextChapter": "Następny rozdział",
-    "backToContents": "Powrót do spisu treści",
-    "continueReading": "Kontynuować czytanie od ostatniego rozdziału?",
-    "chaptersRead": "rozdziałów przeczytanych",
-    "totalReadingTime": "Całkowity czas czytania",
-    "contentWarning": "Ostrzeżenie o treści",
-    "contentWarningText": "Ta opowieść porusza trudne tematy rodzinne, w tym manipulację psychologiczną, konflikty rodzinne i działanie systemu prawnego. Treści mogą być trudne dla osób, które doświadczyły podobnych sytuacji.",
-    "warningTopic1": "Manipulacja psychologiczna",
-    "warningTopic2": "Konflikt rodzinny",
-    "warningTopic3": "Trudności systemu prawnego",
-    "warningTopic4": "Znęcanie się emocjonalne",
-    "genre": "Gatunek",
-    "timespan": "Okres",
-    "chapters": "Rozdziałów",
-    "totalWords": "Słów",
-    "themes": "Główne tematy"
-  },
   "pages": {
     "home": {
       "title": "Radio Adamowo",
@@ -97,7 +69,7 @@
       },
       "analizyTeaser": {
         "title": "Dogłębne Analizy",
-        "description": "Odkryj naszą bibliotekę kompleksowych analiz – od symboliki numerycznej w sprawie Adamowo, przez mechanizmy pętli przemocy, po głębokie studium przypadków manipulacji psychicznej.",
+        "description": "Odkryj naszą bibliotekę kompleksowych analiz – od mechanizmów pętli przemocy po głębokie studia przypadków manipulacji psychicznej.",
         "viewAll": "Zobacz wszystkie"
       },
       "programyTeaser": {
@@ -116,7 +88,6 @@
       "anchorNav": "Nawigacja po sekcjach poradnika",
       "links": {
         "library": "Biblioteka przypadków",
-        "mythology": "Mitologia Narcyza",
         "familyPsychology": "Psychologia rodzinnych wzorców"
       }
     },
@@ -217,7 +188,7 @@
         },
         "analysis": {
           "title": "Analizy",
-          "description": "Dostęp do archiwum analiz, najnowszych osi czasu i Klątwy Ósemki."
+          "description": "Dostęp do archiwum analiz i najnowszych materiałów edukacyjnych."
         },
         "research": {
           "title": "Studio i badania",
@@ -238,11 +209,7 @@
         "lab": "Laboratorium AI",
         "analysis": "Archiwum analiz",
         "analizy": "Analizy",
-        "timeline": "Oś czasu konfliktu",
-        "curse": "Klątwa Ósemki",
         "studio": "Studio",
-        "caseStudy": "Studium przypadku",
-        "polana": "Polana Kłamstw",
         "guides": "Poradniki",
         "help": "Pomoc",
         "community": "Społeczność",
@@ -315,7 +282,7 @@
         "link": "guide"
       },
       "violenceLoop": {
-        "title": "Kocioł Wiedźmy: Pętla Przemocy",
+        "title": "Pętla Przemocy",
         "description": "Animowana wizualizacja cyklu przemocy w formie nieskończonej pętli. Poznaj fazy: Love Bombing, Dewaluacja, Odrzucenie i Hoovering. Zrozum, dlaczego tak trudno jest wyrwać się z toksycznej relacji.",
         "link": "violence-loop"
       },
@@ -592,38 +559,6 @@
       "reconnecting": "Wznawianie połączenia..."
     }
   },
-  "whisper": {
-    "regionLabel": "Szept zza Kurtyny — rekonstrukcja przesłuchania",
-    "length": "Czas nagrania",
-    "title": "Szept zza Kurtyny",
-    "subtitle": "Nagranie dokumentuje napięte przesłuchanie publiczne z 2017 roku.",
-    "ethics": {
-      "title": "Zasady etyczne słuchacza",
-      "body": [
-        "Słuchaj z empatią — każde westchnienie to realna osoba.",
-        "Zwracaj uwagę na pauzy i niedopowiedzenia, w nich ukryta jest dynamika władzy.",
-        "Notuj fakty, unikaj osądów — materiał służy edukacji i profilaktyce."
-      ]
-    },
-    "play": "Odtwórz",
-    "pause": "Wstrzymaj",
-    "restart": "Zacznij od początku",
-    "mute": "Wycisz",
-    "unmute": "Włącz dźwięk",
-    "scrub": "Linia czasu",
-    "volume": "Głośność",
-    "status": {
-      "paused": "Nagranie wstrzymane.",
-      "playing": "Odtwarzanie aktywne.",
-      "ended": "Nagranie zakończone.",
-      "error": "Nie można odtworzyć pliku audio.",
-      "restarted": "Nagranie uruchomione od początku.",
-      "seeked": "Przesunięto pozycję odtwarzania.",
-      "muted": "Dźwięk został wyciszony.",
-      "unmuted": "Dźwięk został przywrócony.",
-      "volume": "Głośność ustawiona na {{value}}%"
-    }
-  },
   "library": {
     "kicker": "Biblioteka przypadków",
     "title": "Biblioteka Przypadków",
@@ -659,9 +594,9 @@
       "community": "wsparcie"
     },
     "entries": {
-      "caseAdamscy": {
-        "title": "Sprawa Adamskich: Wprowadzenie",
-        "summary": "Rodzina Adamskich zgłosiła serię subtelnych, lecz narastających aktów izolacji i dewaluacji ze strony głowy rodziny.",
+      "familyIsolationCase": {
+        "title": "Studium przypadku: izolacja rodzinna",
+        "summary": "Rodzina zgłosiła serię subtelnych, lecz narastających aktów izolacji i dewaluacji ze strony głowy rodziny.",
         "content": [
           "Analiza rozpoczyna się od codziennych obserwacji: zamykane drzwi, przejmowanie rozmów i narastająca kontrola nad codziennym grafikiem rodziny.",
           "Pojawiają się próby rozbijania więzi — prezenty dla wybranych członków, krytyka reszty i straszenie odebraniem środków finansowych.",
@@ -688,7 +623,7 @@
             "title": "Zebranie dowodów i interwencja"
           }
         ],
-        "resources": ["Raport obserwacyjny rodziny Adamskich", "Lista kontrolna sygnałów izolacji"]
+        "resources": ["Raport obserwacyjny rodziny", "Lista kontrolna sygnałów izolacji"]
       },
       "calendarAnalysis": {
         "title": "Analiza Kalendarza: Kronika Eskalacji",
@@ -779,130 +714,10 @@
       }
     }
   },
-  "mythology": {
-    "kicker": "Mitologia narcyza",
-    "title": "Mitologia Narcyza",
-    "intro": "Cztery symbole ostrzegawcze opisujące cykl kontroli: 7 — pakt idealizacji, 4 — sieć zależności, 8 — pętla powrotów, 13 — alarm rozstania.",
-    "gridLabel": "Symbole mitologii narcyza",
-    "viewSymbol": "Zobacz symbol",
-    "symbolCode": "Symbol {{code}}",
-    "detailKicker": "Rozszyfrowanie symbolu",
-    "blocks": {
-      "meaning": "Co oznacza",
-      "when": "Kiedy się pojawia",
-      "actions": "Jak reagować"
-    },
-    "symbol": {
-      "4": {
-        "title": "Cztery",
-        "subtitle": "Symbol zamkniętej sieci",
-        "meaning": [
-          "Cztery filary zależności: emocje, pieniądze, reputacja, dostęp do bliskich.",
-          "Wskazuje na układ, w którym każda decyzja ma cztery wersje kontroli."
-        ],
-        "when": [
-          "Gdy wsparcie finansowe wiąże się z raportowaniem każdej wydanej złotówki.",
-          "Kiedy narcyz narzuca, kto może być twoim przyjacielem."
-        ],
-        "action": [
-          "Zmapuj, od kogo poza sprawcą możesz otrzymać wsparcie.",
-          "Podziel zależności: osobny budżet, alternatywne kanały komunikacji.",
-          "Sprawdź, które z czterech filarów możesz zabezpieczyć już dziś."
-        ]
-      },
-      "7": {
-        "title": "Siedem",
-        "subtitle": "Symbol idealnego paktu",
-        "meaning": [
-          "Obietnica wyjątkowego porozumienia ponad normami społecznymi.",
-          "Deklaracje totalnej lojalności w zamian za oddanie sterów."
-        ],
-        "when": [
-          "Gdy narcyz proponuje tajną współpracę lub 'specjalny' układ.",
-          "W momentach nagłych prezentów po okresie konfliktów.",
-          "Tuż przed prośbą o ryzykowny gest lojalności."
-        ],
-        "action": [
-          "Pytaj o realne konsekwencje umowy i proś o czas do namysłu.",
-          "Rozmawiaj z osobą zaufaną, zanim przystaniesz na warunki."
-        ]
-      },
-      "8": {
-        "title": "Osiem",
-        "subtitle": "Symbol pętli powrotów",
-        "meaning": [
-          "Pętla nieskończonych obietnic poprawy.",
-          "Wskazuje na cykliczność: 'już nigdy' zamienia się w 'znowu to samo'.",
-          "Odnosi się do uzależniającej dynamiki rozstań i powrotów."
-        ],
-        "when": [
-          "Gdy po zerwaniu narcyz natychmiast obiecuje terapię lub zmianę pracy.",
-          "Kiedy harmonogram spotkań zaczyna przypominać sinusoidę.",
-          "Tuż po tym, jak ofiara zapowiada granice lub ultimatum."
-        ],
-        "action": [
-          "Spisz warunki powrotu i ustal datę przeglądu postępów.",
-          "Monitoruj faktyczne zmiany, nie deklaracje."
-        ]
-      },
-      "13": {
-        "title": "Trzynaście",
-        "subtitle": "Symbol przerwania i alarmu",
-        "meaning": [
-          "Zapowiedź radykalnego cięcia — często używanego jako straszak.",
-          "Może oznaczać eskalację w stronę przemocy ekonomicznej lub prawnej."
-        ],
-        "when": [
-          "Gdy narcyz straszy odebraniem dzieci lub majątku.",
-          "W momentach, gdy ofiara planuje ucieczkę lub ujawnienie dowodów.",
-          "Tuż przed dużymi wydarzeniami: święta, podpisanie umowy, przeprowadzka."
-        ],
-        "action": [
-          "Zabezpiecz dokumenty i kontakty awaryjne.",
-          "Powiadom zaufaną osobę o możliwej eskalacji.",
-          "Przygotuj plan bezpieczeństwa i sprawdź lokalne zasoby pomocy."
-        ]
-      }
-    },
-    "keyFindings": {
-      "title": "Kluczowe wnioski",
-      "summary": "Cztery symbole ostrzegawcze pomagają rozpoznać fazy manipulacji narcystycznej: od idealizacji (7), przez budowanie zależności (4), pętlę powrotów (8), aż po zagrożenie eskalacją (13).",
-      "finding1": {
-        "label": "Symbol 7: Rozpoznaj pakt idealizacji",
-        "description": "Żądaj czasu na namysł przed akceptacją 'specjalnych' układów"
-      },
-      "finding2": {
-        "label": "Symbol 4: Mapuj zależności",
-        "description": "Zidentyfikuj 4 filary kontroli i zabezpiecz alternatywne wsparcie"
-      },
-      "finding3": {
-        "label": "Symbol 8: Monitoruj obietnice",
-        "description": "Śledź faktyczne zmiany, nie tylko deklaracje po powrocie"
-      },
-      "finding4": {
-        "label": "Symbol 13: Przygotuj plan bezpieczeństwa",
-        "description": "Zabezpiecz dokumenty i powiadom osoby zaufane o ryzyku"
-      }
-    },
-    "controls": {
-      "theme": {
-        "label": "Motyw",
-        "system": "Motyw systemowy",
-        "systemShort": "SYS",
-        "light": "Tryb jasny",
-        "lightShort": "JAS",
-        "dark": "Tryb ciemny",
-        "darkShort": "NOC",
-        "current": "Aktualnie: {{value}}",
-        "resolved_dark": "tryb ciemny",
-        "resolved_light": "tryb jasny"
-      }
-    }
-  },
   "documentary": {
     "sectionLabel": "Materiał dokumentalny",
-    "title": "Sprawa z Adamowa: Autopsja rodzinnej wojny",
-    "description": "Reporterskie śledztwo w mechanizmy władzy, które rozdarły rodzinę z Adamowa — i praktyki, które pomagają przerwać przemoc.",
+    "title": "Autopsja rodzinnej wojny",
+    "description": "Reporterskie śledztwo w mechanizmy władzy, które rozdzierają rodziny — i praktyki, które pomagają przerwać przemoc.",
     "player": {
       "controlsGroup": "Sterowanie odtwarzaczem",
       "play": "Odtwórz wideo",
@@ -1271,7 +1086,6 @@
     "categories": {
       "AktDarowania": "Akt Darowania",
       "SłużebnośćUwiązania": "Służebność Uwiązania",
-      "SprawaAdamskich": "Sprawa Adamskich",
       "BronNarcyza": "Broń Narcyza",
       "Sledztwo": "Śledztwo"
     },
@@ -1489,7 +1303,7 @@
   "finalLesson": {
     "sectionLabel": "Ostateczna lekcja",
     "title": "Ostateczna Lekcja",
-    "description": "Co wynosimy ze sprawy Adamowo i gdzie szukać pomocy tu i teraz.",
+    "description": "Co warto zapamiętać i gdzie szukać pomocy tu i teraz.",
     "summary": {
       "title": "Najważniejsze wnioski",
       "cycle": "Przemoc jest systemem — wzorzec wróci, jeśli nie zmienimy układu sił.",
@@ -2021,11 +1835,11 @@
         "symbolicDescription": "Osoba, która widzi schemat, nazywa go i próbuje pomóc, ale zostaje zaatakowana lub odrzucona. To nie jej wina – system rodzinny broni się przed zmianą."
       },
       "curse": {
-        "title": "Klątwa Wiedźmy – metafora transgeneracyjna",
+        "title": "Przekleństwo pokoleń – metafora transgeneracyjna",
         "metaphorTitle": "Lustro pokoleń",
-        "explanation": "W folklorze słowiańskim \"klątwa wiedźmy\" oznaczała przekleństwo, które przechodzi z pokolenia na pokolenie, dotykając tych, którzy nie wiedzą, jak je przerwać. W psychologii rodzinnej to metafora systemu przekazu emocjonalnego: gniew, lęk, poczucie krzywdy i potrzeba kontroli przechodzą z dziadków na rodziców, a potem na dzieci.",
+        "explanation": "W wielu tradycjach ludowych \"rodowe przekleństwo\" oznaczało brzemię, które przechodzi z pokolenia na pokolenie, dotykając tych, którzy nie wiedzą, jak je przerwać. W psychologii rodzinnej to metafora systemu przekazu emocjonalnego: gniew, lęk, poczucie krzywdy i potrzeba kontroli przechodzą z dziadków na rodziców, a potem na dzieci.",
         "primaryWound": "W każdej rodzinie istnieje 'pierwotna rana' — moment, w którym ktoś został zdominowany, zdradzony, zlekceważony lub upokorzony. Kolejne pokolenia nieświadomie odtwarzają tę emocję w nowych rolach: ofiara staje się agresorem, a obserwator staje się ofiarą.",
-        "breakingPoint": "Klątwa traci moc w chwili, gdy ktoś zobaczy mechanizm i odmówi udziału.",
+        "breakingPoint": "Przekleństwo traci moc w chwili, gdy ktoś zobaczy mechanizm i odmówi udziału.",
         "quoteTitle": "Przykład rekurencji emocjonalnej – przypadek X (anonimowy)",
         "quote": "Nie mogłem wytrzymać z nią – tak jak ona nie mogła wytrzymać ze swoim ojcem.",
         "quoteAttribution": "— fragment z dokumentacji przypadku, tożsamość ukryta"
@@ -2051,8 +1865,8 @@
         "name": "Ojciec",
         "mechanism": "Dominacja i presja emocjonalna"
       },
-      "barbara": {
-        "name": "Barbara",
+      "generationTwo": {
+        "name": "Drugie pokolenie",
         "mechanism": "Ucieczka od presji, następnie powielenie stylu dominującego"
       },
       "son": {
@@ -2060,14 +1874,14 @@
         "mechanism": "Odcięcie w poszukiwaniu spokoju"
       },
       "partner": {
-        "name": "Partnerka (Julia)",
+        "name": "Partnerka",
         "mechanism": "Odbicie wzorca, próba zatrzymania go przez świadomość"
       },
       "note": "Każda strzałka reprezentuje przekazanie nieświadomego schematu emocjonalnego"
     },
     "patterns": {
       "title": "Wskaźniki powtarzania cudzego schematu",
-      "caseLabel": "Przykład komunikacji obronnej typu Barbara (uniwersalny wzorzec)",
+      "caseLabel": "Przykład defensywnej komunikacji emocjonalnej (uniwersalny wzorzec)",
       "affectWriting": {
         "title": "Pisanie w afekcie i moralnym tonie",
         "description": "Wiadomości lub wypowiedzi nacechowane silnymi emocjami, oskarżeniami i moralnym oburzeniem. Brak dystansu emocjonalnego i refleksji nad własnymi motywacjami."
@@ -2090,7 +1904,7 @@
       }
     },
     "communication": {
-      "title": "Jak reagować na komunikaty emocjonalne typu Barbara",
+      "title": "Jak reagować na tego typu komunikaty emocjonalne",
       "note": "Świadoma komunikacja to nie gra w wygraną, ale próba zrozumienia i ochrony własnych granic.",
       "impulsive": {
         "type": "A: Reakcja impulsywna (eskalacja)",
@@ -2177,8 +1991,6 @@
       "fromGuides": {
         "library": "Biblioteka przypadków",
         "libraryDesc": "Rzeczywiste historie i analizy",
-        "mythology": "Mitologia Narcyza",
-        "mythologyDesc": "Symbole ostrzegawcze 4, 7, 8, 13",
         "familyPsych": "Psychologia rodzinna",
         "familyPsychDesc": "Transmisja międzypokoleniowa traumy",
         "eightSins": "Test 8 grzechów",
@@ -2247,12 +2059,12 @@
         "examples": {
           "ex1": {
             "context": "Konflikt rodzinny - matka deklaruje chęć normalizacji relacji",
-            "behavior": "Deklaracja: 'Ja chcę, żeby było normalnie, jak zawsze. Zaproponowałam terapię rodzinną' (14.04). Równocześnie: prowadzenie kalendarza obciążającego syna od lutego, konsultacje z radcą prawnym ws. odwołania darowizny (lato 2021), uruchomienie procedury Niebieskiej Karty (29.07).",
+            "behavior": "Deklaracja: 'Chcę, żeby było normalnie, jak zawsze. Zaproponowałam terapię rodzinną'. Równocześnie: prowadzenie dziennika obciążającego syna od miesięcy, konsultacje z radcą prawnym ws. odwołania darowizny, uruchomienie procedury interwencyjnej wkrótce potem.",
             "analysis": "To klasyczna strategia dwutorowa: performatywne pojednanie (propozycja terapii) służy jako fasada dla ukrytych działań agresywnych (przygotowania procesu). Propozycja była działaniem pozornym, obliczonym na stworzenie wrażenia dobrej woli, podczas gdy rzeczywisty cel to odebranie majątku."
           },
           "ex2": {
             "context": "Troska o schorowanego męża jako deklarowany motyw",
-            "behavior": "Deklaracja troski o dobro męża. Rzeczywistość: instrumentalizacja jego stanu zdrowia - uzyskanie pełnomocnictwa (19.07) tuż po eskalacji konfliktu, wykorzystanie go do prowadzenia działań prawnych sprzecznych z jego własnymi zeznaniami ('Dariusz nie obraża mnie' vs. pozew o 'uporczywe znieważanie').",
+            "behavior": "Deklaracja troski o dobro męża. Rzeczywistość: instrumentalizacja jego stanu zdrowia - uzyskanie pełnomocnictwa tuż po eskalacji konfliktu, wykorzystanie go do prowadzenia działań prawnych sprzecznych z jego własnymi zeznaniami ('on mnie nie obraża' vs. pozew o 'uporczywe znieważanie').",
             "analysis": "Deklarowana troska jest fasadą dla przejęcia pełnej kontroli. Mąż zdegradowany do roli figuranta, którego stan zdrowia posłużył jako uzasadnienie do działań odwetowych. Pełnomocnictwo użyte do nadpisania jego własnej woli."
           }
         },
@@ -2278,12 +2090,12 @@
         "examples": {
           "ex1": {
             "context": "Zawiadomienie na policji o znęcaniu się psychicznym",
-            "behavior": "Barbara: 'obawia się swojego syna', jest w 'silnym stresie', 'leczy się psychiatrycznie' z jego powodu. Równocześnie mąż Sylwester zeznaje: 'On mnie oraz żony nigdy nie uderzył'. To ona inicjowała konfrontacje (nocne wtargnięcie do pokoju Dariusza).",
+            "behavior": "Matka: 'obawia się swojego syna', jest w 'silnym stresie', 'leczy się psychiatrycznie' z jego powodu. Równocześnie ojciec zeznaje: 'On mnie oraz żony nigdy nie uderzył'. To ona inicjowała konfrontacje (nocne wtargnięcia do pokoju syna).",
             "analysis": "Kreowanie aury zagrożenia było celowym zabiegiem psychologicznym, nie odzwierciedleniem rzeczywistości. Stan zdrowia użyty instrumentalnie - jako tarcza (nie można jej kwestionować, bo cierpi) i zarazem broń (jej cierpienie jest dowodem winy syna)."
           },
           "ex2": {
-            "context": "Interwencja policyjna w nocy 17/18 lipca 2021",
-            "behavior": "Zamiast czekać na patrol w domu, Barbara wraz z ojcem i siostrą oczekiwała 'w lesie obok posesji'. Dariusz był zamknięty w swoim pokoju. Interwencja nie doprowadziła do zatrzymania.",
+            "context": "Nocna interwencja policyjna",
+            "behavior": "Zamiast czekać na patrol w domu, matka wraz z częścią rodziny oczekiwała 'w lesie obok posesji'. Syn był zamknięty w swoim pokoju. Interwencja nie doprowadziła do zatrzymania.",
             "analysis": "Inscenizacja spektaklu na użytek organów ścigania. Gest miał stworzyć sugestywny obraz rodziny zmuszonej do ucieczki przed niebezpiecznym agresorem, co było całkowicie niezgodne z rzeczywistością."
           },
           "ex3": {
@@ -2313,9 +2125,9 @@
         },
         "examples": {
           "ex1": {
-            "context": "21 maja 2021 - Sylwester Adamski wymaga pomocy medycznej",
-            "behavior": "Barbara jako opiekunka (świadczenie pielęgnacyjne 1800 zł/mies.) zamiast wezwać pogotowie żąda kluczyków od Dariusza, tworząc konfrontację. Priorytet: budowanie dowodu procesowego ('odmówił zawiezienia') > zdrowie męża. Dariusz ostatecznie SAM odbiera ojca ze szpitala. Barbara celowo POMIJA ten fakt w 'kalendarzu'.",
-            "analysis": "Modelowy przykład odwróconego triażu. Deklarowany stan nagły (zdrowie męża) zdegradowany do roli rekwizytu. Prawdziwy cel: sfabrykowanie krzywdy ('bezduszny syn nie pomógł'). Zachowanie Barbary to rażące zaniedbanie obowiązków opiekuna. Następnie fakt odebrania ojca przez Dariusza został wymazany z narracji - bo przeczyłby tezie o jego bezduszności."
+            "context": "Ojciec pilnie wymaga pomocy medycznej",
+            "behavior": "Matka, formalna opiekunka ojca, zamiast wezwać pogotowie żąda kluczyków od syna, tworząc konfrontację. Priorytet: budowanie dowodu procesowego ('odmówił zawiezienia') > zdrowie męża. Syn ostatecznie SAM odbiera ojca ze szpitala. Matka celowo POMIJA ten fakt w swoim dzienniku wydarzeń.",
+            "analysis": "Modelowy przykład odwróconego triażu. Deklarowany stan nagły (zdrowie męża) zdegradowany do roli rekwizytu. Prawdziwy cel: sfabrykowanie krzywdy ('bezduszny syn nie pomógł'). Zachowanie matki to rażące zaniedbanie obowiązków opiekuna. Następnie fakt odebrania ojca przez syna został wymazany z narracji - bo przeczyłby tezie o jego bezduszności."
           }
         },
         "quiz": {
@@ -2340,17 +2152,17 @@
         "examples": {
           "ex1": {
             "context": "Zarzut o kontrolę i inwigilację",
-            "behavior": "Barbara oskarża syna o kontrolowanie jej za pomocą kamer. Rzeczywistość: ona sama prowadzi szczegółowy 'kalendarz' śledzący każdy ruch syna, posiada nagrania, wchodzi do jego pokoju w środku nocy (2:30), próbuje ingerować w jego związek.",
+            "behavior": "Matka oskarża syna o kontrolowanie jej za pomocą kamer. Rzeczywistość: ona sama prowadzi szczegółowy dziennik śledzący każdy ruch syna, posiada nagrania, wchodzi do jego pokoju w środku nocy, próbuje ingerować w jego związek.",
             "analysis": "Klasyczna projekcja. To ona przejawia obsesyjno-kontrolujące zachowania, ale przypisuje je synowi. Monitoring zewnętrzny (kamery) to standardowe zabezpieczenie posesji. Jej inwigilacja to naruszanie prywatności dorosłego człowieka."
           },
           "ex2": {
             "context": "Zarzut o agresję i wulgarność",
-            "behavior": "Barbara zarzuca synowi agresję. Rzeczywistość: to ona dokonała nocnego wtargnięcia do pokoju Dariusza (2:00), by zaatakować słownie jego kuzynkę Julię ('franca cholerna'). Sylwester zeznaje, że to Barbara inicjowała konfrontacje.",
-            "analysis": "Odwrócenie ról. Rzeczywista sprawczyni agresji słownej i prowokacji przedstawia się jako ofiarę. Reakcja obronna Dariusza (po prowokacji) jest przedstawiana jako bezpodstawny atak."
+            "behavior": "Matka zarzuca synowi agresję. Rzeczywistość: to ona dokonała nocnego wtargnięcia do jego pokoju, by zaatakować słownie jego partnerkę obraźliwymi słowami. Ojciec zeznaje, że to matka inicjowała konfrontacje.",
+            "analysis": "Odwrócenie ról. Rzeczywista sprawczyni agresji słownej i prowokacji przedstawia się jako ofiarę. Reakcja obronna syna (po prowokacji) jest przedstawiana jako bezpodstawny atak."
           },
           "ex3": {
             "context": "Zarzut o brak empatii wobec chorego ojca",
-            "behavior": "Barbara zarzuca synowi brak empatii. Rzeczywistość: ona sama instrumentalnie wykorzystała chorobę męża (pełnomocnictwo 19.07 tuż po eskalacji), priorytetizowała cel procesowy nad jego zdrowiem (incydent 21.05), używała go jako narzędzia w sporze.",
+            "behavior": "Matka zarzuca synowi brak empatii. Rzeczywistość: ona sama instrumentalnie wykorzystała chorobę męża (pełnomocnictwo uzyskane tuż po eskalacji konfliktu), priorytetyzowała cel procesowy nad jego zdrowiem, używała go jako narzędzia w sporze.",
             "analysis": "Przypisanie braku empatii osobie, która faktycznie odebrała ojca ze szpitala. Prawdziwy brak empatii to instrumentalizacja chorego męża dla celów prawnych i finansowych."
           }
         },
@@ -2376,18 +2188,18 @@
         },
         "examples": {
           "ex1": {
-            "context": "Notatka z 29 marca w 'kalendarzu'",
-            "behavior": "'Darek Nachlany pił z Zauchą (...) po 22 zadzwoniliśmy po policję, bo chyba oszalał'. Użycie pejoratywnego określenia ('Nachlany') i subiektywnej oceny ('chyba oszalał') przedstawione jako obiektywny opis.",
+            "context": "Wpis w dzienniku prowadzonym przez matkę",
+            "behavior": "'Syn wrócił pijany, pił z kolegą (...) po 22 zadzwoniliśmy po policję, bo chyba oszalał'. Użycie pejoratywnego przezwiska i subiektywnej oceny ('chyba oszalał') przedstawione jako obiektywny opis.",
             "analysis": "To nie jest faktograficzna kronika, to aktywny proces oceniania i stygmatyzowania. Celem nie jest zapamiętanie, co się wydarzyło, ale stworzenie materiału obciążającego w formie pozornie neutralnej."
           },
           "ex2": {
-            "context": "Notatka z 11 kwietnia - 'czytanie w myślach'",
-            "behavior": "'W niedzielę były moje siostry (...) Specjalnie gdzieś pojechał amperą, żeby nie rozmawiać z Dorotą.' Fakt (pojechał) + interpretacja (specjalnie, żeby nie...) przedstawione jako jedno.",
+            "context": "Wpis w dzienniku - 'czytanie w myślach'",
+            "behavior": "'W niedzielę odwiedziła nas rodzina (...) Specjalnie gdzieś wyjechał, żeby nie rozmawiać z krewną.' Fakt (wyjechał) + interpretacja (specjalnie, żeby nie...) przedstawione jako jedno.",
             "analysis": "Technika przypisywania negatywnych intencji. Nie dopuszcza żadnej innej możliwości (np. wcześniejsze plany). To tzw. błąd atrybucji - przypisanie wrogich motywów niejednoznacznemu zachowaniu. Powtarzający się wzorzec w jej narracji."
           },
           "ex3": {
-            "context": "Kalendarz luty-sierpień 2021",
-            "behavior": "Skrupulatnie odnotowane: konflikty, zachowania 'podejrzane', obraźliwe (jej zdaniem). Całkowicie pominięte: odbiór ojca ze szpitala przez Dariusza (21.05), jego inwestycje w nieruchomość, jakiekolwiek pozytywne interakcje.",
+            "context": "Dziennik wydarzeń prowadzony przez kilka miesięcy",
+            "behavior": "Skrupulatnie odnotowane: konflikty, zachowania 'podejrzane', obraźliwe (jej zdaniem). Całkowicie pominięte: odbiór ojca ze szpitala przez syna, jego inwestycje w nieruchomość rodzinną, jakiekolwiek pozytywne interakcje.",
             "analysis": "Kliniczny przykład błędu potwierdzenia (confirmation bias). Nie jest to kronika, to proces selekcji danych potwierdzających z góry przyjętą tezę o byciu ofiarą. Pominięcie odbioru ojca ze szpitala jest szczególnie rażące - to akt oczyszczania narracji z dowodów przeczących."
           }
         },
@@ -2414,18 +2226,18 @@
         "examples": {
           "ex1": {
             "context": "Odwołanie darowizny jako 'kara za nieposłuszeństwo'",
-            "behavior": "Barbara ujmuje spór majątkowy w ramy moralne: 'rażąca niewdzięczność'. To prawno-moralna etykieta pozwalająca usprawiedliwić radykalne kroki (odwołanie darowizny) nie jako akt zemsty za osobiste urazy (związek syna z kuzynką), lecz jako sprawiedliwą konsekwencję niemoralnego postępowania.",
-            "analysis": "Prywatny odwet przedstawiony jako akt przywracania porządku. Barbara użyła art. 898 § 1 k.c. jako narzędzia moralnej zemsty, nie ochrony darczyńcy (którym był Sylwester, nie ona). To samolicencjonowanie - nadanie sobie prawa do działania destrukcyjnego poprzez moralne uzasadnienie."
+            "behavior": "Matka ujmuje spór majątkowy w ramy moralne: 'rażąca niewdzięczność'. To prawno-moralna etykieta pozwalająca usprawiedliwić radykalne kroki (odwołanie darowizny) nie jako akt zemsty za osobiste urazy (nieakceptowany związek syna), lecz jako sprawiedliwą konsekwencję niemoralnego postępowania.",
+            "analysis": "Prywatny odwet przedstawiony jako akt przywracania porządku. Matka użyła art. 898 § 1 k.c. jako narzędzia moralnej zemsty, nie ochrony darczyńcy (którym był ojciec, nie ona). To samolicencjonowanie - nadanie sobie prawa do działania destrukcyjnego poprzez moralne uzasadnienie."
           },
           "ex2": {
-            "context": "Wykorzystanie procedury Niebieskiej Karty i Policji",
-            "behavior": "Barbara pozycjonuje się jako obywatelka szukająca ochrony przed przemocą. Jednak już latem 2021 konsultowała z radcą prawnym strategię odwołania darowizny. Procedura NK uruchomiona po wyjeździe Dariusza (brak aktualnego zagrożenia). Celem nie była ochrona, ale zdobycie formalnych narzędzi do walki o majątek.",
+            "context": "Wykorzystanie procedury ochronnej i policji",
+            "behavior": "Matka pozycjonuje się jako osoba szukająca ochrony przed przemocą. Jednak już wcześniej konsultowała z radcą prawnym strategię odwołania darowizny. Procedura ochronna uruchomiona po wyjeździe syna (brak aktualnego zagrożenia). Celem nie była ochrona, ale zdobycie formalnych narzędzi do walki o majątek.",
             "analysis": "Instrumentalizacja systemu państwowego. Instytucje ochrony ofiar przemocy potraktowane jako środek do osiągnięcia celu procesowego. To nadużycie systemu pod płaszczykiem 'walki o bezpieczeństwo'."
           },
           "ex3": {
             "context": "Rodzina jako 'chór poparcia'",
-            "behavior": "W dokumentacji NK: rodzeństwo 'zaprzestało przyjazdów z obawy na zachowanie brata'. Artur i Monika nie mieszkali w domu, rzadko bywali. Ich 'lęk' został ukształtowany przez jednostronną narrację matki, nie osobiste doświadczenia.",
-            "analysis": "Angażowanie rodziny do społecznego wyizolowania Dariusza i wzmocnienia własnej pozycji moralnej. Kreowanie wrażenia, że zachowanie syna jest potępiane przez całe otoczenie. To budowanie 'koalicji' wzmacniającej legitymizację własnych działań."
+            "behavior": "W dokumentacji sprawy: rodzeństwo 'zaprzestało przyjazdów z obawy na zachowanie brata'. Nie mieszkali już w domu rodzinnym, rzadko bywali. Ich 'lęk' został ukształtowany przez jednostronną narrację matki, nie osobiste doświadczenia.",
+            "analysis": "Angażowanie rodziny do społecznego wyizolowania syna i wzmocnienia własnej pozycji moralnej. Kreowanie wrażenia, że zachowanie syna jest potępiane przez całe otoczenie. To budowanie 'koalicji' wzmacniającej legitymizację własnych działań."
           }
         },
         "quiz": {
@@ -2517,7 +2329,7 @@
       "contains": "Strona zawiera",
       "content1": "Opisy toksycznych relacji rodzinnych i manipulacji emocjonalnej",
       "content2": "Analizy dysonansu poznawczego i mechanizmów psychologicznych",
-      "content3": "Przykłady z rzeczywistych dokumentów prawnych i zeznań",
+      "content3": "Zanonimizowane przykłady ilustrujące typowe wzorce manipulacji",
       "content4": "Treści dotyczące instrumentalizacji systemu prawnego",
       "support": {
         "title": "Nie jesteś sam/sama",
@@ -2774,15 +2586,15 @@
     }
   },
   "donation": {
-    "title": "Wesprzyj Wilka Pizzą",
-    "description": "Radio Adamowo powstaje dzięki pasji i niezliczonym godzinom pracy. Jeśli nasza misja edukacyjna jest dla Ciebie wartościowa, możesz wesprzeć wilka pizzą – to mały gest, który daje nam energię do dalszej pracy.",
+    "title": "Wesprzyj Nas Pizzą",
+    "description": "Radio Adamowo powstaje dzięki pasji i niezliczonym godzinom pracy. Jeśli nasza misja edukacyjna jest dla Ciebie wartościowa, możesz wesprzeć nas pizzą – to mały gest, który daje nam energię do dalszej pracy.",
     "feature1": "Wspierasz rozwój platformy edukacyjnej",
     "feature2": "Pomagasz w tworzeniu wartościowych treści",
     "feature3": "Dajesz nam siłę do nocnych sesji kodowania",
     "feature4": "Stajesz się częścią naszej misji",
-    "cta": "Postaw Pizzę Wilkowi",
+    "cta": "Postaw Nam Pizzę",
     "subtitle": "Każda pizza przybliża nas do lepszego świata",
-    "thanks": "Dziękujemy za każde wsparcie – naprawdę robi różnicę! 🐺💙"
+    "thanks": "Dziękujemy za każde wsparcie – naprawdę robi różnicę! 🍕💙"
   },
   "analizy": {
     "title": "Analizy",
@@ -2827,10 +2639,10 @@
   },
   "taxonomy": {
     "title": "Anatomia Manipulacji: Taksonomia Mechanizmów Systemowych",
-    "lead": "Analiza ta stanowi dekonstrukcję taktyk psychologicznych, prawnych i organizacyjnych zidentyfikowanych w toku śledztwa Adamowo. Poniższy leksykon definiuje konkretne wektory ataku – od korporacyjnego gaslightingu po inżynierię prawną. To nie teoria, to mapa błędów systemu.",
+    "lead": "Analiza ta stanowi dekonstrukcję typowych taktyk psychologicznych, prawnych i organizacyjnych spotykanych w sporach rodzinnych, instytucjonalnych i zawodowych. Poniższy leksykon definiuje konkretne wektory ataku – od korporacyjnego gaslightingu po inżynierię prawną.",
     "footer": {
       "title": "Nota metodologiczna",
-      "content": "Niniejsza taksonomia została opracowana w oparciu o dokumentację, zeznania i analizę rzeczywistych przypadków. Każda taktyka opisuje konkretne mechanizmy systemowe zidentyfikowane w toku śledztwa. Nie są to konstrukcje teoretyczne – to udokumentowane wzorce działań."
+      "content": "Niniejsza taksonomia została opracowana w oparciu o typowe, powtarzające się wzorce opisywane w literaturze psychologicznej i prawnej. Każda taktyka opisuje uogólniony mechanizm systemowy, a nie pojedynczy, konkretny przypadek."
     },
     "categories": {
       "corporate": {
@@ -2865,7 +2677,7 @@
       },
       "obsessiveDocumentation": {
         "name": "Obsesyjne dokumentowanie",
-        "description": "Tworzenie selektywnej, fałszywej dokumentacji ex ante, projektowanej wyłącznie pod przyszły proces sądowy (\"Kalendarz Wiedźmy\")."
+        "description": "Tworzenie selektywnej, tendencyjnej dokumentacji ex ante, projektowanej wyłącznie pod przyszły proces sądowy (tzw. \"obciążający kalendarz\")."
       },
       "evidentialProvocation": {
         "name": "Prowokacja dowodowa",
@@ -2873,7 +2685,7 @@
       },
       "dependentInstrumentalization": {
         "name": "Instrumentalizacja osoby zależnej",
-        "description": "Wykorzystywanie stanów chorobowych bliskich i tanich pełnomocnictw do legitymizowania wrogich działań majątkowych (\"Kluczyk do Pokémona\")."
+        "description": "Wykorzystywanie stanów chorobowych bliskich i tanich pełnomocnictw do legitymizowania wrogich działań majątkowych."
       },
       "proceduralBetrayal": {
         "name": "Zdrada procesowa",
@@ -2893,177 +2705,6 @@
       }
     }
   },
-  "caseStudy": {
-    "label": "Studium Przypadku",
-    "title": "Raport Analityczny: Studium Przypadku Instrumentalizacji Systemu Prawnego i Manipulacji Psychologicznej",
-    "subtitle": "Anatomia Psychospołecznej Wojny",
-    "intro": "Niniejszy dokument stanowi specjalistyczną analizę przypadku wykraczającego daleko poza ramy typowego konfliktu rodzinnego. Jest to studium metodycznej wojny psychospołecznej. Celem jest dekonstrukcja złożonych mechanizmów manipulacji, instrumentalizacji prawnej i zawodności systemu. Analiza pokazuje, jak mechanizmy ochronne (takie jak procedura \"Niebieskiej Karty\") stały się bronią w prywatnej wendecie.",
-    "section1": {
-      "title": "I. Architektura Manipulacji: Profil i Metodologia",
-      "intro": "Strategiczne zrozumienie profilu psychologicznego głównego inicjatora (Barbara A.) jest fundamentalne. Jej działania nie były impulsami, lecz częścią \"zimnego, uporządkowanego planu\" odzyskania kontroli nad synem i majątkiem.",
-      "sub1": {
-        "title": "1.1. Profil Psychologiczny: Archetyp \"Pożerającej Matki\"",
-        "content": "Działania wpisują się w jungowski archetyp Pożerającej Matki (Devouring Mother). Zamiast puścić dziecko wolno, próbuje symbolicznie je pochłonąć. Niezależność syna była postrzegana jako osobisty atak. Stworzyła patologiczny emocjonalny kazirodztwo (enmeshment), gdzie dom rodzinny zamienił się w więzienie poczucia winy."
-      },
-      "sub2": {
-        "title": "1.2. Metodyczna Dekonstrukcja Taktyk",
-        "table": {
-          "tactic": "Taktyka",
-          "description": "Opis",
-          "goal": "Cel"
-        },
-        "tactics": {
-          "obsessiveDoc": {
-            "name": "Obsesyjna Dokumentacja (\"Kalendarz Wiedźmy\")",
-            "desc": "Selektywny rejestr fałszywych oskarżeń, sporządzany ex ante jako scenariusz na proces sądowy.",
-            "goal": "Wytworzenie materiału dowodowego."
-          },
-          "provocation": {
-            "name": "Prowokacja i Eskalacja",
-            "desc": "Wtargnięcia nocne (02:30) lub wyłączanie prądu w obecności policji.",
-            "goal": "Wywołanie Reactive Abuse – oprawienie obrony ofiary jako agresji."
-          },
-          "blackmail": {
-            "name": "Szantaż Emocjonalny i Prawny",
-            "desc": "Groźby odwołania darowizny \"jako kara\".",
-            "goal": "Utrzymanie ofiary w permanentnym stanie niepewności."
-          },
-          "reverseTriage": {
-            "name": "Odwrócony Triaż",
-            "desc": "Podczas nagłego stanu zdrowia męża priorytetowe traktowanie sporu o kluczyki do zapisu w kalendarzu.",
-            "goal": "Dokumentacja przed pomocą."
-          }
-        }
-      },
-      "sub3": {
-        "title": "1.3. Symbolika \"Kotła Krzywd\"",
-        "content": "Centralnym instrumentem był metaforyczny \"Kocioł Krzywd\". Rezerwuar, w którym urazy, stare rany i zmyślenia były stale \"podgrzewane\", by zatruwać atmosferę i usprawiedliwiać działania."
-      }
-    },
-    "section2": {
-      "title": "II. Instrumentalizacja Otoczenia",
-      "intro": "Prywatna wendeta została legitymizowana poprzez transformację członków rodziny w marionetki.",
-      "sub1": {
-        "title": "2.1. Studium Przypadku: Sylwester A. – Tragiczna Marionetka",
-        "point1": {
-          "title": "Fundament Zależności",
-          "content": "Jego stan po udarze (ograniczenia poznawcze) uczynił go podatnym na manipulację."
-        },
-        "point2": {
-          "title": "Przejęcie Władzy",
-          "content": "Uzyskanie pełnomocnictwa notarialnego (\"Kluczyk do jej Pokémona\") dwa dni po wszczęciu procedury Niebieskiej Karty."
-        },
-        "point3": {
-          "title": "Dowód Manipulacji",
-          "content": "3 sierpnia Sylwester zeznaje policji, że syn go nie obraża. 6 sierpnia wysyłane jest w jego imieniu pismo z przeciwnym twierdzeniem. Odręczny dopisek \"Na wypadek kwestionowania mojej świadomości...\" to klasyczna freudowska projekcja winy."
-        }
-      },
-      "sub2": {
-        "title": "2.2. Rola Postaci Drugoplanowych",
-        "role1": {
-          "title": "Inspiratorka (\"Sroka Dorota\")",
-          "content": "Siostra doradzająca prowadzenie \"kalendarza\" i stawianie prawnych pułapek."
-        },
-        "role2": {
-          "title": "Rodzinne Echo (\"Bociany z Podciętymi Skrzydłami\")",
-          "content": "Rodzeństwo pasywnie przejmujące fałszywą narrację matki i legitymizujące izolację brata."
-        }
-      }
-    },
-    "section3": {
-      "title": "III. Eskalacja Systemowa: Zawodność Instytucji",
-      "intro": "Konflikt eskalował, gdy instytucje państwowe, zaprojektowane do ochrony, stały się bronią przeciwko Dariuszowi A.",
-      "sub1": {
-        "title": "3.1. Policja i \"Niebieska Karta\"",
-        "content": "Procedura nie została wszczęta dla ochrony, lecz jako amunicja do sprawy cywilnej. Policja (\"Smerfy\") zignorowała kontekst prowokacji (np. celowe wyłączanie prądu), legitymizując narrację agresora."
-      },
-      "sub2": {
-        "title": "3.2. Zdrada Systemu Prawnego (Adwokaci)",
-        "betrayal1": {
-          "title": "Zdrada Pierwotna (Adw. \"Hiena\")",
-          "content": "Zmuszenie klienta 5 minut przed rozprawą do przyznania się do winy w sprawie karnej pod fałszywą obietnicą \"zakończenia konfliktu\". Stworzyło to prejudykat używany później przeciwko niemu."
-        },
-        "betrayal2": {
-          "title": "Zdrada Wtórna (Adw. \"Sarna\")",
-          "content": "Pasywność i sabotaż w celu ochrony reputacji kolegi zamiast reprezentowania interesów klienta."
-        }
-      },
-      "sub3": {
-        "title": "3.3. Błąd Sądowy (Sąd I Instancji)",
-        "error1": "Ślepe zaufanie do prejudykatu: wyrok karny został bezkrytycznie przyjęty.",
-        "error2": "Fundamentalny błąd prawny: pomylenie \"Służebności Osobistej\" ze \"Zobowiązaniem Dożywocia\", tworząc fikcyjne zobowiązania finansowe."
-      }
-    },
-    "section4": {
-      "title": "IV. Trajektoria Ofiary: Reakcja na Zaciśnięcie",
-      "intro": "Działania Dariusza A. nie były agresją, lecz mechanizmami obronnymi.",
-      "sub1": {
-        "title": "4.1. Inwestycja i Dobra Wola",
-        "financial": {
-          "label": "Finansowo",
-          "content": "Inwestycje 160.000 - 255.000 PLN w remont domu (panele słoneczne, dach, izolacja)."
-        },
-        "care": {
-          "label": "Opieka",
-          "content": "Powrót z emigracji, by opiekować się ojcem po jego udarze."
-        }
-      },
-      "sub2": {
-        "title": "4.2. Obrona Oprawiona jako Agresja",
-        "table": {
-          "action": "Działanie",
-          "reality": "Rzeczywistość"
-        },
-        "actions": {
-          "cameras": {
-            "action": "Instalacja kamer",
-            "reality": "Reakcja na kradzież narzędzi i naruszenie prywatności."
-          },
-          "avoidance": {
-            "action": "Unikanie kontaktu",
-            "reality": "Deeskalacja. Spanie w warsztacie, by uniknąć prowokacji."
-          },
-          "destruction": {
-            "action": "Dewastacja (zalutowanie toalety)",
-            "reality": "Desperacki, symboliczny akt bezsilności dotyczący zewnętrznej toalety."
-          }
-        }
-      },
-      "sub3": {
-        "title": "4.3. Diagnoza i Paradoks Wyzwolenia",
-        "diagnosis": {
-          "label": "Diagnoza",
-          "content": "C-PTSD (Złożony Zespół Stresu Pourazowego) jako racjonalna odpowiedź na 4 lata systemowego maltretowania."
-        },
-        "capitulation": {
-          "label": "Strategiczna Kapitulacja",
-          "content": "Rezygnacja z apelacji nie była porażką, lecz \"ceną za wolność\"."
-        }
-      }
-    },
-    "section5": {
-      "label": "Wnioski",
-      "title": "V. Wnioski: Pyrrusowe Zwycięstwo",
-      "sub1": {
-        "title": "5.1. Analiza Wyniku",
-        "barbara": {
-          "title": "Puste Zwycięstwo (Barbara)",
-          "content": "Ma dom, ale też samotność i \"tykającą bombę\": obowiązek zwrotu inwestycji (ok. 250k PLN)."
-        },
-        "dariusz": {
-          "title": "Wolność w Stracie (Dariusz)",
-          "content": "Przerywając walkę, odzyskał kontrolę nad swoim życiem i zdrowiem psychicznym."
-        }
-      },
-      "sub2": {
-        "title": "5.2. Rekomendacje dla Profesjonalistów",
-        "rec1": "Rozpoznawanie dynamiki władzy (kontrola vs. troska).",
-        "rec2": "System prawny musi uwzględniać kontekst psychologiczny, by zapobiegać instrumentalizacji.",
-        "rec3": "Czasami \"opuszczenie pola walki\" jest jedynym zwycięstwem."
-      }
-    },
-    "footer": "Raport Analityczny – Radio Adamowo Research"
-  },
   "programy": {
     "title": "Programy Edukacyjne",
     "description": "Nasze programy to nie zwykłe audycje radiowe – to strukturalne moduły edukacyjne prowadzone przez ekspertów. Każdy program oferuje unikalne perspektywy na manipulację psychiczną, toksyczne relacje i ścieżki wyjścia z przemocy.",
@@ -3074,43 +2715,6 @@
     "additionalInfo": {
       "title": "Dlaczego \"programy\", a nie \"audycje\"?",
       "description": "Traktujemy nasze programy jako strukturalne moduły edukacyjne, nie jako zwykłą ramówkę radiową. Każdy program to przemyślany kurs prowadzony przez specjalistów, z jasnym celem edukacyjnym i progresją tematów. To podejście podnosi wartość treści i lepiej komunikuje edukacyjny charakter platformy."
-    }
-  },
-  "teatr": {
-    "meta": {
-      "title": "Teatr Absurdu - Dom z Papieru i Pianki",
-      "description": "Kabaret rodzinny w trzech aktach. Satyra oparta na rzeczywistych wydarzeniach z polskiego wymiaru sprawiedliwości."
-    },
-    "title": "Dom z Papieru i Pianki Montażowej",
-    "subtitle": "Kabaret Rodzinny w Trzech Aktach",
-    "tagline": "Za cenę dwóch kaw u notariusza kupiłem sobie bilet do piekła",
-    "warning": {
-      "title": "Uwaga",
-      "content": "Poniższy materiał to satyra oparta na rzeczywistych wydarzeniach. Wszystkie fakty (daty, kwoty, cytaty) są autentyczne i udokumentowane. Zmieniono tylko formę narracji — z protokołu sądowego na scenariusz teatralny."
-    },
-    "acts": {
-      "fullPlay": {
-        "title": "Spektakl Pełny",
-        "description": "Trzy akty, prolog i epilog. Kompletna historia od darowizny do wyroku.",
-        "button": "Czytaj"
-      },
-      "analysis": {
-        "title": "Analiza Przedmeczowa",
-        "description": "Zestawienie sił, taktyk i uzbrojenia. Kto miał co w arsenale?",
-        "button": "Analiza"
-      },
-      "documentary": {
-        "title": "Wersja Dokumentalna",
-        "description": "Fakty bez metafor. Protokóły, wyroki, zeznania.",
-        "button": "Dowody"
-      }
-    },
-    "context": {
-      "title": "Kontekst dla nowych widzów",
-      "paragraph1": "Ta historia to rzeczywisty przypadek konfliktu rodzinnego, który przeszedł przez polski wymiar sprawiedliwości (2021-2025). Sprawa dotyczyła cofnięcia darowizny gospodarstwa z powodu \"rażącej niewdzięczności\".",
-      "question": "Dlaczego satyra?",
-      "answer": "Bo czasem jedynym sposobem na przeżycie absurdu jest śmiech. A system, który pozwala na wykorzystanie \"Niebieskiej Karty\" jako dowodu w sporze majątkowym, zasługuje na kabaret.",
-      "link": "Przeczytaj pełną chronologię wydarzeń (wersja poważna)"
     }
   }
 }

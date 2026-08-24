@@ -11,7 +11,6 @@ import {
 import { DocumentarySection } from '../features/documentary/DocumentarySection';
 import { FinalLessonSection } from '../features/final-lesson/FinalLessonSection';
 import { PlatformInfoSection } from '../features/platform-info/PlatformInfoSection';
-import { TimelineSection } from '../features/timeline/TimelineSection';
 import { TrackHighlightsSection } from '../features/track-highlights/TrackHighlightsSection';
 import { ViolenceLoopSection } from '../features/violence-loop/ViolenceLoopSection';
 import { AnalysisTeaser } from '../features/analizy/AnalysisTeaser';
@@ -122,7 +121,6 @@ export default function Home(): ReactElement {
       icon: <InformationCircleIcon className="h-5 w-5" />,
       content: (
         <div className="space-y-12">
-          <TimelineSection />
           <PlatformInfoSection />
         </div>
       ),

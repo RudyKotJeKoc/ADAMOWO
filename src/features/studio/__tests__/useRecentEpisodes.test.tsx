@@ -36,7 +36,7 @@ const sampleEpisodes: Episode[] = [
     id: 'team-ep',
     title: 'Studio Update',
     slug: 'studio-update',
-    category: 'SprawaAdamskich',
+    category: 'Sledztwo',
     tags: [],
     description: 'Weekly briefing.',
     durationSec: 1200,

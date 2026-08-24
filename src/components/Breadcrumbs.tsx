@@ -15,7 +15,6 @@ const routeLabels: Record<string, string> = {
   studio: 'navigation.studio',
   shows: 'navigation.shows',
   guides: 'navigation.guide',
-  'polana-klamstw': 'navigation.polanaKlamstw',
   anatomy: 'navigation.anatomy',
   lab: 'navigation.lab',
   community: 'navigation.community',

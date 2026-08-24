@@ -6,19 +6,16 @@
     "live": "Live",
     "analizy": "Analyses",
     "taxonomy": "Taxonomie",
-    "caseStudy": "Casestudy",
     "programy": "Programma's",
     "violenceLoop": "Geweldscyclus",
     "studio": "Studio",
     "shows": "Programma's",
     "guide": "Gids",
-    "polanaKlamstw": "Weide van Leugens",
     "anatomy": "Anatomie",
     "lab": "Lab",
     "community": "Gemeenschap",
     "media": "Media",
     "sitemap": "Sitemap",
-    "teatr": "Theater van het Absurde",
     "help": "Hulp"
   },
   "header": {
@@ -47,31 +44,6 @@
       "nl": "Nederlands",
       "en": "Engels"
     }
-  },
-  "polanaKlamstw": {
-    "title": "Weide van Leugens",
-    "subtitle": "Een hedendaagse sprookje over hoe echo sterker kan zijn dan stem, en vrijheid kostbaarder dan rijkdom.",
-    "tableOfContents": "Inhoudsopgave",
-    "prolog": "Proloog",
-    "chapter": "Hoofdstuk",
-    "epilog": "Epiloog",
-    "previousChapter": "Vorig hoofdstuk",
-    "nextChapter": "Volgend hoofdstuk",
-    "backToContents": "Terug naar inhoudsopgave",
-    "continueReading": "Doorgaan met lezen vanaf het laatste hoofdstuk?",
-    "chaptersRead": "hoofdstukken gelezen",
-    "totalReadingTime": "Totale leestijd",
-    "contentWarning": "Inhoudswaarschuwing",
-    "contentWarningText": "Dit verhaal behandelt moeilijke familiale onderwerpen, waaronder psychologische manipulatie, familieconflicten en het functioneren van het rechtssysteem. De inhoud kan uitdagend zijn voor degenen die vergelijkbare situaties hebben meegemaakt.",
-    "warningTopic1": "Psychologische manipulatie",
-    "warningTopic2": "Familieconflict",
-    "warningTopic3": "Juridische systeemproblemen",
-    "warningTopic4": "Emotioneel misbruik",
-    "genre": "Genre",
-    "timespan": "Periode",
-    "chapters": "Hoofdstukken",
-    "totalWords": "Woorden",
-    "themes": "Belangrijkste thema's"
   },
   "pages": {
     "home": {
@@ -105,7 +77,7 @@
       "anchorNav": "Navigatie door de gids",
       "links": {
         "library": "Casusbibliotheek",
-        "mythology": "Mythologie van de narcist"
+        "familyPsychology": "Psychologie van familiepatronen"
       }
     },
     "lab": {
@@ -205,7 +177,7 @@
         },
         "analysis": {
           "title": "Analyses",
-          "description": "Toegang tot archief, tijdlijnen en de Vloek van Acht."
+          "description": "Toegang tot het analysearchief en de nieuwste educatieve materialen."
         },
         "research": {
           "title": "Studio & onderzoek",
@@ -226,11 +198,7 @@
         "lab": "AI Lab",
         "analysis": "Analyse-archief",
         "analizy": "Analyses",
-        "timeline": "Conflicttijdlijn",
-        "curse": "Vloek van Acht",
         "studio": "Studio",
-        "caseStudy": "Casestudy",
-        "polana": "Weide van Leugens",
         "guides": "Handleidingen",
         "help": "Hulp",
         "community": "Community",
@@ -303,7 +271,7 @@
         "link": "guide"
       },
       "violenceLoop": {
-        "title": "Heksenketel: Geweldsloop",
+        "title": "Geweldsloop",
         "description": "Geanimeerde visualisatie van de geweldscyclus in de vorm van een oneindige lus. Leer de fasen: Love Bombing, Devaluatie, Afwijzing en Hoovering. Begrijp waarom het zo moeilijk is om uit een toxische relatie te ontsnappen.",
         "link": "violence-loop"
       },
@@ -542,38 +510,6 @@
       "reconnecting": "Opnieuw verbinden..."
     }
   },
-  "whisper": {
-    "regionLabel": "Fluistering achter het gordijn — gereconstrueerde hoorzitting",
-    "length": "Duur van de opname",
-    "title": "Fluistering achter het gordijn",
-    "subtitle": "De opname legt een gespannen openbare hoorzitting uit 2017 vast.",
-    "ethics": {
-      "title": "Ethische luisternotities",
-      "body": [
-        "Luister met empathie — elke zucht is van een echt persoon.",
-        "Let op pauzes en stiltes; machtsdynamiek zit tussen de regels.",
-        "Noteer feiten en vermijd oordelen — het materiaal dient onderwijs en preventie."
-      ]
-    },
-    "play": "Afspelen",
-    "pause": "Pauze",
-    "restart": "Opnieuw starten",
-    "mute": "Dempen",
-    "unmute": "Geluid aan",
-    "scrub": "Tijdlijn",
-    "volume": "Volume",
-    "status": {
-      "paused": "Afspelen gepauzeerd.",
-      "playing": "Afspelen actief.",
-      "ended": "Opname beëindigd.",
-      "error": "Audiobestand kan niet worden afgespeeld.",
-      "restarted": "Opnieuw gestart vanaf het begin.",
-      "seeked": "Afspelpositie gewijzigd.",
-      "muted": "Geluid gedempt.",
-      "unmuted": "Geluid hersteld.",
-      "volume": "Volume ingesteld op {{value}}%"
-    }
-  },
   "library": {
     "kicker": "Casusbibliotheek",
     "title": "Casusbibliotheek",
@@ -609,9 +545,9 @@
       "community": "steun"
     },
     "entries": {
-      "caseAdamscy": {
-        "title": "Zaak Adamski: introductie",
-        "summary": "Familie Adamski meldde een subtiele maar groeiende campagne van isolatie en devaluatie door het gezinshoofd.",
+      "familyIsolationCase": {
+        "title": "Casestudy: gezinsisolatie",
+        "summary": "Een gezin meldde een subtiele maar groeiende campagne van isolatie en devaluatie door het gezinshoofd.",
         "content": [
           "De analyse begint met dagelijkse observaties: afgesloten deuren, afgebroken gesprekken en strakke controle over het familieschema.",
           "Er verschijnen pogingen om banden te breken — cadeaus voor enkelen, kritiek op de rest en dreiging om geldstromen stop te zetten.",
@@ -638,7 +574,7 @@
             "title": "Bewijs verzameld en interventie"
           }
         ],
-        "resources": ["Observatierapport familie Adamski", "Checklist signalen van isolatie"]
+        "resources": ["Observatierapport van het gezin", "Checklist signalen van isolatie"]
       },
       "calendarAnalysis": {
         "title": "Kalenderanalyse: kroniek van escalatie",
@@ -729,130 +665,10 @@
       }
     }
   },
-  "mythology": {
-    "kicker": "Mythologie van de narcist",
-    "title": "Mythologie van de narcist",
-    "intro": "Vier waarschuwingssymbolen voor controle: 7 — ideaal pact, 4 — afhankelijkheidsnet, 8 — terugkeerlus, 13 — alarmsignaal.",
-    "gridLabel": "Symbolen van de narcist",
-    "viewSymbol": "Bekijk symbool",
-    "symbolCode": "Symbool {{code}}",
-    "detailKicker": "Het symbool ontcijferen",
-    "blocks": {
-      "meaning": "Betekenis",
-      "when": "Wanneer zichtbaar",
-      "actions": "Aanpak"
-    },
-    "symbol": {
-      "7": {
-        "title": "Zeven",
-        "subtitle": "Symbool van het perfecte pact",
-        "meaning": [
-          "Belofte van een uitzonderlijke afspraak buiten sociale normen.",
-          "Verklaringen van totale loyaliteit in ruil voor controle."
-        ],
-        "when": [
-          "Wanneer de narcist een geheime samenwerking of 'speciale' deal aanbiedt.",
-          "Tijdens plotselinge cadeaus na conflicten.",
-          "Vlak voordat om een riskant loyaliteitsgebaar wordt gevraagd."
-        ],
-        "action": [
-          "Vraag naar concrete gevolgen en neem bedenktijd.",
-          "Bespreek het aanbod met een vertrouweling voordat je toestemt."
-        ]
-      },
-      "4": {
-        "title": "Vier",
-        "subtitle": "Symbool van het gesloten netwerk",
-        "meaning": [
-          "Vier pijlers van afhankelijkheid: emotie, geld, reputatie, toegang tot geliefden.",
-          "Toont een systeem waarin elke keuze vier controlehendels heeft."
-        ],
-        "when": [
-          "Wanneer financiële steun gepaard gaat met volledige verantwoording.",
-          "Als de dader bepaalt wie jouw vrienden mogen zijn."
-        ],
-        "action": [
-          "Breng alternatieve steun in kaart buiten de dader om.",
-          "Splits afhankelijkheden: eigen budget, andere communicatieroutes.",
-          "Zeker vandaag nog één pijler veilig."
-        ]
-      },
-      "8": {
-        "title": "Acht",
-        "subtitle": "Symbool van de terugkeerlus",
-        "meaning": [
-          "Eindeloze belofte van verbetering.",
-          "Toont de cyclus: 'nooit meer' wordt 'weer opnieuw'.",
-          "Verwijst naar de verslavende dynamiek van uit elkaar gaan en terugkomen."
-        ],
-        "when": [
-          "Na een breuk wanneer direct therapie of verandering wordt beloofd.",
-          "Als de afspraken agenda op een sinusgolf lijkt.",
-          "Direct nadat het slachtoffer grenzen of ultimata stelt."
-        ],
-        "action": [
-          "Noteer voorwaarden voor terugkeer en plan een evaluatiemoment.",
-          "Volg echte verandering, niet alleen woorden."
-        ]
-      },
-      "13": {
-        "title": "Dertien",
-        "subtitle": "Symbool van breuk en alarm",
-        "meaning": [
-          "Aankondiging van een drastische breuk als dreigement.",
-          "Kan wijzen op escalatie naar economisch of juridisch geweld."
-        ],
-        "when": [
-          "Wanneer wordt gedreigd met het afpakken van kinderen of bezit.",
-          "Als het slachtoffer vertrek of bewijsdeling voorbereidt.",
-          "Vlak voor grote gebeurtenissen: feestdagen, contract, verhuizing."
-        ],
-        "action": [
-          "Beveilig documenten en noodcontacten.",
-          "Informeer een vertrouwenspersoon over mogelijke escalatie.",
-          "Maak een veiligheidsplan en verken lokale hulpbronnen."
-        ]
-      }
-    },
-    "keyFindings": {
-      "title": "Belangrijkste Bevindingen",
-      "summary": "Vier waarschuwingssymbolen helpen fasen van narcistische manipulatie te herkennen: van idealisering (7), via opbouwen van afhankelijkheid (4), de terugkeerlus (8), tot escalatie van dreigingen (13).",
-      "finding1": {
-        "label": "Symbool 7: Herken het idealisatiepact",
-        "description": "Eis tijd om na te denken voordat je 'speciale' deals accepteert"
-      },
-      "finding2": {
-        "label": "Symbool 4: Breng afhankelijkheden in kaart",
-        "description": "Identificeer de 4 controlepijlers en zorg voor alternatieve steun"
-      },
-      "finding3": {
-        "label": "Symbool 8: Monitor beloften",
-        "description": "Volg echte veranderingen, niet alleen verklaringen na verzoening"
-      },
-      "finding4": {
-        "label": "Symbool 13: Bereid een veiligheidsplan voor",
-        "description": "Beveilig documenten en informeer vertrouwelingen over risico's"
-      }
-    },
-    "controls": {
-      "theme": {
-        "label": "Thema",
-        "system": "Systeemthema",
-        "systemShort": "SYS",
-        "light": "Lichte modus",
-        "lightShort": "LIC",
-        "dark": "Donkere modus",
-        "darkShort": "DON",
-        "current": "Actueel: {{value}}",
-        "resolved_dark": "donkere modus",
-        "resolved_light": "lichte modus"
-      }
-    }
-  },
   "documentary": {
     "sectionLabel": "Documentaire",
-    "title": "De zaak Adamowo: autopsie van een familieoorlog",
-    "description": "Een onderzoek naar de machtsstructuren die het gezin uit Adamowo verbraken — en naar de strategieën waarmee gemeenschappen geweld kunnen doorbreken.",
+    "title": "Autopsie van een familieoorlog",
+    "description": "Een onderzoek naar de machtsstructuren die gezinnen uiteendrijven — en naar de strategieën waarmee gemeenschappen geweld kunnen doorbreken.",
     "player": {
       "controlsGroup": "Videobediening",
       "play": "Video afspelen",
@@ -1221,7 +1037,6 @@
     "categories": {
       "AktDarowania": "Schenkingsakte",
       "SłużebnośćUwiązania": "Dienstbaarheid Verstrengeling",
-      "SprawaAdamskich": "Adamski-zaak",
       "BronNarcyza": "Wapen van de Narcist",
       "Sledztwo": "Onderzoek"
     },
@@ -1439,7 +1254,7 @@
   "finalLesson": {
     "sectionLabel": "Laatste les",
     "title": "Laatste les",
-    "description": "Wat we meenemen uit de zaak Adamowo en waar directe hulp te vinden is.",
+    "description": "Wat we meenemen en waar directe hulp te vinden is.",
     "summary": {
       "title": "Belangrijkste inzichten",
       "cycle": "Geweld is structureel: patronen keren terug tenzij de machtsbalans verschuift.",
@@ -2093,15 +1908,15 @@
     }
   },
   "donation": {
-    "title": "Ondersteun de Wolf met Pizza",
-    "description": "Radio Adamowo wordt gebouwd met passie en talloze uren werk. Als onze educatieve missie waardevol voor je is, kun je de wolf ondersteunen met een pizza – een klein gebaar dat ons energie geeft om door te gaan.",
+    "title": "Ondersteun Ons met Pizza",
+    "description": "Radio Adamowo wordt gebouwd met passie en talloze uren werk. Als onze educatieve missie waardevol voor je is, kun je ons ondersteunen met een pizza – een klein gebaar dat ons energie geeft om door te gaan.",
     "feature1": "Ondersteun de ontwikkeling van het educatieve platform",
     "feature2": "Help bij het creëren van waardevolle inhoud",
     "feature3": "Geef brandstof voor onze late-night codesessies",
     "feature4": "Word deel van onze missie",
-    "cta": "Koop een Pizza voor de Wolf",
+    "cta": "Koop een Pizza voor Ons",
     "subtitle": "Elke pizza brengt ons dichter bij een betere wereld",
-    "thanks": "Bedankt voor elke vorm van steun – het maakt echt een verschil! 🐺💙"
+    "thanks": "Bedankt voor elke vorm van steun – het maakt echt een verschil! 🍕💙"
   },
   "familyPsychology": {
     "kicker": "Psychologie van familiepatronen",
@@ -2132,9 +1947,9 @@
         "symbolicDescription": "Een persoon die het patroon ziet, het benoemt en probeert te helpen, maar wordt aangevallen of afgewezen. Het is niet haar schuld – het familiesysteem verdedigt zich tegen verandering."
       },
       "curse": {
-        "title": "Vloek van de Heks – transgenerationele metafoor",
+        "title": "Vloek van generaties – transgenerationele metafoor",
         "metaphorTitle": "Spiegel van generaties",
-        "explanation": "In Slavische folklore betekende de 'vloek van de heks' een vloek die van generatie op generatie overgaat, treffend degenen die niet weten hoe het te doorbreken. In familiepsychologie is dit een metafoor voor het systeem van emotionele transmissie: woede, angst, gevoel van onrecht en behoefte aan controle gaan over van grootouders naar ouders, en dan naar kinderen.",
+        "explanation": "In veel volksverhalen betekende een 'familievloek' een last die van generatie op generatie overgaat, treffend degenen die niet weten hoe het te doorbreken. In familiepsychologie is dit een metafoor voor het systeem van emotionele transmissie: woede, angst, gevoel van onrecht en behoefte aan controle gaan over van grootouders naar ouders, en dan naar kinderen.",
         "primaryWound": "In elke familie bestaat er een 'primaire wond' — een moment waarin iemand werd gedomineerd, verraden, genegeerd of vernederd. Opeenvolgende generaties reproduceren onbewust deze emotie in nieuwe rollen: het slachtoffer wordt de agressor, en de waarnemer wordt het slachtoffer.",
         "breakingPoint": "De vloek verliest zijn kracht op het moment dat iemand het mechanisme ziet en weigert deel te nemen.",
         "quoteTitle": "Voorbeeld van emotionele recursie – geval X (anoniem)",
@@ -2162,8 +1977,8 @@
         "name": "Vader",
         "mechanism": "Dominantie en emotionele druk"
       },
-      "barbara": {
-        "name": "Barbara",
+      "generationTwo": {
+        "name": "Tweede generatie",
         "mechanism": "Vlucht voor druk, vervolgens herhaling van dominante stijl"
       },
       "son": {
@@ -2171,14 +1986,14 @@
         "mechanism": "Afsnijding op zoek naar rust"
       },
       "partner": {
-        "name": "Partner (Julia)",
+        "name": "Partner",
         "mechanism": "Reflectie van patroon, poging om het te stoppen door bewustzijn"
       },
       "note": "Elke pijl vertegenwoordigt de overdracht van een onbewust emotioneel patroon"
     },
     "patterns": {
       "title": "Indicatoren van herhaling van iemands patroon",
-      "caseLabel": "Voorbeeld van Barbara-type defensieve communicatie (universeel patroon)",
+      "caseLabel": "Voorbeeld van defensieve emotionele communicatie (universeel patroon)",
       "affectWriting": {
         "title": "Schrijven in affect en morele toon",
         "description": "Berichten of uitspraken geladen met sterke emoties, beschuldigingen en morele verontwaardiging. Gebrek aan emotionele afstand en reflectie op eigen motivaties."
@@ -2201,7 +2016,7 @@
       }
     },
     "communication": {
-      "title": "Hoe te reageren op Barbara-type emotionele berichten",
+      "title": "Hoe te reageren op dit type emotionele berichten",
       "note": "Bewuste communicatie is geen spel om te winnen, maar een poging tot begrip en bescherming van eigen grenzen.",
       "impulsive": {
         "type": "A: Impulsieve reactie (escalatie)",
@@ -2406,8 +2221,6 @@
       "fromGuides": {
         "library": "Casusbibliotheek",
         "libraryDesc": "Echte verhalen en analyses",
-        "mythology": "Mythologie van Narcissus",
-        "mythologyDesc": "Waarschuwingssymbolen 4, 7, 8, 13",
         "familyPsych": "Familiepsychologie",
         "familyPsychDesc": "Intergenerationele traumaoverdracht",
         "eightSins": "Test van 8 zonden",
@@ -2476,12 +2289,12 @@
         "examples": {
           "ex1": {
             "context": "Familieconflict - moeder verklaart wens tot normalisatie van relaties",
-            "behavior": "Verklaring: 'Ik wil dat het normaal is, zoals altijd. Ik heb familietherapie voorgesteld' (14.04). Tegelijkertijd: bijhouden van kalender belastend voor zoon vanaf februari, consultaties met juridisch adviseur over herroeping schenking (zomer 2021), activering Blauwe Kaart procedure (29.07).",
+            "behavior": "Verklaring: 'Ik wil dat het normaal is, zoals altijd. Ik heb familietherapie voorgesteld.' Tegelijkertijd: bijhouden van een dagboek belastend voor zoon vanaf maanden eerder, consultaties met juridisch adviseur over herroeping schenking, activering van een beschermingsprocedure kort daarna.",
             "analysis": "Dit is klassieke tweesporenstrategie: performatieve verzoening (therapievoorstel) dient als façade voor verborgen agressieve acties (procedurale voorbereidingen). Het voorstel was een schijnactie, berekend om de indruk van goede wil te wekken, terwijl het werkelijke doel het afnemen van eigendom was."
           },
           "ex2": {
             "context": "Zorg voor zieke echtgenoot als verklaard motief",
-            "behavior": "Verklaring van zorg voor welzijn echtgenoot. Werkelijkheid: instrumentalisering van zijn gezondheidstoestand - verkrijgen van volmacht (19.07) kort na escalatie conflict, gebruik ervan voor juridische acties in strijd met zijn eigen verklaringen ('Dariusz beledigt mij niet' vs. claim wegens 'hardnekkige belediging').",
+            "behavior": "Verklaring van zorg voor welzijn echtgenoot. Werkelijkheid: instrumentalisering van zijn gezondheidstoestand - verkrijgen van volmacht kort na escalatie conflict, gebruik ervan voor juridische acties in strijd met zijn eigen verklaringen ('hij beledigt mij niet' vs. claim wegens 'hardnekkige belediging').",
             "analysis": "Verklaarde zorg is façade voor volledige controle. Echtgenoot gedegradeerd tot rol van figurant, wiens gezondheidstoestand werd gebruikt als rechtvaardiging voor vergeldingsacties. Volmacht gebruikt om zijn eigen wil te overschrijven."
           }
         },
@@ -2507,12 +2320,12 @@
         "examples": {
           "ex1": {
             "context": "Melding bij politie van psychologisch misbruik",
-            "behavior": "Barbara: 'is bang voor haar zoon', is in 'ernstige stress', 'wordt psychiatrisch behandeld' vanwege hem. Tegelijkertijd verklaart echtgenoot Sylwester: 'Hij heeft mij noch mijn vrouw ooit geslagen'. Zij initieerde confrontaties (nachtelijke inbraak in kamer van Dariusz).",
+            "behavior": "Moeder: 'is bang voor haar zoon', is in 'ernstige stress', 'wordt psychiatrisch behandeld' vanwege hem. Tegelijkertijd verklaart de vader: 'Hij heeft mij noch mijn vrouw ooit geslagen'. Zij initieerde confrontaties (nachtelijke inbraken in kamer van de zoon).",
             "analysis": "Creëren van dreigende sfeer was opzettelijke psychologische handeling, geen weerspiegeling van werkelijkheid. Gezondheidstoestand instrumenteel gebruikt - als schild (ze kan niet in vraag worden gesteld, want ze lijdt) en tegelijk als wapen (haar lijden is bewijs van schuld van zoon)."
           },
           "ex2": {
-            "context": "Politie-interventie in nacht 17/18 juli 2021",
-            "behavior": "In plaats van op patrouille thuis te wachten, wachtte Barbara samen met vader en zus 'in bos naast terrein'. Dariusz was opgesloten in zijn kamer. Interventie leidde niet tot arrestatie.",
+            "context": "Nachtelijke politie-interventie",
+            "behavior": "In plaats van op patrouille thuis te wachten, wachtte moeder samen met een deel van de familie 'in bos naast terrein'. Zoon was opgesloten in zijn kamer. Interventie leidde niet tot arrestatie.",
             "analysis": "Enscenering van spektakel voor opsporingsinstanties. Gebaar bedoeld om suggestief beeld te creëren van familie gedwongen tot vlucht voor gevaarlijke agressor, wat volledig in strijd was met werkelijkheid."
           },
           "ex3": {
@@ -2542,9 +2355,9 @@
         },
         "examples": {
           "ex1": {
-            "context": "21 mei 2021 - Sylwester Adamski heeft medische hulp nodig",
-            "behavior": "Barbara als verzorger (verzorgingsuitkering 1800 zł/mnd.) eist in plaats van ambulance te bellen sleutels van Dariusz, waardoor confrontatie ontstaat. Prioriteit: opbouwen van procesbewijs ('weigerde te brengen') > gezondheid echtgenoot. Dariusz haalt uiteindelijk ZELF vader op uit ziekenhuis. Barbara laat dit feit opzettelijk WEG in 'kalender'.",
-            "analysis": "Modelvoorbeeld van omgekeerde prioritering. Verklaarde noodsituatie (gezondheid echtgenoot) gedegradeerd tot rekwisiet. Werkelijk doel: fabriceren van onrecht ('harteloze zoon hielp niet'). Gedrag van Barbara is ernstige verwaarlozing van verzorgerplichten. Vervolgens werd feit dat Dariusz vader ophaalde gewist uit narratief - want het zou these van zijn harteloosheid tegenspreken."
+            "context": "Vader heeft dringend medische hulp nodig",
+            "behavior": "Moeder, formele verzorger van vader, eist in plaats van ambulance te bellen sleutels van de zoon, waardoor confrontatie ontstaat. Prioriteit: opbouwen van procesbewijs ('weigerde te brengen') > gezondheid echtgenoot. Zoon haalt uiteindelijk ZELF vader op uit ziekenhuis. Moeder laat dit feit opzettelijk WEG in haar dagboek.",
+            "analysis": "Modelvoorbeeld van omgekeerde prioritering. Verklaarde noodsituatie (gezondheid echtgenoot) gedegradeerd tot rekwisiet. Werkelijk doel: fabriceren van onrecht ('harteloze zoon hielp niet'). Gedrag van moeder is ernstige verwaarlozing van verzorgerplichten. Vervolgens werd feit dat zoon vader ophaalde gewist uit narratief - want het zou de these van zijn harteloosheid tegenspreken."
           }
         },
         "quiz": {
@@ -2569,17 +2382,17 @@
         "examples": {
           "ex1": {
             "context": "Beschuldiging van controle en bewaking",
-            "behavior": "Barbara beschuldigt zoon van haar controleren met camera's. Werkelijkheid: zij zelf houdt gedetailleerde 'kalender' bij die elke beweging van zoon volgt, bezit opnames, komt midden in de nacht (2:30) zijn kamer binnen, probeert in zijn relatie te interfereren.",
+            "behavior": "Moeder beschuldigt zoon van haar controleren met camera's. Werkelijkheid: zij zelf houdt een gedetailleerd dagboek bij dat elke beweging van zoon volgt, bezit opnames, komt midden in de nacht zijn kamer binnen, probeert in zijn relatie te interfereren.",
             "analysis": "Klassieke projectie. Zij vertoont obsessief-controlerend gedrag, maar schrijft het aan zoon toe. Externe monitoring (camera's) is standaard beveiliging van terrein. Haar bewaking is schending van privacy van volwassen persoon."
           },
           "ex2": {
             "context": "Beschuldiging van agressie en vulgariteit",
-            "behavior": "Barbara beschuldigt zoon van agressie. Werkelijkheid: zij brak 's nachts binnen in kamer van Dariusz (2:00) om zijn nicht Julia verbaal aan te vallen ('Franse hoer'). Sylwester verklaart dat Barbara confrontaties initieerde.",
-            "analysis": "Omkering van rollen. Werkelijke dader van verbale agressie en provocatie presenteert zich als slachtoffer. Defensieve reactie van Dariusz (na provocatie) wordt voorgesteld als ongefundeerde aanval."
+            "behavior": "Moeder beschuldigt zoon van agressie. Werkelijkheid: zij brak 's nachts binnen in de kamer van de zoon om zijn partner verbaal aan te vallen met kleinerende taal. De vader verklaart dat moeder de confrontaties initieerde.",
+            "analysis": "Omkering van rollen. Werkelijke dader van verbale agressie en provocatie presenteert zich als slachtoffer. Defensieve reactie van de zoon (na provocatie) wordt voorgesteld als ongefundeerde aanval."
           },
           "ex3": {
             "context": "Beschuldiging van gebrek aan empathie voor zieke vader",
-            "behavior": "Barbara beschuldigt zoon van gebrek aan empathie. Werkelijkheid: zij zelf heeft ziekte van echtgenoot instrumenteel gebruikt (volmacht 19.07 kort na escalatie), gezondheid ondergeschikt gemaakt aan procedureel doel (incident 21.05), hem gebruikt als middel in conflict.",
+            "behavior": "Moeder beschuldigt zoon van gebrek aan empathie. Werkelijkheid: zij zelf heeft de ziekte van echtgenoot instrumenteel gebruikt (volmacht verkregen kort na escalatie), gezondheid ondergeschikt gemaakt aan procedureel doel, hem gebruikt als middel in conflict.",
             "analysis": "Toekenning van gebrek aan empathie aan persoon die feitelijk vader uit ziekenhuis haalde. Werkelijk gebrek aan empathie is instrumentalisering van zieke echtgenoot voor juridische en financiële doelen."
           }
         },
@@ -2605,18 +2418,18 @@
         },
         "examples": {
           "ex1": {
-            "context": "Notitie van 29 maart in 'kalender'",
-            "behavior": "'Darek Dronken dronk met Zaucha (...) na 22 belden we politie, want hij was waarschijnlijk gek geworden'. Gebruik van pejoratieve benaming ('Dronken') en subjectief oordeel ('waarschijnlijk gek geworden') voorgesteld als objectieve beschrijving.",
+            "context": "Notitie in dagboek van moeder",
+            "behavior": "'Zoon kwam dronken thuis, dronk met een vriend (...) na 22 belden we politie, want hij was waarschijnlijk gek geworden'. Gebruik van een pejoratieve bijnaam en subjectief oordeel ('waarschijnlijk gek geworden') voorgesteld als objectieve beschrijving.",
             "analysis": "Dit is geen feitelijke kroniek, dit is actief proces van beoordelen en stigmatiseren. Doel is niet onthouden wat gebeurde, maar creëren van belastend materiaal in schijnbaar neutrale vorm."
           },
           "ex2": {
-            "context": "Notitie van 11 april - 'gedachten lezen'",
-            "behavior": "'Op zondag waren mijn zussen er (...) Hij reed opzettelijk ergens heen met ampera, om niet met Dorota te praten.' Feit (reed weg) + interpretatie (opzettelijk, om niet...) voorgesteld als één.",
+            "context": "Notitie in dagboek - 'gedachten lezen'",
+            "behavior": "'Op zondag kwam de familie op bezoek (...) Hij reed opzettelijk ergens heen, om niet met een familielid te praten.' Feit (reed weg) + interpretatie (opzettelijk, om niet...) voorgesteld als één.",
             "analysis": "Techniek van toekennen van negatieve intenties. Laat geen andere mogelijkheid toe (bijv. eerdere plannen). Dit is zogenaamde attributiefout - toekennen van vijandige motieven aan ambigue gedrag. Herhalend patroon in haar narratief."
           },
           "ex3": {
-            "context": "Kalender februari-augustus 2021",
-            "behavior": "Nauwgezet genoteerd: conflicten, 'verdacht' gedrag, beledigend (volgens haar). Volledig weggelaten: ophalen vader uit ziekenhuis door Dariusz (21.05), zijn investeringen in onroerend goed, welke positieve interacties dan ook.",
+            "context": "Dagboek bijgehouden gedurende enkele maanden",
+            "behavior": "Nauwgezet genoteerd: conflicten, 'verdacht' gedrag, beledigend (volgens haar). Volledig weggelaten: ophalen vader uit ziekenhuis door zoon, zijn investeringen in het familiebezit, welke positieve interacties dan ook.",
             "analysis": "Klinisch voorbeeld van bevestigingsbias (confirmation bias). Dit is geen kroniek, dit is proces van selectie van gegevens die vooraf aangenomen these van slachtoffer zijn bevestigen. Weglaten van ophalen vader uit ziekenhuis is bijzonder grof - dit is zuiveren van narratief van tegenbewijs."
           }
         },
@@ -2643,18 +2456,18 @@
         "examples": {
           "ex1": {
             "context": "Herroeping schenking als 'straf voor ongehoorzaamheid'",
-            "behavior": "Barbara plaatst vermogensconflict in moreel kader: 'grove ondankbaarheid'. Dit is juridisch-moreel etiket dat radicale stappen (herroeping schenking) mogelijk maakt te rechtvaardigen niet als wraakact voor persoonlijke grieven (relatie zoon met nicht), maar als rechtvaardige consequentie van immoreel gedrag.",
-            "analysis": "Privéwraak voorgesteld als herstel van orde. Barbara gebruikte art. 898 § 1 BW als instrument van morele wraak, niet bescherming van schenker (die was Sylwester, niet zij). Dit is zelfautorisatie - zichzelf recht geven op destructieve actie door morele rechtvaardiging."
+            "behavior": "Moeder plaatst vermogensconflict in moreel kader: 'grove ondankbaarheid'. Dit is juridisch-moreel etiket dat radicale stappen (herroeping schenking) mogelijk maakt te rechtvaardigen niet als wraakact voor persoonlijke grieven (een niet-geaccepteerde relatie van de zoon), maar als rechtvaardige consequentie van immoreel gedrag.",
+            "analysis": "Privéwraak voorgesteld als herstel van orde. Moeder gebruikte art. 898 § 1 BW als instrument van morele wraak, niet bescherming van schenker (die was de vader, niet zij). Dit is zelfautorisatie - zichzelf recht geven op destructieve actie door morele rechtvaardiging."
           },
           "ex2": {
             "context": "Gebruik van Blauwe Kaart procedure en Politie",
-            "behavior": "Barbara positioneert zich als burger die bescherming zoekt tegen geweld. Echter zomer 2021 consulteerde zij al met juridisch adviseur over strategie herroeping schenking. BK-procedure geactiveerd na vertrek van Dariusz (geen actuele dreiging). Doel was niet bescherming, maar verkrijgen van formele instrumenten voor strijd om eigendom.",
+            "behavior": "Moeder positioneert zich als burger die bescherming zoekt tegen geweld. Echter had zij al eerder met een juridisch adviseur de strategie voor herroeping van de schenking besproken. De procedure werd geactiveerd na vertrek van de zoon (geen actuele dreiging). Doel was niet bescherming, maar verkrijgen van formele instrumenten voor strijd om eigendom.",
             "analysis": "Instrumentalisering van staatssysteem. Instellingen voor bescherming van slachtoffers van geweld behandeld als middel om procedureel doel te bereiken. Dit is misbruik van systeem onder dekmantel van 'strijd voor veiligheid'."
           },
           "ex3": {
             "context": "Familie als 'koor van steun'",
-            "behavior": "In BK-documentatie: broers en zussen 'stopten met bezoeken uit angst voor gedrag van broer'. Artur en Monika woonden niet in huis, kwamen zelden. Hun 'angst' werd gevormd door eenzijdig narratief van moeder, niet door persoonlijke ervaring.",
-            "analysis": "Betrekken van familie bij sociaal isoleren van Dariusz en versterken van eigen morele positie. Creëren van indruk dat gedrag van zoon door hele omgeving wordt veroordeeld. Dit is opbouwen van 'coalitie' die legitimiteit van eigen acties versterkt."
+            "behavior": "In de documentatie van de zaak: broers en zussen 'stopten met bezoeken uit angst voor gedrag van broer'. Zij woonden niet meer in het ouderlijk huis, kwamen zelden. Hun 'angst' werd gevormd door eenzijdig narratief van moeder, niet door persoonlijke ervaring.",
+            "analysis": "Betrekken van familie bij sociaal isoleren van de zoon en versterken van eigen morele positie. Creëren van indruk dat gedrag van zoon door hele omgeving wordt veroordeeld. Dit is opbouwen van 'coalitie' die legitimiteit van eigen acties versterkt."
           }
         },
         "quiz": {
@@ -2746,7 +2559,7 @@
       "contains": "Pagina bevat",
       "content1": "Beschrijvingen van toxische familierelaties en emotionele manipulatie",
       "content2": "Analyses van cognitieve dissonantie en psychologische mechanismen",
-      "content3": "Voorbeelden uit echte juridische documenten en verklaringen",
+      "content3": "Geanonimiseerde voorbeelden die typische manipulatiepatronen illustreren",
       "content4": "Inhoud over instrumentalisering van rechtssysteem",
       "support": {
         "title": "Je bent niet alleen",
@@ -2770,10 +2583,10 @@
   },
   "taxonomy": {
     "title": "Anatomie van Manipulatie: Taxonomie van Systemische Mechanismen",
-    "lead": "Deze analyse vormt een deconstructie van psychologische, juridische en organisatorische tactieken geïdentificeerd tijdens het Adamowo-onderzoek. Het onderstaande lexicon definieert concrete aanvalsvectoren – van bedrijfsgaslighting tot juridische engineering. Dit is geen theorie, dit is een kaart van systeemfouten.",
+    "lead": "Deze analyse vormt een deconstructie van veelvoorkomende psychologische, juridische en organisatorische tactieken bij familiale, institutionele en professionele conflicten. Het onderstaande lexicon definieert concrete aanvalsvectoren – van bedrijfsgaslighting tot juridische engineering.",
     "footer": {
       "title": "Methodologische Opmerking",
-      "content": "Deze taxonomie werd ontwikkeld op basis van documentatie, getuigenissen en analyse van echte gevallen. Elke tactiek beschrijft specifieke systemische mechanismen geïdentificeerd tijdens het onderzoek. Dit zijn geen theoretische constructies – dit zijn gedocumenteerde actiepatronen."
+      "content": "Deze taxonomie werd ontwikkeld op basis van terugkerende patronen beschreven in psychologische en juridische literatuur. Elke tactiek beschrijft een veralgemeend systemisch mechanisme, geen specifiek, individueel geval."
     },
     "categories": {
       "corporate": {
@@ -2808,7 +2621,7 @@
       },
       "obsessiveDocumentation": {
         "name": "Obsessieve Documentatie",
-        "description": "Creëren van selectieve, valse ex ante documentatie uitsluitend ontworpen voor toekomstige rechtszaken (\"Heksenkalender\")."
+        "description": "Creëren van selectieve, tendentieuze ex ante documentatie uitsluitend ontworpen voor toekomstige rechtszaken (een zogenoemde \"belastende kalender\")."
       },
       "evidentialProvocation": {
         "name": "Bewijsprovocatie",
@@ -2816,7 +2629,7 @@
       },
       "dependentInstrumentalization": {
         "name": "Afhankelijke Instrumentalisering",
-        "description": "Exploiteren van ziekte van dierbaren en goedkope volmachten om vijandige vastgoedacties te legitimeren (\"Pokémon Sleutel\")."
+        "description": "Exploiteren van ziekte van dierbaren en goedkope volmachten om vijandige vastgoedacties te legitimeren."
       },
       "proceduralBetrayal": {
         "name": "Procesverraad",
@@ -2834,214 +2647,6 @@
         "name": "Moreel Relativisme",
         "description": "Sociale acceptatie van kleine fraudes, leidend tot erosie van vertrouwen in instellingen en isolatie van individuen die principes volgen."
       }
-    }
-  },
-  "caseStudy": {
-    "label": "Casestudy",
-    "title": "Analytisch Rapport: Casestudy van Instrumentalisering van het Rechtssysteem en Psychologische Manipulatie",
-    "subtitle": "De Anatomie van Psychosociale Oorlogvoering",
-    "intro": "Dit document is een gespecialiseerde analyse van een casus die ver buiten de kaders van een typisch familieconflict treedt. Het betreft een studie naar methodische psychosociale oorlogvoering. Het doel is de deconstructie van complexe manipulatiemechanismen, juridische instrumentalisering en systeemfalen. Deze analyse toont aan hoe beschermingsmechanismen (zoals de \"Blauwe Kaart\"-procedure) wapens werden in een privévendetta.",
-    "section1": {
-      "title": "I. Architectuur van Manipulatie: Profiel en Methodologie",
-      "intro": "Het strategisch begrijpen van het psychologisch profiel van de hoofdinitiator (Barbara A.) is fundamenteel. Haar acties waren geen impulsen, maar onderdeel van een \"koud, geordend plan\" om controle over zoon en vermogen te herwinnen.",
-      "sub1": {
-        "title": "1.1. Psychologisch Profiel: Archetype \"De Verslindende Moeder\"",
-        "content": "De acties passen in het Jungiaanse archetype van de Devouring Mother. In plaats van het kind los te laten, probeert zij het symbolisch te verzwelgen. De onafhankelijkheid van de zoon werd gezien als een persoonlijke aanval. Ze creëerde een pathologisch emotioneel incest (enmeshment), waarbij het ouderlijk huis veranderde in een gevangenis van schuldgevoel."
-      },
-      "sub2": {
-        "title": "1.2. Methodische Deconstructie van Tactieken",
-        "table": {
-          "tactic": "Tactiek",
-          "description": "Beschrijving",
-          "goal": "Doel"
-        },
-        "tactics": {
-          "obsessiveDoc": {
-            "name": "Obsessieve Documentatie (\"De Heksenkalender\")",
-            "desc": "Een selectief register van valse beschuldigingen, ex ante opgesteld als script voor de rechtszaak.",
-            "goal": "Vervaardigen van bewijsmateriaal."
-          },
-          "provocation": {
-            "name": "Provocatie & Escalatie",
-            "desc": "'s Nachts binnenvallen (02:30u) of stroom afsluiten in bijzijn van politie.",
-            "goal": "Reactive Abuse uitlokken – de verdediging van het slachtoffer framen als agressie."
-          },
-          "blackmail": {
-            "name": "Emotionele & Juridische Chantage",
-            "desc": "Dreigen met herroeping van schenking \"als straf\".",
-            "goal": "Het slachtoffer in permanente staat van onzekerheid houden."
-          },
-          "reverseTriage": {
-            "name": "Omgekeerde Triage",
-            "desc": "Tijdens medisch noodgeval van haar man prioriteit geven aan ruzie over autosleutels om dit te noteren.",
-            "goal": "Documentatie boven hulpverlening."
-          }
-        }
-      },
-      "sub3": {
-        "title": "1.3. Symboliek van de \"Ketel van Leed\"",
-        "content": "Het centrale instrument was de metaforische \"Ketel van Leed\" (Kocioł Krzywd). Een reservoir waarin grieven, oude wonden en verzinsels constant werden \"opgewarmd\" om de sfeer te vergiftigen en acties te rechtvaardigen."
-      }
-    },
-    "section2": {
-      "title": "II. Instrumentalisering van de Omgeving",
-      "intro": "De privévendetta werd gelegitimeerd door familieleden te transformeren tot marionetten.",
-      "sub1": {
-        "title": "2.1. Casestudy: Sylwester A. – Een Tragische Marionet",
-        "point1": {
-          "title": "Fundament van Afhankelijkheid",
-          "content": "Zijn toestand na een beroerte (cognitieve beperkingen) maakte hem manipuleerbaar."
-        },
-        "point2": {
-          "title": "De Machtsovername",
-          "content": "Verkrijgen van een notariële volmacht (\"De sleutel tot haar Pokémon\") twee dagen na het starten van de Blauwe Kaart-procedure."
-        },
-        "point3": {
-          "title": "Bewijs van Manipulatie",
-          "content": "Op 3 augustus verklaart Sylwester aan de politie dat zijn zoon hem niet beledigt. Op 6 augustus wordt namens hem een brief verstuurd met het tegenovergestelde. De handgeschreven toevoeging \"Voor het geval mijn bewustzijn wordt betwist...\" is een klassieke Freudiaanse projectie van schuld."
-        }
-      },
-      "sub2": {
-        "title": "2.2. De Rol van Bijfiguren",
-        "role1": {
-          "title": "De Inspirator (\"Ekster Dorota\")",
-          "content": "De zus die adviseerde om de \"kalender\" te voeren en juridische valstrikken te zetten."
-        },
-        "role2": {
-          "title": "De Familiale Echo (\"Ooievaars met Geknipte Vleugels\")",
-          "content": "Broers en zussen die passief het valse narratief van de moeder overnamen en de isolatie van de broer legitimeerden."
-        }
-      }
-    },
-    "section3": {
-      "title": "III. Systemische Escalatie: Falen van Instituties",
-      "intro": "Het conflict escaleerde toen staatsinstellingen, bedoeld voor bescherming, wapens werden tegen Dariusz A.",
-      "sub1": {
-        "title": "3.1. Politie en de \"Blauwe Kaart\" (Niebieska Karta)",
-        "content": "De procedure werd niet gestart voor bescherming, maar als munitie voor een civiele rechtszaak. De politie (\"Smurfen\") negeerde de context van provocaties (bv. het opzettelijk uitschakelen van elektriciteit) en legitimeerde zo het narratief van de agressor."
-      },
-      "sub2": {
-        "title": "3.2. Verraad van het Rechtssysteem (Advocaten)",
-        "betrayal1": {
-          "title": "Het Oerverraad (Adv. \"Hyena\")",
-          "content": "Dwingt de cliënt 5 minuten voor de zitting schuld te bekennen in een strafzaak met de valse belofte van \"einde conflict\". Dit creëerde een prejudicieel vonnis dat later tegen hem werd gebruikt."
-        },
-        "betrayal2": {
-          "title": "Secundair Verraad (Adv. \"Ree\")",
-          "content": "Passiviteit en sabotage om de reputatie van zijn collega te beschermen, in plaats van de belangen van de cliënt."
-        }
-      },
-      "sub3": {
-        "title": "3.3. Gerechtelijke Dwaling (Rechtbank Eerste Aanleg)",
-        "error1": "Blind vertrouwen in het prejudicaat: Het strafvonnis werd onkritisch overgenomen.",
-        "error2": "Fundamentele Rechtsdwaling: Het verwarren van \"Persoonlijk Vruchtgebruik\" (Służebność) met een \"Lijfrente/Verzorgingscontract\" (Dożywocie), waardoor fictieve financiële verplichtingen werden gecreëerd."
-      }
-    },
-    "section4": {
-      "title": "IV. Traject van het Slachtoffer: Reactie op Beknelling",
-      "intro": "De acties van Dariusz A. waren geen agressie, maar verdedigingsmechanismen.",
-      "sub1": {
-        "title": "4.1. Investering en Goede Wil",
-        "financial": {
-          "label": "Financieel",
-          "content": "Investeringen van 160.000 - 255.000 PLN in woningrenovatie (zonnepanelen, dak, isolatie)."
-        },
-        "care": {
-          "label": "Zorg",
-          "content": "Terugkeer uit emigratie om voor de vader te zorgen na diens beroerte."
-        }
-      },
-      "sub2": {
-        "title": "4.2. Verdediging geframed als Agressie",
-        "table": {
-          "action": "Actie",
-          "reality": "Werkelijkheid"
-        },
-        "actions": {
-          "cameras": {
-            "action": "Camera's installeren",
-            "reality": "Reactie op diefstal van gereedschap en inbreuk op privacy."
-          },
-          "avoidance": {
-            "action": "Contact vermijden",
-            "reality": "De-escalatie. Slapen in de werkplaats om provocaties te ontlopen."
-          },
-          "destruction": {
-            "action": "Vernieling (dichtlassen toilet)",
-            "reality": "Een wanhopige, symbolische daad van onmacht betreffende een buitentoilet."
-          }
-        }
-      },
-      "sub3": {
-        "title": "4.3. Diagnose en de Paradox van Bevrijding",
-        "diagnosis": {
-          "label": "Diagnose",
-          "content": "C-PTSS (Complex Post-Traumatische Stress Stoornis) als rationele reactie op 4 jaar systemisch misbruik."
-        },
-        "capitulation": {
-          "label": "Strategische Capitulatie",
-          "content": "Het afzien van hoger beroep was geen nederlaag, maar een \"prijs voor vrijheid\"."
-        }
-      }
-    },
-    "section5": {
-      "label": "Conclusies",
-      "title": "V. Conclusies: De Pyrrhusoverwinning",
-      "sub1": {
-        "title": "5.1. Analyse van het Resultaat",
-        "barbara": {
-          "title": "De Lege Overwinning (Barbara)",
-          "content": "Ze heeft het huis, maar ook de eenzaamheid en een \"tikkende tijdbom\": de verplichting om de investeringen (ca. 250k PLN) terug te betalen."
-        },
-        "dariusz": {
-          "title": "Vrijheid in Verlies (Dariusz)",
-          "content": "Door het gevecht te staken, herwon hij controle over zijn leven en geestelijke gezondheid."
-        }
-      },
-      "sub2": {
-        "title": "5.2. Aanbevelingen voor Professionals",
-        "rec1": "Herken machtsdynamiek (controle vs. zorg).",
-        "rec2": "Het rechtssysteem moet oog hebben voor psychologische context om instrumentalisering te voorkomen.",
-        "rec3": "Soms is \"het slagveld verlaten\" de enige overwinning."
-      }
-    },
-    "footer": "Analytisch Rapport – Radio Adamowo Research"
-  },
-  "teatr": {
-    "meta": {
-      "title": "Theater van het Absurde - Huis van Papier en Schuim",
-      "description": "Familiecabaret in drie bedrijven. Satire gebaseerd op echte gebeurtenissen uit het Poolse rechtssysteem."
-    },
-    "title": "Huis van Papier en Montageschuim",
-    "subtitle": "Familiecabaret in Drie Bedrijven",
-    "tagline": "Voor de prijs van twee kopjes koffie bij de notaris kocht ik mezelf een ticket naar de hel",
-    "warning": {
-      "title": "Waarschuwing",
-      "content": "Het volgende materiaal is satire gebaseerd op echte gebeurtenissen. Alle feiten (data, bedragen, citaten) zijn authentiek en gedocumenteerd. Alleen de verhalende vorm is veranderd — van gerechtelijke protocollen naar theatraal script."
-    },
-    "acts": {
-      "fullPlay": {
-        "title": "Volledige Voorstelling",
-        "description": "Drie bedrijven, proloog en epiloog. Volledig verhaal van schenking tot vonnis.",
-        "button": "Lees"
-      },
-      "analysis": {
-        "title": "Pre-Fight Analyse",
-        "description": "Vergelijking van krachten, tactieken en bewapening. Wie had wat in het arsenaal?",
-        "button": "Analyse"
-      },
-      "documentary": {
-        "title": "Documentaire Versie",
-        "description": "Feiten zonder metaforen. Protocollen, vonnissen, getuigenissen.",
-        "button": "Bewijs"
-      }
-    },
-    "context": {
-      "title": "Context voor nieuwe kijkers",
-      "paragraph1": "Dit verhaal is een echte zaak van familieconflict die door het Poolse rechtssysteem ging (2021-2025). De zaak betrof de herroeping van een boerderijschenking wegens \"grove ondankbaarheid\".",
-      "question": "Waarom satire?",
-      "answer": "Omdat soms de enige manier om absurditeit te overleven lachen is. En een systeem dat het gebruik van een \"Blauwe Kaart\" als bewijs in een eigendomsgeschil toestaat, verdient cabaret.",
-      "link": "Lees de volledige chronologie van gebeurtenissen (serieuze versie)"
     }
   }
 }

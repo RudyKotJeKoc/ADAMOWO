@@ -304,7 +304,7 @@ Get current playlist with pagination.
       "total": 145,
       "total_pages": 8
     },
-    "categories": ["ambient", "hiphop", "disco", "barbara", "kids"]
+    "categories": ["ambient", "hiphop", "disco", "kids"]
   }
 }
 ```
@@ -1133,7 +1133,7 @@ test.describe('User Journey', () => {
         await page.waitForSelector('.fa-pause', { timeout: 5000 });
         
         // Navigate to calendar
-        await page.click('a[href="#kalendarium"]');
+        await page.click('a[href="#calendar"]');
         
         // Add comment
         await page.click('#calendar-input');

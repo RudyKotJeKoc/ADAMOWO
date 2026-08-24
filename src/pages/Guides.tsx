@@ -4,20 +4,19 @@ import { Link } from 'react-router-dom';
 
 import { EightSinsPage } from '../features/guide-eight-sins/EightSinsPage';
 import { LibrarySection } from '../features/library/LibrarySection';
-import { MythologySection } from '../features/mythology/MythologySection';
 import { FamilyPsychologySection } from '../features/family-psychology/FamilyPsychologySection';
 import { ExploreMore, type ExploreMoreLink } from '../components/ExploreMore';
 
 /**
  * Guides page component providing educational resources and frameworks.
  *
- * Displays comprehensive guides covering library resources, mythology, family psychology,
+ * Displays comprehensive guides covering library resources, family psychology,
  * and the eight sins framework. Features anchor navigation to different sections and
  * exploration links to related tools and content. Includes a call-to-action for the
  * analysis section with audio content.
  *
  * Key Features:
- * - Multiple educational sections (library, mythology, family psychology)
+ * - Multiple educational sections (library, family psychology)
  * - Eight Sins educational framework
  * - Anchor navigation for quick section access
  * - Related tools exploration suggestions
@@ -71,13 +70,6 @@ export default function Guides(): JSX.Element {
             <span>{t('pages.guides.links.library')}</span>
           </a>
           <a
-            href="#mythology"
-            className="inline-flex items-center gap-2 rounded-full border border-accent-500/50 bg-base-925/60 px-4 py-2 text-sm font-semibold text-accent-100 transition motion-safe:hover:border-accent-400 motion-safe:hover:text-accent-50 focus-visible:shadow-focus"
-          >
-            <span className="text-base-300">→</span>
-            <span>{t('pages.guides.links.mythology')}</span>
-          </a>
-          <a
             href="#family-psychology"
             className="inline-flex items-center gap-2 rounded-full border border-accent-500/50 bg-base-925/60 px-4 py-2 text-sm font-semibold text-accent-100 transition motion-safe:hover:border-accent-400 motion-safe:hover:text-accent-50 focus-visible:shadow-focus"
           >
@@ -89,7 +81,6 @@ export default function Guides(): JSX.Element {
 
       <div className="space-y-12">
         <LibrarySection sectionId="library" />
-        <MythologySection sectionId="mythology" />
         <FamilyPsychologySection sectionId="family-psychology" />
         <EightSinsPage />
 

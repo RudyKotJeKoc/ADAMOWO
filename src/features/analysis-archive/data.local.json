@@ -73,41 +73,6 @@
     "programId": "psych"
   },
   {
-    "id": "analysis-003",
-    "title": "Sprawa Adamskich: timeline zdarzeń",
-    "slug": "sprawa-adamskich-timeline",
-    "category": "SprawaAdamskich",
-    "tags": [
-      "case-study",
-      "rodzina"
-    ],
-    "description": "Szczegółowa rekonstrukcja wydarzeń w sprawie Adamskich, z naciskiem na momenty przełomowe.",
-    "durationSec": 2670,
-    "audioUrl": "https://cdn.adamowo.org/audio/analysis/sprawa-adamskich-1.mp3",
-    "publishedAt": "2024-02-02T08:00:00.000Z",
-    "chapters": [
-      {
-        "title": "Wprowadzenie do akt",
-        "startSec": 0
-      },
-      {
-        "title": "Analiza dokumentów",
-        "startSec": 540
-      },
-      {
-        "title": "Głosy świadków",
-        "startSec": 1500
-      }
-    ],
-    "resources": [
-      {
-        "label": "Teczka sprawy",
-        "url": "https://adamowo.org/sprawa-adamskich"
-      }
-    ],
-    "programId": "team"
-  },
-  {
     "id": "analysis-004",
     "title": "Broń Narcyza: język dominacji",
     "slug": "bron-narcyza-jezyk",
@@ -270,35 +235,6 @@
       }
     ],
     "programId": "psych"
-  },
-  {
-    "id": "analysis-009",
-    "title": "Sprawa Adamskich: proces sądowy",
-    "slug": "sprawa-adamskich-proces",
-    "category": "SprawaAdamskich",
-    "tags": [
-      "prawo",
-      "orzecznictwo"
-    ],
-    "description": "Przegląd kluczowych rozpraw w procesie Adamskich i analiza zeznań świadków.",
-    "durationSec": 2520,
-    "audioUrl": "https://cdn.adamowo.org/audio/analysis/sprawa-adamskich-2.mp3",
-    "publishedAt": "2024-04-26T08:00:00.000Z",
-    "chapters": [
-      {
-        "title": "Przygotowanie obrony",
-        "startSec": 120
-      },
-      {
-        "title": "Linie argumentacyjne",
-        "startSec": 840
-      },
-      {
-        "title": "Orzeczenie",
-        "startSec": 2040
-      }
-    ],
-    "programId": "team"
   },
   {
     "id": "analysis-010",

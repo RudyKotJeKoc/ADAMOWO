@@ -214,7 +214,7 @@ npm run test:pwa
 - **Accessibility improvements** with ARIA labels (+20 Accessibility)
 - **PWA manifest** enhanced with proper icons (+25 PWA)
 - **Service worker** caching strategies (+15 Performance)
-- **Barbara-themed playlists** with proper metadata (+5 SEO)
+- **Curated playlists** with proper metadata (+5 SEO)
 
 ### 🎯 Optimization Opportunities  
 - **Image optimization** - convert to WebP format

@@ -12,50 +12,50 @@ import type { LibraryEntry } from './library.schema';
  * - Categorization tags
  *
  * Current entries:
- * 1. case_adamscy - Case study of the Adamski family dynamics
+ * 1. family_isolation_case - Case study of family isolation dynamics
  * 2. calendar_analysis - Timeline and pattern analysis methodology
  * 3. prince_ingratitude - Analysis of manipulation tactics
  * 4. investigation_docs - Documentation and evidence gathering guide
  */
 export const LIBRARY_ENTRIES: LibraryEntry[] = [
   {
-    id: 'case_adamscy',
-    titleKey: 'library.entries.caseAdamscy.title',
-    summaryKey: 'library.entries.caseAdamscy.summary',
+    id: 'family_isolation_case',
+    titleKey: 'library.entries.familyIsolationCase.title',
+    summaryKey: 'library.entries.familyIsolationCase.summary',
     contentKeys: [
-      'library.entries.caseAdamscy.content.0',
-      'library.entries.caseAdamscy.content.1',
-      'library.entries.caseAdamscy.content.2'
+      'library.entries.familyIsolationCase.content.0',
+      'library.entries.familyIsolationCase.content.1',
+      'library.entries.familyIsolationCase.content.2'
     ],
     tipsKeys: [
-      'library.entries.caseAdamscy.tips.0',
-      'library.entries.caseAdamscy.tips.1',
-      'library.entries.caseAdamscy.tips.2'
+      'library.entries.familyIsolationCase.tips.0',
+      'library.entries.familyIsolationCase.tips.1',
+      'library.entries.familyIsolationCase.tips.2'
     ],
     timeline: [
       {
-        when: 'library.entries.caseAdamscy.timeline.0.when',
-        title: 'library.entries.caseAdamscy.timeline.0.title',
-        note: 'library.entries.caseAdamscy.timeline.0.note'
+        when: 'library.entries.familyIsolationCase.timeline.0.when',
+        title: 'library.entries.familyIsolationCase.timeline.0.title',
+        note: 'library.entries.familyIsolationCase.timeline.0.note'
       },
       {
-        when: 'library.entries.caseAdamscy.timeline.1.when',
-        title: 'library.entries.caseAdamscy.timeline.1.title',
-        note: 'library.entries.caseAdamscy.timeline.1.note'
+        when: 'library.entries.familyIsolationCase.timeline.1.when',
+        title: 'library.entries.familyIsolationCase.timeline.1.title',
+        note: 'library.entries.familyIsolationCase.timeline.1.note'
       },
       {
-        when: 'library.entries.caseAdamscy.timeline.2.when',
-        title: 'library.entries.caseAdamscy.timeline.2.title'
+        when: 'library.entries.familyIsolationCase.timeline.2.when',
+        title: 'library.entries.familyIsolationCase.timeline.2.title'
       }
     ],
     resources: [
       {
-        label: 'library.entries.caseAdamscy.resources.0',
-        url: '/assets/docs/case-adamscy-report.pdf'
+        label: 'library.entries.familyIsolationCase.resources.0',
+        url: '/assets/docs/family-isolation-report.pdf'
       },
       {
-        label: 'library.entries.caseAdamscy.resources.1',
-        url: '/assets/docs/case-adamscy-checklist.pdf'
+        label: 'library.entries.familyIsolationCase.resources.1',
+        url: '/assets/docs/family-isolation-checklist.pdf'
       }
     ],
     tags: ['library.tags.caseStudy', 'library.tags.escalation', 'library.tags.family']

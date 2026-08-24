@@ -6,19 +6,16 @@
     "live": "Live",
     "analizy": "Analyses",
     "taxonomy": "Taxonomy",
-    "caseStudy": "Case Study",
     "programy": "Programs",
     "violenceLoop": "Violence Loop",
     "studio": "Studio",
     "shows": "Shows",
     "guide": "Guide",
-    "polanaKlamstw": "Glade of Lies",
     "anatomy": "Anatomy",
     "lab": "Lab",
     "community": "Community",
     "media": "Media",
     "sitemap": "Sitemap",
-    "teatr": "Theater of the Absurd",
     "help": "Help"
   },
   "header": {
@@ -47,31 +44,6 @@
       "nl": "Dutch",
       "en": "English"
     }
-  },
-  "polanaKlamstw": {
-    "title": "Glade of Lies",
-    "subtitle": "A contemporary fairytale about how echo can be stronger than voice, and freedom more precious than wealth.",
-    "tableOfContents": "Table of Contents",
-    "prolog": "Prologue",
-    "chapter": "Chapter",
-    "epilog": "Epilogue",
-    "previousChapter": "Previous chapter",
-    "nextChapter": "Next chapter",
-    "backToContents": "Back to table of contents",
-    "continueReading": "Continue reading from the last chapter?",
-    "chaptersRead": "chapters read",
-    "totalReadingTime": "Total reading time",
-    "contentWarning": "Content Warning",
-    "contentWarningText": "This story addresses difficult family topics, including psychological manipulation, family conflicts, and the legal system's functioning. Content may be challenging for those who have experienced similar situations.",
-    "warningTopic1": "Psychological manipulation",
-    "warningTopic2": "Family conflict",
-    "warningTopic3": "Legal system difficulties",
-    "warningTopic4": "Emotional abuse",
-    "genre": "Genre",
-    "timespan": "Period",
-    "chapters": "Chapters",
-    "totalWords": "Words",
-    "themes": "Main themes"
   },
   "pages": {
     "home": {
@@ -105,7 +77,7 @@
       "anchorNav": "Guide section navigation",
       "links": {
         "library": "Case library",
-        "mythology": "Mythology of the Narcissist"
+        "familyPsychology": "Family pattern psychology"
       }
     },
     "lab": {
@@ -205,7 +177,7 @@
         },
         "analysis": {
           "title": "Analyses",
-          "description": "Access the archive, timelines, and Curse of Eight deep dives."
+          "description": "Access the analysis archive and the latest educational materials."
         },
         "research": {
           "title": "Studio & research",
@@ -226,11 +198,7 @@
         "lab": "AI Lab",
         "analysis": "Analysis archive",
         "analizy": "Analyses",
-        "timeline": "Conflict timeline",
-        "curse": "Curse of Eight",
         "studio": "Studio",
-        "caseStudy": "Case study",
-        "polana": "Field of Lies",
         "guides": "Guides",
         "help": "Help",
         "community": "Community",
@@ -303,7 +271,7 @@
         "link": "guide"
       },
       "violenceLoop": {
-        "title": "Witch's Cauldron: Violence Loop",
+        "title": "Violence Loop",
         "description": "Animated visualization of the violence cycle in the form of an infinite loop. Learn the phases: Love Bombing, Devaluation, Rejection, and Hoovering. Understand why it's so hard to break free from a toxic relationship.",
         "link": "violence-loop"
       },
@@ -580,38 +548,6 @@
       "reconnecting": "Reconnecting..."
     }
   },
-  "whisper": {
-    "regionLabel": "Whisper Behind the Curtain — reconstructed hearing",
-    "length": "Recording length",
-    "title": "Whisper Behind the Curtain",
-    "subtitle": "The recording captures a tense public hearing from 2017.",
-    "ethics": {
-      "title": "Ethical listening notes",
-      "body": [
-        "Listen with empathy — every breath belongs to a real person.",
-        "Pay attention to pauses and ellipses; power dynamics hide between the lines.",
-        "Write down facts, avoid judgments — the material serves education and prevention."
-      ]
-    },
-    "play": "Play",
-    "pause": "Pause",
-    "restart": "Start over",
-    "mute": "Mute",
-    "unmute": "Turn sound on",
-    "scrub": "Timeline",
-    "volume": "Volume",
-    "status": {
-      "paused": "Playback paused.",
-      "playing": "Playback running.",
-      "ended": "Recording finished.",
-      "error": "Unable to play the audio file.",
-      "restarted": "Restarted from the beginning.",
-      "seeked": "Playback position changed.",
-      "muted": "Sound muted.",
-      "unmuted": "Sound restored.",
-      "volume": "Volume set to {{value}}%"
-    }
-  },
   "library": {
     "kicker": "Case library",
     "title": "Case Library",
@@ -647,9 +583,9 @@
       "community": "support"
     },
     "entries": {
-      "caseAdamscy": {
-        "title": "The Adamski Case: Orientation",
-        "summary": "The Adamski family reported a subtle yet growing isolation and devaluation campaign by the head of the household.",
+      "familyIsolationCase": {
+        "title": "Case study: family isolation",
+        "summary": "A family reported a subtle yet growing isolation and devaluation campaign by the head of the household.",
         "content": [
           "The analysis starts with daily observations: locked doors, hijacked conversations and tight control over the family schedule.",
           "Attempts to fracture bonds appear — gifts for selected members, criticism of the rest and threats to cut off funds.",
@@ -676,7 +612,7 @@
             "title": "Evidence review and intervention"
           }
         ],
-        "resources": ["Adamski family observation report", "Isolation warning checklist"]
+        "resources": ["Family observation report", "Isolation warning checklist"]
       },
       "calendarAnalysis": {
         "title": "Calendar Analysis: Chronicle of Escalation",
@@ -767,130 +703,10 @@
       }
     }
   },
-  "mythology": {
-    "kicker": "Mythology of the narcissist",
-    "title": "Mythology of the Narcissist",
-    "intro": "Four warning symbols describing control cycles: 7 — ideal pact, 4 — dependency grid, 8 — return loop, 13 — rupture alert.",
-    "gridLabel": "Narcissist mythology symbols",
-    "viewSymbol": "View symbol",
-    "symbolCode": "Symbol {{code}}",
-    "detailKicker": "Decoding the symbol",
-    "blocks": {
-      "meaning": "What it means",
-      "when": "When it appears",
-      "actions": "How to respond"
-    },
-    "symbol": {
-      "4": {
-        "title": "Four",
-        "subtitle": "Symbol of the closed network",
-        "meaning": [
-          "Four pillars of dependency: emotions, money, reputation, access to loved ones.",
-          "Signals a setup where every choice has four control levers."
-        ],
-        "when": [
-          "When financial help requires reporting every expense.",
-          "When the abuser dictates who may be your friend."
-        ],
-        "action": [
-          "Map alternative support outside the abuser.",
-          "Split dependencies: separate budget, alternate communication channels.",
-          "Secure at least one pillar today."
-        ]
-      },
-      "7": {
-        "title": "Seven",
-        "subtitle": "Symbol of the perfect pact",
-        "meaning": [
-          "Promise of an exceptional agreement beyond social norms.",
-          "Declarations of total loyalty in exchange for control."
-        ],
-        "when": [
-          "When the narcissist proposes a secret collaboration or 'special' deal.",
-          "During sudden gifts after conflict periods.",
-          "Right before asking for a risky act of loyalty."
-        ],
-        "action": [
-          "Ask about real consequences and request time to reflect.",
-          "Consult a trusted person before accepting the terms."
-        ]
-      },
-      "8": {
-        "title": "Eight",
-        "subtitle": "Symbol of the return loop",
-        "meaning": [
-          "Endless promise of improvement.",
-          "Highlights the cycle: 'never again' turns into 'again'.",
-          "Refers to addictive break-up/make-up dynamics."
-        ],
-        "when": [
-          "After a breakup when therapy or drastic change is promised immediately.",
-          "When the meeting schedule looks like a sine wave.",
-          "Right after the victim states boundaries or ultimatums."
-        ],
-        "action": [
-          "Write down conditions for return and schedule a progress review date.",
-          "Track real change, not declarations."
-        ]
-      },
-      "13": {
-        "title": "Thirteen",
-        "subtitle": "Symbol of rupture and alarm",
-        "meaning": [
-          "Announces a drastic cut-off often used as a threat.",
-          "May signal escalation toward economic or legal abuse."
-        ],
-        "when": [
-          "When the abuser threatens custody or asset seizure.",
-          "As the victim prepares to leave or disclose evidence.",
-          "Right before major events: holidays, contracts, moving."
-        ],
-        "action": [
-          "Secure documents and emergency contacts.",
-          "Alert a trusted person about potential escalation.",
-          "Draft a safety plan and review local resources."
-        ]
-      }
-    },
-    "keyFindings": {
-      "title": "Key Findings",
-      "summary": "Four warning symbols help identify phases of narcissistic manipulation: from idealization (7), through building dependency (4), the return loop (8), to threat escalation (13).",
-      "finding1": {
-        "label": "Symbol 7: Recognize the idealization pact",
-        "description": "Demand time to reflect before accepting 'special' deals"
-      },
-      "finding2": {
-        "label": "Symbol 4: Map dependencies",
-        "description": "Identify the 4 control pillars and secure alternative support"
-      },
-      "finding3": {
-        "label": "Symbol 8: Monitor promises",
-        "description": "Track actual changes, not just declarations after reconciliation"
-      },
-      "finding4": {
-        "label": "Symbol 13: Prepare a safety plan",
-        "description": "Secure documents and notify trusted individuals of risk"
-      }
-    },
-    "controls": {
-      "theme": {
-        "label": "Theme",
-        "system": "System theme",
-        "systemShort": "SYS",
-        "light": "Light mode",
-        "lightShort": "LGT",
-        "dark": "Dark mode",
-        "darkShort": "DRK",
-        "current": "Currently: {{value}}",
-        "resolved_dark": "dark mode",
-        "resolved_light": "light mode"
-      }
-    }
-  },
   "documentary": {
     "sectionLabel": "Documentary",
-    "title": "The Adamowo Case: Autopsy of a Family War",
-    "description": "An investigative dive into the power structures that tore the Adamowo family apart — and the lessons that help communities interrupt violence.",
+    "title": "Autopsy of a Family War",
+    "description": "An investigative dive into the power structures that tear families apart — and the lessons that help communities interrupt violence.",
     "player": {
       "controlsGroup": "Video controls",
       "play": "Play video",
@@ -1259,7 +1075,6 @@
     "categories": {
       "AktDarowania": "Act of Donation",
       "SłużebnośćUwiązania": "Servitude Entanglement",
-      "SprawaAdamskich": "Adamski Case",
       "BronNarcyza": "Narcissist's Weapon",
       "Sledztwo": "Investigation"
     },
@@ -1477,7 +1292,7 @@
   "finalLesson": {
     "sectionLabel": "Final lesson",
     "title": "Final Lesson",
-    "description": "What to carry forward from the Adamowo case and where to find help right now.",
+    "description": "What to carry forward and where to find help right now.",
     "summary": {
       "title": "Key takeaways",
       "cycle": "Abuse is systemic: patterns repeat unless the power balance changes.",
@@ -2103,22 +1918,22 @@
     }
   },
   "donation": {
-    "title": "Support the Wolf with Pizza",
-    "description": "Radio Adamowo is built with passion and countless hours of work. If our educational mission is valuable to you, you can support the wolf with a pizza – a small gesture that gives us energy to keep going.",
+    "title": "Support Us with Pizza",
+    "description": "Radio Adamowo is built with passion and countless hours of work. If our educational mission is valuable to you, you can support us with a pizza – a small gesture that gives us energy to keep going.",
     "feature1": "Support the development of the educational platform",
     "feature2": "Help create valuable content",
     "feature3": "Fuel our late-night coding sessions",
     "feature4": "Become part of our mission",
-    "cta": "Buy the Wolf a Pizza",
+    "cta": "Buy Us a Pizza",
     "subtitle": "Every pizza brings us closer to a better world",
-    "thanks": "Thank you for every bit of support – it truly makes a difference! 🐺💙"
+    "thanks": "Thank you for every bit of support – it truly makes a difference! 🍕💙"
   },
   "taxonomy": {
     "title": "Anatomy of Manipulation: Taxonomy of Systemic Mechanisms",
-    "lead": "This analysis constitutes a deconstruction of psychological, legal, and organizational tactics identified during the Adamowo investigation. The lexicon below defines concrete attack vectors – from corporate gaslighting to legal engineering. This is not theory, this is a map of system failures.",
+    "lead": "This analysis constitutes a deconstruction of common psychological, legal, and organizational tactics found in family, institutional, and workplace conflicts. The lexicon below defines concrete attack vectors – from corporate gaslighting to legal engineering.",
     "footer": {
       "title": "Methodological Note",
-      "content": "This taxonomy was developed based on documentation, testimonies, and analysis of real cases. Each tactic describes specific systemic mechanisms identified during the investigation. These are not theoretical constructs – these are documented patterns of actions."
+      "content": "This taxonomy was developed based on recurring patterns described in psychological and legal literature. Each tactic describes a generalized systemic mechanism, not a specific individual case."
     },
     "categories": {
       "corporate": {
@@ -2153,7 +1968,7 @@
       },
       "obsessiveDocumentation": {
         "name": "Obsessive Documentation",
-        "description": "Creating selective, false ex ante documentation designed exclusively for future litigation (\"Witch's Calendar\")."
+        "description": "Creating selective, one-sided ex ante documentation designed exclusively for future litigation (a so-called \"incriminating calendar\")."
       },
       "evidentialProvocation": {
         "name": "Evidential Provocation",
@@ -2161,7 +1976,7 @@
       },
       "dependentInstrumentalization": {
         "name": "Dependent Instrumentalization",
-        "description": "Exploiting the illness of loved ones and cheap powers of attorney to legitimize hostile property actions (\"Pokémon Key\")."
+        "description": "Exploiting the illness of loved ones and cheap powers of attorney to legitimize hostile property actions."
       },
       "proceduralBetrayal": {
         "name": "Procedural Betrayal",
@@ -2179,214 +1994,6 @@
         "name": "Moral Relativism",
         "description": "Social acceptance of petty frauds, leading to erosion of trust in institutions and isolation of individuals who follow principles."
       }
-    }
-  },
-  "caseStudy": {
-    "label": "Case Study",
-    "title": "Analytical Report: Case Study of Legal System Instrumentalization and Psychological Manipulation",
-    "subtitle": "The Anatomy of Psychosocial Warfare",
-    "intro": "This document is a specialized analysis of a case that extends far beyond the framework of a typical family conflict. It is a study of methodical psychosocial warfare. The goal is the deconstruction of complex manipulation mechanisms, legal instrumentalization, and system failure. This analysis demonstrates how protective mechanisms (such as the \"Blue Card\" procedure) became weapons in a private vendetta.",
-    "section1": {
-      "title": "I. Architecture of Manipulation: Profile and Methodology",
-      "intro": "Strategically understanding the psychological profile of the main initiator (Barbara A.) is fundamental. Her actions were not impulses, but part of a \"cold, ordered plan\" to regain control over her son and assets.",
-      "sub1": {
-        "title": "1.1. Psychological Profile: Archetype \"The Devouring Mother\"",
-        "content": "The actions fit the Jungian archetype of the Devouring Mother. Instead of letting the child go, she tries to symbolically devour it. The son's independence was seen as a personal attack. She created pathological emotional incest (enmeshment), where the parental home turned into a prison of guilt."
-      },
-      "sub2": {
-        "title": "1.2. Methodical Deconstruction of Tactics",
-        "table": {
-          "tactic": "Tactic",
-          "description": "Description",
-          "goal": "Goal"
-        },
-        "tactics": {
-          "obsessiveDoc": {
-            "name": "Obsessive Documentation (\"The Witch's Calendar\")",
-            "desc": "A selective register of false accusations, drafted ex ante as a script for the lawsuit.",
-            "goal": "Fabrication of evidence."
-          },
-          "provocation": {
-            "name": "Provocation & Escalation",
-            "desc": "Night intrusions (02:30) or cutting off electricity in the presence of police.",
-            "goal": "Elicit Reactive Abuse – frame the victim's defense as aggression."
-          },
-          "blackmail": {
-            "name": "Emotional & Legal Blackmail",
-            "desc": "Threatening to revoke the donation \"as punishment\".",
-            "goal": "Keep the victim in a permanent state of uncertainty."
-          },
-          "reverseTriage": {
-            "name": "Reverse Triage",
-            "desc": "During her husband's medical emergency, prioritizing a dispute over car keys for documentation.",
-            "goal": "Documentation over assistance."
-          }
-        }
-      },
-      "sub3": {
-        "title": "1.3. Symbolism of the \"Cauldron of Grievances\"",
-        "content": "The central instrument was the metaphorical \"Cauldron of Grievances\" (Kocioł Krzywd). A reservoir in which grievances, old wounds, and fabrications were constantly \"heated up\" to poison the atmosphere and justify actions."
-      }
-    },
-    "section2": {
-      "title": "II. Instrumentalization of the Environment",
-      "intro": "The private vendetta was legitimized by transforming family members into puppets.",
-      "sub1": {
-        "title": "2.1. Case Study: Sylwester A. – A Tragic Puppet",
-        "point1": {
-          "title": "Foundation of Dependency",
-          "content": "His condition after a stroke (cognitive limitations) made him manipulable."
-        },
-        "point2": {
-          "title": "The Power Takeover",
-          "content": "Obtaining a notarial power of attorney (\"The key to her Pokémon\") two days after initiating the Blue Card procedure."
-        },
-        "point3": {
-          "title": "Proof of Manipulation",
-          "content": "On August 3, Sylwester tells police that his son does not insult him. On August 6, a letter is sent in his name claiming the opposite. The handwritten addition \"In case my consciousness is questioned...\" is a classic Freudian projection of guilt."
-        }
-      },
-      "sub2": {
-        "title": "2.2. The Role of Supporting Characters",
-        "role1": {
-          "title": "The Inspirer (\"Magpie Dorota\")",
-          "content": "The sister who advised keeping the \"calendar\" and setting legal traps."
-        },
-        "role2": {
-          "title": "The Family Echo (\"Storks with Clipped Wings\")",
-          "content": "Siblings who passively adopted the mother's false narrative and legitimized the brother's isolation."
-        }
-      }
-    },
-    "section3": {
-      "title": "III. Systemic Escalation: Failure of Institutions",
-      "intro": "The conflict escalated when state institutions, designed for protection, became weapons against Dariusz A.",
-      "sub1": {
-        "title": "3.1. Police and the \"Blue Card\" (Niebieska Karta)",
-        "content": "The procedure was not initiated for protection, but as ammunition for a civil lawsuit. The police (\"Smurfs\") ignored the context of provocations (e.g., deliberately cutting off electricity) and thus legitimized the aggressor's narrative."
-      },
-      "sub2": {
-        "title": "3.2. Betrayal of the Legal System (Lawyers)",
-        "betrayal1": {
-          "title": "The Original Betrayal (Atty. \"Hyena\")",
-          "content": "Forces the client to plead guilty in a criminal case 5 minutes before the hearing with the false promise of \"ending the conflict.\" This created a prejudicial verdict later used against him."
-        },
-        "betrayal2": {
-          "title": "Secondary Betrayal (Atty. \"Deer\")",
-          "content": "Passivity and sabotage to protect the reputation of his colleague, instead of representing the client's interests."
-        }
-      },
-      "sub3": {
-        "title": "3.3. Judicial Error (Court of First Instance)",
-        "error1": "Blind trust in the precedent: The criminal verdict was uncritically adopted.",
-        "error2": "Fundamental Legal Error: Confusing \"Personal Usufruct\" (Służebność) with a \"Life Annuity/Care Contract\" (Dożywocie), creating fictitious financial obligations."
-      }
-    },
-    "section4": {
-      "title": "IV. Victim's Trajectory: Response to Entrapment",
-      "intro": "Dariusz A.'s actions were not aggression, but defense mechanisms.",
-      "sub1": {
-        "title": "4.1. Investment and Good Will",
-        "financial": {
-          "label": "Financial",
-          "content": "Investments of 160,000 - 255,000 PLN in home renovation (solar panels, roof, insulation)."
-        },
-        "care": {
-          "label": "Care",
-          "content": "Return from emigration to care for his father after his stroke."
-        }
-      },
-      "sub2": {
-        "title": "4.2. Defense Framed as Aggression",
-        "table": {
-          "action": "Action",
-          "reality": "Reality"
-        },
-        "actions": {
-          "cameras": {
-            "action": "Installing cameras",
-            "reality": "Response to theft of tools and privacy invasion."
-          },
-          "avoidance": {
-            "action": "Avoiding contact",
-            "reality": "De-escalation. Sleeping in the workshop to avoid provocations."
-          },
-          "destruction": {
-            "action": "Destruction (welding toilet shut)",
-            "reality": "A desperate, symbolic act of helplessness concerning an outdoor toilet."
-          }
-        }
-      },
-      "sub3": {
-        "title": "4.3. Diagnosis and the Paradox of Liberation",
-        "diagnosis": {
-          "label": "Diagnosis",
-          "content": "C-PTSD (Complex Post-Traumatic Stress Disorder) as a rational response to 4 years of systemic abuse."
-        },
-        "capitulation": {
-          "label": "Strategic Capitulation",
-          "content": "Abandoning the appeal was not defeat, but a \"price for freedom\"."
-        }
-      }
-    },
-    "section5": {
-      "label": "Conclusions",
-      "title": "V. Conclusions: The Pyrrhic Victory",
-      "sub1": {
-        "title": "5.1. Analysis of the Outcome",
-        "barbara": {
-          "title": "The Empty Victory (Barbara)",
-          "content": "She has the house, but also loneliness and a \"ticking time bomb\": the obligation to repay the investments (approx. 250k PLN)."
-        },
-        "dariusz": {
-          "title": "Freedom in Loss (Dariusz)",
-          "content": "By stopping the fight, he regained control over his life and mental health."
-        }
-      },
-      "sub2": {
-        "title": "5.2. Recommendations for Professionals",
-        "rec1": "Recognize power dynamics (control vs. care).",
-        "rec2": "The legal system must consider psychological context to prevent instrumentalization.",
-        "rec3": "Sometimes \"leaving the battlefield\" is the only victory."
-      }
-    },
-    "footer": "Analytical Report – Radio Adamowo Research"
-  },
-  "teatr": {
-    "meta": {
-      "title": "Theater of the Absurd - House of Paper and Foam",
-      "description": "Family cabaret in three acts. Satire based on real events from the Polish justice system."
-    },
-    "title": "House of Paper and Mounting Foam",
-    "subtitle": "Family Cabaret in Three Acts",
-    "tagline": "For the price of two coffees at the notary, I bought myself a ticket to hell",
-    "warning": {
-      "title": "Warning",
-      "content": "The following material is satire based on real events. All facts (dates, amounts, quotes) are authentic and documented. Only the narrative form has been changed — from court protocols to theatrical script."
-    },
-    "acts": {
-      "fullPlay": {
-        "title": "Full Play",
-        "description": "Three acts, prologue and epilogue. Complete story from donation to verdict.",
-        "button": "Read"
-      },
-      "analysis": {
-        "title": "Pre-Fight Analysis",
-        "description": "Comparison of forces, tactics and armament. Who had what in the arsenal?",
-        "button": "Analysis"
-      },
-      "documentary": {
-        "title": "Documentary Version",
-        "description": "Facts without metaphors. Protocols, verdicts, testimonies.",
-        "button": "Evidence"
-      }
-    },
-    "context": {
-      "title": "Context for new viewers",
-      "paragraph1": "This story is a real case of family conflict that went through the Polish justice system (2021-2025). The case concerned the revocation of a farm donation due to \"gross ingratitude\".",
-      "question": "Why satire?",
-      "answer": "Because sometimes the only way to survive absurdity is laughter. And a system that allows the use of a \"Blue Card\" as evidence in a property dispute deserves cabaret.",
-      "link": "Read the full chronology of events (serious version)"
     }
   }
 }

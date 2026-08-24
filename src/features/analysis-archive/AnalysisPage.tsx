@@ -11,7 +11,6 @@ import { getEpisodes } from './api';
 const ALL_CATEGORIES: EpisodeCategory[] = [
   'AktDarowania',
   'SłużebnośćUwiązania',
-  'SprawaAdamskich',
   'BronNarcyza',
   'Sledztwo'
 ];

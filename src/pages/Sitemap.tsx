@@ -27,18 +27,12 @@ export default function Sitemap(): JSX.Element {
       links: [
         { labelKey: 'pages.sitemap.links.analysis', to: '/analysis' },
         { labelKey: 'pages.sitemap.links.analizy', to: '/analizy' },
-        { labelKey: 'pages.sitemap.links.timeline', to: '/timeline-content' },
-        { labelKey: 'pages.sitemap.links.curse', to: '/curse-of-eight-content' },
       ],
     },
     {
       titleKey: 'pages.sitemap.sections.research.title',
       descriptionKey: 'pages.sitemap.sections.research.description',
-      links: [
-        { labelKey: 'pages.sitemap.links.studio', to: '/studio' },
-        { labelKey: 'pages.sitemap.links.caseStudy', to: '/case-study' },
-        { labelKey: 'pages.sitemap.links.polana', to: '/polana-klamstw' },
-      ],
+      links: [{ labelKey: 'pages.sitemap.links.studio', to: '/studio' }],
     },
     {
       titleKey: 'pages.sitemap.sections.support.title',
