@@ -1,11 +1,11 @@
 import { vi } from 'vitest';
 
-// ----- mock API multimediów (jsdom tego nie ma) -----
-Object.defineProperty(global, 'HTMLMediaElement', {
-  value: class {},
-  writable: true,
-});
-
+// ----- mock API multimediów (odtwarzanie niezaimplementowane w jsdom) -----
+// jsdom already provides a real HTMLMediaElement (play/pause/load exist as
+// no-op stubs), so this must patch its actual prototype rather than replace
+// the global binding with an unrelated class — doing that would silently
+// disconnect every real <audio>/<video> element's prototype chain from any
+// mock set up here or in individual test files.
 interface MockHTMLMediaElement {
   load: ReturnType<typeof vi.fn>;
   play: ReturnType<typeof vi.fn>;
