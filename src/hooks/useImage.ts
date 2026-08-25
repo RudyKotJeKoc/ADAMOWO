@@ -20,6 +20,21 @@ import type { ImageCategory, ImageKey } from '../config/imageMap';
 import { getImagePath, IMAGE_PATHS } from '../config/imageMap';
 import { checkImageExists } from '../utils/imageValidation';
 
+type ImageRef = { [K in ImageCategory]: [K, ImageKey<K>] }[ImageCategory];
+
+/**
+ * Resolves an ImageRef tuple to a path.
+ *
+ * TypeScript can't distribute generic inference over a union-of-tuples
+ * argument, so `getImagePath`'s own `<T>` can't be inferred here even
+ * though the ImageRef union already guarantees category/key correlate.
+ * The cast below is the single, narrow point that bridges that gap.
+ */
+function resolveImagePath(pair: ImageRef): string {
+  const [category, key] = pair;
+  return getImagePath(category, key as ImageKey<typeof category>);
+}
+
 export interface UseImageOptions {
   /**
    * Enable lazy loading (adds loading="lazy" attribute)
@@ -31,7 +46,7 @@ export interface UseImageOptions {
    * Fallback image if primary image fails
    * @default ['placeholders', 'cover']
    */
-  fallback?: [ImageCategory, string];
+  fallback?: ImageRef;
 
   /**
    * Skip validation (use image path directly without checking)
@@ -100,7 +115,7 @@ export function useImage<T extends ImageCategory>(
   } = options;
 
   const primaryPath = getImagePath(category, key);
-  const fallbackPath = getImagePath(fallback[0], fallback[1]);
+  const fallbackPath = resolveImagePath(fallback);
 
   const [src, setSrc] = useState<string>(primaryPath);
   const [isLoading, setIsLoading] = useState<boolean>(!skipValidation);
@@ -137,17 +152,14 @@ export function useImage<T extends ImageCategory>(
           setSrc(fallbackPath);
           setIsFallback(true);
 
-          const fallbackError = new Error(
-            `Image not found or is placeholder: ${primaryPath}`
-          );
+          const fallbackError = new Error(`Image not found or is placeholder: ${primaryPath}`);
           setError(fallbackError);
           onError?.(fallbackError);
         }
       } catch (err) {
         if (!mounted) return;
 
-        const imageError =
-          err instanceof Error ? err : new Error('Unknown image error');
+        const imageError = err instanceof Error ? err : new Error('Unknown image error');
 
         console.error(`[useImage] Error loading image ${primaryPath}:`, err);
 
@@ -167,15 +179,7 @@ export function useImage<T extends ImageCategory>(
     return () => {
       mounted = false;
     };
-  }, [
-    category,
-    key,
-    primaryPath,
-    fallbackPath,
-    skipValidation,
-    onLoad,
-    onError,
-  ]);
+  }, [category, key, primaryPath, fallbackPath, skipValidation, onLoad, onError]);
 
   return {
     src,
@@ -242,22 +246,16 @@ export function useDirectImage(
           setSrc(fallback);
           setIsFallback(true);
 
-          const fallbackError = new Error(
-            `Image not found or is placeholder: ${imagePath}`
-          );
+          const fallbackError = new Error(`Image not found or is placeholder: ${imagePath}`);
           setError(fallbackError);
           onError?.(fallbackError);
         }
       } catch (err) {
         if (!mounted) return;
 
-        const imageError =
-          err instanceof Error ? err : new Error('Unknown image error');
+        const imageError = err instanceof Error ? err : new Error('Unknown image error');
 
-        console.error(
-          `[useDirectImage] Error loading image ${imagePath}:`,
-          err
-        );
+        console.error(`[useDirectImage] Error loading image ${imagePath}:`, err);
 
         setSrc(fallback);
         setIsFallback(true);
@@ -294,9 +292,6 @@ export function useDirectImage(
  * @param key - Image key
  * @returns Image path
  */
-export function useImagePath<T extends ImageCategory>(
-  category: T,
-  key: ImageKey<T>
-): string {
+export function useImagePath<T extends ImageCategory>(category: T, key: ImageKey<T>): string {
   return getImagePath(category, key);
 }

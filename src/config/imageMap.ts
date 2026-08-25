@@ -83,8 +83,9 @@ export const IMAGE_PATHS = {
  * Usage: getImage('icons.favicon') or getImage('covers.default')
  */
 export type ImageCategory = keyof typeof IMAGE_PATHS;
-export type ImageKey<T extends ImageCategory> = keyof typeof IMAGE_PATHS[T];
-export type ImagePath = typeof IMAGE_PATHS[ImageCategory][string];
+export type ImageKey<T extends ImageCategory> = keyof (typeof IMAGE_PATHS)[T];
+type ValueOf<T> = T[keyof T];
+export type ImagePath = ValueOf<{ [K in ImageCategory]: ValueOf<(typeof IMAGE_PATHS)[K]> }>;
 
 /**
  * Get image path by category and key
@@ -93,10 +94,7 @@ export type ImagePath = typeof IMAGE_PATHS[ImageCategory][string];
  * getImagePath('icons', 'favicon') // returns '/assets/images/icons/favicon.ico'
  * getImagePath('covers', 'default') // returns '/assets/images/placeholders/default-cover.jpg'
  */
-export function getImagePath<T extends ImageCategory>(
-  category: T,
-  key: ImageKey<T>
-): string {
+export function getImagePath<T extends ImageCategory>(category: T, key: ImageKey<T>): string {
   return IMAGE_PATHS[category][key] as string;
 }
 
