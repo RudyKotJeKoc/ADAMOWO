@@ -59,6 +59,29 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
   const animationFrameRef = useRef<number | null>(null);
   const crossfadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Invalidates in-flight playback requests. play()/crossfadeToTrack() each
+  // bump this and capture the new value before their first await; stop()
+  // bumps it without starting new work. Aborting the in-flight fetch is a
+  // best-effort optimization (decodeAudioData can't be aborted, and may
+  // already be running once the network request completes), so every
+  // request also re-checks this counter after its own await points —
+  // "am I still the current request?" — before touching the audio graph
+  // or playback state. See the loading/currentTrack race caught in review.
+  const requestGenerationRef = useRef(0);
+  const activeLoadAbortRef = useRef<AbortController | null>(null);
+
+  const beginPlaybackRequest = useCallback((): {
+    generation: number;
+    signal: AbortSignal;
+  } => {
+    activeLoadAbortRef.current?.abort();
+    const controller = new AbortController();
+    activeLoadAbortRef.current = controller;
+    const generation = requestGenerationRef.current + 1;
+    requestGenerationRef.current = generation;
+    return { generation, signal: controller.signal };
+  }, []);
+
   // Refs holding the latest versions of callbacks whose own identities
   // change on nearly every playback state transition (they depend on
   // status/currentTrack/queue/onEvent). Call sites below invoke these
@@ -207,9 +230,17 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
 
   const play = useCallback(
     async (track: AudioTrack) => {
+      const { generation, signal } = beginPlaybackRequest();
+
       try {
         setStatus('loading');
         setError(null);
+        // A plain play() starting always means "not crossfading anymore" —
+        // reset unconditionally rather than trying to reason about
+        // generation ordering against a crossfade this call may have just
+        // superseded (whose own bail-out paths intentionally don't touch
+        // this flag, to avoid clobbering a *newer* crossfade's true value).
+        setTransitioning(false);
 
         const ctx = initializeAudioContext();
         if (!ctx) return;
@@ -217,10 +248,18 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
         // Resume context if suspended (browser autoplay policy)
         if (ctx.state === 'suspended') {
           await ctx.resume();
+          if (requestGenerationRef.current !== generation) return;
         }
 
         // Load audio buffer
-        const buffer = await loadAudioBuffer(track);
+        const buffer = await loadAudioBuffer(track, signal);
+
+        // A newer play()/crossfadeToTrack()/stop() call superseded this one
+        // while the buffer was loading (decodeAudioData can't be aborted,
+        // so this is the only guard once fetch has already completed) —
+        // abandon silently rather than create a source, start it, or
+        // overwrite currentTrack/status for a track nothing wants anymore.
+        if (requestGenerationRef.current !== generation) return;
 
         // Create gain node for volume control
         const gainNode = ctx.createGain();
@@ -260,6 +299,10 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
           preloadNextRef.current();
         }
       } catch (error) {
+        // A superseding call aborts this one's fetch (or invalidates the
+        // generation outright) — that's not this call's error to report.
+        if (requestGenerationRef.current !== generation) return;
+
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
         setError(errorMessage);
         setStatus('error');
@@ -267,6 +310,7 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
       }
     },
     [
+      beginPlaybackRequest,
       initializeAudioContext,
       loadAudioBuffer,
       createSource,
@@ -275,6 +319,7 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
       config.preloadNextTrack,
       setStatus,
       setError,
+      setTransitioning,
       setCurrentTrack,
       setDuration,
       onEvent,
@@ -283,6 +328,12 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
   );
 
   const stop = useCallback(() => {
+    // Invalidate any in-flight play()/crossfadeToTrack() request — stopping
+    // must not let a load that was already underway create a source and
+    // start playback right after this call returns.
+    activeLoadAbortRef.current?.abort();
+    requestGenerationRef.current += 1;
+
     const source = currentSourceRef.current;
     if (source) {
       source.stop();
@@ -307,6 +358,8 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
 
   const crossfadeToTrack = useCallback(
     async (newTrack: AudioTrack) => {
+      const { generation, signal } = beginPlaybackRequest();
+
       try {
         const ctx = audioContextRef.current;
         if (!ctx) return;
@@ -315,7 +368,14 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
         onEvent?.({ type: 'crossfadeStart', from: currentTrack!, to: newTrack });
 
         // Load next track buffer
-        const buffer = await loadAudioBuffer(newTrack);
+        const buffer = await loadAudioBuffer(newTrack, signal);
+
+        // Superseded while loading — abandon before creating any nodes or
+        // touching the audio graph/store for a track nothing wants anymore.
+        if (requestGenerationRef.current !== generation) {
+          setTransitioning(false);
+          return;
+        }
 
         // Create gain node for new track
         const nextGainNode = ctx.createGain();
@@ -347,6 +407,15 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
 
         // Wait for crossfade to complete
         crossfadeTimeoutRef.current = setTimeout(() => {
+          if (requestGenerationRef.current !== generation) {
+            // Superseded while the fade was in progress — a newer request
+            // already owns currentSourceRef/currentGainRef by now; stop
+            // this generation's source instead of leaving it playing
+            // underneath whatever superseded it.
+            nextSource.stop();
+            return;
+          }
+
           // Stop old source
           if (currentSourceRef.current) {
             currentSourceRef.current.stop();
@@ -375,11 +444,16 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
           }
         }, config.crossfadeDuration);
       } catch (error) {
+        // A superseding call aborts this one's fetch (or invalidates the
+        // generation outright) — that's not this call's error to report.
+        if (requestGenerationRef.current !== generation) return;
+
         setTransitioning(false);
         setError(error instanceof Error ? error.message : 'Crossfade failed');
       }
     },
     [
+      beginPlaybackRequest,
       currentTrack,
       volume,
       muted,

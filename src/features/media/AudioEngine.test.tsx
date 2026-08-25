@@ -263,14 +263,64 @@ describe('AudioEngine', () => {
     expect(mockCtx.sources[0].start).toHaveBeenCalledTimes(1);
     expect(useAudioEngineStore.getState().currentTrack?.id).toBe('b');
 
-    // trackA's load is still pending and intentionally left unresolved here
-    // — exactly two loads were started (one per real queue change), not
-    // three, confirming the status transitions in between didn't add one.
+    // trackA's load is still pending at this point — exactly two loads
+    // were started (one per real queue change), not three, confirming the
+    // status transitions in between didn't add one.
     expect(mockCtx.decodeAudioData).toHaveBeenCalledTimes(2);
   });
 
-  it('runs the cleanup effect and tolerates a load resolving after unmount', async () => {
-    const { unmount } = render(<AudioEngine />);
+  it('does not resurrect the superseded track when its stale load resolves after a newer one already started playing', async () => {
+    const onEvent = vi.fn();
+    render(<AudioEngine onEvent={onEvent} />);
+
+    const trackA = track('a');
+    const trackB = track('b');
+
+    // 1. Start loading A.
+    await setQueueTracks([trackA, trackB]);
+    expect(mockCtx.decodeAudioData).toHaveBeenCalledTimes(1);
+
+    // 2. Switch to B while A is still loading.
+    await jumpTo(1);
+    expect(mockCtx.decodeAudioData).toHaveBeenCalledTimes(2);
+
+    // 3. Resolve B.
+    mockCtx.decodeCalls[1].resolve(fakeBuffer);
+    await flushMicrotasks();
+
+    // 4. Confirm B started.
+    expect(mockCtx.createBufferSource).toHaveBeenCalledTimes(1);
+    expect(mockCtx.sources[0].start).toHaveBeenCalledTimes(1);
+    expect(useAudioEngineStore.getState().status).toBe('playing');
+    expect(useAudioEngineStore.getState().currentTrack?.id).toBe('b');
+    expect(onEvent).toHaveBeenCalledWith(
+      expect.objectContaining({ type: 'trackStart', track: trackB })
+    );
+
+    onEvent.mockClear();
+
+    // 5. Now resolve the stale, still-pending load for A. Calling this
+    // directly (rather than through expect(...).not.toThrow(), which only
+    // checks whether invoking an async function throws *synchronously* and
+    // does not await its returned promise) is itself part of what's under
+    // test: play() catches its own errors internally, so there is nothing
+    // here that should reject — if it did, it would surface as vitest's
+    // unhandled-rejection failure rather than a caught assertion.
+    mockCtx.decodeCalls[0].resolve(fakeBuffer);
+    await flushMicrotasks();
+
+    // 6. A must not have created a source, started playback, replaced
+    // currentTrack, or emitted trackStart — B is still the one playing and
+    // the source count did not increase.
+    expect(mockCtx.createBufferSource).toHaveBeenCalledTimes(1);
+    expect(mockCtx.sources).toHaveLength(1);
+    expect(useAudioEngineStore.getState().currentTrack?.id).toBe('b');
+    expect(onEvent).not.toHaveBeenCalled();
+  });
+
+  it('runs cleanup on unmount and does not resurrect the track when its load resolves afterward', async () => {
+    const onEvent = vi.fn();
+    const { unmount } = render(<AudioEngine onEvent={onEvent} />);
 
     const trackA = track('a');
     await setQueueTracks([trackA]);
@@ -279,12 +329,26 @@ describe('AudioEngine', () => {
     unmount();
     expect(mockCtx.close).toHaveBeenCalledTimes(1);
 
+    const currentTrackBeforeResolve = useAudioEngineStore.getState().currentTrack;
+    onEvent.mockClear();
+
     // The network/decode finishing after unmount must not throw or reject
-    // unhandled; play()'s own guard clauses (audio context/track refs) are
-    // exercised here rather than any test-only workaround.
-    await expect(async () => {
-      mockCtx.decodeCalls[0].resolve(fakeBuffer);
-      await flushMicrotasks();
-    }).not.toThrow();
+    // unhandled; play()'s generation check is what actually prevents it
+    // from touching the audio graph or store, not any test-only workaround.
+    // (Calling this directly rather than via expect(...).not.toThrow() is
+    // deliberate — see the equivalent comment in the test above.)
+    mockCtx.decodeCalls[0].resolve(fakeBuffer);
+    await flushMicrotasks();
+
+    expect(mockCtx.createBufferSource).not.toHaveBeenCalled();
+    expect(useAudioEngineStore.getState().currentTrack).toBe(currentTrackBeforeResolve);
+    expect(onEvent).not.toHaveBeenCalled();
   });
+
+  // No test covers stop() being called mid-load: AudioEngine is a headless
+  // component (`return null`) that exposes no ref/imperative handle and no
+  // store action maps to its internal stop() — per the component's own
+  // "PUBLIC API" comment, control is meant to go through the store, but no
+  // such action exists yet. There is currently no reliable way to invoke
+  // stop() from outside the component to exercise this path.
 });
