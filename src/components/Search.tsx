@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/20/solid';
@@ -57,75 +57,80 @@ export function Search(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Search index - in a real app, this would come from a search service
-  const searchIndex: SearchResult[] = [
-    {
-      title: t('navigation.live'),
-      path: '/live',
-      description: t('search.results.live.description'),
-      type: 'page',
-    },
-    {
-      title: t('navigation.violenceLoop'),
-      path: '/violence-loop',
-      description: t('search.results.violenceLoop.description'),
-      type: 'tool',
-    },
-    {
-      title: t('navigation.studio'),
-      path: '/studio',
-      description: t('search.results.studio.description'),
-      type: 'page',
-    },
-    {
-      title: t('navigation.shows'),
-      path: '/shows',
-      description: t('search.results.shows.description'),
-      type: 'page',
-    },
-    {
-      title: t('navigation.guide'),
-      path: '/guides',
-      description: t('search.results.guides.description'),
-      type: 'guide',
-    },
-    {
-      title: t('navigation.anatomy'),
-      path: '/anatomy',
-      description: t('search.results.anatomy.description'),
-      type: 'guide',
-    },
-    {
-      title: t('navigation.lab'),
-      path: '/lab',
-      description: t('search.results.lab.description'),
-      type: 'tool',
-    },
-    {
-      title: t('navigation.community'),
-      path: '/community',
-      description: t('search.results.community.description'),
-      type: 'page',
-    },
-    {
-      title: t('breadcrumbs.analysis'),
-      path: '/analysis',
-      description: t('search.results.analysis.description'),
-      type: 'analysis',
-    },
-    {
-      title: t('breadcrumbs.privacy'),
-      path: '/privacy',
-      description: t('search.results.privacy.description'),
-      type: 'page',
-    },
-    {
-      title: t('breadcrumbs.aiPolicy'),
-      path: '/ai-policy',
-      description: t('search.results.aiPolicy.description'),
-      type: 'page',
-    },
-  ];
+  // Search index - in a real app, this would come from a search service.
+  // Memoized on `t` so it only rebuilds on language change instead of on
+  // every render, which is what let it destabilize handleSearch's identity.
+  const searchIndex: SearchResult[] = useMemo(
+    () => [
+      {
+        title: t('navigation.live'),
+        path: '/live',
+        description: t('search.results.live.description'),
+        type: 'page',
+      },
+      {
+        title: t('navigation.violenceLoop'),
+        path: '/violence-loop',
+        description: t('search.results.violenceLoop.description'),
+        type: 'tool',
+      },
+      {
+        title: t('navigation.studio'),
+        path: '/studio',
+        description: t('search.results.studio.description'),
+        type: 'page',
+      },
+      {
+        title: t('navigation.shows'),
+        path: '/shows',
+        description: t('search.results.shows.description'),
+        type: 'page',
+      },
+      {
+        title: t('navigation.guide'),
+        path: '/guides',
+        description: t('search.results.guides.description'),
+        type: 'guide',
+      },
+      {
+        title: t('navigation.anatomy'),
+        path: '/anatomy',
+        description: t('search.results.anatomy.description'),
+        type: 'guide',
+      },
+      {
+        title: t('navigation.lab'),
+        path: '/lab',
+        description: t('search.results.lab.description'),
+        type: 'tool',
+      },
+      {
+        title: t('navigation.community'),
+        path: '/community',
+        description: t('search.results.community.description'),
+        type: 'page',
+      },
+      {
+        title: t('breadcrumbs.analysis'),
+        path: '/analysis',
+        description: t('search.results.analysis.description'),
+        type: 'analysis',
+      },
+      {
+        title: t('breadcrumbs.privacy'),
+        path: '/privacy',
+        description: t('search.results.privacy.description'),
+        type: 'page',
+      },
+      {
+        title: t('breadcrumbs.aiPolicy'),
+        path: '/ai-policy',
+        description: t('search.results.aiPolicy.description'),
+        type: 'page',
+      },
+    ],
+    [t]
+  );
 
   /**
    * Filters the search index based on the query string.

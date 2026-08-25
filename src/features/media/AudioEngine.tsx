@@ -59,6 +59,22 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
   const animationFrameRef = useRef<number | null>(null);
   const crossfadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Refs holding the latest versions of callbacks whose own identities
+  // change on nearly every playback state transition (they depend on
+  // status/currentTrack/queue/onEvent). Call sites below invoke these
+  // through the ref instead of listing the callback itself as a
+  // dependency, so calling one doesn't make the *caller's* identity (or a
+  // caller effect's dependency check) change too — which would risk
+  // re-triggering that caller and double-invoking play()/crossfadeToTrack()
+  // for the same track while the first call is still in flight.
+  const handleTrackEndRef = useRef<() => void>(() => {});
+  const preloadNextRef = useRef<() => void>(() => {});
+  const startTimeUpdatesRef = useRef<() => void>(() => {});
+  const stopRef = useRef<() => void>(() => {});
+  const stopTimeUpdatesRef = useRef<() => void>(() => {});
+  const playRef = useRef<(track: AudioTrack) => Promise<void>>(async () => {});
+  const crossfadeToTrackRef = useRef<(track: AudioTrack) => Promise<void>>(async () => {});
+
   // ============================================================================
   // INITIALIZATION
   // ============================================================================
@@ -208,7 +224,7 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
           if (currentSourceRef.current === source) {
             onEvent?.({ type: 'trackEnd', track });
             addToHistory(track);
-            handleTrackEnd();
+            handleTrackEndRef.current();
           }
         };
 
@@ -225,11 +241,11 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
         onEvent?.({ type: 'play' });
 
         // Start time updates
-        startTimeUpdates();
+        startTimeUpdatesRef.current();
 
         // Preload next track
         if (config.preloadNextTrack) {
-          preloadNext();
+          preloadNextRef.current();
         }
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
@@ -254,6 +270,8 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     ]
   );
 
+  playRef.current = play;
+
   const stop = useCallback(() => {
     const source = currentSourceRef.current;
     if (source) {
@@ -261,12 +279,19 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
       currentSourceRef.current = null;
     }
 
-    stopTimeUpdates();
+    // stopTimeUpdates is declared further down (in the TIME UPDATES section)
+    // and is stable, but referencing it directly here would need it in this
+    // callback's deps, which — since it's declared after `stop` in source
+    // order — would hit its temporal dead zone when the deps array below is
+    // evaluated. Going through the ref sidesteps the ordering issue.
+    stopTimeUpdatesRef.current();
     setStatus('idle');
     setCurrentTrack(null);
     setCurrentTime(0);
     onEvent?.({ type: 'stop' });
   }, [setStatus, setCurrentTrack, setCurrentTime, onEvent]);
+
+  stopRef.current = stop;
 
   // ============================================================================
   // CROSSFADE TRANSITION
@@ -297,7 +322,7 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
           if (nextSourceRef.current === nextSource) {
             onEvent?.({ type: 'trackEnd', track: newTrack });
             addToHistory(newTrack);
-            handleTrackEnd();
+            handleTrackEndRef.current();
           }
         };
 
@@ -338,7 +363,7 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
 
           // Preload next
           if (config.preloadNextTrack) {
-            preloadNext();
+            preloadNextRef.current();
           }
         }, config.crossfadeDuration);
       } catch (error) {
@@ -364,6 +389,8 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     ]
   );
 
+  crossfadeToTrackRef.current = crossfadeToTrack;
+
   // ============================================================================
   // TRACK NAVIGATION
   // ============================================================================
@@ -372,6 +399,8 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     nextInQueue();
     // The queue will update, triggering effect to play next track
   }, [nextInQueue]);
+
+  handleTrackEndRef.current = handleTrackEnd;
 
   const preloadNext = useCallback(() => {
     const nextQueueTrack = queue.tracks[queue.currentIndex + 1];
@@ -395,6 +424,8 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
         }
       });
   }, [queue, config.preloadNextTrack, loadAudioBuffer, setNextTrack]);
+
+  preloadNextRef.current = preloadNext;
 
   // ============================================================================
   // TIME UPDATES & ANALYSIS
@@ -458,12 +489,16 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     animationFrameRef.current = requestAnimationFrame(updateTime);
   }, [status, currentTrack, config.enableVisualization, setCurrentTime, onEvent, onAnalysisUpdate]);
 
+  startTimeUpdatesRef.current = startTimeUpdates;
+
   const stopTimeUpdates = useCallback(() => {
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
       animationFrameRef.current = null;
     }
   }, []);
+
+  stopTimeUpdatesRef.current = stopTimeUpdates;
 
   // ============================================================================
   // VOLUME CONTROL
@@ -486,12 +521,23 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
 
     if (currentQueueTrack && currentQueueTrack.id !== currentTrack?.id) {
       if (status === 'playing' && config.crossfadeDuration > 0) {
-        crossfadeToTrack(currentQueueTrack);
+        // Called through refs rather than depending on crossfadeToTrack/play
+        // directly: both are recreated on nearly every playback state change
+        // (status, currentTrack), and listing them here would make this
+        // effect re-run mid-flight — while the track it just started is
+        // still loading, before currentTrack/status catch up — and fire a
+        // second, overlapping play for the same track.
+        crossfadeToTrackRef.current(currentQueueTrack);
       } else {
-        play(currentQueueTrack);
+        playRef.current(currentQueueTrack);
       }
     }
-  }, [queue.currentIndex, queue.tracks]);
+    // status and currentTrack?.id are real dependencies of the condition
+    // above (config.crossfadeDuration too) — they were missing before. Each
+    // one settles to a value matching currentQueueTrack once play/crossfade
+    // finishes, so the `currentQueueTrack.id !== currentTrack?.id` guard
+    // prevents these additions from causing a repeat invocation.
+  }, [queue.currentIndex, queue.tracks, status, currentTrack?.id, config.crossfadeDuration]);
 
   // ============================================================================
   // CLEANUP
@@ -499,8 +545,11 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
 
   useEffect(() => {
     return () => {
-      stop();
-      stopTimeUpdates();
+      // This must run only on unmount (empty dep array), not whenever stop
+      // or stopTimeUpdates are recreated — going through the refs lets it
+      // call the latest versions without adding them as dependencies.
+      stopRef.current();
+      stopTimeUpdatesRef.current();
       if (crossfadeTimeoutRef.current) {
         clearTimeout(crossfadeTimeoutRef.current);
       }
