@@ -13,23 +13,33 @@ declare global {
 
 describe('ThemeSwitch', () => {
   let listeners: Array<(event: MediaQueryListEvent) => void>;
+  // Real MediaQueryList.matches updates before the 'change' event fires, and
+  // applyTheme('system') re-queries matchMedia() rather than trusting the
+  // event it was passed. This mock's `matches` getter must track the same
+  // value the test dispatches through the listeners, or that re-query reads
+  // stale state and the assertions diverge from real-browser behaviour.
+  let currentMatches: boolean;
   beforeEach(async () => {
     listeners = [];
+    currentMatches = false;
     window.localStorage.clear();
     document.documentElement.className = '';
     document.documentElement.removeAttribute('data-theme');
     document.documentElement.removeAttribute('data-theme-resolved');
     window.matchMedia = vi.fn().mockImplementation(() => ({
-      matches: false,
+      get matches() {
+        return currentMatches;
+      },
       media: '(prefers-color-scheme: dark)',
-      addEventListener: (_: string, handler: (event: MediaQueryListEvent) => void) => listeners.push(handler),
+      addEventListener: (_: string, handler: (event: MediaQueryListEvent) => void) =>
+        listeners.push(handler),
       removeEventListener: (_: string, handler: (event: MediaQueryListEvent) => void) =>
         (listeners = listeners.filter((listener) => listener !== handler)),
       addListener: (handler: (event: MediaQueryListEvent) => void) => listeners.push(handler),
       removeListener: (handler: (event: MediaQueryListEvent) => void) =>
         (listeners = listeners.filter((listener) => listener !== handler)),
       onchange: null,
-      dispatchEvent: () => false
+      dispatchEvent: () => false,
     }));
     await i18n.changeLanguage('en');
   });
@@ -55,6 +65,7 @@ describe('ThemeSwitch', () => {
     expect(window.localStorage.getItem('radio-adamowo-theme')).toBe('system');
 
     act(() => {
+      currentMatches = true;
       listeners.forEach((listener) => listener({ matches: true } as MediaQueryListEvent));
     });
     expect(document.documentElement.classList.contains('dark')).toBe(true);
