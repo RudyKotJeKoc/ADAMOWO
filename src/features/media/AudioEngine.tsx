@@ -10,7 +10,7 @@
  * - Error handling and retry logic
  */
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { useAudioEngineStore, usePlaylistQueueStore } from '../../state/media';
 import type { AudioTrack, AudioCache, AudioEngineEvent, AudioAnalysisData } from './media.schema';
 
@@ -74,6 +74,18 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
   const stopTimeUpdatesRef = useRef<() => void>(() => {});
   const playRef = useRef<(track: AudioTrack) => Promise<void>>(async () => {});
   const crossfadeToTrackRef = useRef<(track: AudioTrack) => Promise<void>>(async () => {});
+
+  // Latest status/currentTrack/crossfadeDuration for the QUEUE CHANGES effect
+  // below to read without depending on them: play() itself calls
+  // setStatus('loading') synchronously, before currentTrack is updated, so
+  // if that effect depended on `status` directly it would re-fire on that
+  // transition — while the track it just started is still loading, with the
+  // guard still true (currentTrack hasn't caught up yet) — and call play()
+  // a second time for the same track. Populated below by the single
+  // "LATEST REFS SYNC" useLayoutEffect, not assigned inline during render.
+  const statusRef = useRef(status);
+  const currentTrackIdRef = useRef(currentTrack?.id);
+  const crossfadeDurationRef = useRef(config.crossfadeDuration);
 
   // ============================================================================
   // INITIALIZATION
@@ -270,8 +282,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     ]
   );
 
-  playRef.current = play;
-
   const stop = useCallback(() => {
     const source = currentSourceRef.current;
     if (source) {
@@ -290,8 +300,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     setCurrentTime(0);
     onEvent?.({ type: 'stop' });
   }, [setStatus, setCurrentTrack, setCurrentTime, onEvent]);
-
-  stopRef.current = stop;
 
   // ============================================================================
   // CROSSFADE TRANSITION
@@ -389,8 +397,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     ]
   );
 
-  crossfadeToTrackRef.current = crossfadeToTrack;
-
   // ============================================================================
   // TRACK NAVIGATION
   // ============================================================================
@@ -399,8 +405,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     nextInQueue();
     // The queue will update, triggering effect to play next track
   }, [nextInQueue]);
-
-  handleTrackEndRef.current = handleTrackEnd;
 
   const preloadNext = useCallback(() => {
     const nextQueueTrack = queue.tracks[queue.currentIndex + 1];
@@ -424,8 +428,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
         }
       });
   }, [queue, config.preloadNextTrack, loadAudioBuffer, setNextTrack]);
-
-  preloadNextRef.current = preloadNext;
 
   // ============================================================================
   // TIME UPDATES & ANALYSIS
@@ -489,8 +491,6 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     animationFrameRef.current = requestAnimationFrame(updateTime);
   }, [status, currentTrack, config.enableVisualization, setCurrentTime, onEvent, onAnalysisUpdate]);
 
-  startTimeUpdatesRef.current = startTimeUpdates;
-
   const stopTimeUpdates = useCallback(() => {
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
@@ -498,7 +498,28 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     }
   }, []);
 
-  stopTimeUpdatesRef.current = stopTimeUpdates;
+  // ============================================================================
+  // LATEST REFS SYNC
+  // ============================================================================
+  // Assigning `ref.current = value` directly in the render body is a
+  // commonly-used React escape hatch (harmless as long as nothing reads the
+  // ref during that same render), but it does mutate during render, which a
+  // discarded/uncommitted render pass could in principle leak. Using
+  // useLayoutEffect instead means these refs are only ever written for a
+  // render that actually committed, synchronously before any other effect
+  // (layout or passive) in this component can read them.
+  useLayoutEffect(() => {
+    statusRef.current = status;
+    currentTrackIdRef.current = currentTrack?.id;
+    crossfadeDurationRef.current = config.crossfadeDuration;
+    playRef.current = play;
+    stopRef.current = stop;
+    crossfadeToTrackRef.current = crossfadeToTrack;
+    handleTrackEndRef.current = handleTrackEnd;
+    preloadNextRef.current = preloadNext;
+    startTimeUpdatesRef.current = startTimeUpdates;
+    stopTimeUpdatesRef.current = stopTimeUpdates;
+  });
 
   // ============================================================================
   // VOLUME CONTROL
@@ -519,25 +540,22 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
   useEffect(() => {
     const currentQueueTrack = queue.tracks[queue.currentIndex];
 
-    if (currentQueueTrack && currentQueueTrack.id !== currentTrack?.id) {
-      if (status === 'playing' && config.crossfadeDuration > 0) {
-        // Called through refs rather than depending on crossfadeToTrack/play
-        // directly: both are recreated on nearly every playback state change
-        // (status, currentTrack), and listing them here would make this
-        // effect re-run mid-flight — while the track it just started is
-        // still loading, before currentTrack/status catch up — and fire a
-        // second, overlapping play for the same track.
+    // status/currentTrack/config.crossfadeDuration are read through refs,
+    // not the reactive values in scope: this effect must fire only on an
+    // actual queue change. play() itself calls setStatus('loading')
+    // synchronously, before currentTrack updates, so depending on `status`
+    // directly would re-run this effect mid-flight — while the track it
+    // just started is still loading and the guard below is still true
+    // (currentTrack hasn't caught up yet) — firing a second, overlapping
+    // play for the same track. See the P1 fix that caught this in review.
+    if (currentQueueTrack && currentQueueTrack.id !== currentTrackIdRef.current) {
+      if (statusRef.current === 'playing' && crossfadeDurationRef.current > 0) {
         crossfadeToTrackRef.current(currentQueueTrack);
       } else {
         playRef.current(currentQueueTrack);
       }
     }
-    // status and currentTrack?.id are real dependencies of the condition
-    // above (config.crossfadeDuration too) — they were missing before. Each
-    // one settles to a value matching currentQueueTrack once play/crossfade
-    // finishes, so the `currentQueueTrack.id !== currentTrack?.id` guard
-    // prevents these additions from causing a repeat invocation.
-  }, [queue.currentIndex, queue.tracks, status, currentTrack?.id, config.crossfadeDuration]);
+  }, [queue.currentIndex, queue.tracks]);
 
   // ============================================================================
   // CLEANUP
