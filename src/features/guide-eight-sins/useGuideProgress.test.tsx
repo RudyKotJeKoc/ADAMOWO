@@ -4,15 +4,23 @@ import { describe, expect, it, beforeEach } from 'vitest';
 import { eightSinsModules } from './guide.data';
 import { useGuideProgress } from './useGuideProgress';
 
+// A stable reference is required here: useGuideProgress re-syncs from
+// localStorage whenever its `modules` argument identity changes, so a fresh
+// array on every render (e.g. an inline .slice() call) causes an infinite
+// effect -> setState -> render loop once storage is pre-populated.
+const singleModule = eightSinsModules.slice(0, 1);
+
 const TestHarness = () => {
-  const { totals, setAnswer, reset } = useGuideProgress(eightSinsModules.slice(0, 1));
+  const { totals, setAnswer, reset } = useGuideProgress(singleModule);
   return (
     <div>
       <span data-testid="score">{totals.sin_1 ?? 0}</span>
       <button type="button" onClick={() => setAnswer('sin_1', 'sin_1_q_1', true)}>
         answer
       </button>
-      <button type="button" onClick={() => reset()}>reset</button>
+      <button type="button" onClick={() => reset()}>
+        reset
+      </button>
     </div>
   );
 };
@@ -49,7 +57,7 @@ describe('useGuideProgress', () => {
         version: 1,
         answersByModule: { sin_1: { sin_1_q_1: true } },
         totals: { sin_1: 2 },
-        updatedAt: new Date().toISOString()
+        updatedAt: new Date().toISOString(),
       })
     );
 
