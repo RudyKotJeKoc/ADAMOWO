@@ -1088,7 +1088,7 @@
     },
     "actions": {
       "listen": "Listen",
-      "listenEpisode": "Listen to episode",
+      "listenEpisode": "Listen to episode: {{title}}",
       "currentlyPlaying": "Currently playing"
     },
     "player": {
@@ -1099,7 +1099,7 @@
       "unmute": "Unmute",
       "volume": "Volume",
       "progress": "Playback progress",
-      "nowPlaying": "Now playing",
+      "nowPlaying": "Now playing: {{title}}",
       "idle": "Select an episode to listen",
       "chapters": "Chapters"
     },

@@ -8,6 +8,19 @@ type EpisodeDetailsProps = {
   onSelectChapter: (seconds: number) => void;
 };
 
+function formatTime(totalSeconds: number): string {
+  if (!Number.isFinite(totalSeconds)) {
+    return '0:00';
+  }
+
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = Math.floor(totalSeconds % 60)
+    .toString()
+    .padStart(2, '0');
+
+  return `${minutes}:${seconds}`;
+}
+
 export function EpisodeDetails({ episode, onSelectChapter }: EpisodeDetailsProps): JSX.Element {
   const { t } = useTranslation();
   const buttonsRef = useRef<HTMLButtonElement[]>([]);
@@ -62,7 +75,9 @@ export function EpisodeDetails({ episode, onSelectChapter }: EpisodeDetailsProps
           {episode.title}
         </h2>
         <p className="mt-1 text-sm text-base-300">
-          {t('analysis.details.published', { date: publishedDate ?? t('analysis.details.unknownDate') })}
+          {t('analysis.details.published', {
+            date: publishedDate ?? t('analysis.details.unknownDate'),
+          })}
         </p>
       </div>
 
@@ -86,7 +101,7 @@ export function EpisodeDetails({ episode, onSelectChapter }: EpisodeDetailsProps
                 onClick={() => onSelectChapter(chapter.startSec)}
                 onKeyDown={(event) => handleKeyNavigation(index, event)}
                 className="rounded-full border border-accent-400 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-200 transition hover:bg-accent-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
-                aria-label={t('analysis.details.seekTo', { title: chapter.title })}
+                aria-label={t('analysis.details.seekTo', { time: formatTime(chapter.startSec) })}
               >
                 {chapter.title}
               </button>
