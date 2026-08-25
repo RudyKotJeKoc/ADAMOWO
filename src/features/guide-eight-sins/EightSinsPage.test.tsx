@@ -6,8 +6,9 @@ import i18n from '../../i18n';
 import { EightSinsPage } from './EightSinsPage';
 
 describe('EightSinsPage', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     window.localStorage.clear();
+    await i18n.changeLanguage('pl');
   });
 
   const renderPage = () =>
@@ -28,9 +29,11 @@ describe('EightSinsPage', () => {
   it('updates score after answering a question', async () => {
     renderPage();
 
-    const questionCard = screen.getByText(
-      'Czy ktoś bliski pobiera świadczenia lub granty, ale nie przeznacza ich na realną pomoc Tobie?'
-    ).closest('div');
+    const questionCard = screen
+      .getByText(
+        'Czy ktoś bliski pobiera świadczenia lub granty, ale nie przeznacza ich na realną pomoc Tobie?'
+      )
+      .closest('div');
 
     expect(questionCard).not.toBeNull();
 
