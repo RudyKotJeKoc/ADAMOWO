@@ -1050,7 +1050,7 @@
     },
     "actions": {
       "listen": "Luisteren",
-      "listenEpisode": "Aflevering beluisteren",
+      "listenEpisode": "Aflevering beluisteren: {{title}}",
       "currentlyPlaying": "Nu aan het afspelen"
     },
     "player": {
@@ -1061,7 +1061,7 @@
       "unmute": "Geluid aan",
       "volume": "Volume",
       "progress": "Afspeelvoortgang",
-      "nowPlaying": "Nu aan het spelen",
+      "nowPlaying": "Nu aan het spelen: {{title}}",
       "idle": "Selecteer een aflevering om te beluisteren",
       "chapters": "Hoofdstukken"
     },
