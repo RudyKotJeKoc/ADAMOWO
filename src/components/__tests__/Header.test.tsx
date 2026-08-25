@@ -46,13 +46,10 @@ describe('Header', () => {
     [
       'Analyses',
       'Taxonomy',
-      'Case Study',
       'Anatomy',
       'Guide',
       'Lab',
-      'Glade of Lies',
       'Programs',
-      'Theater of the Absurd',
       'Media',
       'Community',
       'Help',
@@ -82,7 +79,7 @@ describe('Header', () => {
     expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual([
       'Analyses',
       'Taxonomy',
-      'Case Study',
+      'Anatomy',
     ]);
   });
 
