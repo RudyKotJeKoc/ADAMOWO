@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { LangSwitch } from './LangSwitch';
-import { LogoGlasses } from './LogoGlasses';
 import { Search } from './Search';
 import { ThemeSwitch } from './ThemeSwitch';
 
@@ -218,7 +217,14 @@ export function Header(): JSX.Element {
       <div className="container-responsive flex items-center justify-between gap-4 py-4">
         <NavLink to="/" className="group flex items-center gap-3" aria-label={t('header.home')}>
           <span className="rounded bg-base-900/70 p-2 transition-colors duration-150 group-hover:bg-base-850 group-focus-visible:bg-base-850">
-            <LogoGlasses className="h-9 w-auto" />
+            <img
+             src="/assets/images/ui/logo-header.png"
+             alt="Adamowo.com"
+             className="h-10 w-10 shrink-0 rounded-full object-cover sm:h-11 sm:w-11"
+             onError={(event) => {
+              event.currentTarget.style.display = 'none';
+            }}
+          />
           </span>
           <span className="font-display text-base font-semibold uppercase tracking-wide text-base-100">
             Radio Adamowo
