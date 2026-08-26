@@ -345,10 +345,105 @@ describe('AudioEngine', () => {
     expect(onEvent).not.toHaveBeenCalled();
   });
 
-  // No test covers stop() being called mid-load: AudioEngine is a headless
-  // component (`return null`) that exposes no ref/imperative handle and no
-  // store action maps to its internal stop() — per the component's own
-  // "PUBLIC API" comment, control is meant to go through the store, but no
-  // such action exists yet. There is currently no reliable way to invoke
-  // stop() from outside the component to exercise this path.
+  it('does not clear isTransitioning belonging to a newer crossfade when a stale crossfade resolves', async () => {
+    render(<AudioEngine />);
+
+    const trackA = track('a');
+    const trackB = track('b');
+    const trackC = track('c');
+
+    // 1. Get A playing.
+    await setQueueTracks([trackA, trackB, trackC]);
+    expect(mockCtx.decodeAudioData).toHaveBeenCalledTimes(1);
+    mockCtx.decodeCalls[0].resolve(fakeBuffer);
+    await flushMicrotasks();
+    expect(useAudioEngineStore.getState().status).toBe('playing');
+
+    // Long crossfadeDuration so its completion setTimeout never fires on
+    // its own during this test — only the generation check should matter.
+    act(() => {
+      useAudioEngineStore.getState().updateConfig({ crossfadeDuration: 100000 });
+    });
+
+    // 2. Crossfade to B (generation g1): isTransitioning flips true while
+    // B's load is still pending.
+    await jumpTo(1);
+    expect(mockCtx.decodeAudioData).toHaveBeenCalledTimes(2);
+    expect(useAudioEngineStore.getState().isTransitioning).toBe(true);
+
+    // 3. Before B's load resolves, crossfade to C (generation g2) supersedes
+    // B. isTransitioning stays true — now for C's crossfade.
+    await jumpTo(2);
+    expect(mockCtx.decodeAudioData).toHaveBeenCalledTimes(3);
+    expect(useAudioEngineStore.getState().isTransitioning).toBe(true);
+
+    // 4. Resolve C's buffer: C's crossfade is now actively fading, with its
+    // own completion timeout pending (10000ms away, won't fire here).
+    mockCtx.decodeCalls[2].resolve(fakeBuffer);
+    await flushMicrotasks();
+    expect(useAudioEngineStore.getState().isTransitioning).toBe(true);
+    expect(mockCtx.createBufferSource).toHaveBeenCalledTimes(2); // A's source + C's next source
+
+    // 5. Now resolve the stale B load. Its generation no longer matches
+    // (g2/C owns requestGenerationRef now), so it must bail out without
+    // touching isTransitioning — which still belongs to C's in-progress
+    // crossfade — and without creating a source for B.
+    mockCtx.decodeCalls[1].resolve(fakeBuffer);
+    await flushMicrotasks();
+
+    expect(useAudioEngineStore.getState().isTransitioning).toBe(true);
+    expect(mockCtx.createBufferSource).toHaveBeenCalledTimes(2);
+  });
+
+  it('stops both sources and never emits crossfadeEnd/trackChange when unmounted mid-crossfade', async () => {
+    const onEvent = vi.fn();
+    const { unmount } = render(<AudioEngine onEvent={onEvent} />);
+
+    const trackA = track('a');
+    const trackB = track('b');
+
+    // 1. Get A playing.
+    await setQueueTracks([trackA, trackB]);
+    mockCtx.decodeCalls[0].resolve(fakeBuffer);
+    await flushMicrotasks();
+    expect(useAudioEngineStore.getState().status).toBe('playing');
+    const sourceA = mockCtx.sources[0];
+
+    // 2. Start crossfading to B and let its load resolve, so nextSource is
+    // created, started, and the crossfade completion timeout is pending.
+    act(() => {
+      useAudioEngineStore.getState().updateConfig({ crossfadeDuration: 5000 });
+    });
+    await jumpTo(1);
+    mockCtx.decodeCalls[1].resolve(fakeBuffer);
+    await flushMicrotasks();
+
+    expect(mockCtx.createBufferSource).toHaveBeenCalledTimes(2);
+    const sourceB = mockCtx.sources[1];
+    expect(sourceB.start).toHaveBeenCalledTimes(1);
+    expect(useAudioEngineStore.getState().isTransitioning).toBe(true);
+    expect(sourceA.stop).not.toHaveBeenCalled();
+    expect(sourceB.stop).not.toHaveBeenCalled();
+
+    onEvent.mockClear();
+
+    // 3. Unmount while the crossfade is still in progress. The CLEANUP
+    // effect calls stop(), which must immediately stop *both* sources and
+    // cancel the pending crossfade-completion timeout.
+    unmount();
+
+    expect(sourceA.stop).toHaveBeenCalledTimes(1);
+    expect(sourceB.stop).toHaveBeenCalledTimes(1);
+
+    // 4. Let the (cancelled) crossfade timeout's original delay elapse.
+    // Nothing further should happen: no crossfadeEnd/trackChange, no extra
+    // source creation.
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 20));
+    });
+
+    expect(mockCtx.createBufferSource).toHaveBeenCalledTimes(2);
+    expect(onEvent).not.toHaveBeenCalledWith(expect.objectContaining({ type: 'crossfadeEnd' }));
+    expect(onEvent).not.toHaveBeenCalledWith(expect.objectContaining({ type: 'trackChange' }));
+  });
 });

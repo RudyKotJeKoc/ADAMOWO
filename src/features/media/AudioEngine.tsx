@@ -340,6 +340,21 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
       currentSourceRef.current = null;
     }
 
+    // A crossfade may already have started nextSource — without this, it
+    // keeps playing (and its pending timeout still fires crossfadeEnd/
+    // trackChange later) even though stop() was just called.
+    if (crossfadeTimeoutRef.current) {
+      clearTimeout(crossfadeTimeoutRef.current);
+      crossfadeTimeoutRef.current = null;
+    }
+    const nextSource = nextSourceRef.current;
+    if (nextSource) {
+      nextSource.stop();
+      nextSourceRef.current = null;
+    }
+    nextGainRef.current = null;
+    setTransitioning(false);
+
     // stopTimeUpdates is declared further down (in the TIME UPDATES section)
     // and is stable, but referencing it directly here would need it in this
     // callback's deps, which — since it's declared after `stop` in source
@@ -350,7 +365,7 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
     setCurrentTrack(null);
     setCurrentTime(0);
     onEvent?.({ type: 'stop' });
-  }, [setStatus, setCurrentTrack, setCurrentTime, onEvent]);
+  }, [setStatus, setCurrentTrack, setCurrentTime, setTransitioning, onEvent]);
 
   // ============================================================================
   // CROSSFADE TRANSITION
@@ -372,8 +387,10 @@ export function AudioEngine({ onEvent, onAnalysisUpdate }: AudioEngineProps): nu
 
         // Superseded while loading — abandon before creating any nodes or
         // touching the audio graph/store for a track nothing wants anymore.
+        // Do NOT touch setTransitioning here: a newer play()/crossfadeToTrack()
+        // may already own the transitioning flag (e.g. set it to true for its
+        // own crossfade), and this stale branch clearing it would clobber that.
         if (requestGenerationRef.current !== generation) {
-          setTransitioning(false);
           return;
         }
 
