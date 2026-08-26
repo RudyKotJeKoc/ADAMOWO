@@ -5,12 +5,20 @@ import { describe, expect, test, vi, beforeEach, afterAll } from 'vitest';
 import { VideoPlayer } from './VideoPlayer';
 import type { PlayerLabels } from './VideoPlayer';
 
+// VideoPlayer's toggle button branches on the real `paused` DOM property
+// (not React state), so the play/pause mocks below must keep it in sync the
+// same way a real browser would, or a second click re-enters the same
+// branch instead of toggling.
+let mediaPaused = true;
+
 const playMock = vi.fn().mockImplementation(function (this: HTMLVideoElement) {
+  mediaPaused = false;
   fireEvent(this, new Event('play'));
   return Promise.resolve();
 });
 
 const pauseMock = vi.fn().mockImplementation(function (this: HTMLVideoElement) {
+  mediaPaused = true;
   fireEvent(this, new Event('pause'));
 });
 
@@ -44,7 +52,7 @@ vi.mock('hls.js', () => {
 const statusMessages = {
   loading: 'Loading',
   error: 'Error',
-  noSource: 'No source'
+  noSource: 'No source',
 };
 
 const labels: PlayerLabels = {
@@ -63,20 +71,25 @@ const labels: PlayerLabels = {
   volumeIndicator: (value) => `Volume ${Math.round(value * 100)}%`,
   chapterHeading: 'Chapters',
   chapterCurrent: 'Current chapter',
-  getChapterAriaLabel: (chapter, time) => `${chapter.title} (${time})`
+  getChapterAriaLabel: (chapter, time) => `${chapter.title} (${time})`,
 };
 
 beforeEach(() => {
   vi.clearAllMocks();
+  mediaPaused = true;
   Object.defineProperty(HTMLMediaElement.prototype, 'play', {
     configurable: true,
     writable: true,
-    value: playMock
+    value: playMock,
   });
   Object.defineProperty(HTMLMediaElement.prototype, 'pause', {
     configurable: true,
     writable: true,
-    value: pauseMock
+    value: pauseMock,
+  });
+  Object.defineProperty(HTMLMediaElement.prototype, 'paused', {
+    configurable: true,
+    get: () => mediaPaused,
   });
 });
 
@@ -84,12 +97,12 @@ afterAll(() => {
   Object.defineProperty(HTMLMediaElement.prototype, 'play', {
     configurable: true,
     writable: true,
-    value: originalPlay
+    value: originalPlay,
   });
   Object.defineProperty(HTMLMediaElement.prototype, 'pause', {
     configurable: true,
     writable: true,
-    value: originalPause
+    value: originalPause,
   });
 });
 
@@ -111,7 +124,12 @@ describe('VideoPlayer', () => {
   test('shows message when no source is provided', () => {
     renderPlayer({ hlsSrc: undefined, mp4Src: undefined });
 
-    expect(screen.getByText('No source')).toBeInTheDocument();
+    // The "no source" message renders twice by design: once in the
+    // placeholder that replaces the <video> element, and once in the
+    // persistent status line below the controls.
+    const messages = screen.getAllByText('No source');
+    expect(messages.length).toBe(2);
+    messages.forEach((message) => expect(message).toBeInTheDocument());
   });
 
   test('seeks to chapter time when selected', async () => {
@@ -131,9 +149,29 @@ describe('VideoPlayer', () => {
 });
 
 function renderPlayer(
-  overrides: Partial<{ hlsSrc?: string; mp4Src?: string; chapters: Array<{ id: string; title: string; time: number }> }> = {}
+  overrides: Partial<{
+    hlsSrc?: string;
+    mp4Src?: string;
+    chapters: Array<{ id: string; title: string; time: number }>;
+  }> = {}
 ) {
-  const { hlsSrc = 'https://example.com/doc.m3u8', mp4Src = 'https://example.com/doc.mp4', chapters = [] } = overrides;
+  // Destructuring defaults only skip a key that's undefined, which is
+  // indistinguishable from "explicitly passed as undefined" — so a caller
+  // trying to force the no-source state via { hlsSrc: undefined, mp4Src:
+  // undefined } would silently get the defaults back. Checking `in` keeps an
+  // explicit override honoured.
+  const hlsSrc = 'hlsSrc' in overrides ? overrides.hlsSrc : 'https://example.com/doc.m3u8';
+  const mp4Src = 'mp4Src' in overrides ? overrides.mp4Src : 'https://example.com/doc.mp4';
+  const chapters = overrides.chapters ?? [];
 
-  return render(<VideoPlayer title="Documentary" hlsSrc={hlsSrc} mp4Src={mp4Src} chapters={chapters} statusMessages={statusMessages} labels={labels} />);
+  return render(
+    <VideoPlayer
+      title="Documentary"
+      hlsSrc={hlsSrc}
+      mp4Src={mp4Src}
+      chapters={chapters}
+      statusMessages={statusMessages}
+      labels={labels}
+    />
+  );
 }

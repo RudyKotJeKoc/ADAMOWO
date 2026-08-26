@@ -46,6 +46,13 @@ export function Slideshow({
   const videoRef = useRef<HTMLVideoElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  // handleNext's identity changes whenever isTransitioning toggles (twice per
+  // slide, at transition start and end), but the auto-play effect below
+  // should only reset its timer once per slide, on currentIndex change. This
+  // ref lets the interval call the latest handleNext without depending on
+  // its identity and re-running (and re-resetting the countdown) an extra
+  // time per cycle.
+  const handleNextRef = useRef<() => void>(() => {});
 
   const currentItem = items[currentIndex] || null;
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -69,7 +76,7 @@ export function Slideshow({
       currentItem?.type === 'video' ? currentItem.duration || config.interval : config.interval;
 
     intervalRef.current = setInterval(() => {
-      handleNext();
+      handleNextRef.current();
     }, interval);
 
     return () => {
@@ -93,6 +100,8 @@ export function Slideshow({
     }, config.transitionDuration);
   }, [isTransitioning, config.transitionDuration, next, setTransitioning]);
 
+  handleNextRef.current = handleNext;
+
   const handlePrevious = useCallback(() => {
     if (isTransitioning) return;
 
@@ -115,6 +124,54 @@ export function Slideshow({
     },
     [isTransitioning, currentIndex, config.transitionDuration, setCurrentIndex, setTransitioning]
   );
+
+  // ============================================================================
+  // FULLSCREEN
+  // ============================================================================
+  // Declared before KEYBOARD NAVIGATION below (rather than in its original
+  // position after VIDEO HANDLING) because that effect's dependency array
+  // needs exitFullscreen to already be initialized — a dependency array is
+  // evaluated synchronously on every render, unlike an effect body, so
+  // referencing a later `const` there would hit its temporal dead zone.
+
+  const enterFullscreen = useCallback(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    if (container.requestFullscreen) {
+      container.requestFullscreen();
+    } else if (
+      'webkitRequestFullscreen' in container &&
+      typeof container.webkitRequestFullscreen === 'function'
+    ) {
+      container.webkitRequestFullscreen();
+    } else if (
+      'mozRequestFullScreen' in container &&
+      typeof container.mozRequestFullScreen === 'function'
+    ) {
+      container.mozRequestFullScreen();
+    }
+
+    setIsFullscreen(true);
+  }, []);
+
+  const exitFullscreen = useCallback(() => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (
+      'webkitExitFullscreen' in document &&
+      typeof document.webkitExitFullscreen === 'function'
+    ) {
+      document.webkitExitFullscreen();
+    } else if (
+      'mozCancelFullScreen' in document &&
+      typeof document.mozCancelFullScreen === 'function'
+    ) {
+      document.mozCancelFullScreen();
+    }
+
+    setIsFullscreen(false);
+  }, []);
 
   // ============================================================================
   // KEYBOARD NAVIGATION
@@ -149,7 +206,17 @@ export function Slideshow({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [enableKeyboard, isPlaying, isFullscreen, handleNext, handlePrevious, setPlaying]);
+    // exitFullscreen is stable (useCallback with an empty dep array), so
+    // adding it here doesn't change how often this effect re-runs.
+  }, [
+    enableKeyboard,
+    isPlaying,
+    isFullscreen,
+    handleNext,
+    handlePrevious,
+    setPlaying,
+    exitFullscreen,
+  ]);
 
   // ============================================================================
   // TOUCH/SWIPE NAVIGATION
@@ -223,49 +290,6 @@ export function Slideshow({
       });
     }
   }, [currentIndex, currentItem, isPlaying, t]);
-
-  // ============================================================================
-  // FULLSCREEN
-  // ============================================================================
-
-  const enterFullscreen = useCallback(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    if (container.requestFullscreen) {
-      container.requestFullscreen();
-    } else if (
-      'webkitRequestFullscreen' in container &&
-      typeof container.webkitRequestFullscreen === 'function'
-    ) {
-      container.webkitRequestFullscreen();
-    } else if (
-      'mozRequestFullScreen' in container &&
-      typeof container.mozRequestFullScreen === 'function'
-    ) {
-      container.mozRequestFullScreen();
-    }
-
-    setIsFullscreen(true);
-  }, []);
-
-  const exitFullscreen = useCallback(() => {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (
-      'webkitExitFullscreen' in document &&
-      typeof document.webkitExitFullscreen === 'function'
-    ) {
-      document.webkitExitFullscreen();
-    } else if (
-      'mozCancelFullScreen' in document &&
-      typeof document.mozCancelFullScreen === 'function'
-    ) {
-      document.mozCancelFullScreen();
-    }
-
-    setIsFullscreen(false);
-  }, []);
 
   // Listen to fullscreen changes
   useEffect(() => {

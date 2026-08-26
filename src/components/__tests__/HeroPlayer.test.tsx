@@ -5,49 +5,65 @@ import i18n from '../../i18n';
 import { HeroPlayer } from '../HeroPlayer';
 import { usePlayerStore } from '../../state/player';
 
-vi.mock('hls.js', () => ({
-  default: {
-    isSupported: () => true
-  }
-}));
-
-const defaultNowPlaying = {
-  title: 'Mock Show',
-  artist: 'Mock Artist',
-  track: 'Mock Track',
-  coverUrl: '/mock.jpg',
-  startedAt: '2024-01-01T00:00:00Z'
-};
-
-type HlsEventHandlers = {
+type LocalAudioClientOptions = {
   onReady?: () => void;
-  onReconnectAttempt?: (attempt: number, max: number) => void;
-  onReconnectSuccess?: () => void;
   onError?: (message: string) => void;
+  onTrackChange?: (track: {
+    id: string;
+    title: string;
+    artist: string;
+    url: string;
+    coverUrl?: string;
+  }) => void;
+  onPlaylistLoaded?: (tracks: unknown[]) => void;
 };
 
-let capturedHlsOptions: HlsEventHandlers | undefined;
+// vi.mock(...) factories below are hoisted above regular module code, so the
+// mocks they reference must be created inside vi.hoisted() rather than as
+// plain top-level consts (which would still be in their temporal dead zone
+// when the hoisted factories run).
+const {
+  defaultNowPlaying,
+  mockGetNowPlaying,
+  mockSubscribeNowPlaying,
+  mockRetry,
+  mockDestroy,
+  mockCreateLocalAudioClient,
+} = vi.hoisted(() => {
+  const defaultNowPlaying = {
+    title: 'Mock Show',
+    artist: 'Mock Artist',
+    track: 'Mock Track',
+    coverUrl: '/mock.jpg',
+    startedAt: '2024-01-01T00:00:00Z',
+  };
 
-const mockGetNowPlaying = vi.fn(() => Promise.resolve(defaultNowPlaying));
-const mockSubscribeNowPlaying = vi.fn<[], () => void>(() => () => undefined);
-const mockRetry = vi.fn();
-const mockCreateHlsClient = vi.fn((_: unknown, __: unknown, options: HlsEventHandlers) => {
-  capturedHlsOptions = options;
+  const mockGetNowPlaying = vi.fn(() => Promise.resolve(defaultNowPlaying));
+  const mockSubscribeNowPlaying = vi.fn<[], () => void>(() => () => undefined);
+  const mockRetry = vi.fn();
+  const mockDestroy = vi.fn();
+  const mockCreateLocalAudioClient = vi.fn();
+
   return {
-    destroy: vi.fn(),
-    retry: mockRetry
+    defaultNowPlaying,
+    mockGetNowPlaying,
+    mockSubscribeNowPlaying,
+    mockRetry,
+    mockDestroy,
+    mockCreateLocalAudioClient,
   };
 });
+
+let capturedClientOptions: LocalAudioClientOptions | undefined;
 
 vi.mock('../../data/nowPlaying', () => ({
   getNowPlaying: mockGetNowPlaying,
   subscribeNowPlaying: mockSubscribeNowPlaying,
-  FALLBACK_NOW_PLAYING: defaultNowPlaying
+  FALLBACK_NOW_PLAYING: defaultNowPlaying,
 }));
 
-vi.mock('../../lib/hlsClient', () => ({
-  MAX_RECONNECT_ATTEMPTS: 5,
-  createHlsClient: mockCreateHlsClient
+vi.mock('../../lib/localAudioClient', () => ({
+  createLocalAudioClient: mockCreateLocalAudioClient,
 }));
 
 const renderPlayer = (): void => {
@@ -63,10 +79,10 @@ const resetPlayerStore = (): void => {
     playing: false,
     volume: 1,
     muted: false,
-    src: 'https://example.com/stream.m3u8',
+    playlistUrl: '/music/playlist.json',
     status: 'idle',
     error: null,
-    reconnectCount: 0
+    currentTrack: null,
   });
 };
 
@@ -98,9 +114,22 @@ beforeAll(() => {
 beforeEach(() => {
   vi.clearAllMocks();
   resetPlayerStore();
-  capturedHlsOptions = undefined;
+  capturedClientOptions = undefined;
   mockGetNowPlaying.mockResolvedValue(defaultNowPlaying);
   mockSubscribeNowPlaying.mockReturnValue(() => undefined);
+  mockCreateLocalAudioClient.mockImplementation(
+    (_audio: HTMLAudioElement, _playlistUrl: string, options: LocalAudioClientOptions) => {
+      capturedClientOptions = options;
+      return {
+        destroy: mockDestroy,
+        retry: mockRetry,
+        nextTrack: vi.fn(),
+        previousTrack: vi.fn(),
+        getCurrentTrack: () => null,
+        getPlaylist: () => [],
+      };
+    }
+  );
 });
 
 afterEach(() => {
@@ -111,7 +140,7 @@ describe('HeroPlayer', () => {
   it('renders now playing info and toggles play/pause state', async () => {
     renderPlayer();
 
-    await waitFor(() => expect(mockCreateHlsClient).toHaveBeenCalled());
+    await waitFor(() => expect(mockCreateLocalAudioClient).toHaveBeenCalled());
 
     const playButton = await screen.findByRole('button', { name: /play/i });
 
@@ -145,62 +174,67 @@ describe('HeroPlayer', () => {
     await waitFor(() => expect(muteButton).toHaveAttribute('aria-pressed', 'false'));
   });
 
-  it('shows error message and retry option on HLS error', async () => {
+  it('shows error message and retry option when the audio client reports an error', async () => {
     renderPlayer();
 
-    await waitFor(() => expect(mockCreateHlsClient).toHaveBeenCalled());
-    expect(capturedHlsOptions).toBeDefined();
+    await waitFor(() => expect(mockCreateLocalAudioClient).toHaveBeenCalled());
+    expect(capturedClientOptions).toBeDefined();
 
     act(() => {
-      capturedHlsOptions?.onReconnectAttempt?.(2, 5);
+      capturedClientOptions?.onError?.('Network down');
     });
 
     await waitFor(() =>
-      expect(screen.getByRole('status')).toHaveTextContent('Reconnecting (2/5)…')
+      expect(screen.getByRole('status')).toHaveTextContent('Unable to play the stream.')
+    );
+    expect(screen.getByRole('alert')).toHaveTextContent(
+      'No internet connection. Check your Wi-Fi or mobile data.'
     );
 
-    act(() => {
-      capturedHlsOptions?.onError?.('Network down');
-    });
-
-    await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('Playback error'));
-    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Network down'));
-
-    fireEvent.click(screen.getByRole('button', { name: /retry/i }));
+    fireEvent.click(screen.getByRole('button', { name: /try again/i }));
     expect(mockRetry).toHaveBeenCalled();
   });
 
   it('refreshes now playing metadata on interval', async () => {
-    vi.useFakeTimers();
-
     const first = {
       title: 'Track One',
       artist: 'Artist One',
       track: 'First Cut',
       coverUrl: '/one.jpg',
-      startedAt: '2024-01-01T00:00:00Z'
+      startedAt: '2024-01-01T00:00:00Z',
     };
     const second = {
       title: 'Track Two',
       artist: 'Artist Two',
       track: 'Second Cut',
       coverUrl: '/two.jpg',
-      startedAt: '2024-01-01T00:05:00Z'
+      startedAt: '2024-01-01T00:05:00Z',
     };
 
     mockGetNowPlaying.mockResolvedValueOnce(first).mockResolvedValueOnce(second);
 
+    // Fake timers must be active before the component mounts, otherwise its
+    // setInterval registers against the real clock and advanceTimersByTimeAsync
+    // (which only drives the fake timer queue) can never fire it. The initial
+    // poll only needs its promise microtask flushed, not a timer tick, so a
+    // synchronous getByText after that flush works without findBy's
+    // real-timer-based polling.
+    vi.useFakeTimers();
+
     renderPlayer();
 
-    expect(await screen.findByText('Track One')).toBeInTheDocument();
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(0);
+    });
+
+    expect(screen.getByText('Track One')).toBeInTheDocument();
     expect(screen.getByText('Artist One – First Cut')).toBeInTheDocument();
 
     await act(async () => {
-      vi.advanceTimersByTime(15_000);
-      await Promise.resolve();
+      await vi.advanceTimersByTimeAsync(15_000);
     });
 
-    await waitFor(() => expect(screen.getByText('Track Two')).toBeInTheDocument());
+    expect(screen.getByText('Track Two')).toBeInTheDocument();
     expect(screen.getByText('Artist Two – Second Cut')).toBeInTheDocument();
   });
 });

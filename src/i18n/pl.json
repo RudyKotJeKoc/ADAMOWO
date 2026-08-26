@@ -1099,7 +1099,7 @@
     },
     "actions": {
       "listen": "Posłuchaj",
-      "listenEpisode": "Posłuchaj odcinka",
+      "listenEpisode": "Posłuchaj odcinka: {{title}}",
       "currentlyPlaying": "Aktualnie odtwarzane"
     },
     "player": {
@@ -1110,7 +1110,7 @@
       "unmute": "Przywróć dźwięk",
       "volume": "Głośność",
       "progress": "Postęp odtwarzania",
-      "nowPlaying": "Teraz gramy",
+      "nowPlaying": "Teraz gramy: {{title}}",
       "idle": "Wybierz odcinek do odsłuchania",
       "chapters": "Rozdziały"
     },

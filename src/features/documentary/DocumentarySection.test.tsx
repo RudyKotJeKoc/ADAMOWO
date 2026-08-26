@@ -40,9 +40,7 @@ describe('DocumentarySection', () => {
 
     await renderWithI18n(<DocumentarySection />);
 
-    expect(
-      screen.getByRole('heading', { name: 'The Adamowo Case: Autopsy of a Family War' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Autopsy of a Family War' })).toBeInTheDocument();
     expect(screen.getByText('Loading documentary…')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Case timeline/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Disable subtitles' })).toBeInTheDocument();
