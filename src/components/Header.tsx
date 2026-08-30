@@ -16,13 +16,13 @@ import { Search } from './Search';
  * @constant
  */
 const NAV_ITEMS = [
-  { to: '/analiza', letter: 'A', labelKey: 'navigation.analiza' },
-  { to: '/debaty', letter: 'D', labelKey: 'navigation.debaty' },
-  { to: '/argumenty', letter: 'A', labelKey: 'navigation.argumenty' },
-  { to: '/materialy', letter: 'M', labelKey: 'navigation.materialy' },
-  { to: '/orzeczenia', letter: 'O', labelKey: 'navigation.orzeczenia' },
-  { to: '/wykladnie', letter: 'W', labelKey: 'navigation.wykladnie' },
-  { to: '/opinie', letter: 'O', labelKey: 'navigation.opinie' },
+  { to: '/analiza', letter: 'A', label: 'Analizy' },
+  { to: '/definicje', letter: 'D', label: 'Definicje' },
+  { to: '/argumenty', letter: 'A', label: 'Argumenty' },
+  { to: '/mechanizmy', letter: 'M', label: 'Mechanizmy' },
+  { to: '/orzecznictwo', letter: 'O', label: 'Orzecznictwo' },
+  { to: '/wykladnie', letter: 'W', label: 'Wykładnie' },
+  { to: '/ochrona', letter: 'O', label: 'Ochrona' },
 ] as const;
 
 /**
@@ -79,13 +79,13 @@ export function Header(): JSX.Element {
       '/pomoc': () => import('../pages/Help'),
       '/help': () => import('../pages/Help'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage'),
-      '/analiza': () => import('../pages/AdamowoSection'),
-      '/debaty': () => import('../pages/AdamowoSection'),
-      '/argumenty': () => import('../pages/AdamowoSection'),
-      '/materialy': () => import('../pages/AdamowoSection'),
-      '/orzeczenia': () => import('../pages/AdamowoSection'),
-      '/wykladnie': () => import('../pages/AdamowoSection'),
-      '/opinie': () => import('../pages/AdamowoSection'),
+      '/analiza': () => import('../features/knowledge-base/KnowledgeBase'),
+      '/definicje': () => import('../features/knowledge-base/KnowledgeBase'),
+      '/argumenty': () => import('../features/knowledge-base/KnowledgeBase'),
+      '/mechanizmy': () => import('../features/knowledge-base/KnowledgeBase'),
+      '/orzecznictwo': () => import('../features/knowledge-base/KnowledgeBase'),
+      '/wykladnie': () => import('../features/knowledge-base/KnowledgeBase'),
+      '/ochrona': () => import('../features/knowledge-base/KnowledgeBase'),
     }),
     []
   );
@@ -132,7 +132,7 @@ export function Header(): JSX.Element {
    * Renders a single navigation link with prefetching.
    */
   const renderNavLink = (item: (typeof NAV_ITEMS)[number], variant: 'desktop' | 'mobile') => {
-    const label = t(item.labelKey);
+    const label = item.label;
     const suffix = label.startsWith(item.letter) ? label.slice(1) : label;
 
     return (
@@ -234,7 +234,7 @@ export function Header(): JSX.Element {
           <LangSwitch />
           <button
             type="button"
-            className="touch-target inline-flex h-11 w-11 items-center justify-center rounded-full border border-base-700 bg-base-900/80 text-base-100 transition hover:border-accent-500 hover:text-accent-200 md:hidden"
+            className="touch-target inline-flex h-11 w-11 items-center justify-center rounded-full border border-base-700 bg-base-900/80 text-base-100 transition hover:border-accent-500 hover:text-accent-200 lg:hidden"
             aria-controls={menuId}
             aria-expanded={menuOpen}
             onClick={toggleMenu}
@@ -274,7 +274,7 @@ export function Header(): JSX.Element {
       <nav
         id={menuId}
         aria-label={t('header.navigation')}
-        className="container-responsive hidden border-t border-base-800/60 py-1.5 md:flex"
+        className="container-responsive hidden border-t border-base-800/60 py-1.5 lg:flex"
       >
         {renderDesktopNav()}
       </nav>
@@ -282,7 +282,7 @@ export function Header(): JSX.Element {
       <AnimatePresence>
         {menuOpen ? (
           <motion.div
-            className="md:hidden"
+            className="lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

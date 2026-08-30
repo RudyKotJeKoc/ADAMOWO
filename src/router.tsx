@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 import { AppShell } from './components/AppShell';
 
@@ -23,7 +23,8 @@ const AIPolicy = lazy(() => import('./pages/AIPolicy'));
 const Methodology = lazy(() => import('./pages/Methodology'));
 const MediaHub = lazy(() => import('./pages/MediaHub'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
-const AdamowoSection = lazy(() => import('./pages/AdamowoSection'));
+const KnowledgeBase = lazy(() => import('./features/knowledge-base/KnowledgeBase'));
+const KnowledgeArticle = lazy(() => import('./features/knowledge-base/KnowledgeArticle'));
 
 export const router = createBrowserRouter([
   {
@@ -52,13 +53,18 @@ export const router = createBrowserRouter([
       { path: 'methodology', element: <Methodology /> },
       { path: 'media', element: <MediaHub /> },
       { path: 'mapa-strony', element: <Sitemap /> },
-      { path: 'analiza', element: <AdamowoSection section="analiza" /> },
-      { path: 'debaty', element: <AdamowoSection section="debaty" /> },
-      { path: 'argumenty', element: <AdamowoSection section="argumenty" /> },
-      { path: 'materialy', element: <AdamowoSection section="materialy" /> },
-      { path: 'orzeczenia', element: <AdamowoSection section="orzeczenia" /> },
-      { path: 'wykladnie', element: <AdamowoSection section="wykladnie" /> },
-      { path: 'opinie', element: <AdamowoSection section="opinie" /> },
+      { path: 'analiza', element: <KnowledgeBase section="analiza" /> },
+      { path: 'definicje', element: <KnowledgeBase section="definicje" /> },
+      { path: 'definicje/:slug', element: <KnowledgeArticle /> },
+      { path: 'argumenty', element: <KnowledgeBase section="argumenty" /> },
+      { path: 'mechanizmy', element: <KnowledgeBase section="mechanizmy" /> },
+      { path: 'orzecznictwo', element: <KnowledgeBase section="orzecznictwo" /> },
+      { path: 'wykladnie', element: <KnowledgeBase section="wykladnie" /> },
+      { path: 'ochrona', element: <KnowledgeBase section="ochrona" /> },
+      { path: 'debaty', element: <Navigate to="/definicje" replace /> },
+      { path: 'materialy', element: <Navigate to="/mechanizmy" replace /> },
+      { path: 'orzeczenia', element: <Navigate to="/orzecznictwo" replace /> },
+      { path: 'opinie', element: <Navigate to="/ochrona" replace /> },
     ],
   },
 ]);

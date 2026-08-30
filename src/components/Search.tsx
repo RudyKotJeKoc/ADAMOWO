@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 
+import { knowledgeEntries } from '../features/knowledge-base/knowledge.data';
+
 /**
  * Represents a single search result item.
  *
@@ -17,7 +19,7 @@ interface SearchResult {
   title: string;
   path: string;
   description: string;
-  type: 'page' | 'guide' | 'analysis' | 'tool';
+  type: 'page' | 'guide' | 'analysis' | 'tool' | 'knowledge';
 }
 
 /**
@@ -128,6 +130,12 @@ export function Search(): JSX.Element {
         description: t('search.results.aiPolicy.description'),
         type: 'page',
       },
+      ...knowledgeEntries.map((entry) => ({
+        title: entry.title,
+        path: `/definicje/${entry.slug}`,
+        description: `${entry.summary} ${entry.tags.join(', ')}`,
+        type: 'knowledge' as const,
+      })),
     ],
     [t]
   );
@@ -254,6 +262,8 @@ export function Search(): JSX.Element {
         return 'bg-purple-500/20 text-purple-200';
       case 'analysis':
         return 'bg-blue-500/20 text-blue-200';
+      case 'knowledge':
+        return 'bg-emerald-500/20 text-emerald-200';
       default:
         return 'bg-base-700 text-base-300';
     }
@@ -341,7 +351,10 @@ export function Search(): JSX.Element {
                               getTypeColor(result.type)
                             )}
                           >
-                            {t(`search.types.${result.type}`)}
+                            {t(`search.types.${result.type}`, {
+                              defaultValue:
+                                result.type === 'knowledge' ? 'Baza wiedzy' : result.type,
+                            })}
                           </span>
                         </div>
                       </button>

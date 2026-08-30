@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronRightIcon, HomeIcon } from '@heroicons/react/20/solid';
 
+import { knowledgeBySlug } from '../features/knowledge-base/knowledge.data';
+
 interface BreadcrumbItem {
   label: string;
   path: string;
@@ -24,6 +26,16 @@ const routeLabels: Record<string, string> = {
   'ai-policy': 'breadcrumbs.aiPolicy',
 };
 
+const knowledgeRouteLabels: Record<string, string> = {
+  analiza: 'Analizy',
+  definicje: 'Definicje',
+  argumenty: 'Argumenty',
+  mechanizmy: 'Mechanizmy',
+  orzecznictwo: 'Orzecznictwo',
+  wykladnie: 'Wykładnie',
+  ochrona: 'Ochrona',
+};
+
 export function Breadcrumbs(): JSX.Element | null {
   const location = useLocation();
   const { t } = useTranslation();
@@ -38,10 +50,14 @@ export function Breadcrumbs(): JSX.Element | null {
   // Build breadcrumb trail
   const breadcrumbs: BreadcrumbItem[] = pathSegments.map((segment, index) => {
     const path = '/' + pathSegments.slice(0, index + 1).join('/');
+    const knowledgeEntry = knowledgeBySlug.get(segment);
     const labelKey = routeLabels[segment] || segment;
 
     return {
-      label: t(labelKey, { defaultValue: segment.charAt(0).toUpperCase() + segment.slice(1) }),
+      label:
+        knowledgeEntry?.shortTitle ??
+        knowledgeRouteLabels[segment] ??
+        t(labelKey, { defaultValue: segment.charAt(0).toUpperCase() + segment.slice(1) }),
       path,
     };
   });

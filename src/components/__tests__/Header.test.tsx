@@ -43,9 +43,15 @@ describe('Header', () => {
 
   it('renders navigation and toggles the mobile drawer', async () => {
     renderHeader();
-    ['Analiza', 'Debaty', 'Argumenty', 'Materiały', 'Orzeczenia', 'Wykładnie', 'Opinie'].forEach(
-      (label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument()
-    );
+    [
+      'Analizy',
+      'Definicje',
+      'Argumenty',
+      'Mechanizmy',
+      'Orzecznictwo',
+      'Wykładnie',
+      'Ochrona',
+    ].forEach((label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument());
     fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
     expect(screen.getByRole('dialog', { name: /main navigation/i })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /close menu/i }));
@@ -68,8 +74,8 @@ describe('Header', () => {
     );
     expect(document.activeElement).toBe(focusable[0]);
     expect(focusable.slice(0, 3).map((el) => el.getAttribute('aria-label'))).toEqual([
-      'Analiza',
-      'Debaty',
+      'Analizy',
+      'Definicje',
       'Argumenty',
     ]);
   });
@@ -77,6 +83,6 @@ describe('Header', () => {
   it('changes language', async () => {
     renderHeader();
     fireEvent.click(screen.getByRole('button', { name: 'Dutch' }));
-    expect(await screen.findByRole('link', { name: 'Analiza' })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: 'Analizy' })).toBeInTheDocument();
   });
 });
