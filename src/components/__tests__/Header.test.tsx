@@ -46,7 +46,9 @@ describe('Header', () => {
     const mobileNav = screen.getByRole('navigation', { name: 'Działy ADAMOWO' });
     const mobileLinks = within(mobileNav).getAllByRole('link');
 
-    expect(mobileLinks.map((link) => link.textContent).join('')).toBe('ADAMOWO');
+    expect(
+      mobileLinks.map((link) => link.querySelector('[data-nav-letter]')?.textContent).join('')
+    ).toBe('ADAMOWO');
     [
       'Analizy',
       'Definicje',
@@ -57,6 +59,9 @@ describe('Header', () => {
       'Ochrona',
     ].forEach((label) =>
       expect(within(mobileNav).getByRole('link', { name: label })).toBeInTheDocument()
+    );
+    expect(mobileLinks.map((link) => link.querySelector('[data-nav-suffix]')?.textContent)).toEqual(
+      ['nalizy', 'efinicje', 'rgumenty', 'echanizmy', 'rzecznictwo', 'ykładnie', 'chrona']
     );
     expect(screen.queryByRole('button', { name: /open menu/i })).not.toBeInTheDocument();
   });

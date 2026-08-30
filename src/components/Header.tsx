@@ -155,7 +155,7 @@ export function Header(): JSX.Element {
             title={item.label}
             className={({ isActive }) =>
               clsx(
-                'inline-flex min-h-11 items-center justify-center border-r border-base-700 font-display text-lg font-bold text-accent-400 transition last:border-r-0 hover:bg-base-800 hover:text-accent-200 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-400',
+                'inline-flex min-h-[7.5rem] flex-col items-center justify-start gap-1 border-r border-base-700 px-0.5 py-2 font-display text-accent-400 transition last:border-r-0 hover:bg-base-800 hover:text-accent-200 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-400',
                 isActive && 'bg-accent-500 text-base-950 hover:bg-accent-400 hover:text-base-950'
               )
             }
@@ -166,7 +166,21 @@ export function Header(): JSX.Element {
               }
             }}
           >
-            {item.letter}
+            <span data-nav-letter className="text-xl font-bold leading-none" aria-hidden="true">
+              {item.letter}
+            </span>
+            <span
+              data-nav-suffix
+              aria-hidden="true"
+              className="flex flex-col items-center font-sans text-[0.55rem] font-semibold uppercase leading-[0.62rem] tracking-normal"
+            >
+              {item.label
+                .slice(item.letter.length)
+                .split('')
+                .map((character, index) => (
+                  <span key={`${item.to}-${character}-${index}`}>{character}</span>
+                ))}
+            </span>
           </NavLink>
         ))}
       </div>
