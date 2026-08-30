@@ -74,11 +74,9 @@ describe('Header', () => {
     ]);
   });
 
-  it('changes language and theme', async () => {
+  it('changes language', async () => {
     renderHeader();
     fireEvent.click(screen.getByRole('button', { name: 'Dutch' }));
     expect(await screen.findByRole('link', { name: 'Analiza' })).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: /donkere modus/i }));
-    expect(document.documentElement.classList.contains('dark')).toBe(true);
   });
 });

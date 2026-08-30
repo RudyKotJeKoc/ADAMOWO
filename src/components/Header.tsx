@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 
 import { LangSwitch } from './LangSwitch';
 import { Search } from './Search';
-import { ThemeSwitch } from './ThemeSwitch';
 
 /**
  * Navigation items configuration organized into thematic groups.
@@ -228,15 +227,11 @@ export function Header(): JSX.Element {
               }}
             />
           </span>
-          <span className="font-display text-base font-semibold uppercase tracking-wide text-base-100">
-            Radio Adamowo
-          </span>
         </NavLink>
 
         <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
           <Search />
           <LangSwitch />
-          <ThemeSwitch />
           <button
             type="button"
             className="touch-target inline-flex h-11 w-11 items-center justify-center rounded-full border border-base-700 bg-base-900/80 text-base-100 transition hover:border-accent-500 hover:text-accent-200 md:hidden"
