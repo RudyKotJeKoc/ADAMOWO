@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getTotalVisits, getVisitsByPath } from '../lib/analytics';
+import { getTotalVisits, getVisitsByPath, subscribeToVisitCount } from '../lib/analytics';
 
 /**
  * Hook to fetch and display total visit count
@@ -11,12 +11,22 @@ export function useTotalVisits() {
 
   useEffect(() => {
     let mounted = true;
+    let updatedByTracking = false;
+
+    const unsubscribe = subscribeToVisitCount((count) => {
+      if (mounted) {
+        updatedByTracking = true;
+        setVisits(count);
+        setError(null);
+        setLoading(false);
+      }
+    });
 
     async function fetchVisits() {
       try {
         setLoading(true);
         const count = await getTotalVisits();
-        if (mounted) {
+        if (mounted && !updatedByTracking) {
           setVisits(count);
           setError(null);
         }
@@ -35,6 +45,7 @@ export function useTotalVisits() {
 
     return () => {
       mounted = false;
+      unsubscribe();
     };
   }, []);
 

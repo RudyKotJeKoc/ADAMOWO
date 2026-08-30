@@ -10,6 +10,8 @@ export function usePageTracking() {
 
   useEffect(() => {
     // Track the page visit
-    trackPageVisit(location.pathname);
+    void trackPageVisit(location.pathname).catch(() => {
+      // Analytics failure must never interrupt routing or page rendering.
+    });
   }, [location.pathname]);
 }

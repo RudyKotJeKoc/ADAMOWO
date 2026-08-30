@@ -1,53 +1,41 @@
-﻿<?php
+<?php
 declare(strict_types=1);
 
-/**
- * Prosty loader .env + centralny dostp do konfiguracji.
- */
 function env_load(string $path): array {
-    $vars = [];
-    if (!is_file($path)) return $vars;
-    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        if (str_starts_with(trim($line), '#')) continue;
-        [$k, $v] = array_map('trim', explode('=', $line, 2) + [null, null]);
-        if ($k === null) continue;
-        $v = preg_replace('/^["\']?(.*?)["\']?$/', '$1', (string)$v);
-        $vars[$k] = $v;
-        $_ENV[$k] = $v;
-        putenv("$k=$v");
+    $variables = [];
+    if (!is_file($path) || !is_readable($path)) return $variables;
+
+    foreach (file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) ?: [] as $line) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#') || !str_contains($line, '=')) continue;
+
+        [$key, $value] = array_map('trim', explode('=', $line, 2));
+        if ($key === '') continue;
+        if (strlen($value) >= 2 && (($value[0] === '"' && str_ends_with($value, '"'))
+            || ($value[0] === "'" && str_ends_with($value, "'")))) {
+            $value = substr($value, 1, -1);
+        }
+        $variables[$key] = $value;
     }
-    return $vars;
+    return $variables;
 }
 
 final class Config {
-    private static ?array $C = null;
+    private static ?array $values = null;
 
-    public static function get(string $key, mixed $default=null): mixed {
-        self::boot();
-        return self::$C[$key] ?? $default;
-    }
-
-    public static function all(): array {
-        self::boot(); return self::$C;
-    }
-
-    private static function boot(): void {
-        if (self::$C !== null) return;
-        $root = dirname(__DIR__, 1);                 // /api
-        $env  = env_load($root.'/.env');
-
-        $defaults = [
-            'APP_ENV' => 'dev',
-            'APP_DEBUG' => '1',
-            'DB_DSN' => 'sqlite:'.$root.'/data/app.sqlite',
-            'DB_USER' => '',
-            'DB_PASS' => '',
-            'RATE_LIMIT_REQUESTS' => '60',
-            'RATE_LIMIT_WINDOW'   => '60',
-            'RATE_LIMIT_STORAGE'  => 'sqlite', // sqlite|files
-        ];
-
-        self::$C = array_merge($defaults, $env, $_ENV);
+    public static function get(string $key, mixed $default = null): mixed {
+        if (self::$values === null) {
+            $apiRoot = dirname(__DIR__);
+            self::$values = array_merge([
+                'APP_ENV' => 'prod',
+                'APP_DEBUG' => '0',
+                'DB_DSN' => '',
+                'DB_USER' => '',
+                'DB_PASS' => '',
+                'RATE_LIMIT_REQUESTS' => '120',
+                'RATE_LIMIT_WINDOW' => '60',
+            ], env_load($apiRoot.'/.env'));
+        }
+        return self::$values[$key] ?? $default;
     }
 }
