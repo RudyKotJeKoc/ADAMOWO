@@ -3,6 +3,13 @@
     "title": "Radio Adamowo"
   },
   "navigation": {
+    "analiza": "Analiza",
+    "debaty": "Debaty",
+    "argumenty": "Argumenty",
+    "materialy": "Materiały",
+    "orzeczenia": "Orzeczenia",
+    "wykladnie": "Wykładnie",
+    "opinie": "Opinie",
     "live": "Live",
     "analizy": "Analyses",
     "taxonomy": "Taxonomy",

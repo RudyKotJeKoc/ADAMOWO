@@ -16,31 +16,15 @@ import { ThemeSwitch } from './ThemeSwitch';
  *
  * @constant
  */
-const NAV_GROUPS = {
-  education: [
-    { to: '/analizy', labelKey: 'navigation.analizy' },
-    { to: '/taksonomia', labelKey: 'navigation.taxonomy' },
-    { to: '/anatomy', labelKey: 'navigation.anatomy' },
-  ],
-  tools: [
-    { to: '/guides', labelKey: 'navigation.guide' },
-    { to: '/lab', labelKey: 'navigation.lab' },
-  ],
-  content: [
-    { to: '/programy', labelKey: 'navigation.programy' },
-    { to: '/media', labelKey: 'navigation.media' },
-  ],
-  info: [
-    { to: '/community', labelKey: 'navigation.community' },
-    { to: '/pomoc', labelKey: 'navigation.help' },
-    { to: '/mapa-strony', labelKey: 'navigation.sitemap' },
-  ],
-};
-
-/**
- * Flat list of all navigation items for mobile menu.
- */
-const NAV_ITEMS = Object.values(NAV_GROUPS).flat();
+const NAV_ITEMS = [
+  { to: '/analiza', letter: 'A', labelKey: 'navigation.analiza' },
+  { to: '/debaty', letter: 'D', labelKey: 'navigation.debaty' },
+  { to: '/argumenty', letter: 'A', labelKey: 'navigation.argumenty' },
+  { to: '/materialy', letter: 'M', labelKey: 'navigation.materialy' },
+  { to: '/orzeczenia', letter: 'O', labelKey: 'navigation.orzeczenia' },
+  { to: '/wykladnie', letter: 'W', labelKey: 'navigation.wykladnie' },
+  { to: '/opinie', letter: 'O', labelKey: 'navigation.opinie' },
+] as const;
 
 /**
  * Main navigation header component with responsive menu and accessibility features.
@@ -96,6 +80,13 @@ export function Header(): JSX.Element {
       '/pomoc': () => import('../pages/Help'),
       '/help': () => import('../pages/Help'),
       '/analysis': () => import('../features/analysis-archive/AnalysisPage'),
+      '/analiza': () => import('../pages/AdamowoSection'),
+      '/debaty': () => import('../pages/AdamowoSection'),
+      '/argumenty': () => import('../pages/AdamowoSection'),
+      '/materialy': () => import('../pages/AdamowoSection'),
+      '/orzeczenia': () => import('../pages/AdamowoSection'),
+      '/wykladnie': () => import('../pages/AdamowoSection'),
+      '/opinie': () => import('../pages/AdamowoSection'),
     }),
     []
   );
@@ -141,57 +132,68 @@ export function Header(): JSX.Element {
   /**
    * Renders a single navigation link with prefetching.
    */
-  const renderNavLink = (item: { to: string; labelKey: string }, variant: 'desktop' | 'mobile') => (
-    <NavLink
-      to={item.to}
-      className={({ isActive }) =>
-        clsx(
-          'relative inline-flex touch-target items-center justify-center rounded-full px-3 py-2 text-sm font-medium transition-colors',
-          variant === 'desktop'
-            ? 'text-base-200 hover:text-base-50'
-            : 'text-base-50 hover:text-accent-300',
-          isActive && (variant === 'desktop' ? 'text-accent-300' : 'text-accent-200')
-        )
-      }
-      onClick={variant === 'mobile' ? closeMenu : undefined}
-      onFocus={() => {
-        if (!prefetchedRef.current.has(item.to)) {
-          prefetchedRef.current.add(item.to);
-          void prefetchers[item.to]?.();
+  const renderNavLink = (item: (typeof NAV_ITEMS)[number], variant: 'desktop' | 'mobile') => {
+    const label = t(item.labelKey);
+    const suffix = label.startsWith(item.letter) ? label.slice(1) : label;
+
+    return (
+      <NavLink
+        to={item.to}
+        aria-label={label}
+        className={({ isActive }) =>
+          clsx(
+            'group/link relative inline-flex touch-target items-center rounded-xl font-medium transition-all',
+            variant === 'desktop'
+              ? 'justify-center px-3 py-2 text-base-200 hover:bg-base-900/70 hover:text-base-50'
+              : 'w-full gap-3 px-3 py-2 text-base-50 hover:bg-base-800 hover:text-accent-200',
+            isActive && 'bg-base-900 text-accent-200 ring-1 ring-accent-500/30'
+          )
         }
-      }}
-      onMouseEnter={() => {
-        if (!prefetchedRef.current.has(item.to)) {
-          prefetchedRef.current.add(item.to);
-          void prefetchers[item.to]?.();
-        }
-      }}
-    >
-      <span>{t(item.labelKey)}</span>
-    </NavLink>
-  );
+        onClick={variant === 'mobile' ? closeMenu : undefined}
+        onFocus={() => {
+          if (!prefetchedRef.current.has(item.to)) {
+            prefetchedRef.current.add(item.to);
+            void prefetchers[item.to]?.();
+          }
+        }}
+        onMouseEnter={() => {
+          if (!prefetchedRef.current.has(item.to)) {
+            prefetchedRef.current.add(item.to);
+            void prefetchers[item.to]?.();
+          }
+        }}
+      >
+        <span
+          aria-hidden="true"
+          className={clsx(
+            'font-display font-bold text-accent-400 transition-transform group-hover/link:scale-110',
+            variant === 'desktop' ? 'text-xl' : 'w-8 text-center text-2xl'
+          )}
+        >
+          {item.letter}
+        </span>
+        <span
+          className={clsx(
+            'transition-opacity',
+            variant === 'desktop' &&
+              'text-sm group-hover/adamowo-nav:opacity-35 group-hover/link:!opacity-100'
+          )}
+        >
+          <span className="sr-only">{item.letter}</span>
+          {suffix}
+        </span>
+      </NavLink>
+    );
+  };
 
   /**
    * Renders grouped desktop navigation with two rows to prevent overflow.
    */
   const renderDesktopNav = () => (
-    <div className="flex w-full max-w-5xl flex-col gap-2">
-      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-        {NAV_GROUPS.education.map((item) => (
-          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
-        ))}
-        {NAV_GROUPS.tools.map((item) => (
-          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
-        ))}
-      </div>
-      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-        {NAV_GROUPS.content.map((item) => (
-          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
-        ))}
-        {NAV_GROUPS.info.map((item) => (
-          <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
-        ))}
-      </div>
+    <div className="group/adamowo-nav flex w-full items-center justify-center gap-1 lg:gap-3">
+      {NAV_ITEMS.map((item) => (
+        <div key={item.to}>{renderNavLink(item, 'desktop')}</div>
+      ))}
     </div>
   );
 
@@ -199,7 +201,7 @@ export function Header(): JSX.Element {
    * Renders mobile navigation as a flat vertical list.
    */
   const renderMobileNav = () => (
-    <ul className="flex flex-col gap-4">
+    <ul className="grid gap-2 sm:grid-cols-2">
       {NAV_ITEMS.map((item) => (
         <li key={item.to}>{renderNavLink(item, 'mobile')}</li>
       ))}
@@ -218,26 +220,18 @@ export function Header(): JSX.Element {
         <NavLink to="/" className="group flex items-center gap-3" aria-label={t('header.home')}>
           <span className="rounded bg-base-900/70 p-2 transition-colors duration-150 group-hover:bg-base-850 group-focus-visible:bg-base-850">
             <img
-             src="/assets/images/ui/logo-header.png"
-             alt="Adamowo.com"
-             className="h-10 w-10 shrink-0 rounded-full object-cover sm:h-11 sm:w-11"
-             onError={(event) => {
-              event.currentTarget.style.display = 'none';
-            }}
-          />
+              src="/assets/images/ui/logo-header.png"
+              alt="Adamowo.com"
+              className="h-10 w-10 shrink-0 rounded-full object-cover sm:h-11 sm:w-11"
+              onError={(event) => {
+                event.currentTarget.style.display = 'none';
+              }}
+            />
           </span>
           <span className="font-display text-base font-semibold uppercase tracking-wide text-base-100">
             Radio Adamowo
           </span>
         </NavLink>
-
-        <nav
-          id={menuId}
-          aria-label={t('header.navigation')}
-          className="hidden flex-1 items-center justify-center md:flex"
-        >
-          {renderDesktopNav()}
-        </nav>
 
         <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
           <Search />
@@ -281,6 +275,14 @@ export function Header(): JSX.Element {
           </button>
         </div>
       </div>
+
+      <nav
+        id={menuId}
+        aria-label={t('header.navigation')}
+        className="container-responsive hidden border-t border-base-800/60 py-1.5 md:flex"
+      >
+        {renderDesktopNav()}
+      </nav>
 
       <AnimatePresence>
         {menuOpen ? (

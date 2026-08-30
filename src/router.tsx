@@ -23,6 +23,7 @@ const AIPolicy = lazy(() => import('./pages/AIPolicy'));
 const Methodology = lazy(() => import('./pages/Methodology'));
 const MediaHub = lazy(() => import('./pages/MediaHub'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
+const AdamowoSection = lazy(() => import('./pages/AdamowoSection'));
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,13 @@ export const router = createBrowserRouter([
       { path: 'methodology', element: <Methodology /> },
       { path: 'media', element: <MediaHub /> },
       { path: 'mapa-strony', element: <Sitemap /> },
+      { path: 'analiza', element: <AdamowoSection section="analiza" /> },
+      { path: 'debaty', element: <AdamowoSection section="debaty" /> },
+      { path: 'argumenty', element: <AdamowoSection section="argumenty" /> },
+      { path: 'materialy', element: <AdamowoSection section="materialy" /> },
+      { path: 'orzeczenia', element: <AdamowoSection section="orzeczenia" /> },
+      { path: 'wykladnie', element: <AdamowoSection section="wykladnie" /> },
+      { path: 'opinie', element: <AdamowoSection section="opinie" /> },
     ],
   },
 ]);

@@ -43,18 +43,9 @@ describe('Header', () => {
 
   it('renders navigation and toggles the mobile drawer', async () => {
     renderHeader();
-    [
-      'Analyses',
-      'Taxonomy',
-      'Anatomy',
-      'Guide',
-      'Lab',
-      'Programs',
-      'Media',
-      'Community',
-      'Help',
-      'Sitemap',
-    ].forEach((label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument());
+    ['Analiza', 'Debaty', 'Argumenty', 'Materiały', 'Orzeczenia', 'Wykładnie', 'Opinie'].forEach(
+      (label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument()
+    );
     fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
     expect(screen.getByRole('dialog', { name: /main navigation/i })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /close menu/i }));
@@ -76,17 +67,17 @@ describe('Header', () => {
         .querySelectorAll<HTMLElement>('a[href],button:not([disabled])')
     );
     expect(document.activeElement).toBe(focusable[0]);
-    expect(focusable.slice(0, 3).map((el) => el.textContent?.trim())).toEqual([
-      'Analyses',
-      'Taxonomy',
-      'Anatomy',
+    expect(focusable.slice(0, 3).map((el) => el.getAttribute('aria-label'))).toEqual([
+      'Analiza',
+      'Debaty',
+      'Argumenty',
     ]);
   });
 
   it('changes language and theme', async () => {
     renderHeader();
     fireEvent.click(screen.getByRole('button', { name: 'Dutch' }));
-    expect(await screen.findByRole('link', { name: 'Analyses' })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: 'Analiza' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /donkere modus/i }));
     expect(document.documentElement.classList.contains('dark')).toBe(true);
   });
