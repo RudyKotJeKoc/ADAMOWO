@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 36245)
-Total output lines: 2727
-
 {
   "meta": {
     "title": "Radio Adamowo"
@@ -1234,7 +1231,546 @@ Total output lines: 2727
       },
       "help": {
         "title": "Profesjonalna pomoc",
-        "message": "Jeśli przeżywasz trudną sytuacj…6245 tokens truncated…tami z odpowiednich dziedzin:",
+        "message": "Jeśli przeżywasz trudną sytuację, skontaktuj się z profesjonalistą:"
+      },
+      "consent": {
+        "checkbox": "Przeczytałem/am i rozumiem powyższe informacje. Jestem świadomy/a ograniczeń narzędzia i ryzyka retraumatyzacji.",
+        "accept": "Rozumiem i akceptuję",
+        "decline": "Wróć"
+      }
+    }
+  },
+  "rf": {
+    "title": "Dziennik Czerwonych Flag",
+    "add": "Dodaj incydent",
+    "date": "Data",
+    "category": "Kategoria",
+    "intensity": "Natężenie",
+    "note": "Opis (opcjonalnie)",
+    "export": "Eksportuj JSON",
+    "filter": {
+      "from": "Od",
+      "to": "Do",
+      "category": "Filtr kategorii",
+      "intensity": "Filtr natężenia",
+      "intensityValue": "Natężenie {{value}}/5",
+      "all": "Wszystkie"
+    },
+    "list": {
+      "title": "Lista wpisów"
+    },
+    "none": "Brak wpisów dla wybranych filtrów.",
+    "form": {
+      "dateError": "Wybierz datę.",
+      "limitError": "Opis może mieć maksymalnie {{max}} znaków.",
+      "submitError": "Nie udało się zapisać wpisu.",
+      "success": "Zapisano lokalnie",
+      "intensityValue": "Natężenie: {{value}}/5",
+      "limit": "Do {{max}} znaków.",
+      "submit": "Dodaj wpis"
+    },
+    "categories": {
+      "gaslighting": "Gaslighting",
+      "financial_abuse": "Przemoc ekonomiczna",
+      "stalking": "Stalking",
+      "legal_weaponization": "Wykorzystywanie prawa",
+      "emotional_blackmail": "Szantaż emocjonalny",
+      "devaluation": "Dewaluacja",
+      "discard": "Odrzucenie",
+      "hoovering": "Hoovering"
+    },
+    "calendar": {
+      "title": "Kalendarz miesięczny",
+      "subtitle": "Poruszaj się strzałkami, aby sprawdzić dni. Wpisy zostają tylko na tym urządzeniu.",
+      "prevMonth": "Poprzedni miesiąc",
+      "nextMonth": "Następny miesiąc",
+      "prevShort": "◀",
+      "nextShort": "▶",
+      "ariaLabel": "Kalendarz zarejestrowanych incydentów",
+      "week": {
+        "mon": "Poniedziałek",
+        "tue": "Wtorek",
+        "wed": "Środa",
+        "thu": "Czwartek",
+        "fri": "Piątek",
+        "sat": "Sobota",
+        "sun": "Niedziela",
+        "monShort": "Pn",
+        "tueShort": "Wt",
+        "wedShort": "Śr",
+        "thuShort": "Cz",
+        "friShort": "Pt",
+        "satShort": "So",
+        "sunShort": "Nd"
+      },
+      "dayAria": "{{date}}. Liczba wpisów: {{count}}.",
+      "count": "Wpisów: {{count}}"
+    }
+  },
+  "finalLesson": {
+    "sectionLabel": "Ostateczna lekcja",
+    "title": "Ostateczna Lekcja",
+    "description": "Co warto zapamiętać i gdzie szukać pomocy tu i teraz.",
+    "summary": {
+      "title": "Najważniejsze wnioski",
+      "cycle": "Przemoc jest systemem — wzorzec wróci, jeśli nie zmienimy układu sił.",
+      "breakingSilence": "Mówienie głośno jest bezpieczniejsze z planem i zaufanymi osobami.",
+      "communityCare": "Media społecznościowe mogą dokumentować, świadkować i rozbrajać izolację.",
+      "documentation": "Archiwizacja dowodów chroni, gdy narracje są używane przeciw ocalałym.",
+      "boundaries": "Stawianie granic to prawo, a nie przesada."
+    },
+    "resources": {
+      "title": "Zasoby pomocowe",
+      "lead": "Zestawy narzędzi, poradniki i kontakty, które rozszerzają pracę poza dokumentem.",
+      "visit": "Przejdź do zasobu",
+      "openExternal": "Otwiera się w nowym oknie",
+      "blueprint": {
+        "title": "Plan bezpieczeństwa",
+        "description": "Ćwiczenia scenariuszowe z checklistą bezpieczeństwa i mapą wyjścia."
+      },
+      "deEscalation": {
+        "title": "Podręcznik deeskalacji",
+        "description": "Mikrointerwencje i podpowiedzi dla przyjaciół, sąsiadów i współpracowników."
+      },
+      "legal": {
+        "title": "Zestaw prawny",
+        "description": "Instrukcje dokumentowania i pozyskiwania reprezentacji pro bono."
+      }
+    },
+    "crisis": {
+      "title": "Kontakty kryzysowe (Polska)",
+      "description": "Jeśli ty lub ktoś bliski jest w zagrożeniu, skontaktuj się natychmiast.",
+      "niebieska": {
+        "label": "Niebieska Linia – telefon zaufania",
+        "description": "Całodobowe wsparcie psychologiczne i prawne dla osób doświadczających przemocy."
+      },
+      "cpk": {
+        "label": "Centrum Praw Kobiet",
+        "description": "Porady prawne, schronienie i opieka psychologiczna dla kobiet."
+      },
+      "callAction": "Zadzwoń do {{organization}} pod numer {{phone}}"
+    }
+  },
+  "multimedia": {
+    "audioEngine": {
+      "loading": "Ładowanie dźwięku...",
+      "buffering": "Buforowanie...",
+      "playing": "Odtwarzanie",
+      "paused": "Wstrzymano",
+      "error": "Błąd odtwarzania",
+      "offline": "Dźwięk niedostępny offline",
+      "retry": "Spróbuj ponownie",
+      "crossfading": "Przejście do następnego utworu..."
+    },
+    "visualizer": {
+      "title": "Wizualizator dźwięku",
+      "enable": "Włącz wizualizator",
+      "disable": "Wyłącz wizualizator",
+      "mode": "Tryb wizualizatora",
+      "modes": {
+        "bars": "Słupki",
+        "wave": "Fala",
+        "circular": "Okrągły",
+        "3dBars": "Słupki 3D",
+        "3dWave": "Fala 3D",
+        "3dParticles": "Cząsteczki 3D"
+      },
+      "requiresThree": "Wymaga biblioteki Three.js",
+      "disabled": "Wizualizator wyłączony",
+      "waiting": "Oczekiwanie na dane dźwiękowe..."
+    },
+    "playlist": {
+      "title": "Playlista",
+      "empty": "Brak utworów w playliście",
+      "loading": "Ładowanie playlisty...",
+      "addTrack": "Dodaj do playlisty",
+      "removeTrack": "Usuń z playlisty",
+      "clearPlaylist": "Wyczyść playlistę",
+      "shuffle": "Losuj",
+      "repeat": "Powtarzaj",
+      "repeatModes": {
+        "none": "Bez powtarzania",
+        "one": "Powtórz jeden",
+        "all": "Powtórz wszystkie"
+      },
+      "queue": "Kolejka",
+      "history": "Historia",
+      "nowPlaying": "Teraz odtwarzane",
+      "upNext": "Następnie",
+      "noHistory": "Brak historii odtwarzania",
+      "search": "Szukaj utworów...",
+      "filterBy": "Filtruj według",
+      "sortBy": "Sortuj według",
+      "sortOptions": {
+        "title": "Tytuł",
+        "artist": "Artysta",
+        "album": "Album",
+        "duration": "Czas trwania"
+      }
+    },
+    "slideshow": {
+      "title": "Pokaz slajdów",
+      "play": "Odtwórz",
+      "pause": "Wstrzymaj",
+      "previous": "Poprzedni",
+      "next": "Następny",
+      "goTo": "Przejdź do",
+      "fullscreen": "Pełny ekran",
+      "exitFullscreen": "Wyjdź z pełnego ekranu",
+      "noItems": "Brak elementów do wyświetlenia",
+      "videoError": "Nie udało się załadować wideo",
+      "videoNotSupported": "Twoja przeglądarka nie obsługuje odtwarzania wideo",
+      "autoplayBlocked": "Automatyczne odtwarzanie zablokowane przez przeglądarkę",
+      "settings": "Ustawienia pokazu slajdów",
+      "autoPlay": "Automatyczne odtwarzanie",
+      "interval": "Interwał (sekundy)",
+      "transition": "Efekt przejścia",
+      "transitions": {
+        "fade": "Zanikanie",
+        "slide": "Przesuwanie",
+        "zoom": "Powiększenie",
+        "none": "Brak"
+      }
+    },
+    "rating": {
+      "title": "Oceń ten utwór",
+      "rateStar": "Oceń {{star}} gwiazdek",
+      "starsCount_one": "{{count}} gwiazdka",
+      "starsCount_few": "{{count}} gwiazdki",
+      "starsCount_many": "{{count}} gwiazdek",
+      "notRated": "Nie oceniono",
+      "comment": "Komentarz (opcjonalnie)",
+      "commentPlaceholder": "Podziel się swoimi myślami o tym utworze...",
+      "save": "Zapisz ocenę",
+      "cancel": "Anuluj",
+      "edit": "Edytuj ocenę",
+      "ratedOn": "Oceniono dnia",
+      "noRatings": "Brak ocen",
+      "totalRatings_one": "{{count}} ocena",
+      "totalRatings_few": "{{count}} oceny",
+      "totalRatings_many": "{{count}} ocen",
+      "noTracksWithRating": "Brak utworów z oceną {{rating}} gwiazdek",
+      "noRatedTracks": "Brak ocenionych utworów",
+      "yourRating": "Twoja ocena",
+      "averageRating": "Średnia ocena"
+    },
+    "player": {
+      "play": "Odtwórz",
+      "pause": "Wstrzymaj",
+      "stop": "Zatrzymaj",
+      "previous": "Poprzedni utwór",
+      "next": "Następny utwór",
+      "volume": "Głośność",
+      "mute": "Wycisz",
+      "unmute": "Włącz dźwięk",
+      "seekForward": "Przewiń do przodu",
+      "seekBackward": "Przewiń do tyłu",
+      "currentTime": "Aktualny czas",
+      "duration": "Czas trwania",
+      "remaining": "Pozostało",
+      "speed": "Szybkość odtwarzania",
+      "downloadTrack": "Pobierz utwór",
+      "shareTrack": "Udostępnij utwór"
+    },
+    "theme": {
+      "title": "Ustawienia motywu",
+      "audioReactive": "Kolory reagujące na dźwięk",
+      "audioReactiveDesc": "Kolory zmieniają się wraz z muzyką",
+      "animationIntensity": "Intensywność animacji",
+      "intensityLow": "Niska",
+      "intensityMedium": "Średnia",
+      "intensityHigh": "Wysoka",
+      "autoTheme": "Automatyczny motyw dzień/noc",
+      "followSystem": "Śledź ustawienia systemowe",
+      "customColors": "Własne kolory",
+      "presets": "Predefiniowane motywy",
+      "presetNames": {
+        "dark": "Ciemny",
+        "light": "Jasny",
+        "sunset": "Zachód słońca",
+        "ocean": "Ocean",
+        "forest": "Las"
+      }
+    },
+    "offline": {
+      "title": "Tryb offline",
+      "available": "Dostępne offline",
+      "unavailable": "Niedostępne offline",
+      "downloading": "Pobieranie...",
+      "downloaded": "Pobrano",
+      "cached": "W pamięci podręcznej",
+      "download": "Pobierz do trybu offline",
+      "remove": "Usuń kopię offline",
+      "storage": "Wykorzystana pamięć",
+      "clearCache": "Wyczyść pamięć podręczną",
+      "syncPending": "Oczekuje na synchronizację"
+    },
+    "errors": {
+      "loadFailed": "Nie udało się załadować mediów",
+      "playbackFailed": "Odtwarzanie nie powiodło się",
+      "networkError": "Błąd sieci",
+      "notFound": "Nie znaleziono mediów",
+      "formatNotSupported": "Format nieobsługiwany",
+      "permissionDenied": "Brak uprawnień",
+      "unknown": "Wystąpił nieznany błąd"
+    }
+  },
+  "breadcrumbs": {
+    "label": "Nawigacja okruszkowa",
+    "home": "Strona główna",
+    "analysis": "Archiwum analiz",
+    "privacy": "Polityka prywatności",
+    "methodology": "Metodologia",
+    "aiPolicy": "Polityka użycia AI"
+  },
+  "search": {
+    "label": "Przeszukaj stronę",
+    "open": "Otwórz wyszukiwarkę",
+    "close": "Zamknij wyszukiwarkę",
+    "placeholder": "Szukaj treści...",
+    "hint": "Zacznij pisać, aby przeszukać poradniki, narzędzia i strony",
+    "noResults": "Nie znaleziono wyników",
+    "types": {
+      "page": "Strona",
+      "guide": "Poradnik",
+      "analysis": "Analiza",
+      "tool": "Narzędzie"
+    },
+    "results": {
+      "live": {
+        "description": "Słuchaj radia na żywo i treści edukacyjnych"
+      },
+      "violenceLoop": {
+        "description": "Interaktywna wizualizacja pętli przemocy"
+      },
+      "studio": {
+        "description": "Przeglądaj audycje radiowe i treści studyjne"
+      },
+      "shows": {
+        "description": "Odkryj wszystkie audycje i odcinki"
+      },
+      "guides": {
+        "description": "Praktyczne poradniki rozpoznawania manipulacji"
+      },
+      "anatomy": {
+        "description": "Dogłębna analiza taktyk manipulacyjnych i schematów"
+      },
+      "lab": {
+        "description": "Narzędzia AI do zrozumienia manipulacji"
+      },
+      "community": {
+        "description": "Dołącz do społeczności i znajdź wsparcie"
+      },
+      "analysis": {
+        "description": "Archiwum analiz przypadków i podcastów edukacyjnych"
+      },
+      "privacy": {
+        "description": "Polityka prywatności i ochrona danych"
+      },
+      "aiPolicy": {
+        "description": "Polityka użycia AI, etyka i zabezpieczenia"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Polityka Prywatności i Ochrona Danych",
+    "description": "Dowiedz się, jak chronimy Twoje dane osobowe i zapewniamy Twoją prywatność podczas korzystania z interaktywnych narzędzi i usług Radio Adamowo.",
+    "lastUpdated": "Ostatnia aktualizacja",
+    "updateDate": "Styczeń 2025",
+    "notice": {
+      "title": "Twoja Prywatność Ma Znaczenie",
+      "content": "Radio Adamowo zobowiązuje się do ochrony Twojej prywatności. Ta polityka wyjaśnia, jakie dane zbieramy, jak ich używamy i jakie masz prawa dotyczące swoich danych osobowych."
+    },
+    "dataProtection": {
+      "title": "Zasady Ochrony Danych",
+      "content": "<p>Przetwarzamy dane osobowe zgodnie z RODO i obowiązującymi przepisami o ochronie danych. Nasze kluczowe zasady:</p><ul class='list-disc pl-6 space-y-2'><li>Minimalizacja danych: Zbieramy tylko dane niezbędne dla naszych usług</li><li>Ograniczenie celu: Dane są używane wyłącznie do określonych celów</li><li>Przejrzystość: Jasno komunikujemy nasze praktyki dotyczące danych</li><li>Bezpieczeństwo: Wdrażamy odpowiednie środki techniczne i organizacyjne</li><li>Prawa użytkownika: Szanujemy i wspieramy Twoje prawa do ochrony danych</li></ul>"
+    },
+    "personalData": {
+      "title": "Dane Osobowe, Które Zbieramy",
+      "content": "<p><strong>Zbierane automatycznie:</strong></p><ul class='list-disc pl-6 space-y-1'><li>Adres IP (zanonimizowany)</li><li>Typ i wersja przeglądarki</li><li>Informacje o urządzeniu</li><li>Odwiedzone strony i czas spędzony</li><li>Adresy URL pochodzące</li></ul><p class='mt-4'><strong>Dostarczone dobrowolnie:</strong></p><ul class='list-disc pl-6 space-y-1'><li>Adres e-mail (jeśli subskrybujesz newsletter)</li><li>Opinie i odpowiedzi na ankiety</li><li>Treści generowane przez użytkownika w narzędziach interaktywnych</li></ul>"
+    },
+    "interactiveTools": {
+      "title": "Narzędzia Interaktywne i Przetwarzanie Danych",
+      "content": "<p>Kiedy używasz nasze narzędzia interaktywne (AI Lab, Violence Loop, test Ośmiu Grzechów), przetwarzamy dane w następujący sposób:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Przetwarzanie lokalne:</strong> Większość interakcji jest przetwarzana lokalnie w Twojej przeglądarce</li><li><strong>Brak trwałego przechowywania:</strong> Nie przechowujemy trwale Twoich wejść ani odpowiedzi</li><li><strong>Dane sesji:</strong> Tymczasowe dane sesji są automatycznie usuwane po zamknięciu przeglądarki</li><li><strong>Analityka:</strong> Zbieramy zanonimizowane statystyki użycia, aby ulepszyć nasze narzędzia</li></ul>"
+    },
+    "cookies": {
+      "title": "Pliki Cookie i Pamięć Lokalna",
+      "content": "<p>Używamy plików cookie i pamięci lokalnej do:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Istotne pliki cookie:</strong> Wymagane do funkcjonowania witryny (preferencje motywu, wybór języka)</li><li><strong>Analityczne pliki cookie:</strong> Pomagają nam zrozumieć, jak odwiedzający korzystają z naszej witryny (zanonimizowane)</li><li><strong>Pliki cookie wydajności:</strong> Poprawiają szybkość witryny i doświadczenie użytkownika</li></ul><p class='mt-4'>Możesz kontrolować pliki cookie za pośrednictwem ustawień przeglądarki. Wyłączenie istotnych plików cookie może wpłynąć na funkcjonowanie witryny.</p>"
+    },
+    "consent": {
+      "title": "Zgoda na Narzędzia Interaktywne",
+      "description": "Korzystając z naszych interaktywnych narzędzi, wyrażasz zgodę na następujące przetwarzanie danych:",
+      "points": {
+        "aiLab": "AI Lab może przetwarzać wejścia tekstowe lokalnie, aby generować odpowiedzi edukacyjne",
+        "violenceLoop": "Violence Loop przechowuje wzorce interakcji tymczasowo, aby spersonalizować doświadczenie",
+        "analytics": "Zanonimizowana analityka użycia pomaga nam ulepszyć efektywność narzędzi",
+        "storage": "Pamięć lokalna przeglądarki może buforować Twoje preferencje i postęp"
+      },
+      "userControl": "Możesz wycofać zgodę w dowolnym momencie, usuwając dane przeglądarki lub kontaktując się z nami."
+    },
+    "rights": {
+      "title": "Twoje Prawa do Ochrony Danych",
+      "description": "Zgodnie z RODO masz następujące prawa:",
+      "access": "Prawo dostępu do swoich danych osobowych",
+      "rectification": "Prawo do poprawiania niedokładnych danych",
+      "erasure": "Prawo do zażądania usunięcia swoich danych",
+      "portability": "Prawo do otrzymania danych w przenośnym formacie",
+      "objection": "Prawo do sprzeciwu wobec przetwarzania danych",
+      "withdraw": "Prawo do wycofania zgody w dowolnym momencie"
+    },
+    "contact": {
+      "title": "Skontaktuj Się w Sprawie Prywatności",
+      "description": "W przypadku pytań dotyczących prywatności lub w celu wykonania swoich praw, skontaktuj się z naszym inspektorem ochrony danych:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "aiPolicy": "Polityka Użycia AI",
+      "methodology": "Metodologia i Źródła"
+    }
+  },
+  "aiPolicy": {
+    "title": "Polityka Użycia AI i Etyka",
+    "description": "Nasze zobowiązanie do odpowiedzialnego użycia sztucznej inteligencji, w tym etyki rekonstrukcji głosu, zapobiegania deepfakea i ochrony treści edukacyjnych.",
+    "lastUpdated": "Ostatnia aktualizacja",
+    "updateDate": "Styczeń 2025",
+    "warning": {
+      "title": "Ważne: Wyłącznie Użytek Edukacyjny",
+      "content": "Cała treść generowana przez sztuczną inteligencję na tej platformie jest ściśle na cele edukacyjne. Niedopuszczalne jest używanie narzędzi AI do oszustwa, molestowania lub wyrządzania szkody, co może być nielegalne."
+    },
+    "principles": {
+      "title": "Nasze Zasady Etyki AI",
+      "description": "Radio Adamowo zobowiązuje się do odpowiedzialnego użycia AI kierując się następującymi zasadami:",
+      "educational": {
+        "title": "Cel Edukacyjny",
+        "description": "AI jest używana wyłącznie do pomocy użytkownikom w zrozumieniu taktyk manipulacji, a nie do ich zastosowania"
+      },
+      "consent": {
+        "title": "Świadoma Zgoda",
+        "description": "Jasne ujawnienie gdy używane są treści generowane przez AI, z wymaganą wyraźną zgodą użytkownika"
+      },
+      "transparency": {
+        "title": "Przejrzystość",
+        "description": "Otwarta komunikacja na temat możliwości AI, ograniczeń i potencjalnych uprzedzeń"
+      },
+      "safety": {
+        "title": "Bezpieczeństwo Użytkownika",
+        "description": "Zabezpieczenia zapobiegające nadużyciom i chroniące wrażliwych użytkowników przed manipulacją lub szkodą"
+      },
+      "accountability": {
+        "title": "Odpowiedzialność",
+        "description": "Regularne audyty, mechanizmy zbierania opinii użytkowników i zobowiązanie do szybkiego rozwiązywania problemów"
+      }
+    },
+    "voiceReconstruction": {
+      "title": "Rekonstrukcja Głosu i Zapobieganie Deepfakea",
+      "description": "Technologia syntezy i rekonstrukcji głosu wymaga szczególnego rozważenia etycznego. Oto nasze podejście:",
+      "dataSource": {
+        "title": "Źródła Danych",
+        "content": "Wszystkie próbki głosu używane do rekonstrukcji to: (1) Publiczne nagrania z odpowiednim przypisaniem, (2) Syntetyczne głosy utworzone specjalnie na cele edukacyjne, lub (3) Udostępnione z wyraźną pisemną zgodą mówcy."
+      },
+      "consent": {
+        "title": "Wymogi Zgody",
+        "point1": "Pisemna zgoda jest uzyskiwana od wszystkich osób, których głosy są rekonstruowane",
+        "point2": "Formularze zgody wyraźnie wskazują cel edukacyjny i potencjalną rekonstrukcję AI",
+        "point3": "Uczestnicy mogą wycofać zgodę w dowolnym momencie, co powoduje natychmiastowe usunięcie"
+      },
+      "safeguards": {
+        "title": "Zabezpieczenia Techniczne",
+        "watermarking": "Cyfrowe znakowanie wodne całej treści audio generowanej przez AI, aby umożliwić wykrycie",
+        "disclosure": "Jasne wskaźniki wizualne i dźwiękowe, że treść została wygenerowana przez AI",
+        "noExport": "Ograniczenia dotyczące pobierania lub eksportowania rekonstruowanych głosów",
+        "monitoring": "Automatyczne monitorowanie w celu wykrycia prób nadużycia",
+        "encryption": "Bezpieczne przechowywanie i transmisja danych głosu z szyfrowaniem"
+      }
+    },
+    "aiLab": {
+      "title": "Narzędzie AI Lab",
+      "description": "Nasz AI Lab symuluje rozmowy z manipulacyjnymi postaciami, aby pomóc użytkownikom rozpoznać taktyki. Oto jak zapewniamy bezpieczeństwo:",
+      "dataProcessing": {
+        "title": "Przetwarzanie Danych",
+        "local": "Rozmowy są przetwarzane lokalnie, gdy jest to możliwe",
+        "noStorage": "Nie przechowujemy trwale treści rozmów",
+        "noTraining": "Wejścia użytkownika nigdy nie są używane do trenowania modeli AI",
+        "anonymized": "Każda zebrana analityka jest w pełni zanonimizowana"
+      },
+      "limitations": {
+        "title": "Ograniczenia i Zastrzeżenia",
+        "content": "AI Lab zapewnia symulacje edukacyjne, ale nie może replikować pełnej złożoności ludzkiej manipulacji. Powinno stanowić uzupełnienie, a nie zastępstwo, profesjonalnych porad i ludzkiego osądu."
+      }
+    },
+    "security": {
+      "title": "Środki Bezpieczeństwa Danych",
+      "description": "Chronimy dane związane z AI za pomocą kompleksowych środków bezpieczeństwa:",
+      "measures": {
+        "encryption": "Szyfrowanie end-to-end do transmisji danych",
+        "access": "Ścisłe kontrola dostępu ograniczająca dostęp do wrażliwych danych",
+        "audit": "Regularne audyty bezpieczeństwa i oceny luk w zabezpieczeniach",
+        "retention": "Minimalne przechowywanie danych z automatycznymi politykami usuwania",
+        "breach": "Plan reagowania na incydenty w przypadku potencjalnych naruszeń danych",
+        "thirdParty": "Weryfikacja dostawców usług AI trzecich stron"
+      }
+    },
+    "userControl": {
+      "title": "Kontrola Użytkownika i Rezygnacja",
+      "description": "Zachowujesz kontrolę nad interakcjami AI:",
+      "optOut": "Zrezygnuj z funkcji AI, zachowując dostęp do pozostałej treści",
+      "deleteData": "Zażądaj usunięcia wszystkich danych związanych z interakcjami AI",
+      "report": "Zgłoś problematyczne zachowanie AI lub potencjalne nadużycie"
+    },
+    "contact": {
+      "title": "Zagadnienia Etyki AI",
+      "description": "W przypadku pytań na temat naszego użytku AI lub zgłoszenia obaw:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "privacy": "Polityka Prywatności",
+      "methodology": "Metodologia i Źródła"
+    }
+  },
+  "methodology": {
+    "title": "Metodologia i Źródła",
+    "description": "Nasze oparte na dowodach podejście do zrozumienia psychologicznej manipulacji, ugruntowane w badaniach, konsultacjach ekspertów i doświadczeniach osób ocalałych.",
+    "approach": {
+      "title": "Nasza Metodologia",
+      "description": "Treść Radio Adamowo jest opracowywana przy użyciu rygorystycznego, wielodyscyplinarnego podejścia:",
+      "evidence": {
+        "title": "Oparte na Dowodach",
+        "description": "Cała treść jest ugruntowana w badaniach recenzowanych, studiach klinicznych i ustalonej teorii psychologicznej"
+      },
+      "multidisciplinary": {
+        "title": "Perspektywa Wielodyscyplinarna",
+        "description": "Integrujemy wglądy z psychologii, neuronauki, badań nad traumą i studiów prawnych"
+      },
+      "practical": {
+        "title": "Praktyczne Zastosowanie",
+        "description": "Badania akademickie są tłumaczone na praktyczne, praktyczne wytyczne na rzeczywiste sytuacje"
+      },
+      "accessible": {
+        "title": "Dostępna Komunikacja",
+        "description": "Złożone koncepcje są wyjaśniane w jasnym, zrozumiałym języku bez nadmiernego uproszczenia"
+      }
+    },
+    "sources": {
+      "title": "Główne Źródła i Badania",
+      "description": "Nasza treść czerpie z wiodących badań w wielu dziedzinach:",
+      "categories": {
+        "psychology": "Psychologia i Manipulacja",
+        "trauma": "Trauma i Uzdrowienie",
+        "legal": "Prawo i Rzecznictwo"
+      },
+      "examples": {
+        "psychology1": "Badania zaburzenia osobowości narcystycznej (DSM-5, ICD-11)",
+        "psychology2": "Studia dotyczące kontroli przymusu i przemocy w związkach intymnych",
+        "psychology3": "Badania uprzedzeń poznawczych i wpływu społecznego",
+        "trauma1": "Zaburzenie stresowe pourazowe (PTSD) i zespół stresu pourazowego",
+        "trauma2": "Praca Judith Herman na temat traumy i uzdrowienia",
+        "legal1": "Prawo dotyczące przemocy domowej i środki ochronne",
+        "legal2": "Uznawanie przemocy psychicznej w systemach prawnych"
+      }
+    },
+    "experts": {
+      "title": "Konsultacja Ekspercka",
+      "description": "Konsultujemy się z profesjonalistami z odpowiednich dziedzin:",
       "types": {
         "psychologists": "Psychologowie kliniczny specjalizujący się w zaburzeniach osobowości",
         "therapists": "Terapeuci zajmujący się traumą i specjaliści PTSD",

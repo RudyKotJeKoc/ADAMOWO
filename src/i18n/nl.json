@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 34790)
-Total output lines: 2659
-
 {
   "meta": {
     "title": "Radio Adamowo"
@@ -1332,7 +1329,387 @@ Total output lines: 2659
       },
       "violenceLoop": {
         "description": "Interactieve visualisatie van geweldscycluspatronen"
-   …4790 tokens truncated…dersteunt video-afspelen niet",
+      },
+      "studio": {
+        "description": "Blader door radioprogramma's en studio-inhoud"
+      },
+      "shows": {
+        "description": "Ontdek alle radioshows en afleveringen"
+      },
+      "guides": {
+        "description": "Praktische gidsen voor het herkennen van manipulatiepatronen"
+      },
+      "anatomy": {
+        "description": "Diepgaande analyse van manipulatietactieken en schema's"
+      },
+      "lab": {
+        "description": "AI-aangedreven tools voor het begrijpen van manipulatie"
+      },
+      "community": {
+        "description": "Sluit je aan bij de gemeenschap en vind ondersteuning"
+      },
+      "analysis": {
+        "description": "Archief van case-analyses en educatieve podcasts"
+      },
+      "privacy": {
+        "description": "Privacybeleid en gegevensbescherming"
+      },
+      "aiPolicy": {
+        "description": "AI-gebruiksbeleid, ethiek en waarborgen"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacybeleid & Gegevensbescherming",
+    "description": "Leer hoe we je persoonlijke gegevens beschermen en je privacy waarborgen bij het gebruik van Radio Adamowo's interactieve tools en diensten.",
+    "lastUpdated": "Laatst bijgewerkt",
+    "updateDate": "Januari 2025",
+    "notice": {
+      "title": "Je Privacy is Belangrijk",
+      "content": "Radio Adamowo zet zich in voor de bescherming van je privacy. Dit beleid legt uit welke gegevens we verzamelen, hoe we ze gebruiken en welke rechten je hebt met betrekking tot je persoonlijke gegevens."
+    },
+    "dataProtection": {
+      "title": "Principes voor Gegevensbescherming",
+      "content": "<p>We verwerken persoonlijke gegevens in overeenstemming met de AVG en toepasselijke wetten voor gegevensbescherming. Onze kernprincipes:</p><ul class='list-disc pl-6 space-y-2'><li>Gegevensminimalisering: We verzamelen alleen gegevens die nodig zijn voor onze services</li><li>Doelbeperking: Gegevens worden alleen gebruikt voor aangegeven doelen</li><li>Transparantie: We communiceren duidelijk over onze gegevenspraktijken</li><li>Veiligheid: We implementeren passende technische en organisatorische maatregelen</li><li>Gebruikersrechten: We respecteren en ondersteunden je rechten op gegevensbescherming</li></ul>"
+    },
+    "personalData": {
+      "title": "Persoonlijke Gegevens die We Verzamelen",
+      "content": "<p><strong>Automatisch verzameld:</strong></p><ul class='list-disc pl-6 space-y-1'><li>IP-adres (geanonimiseerd)</li><li>Browsertype en versie</li><li>Apparaatgegevens</li><li>Bezochte pagina's en bestede tijd</li><li>Verwijzende URL's</li></ul><p class='mt-4'><strong>Vrijwillig verstrekt:</strong></p><ul class='list-disc pl-6 space-y-1'><li>E-mailadres (als je je aanmeldt voor de nieuwsbrief)</li><li>Feedback en enquêtereacties</li><li>Door gebruikers gegenereerde inhoud in interactieve tools</li></ul>"
+    },
+    "interactiveTools": {
+      "title": "Interactieve Tools & Gegevensverwerking",
+      "content": "<p>Wanneer je onze interactieve tools gebruikt (AI Lab, Violence Loop, Eight Sins assessment), verwerken we gegevens als volgt:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Lokale verwerking:</strong> De meeste interacties worden lokaal in je browser verwerkt</li><li><strong>Geen permanente opslag:</strong> We slaan je invoer of antwoorden niet permanent op</li><li><strong>Sessigegevens:</strong> Tijdelijke sessiegegevens worden automatisch verwijderd wanneer je je browser sluit</li><li><strong>Analytics:</strong> We verzamelen geanonimiseerde gebruiksstatistieken om onze tools te verbeteren</li></ul>"
+    },
+    "cookies": {
+      "title": "Cookies & Lokale Opslag",
+      "content": "<p>We gebruiken cookies en lokale opslag voor:</p><ul class='list-disc pl-6 space-y-2'><li><strong>Essentiële cookies:</strong> Vereist voor situfunctionaliteit (themavoorkeuren, taalkeuze)</li><li><strong>Analytische cookies:</strong> Helpen ons begrijpen hoe bezoekers onze site gebruiken (geanonimiseerd)</li><li><strong>Performance cookies:</strong> Verbeteren sitesnelheid en gebruikerservaring</li></ul><p class='mt-4'>Je kunt cookies beheren via je browserinstellingen. Het uitschakelen van essentiële cookies kan de sitefunctionaliteit beïnvloeden.</p>"
+    },
+    "consent": {
+      "title": "Toestemming voor Interactieve Tools",
+      "description": "Door onze interactieve tools te gebruiken, stem je in met de volgende gegevensverwerking:",
+      "points": {
+        "aiLab": "AI Lab kan tekstinvoer lokaal verwerken om educatieve reacties te genereren",
+        "violenceLoop": "Violence Loop slaat interactiepatronen tijdelijk op om de ervaring aan te passen",
+        "analytics": "Anonieme gebruiksanalytics helpen ons de effectiviteit van tools te verbeteren",
+        "storage": "Browser lokale opslag kan je voorkeuren en voortgang in cache opslaan"
+      },
+      "userControl": "Je kunt je toestemming op elk moment intrekken door je browsergegevens te wissen of contact met ons op te nemen."
+    },
+    "rights": {
+      "title": "Je Gegevensbeschermingsrechten",
+      "description": "Onder de AVG heb je de volgende rechten:",
+      "access": "Recht op toegang tot je persoonlijke gegevens",
+      "rectification": "Recht op correctie van onjuiste gegevens",
+      "erasure": "Recht op verwijdering van je gegevens",
+      "portability": "Recht om je gegevens in een draagbaar formaat te ontvangen",
+      "objection": "Recht om bezwaar te maken tegen gegevensverwerking",
+      "withdraw": "Recht om je toestemming op elk moment in te trekken"
+    },
+    "contact": {
+      "title": "Neem Contact Met Ons Op Over Privacy",
+      "description": "Voor vragen over privacy of om je rechten uit te oefenen, neem contact op met onze functionaris voor gegevensbescherming:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "aiPolicy": "AI Gebruiksbeleid",
+      "methodology": "Methodologie & Bronnen"
+    }
+  },
+  "aiPolicy": {
+    "title": "AI Gebruiksbeleid & Ethiek",
+    "description": "Ons commitment voor verantwoord AI-gebruik, inclusief ethiek van stemaanpassingen, deepfake-preventie en bescherming van educatieve inhoud.",
+    "lastUpdated": "Laatst bijgewerkt",
+    "updateDate": "Januari 2025",
+    "warning": {
+      "title": "Belangrijk: Alleen Educatief Gebruik",
+      "content": "Alle AI-gegenereerde inhoud op dit platform is strikt voor educatieve doeleinden. Misbruik van AI-tools voor bedrog, intimidatie of schadeberokkening is niet toegestaan en kan illegaal zijn."
+    },
+    "principles": {
+      "title": "Onze AI-ethiekprincipes",
+      "description": "Radio Adamowo zet zich in voor verantwoord AI-gebruik geleid door deze kernprincipes:",
+      "educational": {
+        "title": "Educatief Doel",
+        "description": "AI wordt uitsluitend gebruikt om gebruikers manipulatattieken te begrijpen, niet om deze uit te voeren"
+      },
+      "consent": {
+        "title": "Geïnformeerde Toestemming",
+        "description": "Duidelijke openbaring wanneer AI-gegenereerde inhoud wordt gebruikt, met expliciete gebruikerstoestemming vereist"
+      },
+      "transparency": {
+        "title": "Transparantie",
+        "description": "Open communicatie over AI-mogelijkheden, beperkingen en mogelijke vooroordelen"
+      },
+      "safety": {
+        "title": "Gebruikersveiligheid",
+        "description": "Veiligheidsmaatregelen ter voorkoming van misbruik en bescherming van kwetsbare gebruikers tegen manipulatie of schadeberokkening"
+      },
+      "accountability": {
+        "title": "Verantwoordelijkheid",
+        "description": "Regelmatige audits, mechanismen voor gebruikersfeedback en commitment om problemen snel op te lossen"
+      }
+    },
+    "voiceReconstruction": {
+      "title": "Stemaanpassingen & Deepfake-preventie",
+      "description": "Stemsynthese en reconstructietechnologie vereist speciale ethische aandacht. Dit is onze benadering:",
+      "dataSource": {
+        "title": "Gegevensbronnen",
+        "content": "Alle stemplsamples gebruikt voor reconstructie zijn: (1) Openbaar beschikbare opnamen met passende toeschrijving, (2) Synthetische stemmen speciaal voor educatief gebruik, of (3) Verstrekt met expliciete schriftelijke toestemming van de spreker."
+      },
+      "consent": {
+        "title": "Toestemmingsvereisten",
+        "point1": "Schriftelijke toestemming wordt verkregen van alle personen wiens stemmen worden gereconstrueerd",
+        "point2": "Toestemmingsformulieren stellen duidelijk educatief gebruik en mogelijke AI-reconstructie vast",
+        "point3": "Deelnemers kunnen toestemming op elk moment intrekken, wat onmiddellijke verwijdering tot gevolg heeft"
+      },
+      "safeguards": {
+        "title": "Technische Veiligheidsmaatregelen",
+        "watermarking": "Digitaal watermerk van alle AI-gegenereerde audio om detectie mogelijk te maken",
+        "disclosure": "Duidelijke visuele en audiale indicatoren dat inhoud AI-gegenereerd is",
+        "noExport": "Beperkingen op het downloaden of exporteren van gereconstrueerde stemmen",
+        "monitoring": "Geautomatiseerde bewaking voor misbruikpogingen",
+        "encryption": "Veilige opslag en transmissie van stemgegevens met encryptie"
+      }
+    },
+    "aiLab": {
+      "title": "AI Lab Tool",
+      "description": "Onze AI Lab simuleert gesprekken met manipulatieve personen om gebruikers tactiekenherkenning te helpen. Dit is hoe we veiligheid garanderen:",
+      "dataProcessing": {
+        "title": "Gegevensverwerking",
+        "local": "Gesprekken worden waar mogelijk lokaal verwerkt",
+        "noStorage": "We slaan gespreksinhoud niet permanent op",
+        "noTraining": "Gebruikersinvoer wordt nooit gebruikt om AI-modellen te trainen",
+        "anonymized": "Alle verzamelde analyses zijn volledig geanonimiseerd"
+      },
+      "limitations": {
+        "title": "Beperkingen & Disclaimer",
+        "content": "AI Lab biedt educatieve simulaties maar kan niet de volledige complexiteit van menselijke manipulatie repliceren. Het zou een aanvulling, geen vervanging, moeten zijn op professioneel advies en menselijk oordeel."
+      }
+    },
+    "security": {
+      "title": "Maatregelen voor Gegevensbeveiliging",
+      "description": "We beschermen AI-gerelateerde gegevens met uitgebreide veiligheidsmaatregelen:",
+      "measures": {
+        "encryption": "End-to-end encryptie voor gegevenstransmissie",
+        "access": "Strikte toegangscontroles die beperken wie gevoelige gegevens kan zien",
+        "audit": "Regelmatige veiligheidsaudits en kwetsbaarheidsevaluaties",
+        "retention": "Minimale gegevensretentie met automatische verwijderingsbeleid",
+        "breach": "Incidentresponsplan voor mogelijke gegevensinbreuken",
+        "thirdParty": "Beoordeling van AI-diensten van derden"
+      }
+    },
+    "userControl": {
+      "title": "Gebruikerscontrole & Opt-Out",
+      "description": "Je behoudt controle over AI-interacties:",
+      "optOut": "Meld je af voor AI-functies terwijl je nog steeds toegang hebt tot andere inhoud",
+      "deleteData": "Verzoek om verwijdering van alle gegevens die aan AI-interacties zijn gekoppeld",
+      "report": "Meld verdacht AI-gedrag of potentieel misbruik"
+    },
+    "contact": {
+      "title": "AI-ethiekproblemen",
+      "description": "Voor vragen over ons AI-gebruik of het melden van problemen:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "privacy": "Privacybeleid",
+      "methodology": "Methodologie & Bronnen"
+    }
+  },
+  "methodology": {
+    "title": "Methodologie & Bronnen",
+    "description": "Onze evidence-based benadering van het begrijpen van psychologische manipulatie, gebaseerd op onderzoek, deskundigenadvies en ervaringen van overlevenden.",
+    "approach": {
+      "title": "Onze Methodologie",
+      "description": "Radio Adamowo's inhoud wordt ontwikkeld met behulp van een rigoureuze, multidisciplinaire benadering:",
+      "evidence": {
+        "title": "Op Bewijs Gebaseerd",
+        "description": "Alle inhoud is gebaseerd op peer-reviewed onderzoek, klinische studies en gevestigde psychologische theorie"
+      },
+      "multidisciplinary": {
+        "title": "Multidisciplinair Perspectief",
+        "description": "We integreren inzichten uit psychologie, neurowetenschappen, traumaonderzoek en juridische studies"
+      },
+      "practical": {
+        "title": "Praktische Toepassing",
+        "description": "Academisch onderzoek wordt vertaald naar praktische, actionable richtlijnen voor real-world situaties"
+      },
+      "accessible": {
+        "title": "Toegankelijke Communicatie",
+        "description": "Complexe concepten worden uitgelegd in duidelijke, begrijpelijke taal zonder oversimplificatie"
+      }
+    },
+    "sources": {
+      "title": "Belangrijkste Bronnen & Onderzoek",
+      "description": "Onze inhoud put uit toonaangevend onderzoek in meerdere velden:",
+      "categories": {
+        "psychology": "Psychologie & Manipulatie",
+        "trauma": "Trauma & Herstel",
+        "legal": "Recht & Advocatie"
+      },
+      "examples": {
+        "psychology1": "Narcistische persoonlijkheidsstoornis onderzoek (DSM-5, ICD-11)",
+        "psychology2": "Onderzoek naar dwangcontrole en huiselijk geweld",
+        "psychology3": "Onderzoek naar cognitieve vooroordelen en sociale invloed",
+        "trauma1": "Posttraumatische stressstoornis (PTSS) en complex trauma",
+        "trauma2": "Judith Hermans werk over trauma en herstel",
+        "legal1": "Huiselijk geweldrecht en beschermingsmaatregelen",
+        "legal2": "Erkenning van psychisch geweld in rechtsstelsels"
+      }
+    },
+    "experts": {
+      "title": "Deskundigenadvies",
+      "description": "We raadplegen professionals uit relevante velden:",
+      "types": {
+        "psychologists": "Klinische psychologen gespecialiseerd in persoonlijkheidsstoornissen",
+        "therapists": "Traumatherapeuten en PTSS-specialisten",
+        "legal": "Juridische experts in huiselijk geweld en familierecht",
+        "survivors": "Advocaten voor overlevenden en steunorganisaties"
+      }
+    },
+    "quality": {
+      "title": "Kwaliteitsborgingsmaatregelen",
+      "description": "We handhaven inhoudnauwkeurigheid door:",
+      "measures": {
+        "review": "Regelmatige inhoudsbeoordelingen door deskundigen",
+        "feedback": "Integratie van gebruikersfeedback en continue verbetering",
+        "updates": "Periodieke updates om nieuw onderzoek en best practices weer te geven",
+        "accuracy": "Feitenchecking en verificatie van citaten"
+      }
+    },
+    "limitations": {
+      "title": "Beperkingen & Disclaimer",
+      "content": "Hoewel we streven naar nauwkeurigheid, heeft onze inhoud beperkingen:",
+      "point1": "Educatieve inhoud vormt geen medisch of juridisch advies",
+      "point2": "Individuele situaties variëren; professioneel advies wordt aanbevolen",
+      "point3": "Onderzoek is voortdurend; ons begrip evolueert met nieuw bewijs"
+    },
+    "feedback": {
+      "title": "Onderzoeksfeedback",
+      "description": "We ontvangen graag feedback van onderzoekers, professionals en gebruikers:",
+      "email": "E-mail"
+    },
+    "relatedLinks": {
+      "privacy": "Privacybeleid",
+      "aiPolicy": "AI Gebruiksbeleid"
+    }
+  },
+  "footer": {
+    "navigation": "Voettekstnavigatie",
+    "links": {
+      "documentation": "Documentatie",
+      "privacy": "Privacy en cookies",
+      "methodology": "Methodologie en bronnen",
+      "support": "Steun 🍕"
+    },
+    "backToTop": "Terug naar boven",
+    "rights": "© 2025 Radio Adamowo"
+  },
+  "trackHighlights": {
+    "sectionLabel": "Aankomende muziek",
+    "title": "Zes plekken klaar voor nieuwe premières",
+    "description": "Een mozaïek van placeholders op de homepage dat toekomstige Radio Adamowo releases verwelkomt.",
+    "placeholderCta": "Gereserveerd voor een aankomend nummer",
+    "cards": {
+      "forest": {
+        "kicker": "Bosopen plek",
+        "title": "Dageraadfrequenties",
+        "description": "Een zachte opening geïnspireerd door verre vogels en het eerste licht."
+      },
+      "rooftop": {
+        "kicker": "Dakterras",
+        "title": "Stadse Echo Sessie",
+        "description": "Stedelijke ambiance en pulserende bas voor een avond boven de skyline."
+      },
+      "neon": {
+        "kicker": "Neongang",
+        "title": "Naglans Intermezzo",
+        "description": "Een ruime plek badend in synthreflecties en trage, gloeiende beats."
+      },
+      "river": {
+        "kicker": "Oeversein",
+        "title": "Stroom Drift",
+        "description": "Gereserveerd voor een vloeibare drumloop die de rivier volgt."
+      },
+      "attic": {
+        "kicker": "Zolderarchief",
+        "title": "Stof & Vinyl",
+        "description": "Een intieme plek tussen bandruis en gefluisterde poëzie."
+      },
+      "garden": {
+        "kicker": "Nachtelijke tuin",
+        "title": "Bloei Puls",
+        "description": "Een geurige afsluiting voor koorzang en warme percussie."
+      }
+    }
+  },
+  "multimedia": {
+    "audioEngine": {
+      "loading": "Audio laden...",
+      "buffering": "Bufferen...",
+      "playing": "Afspelen",
+      "paused": "Gepauzeerd",
+      "error": "Afspeelfout",
+      "offline": "Audio niet beschikbaar offline",
+      "retry": "Opnieuw proberen",
+      "crossfading": "Overgaan naar volgend nummer..."
+    },
+    "visualizer": {
+      "title": "Audio Visualisator",
+      "enable": "Visualisator inschakelen",
+      "disable": "Visualisator uitschakelen",
+      "mode": "Visualisatormodus",
+      "modes": {
+        "bars": "Balken",
+        "wave": "Golf",
+        "circular": "Circulair",
+        "3dBars": "3D Balken",
+        "3dWave": "3D Golf",
+        "3dParticles": "3D Deeltjes"
+      },
+      "requiresThree": "Vereist Three.js bibliotheek",
+      "disabled": "Visualisator uitgeschakeld",
+      "waiting": "Wachten op audiogegevens..."
+    },
+    "playlist": {
+      "title": "Afspeellijst",
+      "empty": "Geen nummers in afspeellijst",
+      "loading": "Afspeellijst laden...",
+      "addTrack": "Toevoegen aan afspeellijst",
+      "removeTrack": "Verwijderen uit afspeellijst",
+      "clearPlaylist": "Afspeellijst wissen",
+      "shuffle": "Willekeurig",
+      "repeat": "Herhalen",
+      "repeatModes": {
+        "none": "Niet herhalen",
+        "one": "Eén herhalen",
+        "all": "Alles herhalen"
+      },
+      "queue": "Wachtrij",
+      "history": "Geschiedenis",
+      "nowPlaying": "Nu afspelen",
+      "upNext": "Volgende",
+      "noHistory": "Geen afspeelgeschiedenis",
+      "search": "Nummers zoeken...",
+      "filterBy": "Filteren op",
+      "sortBy": "Sorteren op",
+      "sortOptions": {
+        "title": "Titel",
+        "artist": "Artiest",
+        "album": "Album",
+        "duration": "Duur"
+      }
+    },
+    "slideshow": {
+      "title": "Diavoorstelling",
+      "play": "Afspelen",
+      "pause": "Pauzeren",
+      "previous": "Vorige",
+      "next": "Volgende",
+      "goTo": "Ga naar",
+      "fullscreen": "Volledig scherm",
+      "exitFullscreen": "Volledig scherm sluiten",
+      "noItems": "Geen media-items om weer te geven",
+      "videoError": "Video laden mislukt",
+      "videoNotSupported": "Uw browser ondersteunt video-afspelen niet",
       "autoplayBlocked": "Automatisch afspelen geblokkeerd door browser",
       "settings": "Diavoorstelling instellingen",
       "autoPlay": "Automatisch afspelen",
