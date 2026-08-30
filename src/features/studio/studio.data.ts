@@ -13,7 +13,7 @@ import type { ProgramDictionary, ProgramId } from './studio.schema';
  * - Title, subtitle, and description (via translation keys)
  * - Brand color and icon
  * - Host information
- * - Broadcast schedule with live/replay markers
+ * - Publication schedule with archive markers
  */
 export const PROGRAMS: ProgramDictionary = {
   team: {
@@ -25,12 +25,12 @@ export const PROGRAMS: ProgramDictionary = {
     icon: 'team',
     hosts: [
       { nameKey: 'studio.team.hosts.agnieszka.name', bioKey: 'studio.team.hosts.agnieszka.bio' },
-      { nameKey: 'studio.team.hosts.michal.name', bioKey: 'studio.team.hosts.michal.bio' }
+      { nameKey: 'studio.team.hosts.michal.name', bioKey: 'studio.team.hosts.michal.bio' },
     ],
     schedule: [
-      { weekday: 1, start: '09:00', end: '10:00', noteKey: 'studio.schedule.live' },
-      { weekday: 3, start: '18:00', end: '19:00' }
-    ]
+      { weekday: 1, start: '09:00', end: '10:00', noteKey: 'studio.schedule.replay' },
+      { weekday: 3, start: '18:00', end: '19:00' },
+    ],
   },
   heart: {
     id: 'heart',
@@ -39,13 +39,11 @@ export const PROGRAMS: ProgramDictionary = {
     descriptionKeys: ['studio.heart.description.0', 'studio.heart.description.1'],
     color: '#ff6b35',
     icon: 'heart',
-    hosts: [
-      { nameKey: 'studio.heart.hosts.nadia.name', bioKey: 'studio.heart.hosts.nadia.bio' }
-    ],
+    hosts: [{ nameKey: 'studio.heart.hosts.nadia.name', bioKey: 'studio.heart.hosts.nadia.bio' }],
     schedule: [
-      { weekday: 2, start: '20:00', end: '21:00', noteKey: 'studio.schedule.live' },
-      { weekday: 6, start: '10:00', end: '11:00' }
-    ]
+      { weekday: 2, start: '20:00', end: '21:00', noteKey: 'studio.schedule.replay' },
+      { weekday: 6, start: '10:00', end: '11:00' },
+    ],
   },
   psych: {
     id: 'psych',
@@ -56,11 +54,12 @@ export const PROGRAMS: ProgramDictionary = {
     icon: 'psych',
     hosts: [
       { nameKey: 'studio.psych.hosts.drNowak.name', bioKey: 'studio.psych.hosts.drNowak.bio' },
-      { nameKey: 'studio.psych.hosts.profZielinska.name', bioKey: 'studio.psych.hosts.profZielinska.bio' }
+      {
+        nameKey: 'studio.psych.hosts.profZielinska.name',
+        bioKey: 'studio.psych.hosts.profZielinska.bio',
+      },
     ],
-    schedule: [
-      { weekday: 4, start: '17:00', end: '18:30', noteKey: 'studio.schedule.live' }
-    ]
+    schedule: [{ weekday: 4, start: '17:00', end: '18:30', noteKey: 'studio.schedule.replay' }],
   },
   welcome: {
     id: 'welcome',
@@ -71,13 +70,13 @@ export const PROGRAMS: ProgramDictionary = {
     icon: 'welcome',
     hosts: [
       { nameKey: 'studio.welcome.hosts.zofia.name', bioKey: 'studio.welcome.hosts.zofia.bio' },
-      { nameKey: 'studio.welcome.hosts.ola.name', bioKey: 'studio.welcome.hosts.ola.bio' }
+      { nameKey: 'studio.welcome.hosts.ola.name', bioKey: 'studio.welcome.hosts.ola.bio' },
     ],
     schedule: [
       { weekday: 0, start: '11:00', end: '12:00' },
-      { weekday: 5, start: '08:30', end: '09:30', noteKey: 'studio.schedule.replay' }
-    ]
-  }
+      { weekday: 5, start: '08:30', end: '09:30', noteKey: 'studio.schedule.replay' },
+    ],
+  },
 };
 
 /**

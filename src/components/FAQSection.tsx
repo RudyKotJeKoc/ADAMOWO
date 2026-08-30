@@ -42,20 +42,16 @@ export function FAQSection(): ReactElement {
   const faqItems: AccordionItem[] = [
     {
       id: 'what-is-radio-adamowo',
-      title: t('faq.whatIsRadioAdamowo.question', 'Czym jest Radio Adamowo?'),
+      title: 'Czym jest Adamowo.com?',
       content: (
         <div className="space-y-3">
           <p>
-            {t(
-              'faq.whatIsRadioAdamowo.answer',
-              'Radio Adamowo to edukacyjna platforma radiowa działająca 24/7, poświęcona analizie manipulacji psychicznej i toksycznych relacji.'
-            )}
+            Adamowo.com to edukacyjna baza wiedzy poświęcona prawu, procedurom, analizie materiału
+            dowodowego i mechanizmom manipulacji.
           </p>
           <p className="text-sm text-base-300">
-            {t(
-              'faq.whatIsRadioAdamowo.details',
-              'Oferujemy transmisję na żywo, analityczne audycje, interaktywne narzędzia oraz wsparcie społeczności w trzech językach.'
-            )}
+            Serwis zawiera definicje, analizy, nagrane audycje, interaktywne narzędzia oraz
+            uporządkowane materiały edukacyjne.
           </p>
         </div>
       ),
@@ -86,10 +82,8 @@ export function FAQSection(): ReactElement {
       badge: 'Popularne',
       content: (
         <p>
-          {t(
-            'faq.isContentFree.answer',
-            'Tak! Wszystkie treści na Radio Adamowo są całkowicie darmowe i dostępne dla każdego. Wierzymy, że edukacja na temat manipulacji psychicznej powinna być ogólnodostępna.'
-          )}
+          Wszystkie treści na Adamowo.com są dostępne bezpłatnie. Wiedza o prawie, procedurach i
+          manipulacji powinna być przedstawiona jasno oraz bez tworzenia sztucznej bariery dostępu.
         </p>
       ),
     },
@@ -121,10 +115,8 @@ export function FAQSection(): ReactElement {
       title: t('faq.multilingualSupport.question', 'Jakie języki są obsługiwane?'),
       content: (
         <p>
-          {t(
-            'faq.multilingualSupport.answer',
-            'Radio Adamowo jest dostępne w trzech językach: polskim, angielskim i niderlandzkim. Możesz zmienić język w prawym górnym rogu strony.'
-          )}
+          Adamowo.com obsługuje język polski, angielski i niderlandzki. Język można zmienić w górnej
+          części strony.
         </p>
       ),
     },
@@ -134,10 +126,8 @@ export function FAQSection(): ReactElement {
       content: (
         <div className="space-y-3">
           <p>
-            {t(
-              'faq.technicalRequirements.answer',
-              'Radio Adamowo działa na wszystkich nowoczesnych przeglądarkach internetowych.'
-            )}
+            Adamowo.com działa we współczesnych przeglądarkach internetowych na komputerach i
+            urządzeniach mobilnych.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="rounded-lg border border-base-800 bg-base-900/30 p-3">

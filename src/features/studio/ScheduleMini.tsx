@@ -10,7 +10,7 @@ const WEEKDAY_KEYS = [
   'studio.schedule.weekdays.3',
   'studio.schedule.weekdays.4',
   'studio.schedule.weekdays.5',
-  'studio.schedule.weekdays.6'
+  'studio.schedule.weekdays.6',
 ] as const;
 
 type ScheduleMiniProps = {
@@ -64,7 +64,9 @@ export function ScheduleMini({ entries }: ScheduleMiniProps) {
                 </th>
                 <td className="px-4 py-3">{formatTimeRange(entry)}</td>
                 <td className="px-4 py-3 text-base-300">
-                  {entry.noteKey ? t(entry.noteKey) : t('studio.schedule.defaultNote')}
+                  {entry.noteKey === 'studio.schedule.replay'
+                    ? t(entry.noteKey)
+                    : 'Nagranie archiwalne'}
                 </td>
               </tr>
             ))}

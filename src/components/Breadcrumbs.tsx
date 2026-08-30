@@ -12,7 +12,6 @@ interface BreadcrumbItem {
 
 // Map routes to their display names
 const routeLabels: Record<string, string> = {
-  live: 'navigation.live',
   'violence-loop': 'navigation.violenceLoop',
   studio: 'navigation.studio',
   shows: 'navigation.shows',

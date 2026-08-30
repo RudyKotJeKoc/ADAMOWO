@@ -4,7 +4,6 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 
 const Home = lazy(() => import('./pages/Home'));
-const Live = lazy(() => import('./pages/Live'));
 const ViolenceLoop = lazy(() => import('./pages/ViolenceLoop'));
 const Studio = lazy(() => import('./pages/Studio'));
 const Shows = lazy(() => import('./pages/Shows'));
@@ -22,7 +21,7 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 const AIPolicy = lazy(() => import('./pages/AIPolicy'));
 const Methodology = lazy(() => import('./pages/Methodology'));
 const MediaHub = lazy(() => import('./pages/MediaHub'));
-const Sitemap = lazy(() => import('./pages/Sitemap'));
+const Sitemap = lazy(() => import('./pages/SiteDirectory'));
 const KnowledgeBase = lazy(() => import('./features/knowledge-base/KnowledgeBase'));
 const KnowledgeArticle = lazy(() => import('./features/knowledge-base/KnowledgeArticle'));
 
@@ -32,7 +31,7 @@ export const router = createBrowserRouter([
     element: <AppShell />,
     children: [
       { index: true, element: <Home /> },
-      { path: 'live', element: <Live /> },
+      { path: 'live', element: <Navigate to="/shows" replace /> },
       { path: 'violence-loop', element: <ViolenceLoop /> },
       { path: 'studio/:program?', element: <Studio /> },
       { path: 'shows', element: <Shows /> },

@@ -91,10 +91,10 @@ const usePrefersReducedMotion = (): boolean => {
 };
 
 /**
- * Hero audio player component with live stream playback and visualization.
+ * Hero audio player component with playlist playback and visualization.
  *
  * A comprehensive audio player featuring:
- * - Live stream playback with playlist support via LocalAudioClient
+ * - Playlist playback via LocalAudioClient
  * - Real-time now playing metadata with polling and subscription
  * - Visual audio waveform visualization
  * - Play/pause, volume, and mute controls
@@ -108,7 +108,7 @@ const usePrefersReducedMotion = (): boolean => {
  * updates when available. It respects the user's reduced motion preferences
  * for animations.
  *
- * @returns A section element containing the live audio player interface
+ * @returns A section element containing the audio player interface
  */
 export function HeroPlayer(): JSX.Element {
   const { t } = useTranslation();
@@ -449,8 +449,8 @@ export function HeroPlayer(): JSX.Element {
       return nowPlaying.track;
     }
 
-    return t('player.live');
-  }, [nowPlaying.artist, nowPlaying.track, t]);
+    return 'Biblioteka audio';
+  }, [nowPlaying.artist, nowPlaying.track]);
 
   const artworkAlt = useMemo(
     () =>
@@ -480,12 +480,6 @@ export function HeroPlayer(): JSX.Element {
             width={640}
             height={640}
           />
-          <Tooltip content={t('player.tooltips.live')}>
-            <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-accent-500/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-base-950 shadow-md">
-              <span className="h-2 w-2 rounded-full bg-base-950 animate-pulse" aria-hidden="true" />
-              {t('player.live')}
-            </span>
-          </Tooltip>
           {status === 'buffering' && (
             <div className="absolute inset-0 flex items-center justify-center bg-base-950/60 backdrop-blur-sm">
               <div className="flex flex-col items-center gap-3">
@@ -503,7 +497,7 @@ export function HeroPlayer(): JSX.Element {
             <h2 className="text-3xl font-bold text-base-50 sm:text-4xl">{nowPlaying.title}</h2>
             <p className="text-base-200">{nowPlayingDetails}</p>
           </div>
-          <Tooltip content={t('player.tooltips.visualizer')}>
+          <Tooltip content="Wizualizacja częstotliwości odtwarzanego nagrania.">
             <div>
               <AudioViz
                 audio={audioRef.current}

@@ -49,12 +49,6 @@ export default function Home(): ReactElement {
 
   const explorePaths: ExploreMoreLink[] = [
     {
-      to: '/live',
-      labelKey: 'exploreMore.suggestions.fromHome.live',
-      descriptionKey: 'exploreMore.suggestions.fromHome.liveDesc',
-      badge: '24/7',
-    },
-    {
       to: '/guides',
       labelKey: 'exploreMore.suggestions.fromHome.guides',
       descriptionKey: 'exploreMore.suggestions.fromHome.guidesDesc',
@@ -96,9 +90,11 @@ export default function Home(): ReactElement {
         <div className="space-y-8">
           {/* Above the Fold Hero Section - Priority A Content */}
           <section className="space-y-4">
-            <h1 className="text-3xl font-bold text-base-50 sm:text-4xl">{t('pages.home.title')}</h1>
+            <h1 className="text-3xl font-bold text-base-50 sm:text-4xl">Adamowo.com</h1>
             <p className="max-w-4xl text-lg leading-relaxed text-base-200">
-              {t('pages.home.lead')}
+              Baza wiedzy o prawie, procedurach, manipulacji psychologicznej i porządkowaniu
+              materiału dowodowego. Znajdziesz tu wyjaśnienia pojęć, analizy, audycje oraz narzędzia
+              pomagające zrozumieć trudną sytuację krok po kroku.
             </p>
             <div className="pt-4">
               <VisitCounter />

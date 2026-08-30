@@ -27,12 +27,12 @@ type NowPlayingRow = {
  * @constant {NowPlaying}
  */
 export const FALLBACK_NOW_PLAYING: NowPlaying = {
-  title: 'Radio Adamowo',
-  artist: 'Live',
+  title: 'Adamowo Audio',
+  artist: 'Biblioteka nagrań',
   track: undefined,
   coverUrl: IMAGE_PATHS.placeholders.cover,
   startedAt: '2024-01-01T00:00:00Z',
-  duration: undefined
+  duration: undefined,
 };
 
 /**
@@ -53,7 +53,7 @@ function mapNowPlayingRow(row?: NowPlayingRow | null): NowPlaying {
     track: row.track?.trim() || undefined,
     coverUrl: row.cover_url?.trim() || row.coverUrl?.trim() || FALLBACK_NOW_PLAYING.coverUrl,
     startedAt: row.started_at ?? row.startedAt ?? FALLBACK_NOW_PLAYING.startedAt,
-    duration: typeof row.duration === 'number' ? row.duration : undefined
+    duration: typeof row.duration === 'number' ? row.duration : undefined,
   };
 }
 
@@ -137,10 +137,16 @@ export function subscribeNowPlaying(callback: SubscribeCallback): () => void {
 
   const channel = client
     .channel('now-playing')
-    .on('postgres_changes', { event: '*', schema: 'public', table: 'now_playing' }, (payload: RealtimePayload) => {
-      const next = mapNowPlayingRow((payload.new as NowPlayingRow) ?? (payload.old as NowPlayingRow));
-      callback(next);
-    });
+    .on(
+      'postgres_changes',
+      { event: '*', schema: 'public', table: 'now_playing' },
+      (payload: RealtimePayload) => {
+        const next = mapNowPlayingRow(
+          (payload.new as NowPlayingRow) ?? (payload.old as NowPlayingRow)
+        );
+        callback(next);
+      }
+    );
 
   void channel.subscribe();
 

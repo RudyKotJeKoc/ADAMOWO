@@ -65,12 +65,6 @@ export function Search(): JSX.Element {
   const searchIndex: SearchResult[] = useMemo(
     () => [
       {
-        title: t('navigation.live'),
-        path: '/live',
-        description: t('search.results.live.description'),
-        type: 'page',
-      },
-      {
         title: t('navigation.violenceLoop'),
         path: '/violence-loop',
         description: t('search.results.violenceLoop.description'),

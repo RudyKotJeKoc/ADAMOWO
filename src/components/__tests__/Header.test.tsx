@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 
@@ -41,8 +41,12 @@ describe('Header', () => {
     await i18n.changeLanguage('en');
   });
 
-  it('renders navigation and toggles the mobile drawer', async () => {
+  it('renders all ADAMOWO sections without hiding them behind a mobile drawer', () => {
     renderHeader();
+    const mobileNav = screen.getByRole('navigation', { name: 'Działy ADAMOWO' });
+    const mobileLinks = within(mobileNav).getAllByRole('link');
+
+    expect(mobileLinks.map((link) => link.textContent).join('')).toBe('ADAMOWO');
     [
       'Analizy',
       'Definicje',
@@ -51,29 +55,20 @@ describe('Header', () => {
       'Orzecznictwo',
       'Wykładnie',
       'Ochrona',
-    ].forEach((label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument());
-    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
-    expect(screen.getByRole('dialog', { name: /main navigation/i })).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: /close menu/i }));
-    // Wait for animation to complete
-    await vi.waitFor(
-      () => {
-        expect(screen.queryByRole('dialog', { name: /main navigation/i })).not.toBeInTheDocument();
-      },
-      { timeout: 500 }
+    ].forEach((label) =>
+      expect(within(mobileNav).getByRole('link', { name: label })).toBeInTheDocument()
     );
+    expect(screen.queryByRole('button', { name: /open menu/i })).not.toBeInTheDocument();
   });
 
-  it('sets focus on the first link inside the drawer', () => {
+  it('keeps every compact letter link keyboard accessible', () => {
     renderHeader();
-    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
-    const focusable = Array.from(
-      screen
-        .getByRole('dialog', { name: /main navigation/i })
-        .querySelectorAll<HTMLElement>('a[href],button:not([disabled])')
-    );
-    expect(document.activeElement).toBe(focusable[0]);
-    expect(focusable.slice(0, 3).map((el) => el.getAttribute('aria-label'))).toEqual([
+    const mobileNav = screen.getByRole('navigation', { name: 'Działy ADAMOWO' });
+    const links = within(mobileNav).getAllByRole('link');
+    links[0].focus();
+
+    expect(document.activeElement).toBe(links[0]);
+    expect(links.slice(0, 3).map((link) => link.getAttribute('aria-label'))).toEqual([
       'Analizy',
       'Definicje',
       'Argumenty',
@@ -83,6 +78,6 @@ describe('Header', () => {
   it('changes language', async () => {
     renderHeader();
     fireEvent.click(screen.getByRole('button', { name: 'Dutch' }));
-    expect(await screen.findByRole('link', { name: 'Analizy' })).toBeInTheDocument();
+    expect((await screen.findAllByRole('link', { name: 'Analizy' })).length).toBeGreaterThan(0);
   });
 });

@@ -15,6 +15,13 @@ function useProgram(programId: ProgramId | null) {
   return useMemo(() => getProgramMeta(programId), [programId]);
 }
 
+const NEUTRAL_PROGRAM_DESCRIPTIONS: Record<string, string> = {
+  'studio.team.description.0':
+    'Poznaj producentów przygotowujących nagrania, opracowania i materiały dla słuchaczy.',
+  'studio.welcome.description.0':
+    'Przewodniki po serwisie, materiały wprowadzające i najciekawsze nagrania z biblioteki Adamowo.',
+};
+
 type ProgramPageProps = {
   programId: ProgramId | null;
 };
@@ -60,7 +67,10 @@ export function ProgramPage({ programId }: ProgramPageProps) {
     <div className="space-y-10">
       <ProgramHeader program={program} />
 
-      <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]" aria-label={t('studio.program.layoutAria')}>
+      <section
+        className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]"
+        aria-label={t('studio.program.layoutAria')}
+      >
         <div className="space-y-8">
           <section role="region" aria-labelledby="program-description" className="space-y-4">
             <h2 id="program-description" className="text-2xl font-semibold text-base-100">
@@ -68,7 +78,7 @@ export function ProgramPage({ programId }: ProgramPageProps) {
             </h2>
             <div className="space-y-3 text-base-300">
               {program.descriptionKeys.map((key) => (
-                <p key={key}>{t(key)}</p>
+                <p key={key}>{NEUTRAL_PROGRAM_DESCRIPTIONS[key] ?? t(key)}</p>
               ))}
             </div>
           </section>
@@ -85,7 +95,9 @@ export function ProgramPage({ programId }: ProgramPageProps) {
                   aria-label={t(host.nameKey)}
                 >
                   <h3 className="text-lg font-semibold text-base-50">{t(host.nameKey)}</h3>
-                  {host.bioKey ? <p className="mt-2 text-sm text-base-300">{t(host.bioKey)}</p> : null}
+                  {host.bioKey ? (
+                    <p className="mt-2 text-sm text-base-300">{t(host.bioKey)}</p>
+                  ) : null}
                 </article>
               ))}
             </div>
@@ -129,7 +141,11 @@ export function ProgramPage({ programId }: ProgramPageProps) {
           </section>
         </div>
 
-        <aside className="space-y-4" aria-label={t('studio.program.playerAria')} role="complementary">
+        <aside
+          className="space-y-4"
+          aria-label={t('studio.program.playerAria')}
+          role="complementary"
+        >
           <AnalysisPlayer episode={selectedEpisode} />
         </aside>
       </section>

@@ -6,35 +6,30 @@ export function PlatformInfoSection(): ReactElement {
 
   const features = [
     {
-      id: 'streaming',
-      titleKey: 'platformInfo.features.streaming.title',
-      descKey: 'platformInfo.features.streaming.description'
-    },
-    {
       id: 'podcasts',
       titleKey: 'platformInfo.features.podcasts.title',
-      descKey: 'platformInfo.features.podcasts.description'
+      descKey: 'platformInfo.features.podcasts.description',
     },
     {
       id: 'interactive',
       titleKey: 'platformInfo.features.interactive.title',
-      descKey: 'platformInfo.features.interactive.description'
+      descKey: 'platformInfo.features.interactive.description',
     },
     {
       id: 'community',
       titleKey: 'platformInfo.features.community.title',
-      descKey: 'platformInfo.features.community.description'
+      descKey: 'platformInfo.features.community.description',
     },
     {
       id: 'multilingual',
       titleKey: 'platformInfo.features.multilingual.title',
-      descKey: 'platformInfo.features.multilingual.description'
+      descKey: 'platformInfo.features.multilingual.description',
     },
     {
       id: 'pwa',
       titleKey: 'platformInfo.features.pwa.title',
-      descKey: 'platformInfo.features.pwa.description'
-    }
+      descKey: 'platformInfo.features.pwa.description',
+    },
   ];
 
   const tools = [
@@ -42,49 +37,50 @@ export function PlatformInfoSection(): ReactElement {
       id: 'eightSins',
       titleKey: 'platformInfo.tools.eightSins.title',
       descKey: 'platformInfo.tools.eightSins.description',
-      link: '/guides'
+      link: '/guides',
     },
     {
       id: 'violenceLoop',
       titleKey: 'platformInfo.tools.violenceLoop.title',
       descKey: 'platformInfo.tools.violenceLoop.description',
-      link: '/violence-loop'
+      link: '/violence-loop',
     },
     {
       id: 'aiLab',
       titleKey: 'platformInfo.tools.aiLab.title',
       descKey: 'platformInfo.tools.aiLab.description',
-      link: '/lab'
+      link: '/lab',
     },
     {
       id: 'calendar',
       titleKey: 'platformInfo.tools.calendar.title',
       descKey: 'platformInfo.tools.calendar.description',
-      link: '/community'
-    }
+      link: '/community',
+    },
   ];
 
   const programs = [
     {
       id: 'team',
       titleKey: 'platformInfo.programs.team.title',
-      descKey: 'platformInfo.programs.team.description'
+      descKey: 'platformInfo.programs.team.description',
     },
     {
       id: 'heart',
       titleKey: 'platformInfo.programs.heart.title',
-      descKey: 'platformInfo.programs.heart.description'
+      descKey: 'platformInfo.programs.heart.description',
     },
     {
       id: 'psychology',
       titleKey: 'platformInfo.programs.psychology.title',
-      descKey: 'platformInfo.programs.psychology.description'
+      descKey: 'platformInfo.programs.psychology.description',
     },
     {
       id: 'welcome',
       titleKey: 'platformInfo.programs.welcome.title',
-      descKey: 'platformInfo.programs.welcome.description'
-    }
+      description:
+        'Materiały wprowadzające, przewodniki po serwisie i najważniejsze nagrania z biblioteki Adamowo.',
+    },
   ];
 
   return (
@@ -102,7 +98,9 @@ export function PlatformInfoSection(): ReactElement {
             {t('platformInfo.title')}
           </h2>
           <p className="mx-auto max-w-4xl text-lg leading-relaxed text-base-200">
-            {t('platformInfo.mission')}
+            Adamowo.com łączy uporządkowaną bazę wiedzy, narzędzia interaktywne, analizy i
+            bibliotekę audycji. Celem jest precyzyjne wyjaśnianie prawa, procedur oraz mechanizmów
+            manipulacji bez mieszania faktów, interpretacji i ocen.
           </p>
         </header>
 
@@ -169,7 +167,9 @@ export function PlatformInfoSection(): ReactElement {
                 className="rounded-2xl border border-base-800/60 bg-base-900/50 p-5 transition hover:border-base-700 hover:bg-base-900/70"
               >
                 <h4 className="mb-2 text-base font-semibold text-base-50">{t(program.titleKey)}</h4>
-                <p className="text-xs leading-relaxed text-base-400">{t(program.descKey)}</p>
+                <p className="text-xs leading-relaxed text-base-400">
+                  {'description' in program ? program.description : t(program.descKey)}
+                </p>
               </div>
             ))}
           </div>
@@ -232,13 +232,15 @@ export function PlatformInfoSection(): ReactElement {
           <h3 className="mb-4 text-2xl font-semibold text-accent-100">
             {t('platformInfo.cta.title')}
           </h3>
-          <p className="mx-auto mb-6 max-w-2xl text-base-300">{t('platformInfo.cta.description')}</p>
+          <p className="mx-auto mb-6 max-w-2xl text-base-300">
+            Zacznij od katalogu pojęć albo przejdź do nagranych audycji i poradników.
+          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/live"
+              href="/shows"
               className="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 font-semibold text-base-950 transition hover:bg-accent-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300"
             >
-              {t('platformInfo.cta.startListening')}
+              Przeglądaj audycje
             </a>
             <a
               href="/guides"

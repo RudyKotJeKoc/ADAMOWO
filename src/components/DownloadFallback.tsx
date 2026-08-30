@@ -195,7 +195,7 @@ export function DownloadFallback({
           <p className="text-xs text-accent-200">
             {t(
               'media.download.browserNote',
-              'Uwaga: Niektóre starsze przeglądarki mogą nie obsługiwać odtwarzania streamingu. Po pobraniu pliku możesz go odtworzyć w dowolnym odtwarzaczu multimedialnym.'
+              'Uwaga: Niektóre starsze przeglądarki mogą nie obsługiwać odtwarzania tego materiału. Po pobraniu pliku możesz go otworzyć w dowolnym odtwarzaczu multimedialnym.'
             )}
           </p>
         </div>

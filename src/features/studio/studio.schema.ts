@@ -28,7 +28,7 @@ export type Host = {
  * @property weekday - Day of week (0=Sunday, 1=Monday, ..., 6=Saturday)
  * @property start - Start time in HH:MM format (24-hour)
  * @property end - End time in HH:MM format (24-hour)
- * @property noteKey - Optional translation key for broadcast notes (e.g., "LIVE" or "REPLAY")
+ * @property noteKey - Optional translation key for publication notes
  */
 export type ScheduleEntry = {
   weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6;

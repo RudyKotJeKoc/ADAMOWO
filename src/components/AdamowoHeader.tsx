@@ -151,38 +151,19 @@ export function AdamowoHeader(): JSX.Element {
     <div className="border-b border-base-800/50 bg-base-950">
       <div className="container-responsive py-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          {/* Radio Adamowo branding z lampką ON AIR */}
+          {/* Adamowo.com branding */}
           <motion.div
             className="flex items-center gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
           >
-            {/* ON AIR lampka - delikatny puls */}
-            <div className="flex flex-col items-center gap-1">
-              <motion.div
-                className="h-3 w-3 rounded-full bg-danger-600 shadow-lg shadow-danger-500/50"
-                animate={{
-                  opacity: [0.9, 1, 0.9],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-              <span className="font-display text-[10px] font-medium uppercase tracking-wider text-danger-600">
-                ON AIR
-              </span>
-            </div>
-
-            {/* Logo */}
             <div className="relative">
               <h1 className="font-display text-3xl font-bold tracking-tight text-accent-400 md:text-4xl">
-                Radio Adamowo
+                Adamowo.com
               </h1>
               <p className="font-mono text-xs text-base-400 uppercase tracking-widest mt-0.5">
-                Studio Śledcze
+                Baza wiedzy i audycje
               </p>
             </div>
           </motion.div>

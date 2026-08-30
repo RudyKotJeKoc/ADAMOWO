@@ -5,6 +5,13 @@ import { PROGRAM_ICON_MAP } from './icons';
 import type { ProgramMeta } from './studio.schema';
 import { useRecentEpisodes } from './useRecentEpisodes';
 
+const NEUTRAL_PROGRAM_DESCRIPTIONS: Record<string, string> = {
+  'studio.team.description.0':
+    'Poznaj producentów przygotowujących nagrania, opracowania i materiały dla słuchaczy.',
+  'studio.welcome.description.0':
+    'Przewodniki po serwisie, materiały wprowadzające i najciekawsze nagrania z biblioteki Adamowo.',
+};
+
 function formatDuration(minutes: number) {
   const mins = Math.floor(minutes);
   const secs = Math.floor((minutes - mins) * 60);
@@ -35,24 +42,30 @@ export function StudioProgramCard({ program }: StudioProgramCardProps) {
           <h3 id={`program-${program.id}`} className="text-xl font-semibold text-base-50">
             {t(program.titleKey)}
           </h3>
-          {program.subtitleKey ? <p className="text-sm text-base-300">{t(program.subtitleKey)}</p> : null}
+          {program.subtitleKey ? (
+            <p className="text-sm text-base-300">{t(program.subtitleKey)}</p>
+          ) : null}
         </div>
       </div>
 
-      <p className="mt-4 flex-1 text-sm text-base-300">{t(program.descriptionKeys[0])}</p>
+      <p className="mt-4 flex-1 text-sm text-base-300">
+        {NEUTRAL_PROGRAM_DESCRIPTIONS[program.descriptionKeys[0]] ?? t(program.descriptionKeys[0])}
+      </p>
 
       <div className="mt-6 space-y-4 text-sm text-base-300">
         <div className="rounded-2xl border border-base-800 bg-base-900/70 p-4">
-          <p className="text-xs uppercase tracking-wide text-base-500">{t('studio.cards.latest')}</p>
+          <p className="text-xs uppercase tracking-wide text-base-500">
+            {t('studio.cards.latest')}
+          </p>
           <p className="mt-1 font-medium text-base-100" aria-live="polite">
             {isLoading
               ? t('studio.cards.loading')
               : lastEpisode
-              ? t('studio.cards.latestEpisode', {
-                  title: lastEpisode.title,
-                  duration: formatDuration((lastEpisode.durationSec ?? 0) / 60)
-                })
-              : t('studio.cards.noEpisodes')}
+                ? t('studio.cards.latestEpisode', {
+                    title: lastEpisode.title,
+                    duration: formatDuration((lastEpisode.durationSec ?? 0) / 60),
+                  })
+                : t('studio.cards.noEpisodes')}
           </p>
         </div>
         <Link
