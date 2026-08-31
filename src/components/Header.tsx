@@ -3,7 +3,6 @@ import { useMemo, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { LangSwitch } from './LangSwitch';
 import { Search } from './Search';
 
 /**
@@ -213,9 +212,8 @@ export function Header(): JSX.Element {
 
         {renderMobileNav()}
 
-        <div className="flex w-full items-center justify-end gap-1.5 sm:gap-2 md:gap-3 lg:w-auto">
+        <div className="flex w-full items-center justify-end lg:w-auto">
           <Search />
-          <LangSwitch />
         </div>
       </div>
 

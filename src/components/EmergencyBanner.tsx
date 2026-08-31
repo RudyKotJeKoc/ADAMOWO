@@ -20,7 +20,7 @@ export function EmergencyBanner(): JSX.Element | null {
 
   return (
     <div
-      className="sticky top-0 z-50 border-b border-red-700/50 bg-gradient-to-r from-red-950/95 to-red-900/95 backdrop-blur-sm"
+      className="relative z-50 border-b border-red-700/50 bg-gradient-to-r from-red-950/95 to-red-900/95"
       role="alert"
       aria-live="polite"
     >

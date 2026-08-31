@@ -59,8 +59,8 @@ export function AppShell(): JSX.Element {
         {t('header.skipToContent')}
       </a>
       <EmergencyBanner />
-      <AdamowoHeader />
       <Header />
+      <AdamowoHeader />
       <Breadcrumbs />
       <main
         id="main-content"

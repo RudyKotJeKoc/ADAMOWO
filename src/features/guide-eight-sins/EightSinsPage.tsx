@@ -53,7 +53,7 @@ export const EightSinsPage = (): JSX.Element => {
   };
 
   return (
-    <div className="space-y-6">
+    <div id="eight-sins" className="scroll-mt-28 space-y-6">
       <header className="rounded-3xl border border-base-700 bg-gradient-to-br from-base-900 via-base-950 to-base-900 p-8 text-base-100 shadow-xl">
         <div className="mb-2">
           <ContentTypeLabel type="tool" />
@@ -91,7 +91,9 @@ export const EightSinsPage = (): JSX.Element => {
           key={activeModule.id}
           module={activeModule}
           answers={activeAnswers}
-          onAnswer={(questionId, value) => setAnswer(activeModule.id, questionId, value as AnswerValue)}
+          onAnswer={(questionId, value) =>
+            setAnswer(activeModule.id, questionId, value as AnswerValue)
+          }
         />
       ) : null}
 
@@ -101,7 +103,10 @@ export const EightSinsPage = (): JSX.Element => {
         <p className="mt-2 text-xs text-base-500">{t('guide.footer.disclaimer')}</p>
         <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {modules.map((module) => (
-            <div key={`${module.id}-summary`} className="rounded-xl border border-base-800 bg-base-900/50 p-4">
+            <div
+              key={`${module.id}-summary`}
+              className="rounded-xl border border-base-800 bg-base-900/50 p-4"
+            >
               <h3 className="text-sm font-semibold text-base-100">{t(module.titleKey)}</h3>
               <p className="mt-1 text-xs text-base-300">
                 {t('guide.footer.moduleScore', { score: totals[module.id] ?? 0 })}

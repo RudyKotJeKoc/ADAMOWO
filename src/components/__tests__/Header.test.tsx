@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 
@@ -38,7 +38,7 @@ describe('Header', () => {
       onchange: null,
       dispatchEvent: () => false,
     }));
-    await i18n.changeLanguage('en');
+    await i18n.changeLanguage('pl');
   });
 
   it('renders all ADAMOWO sections without hiding them behind a mobile drawer', () => {
@@ -80,9 +80,9 @@ describe('Header', () => {
     ]);
   });
 
-  it('changes language', async () => {
+  it('does not expose incomplete language versions', () => {
     renderHeader();
-    fireEvent.click(screen.getByRole('button', { name: 'Dutch' }));
-    expect((await screen.findAllByRole('link', { name: 'Analizy' })).length).toBeGreaterThan(0);
+    expect(screen.queryByRole('button', { name: /niderlandzki|dutch/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /angielski|english/i })).not.toBeInTheDocument();
   });
 });

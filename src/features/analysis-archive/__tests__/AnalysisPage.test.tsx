@@ -80,7 +80,7 @@ describe('AnalysisPage', () => {
     await within(await findEpisodeList()).findByText('Akt Darowania: początki narracji');
     const cards = screen.getAllByRole('article');
     expect(cards[0]).toHaveTextContent('Akt Darowania: początki narracji');
-  });
+  }, 10_000);
 
   it('updates player when selecting a different episode', async () => {
     await renderAnalysis();

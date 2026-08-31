@@ -142,7 +142,7 @@ describe('HeroPlayer', () => {
 
     await waitFor(() => expect(mockCreateLocalAudioClient).toHaveBeenCalled());
 
-    const playButton = await screen.findByRole('button', { name: /play/i });
+    const playButton = await screen.findByRole('button', { name: /odtwórz/i });
 
     expect(playButton).toHaveAttribute('aria-pressed', 'false');
 
@@ -158,14 +158,14 @@ describe('HeroPlayer', () => {
   it('updates volume slider and mute button aria attributes', async () => {
     renderPlayer();
 
-    const volumeSlider = await screen.findByRole('slider', { name: /volume/i });
+    const volumeSlider = await screen.findByRole('slider', { name: /głośność/i });
     fireEvent.change(volumeSlider, { target: { value: '0.5' } });
 
     await waitFor(() =>
       expect(volumeSlider).toHaveAttribute('aria-valuenow', expect.stringContaining('0.5'))
     );
 
-    const muteButton = screen.getByRole('button', { name: /mute/i });
+    const muteButton = screen.getByRole('button', { name: /wycisz/i });
     fireEvent.click(muteButton);
 
     await waitFor(() => expect(muteButton).toHaveAttribute('aria-pressed', 'true'));
@@ -185,13 +185,13 @@ describe('HeroPlayer', () => {
     });
 
     await waitFor(() =>
-      expect(screen.getByRole('status')).toHaveTextContent('Unable to play the stream.')
+      expect(screen.getByRole('status')).toHaveTextContent('Nie udało się odtworzyć strumienia.')
     );
     expect(screen.getByRole('alert')).toHaveTextContent(
-      'No internet connection. Check your Wi-Fi or mobile data.'
+      'Brak połączenia internetowego. Sprawdź swoją sieć Wi-Fi lub dane komórkowe.'
     );
 
-    fireEvent.click(screen.getByRole('button', { name: /try again/i }));
+    fireEvent.click(screen.getByRole('button', { name: /spróbuj ponownie/i }));
     expect(mockRetry).toHaveBeenCalled();
   });
 
