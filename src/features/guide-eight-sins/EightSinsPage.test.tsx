@@ -21,9 +21,9 @@ describe('EightSinsPage', () => {
   it('renders all module cards and shows progress bar', () => {
     renderPage();
 
-    expect(screen.getByText('8 grzechów toksycznych osób')).toBeInTheDocument();
+    expect(screen.getByText('Analiza wzorców kontroli w relacji')).toBeInTheDocument();
     expect(screen.getByText('Postęp')).toBeInTheDocument();
-    expect(screen.getAllByRole('button', { name: /Branie pieniędzy/ })).toHaveLength(1);
+    expect(screen.getAllByRole('button', { name: /Przekierowanie środków/ })).toHaveLength(1);
   });
 
   it('updates score after answering a question', async () => {

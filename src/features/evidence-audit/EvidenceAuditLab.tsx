@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 import rawCase from './cases/case-0-pilot.json';
 import { EngineAuditPanel } from './components/EngineAuditPanel';
@@ -46,11 +47,24 @@ export default function EvidenceAuditLab(): JSX.Element {
         </p>
         <h1 className="text-3xl font-bold text-base-50 sm:text-4xl">{pilotCase.case.title}</h1>
         <p className="max-w-3xl text-lg leading-relaxed text-base-200">{pilotCase.case.subtitle}</p>
+        <p className="max-w-3xl text-sm leading-relaxed text-base-300">
+          Cel modułu: odróżnić liczbę dokumentów od liczby niezależnych źródeł. To rozróżnienie
+          decyduje o tym, czy zarzut jest potwierdzony, czy tylko wielokrotnie powtórzony —
+          pomylenie ich zawyża wiarygodność każdego zarzutu, niezależnie od tego, którą stronę sporu
+          wspiera.
+        </p>
         <p className="max-w-3xl rounded-xl border border-base-800 bg-base-900/50 p-4 text-sm text-base-400">
           {pilotCase.case.disclaimer}
         </p>
         <p className="max-w-3xl text-base font-medium text-base-100">
           Pytanie audytowe: <span className="text-accent-200">{pilotCase.case.auditQuestion}</span>
+        </p>
+        <p className="max-w-3xl text-sm text-base-400">
+          Szukasz katalogu nazwanych wzorców manipulacji zamiast ćwiczenia na materiale?{' '}
+          <Link to="/anatomy" className="font-semibold text-accent-300 hover:text-accent-200">
+            Zobacz Anatomię Manipulacji
+          </Link>
+          .
         </p>
       </header>
 

@@ -1,12 +1,21 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 
 import EvidenceAuditLab from '../EvidenceAuditLab';
 import rawCase from '../cases/case-0-pilot.json';
 
+function renderLab() {
+  return render(
+    <MemoryRouter>
+      <EvidenceAuditLab />
+    </MemoryRouter>
+  );
+}
+
 describe('EvidenceAuditLab', () => {
   it('renders the case title, sources and both exercises', () => {
-    render(<EvidenceAuditLab />);
+    renderLab();
 
     expect(screen.getByRole('heading', { name: rawCase.case.title })).toBeInTheDocument();
     expect(screen.getByText(rawCase.case.auditQuestion)).toBeInTheDocument();
@@ -18,7 +27,7 @@ describe('EvidenceAuditLab', () => {
   });
 
   it('grades a correct independent-sources submission as correct', () => {
-    render(<EvidenceAuditLab />);
+    renderLab();
 
     fireEvent.click(screen.getByLabelText(/Pierwotna relacja Osoby A/));
     fireEvent.click(screen.getByRole('button', { name: 'Sprawdź odpowiedź' }));
@@ -27,7 +36,7 @@ describe('EvidenceAuditLab', () => {
   });
 
   it('grades an over-counted independent-sources submission as incorrect', () => {
-    render(<EvidenceAuditLab />);
+    renderLab();
 
     fireEvent.click(screen.getByLabelText(/Pierwotna relacja Osoby A/));
     fireEvent.click(screen.getByLabelText(/Własna wiedza Świadka C/));
@@ -37,7 +46,7 @@ describe('EvidenceAuditLab', () => {
   });
 
   it('runs the engine audit panel and reports every sub-check passing', () => {
-    render(<EvidenceAuditLab />);
+    renderLab();
 
     fireEvent.click(screen.getByRole('button', { name: 'Uruchom audyt silnika' }));
 

@@ -39,6 +39,7 @@ const SECTIONS = [
     links: [
       { label: 'Poradniki', to: '/guides' },
       { label: 'Laboratorium', to: '/lab' },
+      { label: 'Laboratorium dowodów', to: '/laboratorium-dowodow' },
       { label: 'Pętla przemocy', to: '/violence-loop' },
       { label: 'Pomoc', to: '/pomoc' },
       { label: 'Społeczność', to: '/community' },

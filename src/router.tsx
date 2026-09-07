@@ -24,6 +24,7 @@ const MediaHub = lazy(() => import('./pages/MediaHub'));
 const Sitemap = lazy(() => import('./pages/SiteDirectory'));
 const KnowledgeBase = lazy(() => import('./features/knowledge-base/KnowledgeBase'));
 const KnowledgeArticle = lazy(() => import('./features/knowledge-base/KnowledgeArticle'));
+const EvidenceAuditLab = lazy(() => import('./features/evidence-audit/EvidenceAuditLab'));
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,7 @@ export const router = createBrowserRouter([
       { path: 'programy', element: <Programs /> },
       { path: 'guides', element: <Guides /> },
       { path: 'lab', element: <Lab /> },
+      { path: 'laboratorium-dowodow', element: <EvidenceAuditLab /> },
       { path: 'community', element: <Community /> },
       { path: 'anatomy', element: <AnatomyPage /> },
       { path: 'help', element: <Help /> },

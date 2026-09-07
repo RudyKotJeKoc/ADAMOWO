@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import {
   TACTIC_CATEGORIES,
@@ -46,7 +47,7 @@ export default function ManipulationTaxonomy(): ReactElement {
         <p className="max-w-4xl text-lg leading-relaxed text-base-200 md:text-xl">
           {t(
             'taxonomy.lead',
-            'Analiza ta stanowi dekonstrukcję taktyk psychologicznych, prawnych i organizacyjnych zidentyfikowanych w toku śledztwa Adamowo. Poniższy leksykon definiuje konkretne wektory ataku – od korporacyjnego gaslightingu po inżynierię prawną. To nie teoria, to mapa błędów systemu.'
+            'Analiza ta stanowi dekonstrukcję typowych taktyk psychologicznych, prawnych i organizacyjnych spotykanych w sporach rodzinnych, instytucjonalnych i zawodowych. Poniższy leksykon definiuje konkretne wektory ataku – od korporacyjnego gaslightingu po inżynierię prawną.'
           )}
         </p>
       </header>
@@ -115,9 +116,7 @@ export default function ManipulationTaxonomy(): ReactElement {
                         style={{ color: category.color }}
                       />
                     ) : (
-                      <ChevronDownIcon
-                        className="h-6 w-6 text-base-500 transition-transform md:h-7 md:w-7"
-                      />
+                      <ChevronDownIcon className="h-6 w-6 text-base-500 transition-transform md:h-7 md:w-7" />
                     )}
                   </div>
                 </div>
@@ -183,12 +182,27 @@ export default function ManipulationTaxonomy(): ReactElement {
             <p className="leading-relaxed text-base-200">
               {t(
                 'taxonomy.footer.content',
-                'Niniejsza taksonomia została opracowana w oparciu o dokumentację, zeznania i analizę rzeczywistych przypadków. Każda taktyka opisuje konkretne mechanizmy systemowe zidentyfikowane w toku śledztwa. Nie są to konstrukcje teoretyczne – to udokumentowane wzorce działań.'
+                'Niniejsza taksonomia została opracowana w oparciu o typowe, powtarzające się wzorce opisywane w literaturze psychologicznej i prawnej. Każda taktyka opisuje uogólniony mechanizm systemowy, a nie pojedynczy, konkretny przypadek.'
               )}
             </p>
           </div>
         </div>
       </footer>
+
+      <div className="rounded-xl border border-base-800 bg-base-900/60 p-6 text-center md:p-8">
+        <h3 className="text-lg font-bold text-base-50">Sprawdź to na przykładzie</h3>
+        <p className="mx-auto mt-2 max-w-xl leading-relaxed text-base-300">
+          Laboratorium Dowodowe pokazuje te same pytania zastosowane do konkretnego materiału: ile
+          niezależnych źródeł faktycznie potwierdza zarzut i jak nie dać się zwieść jego
+          powtórzeniom.
+        </p>
+        <Link
+          to="/laboratorium-dowodow"
+          className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-accent-500/50 px-5 py-2 text-sm font-semibold text-accent-200 transition hover:bg-accent-500/10"
+        >
+          Przejdź do Laboratorium Dowodowego
+        </Link>
+      </div>
     </div>
   );
 }

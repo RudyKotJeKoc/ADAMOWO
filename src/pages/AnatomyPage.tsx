@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { TriggerWarning } from '../features/anatomy/components/TriggerWarning';
 import { SchemaCard } from '../features/anatomy/components/SchemaCard';
 import { AnalysisWorksheet } from '../features/anatomy/components/AnalysisWorksheet';
@@ -85,8 +86,10 @@ export default function AnatomyPage(): JSX.Element {
               {t('anatomy.schemas.sectionTitle')}
             </h2>
             <p className="text-center text-base-300 mb-12 max-w-2xl mx-auto">
-              Każdy schemat został dokładnie przeanalizowany i oparty na rzeczywistych przypadkach.
-              Kliknij na kartę, aby poznać szczegóły.
+              {t(
+                'anatomy.schemas.sectionIntro',
+                'Sześć powtarzających się wzorców manipulacji, każdy z definicją, sygnałami rozpoznawczymi i zanonimizowanym przykładem. Kliknij kartę, aby zobaczyć rozbicie na fakt, mechanizm i wniosek.'
+              )}
             </p>
 
             <div className="max-w-5xl mx-auto space-y-4">
@@ -114,6 +117,28 @@ export default function AnatomyPage(): JSX.Element {
               {t('anatomy.framework.intro')}
             </p>
             <AnalysisWorksheet />
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════════ */}
+        {/* LINK TO EVIDENCE AUDIT LAB */}
+        {/* ═══════════════════════════════════════════════════════════ */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-3xl rounded-xl border border-accent-500/30 bg-accent-500/5 p-6 text-center md:p-8">
+              <h3 className="text-lg font-bold text-accent-300">Od wzorca do dowodu</h3>
+              <p className="mx-auto mt-2 max-w-xl leading-relaxed text-base-200">
+                Ten katalog nazywa mechanizmy manipulacji. Laboratorium Dowodowe uczy, jak sprawdzić
+                konkretny materiał dowodowy: policzyć niezależne źródła i odróżnić twierdzenie
+                strony od ustalenia organu.
+              </p>
+              <Link
+                to="/laboratorium-dowodow"
+                className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-accent-500/50 px-5 py-2 text-sm font-semibold text-accent-200 transition hover:bg-accent-500/10"
+              >
+                Przejdź do Laboratorium Dowodowego
+              </Link>
+            </div>
           </div>
         </section>
 

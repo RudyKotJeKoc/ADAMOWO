@@ -7,7 +7,7 @@ export function LiberationSteps(): JSX.Element {
   return (
     <div className="my-8">
       <h3 className="mb-6 font-display text-2xl font-semibold text-accent-300">
-        {t('familyPsychology.liberation.stepsTitle')}
+        {t('familyPsychology.sections.liberation.stepsTitle')}
       </h3>
       <div className="space-y-4">
         {LIBERATION_STEPS.map((stepKey, index) => (
@@ -27,7 +27,9 @@ export function LiberationSteps(): JSX.Element {
         ))}
       </div>
       <div className="mt-8 rounded-lg border-l-4 border-accent-500 bg-base-900/60 p-6">
-        <p className="font-semibold text-accent-200">{t('familyPsychology.liberation.reminder')}</p>
+        <p className="font-semibold text-accent-200">
+          {t('familyPsychology.sections.liberation.reminder')}
+        </p>
       </div>
     </div>
   );

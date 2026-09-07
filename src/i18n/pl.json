@@ -796,8 +796,8 @@
     }
   },
   "guide": {
-    "title": "8 grzechów toksycznych osób",
-    "intro": "Interaktywny poradnik pomoże Ci rozpoznać zachowania, które niszczą relacje i poczucie bezpieczeństwa. Odpowiedz na pytania, a zobaczysz interpretację wyników oraz rekomendacje wsparcia.",
+    "title": "Analiza wzorców kontroli w relacji",
+    "intro": "Osiem modułów, jeden wzorzec zachowań na moduł: finanse, obwinianie, gaslighting, inwigilacja, instytucje, szantaż emocjonalny, dezinformacja i izolacja. Odpowiedz na pytania o własne doświadczenia — wynik pokaże poziom ryzyka i konkretne kroki, nie diagnozę.",
     "start": "Rozpocznij",
     "continue": "Kontynuuj",
     "reset": "Resetuj postęp",
@@ -846,8 +846,8 @@
     }
   },
   "sin_1": {
-    "title": "Branie pieniędzy z instytucji zamiast prawdziwej pomocy",
-    "desc": "Toksyczna osoba wykorzystuje zasoby instytucji do własnych celów, zamiast zapewnić realne wsparcie partnerowi lub rodzinie. Skupia się na zyskach finansowych, a nie na potrzebach osób w kryzysie.",
+    "title": "Przekierowanie środków pomocowych",
+    "desc": "Wzorzec: środki przyznane na pomoc osobie w kryzysie (świadczenia, dodatki, granty) są przekierowywane na inne cele niż deklarowane wsparcie. Mechanizm: kontrola nad przepływem pieniędzy ogranicza dostęp do pomocy nawet wtedy, gdy formalnie została ona przyznana. Sygnał ostrzegawczy: rozbieżność między tym, na co środki zostały przyznane, a tym, na co faktycznie są wydawane.",
     "example_1": "Partner pobiera świadczenia socjalne przeznaczone dla ofiary przemocy, ale nie przekazuje ich na opłacenie terapii.",
     "example_2": "Bliski zachęca do kredytu na siebie, by otrzymać dodatkową premię z banku, ignorując zadłużenie rodziny.",
     "example_3": "Opiekun przejmuje kontrolę nad kontem dziecka, by pobierać świadczenie wychowawcze na swoje cele.",
@@ -869,7 +869,7 @@
   },
   "sin_2": {
     "title": "Przerzucanie winy i granie ofiary",
-    "desc": "Osoba toksyczna kreuje siebie na pokrzywdzonego, by unikać odpowiedzialności i wzbudzać poczucie winy. Manipuluje narracją, abyś przepraszał za jej działania.",
+    "desc": "Wzorzec: po konflikcie druga strona przedstawia siebie jako poszkodowaną, niezależnie od faktycznego przebiegu zdarzenia. Mechanizm: przesunięcie odpowiedzialności utrudnia ustalenie, kto zainicjował konflikt, i wywołuje poczucie winy niezależne od faktów. Sygnał ostrzegawczy: regularnie przepraszasz, choć nie potrafisz wskazać, za co konkretnie.",
     "example_1": "Po awanturze sprawca twierdzi, że krzyczał, bo był sprowokowany Twoją ciszą.",
     "example_2": "W rozmowie z rodziną przedstawia Cię jako agresora, mimo że to ona wszczęła konflikt.",
     "example_3": "W mediach społecznościowych publikuje wpisy o byciu ofiarą, sugerując, że wszyscy są przeciwko niej.",
@@ -889,7 +889,7 @@
   },
   "sin_3": {
     "title": "Gaslighting",
-    "desc": "Gaslighting to celowe podważanie Twojej pamięci i poczucia rzeczywistości. Sprawca sprawia, że wątpisz w swoje doświadczenia, by mieć nad Tobą większą kontrolę.",
+    "desc": "Wzorzec: Twoja pamięć zdarzenia lub odczucia są systematycznie kwestionowane przez drugą stronę. Mechanizm: powtarzane podważanie prowadzi do niepewności co do własnych spostrzeżeń i zwiększa zależność od cudzej wersji wydarzeń. Sygnał ostrzegawczy: coraz częściej wątpisz we własną pamięć, mimo braku nowych dowodów przeciwnych.",
     "example_1": "Słyszysz, że „przesadzasz”, choć rozmowa była pełna krzyków i obelg.",
     "example_2": "Dowody w telefonie są kasowane, a sprawca twierdzi, że nigdy ich nie było.",
     "example_3": "Osoba mówi innym, że masz problemy psychiczne, by podważyć Twoją wiarygodność.",
@@ -909,7 +909,7 @@
   },
   "sin_4": {
     "title": "Inwigilacja i obsesyjna kontrola",
-    "desc": "Toksyczna osoba śledzi każdy Twój ruch, narusza prywatność i wymaga pełnej kontroli nad Twoim czasem. To naruszenie granic i forma przemocy.",
+    "desc": "Wzorzec: Twoja lokalizacja, komunikacja lub czas są monitorowane bez zgody lub ponad wcześniej uzgodniony zakres. Mechanizm: stały nadzór ogranicza autonomię i wymusza gotowość do natychmiastowego raportowania. Sygnał ostrzegawczy: ukrywasz rutynowe czynności, by uniknąć pytań lub konfliktu.",
     "example_1": "Partner wymaga natychmiastowej odpowiedzi na każdą wiadomość i dzwoni co kilka minut.",
     "example_2": "Ktoś instaluje aplikacje szpiegowskie na Twoim telefonie lub komputerze.",
     "example_3": "Bliski oczekuje udostępniania lokalizacji przez całą dobę.",
@@ -929,7 +929,7 @@
   },
   "sin_5": {
     "title": "Używanie instytucji jako broni",
-    "desc": "Toksyczna osoba manipuluje instytucjami, by zastraszyć i uciszyć ofiarę. Zgłasza fałszywe skargi, wykorzystuje prawo, by utrudniać życie.",
+    "desc": "Wzorzec: instytucje (policja, szkoła, sąd, pracodawca) są angażowane w spór w sposób niewspółmierny do zgłaszanego problemu. Mechanizm: powtarzające się zgłoszenia lub pisma zmuszają do stałego tłumaczenia się, co pochłania czas i zasoby niezależnie od ich zasadności. Sygnał ostrzegawczy: unikasz kontaktu z instytucjami z obawy przed przewidywaną reakcją drugiej strony, a nie z powodu własnego postępowania.",
     "example_1": "Składanie bezpodstawnych zawiadomień na policji.",
     "example_2": "Wysyłanie fałszywych pism do szkoły dziecka, by podważyć Twoją opiekę.",
     "example_3": "Groźby pozwami, jeśli ujawnisz prawdę o przemocy.",
@@ -949,7 +949,7 @@
   },
   "sin_6": {
     "title": "Szantaż emocjonalny i groźby",
-    "desc": "Szantaż emocjonalny polega na wzbudzaniu strachu i poczucia odpowiedzialności za czyjeś emocje. Groźby mają zmusić Cię do podporządkowania.",
+    "desc": "Wzorzec: decyzje są wymuszane groźbą emocjonalnych konsekwencji — dla Ciebie lub dla osoby grożącej. Mechanizm: zapowiedź skutku przenosi na Ciebie odpowiedzialność za cudze emocje i ogranicza swobodę decyzji. Sygnał ostrzegawczy: unikasz ważnych rozmów lub decyzji z obawy przed zapowiadaną reakcją.",
     "example_1": "Słyszysz, że jeśli odejdziesz, stanie się tragedia.",
     "example_2": "Ktoś grozi ujawnieniem kompromitujących informacji, jeśli nie spełnisz żądań.",
     "example_3": "Bliska osoba twierdzi, że zrobi sobie krzywdę, jeśli nie przyznasz jej racji.",
@@ -969,7 +969,7 @@
   },
   "sin_7": {
     "title": "Tworzenie chaosu i dezinformacji",
-    "desc": "Toksyczna osoba celowo wprowadza zamieszanie, by utrudnić Ci ocenę sytuacji. Wysyła sprzeczne informacje i zmienia zasady gry.",
+    "desc": "Wzorzec: ustalenia, terminy lub wersje wydarzeń zmieniają się bez zapowiedzi albo różnią się zależnie od rozmówcy. Mechanizm: niespójność informacji utrudnia zbudowanie stabilnego obrazu sytuacji i wymusza stałą weryfikację. Sygnał ostrzegawczy: zaczynasz zapisywać każdą rozmowę, bo nie możesz polegać na wcześniejszych ustaleniach.",
     "example_1": "Plany spotkań są ciągle zmieniane bez uprzedzenia.",
     "example_2": "Otrzymujesz sprzeczne wiadomości dotyczące ważnych decyzji.",
     "example_3": "Osoba przekazuje innym różne wersje wydarzeń, by wzbudzić chaos.",
@@ -989,7 +989,7 @@
   },
   "sin_8": {
     "title": "Sianie podziałów i rozrywanie więzi",
-    "desc": "Sprawca izoluje Cię od bliskich, wzbudza konflikty i utrudnia dostęp do wsparcia. Celem jest osłabienie Twojej sieci pomocy.",
+    "desc": "Wzorzec: kontakty z osobami spoza relacji są ograniczane, kwestionowane lub obwarowywane warunkami. Mechanizm: osłabienie sieci wsparcia zwiększa zależność od jednej relacji i utrudnia weryfikację sytuacji z zewnątrz. Sygnał ostrzegawczy: ukrywasz spotkania z bliskimi lub czujesz presję wyboru między nimi a tą relacją.",
     "example_1": "Toksyczna osoba oczernia Twoich przyjaciół, byś ograniczył z nimi kontakt.",
     "example_2": "Rodzina jest skłócana poprzez przekazywanie plotek i sekretów.",
     "example_3": "Ktoś wymusza wybór „albo oni, albo ja”.",
@@ -1833,23 +1833,23 @@
         ]
       },
       "observer": {
-        "title": "Perspektywa obserwatora – gdy ktoś widzi wzorzec",
-        "description": "Często zdarza się, że osoba z zewnątrz – partner, przyjaciel lub terapeuta – dostrzega schemat wcześniej niż osoba uwikłana w rodzinny system. Taka osoba staje się symbolicznym 'obserwatorem', który próbuje nazwać problem i wskazać na jego źródło.",
-        "mechanism": "W odpowiedzi na nazwanie prawdy przez obserwatora, osoba dotknięta schematem często reaguje agresją, odwróceniem winy lub zerwaniem kontaktu. To klasyczny mechanizm obronny: prawda boli najbardziej tego, kto jeszcze jej nie zaakceptował.",
-        "mechanismTitle": "Mechanizm obronny",
-        "truth": "Prawda boli najbardziej tego, kto jeszcze jej nie zaakceptował.",
-        "symbolicTitle": "Symboliczny obserwator (np. postać Bożeny)",
-        "symbolicDescription": "Osoba, która widzi schemat, nazywa go i próbuje pomóc, ale zostaje zaatakowana lub odrzucona. To nie jej wina – system rodzinny broni się przed zmianą."
+        "title": "Perspektywa obserwatora — rozpoznanie z zewnątrz",
+        "description": "Fakt: osoba spoza bezpośredniej relacji — partner, przyjaciel lub terapeuta — czasem rozpoznaje powtarzający się schemat wcześniej niż osoba w niego uwikłana. Mechanizm: dystans do sytuacji ułatwia dostrzeżenie wzorca, którego uczestnik systemu rodzinnego nie widzi z powodu emocjonalnego zaangażowania.",
+        "mechanism": "Wniosek: nazwanie schematu przez obserwatora bywa odbierane jako zagrożenie i spotyka się z odrzuceniem, zaprzeczeniem lub zerwaniem kontaktu — nie dlatego, że obserwacja jest błędna, ale dlatego, że kwestionuje ugruntowany sposób funkcjonowania systemu.",
+        "mechanismTitle": "Typowa reakcja na nazwanie schematu",
+        "truth": "Reakcja obronna na nazwanie wzorca jest silniejsza, im mniej osoba w niego uwikłana jest gotowa go zaakceptować.",
+        "symbolicTitle": "Rola obserwatora w praktyce",
+        "symbolicDescription": "Osoba, która rozpoznaje schemat i próbuje go nazwać, często spotyka się z odrzuceniem — nie jest to dowód, że się myli. System, w którym wzorzec funkcjonuje od lat, zwykle broni się przed zmianą silniej niż przed jednorazowym incydentem."
       },
       "curse": {
-        "title": "Przekleństwo pokoleń – metafora transgeneracyjna",
-        "metaphorTitle": "Lustro pokoleń",
-        "explanation": "W wielu tradycjach ludowych \"rodowe przekleństwo\" oznaczało brzemię, które przechodzi z pokolenia na pokolenie, dotykając tych, którzy nie wiedzą, jak je przerwać. W psychologii rodzinnej to metafora systemu przekazu emocjonalnego: gniew, lęk, poczucie krzywdy i potrzeba kontroli przechodzą z dziadków na rodziców, a potem na dzieci.",
-        "primaryWound": "W każdej rodzinie istnieje 'pierwotna rana' — moment, w którym ktoś został zdominowany, zdradzony, zlekceważony lub upokorzony. Kolejne pokolenia nieświadomie odtwarzają tę emocję w nowych rolach: ofiara staje się agresorem, a obserwator staje się ofiarą.",
-        "breakingPoint": "Przekleństwo traci moc w chwili, gdy ktoś zobaczy mechanizm i odmówi udziału.",
-        "quoteTitle": "Przykład rekurencji emocjonalnej – przypadek X (anonimowy)",
-        "quote": "Nie mogłem wytrzymać z nią – tak jak ona nie mogła wytrzymać ze swoim ojcem.",
-        "quoteAttribution": "— fragment z dokumentacji przypadku, tożsamość ukryta"
+        "title": "Transmisja międzypokoleniowa — mechanizm w skrócie",
+        "metaphorTitle": "Jak schemat przechodzi między pokoleniami",
+        "explanation": "Fakt: w literaturze psychologicznej opisano powtarzalny wzorzec, w którym nieprzepracowane napięcie emocjonalne jednego pokolenia wpływa na styl relacji pokolenia następnego. Mechanizm: gniew, lęk lub potrzeba kontroli, których dana osoba doświadczyła jako dziecko, kształtują jej domyślne sposoby reagowania jako rodzica — niezależnie od świadomej intencji.",
+        "primaryWound": "Wniosek: punktem wyjścia często jest pojedyncze zdarzenie z wcześniejszego pokolenia — sytuacja dominacji, zaniedbania lub upokorzenia — którego wzorzec reagowania jest później nieświadomie powielany w nowej roli. Rozpoznanie tego mechanizmu jest warunkiem koniecznym, by przerwać jego automatyczne powtarzanie.",
+        "breakingPoint": "Mechanizm traci siłę oddziaływania w chwili, gdy zostaje świadomie rozpoznany i nazwany.",
+        "quoteTitle": "Przykład ilustracyjny (fikcyjny, do celów edukacyjnych)",
+        "quote": "Nie potrafiłem inaczej reagować na presję niż on — dopóki nie zobaczyłem, że to jego wzorzec, nie mój wybór.",
+        "quoteAttribution": "— zilustrowany, uogólniony przykład; nie jest zapisem rzeczywistej rozmowy ani dokumentacją sprawy"
       },
       "liberation": {
         "title": "Jak się uwolnić – ćwiczenie świadomości",
@@ -2037,6 +2037,7 @@
     },
     "schemas": {
       "sectionTitle": "6 Kluczowych Schematów Manipulacji",
+      "sectionIntro": "Sześć powtarzających się wzorców manipulacji, każdy z definicją, sygnałami rozpoznawczymi i zanonimizowanym przykładem. Kliknij kartę, aby zobaczyć rozbicie na fakt, mechanizm i wniosek.",
       "whatIsIt": "Co to jest?",
       "howToRecognize": "Jak to rozpoznać?",
       "exampleFromDocs": "Przykład z dokumentacji",
@@ -2065,14 +2066,14 @@
         },
         "examples": {
           "ex1": {
-            "context": "Konflikt rodzinny - matka deklaruje chęć normalizacji relacji",
-            "behavior": "Deklaracja: 'Chcę, żeby było normalnie, jak zawsze. Zaproponowałam terapię rodzinną'. Równocześnie: prowadzenie dziennika obciążającego syna od miesięcy, konsultacje z radcą prawnym ws. odwołania darowizny, uruchomienie procedury interwencyjnej wkrótce potem.",
-            "analysis": "To klasyczna strategia dwutorowa: performatywne pojednanie (propozycja terapii) służy jako fasada dla ukrytych działań agresywnych (przygotowania procesu). Propozycja była działaniem pozornym, obliczonym na stworzenie wrażenia dobrej woli, podczas gdy rzeczywisty cel to odebranie majątku."
+            "context": "Konflikt rodzinny — równoległe tory działania jednej ze stron",
+            "behavior": "Fakt: deklaracja słowna — 'Chcę, żeby było normalnie, jak zawsze. Zaproponowałam terapię rodzinną'. Fakt: w tym samym okresie prowadzona jest dokumentacja zachowań drugiej strony, trwają konsultacje z radcą prawnym w sprawie odwołania darowizny, a wkrótce potem uruchomiona zostaje procedura interwencyjna.",
+            "analysis": "Mechanizm: równoczesne prowadzenie dwóch rozbieżnych torów — deklaracji pojednania i przygotowań procesowych — odpowiada wzorcowi opisywanemu tu jako rozdwojenie komunikacji. Wniosek: sama chronologia (deklaracja poprzedzająca kroki prawne) nie rozstrzyga motywacji; wskazuje jedynie, że propozycja terapii mogła pełnić funkcję wizerunkową równolegle do przygotowań procesowych. Ustalenie rzeczywistego celu wymaga oceny całości materiału, nie pojedynczego zestawienia dat."
           },
           "ex2": {
-            "context": "Troska o schorowanego męża jako deklarowany motyw",
-            "behavior": "Deklaracja troski o dobro męża. Rzeczywistość: instrumentalizacja jego stanu zdrowia - uzyskanie pełnomocnictwa tuż po eskalacji konfliktu, wykorzystanie go do prowadzenia działań prawnych sprzecznych z jego własnymi zeznaniami ('on mnie nie obraża' vs. pozew o 'uporczywe znieważanie').",
-            "analysis": "Deklarowana troska jest fasadą dla przejęcia pełnej kontroli. Mąż zdegradowany do roli figuranta, którego stan zdrowia posłużył jako uzasadnienie do działań odwetowych. Pełnomocnictwo użyte do nadpisania jego własnej woli."
+            "context": "Stan zdrowia bliskiej osoby jako deklarowany motyw działania",
+            "behavior": "Fakt: deklarowana troska o zdrowie męża. Fakt: pełnomocnictwo zostało uzyskane wkrótce po eskalacji konfliktu i posłużyło do działań prawnych, których treść stoi w sprzeczności z odrębnie złożonym zeznaniem męża ('on mnie nie obraża' wobec pozwu o uporczywe znieważanie).",
+            "analysis": "Mechanizm: rozbieżność między deklarowanym motywem (troska) a treścią zeznania osoby, w której imieniu rzekomo się działa, jest wzorcem opisywanym jako instrumentalizacja stanu zdrowia. Wniosek: rozbieżność ta stawia pytanie, czyj interes pełnomocnictwo faktycznie realizowało — ale samo pytanie nie zastępuje ustalenia; to element materiału do oceny, nie gotowa konkluzja o winie."
           }
         },
         "quiz": {
@@ -2096,29 +2097,29 @@
         },
         "examples": {
           "ex1": {
-            "context": "Zawiadomienie na policji o znęcaniu się psychicznym",
-            "behavior": "Matka: 'obawia się swojego syna', jest w 'silnym stresie', 'leczy się psychiatrycznie' z jego powodu. Równocześnie ojciec zeznaje: 'On mnie oraz żony nigdy nie uderzył'. To ona inicjowała konfrontacje (nocne wtargnięcia do pokoju syna).",
-            "analysis": "Kreowanie aury zagrożenia było celowym zabiegiem psychologicznym, nie odzwierciedleniem rzeczywistości. Stan zdrowia użyty instrumentalnie - jako tarcza (nie można jej kwestionować, bo cierpi) i zarazem broń (jej cierpienie jest dowodem winy syna)."
+            "context": "Zawiadomienie o znęcaniu się psychicznym",
+            "behavior": "Fakt: zgłaszająca opisuje siebie jako osobę odczuwającą lęk wobec syna, w silnym stresie, pozostającą w leczeniu psychiatrycznym z tego powodu. Fakt: w odrębnym zeznaniu ojciec stwierdza, że syn nigdy nie uderzył ani jego, ani matki. Fakt: to zgłaszająca inicjowała część konfrontacji, w tym wejścia do pokoju syna w nocy.",
+            "analysis": "Mechanizm: rozbieżność między relacją zgłaszającej a niezależnym zeznaniem drugiego świadka jest sygnałem wartym dalszego zbadania, nie automatycznym dowodem fałszu którejkolwiek ze stron. Wniosek: język zagrożenia użyty w zgłoszeniu może odzwierciedlać subiektywne odczucie zgłaszającej albo pełnić funkcję wzmacniającą wiarygodność zarzutu; rozstrzygnięcie, które z tych wyjaśnień jest trafne, należy do organu prowadzącego postępowanie, nie do tej analizy."
           },
           "ex2": {
-            "context": "Nocna interwencja policyjna",
-            "behavior": "Zamiast czekać na patrol w domu, matka wraz z częścią rodziny oczekiwała 'w lesie obok posesji'. Syn był zamknięty w swoim pokoju. Interwencja nie doprowadziła do zatrzymania.",
-            "analysis": "Inscenizacja spektaklu na użytek organów ścigania. Gest miał stworzyć sugestywny obraz rodziny zmuszonej do ucieczki przed niebezpiecznym agresorem, co było całkowicie niezgodne z rzeczywistością."
+            "context": "Miejsce oczekiwania na interwencję policyjną",
+            "behavior": "Fakt: w trakcie zgłoszonej interwencji część rodziny oczekiwała na patrol poza domem, w pobliżu posesji, a nie w budynku. Fakt: syn w tym czasie przebywał w swoim pokoju. Fakt: interwencja nie zakończyła się zatrzymaniem.",
+            "analysis": "Mechanizm: wybór miejsca oczekiwania na patrol jest okolicznością, którą można odczytywać na kilka sposobów — od faktycznej obawy po element budowania obrazu sytuacji dla funkcjonariuszy. Wniosek: bez dodatkowych ustaleń (np. notatki funkcjonariuszy o stanie zastanym na miejscu) nie da się jednoznacznie rozstrzygnąć, która interpretacja jest trafna; brak zatrzymania jest jedynym elementem tego zdarzenia potwierdzonym dokumentem urzędowym."
           },
           "ex3": {
-            "context": "Zawiadomienie o niszczeniu ogrodu jako psychicznym znęcaniu się",
-            "behavior": "'On wie, że mnie to rani. On niszczy mi ogród, kwiaty oraz krzewy (...) Mój syn wie, że ja kocham rośliny, kwiaty dlatego chce mi to wszystko poniszczyć'.",
-            "analysis": "Przypisanie świadomej intencji zadawania psychicznego bólu. Zwykły konflikt o użytkowanie posesji przedstawiony jako celowy atak psychologiczny w najczulszy punkt. Wzmacnia pozycję ofiary i buduje podstawy pod zarzut 'znęcania się'."
+            "context": "Zawiadomienie o niszczeniu roślin jako formie znęcania się",
+            "behavior": "Fakt: treść zgłoszenia — 'On wie, że mnie to rani. On niszczy mi ogród, kwiaty oraz krzewy (...) Mój syn wie, że ja kocham rośliny, dlatego chce mi to wszystko poniszczyć'. Zdanie łączy opis zdarzenia (zniszczenie roślin) z przypisaniem konkretnej intencji.",
+            "analysis": "Mechanizm: to zdanie ilustruje różnicę między opisem zdarzenia a przypisaniem intencji — obie warstwy są tu podane jako jedno twierdzenie, choć wymagają odrębnego dowodzenia. Wniosek: spór o użytkowanie posesji i świadome działanie w celu wyrządzenia cierpienia psychicznego to dwie różne kategorie prawne i faktyczne; które z nich miało miejsce, rozstrzyga materiał dowodowy, a nie sam sposób sformułowania zgłoszenia."
           }
         },
         "quiz": {
           "question": "Osoba często mówi 'to mnie psychicznie niszczy', ale równocześnie aktywnie eskaluje konflikt. Jak to interpretować?",
           "opt1": "Osoba rzeczywiście cierpi, więc wszystko jest usprawiedliwione",
-          "exp1": "Nie. Autentyczne cierpienie nie usprawiedliwia aktywnej eskalacji. Jeśli ktoś naprawdę chce zakończyć cierpienie, nie pogłębia konfliktu.",
+          "exp1": "Niepełna odpowiedź. Cierpienie i eskalacja mogą współistnieć — samo cierpienie nie tłumaczy automatycznie każdego działania podjętego w jego imieniu.",
           "opt2": "To normalny sposób wyrażania frustracji",
-          "exp2": "Nie. Normalne wyrażanie frustracji to komunikacja o potrzebach. Instrumentalizacja to strategiczne używanie cierpienia jako narzędzia.",
-          "opt3": "To instrumentalizacja emocji - cierpienie jako taktyka",
-          "exp3": "Dokładnie. Sprzeczność między deklarowanym cierpieniem a eskalacją wskazuje, że emocje są używane jako narzędzie retoryczne, nie autentyczne wyrażenie."
+          "exp2": "Częściowo. Wyrażanie frustracji jest naturalne; wartą uwagi różnicą jest to, czy język cierpienia towarzyszy próbie deeskalacji, czy raczej jej przeciwieństwu.",
+          "opt3": "To może być instrumentalizacja emocji — wymaga sprawdzenia, nie założenia z góry",
+          "exp3": "Najbliżej sedna. Sprzeczność między deklarowanym cierpieniem a jednoczesną eskalacją to sygnał wart bliższego zbadania, nie automatyczny dowód manipulacji — każdy taki przypadek wymaga oceny w kontekście całości materiału."
         }
       },
       "invertedTriage": {
@@ -2132,9 +2133,9 @@
         },
         "examples": {
           "ex1": {
-            "context": "Ojciec pilnie wymaga pomocy medycznej",
-            "behavior": "Matka, formalna opiekunka ojca, zamiast wezwać pogotowie żąda kluczyków od syna, tworząc konfrontację. Priorytet: budowanie dowodu procesowego ('odmówił zawiezienia') > zdrowie męża. Syn ostatecznie SAM odbiera ojca ze szpitala. Matka celowo POMIJA ten fakt w swoim dzienniku wydarzeń.",
-            "analysis": "Modelowy przykład odwróconego triażu. Deklarowany stan nagły (zdrowie męża) zdegradowany do roli rekwizytu. Prawdziwy cel: sfabrykowanie krzywdy ('bezduszny syn nie pomógł'). Zachowanie matki to rażące zaniedbanie obowiązków opiekuna. Następnie fakt odebrania ojca przez syna został wymazany z narracji - bo przeczyłby tezie o jego bezduszności."
+            "context": "Nagła potrzeba pomocy medycznej dla bliskiej osoby",
+            "behavior": "Fakt: formalna opiekunka, wobec pilnej potrzeby pomocy medycznej, nie wzywa pogotowia, lecz żąda kluczyków od syna, co prowadzi do konfrontacji. Fakt: syn ostatecznie sam odbiera ojca ze szpitala. Fakt: to zdarzenie nie zostało odnotowane w prowadzonym przez opiekunkę dzienniku wydarzeń.",
+            "analysis": "Mechanizm: wybór działania konfrontacyjnego zamiast najszybszej ścieżki pomocy (wezwania pogotowia) w sytuacji nagłej jest niezgodny z typowym priorytetem, jakim jest zdrowie osoby w kryzysie — wzorzec ten określa się tu jako odwrócony triaż. Wniosek: pominięcie w dzienniku faktu, który stawiałby syna w pozytywnym świetle, jest niespójne z twierdzeniem o rzetelnej, bieżącej dokumentacji zdarzeń; czy wynika to z selekcji intencjonalnej czy z innej przyczyny, rozstrzyga analiza całości zapisów, nie pojedynczy brak."
           }
         },
         "quiz": {
@@ -2158,19 +2159,19 @@
         },
         "examples": {
           "ex1": {
-            "context": "Zarzut o kontrolę i inwigilację",
-            "behavior": "Matka oskarża syna o kontrolowanie jej za pomocą kamer. Rzeczywistość: ona sama prowadzi szczegółowy dziennik śledzący każdy ruch syna, posiada nagrania, wchodzi do jego pokoju w środku nocy, próbuje ingerować w jego związek.",
-            "analysis": "Klasyczna projekcja. To ona przejawia obsesyjno-kontrolujące zachowania, ale przypisuje je synowi. Monitoring zewnętrzny (kamery) to standardowe zabezpieczenie posesji. Jej inwigilacja to naruszanie prywatności dorosłego człowieka."
+            "context": "Wzajemne zarzuty o kontrolę i inwigilację",
+            "behavior": "Fakt: jedna strona zarzuca drugiej kontrolowanie jej za pomocą kamer monitoringu. Fakt: ta sama strona prowadzi własny, szczegółowy dziennik odnotowujący ruchy drugiej osoby, dysponuje nagraniami i wchodzi do jej pokoju w nocy.",
+            "analysis": "Mechanizm: gdy strona formułująca zarzut o kontrolę sama prowadzi równolegle bardziej szczegółowe śledzenie drugiej osoby, zestawienie to odpowiada wzorcowi określanemu jako projekcja lustrzana. Wniosek: samo istnienie monitoringu posesji nie jest dowodem kontroli nad osobą — kluczowe jest porównanie zakresu i celu obu form obserwacji, co wymaga odrębnej oceny każdego przypadku."
           },
           "ex2": {
-            "context": "Zarzut o agresję i wulgarność",
-            "behavior": "Matka zarzuca synowi agresję. Rzeczywistość: to ona dokonała nocnego wtargnięcia do jego pokoju, by zaatakować słownie jego partnerkę obraźliwymi słowami. Ojciec zeznaje, że to matka inicjowała konfrontacje.",
-            "analysis": "Odwrócenie ról. Rzeczywista sprawczyni agresji słownej i prowokacji przedstawia się jako ofiarę. Reakcja obronna syna (po prowokacji) jest przedstawiana jako bezpodstawny atak."
+            "context": "Wzajemne zarzuty o agresję słowną",
+            "behavior": "Fakt: jedna strona zarzuca drugiej agresję. Fakt: zeznanie trzeciego świadka (ojca) wskazuje, że to strona formułująca zarzut inicjowała część konfrontacji, w tym nocne wejście do pokoju syna połączone ze słowną konfrontacją z jego partnerką.",
+            "analysis": "Mechanizm: rozbieżność między tym, kto formułuje zarzut agresji, a tym, kogo za inicjatora konfrontacji wskazuje niezależny świadek, jest wzorcem wartym odnotowania w ocenie wiarygodności obu relacji. Wniosek: to zeznanie trzeciej osoby, nie samo zestawienie zarzutów, jest materiałem rozstrzygającym — analiza jedynie wskazuje na potrzebę jego uwzględnienia."
           },
           "ex3": {
-            "context": "Zarzut o brak empatii wobec chorego ojca",
-            "behavior": "Matka zarzuca synowi brak empatii. Rzeczywistość: ona sama instrumentalnie wykorzystała chorobę męża (pełnomocnictwo uzyskane tuż po eskalacji konfliktu), priorytetyzowała cel procesowy nad jego zdrowiem, używała go jako narzędzia w sporze.",
-            "analysis": "Przypisanie braku empatii osobie, która faktycznie odebrała ojca ze szpitala. Prawdziwy brak empatii to instrumentalizacja chorego męża dla celów prawnych i finansowych."
+            "context": "Zarzut braku empatii wobec chorego członka rodziny",
+            "behavior": "Fakt: jedna strona zarzuca drugiej brak empatii wobec chorego ojca. Fakt: to strona formułująca ten zarzut uzyskała pełnomocnictwo od ojca wkrótce po eskalacji konfliktu i wykorzystała je w toczącym się sporze. Fakt: to druga strona (syn) odebrała ojca ze szpitala.",
+            "analysis": "Mechanizm: gdy strona zarzucająca brak empatii sama wykorzystuje stan zdrowia tej samej osoby jako narzędzie w sporze prawnym, zestawienie to jest wzorcem projekcji wartym uwzględnienia w ocenie obu narracji. Wniosek: ustalenie, czyje działania faktycznie służyły dobru ojca, wymaga oceny całości materiału (w tym celu i okoliczności uzyskania pełnomocnictwa), nie samego porównania deklaracji."
           }
         },
         "quiz": {
@@ -2195,19 +2196,19 @@
         },
         "examples": {
           "ex1": {
-            "context": "Wpis w dzienniku prowadzonym przez matkę",
-            "behavior": "'Syn wrócił pijany, pił z kolegą (...) po 22 zadzwoniliśmy po policję, bo chyba oszalał'. Użycie pejoratywnego przezwiska i subiektywnej oceny ('chyba oszalał') przedstawione jako obiektywny opis.",
-            "analysis": "To nie jest faktograficzna kronika, to aktywny proces oceniania i stygmatyzowania. Celem nie jest zapamiętanie, co się wydarzyło, ale stworzenie materiału obciążającego w formie pozornie neutralnej."
+            "context": "Wpis w dzienniku wydarzeń",
+            "behavior": "Fakt: treść wpisu — 'Syn wrócił pijany, pił z kolegą (...) po 22 zadzwoniliśmy po policję, bo chyba oszalał'. Wpis łączy opis zdarzenia z subiektywną oceną autora ('chyba oszalał'), bez rozróżnienia między nimi.",
+            "analysis": "Mechanizm: gdy zapis zdarzenia i ocena autora są podane w jednym zdaniu, bez oznaczenia, gdzie kończy się obserwacja a zaczyna interpretacja, czytelnik dziennika otrzymuje ocenę w opakowaniu faktu. Wniosek: to sposób konstruowania zapisu wart odnotowania przy ocenie jego wiarygodności jako źródła — nie przesądza on jednak sam w sobie o nieprawdziwości opisanego zdarzenia."
           },
           "ex2": {
-            "context": "Wpis w dzienniku - 'czytanie w myślach'",
-            "behavior": "'W niedzielę odwiedziła nas rodzina (...) Specjalnie gdzieś wyjechał, żeby nie rozmawiać z krewną.' Fakt (wyjechał) + interpretacja (specjalnie, żeby nie...) przedstawione jako jedno.",
-            "analysis": "Technika przypisywania negatywnych intencji. Nie dopuszcza żadnej innej możliwości (np. wcześniejsze plany). To tzw. błąd atrybucji - przypisanie wrogich motywów niejednoznacznemu zachowaniu. Powtarzający się wzorzec w jej narracji."
+            "context": "Wpis przypisujący intencję niepotwierdzonemu zachowaniu",
+            "behavior": "Fakt: treść wpisu — 'W niedzielę odwiedziła nas rodzina (...) Specjalnie gdzieś wyjechał, żeby nie rozmawiać z krewną.' Zdanie łączy zaobserwowany fakt (wyjazd) z przypisaną intencją (celowe unikanie rozmowy), bez wskazania podstawy tej interpretacji.",
+            "analysis": "Mechanizm: przypisanie konkretnej, negatywnej intencji zachowaniu, które ma też inne możliwe wyjaśnienia (np. wcześniej ustalone plany), jest znanym w psychologii błędem atrybucji. Wniosek: powtarzanie się tego wzorca w wielu wpisach tego samego autora jest istotną wskazówką co do sposobu, w jaki dokument został sporządzony — i powinno być brane pod uwagę przy ocenie jego dowodowej wartości."
           },
           "ex3": {
             "context": "Dziennik wydarzeń prowadzony przez kilka miesięcy",
-            "behavior": "Skrupulatnie odnotowane: konflikty, zachowania 'podejrzane', obraźliwe (jej zdaniem). Całkowicie pominięte: odbiór ojca ze szpitala przez syna, jego inwestycje w nieruchomość rodzinną, jakiekolwiek pozytywne interakcje.",
-            "analysis": "Kliniczny przykład błędu potwierdzenia (confirmation bias). Nie jest to kronika, to proces selekcji danych potwierdzających z góry przyjętą tezę o byciu ofiarą. Pominięcie odbioru ojca ze szpitala jest szczególnie rażące - to akt oczyszczania narracji z dowodów przeczących."
+            "behavior": "Fakt: dziennik skrupulatnie odnotowuje konflikty oraz zachowania ocenione przez autorkę jako podejrzane lub obraźliwe. Fakt: dziennik nie zawiera wzmianki o odbiorze ojca ze szpitala przez syna ani o jego wcześniej udokumentowanych inwestycjach w nieruchomość rodzinną.",
+            "analysis": "Mechanizm: selektywne odnotowywanie zdarzeń — rejestrowanie tego, co potwierdza jedną narrację, przy pominięciu zdarzeń jej przeczących — odpowiada mechanizmowi znanemu jako błąd potwierdzenia. Wniosek: brak w dzienniku zdarzenia równie istotnego jak odbiór ojca ze szpitala obniża jego wartość jako kompletnej, bezstronnej kroniki; nie oznacza to jednak automatycznie, że pozostałe odnotowane zdarzenia są nieprawdziwe — wymagają jedynie weryfikacji z innych źródeł."
           }
         },
         "quiz": {
@@ -2232,19 +2233,19 @@
         },
         "examples": {
           "ex1": {
-            "context": "Odwołanie darowizny jako 'kara za nieposłuszeństwo'",
-            "behavior": "Matka ujmuje spór majątkowy w ramy moralne: 'rażąca niewdzięczność'. To prawno-moralna etykieta pozwalająca usprawiedliwić radykalne kroki (odwołanie darowizny) nie jako akt zemsty za osobiste urazy (nieakceptowany związek syna), lecz jako sprawiedliwą konsekwencję niemoralnego postępowania.",
-            "analysis": "Prywatny odwet przedstawiony jako akt przywracania porządku. Matka użyła art. 898 § 1 k.c. jako narzędzia moralnej zemsty, nie ochrony darczyńcy (którym był ojciec, nie ona). To samolicencjonowanie - nadanie sobie prawa do działania destrukcyjnego poprzez moralne uzasadnienie."
+            "context": "Odwołanie darowizny z powołaniem na rażącą niewdzięczność",
+            "behavior": "Fakt: strona odwołująca darowiznę ujmuje spór majątkowy w kategorii prawnej 'rażącej niewdzięczności' (art. 898 k.c.). Fakt: darczyńcą formalnie był ojciec, nie osoba składająca oświadczenie o odwołaniu.",
+            "analysis": "Mechanizm: powołanie się na kategorię prawną pozwala przedstawić działanie majątkowe jako konsekwencję cudzego postępowania, niezależnie od tego, jaka jest jego rzeczywista motywacja — to wzorzec opisywany tu jako moralne samolicencjonowanie. Wniosek: czy w tym konkretnym przypadku przesłanki rażącej niewdzięczności rzeczywiście zostały spełnione, rozstrzyga sąd oceniający całość materiału dowodowego — sama etykieta prawna użyta w uzasadnieniu nie jest na to dowodem."
           },
           "ex2": {
-            "context": "Wykorzystanie procedury ochronnej i policji",
-            "behavior": "Matka pozycjonuje się jako osoba szukająca ochrony przed przemocą. Jednak już wcześniej konsultowała z radcą prawnym strategię odwołania darowizny. Procedura ochronna uruchomiona po wyjeździe syna (brak aktualnego zagrożenia). Celem nie była ochrona, ale zdobycie formalnych narzędzi do walki o majątek.",
-            "analysis": "Instrumentalizacja systemu państwowego. Instytucje ochrony ofiar przemocy potraktowane jako środek do osiągnięcia celu procesowego. To nadużycie systemu pod płaszczykiem 'walki o bezpieczeństwo'."
+            "context": "Uruchomienie procedury ochronnej",
+            "behavior": "Fakt: strona zgłaszająca wcześniej konsultowała z radcą prawnym strategię odwołania darowizny. Fakt: procedura ochronna została uruchomiona po wyjeździe drugiej strony z miejsca zamieszkania.",
+            "analysis": "Mechanizm: chronologia — wcześniejsze przygotowanie kroków majątkowych, a dopiero potem uruchomienie procedury ochronnej po ustaniu bezpośredniego kontaktu — jest okolicznością wartą uwzględnienia przy ocenie celu, w jakim procedura została wszczęta. Wniosek: sama ta chronologia nie rozstrzyga, czy zgłoszenie było zasadne czy instrumentalne; ocena wymaga analizy pełnej dokumentacji zgłoszenia przez właściwy organ."
           },
           "ex3": {
-            "context": "Rodzina jako 'chór poparcia'",
-            "behavior": "W dokumentacji sprawy: rodzeństwo 'zaprzestało przyjazdów z obawy na zachowanie brata'. Nie mieszkali już w domu rodzinnym, rzadko bywali. Ich 'lęk' został ukształtowany przez jednostronną narrację matki, nie osobiste doświadczenia.",
-            "analysis": "Angażowanie rodziny do społecznego wyizolowania syna i wzmocnienia własnej pozycji moralnej. Kreowanie wrażenia, że zachowanie syna jest potępiane przez całe otoczenie. To budowanie 'koalicji' wzmacniającej legitymizację własnych działań."
+            "context": "Relacje z dalszą rodziną w dokumentacji sprawy",
+            "behavior": "Fakt: w dokumentacji sprawy rodzeństwo opisane jest jako osoby, które 'zaprzestały przyjazdów z obawy na zachowanie brata'. Fakt: rodzeństwo nie mieszkało już w domu rodzinnym i bywało tam rzadko przed opisywanym okresem.",
+            "analysis": "Mechanizm: gdy opisywana obawa krewnych opiera się głównie na relacji jednej strony konfliktu, a nie na ich bezpośrednim doświadczeniu, warto to odnotować przy ocenie niezależności takiego świadectwa. Wniosek: to, czy obawa rodzeństwa wynika z własnych obserwacji czy z przyjętej narracji, rozstrzyga treść ich własnych, bezpośrednio złożonych zeznań — nie samo sformułowanie użyte w dokumentacji sprawy."
           }
         },
         "quiz": {

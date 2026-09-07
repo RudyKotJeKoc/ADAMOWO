@@ -115,9 +115,9 @@ export default function Home(): ReactElement {
     },
     {
       eyebrow: 'Narzędzie',
-      title: '8 grzechów toksycznej argumentacji',
+      title: 'Analiza wzorców kontroli w relacji',
       description:
-        'Krótka, interaktywna analiza błędów, które osłabiają ocenę sytuacji i własne stanowisko.',
+        'Osiem krótkich modułów oceny — od finansów po izolację. Wynik pokazuje poziom ryzyka i konkretne kroki.',
       meta: 'Wynik zapisywany lokalnie',
       to: '/guides#eight-sins',
       icon: WrenchScrewdriverIcon,
