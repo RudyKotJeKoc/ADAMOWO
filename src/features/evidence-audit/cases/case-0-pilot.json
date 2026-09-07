@@ -1,0 +1,550 @@
+{
+  "schemaVersion": "1.0.0",
+  "case": {
+    "id": "case-0-breakers",
+    "slug": "bezpieczniki-i-echo-zarzutu",
+    "title": "Bezpieczniki i echo zarzutu",
+    "subtitle": "Trzy dokumenty, ile niezależnych źródeł?",
+    "language": "pl",
+    "caseType": "synthetic-training",
+    "publicationStatus": "training-only",
+    "estimatedMinutes": 6,
+    "disclaimer": "Przypadek syntetyczny. Nie przedstawia rzeczywistych osób ani cytatów z akt.",
+    "auditQuestion": "Czy materiał potwierdza, że Osoba B celowo wyłączyła zabezpieczenie elektryczne około 08:30?",
+    "primaryClaimId": "C002"
+  },
+  "sources": [
+    {
+      "id": "A",
+      "label": "Osoba A",
+      "kind": "person",
+      "role": "reporting-party",
+      "description": "Mieszkanka domu i źródło pierwotnego zarzutu."
+    },
+    {
+      "id": "B",
+      "label": "Osoba B",
+      "kind": "person",
+      "role": "accused-party",
+      "description": "Właściciel domu wskazany w zgłoszeniu."
+    },
+    {
+      "id": "C",
+      "label": "Świadek C",
+      "kind": "person",
+      "role": "hearsay-witness",
+      "description": "Krewna Osoby A, nieobecna podczas zdarzenia."
+    },
+    {
+      "id": "D",
+      "label": "Funkcjonariusz D",
+      "kind": "person",
+      "role": "public-official",
+      "description": "Policjant przyjmujący zgłoszenie i sporządzający notatkę."
+    },
+    {
+      "id": "POL",
+      "label": "Jednostka Policji",
+      "kind": "institution",
+      "role": "public-official",
+      "description": "Instytucjonalny autor formularzy i rejestrów."
+    }
+  ],
+  "epistemicLayers": [
+    {
+      "id": "direct-observation",
+      "label": "Fakt lub obserwacja",
+      "definition": "Stan albo zdarzenie bezpośrednio zaobserwowane przez wskazanego obserwatora w określonym czasie.",
+      "colorToken": "cyan",
+      "icon": "eye"
+    },
+    {
+      "id": "party-claim",
+      "label": "Twierdzenie strony",
+      "definition": "Relacja osoby zainteresowanej wynikiem sprawy albo cudza relacja przytoczona w dokumencie.",
+      "colorToken": "blue",
+      "icon": "message"
+    },
+    {
+      "id": "official-finding",
+      "label": "Ustalenie organu",
+      "definition": "Jawny wniosek organu, odróżniony od przytoczenia wypowiedzi strony.",
+      "colorToken": "violet",
+      "icon": "stamp"
+    },
+    {
+      "id": "motive-inference",
+      "label": "Motyw lub intencja",
+      "definition": "Przypisanie celu, zamiaru albo stanu wewnętrznego określonej osobie.",
+      "colorToken": "amber",
+      "icon": "question"
+    },
+    {
+      "id": "metadata",
+      "label": "Metadane",
+      "definition": "Informacja o czasie, miejscu, autorstwie albo pochodzeniu zapisu.",
+      "colorToken": "slate",
+      "icon": "clock"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C001",
+      "text": "Około 08:30 w części domu wystąpiła przerwa w zasilaniu.",
+      "claimType": "event",
+      "subjectSourceId": null,
+      "timeRange": {
+        "from": "2026-01-12T08:25:00+01:00",
+        "to": "2026-01-12T08:35:00+01:00"
+      },
+      "expectedAssessment": "not-resolved"
+    },
+    {
+      "id": "C002",
+      "text": "Osoba B fizycznie i celowo wyłączyła zabezpieczenie około 08:30.",
+      "claimType": "causation",
+      "subjectSourceId": "B",
+      "timeRange": {
+        "from": "2026-01-12T08:25:00+01:00",
+        "to": "2026-01-12T08:35:00+01:00"
+      },
+      "expectedAssessment": "unsupported"
+    },
+    {
+      "id": "C003",
+      "text": "Celem działania było zastraszenie Osoby A.",
+      "claimType": "motive",
+      "subjectSourceId": "B",
+      "timeRange": {
+        "from": "2026-01-12T08:25:00+01:00",
+        "to": "2026-01-12T08:35:00+01:00"
+      },
+      "expectedAssessment": "unsupported"
+    },
+    {
+      "id": "C004",
+      "text": "Brak zasilania utrzymywał się do przyjazdu patrolu.",
+      "claimType": "event",
+      "subjectSourceId": null,
+      "timeRange": {
+        "from": "2026-01-12T08:30:00+01:00",
+        "to": "2026-01-12T08:52:00+01:00"
+      },
+      "expectedAssessment": "contradicted"
+    },
+    {
+      "id": "C005",
+      "text": "Osoba A nie dotykała rozdzielnicy przed przyjazdem patrolu.",
+      "claimType": "event",
+      "subjectSourceId": "A",
+      "timeRange": {
+        "from": "2026-01-12T08:30:00+01:00",
+        "to": "2026-01-12T08:52:00+01:00"
+      },
+      "expectedAssessment": "contradicted"
+    },
+    {
+      "id": "C006",
+      "text": "Świadek C osobiście widział przełączenie zabezpieczenia.",
+      "claimType": "source-competence",
+      "subjectSourceId": "C",
+      "timeRange": {
+        "from": "2026-01-12T08:25:00+01:00",
+        "to": "2026-01-12T08:35:00+01:00"
+      },
+      "expectedAssessment": "contradicted"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D001",
+      "title": "Protokół przyjęcia zgłoszenia",
+      "documentType": "reported-complaint",
+      "createdAt": "2026-01-12T09:05:00+01:00",
+      "eventTime": "2026-01-12T08:30:00+01:00",
+      "authorSourceId": "D",
+      "speakerSourceIds": ["A"],
+      "legalRigor": {
+        "category": "official-record-of-party-statement",
+        "description": "Urzędowy formularz potwierdza przyjęcie wypowiedzi Osoby A.",
+        "proves": ["czas przyjęcia zgłoszenia", "treść zarzutu przekazanego funkcjonariuszowi"],
+        "doesNotProve": [
+          "kto przełączył zabezpieczenie",
+          "czy działanie było celowe",
+          "jaki był motyw działania"
+        ]
+      },
+      "sourceGroupIds": ["G-A"],
+      "segments": [
+        {
+          "id": "D001:S001",
+          "text": "W dniu 12 stycznia 2026 r. o 09:05 przyjęto zgłoszenie Osoby A.",
+          "speakerSourceId": "D",
+          "originSourceId": "D",
+          "epistemicLayer": "metadata",
+          "claimIds": [],
+          "directKnowledge": true
+        },
+        {
+          "id": "D001:S002",
+          "text": "Zgłaszająca podała, że około 08:30 w kuchni i korytarzu zgasło światło, a gniazda przestały działać.",
+          "speakerSourceId": "A",
+          "originSourceId": "A",
+          "epistemicLayer": "party-claim",
+          "claimIds": ["C001"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D001:S003",
+          "text": "Według zgłaszającej Osoba B zeszła do rozdzielnicy i celowo wyłączyła zabezpieczenie, aby ją przestraszyć.",
+          "speakerSourceId": "A",
+          "originSourceId": "A",
+          "epistemicLayer": "party-claim",
+          "secondaryLayer": "motive-inference",
+          "claimIds": ["C002", "C003"],
+          "directKnowledge": false
+        },
+        {
+          "id": "D001:S004",
+          "text": "Zgłaszająca podała, że zasilanie nadal nie działa i że sama nie otwierała rozdzielnicy.",
+          "speakerSourceId": "A",
+          "originSourceId": "A",
+          "epistemicLayer": "party-claim",
+          "claimIds": ["C004", "C005"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D001:S005",
+          "text": "Zgłaszająca nie widziała ręki Osoby B na dźwigni zabezpieczenia.",
+          "speakerSourceId": "A",
+          "originSourceId": "A",
+          "epistemicLayer": "party-claim",
+          "claimIds": ["C002"],
+          "directKnowledge": true
+        }
+      ]
+    },
+    {
+      "id": "D002",
+      "title": "Zeznanie Świadka C",
+      "documentType": "witness-statement",
+      "createdAt": "2026-01-14T13:20:00+01:00",
+      "eventTime": "2026-01-12T08:37:00+01:00",
+      "authorSourceId": "D",
+      "speakerSourceIds": ["C"],
+      "legalRigor": {
+        "category": "formal-witness-statement",
+        "description": "Formalnie utrwalone zeznanie; wiedza o głównym zdarzeniu pochodzi od Osoby A.",
+        "proves": [
+          "treść rozmowy opisanej przez Świadka C",
+          "brak obecności świadka na miejscu według jego własnej relacji"
+        ],
+        "doesNotProve": ["kto przełączył zabezpieczenie", "stan instalacji w domu", "motyw Osoby B"]
+      },
+      "sourceGroupIds": ["G-A", "G-C"],
+      "segments": [
+        {
+          "id": "D002:S001",
+          "text": "W chwili zdarzenia przebywałam w swoim mieszkaniu w innym mieście.",
+          "speakerSourceId": "C",
+          "originSourceId": "C",
+          "epistemicLayer": "party-claim",
+          "claimIds": ["C006"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D002:S002",
+          "text": "Około 08:37 zadzwoniła do mnie Osoba A i powiedziała, że Osoba B wyłączyła jej bezpieczniki.",
+          "speakerSourceId": "C",
+          "originSourceId": "A",
+          "epistemicLayer": "party-claim",
+          "claimIds": ["C001", "C002"],
+          "directKnowledge": false
+        },
+        {
+          "id": "D002:S003",
+          "text": "Nie widziałam Osoby B przy rozdzielnicy i nie sprawdzałam instalacji.",
+          "speakerSourceId": "C",
+          "originSourceId": "C",
+          "epistemicLayer": "party-claim",
+          "claimIds": ["C006"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D002:S004",
+          "text": "Uznałam, że chciał ją przestraszyć, ponieważ A wcześniej mówiła mi o ich konflikcie.",
+          "speakerSourceId": "C",
+          "originSourceId": "A",
+          "epistemicLayer": "motive-inference",
+          "claimIds": ["C003"],
+          "directKnowledge": false
+        }
+      ]
+    },
+    {
+      "id": "D003",
+      "title": "Notatka urzędowa z interwencji",
+      "documentType": "police-intervention-note",
+      "createdAt": "2026-01-12T10:15:00+01:00",
+      "eventTime": "2026-01-12T08:52:00+01:00",
+      "authorSourceId": "D",
+      "speakerSourceIds": ["D", "A"],
+      "legalRigor": {
+        "category": "official-observation-and-reported-content",
+        "description": "Notatka łączy obserwacje funkcjonariusza z relacją Osoby A; segmenty wymagają osobnej kwalifikacji.",
+        "proves": [
+          "czas przyjazdu patrolu",
+          "stan widoczny funkcjonariuszowi o 08:52",
+          "treść późniejszej wypowiedzi Osoby A"
+        ],
+        "doesNotProve": [
+          "stan instalacji o 08:30",
+          "kto pierwotnie przełączył zabezpieczenie",
+          "motyw Osoby B"
+        ]
+      },
+      "sourceGroupIds": ["G-A", "G-D"],
+      "segments": [
+        {
+          "id": "D003:S001",
+          "text": "Patrol przybył na miejsce o 08:52.",
+          "speakerSourceId": "D",
+          "originSourceId": "D",
+          "epistemicLayer": "metadata",
+          "claimIds": [],
+          "directKnowledge": true
+        },
+        {
+          "id": "D003:S002",
+          "text": "W chwili wejścia patrolu oświetlenie kuchni i korytarza działało, a dostępne gniazdo zasilało lampę kontrolną.",
+          "speakerSourceId": "D",
+          "originSourceId": "D",
+          "epistemicLayer": "direct-observation",
+          "claimIds": ["C004"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D003:S003",
+          "text": "Osoba A oświadczyła, że przed przyjazdem patrolu sama podniosła jedną opuszczoną dźwignię zabezpieczenia i zasilanie wróciło.",
+          "speakerSourceId": "A",
+          "originSourceId": "A",
+          "epistemicLayer": "party-claim",
+          "claimIds": ["C004", "C005"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D003:S004",
+          "text": "W chwili interwencji wszystkie widoczne dźwignie znajdowały się w pozycji załączonej.",
+          "speakerSourceId": "D",
+          "originSourceId": "D",
+          "epistemicLayer": "direct-observation",
+          "claimIds": ["C004"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D003:S005",
+          "text": "Osoby B nie zastano na miejscu. Funkcjonariusz nie obserwował stanu instalacji o 08:30 ani momentu przełączenia zabezpieczenia.",
+          "speakerSourceId": "D",
+          "originSourceId": "D",
+          "epistemicLayer": "direct-observation",
+          "claimIds": ["C001", "C002"],
+          "directKnowledge": true
+        },
+        {
+          "id": "D003:S006",
+          "text": "Osoba A podtrzymała, że zabezpieczenie wyłączyła Osoba B, ponieważ wcześniej zapowiadała odłączenie prądu.",
+          "speakerSourceId": "A",
+          "originSourceId": "A",
+          "epistemicLayer": "party-claim",
+          "secondaryLayer": "motive-inference",
+          "claimIds": ["C002", "C003"],
+          "directKnowledge": false
+        }
+      ]
+    }
+  ],
+  "sourceGroups": [
+    {
+      "id": "G-A",
+      "label": "Pierwotna relacja Osoby A",
+      "originSourceId": "A",
+      "memberSegmentIds": [
+        "D001:S002",
+        "D001:S003",
+        "D001:S004",
+        "D002:S002",
+        "D002:S004",
+        "D003:S003",
+        "D003:S006"
+      ],
+      "independentForClaimIds": ["C001", "C002", "C003", "C004", "C005"],
+      "explanation": "Fragmenty w trzech dokumentach prowadzą do Osoby A. Powtórzenie zarzutu przez świadka i w notatce nie tworzy nowych źródeł."
+    },
+    {
+      "id": "G-C",
+      "label": "Własna wiedza Świadka C",
+      "originSourceId": "C",
+      "memberSegmentIds": ["D002:S001", "D002:S003"],
+      "independentForClaimIds": ["C006"],
+      "explanation": "Świadek ma bezpośrednią wiedzę jedynie o własnej nieobecności i braku obserwacji zdarzenia."
+    },
+    {
+      "id": "G-D",
+      "label": "Bezpośrednie obserwacje Funkcjonariusza D",
+      "originSourceId": "D",
+      "memberSegmentIds": ["D003:S001", "D003:S002", "D003:S004", "D003:S005"],
+      "independentForClaimIds": ["C004"],
+      "explanation": "Funkcjonariusz obserwował stan o 08:52. Nie obserwował zdarzenia o 08:30."
+    }
+  ],
+  "evidenceRelations": [
+    {
+      "id": "R001",
+      "fromId": "D001:S002",
+      "toId": "C001",
+      "relationType": "SUPPORTS_EXISTENCE_OF_ALLEGATION",
+      "strength": "strong",
+      "explanation": "Potwierdza zgłoszenie przerwy, nie jej przyczynę."
+    },
+    {
+      "id": "R002",
+      "fromId": "D001:S003",
+      "toId": "C002",
+      "relationType": "SUPPORTS_EXISTENCE_OF_ALLEGATION",
+      "strength": "strong",
+      "explanation": "Potwierdza sformułowanie zarzutu wobec Osoby B."
+    },
+    {
+      "id": "R003",
+      "fromId": "D001:S005",
+      "toId": "C002",
+      "relationType": "WEAKENS",
+      "strength": "medium",
+      "explanation": "Źródło zarzutu nie widziało samego przełączenia."
+    },
+    {
+      "id": "R004",
+      "fromId": "D002:S002",
+      "toId": "D001:S003",
+      "relationType": "REPEATS",
+      "strength": "strong",
+      "explanation": "Świadek powtarza informację otrzymaną od Osoby A."
+    },
+    {
+      "id": "R005",
+      "fromId": "D002:S002",
+      "toId": "C002",
+      "relationType": "SUPPORTS_EXISTENCE_OF_ALLEGATION",
+      "strength": "medium",
+      "explanation": "Potwierdza przekazanie zarzutu świadkowi, nie sprawstwo."
+    },
+    {
+      "id": "R006",
+      "fromId": "D002:S001",
+      "toId": "C006",
+      "relationType": "CONTRADICTS",
+      "strength": "strong",
+      "explanation": "Świadek wskazuje, że przebywał w innym mieście."
+    },
+    {
+      "id": "R007",
+      "fromId": "D002:S003",
+      "toId": "C006",
+      "relationType": "CONTRADICTS",
+      "strength": "strong",
+      "explanation": "Świadek wprost zaprzecza osobistej obserwacji."
+    },
+    {
+      "id": "R008",
+      "fromId": "D003:S002",
+      "toId": "C004",
+      "relationType": "CONTRADICTS",
+      "strength": "strong",
+      "explanation": "O 08:52 zasilanie działało, więc nie utrzymywało się do przyjazdu patrolu."
+    },
+    {
+      "id": "R009",
+      "fromId": "D003:S003",
+      "toId": "C005",
+      "relationType": "CONTRADICTS",
+      "strength": "strong",
+      "explanation": "Późniejsza wypowiedź Osoby A opisuje jej ingerencję w rozdzielnicę."
+    },
+    {
+      "id": "R010",
+      "fromId": "D003:S005",
+      "toId": "C001",
+      "relationType": "DOES_NOT_RESOLVE",
+      "strength": "none",
+      "explanation": "Brak obserwacji stanu o 08:30 nie potwierdza ani nie wyklucza przerwy."
+    },
+    {
+      "id": "R011",
+      "fromId": "D003:S005",
+      "toId": "C002",
+      "relationType": "DOES_NOT_RESOLVE",
+      "strength": "none",
+      "explanation": "Nieobecność B o 08:52 i brak obserwacji zdarzenia nie rozstrzygają sprawstwa o 08:30."
+    },
+    {
+      "id": "R012",
+      "fromId": "D003:S006",
+      "toId": "D001:S003",
+      "relationType": "REPEATS",
+      "strength": "strong",
+      "explanation": "Notatka ponownie rejestruje zarzut pochodzący od Osoby A."
+    },
+    {
+      "id": "R013",
+      "fromId": "D003:S006",
+      "toId": "C002",
+      "relationType": "SUPPORTS_EXISTENCE_OF_ALLEGATION",
+      "strength": "strong",
+      "explanation": "Urzędowa notatka potwierdza wypowiedzenie zarzutu, nie jego prawdziwość."
+    },
+    {
+      "id": "R014",
+      "fromId": "D002:S004",
+      "toId": "C003",
+      "relationType": "QUALIFIES",
+      "strength": "strong",
+      "explanation": "Ocena motywu świadka pochodzi z narracji Osoby A, a nie z obserwacji Osoby B."
+    }
+  ],
+  "auditTasks": {
+    "independentSources": {
+      "claimId": "C002",
+      "expectedSupportingGroupIds": ["G-A"],
+      "expectedNonResolvingGroupIds": ["G-D"],
+      "expectedSupportingIndependentCount": 1
+    },
+    "layerClassification": [
+      {
+        "segmentId": "D001:S003",
+        "expectedPrimaryLayer": "party-claim",
+        "expectedSecondaryLayer": "motive-inference"
+      },
+      {
+        "segmentId": "D002:S002",
+        "expectedPrimaryLayer": "party-claim"
+      },
+      {
+        "segmentId": "D002:S004",
+        "expectedPrimaryLayer": "motive-inference"
+      },
+      {
+        "segmentId": "D003:S002",
+        "expectedPrimaryLayer": "direct-observation"
+      },
+      {
+        "segmentId": "D003:S003",
+        "expectedPrimaryLayer": "party-claim"
+      },
+      {
+        "segmentId": "D003:S006",
+        "expectedPrimaryLayer": "party-claim",
+        "expectedSecondaryLayer": "motive-inference"
+      }
+    ]
+  }
+}
