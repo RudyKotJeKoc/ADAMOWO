@@ -1,9 +1,11 @@
-const CACHE_NAME = 'radio-adamowo-v4-clean';
+// Zmiana wersji wymusza instalację nowego SW i usunięcie starych cache'y
+// (w tym audio zapisanego przez poprzednie wersje).
+const SW_VERSION = 'v5';
+const CACHE_NAME = `radio-adamowo-${SW_VERSION}`;
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/music/playlist.json',
   '/assets/images/icons/favicon.ico',
   '/assets/images/icons/icon-pwa-master.svg',
   '/assets/images/placeholders/cover-sunset-waves.svg',
@@ -11,77 +13,91 @@ const ASSETS_TO_CACHE = [
   '/assets/images/placeholders/cover-golden-hour.svg',
 ];
 
+const MEDIA_EXTENSIONS = /\.(mp3|m4a|aac|ogg|oga|opus|wav|flac|webm|mp4|m3u8|ts)$/i;
+
+/**
+ * Żądania, których SW w ogóle nie dotyka - przeglądarka wysyła je prosto do
+ * serwera, razem z nagłówkiem `Range`. Dzięki temu serwer odpowiada 206
+ * Partial Content i działa strumieniowanie oraz przewijanie mp3.
+ */
+const shouldBypass = (request, url) =>
+  request.method !== 'GET' ||
+  url.origin !== self.location.origin ||
+  url.pathname.startsWith('/music/') ||
+  MEDIA_EXTENSIONS.test(url.pathname) ||
+  request.headers.has('range') ||
+  request.destination === 'audio' ||
+  request.destination === 'video';
+
 // Install event - cache core assets
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing service worker...');
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Caching core assets');
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE)));
   // Force waiting service worker to become active
   self.skipWaiting();
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activating service worker...');
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('[SW] Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+    caches
+      .keys()
+      .then((cacheNames) =>
+        Promise.all(
+          cacheNames
+            .filter((cacheName) => cacheName !== CACHE_NAME)
+            .map((cacheName) => caches.delete(cacheName))
+        )
+      )
+      // Take control of all clients immediately
+      .then(() => self.clients.claim())
   );
-  // Take control of all clients immediately
-  return self.clients.claim();
 });
 
 // Fetch event - network first, fallback to cache
 self.addEventListener('fetch', (event) => {
-  // Skip cross-origin requests
-  if (!event.request.url.startsWith(self.location.origin)) {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // Network-only: brak respondWith = SW nie pośredniczy w żądaniu.
+  if (shouldBypass(request, url)) {
     return;
   }
 
   event.respondWith(
-    fetch(event.request)
+    fetch(request)
       .then((response) => {
-        // Clone the response before caching
-        const responseToCache = response.clone();
-
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
+        // Cache API nie przyjmuje odpowiedzi 206 i nie ma sensu cache'ować błędów.
+        if (response.ok && response.status === 200 && response.type === 'basic') {
+          const responseToCache = response.clone();
+          event.waitUntil(
+            caches
+              .open(CACHE_NAME)
+              .then((cache) => cache.put(request, responseToCache))
+              .catch(() => undefined)
+          );
+        }
 
         return response;
       })
-      .catch(() => {
+      .catch(async () => {
         // Network failed, try cache
-        return caches.match(event.request).then((response) => {
-          if (response) {
-            return response;
-          }
+        const cached = await caches.match(request);
+        if (cached) {
+          return cached;
+        }
 
-          // If no cache match, return offline page for navigation requests
-          if (event.request.mode === 'navigate') {
-            return caches.match('/index.html');
+        // If no cache match, return offline page for navigation requests
+        if (request.mode === 'navigate') {
+          const shell = await caches.match('/index.html');
+          if (shell) {
+            return shell;
           }
+        }
 
-          // For other requests, return a basic response
-          return new Response('Offline - content not available', {
-            status: 503,
-            statusText: 'Service Unavailable',
-            headers: new Headers({
-              'Content-Type': 'text/plain',
-            }),
-          });
+        return new Response('Offline - content not available', {
+          status: 503,
+          statusText: 'Service Unavailable',
+          headers: new Headers({ 'Content-Type': 'text/plain' }),
         });
       })
   );
