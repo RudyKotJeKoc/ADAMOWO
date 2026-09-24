@@ -42,7 +42,10 @@
   backdrop-filter: blur(6px);
   color: #f3f5ff;
   text-align: left;
-  transition: box-shadow 150ms ease, border-color 150ms ease, background-color 150ms ease;
+  transition:
+    box-shadow 150ms ease,
+    border-color 150ms ease,
+    background-color 150ms ease;
 }
 
 .loop-hotspot[data-active='true'] {

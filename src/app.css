@@ -83,6 +83,50 @@
     @apply font-display text-xs font-medium uppercase tracking-widest text-accent-400;
   }
 
+  /*
+   * Subtelna poświata na hover/active - wyłącznie w istniejącym kolorze akcentu
+   * (accent-400 / theme_color). Zmienia tylko box-shadow, więc nie rusza układu.
+   * Warstwy ringów Tailwinda są zachowane, żeby nie gasić focus ringów.
+   */
+  .glow-hover,
+  .card-base,
+  :is(a, button, summary)[class*='rounded'][class*='border-'],
+  button[class*='rounded'][class*='bg-accent-'] {
+    transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+    transition-duration: 200ms;
+  }
+
+  .glow-hover:where(:not(:disabled)):hover,
+  .card-base:hover,
+  :is(a, button, summary)[class*='rounded'][class*='border-']:where(:not(:disabled)):hover,
+  button[class*='rounded'][class*='bg-accent-']:where(:not(:disabled)):hover {
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000),
+      0 0 14px rgba(245, 158, 11, 0.28),
+      0 0 2px rgba(245, 158, 11, 0.45);
+  }
+
+  .glow-hover:where(:not(:disabled)):active,
+  :is(a, button)[class*='rounded'][class*='border-']:where(:not(:disabled)):active,
+  button[class*='rounded'][class*='bg-accent-']:where(:not(:disabled)):active {
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000),
+      0 0 20px rgba(245, 158, 11, 0.4),
+      0 0 3px rgba(245, 158, 11, 0.6);
+  }
+
+  /* Ikona odtwarzacza „świeci", gdy gra muzyka */
+  .glow-accent-soft {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+  }
+
+  /* Suwaki głośności w odtwarzaczach */
+  input[type='range']:hover {
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.35));
+  }
+
   /* Modal open state - prevent scroll */
   .modal-open {
     overflow: hidden;

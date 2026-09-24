@@ -17,7 +17,7 @@ export const ProgressBar = ({
   moduleProgress,
   overallProgress,
   activeModuleId,
-  onSelectModule
+  onSelectModule,
 }: Props): JSX.Element => {
   const { t } = useTranslation();
 
@@ -56,14 +56,19 @@ export const ProgressBar = ({
               type="button"
               onClick={() => onSelectModule(module.id)}
               className={`flex flex-col rounded-xl border px-3 py-3 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 ${
-                isActive ? 'border-accent-300 bg-base-800/70' : 'border-base-700 bg-base-900/60 hover:border-accent-400'
+                isActive
+                  ? 'border-accent-300 bg-base-800/70'
+                  : 'border-base-700 bg-base-900/60 hover:border-accent-400'
               }`}
               aria-pressed={isActive}
               aria-current={isActive ? 'true' : undefined}
             >
               <span className="text-sm font-semibold text-base-50">{t(module.titleKey)}</span>
               <span className="mt-1 text-xs text-base-300">
-                {t('guide.progress.module', { answered: progress?.answered ?? 0, total: progress?.total ?? 0 })}
+                {t('guide.progress.module', {
+                  answered: progress?.answered ?? 0,
+                  total: progress?.total ?? 0,
+                })}
               </span>
               <div className="mt-2 h-1.5 rounded-full bg-base-700">
                 <div

@@ -14,7 +14,9 @@ const initialTheme = initTheme();
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('/sw.js')
+      // updateViaCache: 'none' - przeglądarka zawsze sprawdza świeży sw.js
+      // z serwera, więc poprawki SW docierają bez czekania na wygaśnięcie cache HTTP.
+      .register('/sw.js', { updateViaCache: 'none' })
       .then((registration) => {
         console.log('SW registered:', registration);
       })
