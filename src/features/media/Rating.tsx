@@ -294,11 +294,8 @@ export function RatingStatistics({ ratings, className = '' }: RatingStatisticsPr
           return (
             <div key={star} className="flex items-center gap-2">
               <span className="text-sm text-base-400 w-8">{star}★</span>
-              <div className="flex-1 bg-base-800 rounded-full h-2 overflow-hidden">
-                <div
-                  className="bg-accent-500 h-full transition-all duration-300"
-                  style={{ width: `${percentage}%` }}
-                />
+              <div className="neon-track h-2 flex-1">
+                <div className="neon-bar" style={{ width: `${percentage}%` }} />
               </div>
               <span className="text-sm text-base-400 w-12 text-right">{count}</span>
             </div>

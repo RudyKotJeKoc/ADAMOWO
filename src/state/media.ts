@@ -167,11 +167,11 @@ const defaultVisualizerConfig: VisualizerConfig = {
   minDecibels: -90,
   maxDecibels: -10,
   colorScheme: {
-    primary: '#f59e0b',
-    secondary: '#d97706',
-    accent: '#fbbf24',
-    background: '#0a0e27',
-    gradient: ['#f59e0b', '#d97706', '#b45309'],
+    primary: '#3dfc8f',
+    secondary: '#22d8f0',
+    accent: '#a97bff',
+    background: '#0a0b0e',
+    gradient: ['#3dfc8f', '#22d8f0', '#a97bff'],
   },
   responsive: true,
 };

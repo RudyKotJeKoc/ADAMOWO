@@ -48,12 +48,10 @@ export function PizzaDonation() {
             transition={{
               duration: 4,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           >
-            <span className="text-8xl drop-shadow-[0_0_30px_rgba(245,158,11,0.5)]">
-              🍕
-            </span>
+            <span className="text-8xl drop-shadow-[0_0_30px_rgba(34,216,240,0.45)]">🍕</span>
           </motion.div>
 
           {/* Main heading */}
@@ -114,9 +112,7 @@ export function PizzaDonation() {
                       transition={{ delay: 0.5 + idx * 0.1 }}
                     >
                       <item.icon className="h-6 w-6 flex-shrink-0 text-accent-400" />
-                      <span className="text-base-100">
-                        {t(`donation.${item.key}`)}
-                      </span>
+                      <span className="text-base-100">{t(`donation.${item.key}`)}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -157,9 +153,7 @@ export function PizzaDonation() {
                     </span>
                   </motion.a>
 
-                  <p className="mt-4 text-sm text-base-400">
-                    {t('donation.subtitle')}
-                  </p>
+                  <p className="mt-4 text-sm text-base-400">{t('donation.subtitle')}</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -173,9 +167,7 @@ export function PizzaDonation() {
             viewport={{ once: true }}
             transition={{ delay: 1 }}
           >
-            <p className="text-base-300">
-              {t('donation.thanks')}
-            </p>
+            <p className="text-base-300">{t('donation.thanks')}</p>
           </motion.div>
         </motion.div>
       </div>

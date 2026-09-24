@@ -17,7 +17,7 @@ export const ProgressBar = ({
   moduleProgress,
   overallProgress,
   activeModuleId,
-  onSelectModule
+  onSelectModule,
 }: Props): JSX.Element => {
   const { t } = useTranslation();
 
@@ -31,16 +31,14 @@ export const ProgressBar = ({
           </p>
         </div>
         <div className="flex w-full max-w-sm items-center gap-3">
-          <div className="h-2 flex-1 rounded-full bg-base-700">
+          <div className="neon-track h-2 flex-1">
             <div
-              className="h-full rounded-full bg-accent-500 transition-all"
+              className="neon-bar"
               style={{ width: `${Math.min(100, formatPercent(overallProgress))}%` }}
               aria-hidden="true"
             />
           </div>
-          <span className="text-sm font-semibold text-accent-200">
-            {formatPercent(overallProgress)}%
-          </span>
+          <span className="data-value text-sm">{formatPercent(overallProgress)}%</span>
         </div>
       </div>
 
@@ -56,21 +54,22 @@ export const ProgressBar = ({
               type="button"
               onClick={() => onSelectModule(module.id)}
               className={`flex flex-col rounded-xl border px-3 py-3 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 ${
-                isActive ? 'border-accent-300 bg-base-800/70' : 'border-base-700 bg-base-900/60 hover:border-accent-400'
+                isActive
+                  ? 'border-accent-300 bg-base-800/70'
+                  : 'border-base-700 bg-base-900/60 hover:border-accent-400'
               }`}
               aria-pressed={isActive}
               aria-current={isActive ? 'true' : undefined}
             >
               <span className="text-sm font-semibold text-base-50">{t(module.titleKey)}</span>
               <span className="mt-1 text-xs text-base-300">
-                {t('guide.progress.module', { answered: progress?.answered ?? 0, total: progress?.total ?? 0 })}
+                {t('guide.progress.module', {
+                  answered: progress?.answered ?? 0,
+                  total: progress?.total ?? 0,
+                })}
               </span>
-              <div className="mt-2 h-1.5 rounded-full bg-base-700">
-                <div
-                  className="h-full rounded-full bg-accent-500"
-                  style={{ width: `${percent}%` }}
-                  aria-hidden="true"
-                />
+              <div className="neon-track mt-2 h-1.5">
+                <div className="neon-bar" style={{ width: `${percent}%` }} aria-hidden="true" />
               </div>
             </button>
           );

@@ -2,31 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════════════════
+   Radio Adamowo - motyw „Neon Dashboard"
+   Wszystkie kolory są zdefiniowane jako kanały RGB, żeby Tailwind mógł
+   dokładać przezroczystość (`bg-base-900/70`). Zmiana palety = edycja
+   tylko tego bloku.
+   ═══════════════════════════════════════════════════════════════════ */
 :root {
-  color-scheme: dark light;
+  color-scheme: dark;
 
-  /* Radio Adamowo - ciemne studio śledcze */
   --font-display: 'IBM Plex Mono', 'Courier New', ui-monospace, monospace;
   --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  /* Kolory główne */
-  --color-studio-dark: #020617; /* slate-950 */
-  --color-accent-gold: #f59e0b; /* theme_color */
-  --color-on-air-red: #dc2626;
+  /* Tła (matowy grafit) i tekst (złamana biel → stonowana szarość) */
+  --base-50: 240 242 245; /* #f0f2f5 tekst główny */
+  --base-100: 225 228 237; /* #e1e4ed */
+  --base-200: 194 199 214; /* #c2c7d6 */
+  --base-300: 138 145 168; /* #8a91a8 tekst drugorzędny */
+  --base-400: 124 131 154; /* #7c839a etykiety (≥4.5:1 na tle) */
+  --base-500: 93 100 121; /* #5d6479 placeholdery, dekoracje */
+  --base-600: 53 58 74; /* #353a4a */
+  --base-700: 37 42 55; /* #252a37 obramowania */
+  --base-800: 27 31 41; /* #1b1f29 powierzchnie podniesione */
+  --base-850: 22 25 34; /* #161922 */
+  --base-900: 15 17 23; /* #0f1117 karty */
+  --base-925: 12 14 19; /* #0c0e13 */
+  --base-950: 10 11 14; /* #0a0b0e tło bazowe */
+
+  /* Neonowy cyjan - nawigacja, nagłówki, ramki, akcje */
+  --accent-50: 236 254 255;
+  --accent-100: 207 252 255;
+  --accent-200: 162 246 255;
+  --accent-300: 94 234 252;
+  --accent-400: 34 216 240; /* #22d8f0 */
+  --accent-500: 0 188 217; /* #00bcd9 */
+  --accent-600: 8 145 168;
+  --accent-700: 14 98 114;
+  --accent-800: 17 74 87;
+  --accent-900: 15 58 69;
+  --accent-950: 6 34 41;
+
+  /* Neonowa zieleń - status OK, aktywne wskaźniki, kluczowe dane */
+  --neon-200: 187 255 217;
+  --neon-300: 125 255 181;
+  --neon-400: 61 252 143; /* #3dfc8f */
+  --neon-500: 30 224 122;
+  --neon-600: 18 168 91;
+
+  /* Neonowy fiolet - metadane, tagi */
+  --plasma-200: 221 208 255;
+  --plasma-300: 196 168 255;
+  --plasma-400: 169 123 255; /* #a97bff */
+  --plasma-500: 139 85 245;
+  --plasma-600: 109 58 214;
+
+  /* Alarmy / ON AIR / red flags */
+  --danger-400: 255 92 122;
+  --danger-500: 255 56 96;
+  --danger-600: 225 29 72;
+  --danger-700: 190 18 60;
+
+  /* Karty */
+  --card-border: rgb(var(--accent-400) / 0.14);
+  --card-border-hover: rgb(var(--accent-400) / 0.45);
+  --card-sheen: linear-gradient(180deg, rgb(var(--accent-400) / 0.035), transparent 45%);
+  --glow-sm: 0 0 10px rgb(var(--accent-400) / 0.18);
+  --glow-md: 0 0 22px rgb(var(--accent-400) / 0.22), 0 0 1px rgb(var(--accent-400) / 0.6);
+
+  /* Aliasy zgodne ze starszym kodem */
+  --color-studio-dark: rgb(var(--base-950));
+  --color-accent-gold: rgb(var(--accent-400));
+  --color-on-air-red: rgb(var(--danger-600));
 }
 
 @layer base {
   html {
     min-height: 100%;
     background-color: theme('colors.base.950');
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     min-height: 100vh;
+    background-color: theme('colors.base.950');
+    color: theme('colors.base.100');
+  }
+
+  ::selection {
+    background: rgb(var(--accent-400) / 0.3);
+    color: theme('colors.base.50');
   }
 
   a {
-    @apply text-accent-400 transition-colors hover:text-accent-500;
+    @apply text-accent-300 transition-colors hover:text-accent-200;
   }
 
   :focus-visible {
@@ -35,6 +103,17 @@
 
   .skip-link {
     @apply pointer-events-auto focus-visible:ring-offset-base-950;
+  }
+
+  /* Delikatny blask dla nagłówków w kolorze akcentu */
+  :is(h1, h2, h3)[class*='text-accent-'] {
+    text-shadow: 0 0 18px rgb(var(--accent-400) / 0.28);
+  }
+
+  /* Scrollbar w palecie */
+  * {
+    scrollbar-color: rgb(var(--base-600)) transparent;
+    scrollbar-width: thin;
   }
 }
 
@@ -47,46 +126,174 @@
     @apply min-h-[44px] min-w-[44px];
   }
 
-  /* Content spacing for better readability */
+  /* Tło aplikacji: matowa baza + dwa rozmyte neonowe źródła światła + siatka */
+  .neon-backdrop {
+    background-color: rgb(var(--base-950));
+    background-image:
+      radial-gradient(60rem 40rem at 10% -10%, rgb(var(--accent-500) / 0.09), transparent 60%),
+      radial-gradient(50rem 35rem at 100% 0%, rgb(var(--plasma-500) / 0.08), transparent 60%),
+      linear-gradient(rgb(var(--base-50) / 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--base-50) / 0.018) 1px, transparent 1px);
+    background-size:
+      auto,
+      auto,
+      32px 32px,
+      32px 32px;
+    background-attachment: fixed;
+  }
+
   .content-section {
     @apply space-y-6 sm:space-y-8;
   }
 
   .content-paragraph {
-    @apply font-body leading-relaxed text-sm text-base-200 sm:text-base;
+    @apply font-body text-sm leading-relaxed text-base-200 sm:text-base;
   }
 
-  /* Card components - spokojne, hardware'owe */
-  .card-base {
-    @apply rounded border border-base-800 bg-base-900/80 p-6 transition-colors duration-150 hover:border-base-700;
+  /* ── Neon Cards ──────────────────────────────────────────────── */
+  .card-base,
+  .neon-card {
+    @apply rounded-xl border bg-base-900/80 p-6;
+    border-color: var(--card-border);
+    background-image: var(--card-sheen);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      translate 180ms ease;
+  }
+
+  .card-base:hover,
+  .neon-card:hover {
+    border-color: var(--card-border-hover);
+    box-shadow: var(--glow-md);
+    translate: 0 -2px;
   }
 
   .card-highlight {
-    @apply rounded border border-accent-700/30 bg-base-900/90 p-6;
+    @apply rounded-xl border border-accent-400/40 bg-base-900/90 p-6;
+    background-image: linear-gradient(180deg, rgb(var(--accent-400) / 0.08), transparent 55%);
+    box-shadow: var(--glow-sm);
   }
 
-  /* Improved heading hierarchy - używamy font-display dla nagłówków */
+  /*
+   * Automatyczne „neonowe karty" dla istniejących bloków w kodzie:
+   * każdy zaokrąglony kontener z obramowaniem w odcieniu `base` dostaje
+   * półprzezroczystą cyjanową ramkę i delikatny połysk. Selektory mają
+   * specyficzność (0,2,0), więc wygrywają z `border-base-*`, ale
+   * przegrywają ze stanami `hover:` / `focus:` z utilities (te są później).
+   */
+  :is(
+    [class*='rounded-'][class*='border-base-7'],
+    [class*='rounded-'][class*='border-base-8']
+  ):where(:not(input, textarea, select)) {
+    border-color: var(--card-border);
+    transition-property: color, background-color, border-color, box-shadow, translate, opacity;
+    transition-duration: 180ms;
+  }
+
+  :is(
+      [class*='rounded-xl'],
+      [class*='rounded-2xl'],
+      [class*='rounded-3xl']
+    )[class*='bg-base-9']:where(:not(input, textarea, select)) {
+    background-image: var(--card-sheen);
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000),
+      inset 0 1px 0 rgb(var(--base-50) / 0.04);
+  }
+
+  /* Hover dla kart-liści (bez zagnieżdżonych kart) - mocniejsza ramka + blask */
+  :is(
+      [class*='rounded-'][class*='border-base-7'],
+      [class*='rounded-'][class*='border-base-8']
+    ):where(
+      :not(input, textarea, select):not(:has([class*='rounded-'][class*='border-base-']))
+    ):hover {
+    border-color: var(--card-border-hover);
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--glow-sm);
+  }
+
+  /* Klikalne karty i przyciski konturowe - lekkie uniesienie */
+  :is(a, button, summary)[class*='rounded-'][class*='border']:where(
+      :not(:disabled, [aria-disabled='true'])
+    ):hover {
+    translate: 0 -2px;
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--glow-md);
+  }
+
+  /* Przyciski wypełnione akcentem - neonowy blask */
+  :is(a, button)[class*='bg-accent-4'],
+  :is(a, button)[class*='bg-accent-5']:not([class*='bg-accent-500/']) {
+    box-shadow: 0 0 14px rgb(var(--accent-400) / 0.25);
+    transition-property: color, background-color, border-color, box-shadow, translate;
+    transition-duration: 180ms;
+  }
+
+  :is(a, button)[class*='bg-accent-4']:where(:not(:disabled)):hover,
+  :is(a, button)[class*='bg-accent-5']:not([class*='bg-accent-500/']):where(:not(:disabled)):hover {
+    box-shadow: 0 0 26px rgb(var(--accent-400) / 0.45);
+    translate: 0 -2px;
+  }
+
+  /* ── Typografia ──────────────────────────────────────────────── */
   .heading-xl {
-    @apply font-display text-2xl font-bold uppercase tracking-wide text-accent-400 sm:text-3xl lg:text-4xl;
+    @apply font-display text-2xl font-bold uppercase tracking-wide text-accent-300 sm:text-3xl lg:text-4xl;
+    text-shadow: 0 0 18px rgb(var(--accent-400) / 0.35);
   }
 
   .heading-lg {
-    @apply font-display text-xl font-bold uppercase tracking-wide text-accent-400 sm:text-2xl;
+    @apply font-display text-xl font-bold uppercase tracking-wide text-accent-300 sm:text-2xl;
+    text-shadow: 0 0 14px rgb(var(--accent-400) / 0.3);
   }
 
   .heading-md {
-    @apply font-display text-lg font-semibold uppercase tracking-wide text-base-100 sm:text-xl;
+    @apply font-display text-lg font-semibold uppercase tracking-wide text-base-50 sm:text-xl;
   }
 
-  /* Etykiety sekcji - maszynowy styl */
   .section-label {
-    @apply font-display text-xs font-medium uppercase tracking-widest text-accent-400;
+    @apply font-display text-xs font-medium uppercase tracking-widest text-accent-300;
   }
 
-  /* Modal open state - prevent scroll */
+  /* ── Dane, statusy, tagi ─────────────────────────────────────── */
+  .data-value {
+    @apply font-bold tabular-nums text-neon-400;
+    text-shadow: 0 0 10px rgb(var(--neon-400) / 0.4);
+  }
+
+  .data-tag {
+    @apply inline-flex items-center gap-1 rounded-full border border-plasma-400/30 bg-plasma-500/10 px-2 py-0.5 font-display text-xs font-semibold uppercase tracking-wide text-plasma-300;
+  }
+
+  .status-dot {
+    @apply inline-block h-2 w-2 rounded-full bg-neon-400 motion-safe:animate-neon-pulse;
+    box-shadow: 0 0 8px rgb(var(--neon-400) / 0.8);
+  }
+
+  /* ── Paski postępu ───────────────────────────────────────────── */
+  .neon-track {
+    @apply overflow-hidden rounded-full bg-base-800;
+    box-shadow: inset 0 0 0 1px rgb(var(--base-50) / 0.04);
+  }
+
+  .neon-bar {
+    @apply h-full rounded-full transition-all duration-300;
+    background-image: linear-gradient(90deg, rgb(var(--accent-500)), rgb(var(--neon-400)));
+    box-shadow: 0 0 10px rgb(var(--neon-400) / 0.45);
+  }
+
   .modal-open {
     overflow: hidden;
     padding-right: var(--scrollbar-width, 0);
+  }
+}
+
+/* Ekrany dotykowe nie mają hovera - bez uniesienia, żeby karty nie „skakały" po tapnięciu */
+@media (hover: none) {
+  *:hover {
+    translate: none !important;
   }
 }
 
@@ -98,5 +305,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  *:hover {
+    translate: none !important;
   }
 }

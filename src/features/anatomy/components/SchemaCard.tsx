@@ -23,32 +23,32 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
       border: 'border-red-500',
       bg: 'bg-red-500/10',
       badge: 'bg-red-500/20 text-red-400',
-      glow: 'hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]'
+      glow: 'hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]',
     },
     medium: {
       border: 'border-amber-500',
       bg: 'bg-amber-500/10',
       badge: 'bg-amber-500/20 text-amber-400',
-      glow: 'hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]'
+      glow: 'hover:shadow-[0_0_30px_rgba(34,216,240,0.3)]',
     },
     low: {
       border: 'border-green-500',
       bg: 'bg-green-500/10',
       badge: 'bg-green-500/20 text-green-400',
-      glow: 'hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]'
-    }
+      glow: 'hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]',
+    },
   };
 
   const config = severityConfig[schema.severity];
 
   // Mapowanie ikon (emoji jako fallback)
   const iconMap: Record<string, string> = {
-    'MasksIcon': '🎭',
-    'BrokenHeartIcon': '💔',
-    'ScalesIcon': '⚖️',
-    'MirrorIcon': '🪞',
-    'NotebookIcon': '📔',
-    'ShieldIcon': '🛡️'
+    MasksIcon: '🎭',
+    BrokenHeartIcon: '💔',
+    ScalesIcon: '⚖️',
+    MirrorIcon: '🪞',
+    NotebookIcon: '📔',
+    ShieldIcon: '🛡️',
   };
 
   const handleQuizSubmit = () => {
@@ -84,11 +84,11 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
           {/* Tytuł i metadata */}
           <div className="text-left flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-2xl font-bold">
-                {t(schema.titleKey)}
-              </h3>
+              <h3 className="text-2xl font-bold">{t(schema.titleKey)}</h3>
               {/* Badge severity */}
-              <span className={`text-xs px-2 py-1 rounded-full ${config.badge} uppercase tracking-wide font-semibold`}>
+              <span
+                className={`text-xs px-2 py-1 rounded-full ${config.badge} uppercase tracking-wide font-semibold`}
+              >
                 {t(`anatomy.severity.${schema.severity}`)}
               </span>
             </div>
@@ -112,10 +112,7 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
       {/* ROZWIJALNA TREŚĆ */}
       {/* ═══════════════════════════════════════ */}
       {isExpanded && (
-        <div
-          id={`schema-content-${schema.id}`}
-          className="p-6 pt-0 space-y-6 animate-slideInUp"
-        >
+        <div id={`schema-content-${schema.id}`} className="p-6 pt-0 space-y-6 animate-slideInUp">
           {/* Separacja */}
           <div className="h-px bg-gradient-to-r from-transparent via-base-700 to-transparent" />
 
@@ -127,9 +124,7 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
               <span className="text-amber-500">📖</span>
               {t('anatomy.schemas.whatIsIt')}
             </h4>
-            <p className="text-base-200 leading-relaxed">
-              {t(schema.definitionKey)}
-            </p>
+            <p className="text-base-200 leading-relaxed">{t(schema.definitionKey)}</p>
           </div>
 
           {/* ─────────────────────────────────── */}
@@ -142,16 +137,11 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
             </h4>
             <ul className="space-y-3">
               {schema.redFlags.map((flag) => (
-                <li
-                  key={flag.id}
-                  className="flex items-start gap-3 group"
-                >
+                <li key={flag.id} className="flex items-start gap-3 group">
                   <span className="text-red-500 text-xl mt-0.5 group-hover:scale-125 transition-transform">
                     ✓
                   </span>
-                  <span className="text-base-100 leading-relaxed">
-                    {t(flag.translationKey)}
-                  </span>
+                  <span className="text-base-100 leading-relaxed">{t(flag.translationKey)}</span>
                 </li>
               ))}
             </ul>
@@ -173,9 +163,7 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
                     key={example.id}
                     example={example}
                     isOpen={showExample === example.id}
-                    onToggle={() => setShowExample(
-                      showExample === example.id ? null : example.id
-                    )}
+                    onToggle={() => setShowExample(showExample === example.id ? null : example.id)}
                   />
                 ))}
               </div>
@@ -193,9 +181,7 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
               </h4>
 
               {/* Pytanie */}
-              <p className="text-base-100 mb-4 font-medium">
-                {t(schema.quiz.questionKey)}
-              </p>
+              <p className="text-base-100 mb-4 font-medium">{t(schema.quiz.questionKey)}</p>
 
               {/* Opcje */}
               <div className="space-y-2 mb-4">
@@ -227,21 +213,21 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
                           className="mt-1 accent-amber-500"
                         />
                         <div className="flex-1">
-                          <p className="text-base-100">
-                            {t(option.textKey)}
-                          </p>
+                          <p className="text-base-100">{t(option.textKey)}</p>
 
                           {/* Wyjaśnienie po submicie */}
                           {showFeedback && (
-                            <div className={`mt-2 p-2 rounded text-sm ${
-                              isCorrect ? 'bg-green-900/30 text-green-300' : 'bg-red-900/30 text-red-300'
-                            }`}>
+                            <div
+                              className={`mt-2 p-2 rounded text-sm ${
+                                isCorrect
+                                  ? 'bg-green-900/30 text-green-300'
+                                  : 'bg-red-900/30 text-red-300'
+                              }`}
+                            >
                               <p className="font-semibold mb-1">
                                 {isCorrect ? '✓ Prawidłowo!' : '✗ Nieprawidłowo'}
                               </p>
-                              <p className="text-xs leading-relaxed">
-                                {t(option.explanationKey)}
-                              </p>
+                              <p className="text-xs leading-relaxed">{t(option.explanationKey)}</p>
                             </div>
                           )}
                         </div>
@@ -279,7 +265,7 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
           <div className="pt-4 border-t border-base-700">
             <p className="text-sm text-base-400 italic">
               {t('anatomy.schemas.footer', {
-                category: t(`anatomy.categories.${schema.category}`).toLowerCase()
+                category: t(`anatomy.categories.${schema.category}`).toLowerCase(),
               })}
             </p>
           </div>
@@ -328,9 +314,7 @@ function ExampleBlock({ example, isOpen, onToggle }: ExampleBlockProps) {
             <h5 className="text-sm font-semibold text-amber-500 uppercase tracking-wide mb-1">
               {t('anatomy.schemas.example.context')}
             </h5>
-            <p className="text-sm text-base-200">
-              {t(example.context)}
-            </p>
+            <p className="text-sm text-base-200">{t(example.context)}</p>
           </div>
 
           {/* Zachowanie */}
@@ -348,9 +332,7 @@ function ExampleBlock({ example, isOpen, onToggle }: ExampleBlockProps) {
             <h5 className="text-sm font-semibold text-green-500 uppercase tracking-wide mb-1">
               {t('anatomy.schemas.example.analysis')}
             </h5>
-            <p className="text-sm text-base-200 leading-relaxed">
-              {t(example.analysis)}
-            </p>
+            <p className="text-sm text-base-200 leading-relaxed">{t(example.analysis)}</p>
           </div>
 
           {/* Źródła */}

@@ -62,12 +62,12 @@ export interface AudioReactiveTheme {
  */
 export const THEMES: Record<string, ColorPalette> = {
   dark: {
-    primary: '#f59e0b', // accent-400
-    secondary: '#d97706', // accent-500
-    accent: '#fbbf24', // accent-300
-    background: '#0a0e27', // base-950
-    text: '#f3f5ff', // base-50
-    border: '#1e2854', // base-800
+    primary: '#22d8f0', // accent-400 (cyan)
+    secondary: '#00bcd9', // accent-500
+    accent: '#3dfc8f', // neon-400
+    background: '#0a0b0e', // base-950
+    text: '#f0f2f5', // base-50
+    border: '#1b1f29', // base-800
   },
   light: {
     primary: '#d97706',

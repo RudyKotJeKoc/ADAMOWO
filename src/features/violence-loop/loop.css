@@ -38,17 +38,20 @@
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(12, 17, 37, 0.65);
+  background: rgb(var(--base-900) / 0.7);
   backdrop-filter: blur(6px);
-  color: #f3f5ff;
+  color: rgb(var(--base-50));
   text-align: left;
-  transition: box-shadow 150ms ease, border-color 150ms ease, background-color 150ms ease;
+  transition:
+    box-shadow 150ms ease,
+    border-color 150ms ease,
+    background-color 150ms ease;
 }
 
 .loop-hotspot[data-active='true'] {
   border-color: rgba(255, 107, 53, 0.65);
   box-shadow: 0 0 18px rgba(255, 107, 53, 0.35);
-  background: rgba(12, 17, 37, 0.85);
+  background: rgb(var(--base-900) / 0.9);
 }
 
 .loop-hotspot:focus-visible {
