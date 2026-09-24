@@ -167,10 +167,13 @@ Wygenerowano przez Radio Adamowo - Anatomia Manipulacji
           <div className="mt-4">
             <div className="flex justify-between text-sm mb-1">
               <span className="text-base-300">{t('anatomy.framework.progress')}</span>
-              <span className="data-value">{Math.round(progressPercentage)}%</span>
+              <span className="text-amber-500 font-bold">{Math.round(progressPercentage)}%</span>
             </div>
-            <div className="neon-track h-2">
-              <div className="neon-bar duration-500" style={{ width: `${progressPercentage}%` }} />
+            <div className="h-2 bg-base-800 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-amber-500 to-red-500 transition-all duration-500"
+                style={{ width: `${progressPercentage}%` }}
+              />
             </div>
           </div>
         )}

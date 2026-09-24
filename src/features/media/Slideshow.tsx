@@ -443,9 +443,9 @@ export function Slideshow({
               <span>
                 {currentIndex + 1} / {items.length}
               </span>
-              <div className="neon-track h-2 flex-1">
+              <div className="flex-1 bg-base-800 rounded-full h-2">
                 <div
-                  className="neon-bar"
+                  className="bg-accent-500 h-full rounded-full transition-all duration-300"
                   style={{ width: `${((currentIndex + 1) / items.length) * 100}%` }}
                 />
               </div>

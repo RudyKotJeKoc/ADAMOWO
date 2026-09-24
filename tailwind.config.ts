@@ -1,30 +1,42 @@
 import type { Config } from 'tailwindcss';
 
-/**
- * Paleta Neon/Dashboard - wartości kanałów RGB żyją w `src/app.css` (:root),
- * dzięki czemu cały motyw zmienia się w jednym miejscu, a modyfikatory
- * przezroczystości Tailwinda (np. `bg-base-900/70`) nadal działają.
- */
-const token = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
-const scale = (name: string, steps: number[]) =>
-  Object.fromEntries(steps.map((step) => [step, token(`${name}-${step}`)]));
-
 export default {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        // Matowe, grafitowe tła + złamana biel dla tekstu
-        base: scale('base', [50, 100, 200, 300, 400, 500, 600, 700, 800, 850, 900, 925, 950]),
-        // Neonowy cyjan - nawigacja, nagłówki, ramki, akcje
-        accent: scale('accent', [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]),
-        // Neonowa zieleń - statusy poprawne, aktywne wskaźniki, kluczowe dane
-        neon: scale('neon', [200, 300, 400, 500, 600]),
-        // Neonowy fiolet - metadane, tagi, drugorzędne akcenty
-        plasma: scale('plasma', [200, 300, 400, 500, 600]),
+        // Ciemne studio śledcze - prawie czarne tła
+        base: {
+          50: '#f8fafc', // Bardzo jasny tekst (białawy)
+          100: '#f1f5f9', // Jasny tekst
+          200: '#cbd5e1', // Średni jasny
+          300: '#94a3b8', // Średni
+          400: '#64748b', // Przygaszony
+          500: '#475569', // Ciemny tekst
+          600: '#334155', // Bardzo ciemny tekst
+          700: '#1e293b', // Ciemna powierzchnia
+          800: '#0f172a', // Bardzo ciemna powierzchnia
+          850: '#0a0f1e', // Prawie czarna powierzchnia
+          900: '#020617', // Tło główne (slate-950)
+          950: '#020617', // Tło główne (slate-950)
+        },
+        // Złote/bursztynowe akcenty (jak theme_color #f59e0b)
+        accent: {
+          200: '#fcd34d', // Jasny bursztyn
+          300: '#fbbf24', // Bursztyn
+          400: '#f59e0b', // Główny accent (theme_color)
+          500: '#d97706', // Ciemniejszy accent
+          600: '#b45309', // Bardzo ciemny accent
+          700: '#92400e', // Prawie brązowy
+        },
         // Czerwony tylko dla ON AIR / alarmów / red flags
-        danger: scale('danger', [400, 500, 600, 700]),
+        danger: {
+          400: '#f87171', // Jasny czerwony
+          500: '#ef4444', // Czerwony
+          600: '#dc2626', // Ciemny czerwony
+          700: '#b91c1c', // Bardzo ciemny czerwony
+        },
       },
       fontFamily: {
         // Czysty, czytelny font dla treści
@@ -47,24 +59,11 @@ export default {
         ],
         // Maszynowy/dokumentowy font dla nagłówków i etykiet
         display: ['IBM Plex Mono', 'Courier New', 'ui-monospace', 'monospace'],
+        // Dodatkowy font dla specjalnych elementów (opcjonalny)
         mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        focus: '0 0 0 3px rgb(var(--accent-400) / 0.45)',
-        'glow-sm': '0 0 8px rgb(var(--accent-400) / 0.35)',
-        glow: '0 0 16px rgb(var(--accent-400) / 0.3), 0 0 2px rgb(var(--accent-400) / 0.6)',
-        'glow-neon': '0 0 14px rgb(var(--neon-400) / 0.35), 0 0 2px rgb(var(--neon-400) / 0.7)',
-        'glow-plasma':
-          '0 0 14px rgb(var(--plasma-400) / 0.35), 0 0 2px rgb(var(--plasma-400) / 0.7)',
-      },
-      keyframes: {
-        'neon-pulse': {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.55' },
-        },
-      },
-      animation: {
-        'neon-pulse': 'neon-pulse 2.4s ease-in-out infinite',
+        focus: '0 0 0 3px rgba(245, 158, 11, 0.4)', // Accent focus
       },
     },
   },

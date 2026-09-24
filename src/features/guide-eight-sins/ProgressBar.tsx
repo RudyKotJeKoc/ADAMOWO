@@ -31,14 +31,16 @@ export const ProgressBar = ({
           </p>
         </div>
         <div className="flex w-full max-w-sm items-center gap-3">
-          <div className="neon-track h-2 flex-1">
+          <div className="h-2 flex-1 rounded-full bg-base-700">
             <div
-              className="neon-bar"
+              className="h-full rounded-full bg-accent-500 transition-all"
               style={{ width: `${Math.min(100, formatPercent(overallProgress))}%` }}
               aria-hidden="true"
             />
           </div>
-          <span className="data-value text-sm">{formatPercent(overallProgress)}%</span>
+          <span className="text-sm font-semibold text-accent-200">
+            {formatPercent(overallProgress)}%
+          </span>
         </div>
       </div>
 
@@ -68,8 +70,12 @@ export const ProgressBar = ({
                   total: progress?.total ?? 0,
                 })}
               </span>
-              <div className="neon-track mt-2 h-1.5">
-                <div className="neon-bar" style={{ width: `${percent}%` }} aria-hidden="true" />
+              <div className="mt-2 h-1.5 rounded-full bg-base-700">
+                <div
+                  className="h-full rounded-full bg-accent-500"
+                  style={{ width: `${percent}%` }}
+                  aria-hidden="true"
+                />
               </div>
             </button>
           );

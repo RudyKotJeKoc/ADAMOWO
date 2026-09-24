@@ -29,7 +29,7 @@ export function SchemaCard({ schema, isExpanded, onToggle }: SchemaCardProps) {
       border: 'border-amber-500',
       bg: 'bg-amber-500/10',
       badge: 'bg-amber-500/20 text-amber-400',
-      glow: 'hover:shadow-[0_0_30px_rgba(34,216,240,0.3)]',
+      glow: 'hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]',
     },
     low: {
       border: 'border-green-500',

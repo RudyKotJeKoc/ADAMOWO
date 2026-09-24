@@ -84,7 +84,7 @@ export function VisitCounter({ className, showLabel = true }: VisitCounterProps)
             key={displayCount}
             initial={{ opacity: 0.5 }}
             animate={{ opacity: 1 }}
-            className="data-value text-2xl"
+            className="text-2xl font-bold tabular-nums text-accent-400"
           >
             {displayCount.toLocaleString()}
           </motion.span>

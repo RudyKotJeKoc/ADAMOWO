@@ -5,12 +5,7 @@
 /* ═══════════════════════════════════════════════════════════ */
 
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    rgb(var(--accent-300)),
-    rgb(var(--plasma-400)),
-    rgb(var(--accent-300))
-  );
+  background: linear-gradient(135deg, #f59e0b, #dc2626, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,12 +102,12 @@
 /* ═══════════════════════════════════════════════════════════ */
 
 .anatomy-schema-card button:focus-visible {
-  outline: 2px solid rgb(var(--accent-400));
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 
 .anatomy-schema-card input[type='radio']:focus-visible {
-  outline: 2px solid rgb(var(--accent-400));
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 
@@ -225,10 +220,10 @@ textarea::-webkit-scrollbar-track {
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background: rgb(var(--accent-400) / 0.5);
+  background: rgba(245, 158, 11, 0.5);
   border-radius: 4px;
 }
 
 textarea::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--accent-400) / 0.7);
+  background: rgba(245, 158, 11, 0.7);
 }

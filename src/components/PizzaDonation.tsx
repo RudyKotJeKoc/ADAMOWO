@@ -51,7 +51,7 @@ export function PizzaDonation() {
               ease: 'easeInOut',
             }}
           >
-            <span className="text-8xl drop-shadow-[0_0_30px_rgba(34,216,240,0.45)]">🍕</span>
+            <span className="text-8xl drop-shadow-[0_0_30px_rgba(245,158,11,0.5)]">🍕</span>
           </motion.div>
 
           {/* Main heading */}

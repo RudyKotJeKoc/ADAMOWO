@@ -351,9 +351,12 @@ export function MusicPlayer(): JSX.Element {
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="relative h-3 w-full overflow-hidden rounded-full bg-base-800 ring-1 ring-base-700/50">
-            <div className="neon-bar rounded-none" style={{ width: `${progress}%` }} />
             <div
-              className="absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-base-50 shadow-xl ring-2 ring-neon-400 shadow-glow-neon transition-all duration-300"
+              className="h-full bg-gradient-to-r from-accent-600 via-accent-500 to-accent-400 transition-all duration-300 shadow-lg"
+              style={{ width: `${progress}%` }}
+            />
+            <div
+              className="absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-base-50 shadow-xl ring-2 ring-accent-400 transition-all duration-300"
               style={{ left: `calc(${progress}% - 8px)` }}
             />
           </div>
